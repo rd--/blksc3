@@ -1,4 +1,5 @@
-# BLKSC3
+blksc3
+------
 
 Block editor for SuperCollider.
 
@@ -37,4 +38,4 @@ In M. Guzdial (ed.), _Squeak : Open Personal Computing for Multimedia_.
 
 * * *
 
-[HTML](?t=j&e=2021-11-28/blksc3.html)
+[HTML](?t=blksc3&e=blksc3.html)
