@@ -1,0 +1,193 @@
+[
+    {
+        "type": "sc3_Comment",
+        "message0": "comment: %1",
+        "args0": [
+            {"type": "field_input", "name": "COMMENT", "text": ""}
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 300,
+        "tooltip": "Workspace comment"
+    }
+    ,
+    {
+        "type": "sc3_Play",
+        "message0": "🔊 %1",
+        "args0": [
+            {"type": "input_value", "name": "CODE",  "check": ["Array", "UGen"]}
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 300,
+        "tooltip": "Play sound"
+    }
+    ,
+    {
+        "type": "sc3_Proc0",
+        "message0": "λ %1",
+        "args0": [
+            {"type": "input_value", "name": "PROC", "check": ["Array", "Number", "UGen"]}
+        ],
+        "output": "Proc0",
+        "colour": 180,
+        "tooltip": "Make zero argument procedure for input block"
+    }
+    ,
+    {
+        "type": "sc3_Proc1",
+        "message0": "%1 λ %2",
+        "args0": [
+            {"type": "input_value", "name": "VAR"},
+            {"type": "input_value", "name": "PROC", "check": ["Array", "Number", "UGen"]}
+        ],
+        "output": "Proc1",
+        "colour": 180,
+        "tooltip": "Make one argument procedure for input block setting arg to var"
+    }
+    ,
+    {
+        "type": "sc3_timesRepeat",
+        "message0": "%1 timesRepeat: %2",
+        "args0": [
+            {"type": "input_value", "name": "COUNT", "check": "Number"},
+            {"type": "input_statement", "name": "PROC"}
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 180,
+        "tooltip": "Repeat action indicated number of times"
+    }
+    ,
+    {
+        "type": "sc3_overlapTexture",
+        "message0": "overlap: %1 sustainTime: %2 transitionTime: %3 overlap: %4",
+        "args0": [
+            {"type": "input_value", "name": "PROC", "check": "Proc1"},
+            {"type": "input_value", "name": "SUSTAINTIME", "check": "Number"},
+            {"type": "input_value", "name": "TRANSITIONTIME", "check": "Number"},
+            {"type": "input_value", "name": "OVERLAP", "check": "Number"}
+        ],
+        "output": "UGen",
+        "colour": 180,
+        "tooltip": "Overlap add texture"
+    }
+    ,
+    {
+        "type": "sc3_arrayFromTo",
+        "message0": "%1 to: %2",
+        "args0": [
+            {"type": "input_value", "name": "FROM", "check": ["Number", "UGen"]},
+            {"type": "input_value", "name": "TO", "check": ["Number", "UGen"]}
+        ],
+        "output": "Array",
+        "colour": 260,
+        "tooltip": "List of consecutive numbers"
+    }
+    ,
+    {
+        "type": "sc3_arrayFill",
+        "message0": "%1 ! %2",
+        "args0": [
+            {"type": "input_value", "name": "PROC", "check": "Proc0"},
+            {"type": "input_value", "name": "COUNT", "check": "Number"}
+        ],
+        "output": "Array",
+        "colour": 260,
+        "tooltip": "Fill list by evaluating function once for each place"
+    }
+    ,
+    {
+        "type": "sc3_arrayCollect",
+        "message0": "%1 map: %2",
+        "args0": [
+            {"type": "input_value", "name": "ARRAY", "check": ["Array", "UGen"]},
+            {"type": "input_value", "name": "PROC", "check": "Proc1"}
+        ],
+        "output": "Array",
+        "colour": 260,
+        "tooltip": "Collect over ARRAY by evaluating PROC once for each place"
+    }
+    ,
+    {
+        "type": "sc3_UnaryOp",
+        "message0": "%1 of: %2",
+        "args0": [
+            {"type": "field_dropdown", "name": "OP", "options": [["abs", "abs"], ["asLocalBuf","asLocalBuf"], ["choose","choose"], ["clearBuf", "clearBuf"], ["cubed","cubed"], ["distort","distort"], ["1º","first"], ["mean", "mean"], ["midicps", "midicps"], ["mix","mix"], ["-","negated"], ["reciprocal","reciprocal"], ["reverse","reverse"], ["rounded","rounded"], ["2º","second"], ["sin","sin"], ["size","size"], ["splay","splay"], ["√","sqrt"], ["Σ","sum"], ["tanh","tanh"], ["transpose","transpose"]]},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 230,
+        "tooltip": "Unary operators"
+    }
+    ,
+    {
+        "type": "sc3_BinaryOp",
+        "message0": "%2 %1 %3",
+        "args0": [
+            {"type": "field_dropdown", "name": "OP", "options": [["+", "+"], ["-","-"], ["×", "*"], ["/","/"], ["%","%"], ["**","**"], ["<","<"], [">",">"]]},
+            {"type": "input_value", "name": "LHS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RHS", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 230,
+        "tooltip": "Binary operators"
+    }
+    ,
+    {
+        "type": "sc3_KeywordBinaryOp",
+        "message0": "%2 %1: %3",
+        "args0": [
+            {"type": "field_dropdown", "name": "OP", "options": [["clip2","clip2"], ["lag", "lag"], ["lag2", "lag2"], ["min", "min"], ["max","max"], ["mrg","mrg"], ["nth","nth"], ["roundTo","roundTo"]]},
+            {"type": "input_value", "name": "LHS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RHS", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 230,
+        "tooltip": "Keyword binary operators"
+    }
+    ,
+    {
+        "type": "sc3_klankSpec",
+        "message0": "KlankSpec %1 freq: %2 amp: %3 time: %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Array", "UGen"]},
+            {"type": "input_value", "name": "AMP", "check": ["Array", "UGen"]},
+            {"type": "input_value", "name": "TIME", "check": ["Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Helper to arrange Klank filter input"
+    }
+    ,
+    {
+        "type": "sc3_linLin",
+        "message0": "LinLin %1 in: %2 srclo: %3 srchi: %4 dstlo: %5 dsthi %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Array", "Number", "UGen"]},
+            {"type": "input_value", "name": "SRCLO", "check": ["Array", "Number", "UGen"]},
+            {"type": "input_value", "name": "SRCHI", "check": ["Array", "Number", "UGen"]},
+            {"type": "input_value", "name": "DSTLO", "check": ["Array", "Number", "UGen"]},
+            {"type": "input_value", "name": "DSTHI", "check": ["Array", "Number", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Linear range mapping"
+    }
+    ,
+    {
+        "type": "sc3_selectTwo",
+        "message0": "Select2 %1 predicate: %2 ifTrue: %3 ifFalse: %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "PREDICATE", "check": ["Array", "Number", "UGen"]},
+            {"type": "input_value", "name": "IFTRUE", "check": ["Array", "Number", "UGen"]},
+            {"type": "input_value", "name": "IFFALSE", "check": ["Array", "Number", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Select signal branch based on predicate value"
+    }
+]

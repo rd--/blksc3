@@ -1,0 +1,5 @@
+// https://fredrikolofsson.com/f0blog/more-sc-twitter/, f0
+var t = Saw([9, 9.01]);
+var f = Demand(t, 0, Dseq(inf, [0, 0, 0, 0, 0, 0, 500]));
+var p = SinOsc(Demand(t, 0, Dshuf(inf, 8.iota - 1 * 99)).lag(0.04), 0);
+SinOsc(f, p) / 2

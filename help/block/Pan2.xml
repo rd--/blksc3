@@ -1,0 +1,102 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="sc3_Comment" id="fpWc^BW1#3B[(!P)+`yP" x="-1687" y="-465">
+    <field name="COMMENT">Pan2 ; equal power stereo pan</field>
+    <next>
+      <block type="sc3_Play" id="}nIJdje,=i$egwAlA1`^">
+        <value name="CODE">
+          <block type="sc3_Pan2" id="3tY@i|WrG_~FF!iiak1?">
+            <value name="IN">
+              <shadow type="math_number" id="t`pMtaZDT_0t@*ij|;~e">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="sc3_PinkNoise" id="c6H+J{3yKK^v`bU#%xRz" inline="true">
+                <value name="MUL">
+                  <shadow type="math_number" id="]K2)Hx3zqj90|Y~+DCSh">
+                    <field name="NUM">0.1</field>
+                  </shadow>
+                </value>
+                <value name="ADD">
+                  <shadow type="math_number" id="hOqHsg]?Cc^7[Ef45`JU">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="sc3_SinOsc" id="q.Af-C):SXGmcFzI=t!{" inline="true">
+                    <value name="FREQ">
+                      <shadow type="math_number" id="?pHc1KFU-2Q?u0CU,lKG">
+                        <field name="NUM">440</field>
+                      </shadow>
+                      <block type="sc3_UnaryOp" id="|lGh421N%|_e?*f4Wqz+">
+                        <field name="OP">midicps</field>
+                        <value name="IN">
+                          <shadow type="math_number" id="o]{EJdIJ~pn1Ry@}^[(P">
+                            <field name="NUM">48</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="PHASE">
+                      <shadow type="math_number" id="D=#[a8v)kdc7HI7s;|LL">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="MUL">
+                      <shadow type="math_number" id="SlEV@=bCZK/_b|KdSX)o">
+                        <field name="NUM">0.05</field>
+                      </shadow>
+                    </value>
+                    <value name="ADD">
+                      <shadow type="math_number" id="XB$h(H}l)T7N_/qWUs-i">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="POS">
+              <shadow type="math_number" id="V4Cr(Y%G)vvMW1M7JZ$;">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="sc3_SinOsc" id="=-{*={RoVQrhoX?)hl@;" inline="true">
+                <value name="FREQ">
+                  <shadow type="math_number" id="*tj|8jS,0.kSn+*o83uQ">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="PHASE">
+                  <shadow type="math_number" id="lYP#BYutD[xidt5Vi~~y">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="MUL">
+                  <shadow type="math_number" id="qinWoqpDwtDhNxCwLZS0">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="ADD">
+                  <shadow type="math_number" id="oH8Rk`ss%#?5#jkq47LH">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <value name="LEVEL">
+              <shadow type="math_number" id="jdtu9xWjp4qsQ@L^B=tg">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="MUL">
+              <shadow type="math_number" id="(Z{GcqJAp=qFv|@j,p9y">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="ADD">
+              <shadow type="math_number" id="Yf|hna.6*El_Jx8oCGCL">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

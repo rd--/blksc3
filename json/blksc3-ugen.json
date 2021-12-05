@@ -1,0 +1,1301 @@
+[
+    {
+        "type": "sc3_AllpassC",
+        "message0": "AllpassC %1 in: %2 maxdelaytime: %3 delaytime: %4 decaytime: %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Schroeder allpass delay line with cubic interpolation.",
+        "helpUrl": "https://doc.sccode.org/Classes/AllpassC.html"
+    }
+    ,
+    {
+        "type": "sc3_AllpassL",
+        "message0": "AllpassL %1 in: %2 maxdelaytime: %3 delaytime: %4 decaytime: %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Schroeder allpass delay line with linear interpolation.",
+        "helpUrl": "https://doc.sccode.org/Classes/AllpassL.html"
+    }
+    ,
+    {
+        "type": "sc3_AmpComp",
+        "message0": "AmpComp %1 freq: %2 root: %3 exp: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ROOT", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "EXP", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Basic psychoacoustic amplitude compensation.",
+        "helpUrl": "https://doc.sccode.org/Classes/AmpComp.html"
+    }
+    ,
+    {
+        "type": "sc3_BBandPass",
+        "message0": "BBandPass %1 in: %2 freq: %3 bw: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "BW", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Band Pass Filter",
+        "helpUrl": "https://doc.sccode.org/Classes/BBandPass.html"
+    }
+    ,
+    {
+        "type": "sc3_BPF",
+        "message0": "BPF %1 in: %2 freq: %3 rq: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "2nd order Butterworth bandpass filter.",
+        "helpUrl": "https://doc.sccode.org/Classes/BPF.html"
+    }
+    ,
+    {
+        "type": "sc3_BPZ2",
+        "message0": "BPZ2 %1 in: %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Two zero fixed midpass.",
+        "helpUrl": "https://doc.sccode.org/Classes/BPZ2.html"
+    }
+    ,
+    {
+        "type": "sc3_Blip",
+        "message0": "Blip %1 freq: %2 numharm: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "NUMHARM", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Band limited impulse oscillator.",
+        "helpUrl": "https://doc.sccode.org/Classes/Blip.html"
+    }
+    ,
+    {
+        "type": "sc3_BrownNoise",
+        "message0": "BrownNoise %1 × %2 + %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Brown Noise.",
+        "helpUrl": "https://doc.sccode.org/Classes/BrownNoise.html"
+    }
+    ,
+    {
+        "type": "sc3_CombC",
+        "message0": "CombC %1 in: %2 maxdelaytime: %3 delaytime: %4 decaytime: %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Comb delay line with cubic interpolation.",
+        "helpUrl": "https://doc.sccode.org/Classes/CombC.html"
+    }
+    ,
+    {
+        "type": "sc3_CombL",
+        "message0": "CombL %1 in: %2 maxdelaytime: %3 delaytime: %4 decaytime: %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Comb delay line with linear interpolation.",
+        "helpUrl": "https://doc.sccode.org/Classes/CombL.html"
+    }
+    ,
+    {
+        "type": "sc3_Decay",
+        "message0": "Decay %1 in: %2 decayTime: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Exponential decay",
+        "helpUrl": "https://doc.sccode.org/Classes/Decay.html"
+    }
+    ,
+    {
+        "type": "sc3_Decay2",
+        "message0": "Decay2 %1 in: %2 attackTime: %3 decayTime: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ATTACKTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Exponential decay",
+        "helpUrl": "https://doc.sccode.org/Classes/Decay2.html"
+    }
+    ,
+    {
+        "type": "sc3_DegreeToKey",
+        "message0": "DegreeToKey %1 bufnum: %2 in: %3 octave: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "OCTAVE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Convert signal to modal pitch.",
+        "helpUrl": "https://doc.sccode.org/Classes/DegreeToKey.html"
+    }
+    ,
+    {
+        "type": "sc3_DelayC",
+        "message0": "DelayC %1 in: %2 maxdelaytime: %3 delaytime: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Simple delay line with cubic interpolation.",
+        "helpUrl": "https://doc.sccode.org/Classes/DelayC.html"
+    }
+    ,
+    {
+        "type": "sc3_DelayL",
+        "message0": "DelayL %1 in: %2 maxdelaytime: %3 delaytime: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Simple delay line with linear interpolation.",
+        "helpUrl": "https://doc.sccode.org/Classes/DelayL.html"
+    }
+    ,
+    {
+        "type": "sc3_Demand",
+        "message0": "Demand %1 trig: %2 reset: %3 demandUGens: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DEMANDUGENS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Demand results from demand rate UGens.",
+        "helpUrl": "https://doc.sccode.org/Classes/Demand.html"
+    }
+    ,
+    {
+        "type": "sc3_Drand",
+        "message0": "Drand %1 repeats: %2 list: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Demand rate random sequence generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/Drand.html"
+    }
+    ,
+    {
+        "type": "sc3_Dseq",
+        "message0": "Dseq %1 repeats: %2 list: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Demand rate sequence generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/Dseq.html"
+    }
+    ,
+    {
+        "type": "sc3_Dshuf",
+        "message0": "Dshuf %1 repeats: %2 list: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Demand rate random sequence generator",
+        "helpUrl": "https://doc.sccode.org/Classes/Dshuf.html"
+    }
+    ,
+    {
+        "type": "sc3_Dust",
+        "message0": "Dust %1 density: %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "DENSITY", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Random impulses.",
+        "helpUrl": "https://doc.sccode.org/Classes/Dust.html"
+    }
+    ,
+    {
+        "type": "sc3_Duty",
+        "message0": "Duty %1 dur: %2 reset: %3 doneAction: %4 level: %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Demand results from demand rate UGens.",
+        "helpUrl": "https://doc.sccode.org/Classes/Duty.html"
+    }
+    ,
+    {
+        "type": "sc3_ExpRand",
+        "message0": "ExpRand %1 lo: %2 hi: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Exponential single random number generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/ExpRand.html"
+    }
+    ,
+    {
+        "type": "sc3_Formant",
+        "message0": "Formant %1 fundfreq: %2 formfreq: %3 bwfreq: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FUNDFREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FORMFREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "BWFREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Formant oscillator",
+        "helpUrl": "https://doc.sccode.org/Classes/Formant.html"
+    }
+    ,
+    {
+        "type": "sc3_FreeVerb2",
+        "message0": "FreeVerb2 %1 in: %2 in2 %3 mix: %4 room: %5 damp: %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "IN2", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MIX", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ROOM", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DAMP", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "A two-channel reverb",
+        "helpUrl": "https://doc.sccode.org/Classes/FreeVerb2.html"
+    }
+    ,
+    {
+        "type": "sc3_GVerb",
+        "message0": "GVerb %1 in: %2 roomsize: %3 revtime: %4 damping: %5 inputbw: %6 spread: %7 drylevel: %8 earlyreflevel: %9 taillevel: %10 maxroomsize: %11 × %12 + %13",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ROOMSIZE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "REVTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DAMPING", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "INPUTBW", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "SPREAD", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DRYLEVEL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "EARLYREFLEVEL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "TAILLEVEL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAXROOMSIZE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "A two-channel reverb",
+        "helpUrl": "https://doc.sccode.org/Classes/GVerb.html"
+    }
+    ,
+    {
+        "type": "sc3_GrayNoise",
+        "message0": "GrayNoise %1 × %2 + %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Gray Noise.",
+        "helpUrl": "https://doc.sccode.org/Classes/GrayNoise.html"
+    }
+    ,
+    {
+        "type": "sc3_HPF",
+        "message0": "HPF %1 in: %2 freq: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "2nd order Butterworth highpass filter.",
+        "helpUrl": "https://doc.sccode.org/Classes/HPF.html"
+    }
+    ,
+    {
+        "type": "sc3_HPZ1",
+        "message0": "HPZ1 %1 in: %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Two point difference filter",
+        "helpUrl": "https://doc.sccode.org/Classes/HPZ1.html"
+    }
+    ,
+    {
+        "type": "sc3_Impulse",
+        "message0": "Impulse %1 freq: %2 phase: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Impulse oscillator.",
+        "helpUrl": "https://doc.sccode.org/Classes/Impulse.html"
+    }
+    ,
+    {
+        "type": "sc3_InFeedback",
+        "message0": "InFeedback %1 numChannels: %2 bus: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "BUS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Read signal from a bus with a current or one cycle old timestamp.",
+        "helpUrl": "https://doc.sccode.org/Classes/InFeedback.html"
+    }
+    ,
+    {
+        "type": "sc3_Klank",
+        "message0": "Klank %1 input: %2 freqscale: %3 freqoffset: %4 decayscale: %5 specificationsArrayRef: %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "INPUT", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FREQSCALE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FREQOFFSET", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DECAYSCALE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "SPECIFICATIONSARRAYREF", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Bank of resonators",
+        "helpUrl": "https://doc.sccode.org/Classes/Klank.html"
+    }
+    ,
+    {
+        "type": "sc3_LFCub",
+        "message0": "LFCub %1 freq: %2 iphase: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "A sine like shape made of two cubic pieces",
+        "helpUrl": "https://doc.sccode.org/Classes/LFCub.html"
+    }
+    ,
+    {
+        "type": "sc3_LFNoise0",
+        "message0": "LFNoise0 %1 freq: %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Step noise",
+        "helpUrl": "https://doc.sccode.org/Classes/LFNoise0.html"
+    }
+    ,
+    {
+        "type": "sc3_LFNoise1",
+        "message0": "LFNoise1 %1 freq: %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Ramp noise",
+        "helpUrl": "https://doc.sccode.org/Classes/LFNoise1.html"
+    }
+    ,
+    {
+        "type": "sc3_LFNoise2",
+        "message0": "LFNoise2 %1 freq: %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Quadratic noise.",
+        "helpUrl": "https://doc.sccode.org/Classes/LFNoise2.html"
+    }
+    ,
+    {
+        "type": "sc3_LFPar",
+        "message0": "LFPar %1 freq: %2 iphase: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Parabolic oscillator",
+        "helpUrl": "https://doc.sccode.org/Classes/LFPar.html"
+    }
+    ,
+    {
+        "type": "sc3_LFPulse",
+        "message0": "LFPulse %1 freq: %2 iphase: %3 width: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "pulse oscillator",
+        "helpUrl": "https://doc.sccode.org/Classes/LFPulse.html"
+    }
+    ,
+    {
+        "type": "sc3_LFSaw",
+        "message0": "LFSaw %1 freq: %2 iphase: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Sawtooth oscillator",
+        "helpUrl": "https://doc.sccode.org/Classes/LFSaw.html"
+    }
+    ,
+    {
+        "type": "sc3_LFTri",
+        "message0": "LFTri %1 freq: %2 iphase: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Triangle oscillator",
+        "helpUrl": "https://doc.sccode.org/Classes/LFTri.html"
+    }
+    ,
+    {
+        "type": "sc3_LPF",
+        "message0": "LPF %1 in: %2 freq: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "2nd order Butterworth lowpass filter",
+        "helpUrl": "https://doc.sccode.org/Classes/LPF.html"
+    }
+    ,
+    {
+        "type": "sc3_LPZ1",
+        "message0": "LPZ1 %1 in: %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Two point average filter",
+        "helpUrl": "https://doc.sccode.org/Classes/LPZ1.html"
+    }
+    ,
+    {
+        "type": "sc3_Lag",
+        "message0": "Lag %1 in: %2 lagTime: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LAGTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Exponential lag",
+        "helpUrl": "https://doc.sccode.org/Classes/Lag.html"
+    }
+    ,
+    {
+        "type": "sc3_Latch",
+        "message0": "Latch %1 in: %2 trig: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Sample and hold",
+        "helpUrl": "https://doc.sccode.org/Classes/Latch.html"
+    }
+    ,
+    {
+        "type": "sc3_LeakDC",
+        "message0": "LeakDC %1 in: %2 coef: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "COEF", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Remove DC",
+        "helpUrl": "https://doc.sccode.org/Classes/LeakDC.html"
+    }
+    ,
+    {
+        "type": "sc3_LinRand",
+        "message0": "LinRand %1 lo: %2 hi: %3 minmax: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MINMAX", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Skewed random number generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/LinRand.html"
+    }
+    ,
+    {
+        "type": "sc3_Line",
+        "message0": "Line %1 start: %2 end: %3 dur: %4 doneAction: %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "END", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Line generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/Line.html"
+    }
+    ,
+    {
+        "type": "sc3_LocalBuf",
+        "message0": "LocalBuf %1 numChannels: %2 numFrames: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "NUMFRAMES", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Allocate a buffer local to the synth",
+        "helpUrl": "https://doc.sccode.org/Classes/LocalBuf.html"
+    }
+    ,
+    {
+        "type": "sc3_LocalIn",
+        "message0": "LocalIn %1 numChannels: %2 default: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DEFAULT", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Define and read from buses local to a synth.",
+        "helpUrl": "https://doc.sccode.org/Classes/LocalIn.html"
+    }
+    ,
+    {
+        "type": "sc3_LocalOut",
+        "message0": "LocalOut %1 channelsArray: %2",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "CHANNELSARRAY", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Write to buses local to a synth.",
+        "helpUrl": "https://doc.sccode.org/Classes/LocalOut.html"
+    }
+    ,
+    {
+        "type": "sc3_MouseX",
+        "message0": "MouseX %1 minval: %2 maxval: %3 warp: %4 lag: %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAXVAL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "WARP", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LAG", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Cursor tracking UGen.",
+        "helpUrl": "https://doc.sccode.org/Classes/MouseX.html"
+    }
+    ,
+    {
+        "type": "sc3_MouseY",
+        "message0": "MouseY %1 minval: %2 maxval: %3 warp: %4 lag: %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAXVAL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "WARP", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LAG", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Cursor tracking UGen.",
+        "helpUrl": "https://doc.sccode.org/Classes/MouseY.html"
+    }
+    ,
+    {
+        "type": "sc3_OnePole",
+        "message0": "OnePole %1 in: %2 coef: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "COEF", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "One pole filter.",
+        "helpUrl": "https://doc.sccode.org/Classes/OnePole.html"
+    }
+    ,
+    {
+        "type": "sc3_Out",
+        "message0": "Out %1 bus: %2 channelsArray: %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "BUS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "CHANNELSARRAY", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Write a signal to a bus.",
+        "helpUrl": "https://doc.sccode.org/Classes/Out.html"
+    }
+    ,
+    {
+        "type": "sc3_Pan2",
+        "message0": "Pan2 %1 in: %2 pos: %3 level: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "POS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Two channel equal power pan.",
+        "helpUrl": "https://doc.sccode.org/Classes/Pan2.html"
+    }
+    ,
+    {
+        "type": "sc3_PinkNoise",
+        "message0": "PinkNoise %1 × %2 + %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Pink Noise.",
+        "helpUrl": "https://doc.sccode.org/Classes/PinkNoise.html"
+    }
+    ,
+    {
+        "type": "sc3_PitchShift",
+        "message0": "PitchShift %1 in: %2 windowSize: %3 pitchRatio: %4 pitchDispersion: %5 timeDispersion: %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "WINDOWSIZE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "PITCHRATIO", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "PITCHDISPERSION", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "TIMEDISPERSION", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Time domain pitch shifter.",
+        "helpUrl": "https://doc.sccode.org/Classes/PitchShift.html"
+    }
+    ,
+    {
+        "type": "sc3_Pluck",
+        "message0": "Pluck %1 in: %2 trig: %3 maxdelaytime: %4 delaytime: %5 decaytime: %6 coef: %7 × %8 + %9",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "COEF", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "A Karplus-Strong UGen",
+        "helpUrl": "https://doc.sccode.org/Classes/Pluck.html"
+    }
+    ,
+    {
+        "type": "sc3_Pulse",
+        "message0": "Pulse %1 freq: %2 width: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Band limited pulse wave.",
+        "helpUrl": "https://doc.sccode.org/Classes/Pulse.html"
+    }
+    ,
+    {
+        "type": "sc3_RHPF",
+        "message0": "RHPF %1 in: %2 freq: %3 rq: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "A resonant high pass filter.",
+        "helpUrl": "https://doc.sccode.org/Classes/RHPF.html"
+    }
+    ,
+    {
+        "type": "sc3_RLPF",
+        "message0": "RLPF %1 in: %2 freq: %3 rq: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "A resonant low pass filter.",
+        "helpUrl": "https://doc.sccode.org/Classes/RLPF.html"
+    }
+    ,
+    {
+        "type": "sc3_Rand",
+        "message0": "Rand %1 lo: %2 hi: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Single random number generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/Rand.html"
+    }
+    ,
+    {
+        "type": "sc3_RecordBuf",
+        "message0": "RecordBuf %1 bufnum: %2 offset: %3 recLevel: %4 preLevel: %5 run: %6 loop: %7 trigger: %8 doneAction: %9 inputArray: %10 × %11 + %12",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "OFFSET", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RECLEVEL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "PRELEVEL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RUN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LOOP", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "INPUTARRAY", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Record or overdub into a Buffer.",
+        "helpUrl": "https://doc.sccode.org/Classes/RecordBuf.html"
+    }
+    ,
+    {
+        "type": "sc3_Resonz",
+        "message0": "Resonz %1 in: %2 freq: %3 bwr: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "BWR", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Resonant filter.",
+        "helpUrl": "https://doc.sccode.org/Classes/Resonz.html"
+    }
+    ,
+    {
+        "type": "sc3_Ringz",
+        "message0": "Ringz %1 in: %2 freq: %3 decaytime: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Ringing filter.",
+        "helpUrl": "https://doc.sccode.org/Classes/Ringz.html"
+    }
+    ,
+    {
+        "type": "sc3_Rotate2",
+        "message0": "Rotate2 %1 x: %2 y: %3 pos: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "X", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "Y", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "POS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Rotate a sound field.",
+        "helpUrl": "https://doc.sccode.org/Classes/Rotate2.html"
+    }
+    ,
+    {
+        "type": "sc3_RunningMax",
+        "message0": "RunningMax %1 in: %2 trig: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Track maximum level.",
+        "helpUrl": "https://doc.sccode.org/Classes/RunningMax.html"
+    }
+    ,
+    {
+        "type": "sc3_Saw",
+        "message0": "Saw %1 freq: %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Band limited sawtooth.",
+        "helpUrl": "https://doc.sccode.org/Classes/Saw.html"
+    }
+    ,
+    {
+        "type": "sc3_Select",
+        "message0": "Select %1 which: %2 array: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "WHICH", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Select output from an array of inputs.",
+        "helpUrl": "https://doc.sccode.org/Classes/Select.html"
+    }
+    ,
+    {
+        "type": "sc3_SinOsc",
+        "message0": "SinOsc %1 freq: %2 phase: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Interpolating sine wavetable oscillator.",
+        "helpUrl": "https://doc.sccode.org/Classes/SinOsc.html"
+    }
+    ,
+    {
+        "type": "sc3_SinOscFB",
+        "message0": "SinOscFB %1 freq: %2 feedback: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FEEDBACK", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Feedback FM oscillator",
+        "helpUrl": "https://doc.sccode.org/Classes/SinOscFB.html"
+    }
+    ,
+    {
+        "type": "sc3_Sweep",
+        "message0": "Sweep %1 trig: %2 rate: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RATE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Triggered linear ramp",
+        "helpUrl": "https://doc.sccode.org/Classes/Sweep.html"
+    }
+    ,
+    {
+        "type": "sc3_SyncSaw",
+        "message0": "SyncSaw %1 syncFreq: %2 sawFreq: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "SYNCFREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "SAWFREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Hard sync sawtooth wave.",
+        "helpUrl": "https://doc.sccode.org/Classes/SyncSaw.html"
+    }
+    ,
+    {
+        "type": "sc3_TExpRand",
+        "message0": "TExpRand %1 lo: %2 hi: %3 trig: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Triggered exponential random number generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/TExpRand.html"
+    }
+    ,
+    {
+        "type": "sc3_TGrains",
+        "message0": "TGrains %1 numChannels: %2 trigger: %3 bufnum: %4 rate: %5 centerPos: %6 dur: %7 pan: %8 amp: %9 interp: %10 × %11 + %12",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RATE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "CENTERPOS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "PAN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "AMP", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "INTERP", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Buffer granulator.",
+        "helpUrl": "https://doc.sccode.org/Classes/TGrains.html"
+    }
+    ,
+    {
+        "type": "sc3_TRand",
+        "message0": "TRand %1 lo: %2 hi: %3 trig: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Triggered random number generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/TRand.html"
+    }
+    ,
+    {
+        "type": "sc3_VarSaw",
+        "message0": "VarSaw %1 freq: %2 iphase: %3 width: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Variable duty saw",
+        "helpUrl": "https://doc.sccode.org/Classes/VarSaw.html"
+    }
+    ,
+    {
+        "type": "sc3_WhiteNoise",
+        "message0": "WhiteNoise %1 × %2 + %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "White noise.",
+        "helpUrl": "https://doc.sccode.org/Classes/WhiteNoise.html"
+    }
+    ,
+    {
+        "type": "sc3_XLine",
+        "message0": "XLine %1 start: %2 end: %3 dur: %4 doneAction: %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "END", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Exponential line generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/XLine.html"
+    }
+]
