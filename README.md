@@ -1,7 +1,8 @@
 blksc3
 ------
 
-Block editor for SuperCollider.
+A [Block](https://developers.google.com/blockly) editor for the
+[SuperCollider](https://www.audiosynth.com/) synthesiser.
 
 ![](http://rohandrape.net/sw/blksc3/png/whyblksc3.png)
 
@@ -23,6 +24,10 @@ James McCartney.
 "Rethinking the computer music language: Supercollider".
 _Computer Music Journal_, 26(4):61--68, 2002.
 
+Randy Pausch, Tommy Burnette, A.C. Capeheart et. al.
+"Alice: Rapid prototyping system for virtual reality".
+_IEEE Computer Graphics and Applications_, 15:8--11, May 1995.
+
 Alexander Repenning.
 _Agentsheets: A Tool for Building Domain-Oriented Dynamic, Visual Environments._
 PhD thesis, University of Colorado at Boulder, USA, 1993.
@@ -38,4 +43,7 @@ In M. Guzdial (ed.), _Squeak : Open Personal Computing for Multimedia_.
 
 * * *
 
-[HTML](?t=blksc3&e=blksc3.html)
+[HTML](https://rohandrape.net/?t=blksc3&e=blksc3.html)
+[VIDEO](https://rohandrape.net/?t=blksc3&e=md/video.md)
+[CLI](https://rohandrape.net/?t=blksc3&e=md/blksct3.md)
+[BLOCKLY](https://developers.google.com/blockly)
