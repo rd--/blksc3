@@ -197,6 +197,8 @@ blk_graphs =
      ,"Tw 0084"
      ,"Tw 0134"
      ,"Tw 0220", "Tw 0225"
+     ,"Tw 0456384156159574016"
+     ,"Tw 1084601286488674304"
      ,"Tw 1125557217086857216"
      ,"Tw 1138498427241861122"
      ,"Tw 1343283697840226307"
@@ -241,9 +243,7 @@ blk_graphs =
 gen_xml :: IO ()
 gen_xml = do
   let rw = stc_file_to_xml_file
-  rw "ugen/LocalOut.0.stc"
-  rw "ugen/LocalOut.1.stc"
-  rw "ugen/XLine.1.stc"
+  rw "f0-tw-0456384156159574016.stc"
 
 {-
 

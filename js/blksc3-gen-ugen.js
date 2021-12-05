@@ -462,6 +462,17 @@ Blockly.JavaScript['sc3_LocalOut'] = function(block) {
     return [LocalOut_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_MoogFF'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var gain_value = Blockly.JavaScript.valueToCode(block, 'GAIN', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var reset_value = Blockly.JavaScript.valueToCode(block, 'RESET', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var MoogFF_code = 'MulAdd(MoogFF(' + in_value + ', ' + freq_value + ', ' + gain_value + ', ' + reset_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [MoogFF_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_MouseX'] = function(block) {
     var minval_value = Blockly.JavaScript.valueToCode(block, 'MINVAL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
     var maxval_value = Blockly.JavaScript.valueToCode(block, 'MAXVAL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
