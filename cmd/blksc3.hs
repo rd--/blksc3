@@ -38,7 +38,7 @@ ws_to_sclang rq = do
 
 stc_to_osc :: IO ()
 stc_to_osc = do
-  let ws_host = "192.168.1.104"
+  let ws_host = "192.168.1.102"
       ws_port = 9160
   Ws.runServer ws_host ws_port ws_to_sclang
 
@@ -57,10 +57,16 @@ blk_gen = do
 
 -- * Main
 
+usage :: [String]
+usage =
+  ["blksc3 command"
+  ,"  blk-gen"
+  ,"  stc-to-osc"]
+
 main :: IO ()
 main = do
   a <- getArgs
   case a of
     ["blk-gen"] -> blk_gen
     ["stc-to-osc"] -> stc_to_osc
-    _ -> error "blksc3"
+    _ -> putStrLn (unlines usage)

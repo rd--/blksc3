@@ -31,8 +31,8 @@ function blk_xml_init(xml_data) {
 };
 
 function blk_ws_init() {
-    // hosc-json ws print --host=192.168.1.104
-    blk_ws = new WebSocket("ws://192.168.1.104:9160"); // 100 - 104
+    // blsc3 stc-to-osc --host=192.168.1.104
+    blk_ws = new WebSocket("ws://192.168.1.102:9160"); // 100 - 104
 }
 
 function blk_get_js() {

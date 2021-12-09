@@ -146,6 +146,12 @@ proc_xml a v e =
       (concatMap expr_xml e)
     _ -> error "proc_xml: not 0 or 1 argument"
 
+comment_xml :: St.Comment -> String
+comment_xml c =
+  if null c
+  then ""
+  else printf "<block type='sc3_Comment'><field name='COMMENT'>%s</field></block>" (if last c == '\n' then init c else c)
+
 expr_xml :: Expr t -> String
 expr_xml e =
   case e of
@@ -159,6 +165,7 @@ expr_xml e =
     Send lhs (Message (St.BinarySelector m) [rhs]) -> binop_xml m (expr_xml lhs) (expr_xml rhs) -- 1 + 2
     Send lhs (Message (St.KeywordSelector m) [rhs]) -> keybinop_xml m (expr_xml lhs) (expr_xml rhs) -- 1.max(2)
     Lambda _ a (St.Temporaries v) e_seq -> proc_xml a v e_seq
+    Init c _ s -> maybe "" comment_xml c ++ expr_seq_xml s
     _ -> error ("expr_xml: " ++ show e)
 
 expr_seq_xml :: [Expr t] -> String
@@ -168,13 +175,13 @@ in_xml :: String -> String
 in_xml x = concat ["<xml>",x,"</xml>"]
 
 stc_to_xml :: String -> String
-stc_to_xml = in_xml . expr_seq_xml . Sc.stcToExpr
+stc_to_xml = in_xml . expr_xml . Sc.stcToExpr
 
 stc_file_to_xml_file :: FilePath -> IO ()
 stc_file_to_xml_file fn = do
   let dir = "/home/rohan/sw/blksc3/help/graph/"
   txt <- readFile (dir ++ fn)
-  writeFile (dir ++ fn ++ ".xml") (in_xml (expr_seq_xml (Sc.stcToExpr txt)))
+  writeFile (dir ++ fn ++ ".xml") (in_xml (expr_xml (Sc.stcToExpr txt)))
 
 blk_au_graph_filename :: String -> String -> String
 blk_au_graph_filename au nm =
