@@ -44,6 +44,52 @@ stc_to_osc = do
 
 -- * Blk Gen
 
+-- | (Name, InputNames, HasOuputs?, Description, Colour, DefaultInputs)
+type Pseudo_UGen = (String, [String], Bool, String, Int, [Double])
+
+pseudo_ugens :: [Pseudo_UGen]
+pseudo_ugens =
+  [("LinLin"
+   ,words "in srclo srchi dstlo dsthi"
+   ,True
+   ,"Linear range mapping"
+   ,150
+   ,[0, -1, 1, 0, 1])
+  ,("Select2"
+   ,words "predicate ifTrue ifFalse"
+   ,True
+   ,"Select signal branch based on predicate value"
+   ,150
+   ,[1, 1, 0])
+  ,("SinOscBank"
+   ,words "freq amp phase"
+   ,True
+   ,"Parallel bank of SinOsc"
+   ,210
+   ,[440, 0.1, 0])
+  ,("TChoose"
+   ,words "trig array"
+   ,True
+   ,"Randomly select one of several inputs"
+   ,30
+   ,[1, 0])
+  ]
+
+p_blk_gen :: Pseudo_UGen -> String
+p_blk_gen (nm, arg, out, _dsc, _clr, _def) = Blockly.blk_gen nm arg out
+
+p_blk_dfn :: Pseudo_UGen -> String
+p_blk_dfn (nm, arg, out, dsc, clr, _def) = Blockly.blk_dfn nm arg dsc nm out clr
+
+p_blk_tool :: Pseudo_UGen -> String
+p_blk_tool (nm, arg, out, _dsc, _clr, def) = Blockly.blk_tool nm (zip arg def) out
+
+{-
+> putStrLn $ unlines $ map p_blk_gen pseudo_ugens
+> putStrLn $ unlines $ map p_blk_dfn pseudo_ugens
+> putStrLn $ unlines $ map p_blk_tool pseudo_ugens
+-}
+
 blk_gen :: IO ()
 blk_gen = do
   let lst = sort (concat (map (\(_,_,u) -> u) Blockly.blk_dict))
