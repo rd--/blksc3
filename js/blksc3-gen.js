@@ -87,39 +87,6 @@ Blockly.JavaScript['sc3_KeywordBinaryOp'] = function(block) {
     return [KeywordBinaryOp_code, Blockly.JavaScript.ORDER_NONE];
 };
 
-Blockly.JavaScript['sc3_klankSpec'] = function(block) {
-    var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '[440]';
-    var amp_value = Blockly.JavaScript.valueToCode(block, 'AMP', Blockly.JavaScript.ORDER_ATOMIC) || '[0.1]';
-    var time_value = Blockly.JavaScript.valueToCode(block, 'TIME', Blockly.JavaScript.ORDER_ATOMIC) || '[1]';
-    var klankSpec_code = 'KlankSpec(' + freq_value + ', ' + amp_value + ', ' + time_value + ')';
-    return [klankSpec_code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.JavaScript['sc3_linLin'] = function(block) {
-    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    var srclo_value = Blockly.JavaScript.valueToCode(block, 'SRCLO', Blockly.JavaScript.ORDER_ATOMIC) || '-1';
-    var srchi_value = Blockly.JavaScript.valueToCode(block, 'SRCHI', Blockly.JavaScript.ORDER_ATOMIC) || '1';
-    var dstlo_value = Blockly.JavaScript.valueToCode(block, 'DSTLO', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    var dsthi_value = Blockly.JavaScript.valueToCode(block, 'DSTHI', Blockly.JavaScript.ORDER_ATOMIC) || '1';
-    var linLin_code = 'LinLin(' + in_value + ', ' + srclo_value + ', ' + srchi_value + ', ' + dstlo_value + ', ' + dsthi_value + ')';
-    return [linLin_code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.JavaScript['sc3_selectTwo'] = function(block) {
-    var predicate_value = Blockly.JavaScript.valueToCode(block, 'PREDICATE', Blockly.JavaScript.ORDER_ATOMIC) || '1';
-    var ifTrue_value = Blockly.JavaScript.valueToCode(block, 'IFTRUE', Blockly.JavaScript.ORDER_ATOMIC) || '1';
-    var ifFalse_value = Blockly.JavaScript.valueToCode(block, 'IFFALSE', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    var selectTwo_code = 'Select2(' + predicate_value + ', ' + ifTrue_value + ', ' + ifFalse_value + ')';
-    return [selectTwo_code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.JavaScript['sc3_tChoose'] = function(block) {
-    var trig_value = Blockly.JavaScript.valueToCode(block, 'TRIG', Blockly.JavaScript.ORDER_ATOMIC) || '1';
-    var array_value = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC) || '[1]';
-    var tChoose_code = 'TChoose(' + trig_value + ', ' + array_value + ')';
-    return [tChoose_code, Blockly.JavaScript.ORDER_NONE];
-};
-
 Blockly.JavaScript['sc3_voicer'] = function(block) {
     var count_value = Blockly.JavaScript.valueToCode(block, 'COUNT', Blockly.JavaScript.ORDER_ATOMIC) || '16';
     var proc_value = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '{}';

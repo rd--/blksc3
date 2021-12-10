@@ -366,6 +366,27 @@
     }
     ,
     {
+        "type": "sc3_FBSineC",
+        "message0": "FBSineC %1 freq: %2 im: %3 fb: %4 a: %5 c: %6 xi: %7 yi: %8 × %9 + %10",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "IM", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FB", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "A", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "C", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "XI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "YI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Feedback sine with chaotic phase indexing",
+        "helpUrl": "https://doc.sccode.org/Classes/FBSineC.html"
+    }
+    ,
+    {
         "type": "sc3_Formant",
         "message0": "Formant %1 fundfreq: %2 formfreq: %3 bwfreq: %4 × %5 + %6",
         "args0": [
@@ -500,25 +521,6 @@
         "colour": 60,
         "tooltip": "Read signal from a bus with a current or one cycle old timestamp.",
         "helpUrl": "https://doc.sccode.org/Classes/InFeedback.html"
-    }
-    ,
-    {
-        "type": "sc3_Klank",
-        "message0": "Klank %1 input: %2 freqscale: %3 freqoffset: %4 decayscale: %5 specificationsArrayRef: %6 × %7 + %8",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "INPUT", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQSCALE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQOFFSET", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DECAYSCALE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "SPECIFICATIONSARRAYREF", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
-        ],
-        "output": "UGen",
-        "colour": 150,
-        "tooltip": "Bank of resonators",
-        "helpUrl": "https://doc.sccode.org/Classes/Klank.html"
     }
     ,
     {
@@ -741,6 +743,25 @@
         "colour": 150,
         "tooltip": "Remove DC",
         "helpUrl": "https://doc.sccode.org/Classes/LeakDC.html"
+    }
+    ,
+    {
+        "type": "sc3_LinExp",
+        "message0": "LinExp %1 in: %2 srclo: %3 srchi: %4 dstlo: %5 dsthi: %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "SRCLO", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "SRCHI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DSTLO", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DSTHI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Map a linear range to an exponential range",
+        "helpUrl": "https://doc.sccode.org/Classes/LinExp.html"
     }
     ,
     {
@@ -1176,7 +1197,7 @@
             {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
         ],
         "output": "UGen",
-        "colour": 210,
+        "colour": 150,
         "tooltip": "Select output from an array of inputs.",
         "helpUrl": "https://doc.sccode.org/Classes/Select.html"
     }
@@ -1349,5 +1370,92 @@
         "colour": 300,
         "tooltip": "Exponential line generator.",
         "helpUrl": "https://doc.sccode.org/Classes/XLine.html"
+    }
+    ,
+    {
+        "type": "sc3_LinLin",
+        "message0": "LinLin %1 in: %2 srclo: %3 srchi: %4 dstlo: %5 dsthi: %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "SRCLO", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "SRCHI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DSTLO", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DSTHI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Linear range mapping",
+        "helpUrl": "https://doc.sccode.org/Classes/LinLin.html"
+    }
+    ,
+    {
+        "type": "sc3_RingzBank",
+        "message0": "RingzBank %1 input: %2 freq: %3 amp: %4 time: %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "INPUT", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "AMP", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "TIME", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Parallel bank of Ringz (Klank)",
+        "helpUrl": "https://doc.sccode.org/Classes/RingzBank.html"
+    }
+    ,
+    {
+        "type": "sc3_Select2",
+        "message0": "Select2 %1 predicate: %2 ifTrue: %3 ifFalse: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "PREDICATE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "IFTRUE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "IFFALSE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Select signal branch based on predicate value",
+        "helpUrl": "https://doc.sccode.org/Classes/Select2.html"
+    }
+    ,
+    {
+        "type": "sc3_SinOscBank",
+        "message0": "SinOscBank %1 freq: %2 amp: %3 phase: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "AMP", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Parallel bank of SinOsc (Klang)",
+        "helpUrl": "https://doc.sccode.org/Classes/SinOscBank.html"
+    }
+    ,
+    {
+        "type": "sc3_TChoose",
+        "message0": "TChoose %1 trig: %2 array: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Randomly select one of several inputs",
+        "helpUrl": "https://doc.sccode.org/Classes/TChoose.html"
     }
 ]

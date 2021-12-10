@@ -2,11 +2,9 @@
 var p = 8;
 OverlapTexture({
     arg tr;
-    { Klank(
+    { RingzBank(
         Decay(Dust(0.8) * 0.01, 3.4) * LFSaw(TRand(0, 40, tr), 0),
-        1, 0, 1,
-        KlankSpec(
-            { TChoose(tr, [400, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1500, 1600]) * TRand(1, 13, tr) }.dup(p),
-            [1],
-            { TRand(0.4, 3.4, tr) }.dup(p))) }.dup
+        { TChoose(tr, [400, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1500, 1600]) * TRand(1, 13, tr) }.dup(p),
+        [1],
+        { TRand(0.4, 3.4, tr) }.dup(p)) }.dup
 }, 8, 2, 4)

@@ -9,6 +9,7 @@ import Data.Maybe {- base -}
 import Text.Printf {- base -}
 
 import qualified Sound.SC3.UGen.DB as Db {- hsc3-db -}
+import qualified Sound.SC3.UGen.DB.Pseudo as Db {- hsc3-db -}
 import qualified Sound.SC3.UGen.DB.Record as Db {- hsc3-db -}
 
 import qualified Language.Smalltalk.Ansi as St {- stsc3 -}
@@ -24,11 +25,18 @@ lit_int_xml ty n = printf "<%s type='math_number'><field name='NUM'>%d</field></
 named_value_xml :: (String, String) -> String
 named_value_xml (k,v) = printf "<value name='%s'>%s</value>" (map toUpper k) v
 
+ugen_param :: String -> ([String], Bool)
+ugen_param nm =
+  case Db.u_lookup_cs nm of
+    Just u -> (Db.u_input_names u, isJust (Db.ugen_outputs u))
+    Nothing -> case Db.pseudo_ugen_db_lookup nm of
+                 Just (_,p,o,_,_,_)  -> (p, o)
+                 Nothing -> error "ugen_param"
+
 ugen_xml :: String -> [String] -> String
 ugen_xml nm l =
-  let u = Db.u_lookup_cs_err nm
-      o = isJust (Db.ugen_outputs u)
-      i = Db.u_input_names u ++ (if o then ["mul","add"] else [])
+  let (p, o) = ugen_param nm
+      i = p ++ (if o then ["mul","add"] else [])
       l' = l ++ (if o then [lit_int_xml "shadow" 1, lit_int_xml "shadow" 0] else [])
   in printf "<block type='sc3_%s'>%s</block>" nm (concatMap named_value_xml (zip i l'))
 
@@ -40,11 +48,7 @@ block_xml_for nm p d =
 {- | Some names are handled specially.
 
 1. OverlapTexture -> overlapTexture
-2. KlankSpec -> klankSpec
-3. LinLin -> linLin
-4. Select2 -> selectTwo
-5. TChoose -> tChoose
-6. Voicer -> voicer
+2. Voicer -> voicer
 
 -}
 implicit_send_xml :: String -> [String] -> String
@@ -52,14 +56,6 @@ implicit_send_xml nm l =
   case (nm, l) of
     ("OverlapTexture", [_, _, _, _]) ->
       block_xml_for "overlapTexture" ["PROC","SUSTAINTIME","TRANSITIONTIME","OVERLAP"] l
-    ("KlankSpec", [_, _, _]) ->
-      block_xml_for "klankSpec" ["FREQ","AMP","TIME"] l
-    ("LinLin", [_, _, _, _, _]) ->
-      block_xml_for "linLin" ["IN","SRCLO","SRCHI", "DSTLO", "DSTHI"] l
-    ("Select2", [_, _, _]) ->
-      block_xml_for "selectTwo" ["PREDICATE","IFTRUE","IFFALSE"] l
-    ("TChoose", [_, _]) ->
-      block_xml_for "tChoose" ["TRIG","ARRAY"] l
     ("Voicer", [_, _]) ->
       block_xml_for "voicer" ["COUNT","PROC"] l
     _ -> ugen_xml nm l
@@ -271,7 +267,8 @@ blk_graphs =
 gen_xml :: IO ()
 gen_xml = do
   let rw = stc_file_to_xml_file
-  rw "../block/Impulse.1.stc"
+  rw "jmcc-wind-metals.stc"
+  rw "../block/FBSineC.1.stc"
 
 {-
 
