@@ -271,7 +271,7 @@ blk_graphs =
 gen_xml :: IO ()
 gen_xml = do
   let rw = stc_file_to_xml_file
-  rw "../block/CombC.1.stc"
+  rw "../block/Impulse.1.stc"
 
 {-
 

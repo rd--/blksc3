@@ -1,0 +1,112 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="r1}%j41A@TPIzG]{h^Mu">e</variable>
+  </variables>
+  <block type="sc3_Comment" id="Lyo^U]z+U7.U8d[foBxc" x="-99" y="18">
+    <field name="COMMENT">Impulse ; Voicer</field>
+    <next>
+      <block type="sc3_Play" id="O1DPV1RB?C!~j@qlo(],">
+        <value name="CODE">
+          <block type="sc3_UnaryOp" id="qeYutCD{`=h/}yj-J%+^">
+            <field name="OP">splay</field>
+            <value name="IN">
+              <block type="sc3_voicer" id="*Z:cQlU1IR|KuAbbLk58">
+                <value name="COUNT">
+                  <block type="math_number" id="~RR.@SDtlRk44;^2GbzC">
+                    <field name="NUM">16</field>
+                  </block>
+                </value>
+                <value name="PROC">
+                  <block type="sc3_Proc1" id="G/+DL^:dods1=206+#{!">
+                    <value name="VAR">
+                      <block type="variables_get" id=")bcRDJ!z:ngN?v)Ph$x0">
+                        <field name="VAR" id="r1}%j41A@TPIzG]{h^Mu">e</field>
+                      </block>
+                    </value>
+                    <value name="PROC">
+                      <block type="sc3_Impulse" id="qnxGn*4`,CA?g5zxW~@C">
+                        <value name="FREQ">
+                          <block type="sc3_UnaryOp" id="z+HGg]_TJ3LF4$:#~ci.">
+                            <field name="OP">midicps</field>
+                            <value name="IN">
+                              <block type="sc3_MulAdd" id="h$)aumyddzFkMizrsgxm" inline="true">
+                                <value name="IN">
+                                  <block type="sc3_eventParam" id="ErM)~K`h#$|~8`0)@)!3">
+                                    <field name="PARAM">x</field>
+                                    <value name="EVENT">
+                                      <block type="variables_get" id="6X,+u6ow[SzIar1{=a~)">
+                                        <field name="VAR" id="r1}%j41A@TPIzG]{h^Mu">e</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="MUL">
+                                  <shadow type="math_number" id="+(_Og^oC*#kMLzq8Uc[n">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="math_number" id="cNSyC}6Ro8RE3T7l,c/t">
+                                    <field name="NUM">48</field>
+                                  </block>
+                                </value>
+                                <value name="ADD">
+                                  <shadow type="math_number" id="|9VRyIW(oN2o=?CK.Zrw">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="math_number" id="*ViZ;}am_}acKe{o;TKi">
+                                    <field name="NUM">12</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="PHASE">
+                          <block type="math_number" id="jQ54]gcDflis3ERF-%l=">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="MUL">
+                          <shadow type="math_number" id="y}}r_viNpL,#~:4(xdH_">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="sc3_BinaryOp" id="{=q4g`4y}N.WV;@q=v=C" inline="true">
+                            <field name="OP">*</field>
+                            <value name="LHS">
+                              <block type="sc3_eventParam" id="r]K,/+7eMJp$JzJQ.@BF">
+                                <field name="PARAM">w</field>
+                                <value name="EVENT">
+                                  <block type="variables_get" id="#S#;Secacrn_KO#4a*?q">
+                                    <field name="VAR" id="r1}%j41A@TPIzG]{h^Mu">e</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="RHS">
+                              <block type="sc3_eventParam" id="t5yVeOL`lew6,FNyU*/x">
+                                <field name="PARAM">z</field>
+                                <value name="EVENT">
+                                  <block type="variables_get" id="Wb5ZduUz3-sAwkj%L%Uc">
+                                    <field name="VAR" id="r1}%j41A@TPIzG]{h^Mu">e</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ADD">
+                          <shadow type="math_number" id="iIE|}z,bm#Q3%6Dee~D.">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

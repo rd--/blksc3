@@ -20,6 +20,11 @@
       <value name='LHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
       <value name='RHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
+    <block type='sc3_MulAdd'>
+      <value name='IN'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='MUL'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+    </block>
     <block type='sc3_KeywordBinaryOp'>
       <field name='OP'>min</field>
       <value name='LHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
@@ -69,14 +74,59 @@
   </category>
   <category name='Iter' colour='180'>
     <block type='sc3_timesRepeat'>
-      <value name='COUNT'><shadow type='math_number'><field name='NUM'>10</field></shadow></value>
-      <value name='PROC'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+      <value name='COUNT'><shadow type='math_number'><field name='NUM'>9</field></shadow></value>
+      <value name='PROC'></value>
     </block>
     <block type='sc3_overlapTexture'>
-      <value name='PROC'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+      <value name='PROC'>
+        <block type="sc3_Proc1">
+          <value name="VAR"><block type="variables_get"><field name="VAR">tr</field></block></value>
+          <value name="PROC"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+        </block>
+      </value>
       <value name='SUSTAINTIME'><shadow type='math_number'><field name='NUM'>4</field></shadow></value>
       <value name='TRANSITIONTIME'><shadow type='math_number'><field name='NUM'>4</field></shadow></value>
       <value name='OVERLAP'><shadow type='math_number'><field name='NUM'></field>2</shadow></value>
+    </block>
+  </category>
+  <category name='Event' colour='180'>
+    <block type='sc3_voicer'>
+      <value name='COUNT'><shadow type='math_number'><field name='NUM'>16</field></shadow></value>
+      <value name='PROC'>
+        <block type="sc3_Proc1">
+          <value name="VAR"><block type="variables_get"><field name="VAR">e</field></block></value>
+          <value name="PROC"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+        </block>
+      </value>
+    </block>
+    <block type='sc3_eventParam'>
+      <field name='PARAM'>x</field>
+      <value name='EVENT'><block type="variables_get"><field name="VAR">e</field></block></value>
+    </block>
+    <block type="sc3_BinaryOp" inline="true">
+      <field name="OP">*</field>
+      <value name="LHS">
+        <block type="sc3_eventParam">
+          <field name="PARAM">w</field>
+          <value name="EVENT"><block type="variables_get"><field name="VAR">e</field></block></value>
+        </block>
+      </value>
+      <value name="RHS">
+        <block type="sc3_eventParam">
+          <field name="PARAM">z</field>
+          <value name="EVENT"> <block type="variables_get"><field name="VAR">e</field></block>
+          </value>
+        </block>
+      </value>
+    </block>
+    <block type="sc3_UnaryOp">
+      <field name="OP">unitCps</field>
+      <value name="IN">
+        <block type="sc3_eventParam">
+          <field name="PARAM">p</field>
+          <value name="EVENT"><block type="variables_get"><field name="VAR">e</field></block></value>
+        </block>
+      </value>
     </block>
   </category>
   <category name='Meta' colour='300'>

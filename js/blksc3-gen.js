@@ -70,6 +70,15 @@ Blockly.JavaScript['sc3_BinaryOp'] = function(block) {
     return [BinaryOp_code, Blockly.JavaScript.ORDER_NONE];
 };
 
+
+Blockly.JavaScript['sc3_MulAdd'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+    var MulAdd_code = 'MulAdd(' + in_value + ', ' + mul_value + ', ' + add_value + ')';
+    return [MulAdd_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_KeywordBinaryOp'] = function(block) {
     var op_value = block.getFieldValue('OP');
     var lhs_value = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
