@@ -695,6 +695,23 @@
     }
     ,
     {
+        "type": "sc3_LagUD",
+        "message0": "LagUD %1 in: %2 lagTimeU: %3 lagTimeD: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LAGTIMEU", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LAGTIMED", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Exponential lag",
+        "helpUrl": "https://doc.sccode.org/Classes/LagUD.html"
+    }
+    ,
+    {
         "type": "sc3_Latch",
         "message0": "Latch %1 in: %2 trig: %3 × %4 + %5",
         "args0": [
@@ -741,6 +758,23 @@
         "colour": 60,
         "tooltip": "Skewed random number generator.",
         "helpUrl": "https://doc.sccode.org/Classes/LinRand.html"
+    }
+    ,
+    {
+        "type": "sc3_LinXFade2",
+        "message0": "LinXFade2 %1 inA: %2 inB: %3 pan: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "INA", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "INB", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "PAN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Two channel linear crossfade.",
+        "helpUrl": "https://doc.sccode.org/Classes/LinXFade2.html"
     }
     ,
     {

@@ -1,0 +1,5 @@
+// combc ; event control
+var lfo = SinOsc(0.5, 0);
+var osc = Voicer(16, { arg e; SinOsc(e.p.unitCps, 0) * lfo * e.w * e.z });
+CombC(osc.splay, 0.5, 0.2, 3)
+

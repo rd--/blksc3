@@ -104,3 +104,23 @@ Blockly.JavaScript['sc3_selectTwo'] = function(block) {
     return [selectTwo_code, Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript['sc3_tChoose'] = function(block) {
+    var trig_value = Blockly.JavaScript.valueToCode(block, 'TRIG', Blockly.JavaScript.ORDER_ATOMIC) || '1';
+    var array_value = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC) || '[1]';
+    var tChoose_code = 'TChoose(' + trig_value + ', ' + array_value + ')';
+    return [tChoose_code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['sc3_voicer'] = function(block) {
+    var count_value = Blockly.JavaScript.valueToCode(block, 'COUNT', Blockly.JavaScript.ORDER_ATOMIC) || '16';
+    var proc_value = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '{}';
+    var voicer_code = 'Voicer(' + count_value + ', ' + proc_value + ')';
+    return [voicer_code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['sc3_eventParam'] = function(block) {
+    var param_value = block.getFieldValue('PARAM');
+    var event_value = Blockly.JavaScript.valueToCode(block, 'EVENT', Blockly.JavaScript.ORDER_ATOMIC) || '';
+    var eventParam_code = event_value + '.' + param_value;
+    return [eventParam_code, Blockly.JavaScript.ORDER_MEMBER];
+};

@@ -113,7 +113,7 @@
         "type": "sc3_UnaryOp",
         "message0": "%1 of: %2",
         "args0": [
-            {"type": "field_dropdown", "name": "OP", "options": [["abs", "abs"], ["asLocalBuf","asLocalBuf"], ["choose","choose"], ["clearBuf", "clearBuf"], ["cubed","cubed"], ["distort","distort"], ["1º","first"], ["mean", "mean"], ["midicps", "midicps"], ["mix","mix"], ["-","negated"], ["reciprocal","reciprocal"], ["reverse","reverse"], ["rounded","rounded"], ["2º","second"], ["sin","sin"], ["size","size"], ["splay","splay"], ["√","sqrt"], ["Σ","sum"], ["tanh","tanh"], ["transpose","transpose"]]},
+            {"type": "field_dropdown", "name": "OP", "options": [["abs", "abs"], ["asLocalBuf","asLocalBuf"], ["choose","choose"], ["clearBuf", "clearBuf"], ["cubed","cubed"], ["distort","distort"], ["1º","first"], ["⌊", "floor"], ["mean", "mean"], ["midicps", "midicps"], ["mix","mix"], ["-","negated"], ["reciprocal","reciprocal"], ["reverse","reverse"], ["rounded","rounded"], ["2º","second"], ["sin","sin"], ["size","size"], ["softclip","softclip"], ["splay","splay"], ["√","sqrt"], ["Σ","sum"], ["tanh","tanh"], ["transpose","transpose"], ["unitCps", "unitCps"]]},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]}
         ],
         "output": "UGen",
@@ -189,5 +189,43 @@
         "output": "UGen",
         "colour": 150,
         "tooltip": "Select signal branch based on predicate value"
+    }
+    ,
+    {
+        "type": "sc3_tChoose",
+        "message0": "TChoose %1 trig: %2 array: %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "TRIG", "check": ["Array", "Number", "UGen"]},
+            {"type": "input_value", "name": "ARRAY", "check": ["Array", "Number", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Randomly select one of several inputs"
+    }
+    ,
+    {
+        "type": "sc3_voicer",
+        "message0": "Voicer %1 %2 of: %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "COUNT", "check": "Number"},
+            {"type": "input_value", "name": "PROC", "check": "Proc1"}
+        ],
+        "output": "UGen",
+        "colour": 180,
+        "tooltip": "Voicer"
+    }
+    ,
+    {
+        "type": "sc3_eventParam",
+        "message0": "%1 of: %2",
+        "args0": [
+            {"type": "field_dropdown", "name": "PARAM", "options": [["v", "v"], ["w","w"], ["x","x"], ["y", "y"], ["z","z"], ["o","o"], ["rx","rx"], ["ry", "ry"], ["p", "p"], ["px", "px"]]},
+            {"type": "input_value", "name": "EVENT"}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Read voice event parameter"
     }
 ]

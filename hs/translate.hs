@@ -39,10 +39,12 @@ block_xml_for nm p d =
 
 {- | Some names are handled specially.
 
-1. OverlapTexture creates sc3_overlapTexture block
-2. KlankSpec creates a klankSpec block
-3. LinLin creates a linLin block
-4. Select2 creates a selectTwo
+1. OverlapTexture -> overlapTexture
+2. KlankSpec -> klankSpec
+3. LinLin -> linLin
+4. Select2 -> selectTwo
+5. TChoose -> tChoose
+6. Voicer -> voicer
 
 -}
 implicit_send_xml :: String -> [String] -> String
@@ -56,11 +58,26 @@ implicit_send_xml nm l =
       block_xml_for "linLin" ["IN","SRCLO","SRCHI", "DSTLO", "DSTHI"] l
     ("Select2", [_, _, _]) ->
       block_xml_for "selectTwo" ["PREDICATE","IFTRUE","IFFALSE"] l
+    ("TChoose", [_, _]) ->
+      block_xml_for "tChoose" ["TRIG","ARRAY"] l
+    ("Voicer", [_, _]) ->
+      block_xml_for "voicer" ["COUNT","PROC"] l
     _ -> ugen_xml nm l
+
+-- | Is unary operator an event parameter?
+is_event_param :: String -> Bool
+is_event_param = flip elem (words "v w y x z o rx ry p px")
+
+-- | Event parameters (v, w, x, y, z &etc)
+event_param_xml :: String -> String -> String
+event_param_xml o e =
+  printf
+  "<block type='sc3_eventParam'><field name='PARAM'>%s</field><value name='EVENT'>%s</value></block>"
+  o e
 
 {- | Some operators are handled specially.
 
-1. dup creates an sc3_arrayFill block
+1. dup -> sc3_arrayFill
 -}
 uop_xml :: String -> String -> String
 uop_xml o e =
@@ -161,7 +178,7 @@ expr_xml e =
     Literal (St.NumberLiteral (St.Float n)) -> lit_float_xml "block" n
     Literal (St.NumberLiteral (St.Int n)) -> lit_int_xml "block" n
     Send (Identifier u) (Message (St.KeywordSelector "apply:") [Array l]) -> implicit_send_xml u (map expr_xml l) -- Saw(440)
-    Send r (Message (St.UnarySelector m) []) -> uop_xml m (expr_xml r) -- 60.midicps
+    Send r (Message (St.UnarySelector m) []) -> (if is_event_param m then event_param_xml else uop_xml) m (expr_xml r) -- 60.midicps
     Send lhs (Message (St.BinarySelector m) [rhs]) -> binop_xml m (expr_xml lhs) (expr_xml rhs) -- 1 + 2
     Send lhs (Message (St.KeywordSelector m) [rhs]) -> keybinop_xml m (expr_xml lhs) (expr_xml rhs) -- 1.max(2)
     Lambda _ a (St.Temporaries v) e_seq -> proc_xml a v e_seq
@@ -226,15 +243,19 @@ blk_graphs =
      ,"Modal Space", "Modal Space (Collect)"
      ,"Moto Rev"
      ,"Pond Life", "Pond Life (Texture)"
+     ,"Plucked Strings"
      ,"Random Panning Sines"
+     ,"Repeating Harmonic Klank"
      ,"Reverberated Sine Percussion"
      ,"Sample and Hold Liquidities", "Sample and Hold Liquidities (External)"
      ,"Scratchy"
      ,"Sprinkler", "Sprinkler (Mouse)"
      ,"Tank"
      ,"Theremin"
+     ,"Tremulate", "Tremulate (Event)"
      ,"Uplink"
      ,"Why SuperCollider?"
+     ,"Wind Metals"
      ])
   ,("NV"
     ,["Tw 2013-12-04"
@@ -250,7 +271,7 @@ blk_graphs =
 gen_xml :: IO ()
 gen_xml = do
   let rw = stc_file_to_xml_file
-  rw "f0-tw-0456384156159574016.stc"
+  rw "../block/CombC.1.stc"
 
 {-
 

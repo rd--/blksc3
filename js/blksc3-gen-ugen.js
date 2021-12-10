@@ -399,6 +399,16 @@ Blockly.JavaScript['sc3_Lag'] = function(block) {
     return [Lag_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_LagUD'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var lagTimeU_value = Blockly.JavaScript.valueToCode(block, 'LAGTIMEU', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var lagTimeD_value = Blockly.JavaScript.valueToCode(block, 'LAGTIMED', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var LagUD_code = 'MulAdd(LagUD(' + in_value + ', ' + lagTimeU_value + ', ' + lagTimeD_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [LagUD_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_Latch'] = function(block) {
     var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
     var trig_value = Blockly.JavaScript.valueToCode(block, 'TRIG', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
@@ -425,6 +435,16 @@ Blockly.JavaScript['sc3_LinRand'] = function(block) {
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
     var LinRand_code = 'MulAdd(LinRand(' + lo_value + ', ' + hi_value + ', ' + minmax_value + '), ' + mul_value + ', ' + add_value + ')';
     return [LinRand_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_LinXFade2'] = function(block) {
+    var inA_value = Blockly.JavaScript.valueToCode(block, 'INA', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var inB_value = Blockly.JavaScript.valueToCode(block, 'INB', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var pan_value = Blockly.JavaScript.valueToCode(block, 'PAN', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var LinXFade2_code = 'MulAdd(LinXFade2(' + inA_value + ', ' + inB_value + ', ' + pan_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [LinXFade2_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_Line'] = function(block) {
