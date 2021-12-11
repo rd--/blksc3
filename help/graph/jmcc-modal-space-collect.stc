@@ -1,0 +1,15 @@
+// modal space (jmcc) #8
+var b = [0, 2, 3.2, 5, 7, 9, 10].asLocalBuf;
+var k = DegreeToKey(b, MouseX(0, 15, 0, 0.1), 12);
+var n = LFNoise1([3, 3]);
+var c = {
+    arg r;
+    CombN(
+        SinOsc((r + k + (n * 0.04)).midicps, 0) * 0.1
+        +
+        (RLPF(LFPulse([48, 55].midicps, 0, 0.15), (SinOsc(0.1, 0) * 10 + r).midicps, 0.1) * 0.1),
+        0.31,
+        0.31,
+        2)
+};
+[48, 72].collect(c).sum * 0.25

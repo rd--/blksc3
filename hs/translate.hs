@@ -31,7 +31,7 @@ ugen_param nm =
     Just u -> (Db.u_input_names u, isJust (Db.ugen_outputs u))
     Nothing -> case Db.pseudo_ugen_db_lookup nm of
                  Just (_,p,o,_,_,_)  -> (p, o)
-                 Nothing -> error "ugen_param"
+                 Nothing -> error ("ugen_param: " ++ nm)
 
 ugen_xml :: String -> [String] -> String
 ugen_xml nm l =
@@ -243,7 +243,7 @@ blk_graphs =
      ,"Random Panning Sines"
      ,"Repeating Harmonic Klank"
      ,"Reverberated Sine Percussion"
-     ,"Sample and Hold Liquidities", "Sample and Hold Liquidities (External)"
+     ,"Sample and Hold Liquidities"
      ,"Scratchy"
      ,"Sprinkler", "Sprinkler (Mouse)"
      ,"Tank"
@@ -264,11 +264,37 @@ blk_graphs =
    ,["Tw 01"])
   ]
 
+blk_graphs_names :: [String]
+blk_graphs_names = concatMap (\(au, gr) -> map (blk_au_graph_filename au) gr) blk_graphs
+
+blk_help_option :: String -> String
+blk_help_option nm = printf "<option value='%s'>%s</option>" nm nm
+
+-- > putStrLn $ unlines $ map blk_help_option blk_help
+blk_help :: [String]
+blk_help =
+  ["Blip.1", "Blip.2"
+  ,"CombC.1"
+  ,"Decay2.1"
+  --,"dup.1", "dup.2"
+  ,"FBSineC.1"
+  ,"Formant.1"
+  ,"Impulse.1"
+  ,"LFNoise0.1"
+  ,"LFNoise1.1", "LFNoise1.2"
+  ,"LFSaw.1"
+  ,"LocalOut.1"
+  ,"Pan2.1"
+  ,"RingzBank.1"
+  ,"SinOsc.1"
+  ,"XLine.1"]
+
 gen_xml :: IO ()
 gen_xml = do
-  let rw = stc_file_to_xml_file
-  rw "jmcc-wind-metals.stc"
-  rw "../block/FBSineC.1.stc"
+  let rw_graph x = stc_file_to_xml_file (x ++ ".stc")
+      rw_help x = putStrLn x >> rw_graph ("../block/" ++ x)
+  mapM_ rw_graph blk_graphs_names
+  mapM_ rw_help blk_help
 
 {-
 

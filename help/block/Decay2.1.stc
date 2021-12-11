@@ -1,0 +1,9 @@
+// Decay2 ; random impulses ; https://github.com/cianoc/supercollider_fragments
+var f = {
+    Pan2(
+        SinOsc(ExpRand(100, 3000) * (LFNoise1(1 / 6) * 0.4 + 1), 0),
+        LFNoise1(1 / 8),
+        Decay2(Dust(1 / 5), 0.01, 4)
+    )
+};
+f.dup(15).sum * 0.1

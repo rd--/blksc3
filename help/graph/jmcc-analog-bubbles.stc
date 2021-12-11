@@ -1,4 +1,7 @@
 // analog bubbles (jmcc) #1
-var o = LFSaw([8, 7.23], 0) * 3 + 80;
-var f = LFSaw(0.4, 0) * 24 + o;
-CombC(SinOsc(f.midicps, 0) * 0.04, 0.2, 0.2, 4) * 0.1
+CombC(
+    SinOsc(
+        (LFSaw(0.4, 0) * 24 + (LFSaw([8, 7.23], 0) * 3 + 80)).midicps,
+        0)
+    * 0.04, 0.2, 0.2, 4)
+* 0.1

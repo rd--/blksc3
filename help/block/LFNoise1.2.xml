@@ -1,0 +1,79 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="m@:*0Zm{rure%bM3gKb}">lfo</variable>
+  </variables>
+  <block type="sc3_Comment" id="#G?lm5uOWS[OS.y!csiK" x="24" y="72">
+    <field name="COMMENT">LFNoise1 ; angry birds ; https://github.com/cianoc/supercollider_fragments</field>
+    <next>
+      <block type="variables_set" id="OBv]29ym_/KYz3mJeX_B">
+        <field name="VAR" id="m@:*0Zm{rure%bM3gKb}">lfo</field>
+        <value name="VALUE">
+          <block type="sc3_LFNoise1" id="W?Ud8ES:56`prW^s4]C$" inline="true">
+            <value name="FREQ">
+              <block type="lists_create_with" id="Nr_8u$zl#`6!nu)mnFn!" inline="true">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="math_number" id="crQM8Ng,eUJRl!z=d}N?">
+                    <field name="NUM">28</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="math_number" id="f|OtRNc#.W`c+b7q-M]V">
+                    <field name="NUM">27</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="MUL">
+              <shadow type="math_number" id="!C/*XDefp[t+lS}twfA6">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_number" id="prX]1Hn;2yL6nObT3a#%">
+                <field name="NUM">400</field>
+              </block>
+            </value>
+            <value name="ADD">
+              <shadow type="math_number" id="1kP]nM=+g{noZl@[B=$X">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="math_number" id="6OFMRTwr8x`%AxkB|oxU">
+                <field name="NUM">2000</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="sc3_Play" id="aaM7KOMJfam|z.1@WVON">
+            <value name="CODE">
+              <block type="sc3_SinOsc" id="d%`v_G9aZaA.hF32?e3," inline="true">
+                <value name="FREQ">
+                  <block type="variables_get" id="dJL+/^iE.qcbc}i|S+Hc">
+                    <field name="VAR" id="m@:*0Zm{rure%bM3gKb}">lfo</field>
+                  </block>
+                </value>
+                <value name="PHASE">
+                  <block type="math_number" id="=YKLnBUH{c;T2j[}!];P">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="MUL">
+                  <shadow type="math_number" id="uFnvQZ!R)v9NLRbng.rL">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="math_number" id="=VVW5*p/8:u$x36|uk8L">
+                    <field name="NUM">0.1</field>
+                  </block>
+                </value>
+                <value name="ADD">
+                  <shadow type="math_number" id="WJw5ar1O=%kJaGXz](OH">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

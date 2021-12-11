@@ -1,46 +1,39 @@
+<!DOCTYPE html>
 <html>
-
-<head>
-
-<link rel="stylesheet" type="text/css" media="all" href="sw/blksc3/css/blksc3.css" />
-<link rel="icon" type="image/png" href="https://rohandrape.net/data/png/rd.512.png" />
-
-<script src="https://unpkg.com/blockly/blockly.min.js"></script>
-<script src="sw/blksc3/js/blksc3-gen.js"></script>
-<script src="sw/blksc3/js/blksc3-gen-ugen.js"></script>
-<script src="sw/blksc3/js/blksc3.js"></script>
-
-<script>
-blk_load_and_process_json('sw/blksc3/json/blksc3.json', blk_json_init);
-blk_load_and_process_json('sw/blksc3/json/blksc3-ugen.json', blk_json_init);
-fetch('sw/blksc3/xml/blksc3.xml')
-    .then(response => response.text())
-    .then(data => blk_xml_init(data));
-window.onload = blk_init;
-Blockly.HSV_SATURATION = 0.20;
-Blockly.HSV_VALUE = 0.95;
-</script>
-
-</head>
-
-<body>
-
-<p>Block SuperCollider</p>
-
-<div id="blocklyDiv" style="height: 900px; width: 1500px;"></div> <!-- 720 900 ; 900 1350 -->
-
-<div id="controlDiv">
-<input type="file" id="xmlInputFile" accept=".xml" onchange="blk_read_input_xml()" style="display:none">
-<button id="xmlInputFileSelect" title="Select local .xml file and load into workspace">Load Xml</button>
-<button title="Copy current workspace Xml to clipboard" onclick="navigator.clipboard.writeText(blk_get_xml())">Copy Xml</button>
-<button title="Send current workspace Stc to Websocket" onclick="blk_send_stc('play')">Send Stc</button>
-<button title="Send reset command to Websocket" onclick="blk_sc3_reset()">Send Reset</button>
-<button title="Draw current workspace as UGen graph" onclick="blk_send_stc('draw')">Draw Stc</button>
-<button title="Center workspace" onclick="blk_workspace.scrollCenter()">Center</button>
-<button title="Fit to workspace" onclick="blk_workspace.zoomToFit()">Fit</button>
-
-<select title="Example programs" id="blkGraphMenu">
-<option value="">--Graph Blocks--</option>
+  <head>
+    <meta charset="utf-8">
+    <title>Block SuperCollider</title>
+    <link rel="stylesheet" type="text/css" media="all" href="sw/blksc3/css/blksc3.css" />
+    <link rel="icon" type="image/png" href="https://rohandrape.net/data/png/rd.512.png" />
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+    <script src="sw/blksc3/js/blksc3-gen.js"></script>
+    <script src="sw/blksc3/js/blksc3-gen-ugen.js"></script>
+    <script src="sw/blksc3/js/blksc3.js"></script>
+    <script>
+      Blockly.HSV_SATURATION = 0.20;
+      Blockly.HSV_VALUE = 0.95;
+      blk_load_and_process_json('sw/blksc3/json/blksc3.json', blk_json_init);
+      blk_load_and_process_json('sw/blksc3/json/blksc3-ugen.json', blk_json_init);
+      fetch('sw/blksc3/xml/blksc3.xml')
+        .then(response => response.text())
+        .then(data => blk_xml_init(data));
+      window.onload = blk_init;
+    </script>
+  </head>
+  <body>
+    <p>Block SuperCollider</p>
+    <div id="blocklyDiv" style="height: 900px; width: 1500px;"></div> <!-- 720 900 ; 900 1350 -->
+    <div id="controlDiv">
+      <input type="file" id="xmlInputFile" accept=".xml" onchange="blk_read_input_xml()" style="display:none">
+      <button id="xmlInputFileSelect" title="Select local .xml file and load into workspace">Load Xml</button>
+      <button title="Copy current workspace Xml to clipboard" onclick="navigator.clipboard.writeText(blk_get_xml())">Copy Xml</button>
+      <button title="Send current workspace Stc to Websocket" onclick="blk_send_stc('play')">Send Stc</button>
+      <button title="Send reset command to Websocket" onclick="blk_sc3_reset()">Send Reset</button>
+      <button title="Draw current workspace as UGen graph" onclick="blk_send_stc('draw')">Draw Stc</button>
+      <button title="Center workspace" onclick="blk_workspace.scrollCenter()">Center</button>
+      <button title="Fit to workspace" onclick="blk_workspace.zoomToFit()">Fit</button>
+      <select title="Example programs" id="blkGraphMenu">
+        <option value="">--Graph Blocks--</option>
 
 <!-- AUTOGEN -->
 <option value='f0-tw-0030'>F0 - Tw 0030</option>
@@ -84,7 +77,6 @@ Blockly.HSV_VALUE = 0.95;
 <option value='jmcc-repeating-harmonic-klank'>JMcC - Repeating Harmonic Klank</option>
 <option value='jmcc-reverberated-sine-percussion'>JMcC - Reverberated Sine Percussion</option>
 <option value='jmcc-sample-and-hold-liquidities'>JMcC - Sample and Hold Liquidities</option>
-<option value='jmcc-sample-and-hold-liquidities-external'>JMcC - Sample and Hold Liquidities (External)</option>
 <option value='jmcc-scratchy'>JMcC - Scratchy</option>
 <option value='jmcc-sprinkler'>JMcC - Sprinkler</option>
 <option value='jmcc-sprinkler-mouse'>JMcC - Sprinkler (Mouse)</option>
@@ -101,31 +93,37 @@ Blockly.HSV_VALUE = 0.95;
 <option value='nv-tw-41'>NV - Tw 41</option>
 <option value='pj-forest-sounds'>PJ - Forest Sounds</option>
 <option value='tw-tw-01'>TW - Tw 01</option>
-
 <!-- END AUTOGEN -->
-</select>
 
-<select title="Help programs" id="blkHelpMenu">
-<option value="">--Help Blocks--</option>
-<option value='Blip.1'>Blip</option>
-<option value='CombC.1'>CombC</option>
-<option value='dup.inline'>Dup</option>
-<option value='dup.external'>Dup (External)</option>
-<option value='FBSineC.1'>FBSineC</option>
-<option value='Formant.1'>Formant</option>
-<option value='Impulse.1'>Impulse</option>
-<option value='LocalOut.1'>LocalOut</option>
-<option value='Pan2'>Pan2</option>
-<option value='XLine.1'>XLine</option>
-</select>
+      </select>
+      <select title="Help programs" id="blkHelpMenu">
+        <option value="">--Help Blocks--</option>
 
-<button title="Cleanup workspace" onclick="blk_workspace.cleanUp()">Cleanup</button>
-<button title="Delete all blocks and comments from Workspace" onclick="blk_workspace.clear()">Clear Workspace</button>
+<!-- AUTOGEN -->
+<option value='Blip.1'>Blip.1</option>
+<option value='Blip.2'>Blip.2</option>
+<option value='CombC.1'>CombC.1</option>
+<option value='Decay2.1'>Decay2.1</option>
+<option value='FBSineC.1'>FBSineC.1</option>
+<option value='Formant.1'>Formant.1</option>
+<option value='Impulse.1'>Impulse.1</option>
+<option value='LFNoise0.1'>LFNoise0.1</option>
+<option value='LFNoise1.1'>LFNoise1.1</option>
+<option value='LFNoise1.2'>LFNoise1.2</option>
+<option value='LFSaw.1'>LFSaw.1</option>
+<option value='LocalOut.1'>LocalOut.1</option>
+<option value='Pan2.1'>Pan2.1</option>
+<option value='RingzBank.1'>RingzBank.1</option>
+<option value='SinOsc.1'>SinOsc.1</option>
+<option value='XLine.1'>XLine.1</option>
+<!-- END AUTOGEN -->
 
-</div>
+      </select>
 
-</body>
-
+      <button title="Cleanup workspace" onclick="blk_workspace.cleanUp()">Cleanup</button>
+      <button title="Delete all blocks and comments from Workspace" onclick="blk_workspace.clear()">Clear Workspace</button>
+    </div>
+  </body>
 </html>
 
 <!--
