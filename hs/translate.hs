@@ -68,19 +68,19 @@ is_event_param = flip elem (words "v w y x z o rx ry p px")
 event_param_xml :: String -> String -> String
 event_param_xml o e =
   printf
-  "<block type='sc3_eventParam'><field name='PARAM'>%s</field><value name='EVENT'>%s</value></block>"
+  "<block type='sc3_EventParam'><field name='PARAM'>%s</field><value name='EVENT'>%s</value></block>"
   o e
 
 {- | Some operators are handled specially.
 
-1. dup -> sc3_arrayFill
+1. dup -> sc3_ArrayFill
 -}
 uop_xml :: String -> String -> String
 uop_xml o e =
   case o of
     "dup" ->
       printf
-      "<block type='sc3_arrayFill'><value name='PROC'>%s</value><value name='COUNT'>%s</value></block>"
+      "<block type='sc3_ArrayFill'><value name='PROC'>%s</value><value name='COUNT'>%s</value></block>"
       e (lit_int_xml "block" 2)
     _ ->
       printf
@@ -95,29 +95,29 @@ binop_xml o lhs rhs =
 
 {- | Some operators are handled specially.
 
-1. collect: creates an sc3_arrayCollect block
-2. dup: creates an sc3_arrayFill block
-3. to: creates an sc3_arrayFromTo block
-4. timesRepeat: creates an sc3_timesRepeat block
+1. collect: creates an sc3_ArrayCollect block
+2. dup: creates an sc3_ArrayFill block
+3. to: creates an sc3_ArrayFromTo block
+4. timesRepeat: creates an sc3_TimesRepeat block
 -}
 keybinop_xml :: String -> String -> String -> String
 keybinop_xml msg lhs rhs  =
   case msg of
     "collect:" ->
       printf
-      "<block type='sc3_arrayCollect'><value name='ARRAY'>%s</value><value name='PROC'>%s</value></block>"
+      "<block type='sc3_ArrayCollect'><value name='ARRAY'>%s</value><value name='PROC'>%s</value></block>"
       lhs rhs
     "dup:" ->
       printf
-      "<block type='sc3_arrayFill'><value name='PROC'>%s</value><value name='COUNT'>%s</value></block>"
+      "<block type='sc3_ArrayFill'><value name='PROC'>%s</value><value name='COUNT'>%s</value></block>"
       lhs rhs
     "timesRepeat:" ->
       printf
-      "<block type='sc3_timesRepeat'><value name='COUNT'>%s</value><value name='PROC'>%s</value></block>"
+      "<block type='sc3_TimesRepeat'><value name='COUNT'>%s</value><value name='PROC'>%s</value></block>"
       lhs rhs
     "to:" ->
       printf
-      "<block type='sc3_arrayFromTo'><value name='FROM'>%s</value><value name='TO'>%s</value></block>"
+      "<block type='sc3_ArrayFromTo'><value name='FROM'>%s</value><value name='TO'>%s</value></block>"
       lhs rhs
     _ ->
       printf
@@ -270,13 +270,16 @@ blk_graphs_names = concatMap (\(au, gr) -> map (blk_au_graph_filename au) gr) bl
 blk_help_option :: String -> String
 blk_help_option nm = printf "<option value='%s'>%s</option>" nm nm
 
--- > putStrLn $ unlines $ map blk_help_option blk_help
+blk_print_autogen :: [String] -> IO ()
+blk_print_autogen x = putStrLn (unlines ("<!-- AUTOGEN -->" : x ++ ["<!-- END AUTOGEN -->"]))
+
+-- > blk_print_autogen $ map blk_help_option blk_help
 blk_help :: [String]
 blk_help =
-  ["Blip.1", "Blip.2"
+  ["ArrayFill.1"
+  ,"Blip.1", "Blip.2"
   ,"CombC.1"
   ,"Decay2.1"
-  --,"dup.1", "dup.2"
   ,"FBSineC.1"
   ,"Formant.1"
   ,"Impulse.1"

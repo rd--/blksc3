@@ -1,7 +1,9 @@
 <xml xmlns='https://developers.google.com/blockly/xml'>
   <category name='Number' colour='230'>
-    <block type='math_number'></block>
+    <block type='math_number'><field name='NUM'>0</field></block>
+    <block type='math_number'><field name='NUM'>1</field></block>
     <block type='math_number'><field name='NUM'>3.141592653589793</field></block>
+    <block type='math_number'><field name='NUM'>2.718281828459045</field></block>
     <block type='variables_set'>
       <field name='VAR'>twoPi</field>
       <value name='VALUE'><block type='math_number'><field name='NUM'>6.283185307179586</field></block></value>
@@ -15,7 +17,7 @@
       <field name='OP'>abs</field>
       <value name='IN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
-    <block type='sc3_BinaryOp'>
+    <block type='sc3_BinaryOp' inline='false'>
       <field name='OP'>+</field>
       <value name='LHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
       <value name='RHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
@@ -30,26 +32,28 @@
       <value name='LHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
       <value name='RHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
-    <block type='sc3_linLin'>
-      <value name='IN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
-      <value name='SRCLO'><shadow type='math_number'><field name='NUM'>-1</field></shadow></value>
-      <value name='SRCHI'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
-      <value name='DSTLO'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
-      <value name='DSTHI'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
-    </block>
   </category>
   <category name='Array' colour='260'>
-    <block type='sc3_arrayFromTo'>
+    <block type='sc3_ArrayFromTo'>
       <value name='FROM'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
       <value name='TO'><shadow type='math_number'><field name='NUM'>9</field></shadow></value>
     </block>
-    <block type='sc3_arrayFill'>
+    <block type='sc3_ArrayFill'>
       <value name='COUNT'><shadow type='math_number'><field name='NUM'>10</field></shadow></value>
-      <value name='PROC'></value>
+      <value name='PROC'>
+        <block type='sc3_Proc0'>
+          <value name='PROC'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+        </block>
+      </value>
     </block>
-    <block type='sc3_arrayCollect'>
+    <block type='sc3_ArrayCollect'>
       <value name='ARRAY'></value>
-      <value name='PROC'></value>
+      <value name='PROC'>
+        <block type='sc3_Proc1'>
+          <value name='VAR'><block type='variables_get'><field name='VAR'>item</field></block></value>
+          <value name='PROC'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+        </block>
+      </value>
     </block>
     <block type='lists_create_with'>
       <mutation items='2'></mutation>
@@ -73,15 +77,15 @@
     </block>
   </category>
   <category name='Iter' colour='180'>
-    <block type='sc3_timesRepeat'>
+    <block type='sc3_TimesRepeat'>
       <value name='COUNT'><shadow type='math_number'><field name='NUM'>9</field></shadow></value>
       <value name='PROC'></value>
     </block>
-    <block type='sc3_overlapTexture'>
+    <block type='sc3_OverlapTexture'>
       <value name='PROC'>
-        <block type="sc3_Proc1">
-          <value name="VAR"><block type="variables_get"><field name="VAR">tr</field></block></value>
-          <value name="PROC"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+        <block type='sc3_Proc1'>
+          <value name='VAR'><block type='variables_get'><field name='VAR'>tr</field></block></value>
+          <value name='PROC'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
         </block>
       </value>
       <value name='SUSTAINTIME'><shadow type='math_number'><field name='NUM'>4</field></shadow></value>
@@ -90,41 +94,41 @@
     </block>
   </category>
   <category name='Event' colour='180'>
-    <block type='sc3_voicer'>
+    <block type='sc3_Voicer'>
       <value name='COUNT'><shadow type='math_number'><field name='NUM'>16</field></shadow></value>
       <value name='PROC'>
-        <block type="sc3_Proc1">
-          <value name="VAR"><block type="variables_get"><field name="VAR">e</field></block></value>
-          <value name="PROC"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+        <block type='sc3_Proc1'>
+          <value name='VAR'><block type='variables_get'><field name='VAR'>e</field></block></value>
+          <value name='PROC'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
         </block>
       </value>
     </block>
-    <block type='sc3_eventParam'>
+    <block type='sc3_EventParam'>
       <field name='PARAM'>x</field>
-      <value name='EVENT'><block type="variables_get"><field name="VAR">e</field></block></value>
+      <value name='EVENT'><block type='variables_get'><field name='VAR'>e</field></block></value>
     </block>
-    <block type="sc3_BinaryOp" inline="true">
-      <field name="OP">*</field>
-      <value name="LHS">
-        <block type="sc3_eventParam">
-          <field name="PARAM">w</field>
-          <value name="EVENT"><block type="variables_get"><field name="VAR">e</field></block></value>
+    <block type='sc3_BinaryOp' inline='true'>
+      <field name='OP'>*</field>
+      <value name='LHS'>
+        <block type='sc3_EventParam'>
+          <field name='PARAM'>w</field>
+          <value name='EVENT'><block type='variables_get'><field name='VAR'>e</field></block></value>
         </block>
       </value>
-      <value name="RHS">
-        <block type="sc3_eventParam">
-          <field name="PARAM">z</field>
-          <value name="EVENT"> <block type="variables_get"><field name="VAR">e</field></block>
+      <value name='RHS'>
+        <block type='sc3_EventParam'>
+          <field name='PARAM'>z</field>
+          <value name='EVENT'> <block type='variables_get'><field name='VAR'>e</field></block>
           </value>
         </block>
       </value>
     </block>
-    <block type="sc3_UnaryOp">
-      <field name="OP">unitCps</field>
-      <value name="IN">
-        <block type="sc3_eventParam">
-          <field name="PARAM">p</field>
-          <value name="EVENT"><block type="variables_get"><field name="VAR">e</field></block></value>
+    <block type='sc3_UnaryOp'>
+      <field name='OP'>unitCps</field>
+      <value name='IN'>
+        <block type='sc3_EventParam'>
+          <field name='PARAM'>p</field>
+          <value name='EVENT'><block type='variables_get'><field name='VAR'>e</field></block></value>
         </block>
       </value>
     </block>
