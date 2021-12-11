@@ -282,14 +282,19 @@ blk_help =
   ,"Decay2.1"
   ,"FBSineC.1"
   ,"Formant.1"
+  ,"Gendy1.1"
   ,"Impulse.1"
+  ,"Lag.1"
+  ,"Latch.1"
   ,"LFNoise0.1"
   ,"LFNoise1.1", "LFNoise1.2"
   ,"LFSaw.1"
+  ,"Line.1"
   ,"LocalOut.1"
   ,"Pan2.1"
   ,"RingzBank.1"
   ,"SinOsc.1"
+  ,"Stepper.1", "Stepper.2"
   ,"XLine.1"]
 
 gen_xml :: IO ()

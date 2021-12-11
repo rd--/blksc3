@@ -447,6 +447,30 @@
     }
     ,
     {
+        "type": "sc3_Gendy1",
+        "message0": "Gendy1 %1 ampdist: %2 durdist: %3 adparam: %4 ddparam: %5 minfreq: %6 maxfreq: %7 ampscale: %8 durscale: %9 initCPs: %10 knum: %11 × %12 + %13",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "AMPDIST", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DURDIST", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADPARAM", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DDPARAM", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MINFREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAXFREQ", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "AMPSCALE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DURSCALE", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "INITCPS", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "KNUM", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Dynamic stochastic synthesis generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/Gendy1.html"
+    }
+    ,
+    {
         "type": "sc3_GrayNoise",
         "message0": "GrayNoise %1 × %2 + %3",
         "args0": [
@@ -1232,6 +1256,26 @@
         "colour": 210,
         "tooltip": "Feedback FM oscillator",
         "helpUrl": "https://doc.sccode.org/Classes/SinOscFB.html"
+    }
+    ,
+    {
+        "type": "sc3_Stepper",
+        "message0": "Stepper %1 trig: %2 reset: %3 min: %4 max: %5 step: %6 resetval: %7 × %8 + %9",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MIN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MAX", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "STEP", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "RESETVAL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Pulse counter.",
+        "helpUrl": "https://doc.sccode.org/Classes/Stepper.html"
     }
     ,
     {
