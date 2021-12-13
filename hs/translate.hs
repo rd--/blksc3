@@ -47,17 +47,17 @@ block_xml_for nm p d =
 
 {- | Some names are handled specially.
 
-1. OverlapTexture -> overlapTexture
-2. Voicer -> voicer
+1. OverlapTexture -> OverlapTexture
+2. Voicer -> Voicer
 
 -}
 implicit_send_xml :: String -> [String] -> String
 implicit_send_xml nm l =
   case (nm, l) of
     ("OverlapTexture", [_, _, _, _]) ->
-      block_xml_for "overlapTexture" ["PROC","SUSTAINTIME","TRANSITIONTIME","OVERLAP"] l
+      block_xml_for "OverlapTexture" ["PROC","SUSTAINTIME","TRANSITIONTIME","OVERLAP"] l
     ("Voicer", [_, _]) ->
-      block_xml_for "voicer" ["COUNT","PROC"] l
+      block_xml_for "Voicer" ["COUNT","PROC"] l
     _ -> ugen_xml nm l
 
 -- | Is unary operator an event parameter?
@@ -238,9 +238,13 @@ blk_graphs =
      ,"Lfo Modulation"
      ,"Modal Space", "Modal Space (Collect)"
      ,"Moto Rev"
+     ,"Narrow Band Filtered Crackle Noise"
      ,"Pond Life", "Pond Life (Texture)"
+     ,"Pentatonic Pipes"
      ,"Plucked Strings"
      ,"Random Panning Sines"
+     ,"Random Pulsations"
+     ,"Random Sine Waves"
      ,"Repeating Harmonic Klank"
      ,"Reverberated Sine Percussion"
      ,"Sample and Hold Liquidities"
@@ -282,6 +286,7 @@ blk_help =
   ,"Decay2.1"
   ,"FBSineC.1"
   ,"Formant.1"
+  ,"FreqShift.1"
   ,"Gendy1.1"
   ,"Impulse.1"
   ,"Lag.1"
@@ -293,7 +298,7 @@ blk_help =
   ,"LocalOut.1"
   ,"Pan2.1"
   ,"RingzBank.1"
-  ,"SinOsc.1"
+  ,"SinOsc.1", "SinOsc.2"
   ,"Stepper.1", "Stepper.2"
   ,"XLine.1"]
 

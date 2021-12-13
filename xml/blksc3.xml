@@ -210,6 +210,15 @@
       <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
     </block>
+    <block type='sc3_LFGauss'>
+      <value name='DURATION'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='WIDTH'><shadow type='math_number'><field name='NUM'>0.1</field></shadow></value>
+      <value name='IPHASE'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='LOOP'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='DONEACTION'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+    </block>
     <block type='sc3_LFPar'>
       <value name='FREQ'><shadow type='math_number'><field name='NUM'>440.0</field></shadow></value>
       <value name='IPHASE'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
@@ -277,6 +286,11 @@
     </block>
   </category>
   <category name='Chaotic' colour='210'>
+    <block type='sc3_Crackle'>
+      <value name='CHAOSPARAM'><shadow type='math_number'><field name='NUM'>1.5</field></shadow></value>
+      <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+    </block>
     <block type='sc3_FBSineC'>
       <value name='FREQ'><shadow type='math_number'><field name='NUM'>22050.0</field></shadow></value>
       <value name='IM'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
@@ -297,6 +311,22 @@
       <value name='DELAYTIME'><shadow type='math_number'><field name='NUM'>0.2</field></shadow></value>
       <value name='DECAYTIME'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='COEF'><shadow type='math_number'><field name='NUM'>0.5</field></shadow></value>
+      <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+    </block>
+  </category>
+  <category name='Stochastic' colour='210'>
+    <block type='sc3_Gendy1'>
+      <value name='AMPDIST'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='DURDIST'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='ADPARAM'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='DDPARAM'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='MINFREQ'><shadow type='math_number'><field name='NUM'>440.0</field></shadow></value>
+      <value name='MAXFREQ'><shadow type='math_number'><field name='NUM'>660.0</field></shadow></value>
+      <value name='AMPSCALE'><shadow type='math_number'><field name='NUM'>0.5</field></shadow></value>
+      <value name='DURSCALE'><shadow type='math_number'><field name='NUM'>0.5</field></shadow></value>
+      <value name='INITCPS'><shadow type='math_number'><field name='NUM'>12.0</field></shadow></value>
+      <value name='KNUM'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
       <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
     </block>
@@ -484,6 +514,24 @@
       <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
     </block>
   </category>
+  <category name='Pitch' colour='150'>
+    <block type='sc3_FreqShift'>
+      <value name='IN'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='FREQ'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='PHASE'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+    </block>
+    <block type='sc3_PitchShift'>
+      <value name='IN'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='WINDOWSIZE'><shadow type='math_number'><field name='NUM'>0.2</field></shadow></value>
+      <value name='PITCHRATIO'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='PITCHDISPERSION'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='TIMEDISPERSION'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+    </block>
+  </category>
   <category name='Util' colour='150'>
     <block type='sc3_AmpComp'>
       <value name='FREQ'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
@@ -504,15 +552,6 @@
       <value name='SRCHI'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='DSTLO'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='DSTHI'><shadow type='math_number'><field name='NUM'>2.0</field></shadow></value>
-      <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
-      <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
-    </block>
-    <block type='sc3_PitchShift'>
-      <value name='IN'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
-      <value name='WINDOWSIZE'><shadow type='math_number'><field name='NUM'>0.2</field></shadow></value>
-      <value name='PITCHRATIO'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
-      <value name='PITCHDISPERSION'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
-      <value name='TIMEDISPERSION'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
       <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
     </block>
@@ -554,6 +593,16 @@
       <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
     </block>
+    <block type='sc3_Stepper'>
+      <value name='TRIG'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='RESET'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='MIN'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='MAX'><shadow type='math_number'><field name='NUM'>7.0</field></shadow></value>
+      <value name='STEP'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='RESETVAL'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+    </block>
     <block type='sc3_Sweep'>
       <value name='TRIG'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
       <value name='RATE'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
@@ -577,6 +626,14 @@
     <block type='sc3_TChoose'>
       <value name='TRIG'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='ARRAY'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+    </block>
+    <block type='sc3_TLine'>
+      <value name='START'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+      <value name='END'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='DUR'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
+      <value name='TRIG'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
     </block>

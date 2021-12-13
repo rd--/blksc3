@@ -3,7 +3,7 @@ all:
 
 clean:
 	rm -Rf *~
-	(cd cmd ; make clean)
+	(cd help ; make clean)
 
 push-all:
 	r.gitlab-push.sh blksc3
