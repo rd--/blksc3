@@ -280,7 +280,8 @@ blk_print_autogen x = putStrLn (unlines ("<!-- AUTOGEN -->" : x ++ ["<!-- END AU
 -- > blk_print_autogen $ map blk_help_option blk_help
 blk_help :: [String]
 blk_help =
-  ["ArrayFill.1"
+  ["ADSR.1"
+  ,"ArrayFill.1"
   ,"Blip.1", "Blip.2"
   ,"CombC.1"
   ,"Decay2.1"
