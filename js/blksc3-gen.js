@@ -7,22 +7,36 @@ Blockly.JavaScript['sc3_Play'] = function(block) {
 };
 
 Blockly.JavaScript['sc3_Proc0'] = function(block) {
-    var proc_value = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    var proc0_code = '{ ' + proc_value + ' }';
-    return [proc0_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+    var return_value = Blockly.JavaScript.valueToCode(block, 'RETURN', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+    return ['{ ' + return_value + ' }', Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_Proc1'] = function(block) {
     var var_value = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC) || 'x';
-    var proc_value = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    var proc1_code = '{ arg ' + var_value + '_; ' + var_value + ' = ' + var_value + '_; ' + proc_value + ' }';
+    var return_value = Blockly.JavaScript.valueToCode(block, 'RETURN', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+    var proc1_code = '{ arg ' + var_value + '_; ' + var_value + ' = ' + var_value + '_; ' + return_value + ' }';
     return [proc1_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_Proc0Stm'] = function(block) {
+    var statements_code = Blockly.JavaScript.statementToCode(block, 'STATEMENTS');
+    var return_value = Blockly.JavaScript.valueToCode(block, 'RETURN', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+    var proc0stm_code = '{ ' + statements_code + return_value + ' }';
+    return [proc0stm_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_Proc1Stm'] = function(block) {
+    var var_value = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC) || 'x';
+    var statements_code = Blockly.JavaScript.statementToCode(block, 'STATEMENTS');
+    var return_value = Blockly.JavaScript.valueToCode(block, 'RETURN', Blockly.JavaScript.ORDER_ATOMIC) || '0';
+    var proc1stm_code = '{ arg ' + var_value + '_; ' + var_value + ' = ' + var_value + '_; ' + statements_code + return_value + ' }';
+    return [proc1stm_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_TimesRepeat'] = function(block) {
     var count_value = Blockly.JavaScript.valueToCode(block, 'COUNT', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    var proc_code = Blockly.JavaScript.statementToCode(block, 'PROC');
-    return count_value + '.timesRepeat({ ' + proc_code + '});';
+    var statements_code = Blockly.JavaScript.statementToCode(block, 'STATEMENTS');
+    return count_value + '.timesRepeat({ ' + statements_code + '});';
 };
 
 Blockly.JavaScript['sc3_OverlapTexture'] = function(block) {

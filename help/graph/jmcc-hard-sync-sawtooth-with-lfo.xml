@@ -1,0 +1,271 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="yfy9R*IsrFp:zs8Ms#6Y">twoPi</variable>
+    <variable id="aHZypqH4iw/pkdA=Rz{j">txt</variable>
+    <variable id=")W#F)(Aq:^(baoL3q7y_">tr</variable>
+    <variable id="598=y}hm++,b$m+`RRr#">f</variable>
+  </variables>
+  <block type="sc3_Comment" id="6_SAVfJ,TJ/VaCMpED*P" x="-100" y="72">
+    <field name="COMMENT">hard sync sawtooth with lfo (jmcc) #6 ; graph-rewrite</field>
+    <next>
+      <block type="variables_set" id="`d_sTN!RR;j^A9L_]D]@">
+        <field name="VAR" id="yfy9R*IsrFp:zs8Ms#6Y">twoPi</field>
+        <value name="VALUE">
+          <block type="math_number" id="HMyr@kZlzh4UbFYPdp^K">
+            <field name="NUM">6.283185307179586</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="I`(W+n8?yfXwZlm52$=]">
+            <field name="VAR" id="aHZypqH4iw/pkdA=Rz{j">txt</field>
+            <value name="VALUE">
+              <block type="sc3_OverlapTexture" id=")i@b=6ovtzuUrWEJYZEW">
+                <value name="PROC">
+                  <block type="sc3_Proc1Stm" id="c6nXykhC7wOgvtJ7cwu0">
+                    <value name="VAR">
+                      <block type="variables_get" id="6+b4L/(DY!#$05o-@j:@">
+                        <field name="VAR" id=")W#F)(Aq:^(baoL3q7y_">tr</field>
+                      </block>
+                    </value>
+                    <statement name="STATEMENTS">
+                      <block type="variables_set" id="1g22xFK8%d{$dqdlV5+H">
+                        <field name="VAR" id="598=y}hm++,b$m+`RRr#">f</field>
+                        <value name="VALUE">
+                          <block type="sc3_UnaryOp" id="B6|G:(Lj4mu6jzm*D^Q+">
+                            <field name="OP">midicps</field>
+                            <value name="IN">
+                              <block type="sc3_TRand" id="9Om=M;U/5V3I30$O!}D;" inline="true">
+                                <value name="LO">
+                                  <block type="math_number" id="bBjS-PyHqfb,-NDi5f|S">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="HI">
+                                  <block type="math_number" id="O=zZ[1XlI5Y%c9P2{|tH">
+                                    <field name="NUM">50</field>
+                                  </block>
+                                </value>
+                                <value name="TRIG">
+                                  <block type="variables_get" id="B~aR4=EXwRD[bRdKXH=$">
+                                    <field name="VAR" id=")W#F)(Aq:^(baoL3q7y_">tr</field>
+                                  </block>
+                                </value>
+                                <value name="MUL">
+                                  <shadow type="math_number" id="qAF-aD4P7)z-6JL@6xT.">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                                <value name="ADD">
+                                  <shadow type="math_number" id="v05J$ZiIctaiL#eUsz^Z">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="math_number" id="mt0Sdg*8|BhZ3*ql0H$x">
+                                    <field name="NUM">30</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="RETURN">
+                      <block type="sc3_SyncSaw" id="Ma=6V-,a~kkiE836=S4Q">
+                        <value name="SYNCFREQ">
+                          <block type="lists_create_with" id="H.%FV~Z-#a*~Z+cu=D-." inline="true">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="variables_get" id=".Xh^c:/}Af[J,Xs*khte">
+                                <field name="VAR" id="598=y}hm++,b$m+`RRr#">f</field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="sc3_BinaryOp" id="4-nuFDk~|PwQ)tBilzJP" inline="true">
+                                <field name="OP">+</field>
+                                <value name="LHS">
+                                  <block type="variables_get" id="!Ztzy*;cYMmp`G;40;U3">
+                                    <field name="VAR" id="598=y}hm++,b$m+`RRr#">f</field>
+                                  </block>
+                                </value>
+                                <value name="RHS">
+                                  <block type="math_number" id="F==G5[A1z#2fKS~e(vK/">
+                                    <field name="NUM">0.2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="SAWFREQ">
+                          <block type="sc3_SinOsc" id="[:e*l0DA_5keJ|ZR%]G]">
+                            <value name="FREQ">
+                              <block type="math_number" id="Dkc-kr#(l)Yn!H}nU4lc">
+                                <field name="NUM">0.2</field>
+                              </block>
+                            </value>
+                            <value name="PHASE">
+                              <block type="sc3_ArrayFill" id="a7*m7la[p?ZHv4mZI(v6" inline="true">
+                                <value name="PROC">
+                                  <block type="sc3_Proc0" id="3x6XZ;HM^-LGj)w:fM|K">
+                                    <value name="RETURN">
+                                      <block type="sc3_TRand" id="d}%?U/eE5HYc;N=:?`_R" inline="true">
+                                        <value name="LO">
+                                          <block type="math_number" id="KAqnG{EPljp{AFgo$j?b">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="HI">
+                                          <block type="variables_get" id="7l9TrIw{3nyj3J0RviY%">
+                                            <field name="VAR" id="yfy9R*IsrFp:zs8Ms#6Y">twoPi</field>
+                                          </block>
+                                        </value>
+                                        <value name="TRIG">
+                                          <block type="variables_get" id="0bf})-|Z$38#z1l5oQYZ">
+                                            <field name="VAR" id=")W#F)(Aq:^(baoL3q7y_">tr</field>
+                                          </block>
+                                        </value>
+                                        <value name="MUL">
+                                          <shadow type="math_number" id="8D}]BjfEDT)?utJIIHwB">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="ADD">
+                                          <shadow type="math_number" id="x.qG(Aj~8M;Cm~wgmOq9">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="COUNT">
+                                  <block type="math_number" id="OqKGhwtI02#mQG+0])G)">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="MUL">
+                              <shadow type="math_number" id="e3aSCI7j(8W{lVB/aDZD">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="sc3_BinaryOp" id="*aeMsDf.0`p(7P$y7c65" inline="true">
+                                <field name="OP">*</field>
+                                <value name="LHS">
+                                  <block type="math_number" id="wam_BI:3EgQsnhW|kWSx">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                                <value name="RHS">
+                                  <block type="variables_get" id="G(*Y[U;P(v;Z|zxeMOh|">
+                                    <field name="VAR" id="598=y}hm++,b$m+`RRr#">f</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="]k*9tp{Hr`I)$W91k43x">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="sc3_BinaryOp" id="jHt[cdA*#i,f*h]YIT^U" inline="true">
+                                <field name="OP">*</field>
+                                <value name="LHS">
+                                  <block type="math_number" id="3SGboo+`1+-KZM;M`b|z">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                                <value name="RHS">
+                                  <block type="variables_get" id="**{u(HyjB%RCK2y+(gi@">
+                                    <field name="VAR" id="598=y}hm++,b$m+`RRr#">f</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="MUL">
+                          <shadow type="math_number" id="PkG(]EM;@ZED4K_^6]=v">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="math_number" id="cCv?6t/MKwlx-Y8;r)d]">
+                            <field name="NUM">0.025</field>
+                          </block>
+                        </value>
+                        <value name="ADD">
+                          <shadow type="math_number" id="42sF{C9O}c=N_rhx3v4l">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="SUSTAINTIME">
+                  <block type="math_number" id="0Nhb@eLC1}Kqg)-z1I$}">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+                <value name="TRANSITIONTIME">
+                  <block type="math_number" id="4cJhm:R-5:@wcv|jKQH;">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+                <value name="OVERLAP">
+                  <block type="math_number" id="nrE-Bn=j5y93sL.=A#yN">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="sc3_Play" id="./q{hKEsWjKyyQ+)b7G[">
+                <value name="CODE">
+                  <block type="sc3_CombC" id=",{Q:%s{Qp6O7;|Y*+uWT" inline="true">
+                    <value name="IN">
+                      <block type="variables_get" id=":3FkQz}%1ML#;~|$.GED">
+                        <field name="VAR" id="aHZypqH4iw/pkdA=Rz{j">txt</field>
+                      </block>
+                    </value>
+                    <value name="MAXDELAYTIME">
+                      <block type="math_number" id="b0sJ}fN@ydp%ylR5z*$U">
+                        <field name="NUM">0.3</field>
+                      </block>
+                    </value>
+                    <value name="DELAYTIME">
+                      <block type="math_number" id="[3*k!C=0Zn**_vP[7FD9">
+                        <field name="NUM">0.3</field>
+                      </block>
+                    </value>
+                    <value name="DECAYTIME">
+                      <block type="math_number" id="dxTrB;JOQ@bdE7oiR|O1">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                    <value name="MUL">
+                      <shadow type="math_number" id="7jP_0[-sYRXZW[Fa$?Sh">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <value name="ADD">
+                      <shadow type="math_number" id="]_1E?h`]d+#UDE;iJuMO">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="sc3_UnaryOp" id="vO=BV:[y`5mhCor1tw(%">
+                        <field name="OP">reverse</field>
+                        <value name="IN">
+                          <block type="variables_get" id="B2NQGU~n]B!khb/Oc/Hp">
+                            <field name="VAR" id="aHZypqH4iw/pkdA=Rz{j">txt</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -27,11 +27,11 @@
         "type": "sc3_Proc0",
         "message0": "λ %1",
         "args0": [
-            {"type": "input_value", "name": "PROC", "check": ["Array", "Number", "UGen"]}
+            {"type": "input_value", "name": "RETURN", "check": ["Array", "Number", "UGen"]}
         ],
         "output": "Proc0",
         "colour": 180,
-        "tooltip": "Make zero argument procedure for input block"
+        "tooltip": "Make zero argument procedure with return block"
     }
     ,
     {
@@ -39,11 +39,36 @@
         "message0": "%1 λ %2",
         "args0": [
             {"type": "input_value", "name": "VAR"},
-            {"type": "input_value", "name": "PROC", "check": ["Array", "Number", "UGen"]}
+            {"type": "input_value", "name": "RETURN", "check": ["Array", "Number", "UGen"]}
         ],
         "output": "Proc1",
         "colour": 180,
-        "tooltip": "Make one argument procedure for input block setting arg to var"
+        "tooltip": "Make one argument procedure with return block setting arg to var"
+    }
+    ,
+    {
+        "type": "sc3_Proc0Stm",
+        "message0": "λ %1 %2",
+        "args0": [
+            {"type": "input_statement", "name": "STATEMENTS"},
+            {"type": "input_value", "name": "RETURN", "check": ["Array", "Number", "UGen"]}
+        ],
+        "output": "Proc0",
+        "colour": 180,
+        "tooltip": "Make zero argument procedure with statements and return block"
+    }
+    ,
+    {
+        "type": "sc3_Proc1Stm",
+        "message0": "λ %1 let: %2 in: %3",
+        "args0": [
+            {"type": "input_value", "name": "VAR"},
+            {"type": "input_statement", "name": "STATEMENTS"},
+            {"type": "input_value", "name": "RETURN", "check": ["Array", "Number", "UGen"]}
+        ],
+        "output": "Proc1",
+        "colour": 180,
+        "tooltip": "Make one argument procedure with statements and return block"
     }
     ,
     {
@@ -51,7 +76,7 @@
         "message0": "%1 TimesRepeat: %2",
         "args0": [
             {"type": "input_value", "name": "COUNT", "check": "Number"},
-            {"type": "input_statement", "name": "PROC"}
+            {"type": "input_statement", "name": "STATEMENTS"}
         ],
         "previousStatement": null,
         "nextStatement": null,
@@ -125,7 +150,7 @@
         "type": "sc3_UnaryOp",
         "message0": "%1 of: %2",
         "args0": [
-            {"type": "field_dropdown", "name": "OP", "options": [["abs", "abs"], ["asLocalBuf","asLocalBuf"], ["choose","choose"], ["clearBuf", "clearBuf"], ["cubed","cubed"], ["distort","distort"], ["1º","first"], ["⌊", "floor"], ["mean", "mean"], ["midicps", "midicps"], ["mix","mix"], ["-","negated"], ["reciprocal","reciprocal"], ["reverse","reverse"], ["rounded","rounded"], ["2º","second"], ["sin","sin"], ["size","size"], ["softclip","softclip"], ["splay","splay"], ["√","sqrt"], ["Σ","sum"], ["tanh","tanh"], ["transpose","transpose"], ["unitCps", "unitCps"]]},
+            {"type": "field_dropdown", "name": "OP", "options": [["abs", "abs"], ["asLocalBuf","asLocalBuf"], ["choose","choose"], ["clearBuf", "clearBuf"], ["cubed","cubed"], ["distort","distort"], ["1º","first"], ["⌊", "floor"], ["kr","kr"], ["mean", "mean"], ["midicps", "midicps"], ["mix","mix"], ["-","negated"], ["reciprocal","reciprocal"], ["reverse","reverse"], ["rounded","rounded"], ["2º","second"], ["sin","sin"], ["size","size"], ["softclip","softclip"], ["splay","splay"], ["√","sqrt"], ["Σ","sum"], ["tanh","tanh"], ["transpose","transpose"], ["unitCps", "unitCps"]]},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]}
         ],
         "output": "UGen",

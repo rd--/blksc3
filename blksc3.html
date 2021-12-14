@@ -26,7 +26,10 @@
     <div id="controlDiv">
       <input type="file" id="xmlInputFile" accept=".xml" onchange="blk_read_input_xml()" style="display:none">
       <button id="xmlInputFileSelect" title="Select local .xml file and load into workspace">Load Xml</button>
+      <input type="file" id="jsonInputFile" accept=".json" onchange="blk_read_input_json()" style="display:none">
+      <button id="jsonInputFileSelect" title="Select local .json file and load into workspace">Load Json</button>
       <button title="Copy current workspace Xml to clipboard" onclick="navigator.clipboard.writeText(blk_get_xml())">Copy Xml</button>
+      <button title="Copy current workspace Json to clipboard" onclick="navigator.clipboard.writeText(blk_get_json())">Copy Json</button>
       <button title="Send current workspace Stc to Websocket" onclick="blk_send_stc('play')">Send Stc</button>
       <button title="Send reset command to Websocket" onclick="blk_sc3_reset()">Send Reset</button>
       <button title="Draw current workspace as UGen graph" onclick="blk_send_stc('draw')">Draw Stc</button>
@@ -65,6 +68,8 @@
 <option value='jmcc-coolant-texture'>JMcC - Coolant (Texture)</option>
 <option value='jmcc-deep-trip'>JMcC - Deep Trip</option>
 <option value='jmcc-demanding-studies'>JMcC - Demanding Studies</option>
+<option value='jmcc-hard-sync-sawtooth-with-lfo'>JMcC - Hard-Sync Sawtooth with LFO</option>
+<option value='jmcc-harmonic-cloud'>JMcC - Harmonic Cloud</option>
 <option value='jmcc-harmonic-zither'>JMcC - Harmonic Zither</option>
 <option value='jmcc-lfo-modulation'>JMcC - Lfo Modulation</option>
 <option value='jmcc-modal-space'>JMcC - Modal Space</option>

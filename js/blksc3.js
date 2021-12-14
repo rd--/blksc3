@@ -39,9 +39,16 @@ function blk_get_js() {
     return Blockly.JavaScript.workspaceToCode(blk_workspace);
 }
 
+// Get XML serialization of workspace.  The XML format is no longer being worked on.
 function blk_get_xml() {
     var xml = Blockly.Xml.workspaceToDom(blk_workspace);
     return Blockly.Xml.domToPrettyText(xml);
+}
+
+// Get JSON serialization of workspace.
+function blk_get_json() {
+    var obj = Blockly.serialization.workspaces.save(blk_workspace);
+    return JSON.stringify(obj, null, '  ');
 }
 
 function blk_get_svg() {
@@ -49,14 +56,24 @@ function blk_get_svg() {
     return svg.outerHTML;
 }
 
-function blk_load_xml(xml_text, autoPlay) {
-    var xml = Blockly.Xml.textToDom(xml_text);
-    Blockly.Xml.domToWorkspace(xml, blk_workspace);
+function blk_on_load(autoPlay) {
     blk_workspace.setScale(1);
     blk_workspace.scrollCenter();
     if(autoPlay) {
         blk_send_stc('play');
     }
+}
+
+function blk_load_xml(xml_text, autoPlay) {
+    var xml = Blockly.Xml.textToDom(xml_text);
+    Blockly.Xml.domToWorkspace(xml, blk_workspace);
+    blk_on_load(autoPlay);
+}
+
+function blk_load_json(json_text, autoPlay) {
+    var obj = JSON.parse(json_text);
+    Blockly.serialization.workspaces.load(obj, blk_workspace);
+    blk_on_load(autoPlay);
 }
 
 function blk_send_stc(cmd) {
@@ -71,16 +88,35 @@ function blk_xml_input_init () {
     xmlSelect.addEventListener("click", e => xmlInput.click(), false);
 }
 
+function blk_json_input_init () {
+    var jsonInput = document.getElementById("jsonInputFile");
+    var jsonSelect = document.getElementById("jsonInputFileSelect");
+    jsonSelect.addEventListener("click", e => jsonInput.click(), false);
+}
+
 function blk_read_xml(xmlFile) {
     var reader = new FileReader();
     reader.addEventListener("load", () => blk_load_xml(reader.result), false);
     reader.readAsText(xmlFile);
 }
 
+function blk_read_json(jsonFile) {
+    var reader = new FileReader();
+    reader.addEventListener("load", () => blk_load_json(reader.result), false);
+    reader.readAsText(jsonFile);
+}
+
 function blk_read_input_xml() {
     var file = document.getElementById("xmlInputFile").files[0];
     if (file) {
         blk_read_xml(file);
+    }
+}
+
+function blk_read_input_json() {
+    var file = document.getElementById("jsonInputFile").files[0];
+    if (file) {
+        blk_read_json(file);
     }
 }
 
@@ -91,31 +127,39 @@ function blk_fetch_xml(xmlUrl, autoPlay) {
     request.send();
 }
 
+function blk_fetch_json(jsonUrl, autoPlay) {
+    var request = new JSONHttpRequest();
+    request.addEventListener("load", () => blk_load_json(request.response, autoPlay));
+    request.open("GET", jsonUrl)
+    request.send();
+}
+
 function blk_sc3_reset() {
     if(blk_ws) {
         blk_ws.send('SC3.reset');
     }
 }
 
-function blk_graph_menu_select(graphDir, graphName) {
+function blk_graph_menu_select(graphDir, fileType, graphName) {
     var auto_play = false;
     console.log(graphName);
     blk_workspace.clear();
     if(auto_play) {
         blk_sc3_reset();
     }
-    blk_fetch_xml('?t=blksc3&e=help/' + graphDir + '/' + graphName + '.xml', auto_play);
+    blk_fetch_xml('?t=blksc3&e=help/' + graphDir + '/' + graphName + fileType, auto_play);
 }
 
-function blk_menu_init(graphDir, menuId) {
+function blk_menu_init(graphDir, fileType, menuId) {
     var blk_graph = document.getElementById(menuId);
-    blk_graph.addEventListener('change', (e) => blk_graph_menu_select(graphDir, e.target.value));
+    blk_graph.addEventListener('change', (e) => blk_graph_menu_select(graphDir, fileType, e.target.value));
 }
 
 function blk_init() {
-    blk_menu_init('graph', 'blkGraphMenu');
-    blk_menu_init('block', 'blkHelpMenu');
+    blk_menu_init('graph', '.xml', 'blkGraphMenu');
+    blk_menu_init('block', '.xml', 'blkHelpMenu');
     blk_xml_input_init();
+    blk_json_input_init();
     blk_ws_init();
 }
 

@@ -1,6 +1,7 @@
 {-
 
-Translator for simple .stc graphs to Blockly XML notation.
+Translator for simple .stc graphs to Blockly .xml notation.
+The .xml notation is deprecated, there is a .json notation.
 
 -}
 
@@ -113,7 +114,7 @@ keybinop_xml msg lhs rhs  =
       lhs rhs
     "timesRepeat:" ->
       printf
-      "<block type='sc3_TimesRepeat'><value name='COUNT'>%s</value><value name='PROC'>%s</value></block>"
+      "<block type='sc3_TimesRepeat'><value name='COUNT'>%s</value><value name='STATEMENTS'>%s</value></block>"
       lhs rhs
     "to:" ->
       printf
@@ -131,7 +132,14 @@ var_decl v =
   else printf "<variables>%s</variables>" (concatMap (\x -> concat ["<variable>",x,"</variable>"]) v)
 
 var_set :: String -> String -> String
-var_set x y = printf "<block type='variables_set'><field name='VAR'>%s</field><value name='VALUE'>%s</value></block>" x y
+var_set =
+  printf
+  "<block type='variables_set'><field name='VAR'>%s</field><value name='VALUE'>%s</value></block>"
+
+var_set_then :: String -> String -> String -> String
+var_set_then =
+  printf
+  "<block type='variables_set'><field name='VAR'>%s</field><value name='VALUE'>%s</value><next>%s</next></block>"
 
 var_get :: String -> String
 var_get x = printf "<block type='variables_get'><field name='VAR'>%s</field></block>" x
@@ -144,20 +152,30 @@ array_xml :: [String] -> String
 array_xml l = printf "<block type='lists_create_with'><mutation items='%d'></mutation>%s</block>" (length l) (concat (zipWith array_elem_xml [0..] l))
 
 proc_xml :: [String] -> [String] -> [Expr t] -> String
-proc_xml a v e =
-  case a of
-    [] ->
+proc_xml a _v e =
+  case (a, e) of
+    (_, []) -> error "proc_xml: empty procedure?"
+    ([], [e1]) ->
       printf
-      "<block type='sc3_Proc0'><value name='PROC'>%s%s</value></block>"
-      (var_decl v)
-      (concatMap expr_xml e)
-    [p] ->
+      "<block type='sc3_Proc0'><value name='RETURN'>%s</value></block>"
+      (expr_xml e1)
+    ([], _) ->
       printf
-      "<block type='sc3_Proc1'><value name='VAR'>%s</value><value name='PROC'>%s%s</value></block>"
-      (var_get p)
-      (var_decl v)
-      (concatMap expr_xml e)
-    _ -> error "proc_xml: not 0 or 1 argument"
+      "<block type='sc3_Proc0Stm'><value name='STATEMENTS'>%s</value><value name='RETURN'>%s</value></block>"
+      (assign_seq_xml (init e))
+      (expr_xml (last e))
+    ([a1], [e1]) ->
+      printf
+      "<block type='sc3_Proc1'><value name='VAR'>%s</value><value name='RETURN'>%s</value></block>"
+      (var_get a1)
+      (expr_xml e1)
+    ([a1], _) ->
+      printf
+      "<block type='sc3_Proc1Stm'><value name='VAR'>%s</value><value name='STATEMENTS'>%s</value><value name='RETURN'>%s</value></block>"
+      (var_get a1)
+      (assign_seq_xml (init e))
+      (expr_xml (last e))
+    _ -> error (show ("proc_xml: not 0 or 1 argument", a, e))
 
 comment_xml :: St.Comment -> String
 comment_xml c =
@@ -183,6 +201,13 @@ expr_xml e =
 
 expr_seq_xml :: [Expr t] -> String
 expr_seq_xml = concatMap expr_xml
+
+assign_seq_xml :: [Expr t] -> String
+assign_seq_xml e_seq =
+  case e_seq of
+    [Assignment p q] -> var_set p (expr_xml q)
+    (Assignment p q : e_rem) -> var_set_then p (expr_xml q) (assign_seq_xml e_rem)
+    _ -> error ("assign_seq_xml: " ++ show e_seq)
 
 in_xml :: String -> String
 in_xml x = concat ["<xml>",x,"</xml>"]
@@ -228,12 +253,15 @@ blk_graphs =
      ])
   ,("JAR", ["1-4Qx", "rk_20120422"])
   ,("JMcC",
-     ["Analog Bubbles", "Analog Bubbles (Mouse)", "Analog Bubbles (Var)"
+     ["Alien Meadow"
+     ,"Analog Bubbles", "Analog Bubbles (Mouse)", "Analog Bubbles (Var)"
      ,"Babbling Brook"
      ,"Birdies"
      ,"Coolant", "Coolant (Texture)"
      ,"Deep Trip"
      ,"Demanding Studies"
+     ,"Hard-Sync Sawtooth with LFO"
+     ,"Harmonic Cloud"
      ,"Harmonic Zither"
      ,"Lfo Modulation"
      ,"Modal Space", "Modal Space (Collect)"
