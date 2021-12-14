@@ -124,3 +124,10 @@ function blk_load_and_process_json(fileName, processFunc) {
         .then(response => response.json())
         .then(data => processFunc(data));
 }
+function blk_cc_send(k) {
+    if(blk_ws) {
+        var ccElem = document.getElementById("cc" + k);
+        ccElem.value
+        blk_ws.send('SC3.ccSet(' + k + ', ' + ccElem.value + ');\n');
+    }
+}
