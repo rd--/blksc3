@@ -298,6 +298,7 @@ blk_help =
   ,"Line.1"
   ,"LocalOut.1"
   ,"Pan2.1"
+  ,"PMOsc.1"
   ,"RingzBank.1"
   ,"SinOsc.1", "SinOsc.2"
   ,"Stepper.1", "Stepper.2"

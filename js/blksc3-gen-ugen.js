@@ -884,6 +884,17 @@ Blockly.JavaScript['sc3_LinLin'] = function(block) {
     return [LinLin_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_PMOsc'] = function(block) {
+    var carfreq_value = Blockly.JavaScript.valueToCode(block, 'CARFREQ', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var modfreq_value = Blockly.JavaScript.valueToCode(block, 'MODFREQ', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var pmindex_value = Blockly.JavaScript.valueToCode(block, 'PMINDEX', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var modphase_value = Blockly.JavaScript.valueToCode(block, 'MODPHASE', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var PMOsc_code = 'MulAdd(PMOsc(' + carfreq_value + ', ' + modfreq_value + ', ' + pmindex_value + ', ' + modphase_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [PMOsc_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_RingzBank'] = function(block) {
     var input_value = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
     var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
