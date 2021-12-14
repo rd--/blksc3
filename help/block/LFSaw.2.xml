@@ -1,0 +1,74 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="naeKYd/*xc7-hi4%YAg$">lfo</variable>
+  </variables>
+  <block type="sc3_Comment" id="?|nhVj6tjE^+OTQj[)%u" x="-32" y="60">
+    <field name="COMMENT">LFSaw ; as an lfo ; https://github.com/cianoc/supercollider_fragments</field>
+    <next>
+      <block type="variables_set" id="PNklQ69Mp-C*aQ0_S`4)">
+        <field name="VAR" id="naeKYd/*xc7-hi4%YAg$">lfo</field>
+        <value name="VALUE">
+          <block type="sc3_LFSaw" id="#;FOde2NxBiTlcS`r,P^" inline="true">
+            <value name="FREQ">
+              <block type="math_number" id="ink0vp*LMr@CBC$foJOK">
+                <field name="NUM">2</field>
+              </block>
+            </value>
+            <value name="IPHASE">
+              <block type="math_number" id="wc_~]ipsNp}q2QAV`BK;">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="MUL">
+              <shadow type="math_number" id="pLxL/3,U$Ag(5t!)Y4#,">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_number" id="!Z|/@xbS@l/4@R[;6p}C">
+                <field name="NUM">-100</field>
+              </block>
+            </value>
+            <value name="ADD">
+              <shadow type="math_number" id="3qXYNq9{ip06sd)B%/]6">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="math_number" id="BzgzYgwL4wzD+IAUP7=N">
+                <field name="NUM">600</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="sc3_Play" id="Nv%z!r;*]C^/:5jUCdq*">
+            <value name="CODE">
+              <block type="sc3_SinOsc" id="kGx(w-=!Y]#GCw$*pXl1" inline="true">
+                <value name="FREQ">
+                  <block type="variables_get" id="/H4!%3wYZfll6V0$;GJ[">
+                    <field name="VAR" id="naeKYd/*xc7-hi4%YAg$">lfo</field>
+                  </block>
+                </value>
+                <value name="PHASE">
+                  <block type="math_number" id="p)/7!#;0D0#yQYtXMXV)">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="MUL">
+                  <shadow type="math_number" id="Ou]:h;JXXBbggni,p]?6">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="math_number" id="4%c@L:[72I{c@@dG!nhd">
+                    <field name="NUM">0.1</field>
+                  </block>
+                </value>
+                <value name="ADD">
+                  <shadow type="math_number" id="S*B=No*wP-xHyx8xtlK(">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

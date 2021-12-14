@@ -1,0 +1,6 @@
+// Impulse ; synchronised impulses ; https://github.com/cianoc/supercollider_fragments
+var sync = 5;
+var freq = [1, 3, 5, 7, 9, 11, 13];
+var numer = [3, 7, 5, 2, 9, 6, 1];
+var f = { arg i; SinOsc(freq.at(i) * 100, 0) * Decay2(Impulse(numer.at(i) / sync, 0), 0.01, 1) };
+1.to(freq.size).collect(f).splay * 0.1
