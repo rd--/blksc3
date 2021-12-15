@@ -40,6 +40,16 @@ Blockly.JavaScript['sc3_BBandPass'] = function(block) {
     return [BBandPass_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_BBandStop'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var bw_value = Blockly.JavaScript.valueToCode(block, 'BW', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var BBandStop_code = 'MulAdd(BBandStop(' + in_value + ', ' + freq_value + ', ' + bw_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [BBandStop_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_BPF'] = function(block) {
     var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
     var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
@@ -338,6 +348,15 @@ Blockly.JavaScript['sc3_HPZ1'] = function(block) {
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
     var HPZ1_code = 'MulAdd(HPZ1(' + in_value + '), ' + mul_value + ', ' + add_value + ')';
     return [HPZ1_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_IRand'] = function(block) {
+    var lo_value = Blockly.JavaScript.valueToCode(block, 'LO', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var hi_value = Blockly.JavaScript.valueToCode(block, 'HI', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var IRand_code = 'MulAdd(IRand(' + lo_value + ', ' + hi_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [IRand_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_Impulse'] = function(block) {

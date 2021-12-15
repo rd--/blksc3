@@ -287,7 +287,9 @@ blk_graphs =
      ,"Wind Metals"
      ])
   ,("NV"
-    ,["Tw 2013-12-04"
+    ,["Tw 2013-12-04", "Tw 2013-12-04 (TimesRepeat)"
+     ,"TW 2014-06-03"
+     ,"Tw 01"
      ,"Tw 04"
      ,"Tw 40"
      ,"Tw 41"])

@@ -115,7 +115,7 @@
         "message0": "%1 ! %2",
         "args0": [
             {"type": "input_value", "name": "PROC", "check": "Proc0"},
-            {"type": "input_value", "name": "COUNT", "check": "Number"}
+            {"type": "input_value", "name": "COUNT", "check": ["Number", "UGen"]}
         ],
         "output": "Array",
         "colour": 260,
@@ -150,7 +150,7 @@
         "type": "sc3_UnaryOp",
         "message0": "%1 of: %2",
         "args0": [
-            {"type": "field_dropdown", "name": "OP", "options": [["abs", "abs"], ["asLocalBuf","asLocalBuf"], ["choose","choose"], ["clearBuf", "clearBuf"], ["cubed","cubed"], ["distort","distort"], ["1º","first"], ["⌊", "floor"], ["kr","kr"], ["mean", "mean"], ["midicps", "midicps"], ["mix","mix"], ["-","negated"], ["reciprocal","reciprocal"], ["reverse","reverse"], ["rounded","rounded"], ["2º","second"], ["sin","sin"], ["size","size"], ["softclip","softclip"], ["splay","splay"], ["√","sqrt"], ["Σ","sum"], ["tanh","tanh"], ["transpose","transpose"], ["unitCps", "unitCps"]]},
+            {"type": "field_dropdown", "name": "OP", "options": [["abs", "abs"], ["asLocalBuf","asLocalBuf"], ["choose","choose"], ["clearBuf", "clearBuf"], ["cubed","cubed"], ["distort","distort"], ["1º","first"], ["⌊", "floor"], ["kr","kr"], ["mean", "mean"], ["midicps", "midicps"], ["mix","mix"], ["-","negated"], ["∏","product"], ["reciprocal","reciprocal"], ["reverse","reverse"], ["rounded","rounded"], ["2º","second"], ["sin","sin"], ["size","size"], ["softclip","softclip"], ["splay","splay"], ["√","sqrt"], ["Σ","sum"], ["tanh","tanh"], ["transpose","transpose"], ["unitCps", "unitCps"]]},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]}
         ],
         "output": "UGen",
