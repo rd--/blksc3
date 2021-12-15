@@ -74,6 +74,16 @@ Blockly.JavaScript['sc3_BrownNoise'] = function(block) {
     return [BrownNoise_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_Clip'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var lo_value = Blockly.JavaScript.valueToCode(block, 'LO', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var hi_value = Blockly.JavaScript.valueToCode(block, 'HI', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var Clip_code = 'MulAdd(Clip(' + in_value + ', ' + lo_value + ', ' + hi_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [Clip_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_CombC'] = function(block) {
     var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
     var maxdelaytime_value = Blockly.JavaScript.valueToCode(block, 'MAXDELAYTIME', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
@@ -196,6 +206,14 @@ Blockly.JavaScript['sc3_Dust'] = function(block) {
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
     var Dust_code = 'MulAdd(Dust(' + density_value + '), ' + mul_value + ', ' + add_value + ')';
     return [Dust_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_Dust2'] = function(block) {
+    var density_value = Blockly.JavaScript.valueToCode(block, 'DENSITY', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var Dust2_code = 'MulAdd(Dust2(' + density_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [Dust2_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_Duty'] = function(block) {
@@ -474,6 +492,16 @@ Blockly.JavaScript['sc3_LeakDC'] = function(block) {
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
     var LeakDC_code = 'MulAdd(LeakDC(' + in_value + ', ' + coef_value + '), ' + mul_value + ', ' + add_value + ')';
     return [LeakDC_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_Limiter'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var level_value = Blockly.JavaScript.valueToCode(block, 'LEVEL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var dur_value = Blockly.JavaScript.valueToCode(block, 'DUR', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '\'\'';
+    var Limiter_code = 'MulAdd(Limiter(' + in_value + ', ' + level_value + ', ' + dur_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [Limiter_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_LinExp'] = function(block) {

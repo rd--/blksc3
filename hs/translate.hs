@@ -225,7 +225,7 @@ blk_au_graph_filename :: String -> String -> String
 blk_au_graph_filename au nm =
   let rewrite = map toLower .
                 map (\c -> if c == ' ' then '-' else c) .
-                mapMaybe (\c -> if c `elem` "()?" then Nothing else Just c)
+                mapMaybe (\c -> if c `elem` "()?," then Nothing else Just c)
   in printf "%s-%s" (map toLower au) (rewrite nm)
 
 blk_au_graph_option :: String -> String -> String
@@ -252,6 +252,7 @@ blk_graphs =
      ,"Tw 1464534258173849611"
      ])
   ,("JAR", ["1-4Qx", "rk_20120422"])
+  ,("JL", ["Dark Sea Horns", "Rain, Thunder"])
   ,("JMcC",
      ["Alien Meadow"
      ,"Analog Bubbles", "Analog Bubbles (Mouse)", "Analog Bubbles (Var)"
@@ -354,6 +355,7 @@ gen_xml = do
 rw = stc_to_xml
 rw "5.abs"
 rw "SinOsc(440, 0)"
+rw "SinOsc(440, 0).abs"
 rw "{ Rand(0, 1) }"
 rw "{ arg tr; TRand(0, 1, tr) }"
 rw "{ Rand(0, 1) }.dup"

@@ -132,6 +132,23 @@
     }
     ,
     {
+        "type": "sc3_Clip",
+        "message0": "Clip %1 in: %2 lo: %3 hi: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Clip a signal outside given thresholds.",
+        "helpUrl": "https://doc.sccode.org/Classes/Clip.html"
+    }
+    ,
+    {
         "type": "sc3_CombC",
         "message0": "CombC %1 in: %2 maxdelaytime: %3 delaytime: %4 decaytime: %5 × %6 + %7",
         "args0": [
@@ -344,6 +361,21 @@
         "colour": 210,
         "tooltip": "Random impulses.",
         "helpUrl": "https://doc.sccode.org/Classes/Dust.html"
+    }
+    ,
+    {
+        "type": "sc3_Dust2",
+        "message0": "Dust2 %1 density: %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "DENSITY", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Random impulses.",
+        "helpUrl": "https://doc.sccode.org/Classes/Dust2.html"
     }
     ,
     {
@@ -818,6 +850,23 @@
         "colour": 150,
         "tooltip": "Remove DC",
         "helpUrl": "https://doc.sccode.org/Classes/LeakDC.html"
+    }
+    ,
+    {
+        "type": "sc3_Limiter",
+        "message0": "Limiter %1 in: %2 level: %3 dur: %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Peak limiter",
+        "helpUrl": "https://doc.sccode.org/Classes/Limiter.html"
     }
     ,
     {

@@ -12,11 +12,9 @@
     <script>
       Blockly.HSV_SATURATION = 0.20;
       Blockly.HSV_VALUE = 0.95;
-      blk_load_and_process_json('sw/blksc3/json/blksc3.json', blk_json_init);
-      blk_load_and_process_json('sw/blksc3/json/blksc3-ugen.json', blk_json_init);
-      fetch('sw/blksc3/xml/blksc3.xml')
-        .then(response => response.text())
-        .then(data => blk_xml_init(data));
+      blk_load_and_process_json('sw/blksc3/json/blksc3.json', Blockly.defineBlocksWithJsonArray);
+      blk_load_and_process_json('sw/blksc3/json/blksc3-ugen.json', Blockly.defineBlocksWithJsonArray);
+      blk_load_and_process_utf8('sw/blksc3/xml/blksc3.xml', blk_inject_with_xml_toolbox);
       window.onload = blk_init;
     </script>
   </head>
