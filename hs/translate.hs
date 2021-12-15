@@ -242,10 +242,14 @@ blk_graphs =
      ,"Tw 0084"
      ,"Tw 0134"
      ,"Tw 0220", "Tw 0225"
+     ,"Tw 0454598285861617665"
      ,"Tw 0456384156159574016"
+     ,"Tw 0839296011982024704"
      ,"Tw 1084601286488674304"
      ,"Tw 1125557217086857216"
      ,"Tw 1138498427241861122"
+     ,"Tw 1197185125819277312"
+     ,"TW 1246461901669838848"
      ,"Tw 1343283697840226307"
      ,"Tw 1452318302768963589"
      ,"Tw 1453520892374441986"
@@ -261,9 +265,11 @@ blk_graphs =
      ,"Coolant", "Coolant (Texture)"
      ,"Deep Trip"
      ,"Demanding Studies"
+     ,"Fast LFOs with Slow Beats"
      ,"Hard-Sync Sawtooth with LFO"
      ,"Harmonic Cloud"
      ,"Harmonic Zither"
+     ,"Inharmonic Warbulence"
      ,"Lfo Modulation"
      ,"Modal Space", "Modal Space (Collect)"
      ,"Moto Rev"
@@ -292,7 +298,8 @@ blk_graphs =
      ,"Tw 01"
      ,"Tw 04"
      ,"Tw 40"
-     ,"Tw 41"])
+     ,"Tw 41"
+     ,"Tw 528187147543511041"])
   ,("PJ"
    ,["Forest Sounds"])
   ,("TW"
@@ -342,6 +349,9 @@ gen_xml = do
       rw_help x = putStrLn x >> rw_graph ("../block/" ++ x)
   mapM_ rw_graph blk_graphs_names
   mapM_ rw_help blk_help
+
+main :: IO ()
+main = gen_xml
 
 {-
 
