@@ -232,10 +232,11 @@ blk_au_graph_option :: String -> String -> String
 blk_au_graph_option au nm =
   printf "<option value='%s'>%s - %s</option>" (blk_au_graph_filename au nm) au nm
 
--- > putStrLn $ unlines $ concatMap (\(au, gr) -> map (blk_au_graph_option au) gr) blk_graphs
 blk_graphs :: [(String, [String])]
 blk_graphs =
-  [("F0",
+  [("ES",
+    ["Tw 435684664200540161"])
+  ,("F0",
      ["Tw 0030", "Tw 0033"
      ,"Tw 0041", "Tw 0045"
      ,"Tw 0051", "Tw 0059"
@@ -285,6 +286,8 @@ blk_graphs =
      ,"Sample and Hold Liquidities"
      ,"Scratchy"
      ,"Sprinkler", "Sprinkler (Mouse)"
+     ,"Strummable Metals"
+     ,"Strummable Silk"
      ,"Tank"
      ,"Theremin"
      ,"Tremulate", "Tremulate (Event)"
@@ -312,10 +315,13 @@ blk_graphs_names = concatMap (\(au, gr) -> map (blk_au_graph_filename au) gr) bl
 blk_help_option :: String -> String
 blk_help_option nm = printf "<option value='%s'>%s</option>" nm nm
 
-blk_print_autogen :: [String] -> IO ()
-blk_print_autogen x = putStrLn (unlines ("<!-- AUTOGEN -->" : x ++ ["<!-- END AUTOGEN -->"]))
+blk_in_autogen :: String -> [String] -> [String]
+blk_in_autogen typ lst =
+  concat [["<!-- AUTOGEN -->"
+          ,"<option value=''>--" ++ typ ++ " Blocks--</option>"]
+         ,lst
+         ,["<!-- END AUTOGEN -->"]]
 
--- > blk_print_autogen $ map blk_help_option blk_help
 blk_help :: [String]
 blk_help =
   ["ADSR.1"
@@ -345,13 +351,20 @@ blk_help =
 
 gen_xml :: IO ()
 gen_xml = do
-  let rw_graph x = stc_file_to_xml_file (x ++ ".stc")
-      rw_help x = putStrLn x >> rw_graph ("../block/" ++ x)
+  let rw nm fn = putStrLn nm >> stc_file_to_xml_file (fn ++ ".stc")
+      rw_graph nm = rw nm nm
+      rw_help nm = rw nm ("../block/" ++ nm)
   mapM_ rw_graph blk_graphs_names
   mapM_ rw_help blk_help
 
 main :: IO ()
-main = gen_xml
+main = do
+  gen_xml
+  let dir = "/home/rohan/sw/blksc3/html/"
+      mk_menu fn typ dat = writeFile (dir ++ fn ++ "-menu.html") (unlines (blk_in_autogen typ dat))
+  mk_menu "help" "Help" (map blk_help_option blk_help)
+  mk_menu "graph" "Graph" (concatMap (\(au, gr) -> map (blk_au_graph_option au) gr) blk_graphs)
+
 
 {-
 

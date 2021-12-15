@@ -172,6 +172,8 @@ function blk_init() {
     blk_xml_input_init();
     blk_json_input_init();
     blk_ws_init();
+    blk_load_and_process_utf8('sw/blksc3/html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
+    blk_load_and_process_utf8('sw/blksc3/html/graph-menu.html', blk_set_inner_html_of('blkGraphMenu'));
 }
 
 // Fetch fileName and apply processFunc to the object read (stored as JSON).
@@ -193,5 +195,13 @@ function blk_cc_send(ccIndex) {
     if(blk_ws) {
         var ccElem = document.getElementById("cc" + ccIndex);
         blk_ws.send('SC3.ccSet(' + ccIndex + ', ' + ccElem.value + ');\n');
+    }
+}
+
+// Function to return a function to set the innerHTML of elemId
+function blk_set_inner_html_of(elemId) {
+    var selectElem = document.getElementById(elemId);
+    return function(innerHtml) {
+        selectElem.innerHTML = innerHtml;
     }
 }
