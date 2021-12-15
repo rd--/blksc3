@@ -4,12 +4,12 @@
         "message0": "AllpassC %1 in: %2 maxdelaytime: %3 delaytime: %4 decaytime: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -22,12 +22,12 @@
         "message0": "AllpassL %1 in: %2 maxdelaytime: %3 delaytime: %4 decaytime: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -40,11 +40,11 @@
         "message0": "AmpComp %1 freq: %2 root: %3 exp: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ROOT", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "EXP", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ROOT", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "EXP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -57,11 +57,11 @@
         "message0": "BBandPass %1 in: %2 freq: %3 bw: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "BW", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "BW", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -74,11 +74,11 @@
         "message0": "BBandStop %1 in: %2 freq: %3 bw: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "BW", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "BW", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -91,11 +91,11 @@
         "message0": "BPF %1 in: %2 freq: %3 rq: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -108,9 +108,9 @@
         "message0": "BPZ2 %1 in: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -123,10 +123,10 @@
         "message0": "Blip %1 freq: %2 numharm: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "NUMHARM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "NUMHARM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -139,8 +139,8 @@
         "message0": "BrownNoise %1 × %2 + %3",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -153,11 +153,11 @@
         "message0": "Clip %1 in: %2 lo: %3 hi: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -170,12 +170,12 @@
         "message0": "CombC %1 in: %2 maxdelaytime: %3 delaytime: %4 decaytime: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -188,12 +188,12 @@
         "message0": "CombL %1 in: %2 maxdelaytime: %3 delaytime: %4 decaytime: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -206,9 +206,9 @@
         "message0": "Crackle %1 chaosParam: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "CHAOSPARAM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "CHAOSPARAM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -221,10 +221,10 @@
         "message0": "Decay %1 in: %2 decayTime: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 300,
@@ -237,11 +237,11 @@
         "message0": "Decay2 %1 in: %2 attackTime: %3 decayTime: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ATTACKTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ATTACKTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 300,
@@ -254,11 +254,11 @@
         "message0": "DegreeToKey %1 bufnum: %2 in: %3 octave: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "OCTAVE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "OCTAVE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -271,11 +271,11 @@
         "message0": "DelayC %1 in: %2 maxdelaytime: %3 delaytime: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -288,11 +288,11 @@
         "message0": "DelayL %1 in: %2 maxdelaytime: %3 delaytime: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -305,11 +305,11 @@
         "message0": "Demand %1 trig: %2 reset: %3 demandUGens: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DEMANDUGENS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DEMANDUGENS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -322,10 +322,10 @@
         "message0": "Drand %1 repeats: %2 list: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -338,10 +338,10 @@
         "message0": "Dseq %1 repeats: %2 list: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -354,10 +354,10 @@
         "message0": "Dshuf %1 repeats: %2 list: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -370,9 +370,9 @@
         "message0": "Dust %1 density: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "DENSITY", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "DENSITY", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -385,9 +385,9 @@
         "message0": "Dust2 %1 density: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "DENSITY", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "DENSITY", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -400,12 +400,12 @@
         "message0": "Duty %1 dur: %2 reset: %3 doneAction: %4 level: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -418,10 +418,10 @@
         "message0": "ExpRand %1 lo: %2 hi: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -434,15 +434,15 @@
         "message0": "FBSineC %1 freq: %2 im: %3 fb: %4 a: %5 c: %6 xi: %7 yi: %8 × %9 + %10",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FB", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "A", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "C", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "XI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "YI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FB", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "A", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "C", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "XI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "YI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -455,11 +455,11 @@
         "message0": "Formant %1 fundfreq: %2 formfreq: %3 bwfreq: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FUNDFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FORMFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "BWFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FUNDFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FORMFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "BWFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -472,13 +472,13 @@
         "message0": "FreeVerb2 %1 in: %2 in2 %3 mix: %4 room: %5 damp: %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IN2", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MIX", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ROOM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DAMP", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IN2", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MIX", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ROOM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DAMP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -491,11 +491,11 @@
         "message0": "FreqShift %1 in: %2 freq: %3 phase: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -508,18 +508,18 @@
         "message0": "GVerb %1 in: %2 roomsize: %3 revtime: %4 damping: %5 inputbw: %6 spread: %7 drylevel: %8 earlyreflevel: %9 taillevel: %10 maxroomsize: %11 × %12 + %13",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ROOMSIZE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "REVTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DAMPING", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "INPUTBW", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "SPREAD", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DRYLEVEL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "EARLYREFLEVEL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TAILLEVEL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXROOMSIZE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ROOMSIZE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "REVTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DAMPING", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INPUTBW", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "SPREAD", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DRYLEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "EARLYREFLEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TAILLEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXROOMSIZE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -532,18 +532,18 @@
         "message0": "Gendy1 %1 ampdist: %2 durdist: %3 adparam: %4 ddparam: %5 minfreq: %6 maxfreq: %7 ampscale: %8 durscale: %9 initCPs: %10 knum: %11 × %12 + %13",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "AMPDIST", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DURDIST", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADPARAM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DDPARAM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MINFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "AMPSCALE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DURSCALE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "INITCPS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "KNUM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "AMPDIST", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DURDIST", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADPARAM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DDPARAM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MINFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "AMPSCALE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DURSCALE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INITCPS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "KNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -556,17 +556,17 @@
         "message0": "GrainFM %1 numChannels: %2 trigger: %3 dur: %4 carfreq: %5 modfreq: %6 index: %7 pan: %8 envbufnum: %9 maxGrains: %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "CARFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MODFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "INDEX", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PAN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ENVBUFNUM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXGRAINS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "CARFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MODFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INDEX", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PAN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ENVBUFNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXGRAINS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -579,15 +579,15 @@
         "message0": "GrainSin %1 numChannels: %2 trigger: %3 dur: %4 freq: %5 pan: %6 envbufnum: %7 maxGrains: %8 × %9 + %10",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PAN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ENVBUFNUM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXGRAINS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PAN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ENVBUFNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXGRAINS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -600,8 +600,8 @@
         "message0": "GrayNoise %1 × %2 + %3",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -614,10 +614,10 @@
         "message0": "HPF %1 in: %2 freq: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -630,9 +630,9 @@
         "message0": "HPZ1 %1 in: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -645,10 +645,10 @@
         "message0": "IRand %1 lo: %2 hi: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -661,10 +661,10 @@
         "message0": "Impulse %1 freq: %2 phase: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -677,10 +677,10 @@
         "message0": "InFeedback %1 numChannels: %2 bus: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "BUS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "BUS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -693,10 +693,10 @@
         "message0": "LFCub %1 freq: %2 iphase: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -709,13 +709,13 @@
         "message0": "LFGauss %1 duration: %2 width: %3 iphase: %4 loop: %5 doneAction: %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "DURATION", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LOOP", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "DURATION", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LOOP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -728,9 +728,9 @@
         "message0": "LFNoise0 %1 freq: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -743,9 +743,9 @@
         "message0": "LFNoise1 %1 freq: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -758,9 +758,9 @@
         "message0": "LFNoise2 %1 freq: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -773,10 +773,10 @@
         "message0": "LFPar %1 freq: %2 iphase: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -789,11 +789,11 @@
         "message0": "LFPulse %1 freq: %2 iphase: %3 width: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -806,10 +806,10 @@
         "message0": "LFSaw %1 freq: %2 iphase: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -822,10 +822,10 @@
         "message0": "LFTri %1 freq: %2 iphase: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -838,10 +838,10 @@
         "message0": "LPF %1 in: %2 freq: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -854,9 +854,9 @@
         "message0": "LPZ1 %1 in: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -869,10 +869,10 @@
         "message0": "Lag %1 in: %2 lagTime: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LAGTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LAGTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -885,11 +885,11 @@
         "message0": "LagUD %1 in: %2 lagTimeU: %3 lagTimeD: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LAGTIMEU", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LAGTIMED", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LAGTIMEU", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LAGTIMED", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -902,10 +902,10 @@
         "message0": "Latch %1 in: %2 trig: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -918,10 +918,10 @@
         "message0": "LeakDC %1 in: %2 coef: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "COEF", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "COEF", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -934,11 +934,11 @@
         "message0": "Limiter %1 in: %2 level: %3 dur: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -951,13 +951,13 @@
         "message0": "LinExp %1 in: %2 srclo: %3 srchi: %4 dstlo: %5 dsthi: %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "SRCLO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "SRCHI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DSTLO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DSTHI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "SRCLO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "SRCHI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DSTLO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DSTHI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -970,11 +970,11 @@
         "message0": "LinRand %1 lo: %2 hi: %3 minmax: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MINMAX", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MINMAX", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -987,11 +987,11 @@
         "message0": "LinXFade2 %1 inA: %2 inB: %3 pan: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "INA", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "INB", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PAN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "INA", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INB", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PAN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 300,
@@ -1004,12 +1004,12 @@
         "message0": "Line %1 start: %2 end: %3 dur: %4 doneAction: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "END", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "END", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 300,
@@ -1022,10 +1022,10 @@
         "message0": "LocalBuf %1 numChannels: %2 numFrames: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "NUMFRAMES", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "NUMFRAMES", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -1038,10 +1038,10 @@
         "message0": "LocalIn %1 numChannels: %2 default: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DEFAULT", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DEFAULT", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -1054,7 +1054,7 @@
         "message0": "LocalOut %1 channelsArray: %2",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "CHANNELSARRAY", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "CHANNELSARRAY", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -1067,12 +1067,12 @@
         "message0": "MoogFF %1 in: %2 freq: %3 gain: %4 reset: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "GAIN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "GAIN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1085,12 +1085,12 @@
         "message0": "MouseX %1 minval: %2 maxval: %3 warp: %4 lag: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXVAL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "WARP", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LAG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXVAL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "WARP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LAG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -1103,12 +1103,12 @@
         "message0": "MouseY %1 minval: %2 maxval: %3 warp: %4 lag: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXVAL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "WARP", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LAG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXVAL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "WARP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LAG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -1121,10 +1121,10 @@
         "message0": "OnePole %1 in: %2 coef: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "COEF", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "COEF", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1137,8 +1137,8 @@
         "message0": "Out %1 bus: %2 channelsArray: %3",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "BUS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "CHANNELSARRAY", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "BUS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "CHANNELSARRAY", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -1151,11 +1151,11 @@
         "message0": "Pan2 %1 in: %2 pos: %3 level: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "POS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "POS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 300,
@@ -1168,8 +1168,8 @@
         "message0": "PinkNoise %1 × %2 + %3",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -1182,19 +1182,19 @@
         "message0": "Pitch %1 in: %2 initFreq: %3 minFreq: %4 maxFreq: %5 execFreq: %6 maxBinsPerOctave: %7 median: %8 ampThreshold: %9 peakThreshold: %10 downSample: %11 clar: %12 × %13 + %14",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "INITFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MINFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "EXECFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXBINSPEROCTAVE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MEDIAN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "AMPTHRESHOLD", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PEAKTHRESHOLD", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DOWNSAMPLE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "CLAR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INITFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MINFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "EXECFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXBINSPEROCTAVE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MEDIAN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "AMPTHRESHOLD", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PEAKTHRESHOLD", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DOWNSAMPLE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "CLAR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1207,13 +1207,13 @@
         "message0": "PitchShift %1 in: %2 windowSize: %3 pitchRatio: %4 pitchDispersion: %5 timeDispersion: %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "WINDOWSIZE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PITCHRATIO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PITCHDISPERSION", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TIMEDISPERSION", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "WINDOWSIZE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PITCHRATIO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PITCHDISPERSION", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TIMEDISPERSION", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1226,14 +1226,14 @@
         "message0": "Pluck %1 in: %2 trig: %3 maxdelaytime: %4 delaytime: %5 decaytime: %6 coef: %7 × %8 + %9",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "COEF", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "COEF", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -1246,10 +1246,10 @@
         "message0": "Pulse %1 freq: %2 width: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -1262,11 +1262,11 @@
         "message0": "RHPF %1 in: %2 freq: %3 rq: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1279,11 +1279,11 @@
         "message0": "RLPF %1 in: %2 freq: %3 rq: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1296,10 +1296,10 @@
         "message0": "Rand %1 lo: %2 hi: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -1312,17 +1312,17 @@
         "message0": "RecordBuf %1 bufnum: %2 offset: %3 recLevel: %4 preLevel: %5 run: %6 loop: %7 trigger: %8 doneAction: %9 inputArray: %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "OFFSET", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RECLEVEL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PRELEVEL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RUN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "LOOP", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "INPUTARRAY", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "OFFSET", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RECLEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PRELEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RUN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LOOP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INPUTARRAY", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -1335,11 +1335,11 @@
         "message0": "Resonz %1 in: %2 freq: %3 bwr: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "BWR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "BWR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1352,11 +1352,11 @@
         "message0": "Ringz %1 in: %2 freq: %3 decaytime: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1369,11 +1369,11 @@
         "message0": "Rotate2 %1 x: %2 y: %3 pos: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "X", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "Y", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "POS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "X", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "Y", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "POS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 300,
@@ -1386,10 +1386,10 @@
         "message0": "RunningMax %1 in: %2 trig: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -1402,9 +1402,9 @@
         "message0": "Saw %1 freq: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -1417,10 +1417,10 @@
         "message0": "Select %1 which: %2 array: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "WHICH", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "WHICH", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1433,10 +1433,10 @@
         "message0": "SinOsc %1 freq: %2 phase: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -1449,10 +1449,10 @@
         "message0": "SinOscFB %1 freq: %2 feedback: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FEEDBACK", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FEEDBACK", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -1465,14 +1465,14 @@
         "message0": "Stepper %1 trig: %2 reset: %3 min: %4 max: %5 step: %6 resetval: %7 × %8 + %9",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MIN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MAX", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "STEP", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RESETVAL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MIN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MAX", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "STEP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RESETVAL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -1485,10 +1485,10 @@
         "message0": "Sweep %1 trig: %2 rate: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RATE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RATE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -1501,10 +1501,10 @@
         "message0": "SyncSaw %1 syncFreq: %2 sawFreq: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "SYNCFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "SAWFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "SYNCFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "SAWFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -1517,11 +1517,11 @@
         "message0": "TExpRand %1 lo: %2 hi: %3 trig: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -1534,17 +1534,17 @@
         "message0": "TGrains %1 numChannels: %2 trigger: %3 bufnum: %4 rate: %5 centerPos: %6 dur: %7 pan: %8 amp: %9 interp: %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RATE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "CENTERPOS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PAN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "AMP", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "INTERP", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RATE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "CENTERPOS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PAN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "AMP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INTERP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -1557,11 +1557,11 @@
         "message0": "TRand %1 lo: %2 hi: %3 trig: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -1574,9 +1574,9 @@
         "message0": "ToggleFF %1 trig: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -1589,10 +1589,10 @@
         "message0": "Trig %1 in: %2 dur: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -1605,11 +1605,11 @@
         "message0": "VarSaw %1 freq: %2 iphase: %3 width: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IPHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -1622,8 +1622,8 @@
         "message0": "WhiteNoise %1 × %2 + %3",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -1636,12 +1636,12 @@
         "message0": "XLine %1 start: %2 end: %3 dur: %4 doneAction: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "END", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "END", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 300,
@@ -1654,16 +1654,16 @@
         "message0": "ADSR %1 gate: %2 attackTime: %3 decayTime: %4 sustainLevel: %5 releaseTime: %6 peakLevel: %7 curves: %8 doneAction: %9 × %10 + %11",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "GATE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ATTACKTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "SUSTAINLEVEL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RELEASETIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PEAKLEVEL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "CURVES", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "GATE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ATTACKTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "SUSTAINLEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RELEASETIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PEAKLEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "CURVES", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 300,
@@ -1676,13 +1676,13 @@
         "message0": "LinLin %1 in: %2 srclo: %3 srchi: %4 dstlo: %5 dsthi: %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "SRCLO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "SRCHI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DSTLO", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DSTHI", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "SRCLO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "SRCHI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DSTLO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DSTHI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1695,12 +1695,12 @@
         "message0": "PMOsc %1 carfreq: %2 modfreq: %3 pmindex: %4 modphase: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "CARFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MODFREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PMINDEX", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MODPHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "CARFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MODFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PMINDEX", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MODPHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -1713,12 +1713,12 @@
         "message0": "RingzBank %1 input: %2 freq: %3 amp: %4 time: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "INPUT", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "AMP", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TIME", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "INPUT", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "AMP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1731,11 +1731,11 @@
         "message0": "Select2 %1 predicate: %2 ifTrue: %3 ifFalse: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "PREDICATE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IFTRUE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "IFFALSE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "PREDICATE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IFTRUE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IFFALSE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1748,11 +1748,11 @@
         "message0": "SinOscBank %1 freq: %2 amp: %3 phase: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "AMP", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "AMP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 210,
@@ -1761,14 +1761,33 @@
     }
     ,
     {
+        "type": "sc3_Splay",
+        "message0": "Splay %1 input: %2 spread: %3 level: %4 center: %5 levelComp: %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "INPUT", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "SPREAD", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "CENTER", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LEVELCOMP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Pan a set of channels across the stereo field",
+        "helpUrl": "https://doc.sccode.org/Classes/Splay.html"
+    }
+    ,
+    {
         "type": "sc3_TChoose",
         "message0": "TChoose %1 trig: %2 array: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -1781,12 +1800,12 @@
         "message0": "TLine %1 start: %2 end: %3 dur: %4 trig: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "END", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "END", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -1799,12 +1818,12 @@
         "message0": "TXLine %1 start: %2 end: %3 dur: %4 trig: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
-            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "END", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "END", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 30,

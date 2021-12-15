@@ -1,11 +1,12 @@
 {-
 
 Translator for simple .stc graphs to Blockly .xml notation.
-The .xml notation is deprecated, there is a .json notation.
+The .xml notation is old, there's a newer .json notation.
 
 -}
 
 import Data.Char {- base -}
+import Data.Either {- base -}
 import Data.Maybe {- base -}
 import Text.Printf {- base -}
 
@@ -22,6 +23,14 @@ lit_float_xml ty n = printf "<%s type='math_number'><field name='NUM'>%f</field>
 
 lit_int_xml :: String -> Integer -> String
 lit_int_xml ty n = printf "<%s type='math_number'><field name='NUM'>%d</field></%s>" ty n ty
+
+lit_xml :: String -> St.Literal -> String
+lit_xml ty l =
+  case l of
+  St.NumberLiteral (St.Float n) -> lit_float_xml ty n
+  St.NumberLiteral (St.Int n) -> lit_int_xml ty n
+  St.ArrayLiteral a -> array_xml (map (lit_xml ty . fromLeft (error "non-literal in literal array")) a)
+  _ -> error "lit_xml"
 
 named_value_xml :: (String, String) -> String
 named_value_xml (k,v) = printf "<value name='%s'>%s</value>" (map toUpper k) v
@@ -141,15 +150,23 @@ var_set_then =
   printf
   "<block type='variables_set'><field name='VAR'>%s</field><value name='VALUE'>%s</value><next>%s</next></block>"
 
+-- | Booleans are special cases
 var_get :: String -> String
-var_get x = printf "<block type='variables_get'><field name='VAR'>%s</field></block>" x
+var_get x =
+  case x of
+    "true" -> "<block type='logic_boolean'><field name='BOOL'>TRUE</field></block>"
+    "false" -> "<block type='logic_boolean'><field name='BOOL'>FALSE</field></block>"
+    _ -> printf "<block type='variables_get'><field name='VAR'>%s</field></block>" x
 
 -- | Zero-indexed.
 array_elem_xml :: Int -> String -> String
 array_elem_xml k x = printf "<value name='ADD%d'>%s</value>" k x
 
 array_xml :: [String] -> String
-array_xml l = printf "<block type='lists_create_with'><mutation items='%d'></mutation>%s</block>" (length l) (concat (zipWith array_elem_xml [0..] l))
+array_xml l =
+  printf
+  "<block type='lists_create_with'><mutation items='%d'></mutation>%s</block>"
+  (length l) (concat (zipWith array_elem_xml [0..] l))
 
 proc_xml :: [String] -> [String] -> [Expr t] -> String
 proc_xml a _v e =
@@ -189,8 +206,7 @@ expr_xml e =
     Array l -> array_xml (map expr_xml l)
     Assignment p q -> var_set p (expr_xml q)
     Identifier x -> var_get x
-    Literal (St.NumberLiteral (St.Float n)) -> lit_float_xml "block" n
-    Literal (St.NumberLiteral (St.Int n)) -> lit_int_xml "block" n
+    Literal l -> lit_xml "block" l
     Send (Identifier u) (Message (St.KeywordSelector "apply:") [Array l]) -> implicit_send_xml u (map expr_xml l) -- Saw(440)
     Send r (Message (St.UnarySelector m) []) -> (if is_event_param m then event_param_xml else uop_xml) m (expr_xml r) -- 60.midicps
     Send lhs (Message (St.BinarySelector m) [rhs]) -> binop_xml m (expr_xml lhs) (expr_xml rhs) -- 1 + 2
@@ -237,7 +253,9 @@ blk_graphs =
   [("ES",
     ["Tw 435684664200540161"])
   ,("F0",
-     ["Tw 0030", "Tw 0033"
+     ["Pkt 00", "Pkt 07"
+     ,"Pkt 26", "Pkt 28"
+     ,"Tw 0030", "Tw 0033"
      ,"Tw 0041", "Tw 0045"
      ,"Tw 0051", "Tw 0059"
      ,"Tw 0084"

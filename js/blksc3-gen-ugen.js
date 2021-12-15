@@ -1038,6 +1038,18 @@ Blockly.JavaScript['sc3_SinOscBank'] = function(block) {
     return [SinOscBank_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_Splay'] = function(block) {
+    var input_value = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var spread_value = Blockly.JavaScript.valueToCode(block, 'SPREAD', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var level_value = Blockly.JavaScript.valueToCode(block, 'LEVEL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var center_value = Blockly.JavaScript.valueToCode(block, 'CENTER', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var levelComp_value = Blockly.JavaScript.valueToCode(block, 'LEVELCOMP', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var Splay_code = 'MulAdd(Splay(' + input_value + ', ' + spread_value + ', ' + level_value + ', ' + center_value + ', ' + levelComp_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [Splay_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_TChoose'] = function(block) {
     var trig_value = Blockly.JavaScript.valueToCode(block, 'TRIG', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
     var array_value = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
