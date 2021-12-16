@@ -109,6 +109,12 @@ Blockly.JavaScript['sc3_Voicer'] = function(block) {
     return ['Voicer(' + count_value + ', ' + proc_value + ')', Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript['sc3_VoiceWriter'] = function(block) {
+    var count_value = Blockly.JavaScript.valueToCode(block, 'COUNT', Blockly.JavaScript.ORDER_ATOMIC) || '16';
+    var proc_value = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '{}';
+    return ['VoiceWriter(' + count_value + ', ' + proc_value + ')', Blockly.JavaScript.ORDER_NONE];
+};
+
 Blockly.JavaScript['sc3_EventParam'] = function(block) {
     var param_value = block.getFieldValue('PARAM');
     var event_value = Blockly.JavaScript.valueToCode(block, 'EVENT', Blockly.JavaScript.ORDER_ATOMIC) || '';

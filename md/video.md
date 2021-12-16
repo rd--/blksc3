@@ -2,6 +2,8 @@
 
 .stc to Block notation translator.
 
+<iframe src="https://player.vimeo.com/video/657283467" frameborder="0" allowfullscreen="true" width="640" height="360" ></iframe>
+<iframe src="https://player.vimeo.com/video/657218138" frameborder="0" allowfullscreen="true" width="640" height="360" ></iframe>
 <iframe src="https://player.vimeo.com/video/653303579" frameborder="0" allowfullscreen="true" width="640" height="360" ></iframe>
 <iframe src="https://player.vimeo.com/video/653296206" frameborder="0" allowfullscreen="true" width="640" height="360" ></iframe>
 <iframe src="https://player.vimeo.com/video/653087968" frameborder="0" allowfullscreen="true" width="640" height="360" ></iframe>
@@ -21,6 +23,8 @@
 
 * * *
 
+[MP4](https://vimeo.com/657283467)
+[MP4](https://vimeo.com/657218138)
 [MP4](https://vimeo.com/653303579)
 [MP4](https://vimeo.com/653296206)
 [MP4](https://vimeo.com/653087968)

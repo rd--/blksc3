@@ -24,11 +24,16 @@ lit_float_xml ty n = printf "<%s type='math_number'><field name='NUM'>%f</field>
 lit_int_xml :: String -> Integer -> String
 lit_int_xml ty n = printf "<%s type='math_number'><field name='NUM'>%d</field></%s>" ty n ty
 
+lit_str_xml :: String -> String -> String
+lit_str_xml ty s = printf "<%s type='text'><field name='TEXT'>%s</field></%s>" ty s ty
+
 lit_xml :: String -> St.Literal -> String
 lit_xml ty l =
   case l of
   St.NumberLiteral (St.Float n) -> lit_float_xml ty n
   St.NumberLiteral (St.Int n) -> lit_int_xml ty n
+  St.StringLiteral s -> lit_str_xml ty s
+  St.SymbolLiteral s -> lit_str_xml ty s
   St.ArrayLiteral a -> array_xml (map (lit_xml ty . fromLeft (error "non-literal in literal array")) a)
   _ -> error "lit_xml"
 
@@ -59,6 +64,7 @@ block_xml_for nm p d =
 
 1. OverlapTexture -> OverlapTexture
 2. Voicer -> Voicer
+2. VoiceWriter -> VoiceWriter
 
 -}
 implicit_send_xml :: String -> [String] -> String
@@ -68,6 +74,8 @@ implicit_send_xml nm l =
       block_xml_for "OverlapTexture" ["PROC","SUSTAINTIME","TRANSITIONTIME","OVERLAP"] l
     ("Voicer", [_, _]) ->
       block_xml_for "Voicer" ["COUNT","PROC"] l
+    ("VoiceWriter", [_, _]) ->
+      block_xml_for "VoiceWriter" ["COUNT","PROC"] l
     _ -> ugen_xml nm l
 
 -- | Is unary operator an event parameter?
@@ -105,10 +113,10 @@ binop_xml o lhs rhs =
 
 {- | Some operators are handled specially.
 
-1. collect: creates an sc3_ArrayCollect block
-2. dup: creates an sc3_ArrayFill block
-3. to: creates an sc3_ArrayFromTo block
-4. timesRepeat: creates an sc3_TimesRepeat block
+1. collect -> sc3_ArrayCollect
+2. dup -> sc3_ArrayFill
+3. to -> sc3_ArrayFromTo
+4. timesRepeat -> sc3_TimesRepeat
 -}
 keybinop_xml :: String -> String -> String -> String
 keybinop_xml msg lhs rhs  =
@@ -275,7 +283,7 @@ blk_graphs =
      ,"Tw 1464534258173849611"
      ])
   ,("JAR", ["1-4Qx", "rk_20120422"])
-  ,("JL", ["Dark Sea Horns", "Rain, Thunder"])
+  ,("JL", ["1 9", "1 Z", "Bitwise", "Dark Sea Horns", "Rain, Thunder"])
   ,("JMcC",
      ["Alien Meadow"
      ,"Analog Bubbles", "Analog Bubbles (Mouse)", "Analog Bubbles (Var)"
@@ -313,6 +321,7 @@ blk_graphs =
      ,"Why SuperCollider?"
      ,"Wind Metals"
      ])
+  ,("KL", ["Vibraphone"])
   ,("NV"
     ,["Tw 2013-12-04", "Tw 2013-12-04 (TimesRepeat)"
      ,"TW 2014-06-03"
@@ -365,6 +374,7 @@ blk_help =
   ,"RingzBank.1"
   ,"SinOsc.1", "SinOsc.2", "SinOsc.3"
   ,"Stepper.1", "Stepper.2"
+  ,"VoiceWriter.1"
   ,"XLine.1"]
 
 gen_xml :: IO ()

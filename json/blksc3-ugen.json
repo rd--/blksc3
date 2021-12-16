@@ -1258,6 +1258,22 @@
     }
     ,
     {
+        "type": "sc3_PulseCount",
+        "message0": "PulseCount %1 trig: %2 reset: %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Pulse counter.",
+        "helpUrl": "https://doc.sccode.org/Classes/PulseCount.html"
+    }
+    ,
+    {
         "type": "sc3_RHPF",
         "message0": "RHPF %1 in: %2 freq: %3 rq: %4 × %5 + %6",
         "args0": [
