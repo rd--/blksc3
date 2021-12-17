@@ -1,10 +1,12 @@
 body {
   margin: 1em 2em;
   background-color: #FFFACD;
+  font-family: 'C059';
 }
 
-.blocklyText {
+.blocklyText, .blocklyTreeLabel {
   fill: #666 !important;
+  font-family: 'C059', serif !important;
 }
 
 .blocklyToolboxDiv {
@@ -15,15 +17,21 @@ body {
   background-color: #fddde6;
 }
 
-#controlDiv {
+div#blkEdit {
   margin-top: 1em;
 }
 
-#ccDiv {
+div#blkCtl {
   position: absolute;
   top: 50px;
   left: 1550px;
-  width: 350px;
+  width: 325px;
+}
+
+div#blkNotes {
+  width: 100%;
+  height: 42em;
+  border: 1px dotted;
 }
 
 button {
@@ -36,6 +44,15 @@ select {
   border: 1px dotted;
 }
 
-input[type=range] {
+input[type='range'] {
   width: 100%;
 }
+
+details#blkSwCc > div > button {
+  padding: 0.75em;
+}
+
+h1 {
+  font-size: 1em;
+}
+

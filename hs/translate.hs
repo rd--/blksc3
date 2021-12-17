@@ -377,13 +377,20 @@ blk_help =
   ,"VoiceWriter.1"
   ,"XLine.1"]
 
+blk_guide :: [String]
+blk_guide =
+  ["Guide.A.1", "Guide.A.2", "Guide.A.3"
+  ]
+
 gen_xml :: IO ()
 gen_xml = do
   let rw nm fn = putStrLn nm >> stc_file_to_xml_file (fn ++ ".stc")
       rw_graph nm = rw nm nm
       rw_help nm = rw nm ("../block/" ++ nm)
+      rw_guide nm = rw nm ("../guide/" ++ nm)
   mapM_ rw_graph blk_graphs_names
   mapM_ rw_help blk_help
+  mapM_ rw_guide blk_guide
 
 main :: IO ()
 main = do
@@ -391,6 +398,7 @@ main = do
   let dir = "/home/rohan/sw/blksc3/html/"
       mk_menu fn typ dat = writeFile (dir ++ fn ++ "-menu.html") (unlines (blk_in_autogen typ dat))
   mk_menu "help" "Help" (map blk_help_option blk_help)
+  mk_menu "guide" "Guide" (map blk_help_option blk_guide)
   mk_menu "graph" "Graph" (concatMap (\(au, gr) -> map (blk_au_graph_option au) gr) blk_graphs)
 
 

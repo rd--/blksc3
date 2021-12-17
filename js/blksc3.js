@@ -20,7 +20,7 @@ function blk_inject_with_xml_toolbox(xml_toolbox) {
                scaleSpeed: 1.2,
                pinch: true},
         trashcan: false}
-    blk_workspace = Blockly.inject('blocklyDiv', blk_config);
+    blk_workspace = Blockly.inject('blocklyContainer', blk_config);
 };
 
 // Initialise websocket.  To send .stc to sclang as /eval message run "blksc3 stc-to-osc --host=192.168.1.104"
@@ -151,12 +151,20 @@ function blk_sc3_reset() {
 // Clear workspace, construct URL from arguments, fetch and load graph.
 function blk_load_help_graph(graphDir, graphName, fileType) {
     var auto_play = false;
+    var graphUrl = '?t=blksc3&e=help/' + graphDir + '/' + graphName + fileType;
+    var graphMd = 'sw/blksc3/help/' + graphDir + '/' + graphName + '.md';
     console.log(graphName);
     blk_workspace.clear();
     if(auto_play) {
         blk_sc3_reset();
     }
-    blk_fetch_xml('?t=blksc3&e=help/' + graphDir + '/' + graphName + fileType, auto_play);
+    blk_fetch_xml(graphUrl, auto_play);
+    // at present only the guide has notes, this avoids GET errors in the console
+    if(graphDir == 'guide') {
+        blk_load_and_process_md(graphMd, blk_set_inner_html_of('blkNotes'));
+    } else {
+        blk_set_inner_html_of('blkNotes')('');
+    }
 }
 
 // Intialise menuId to run blk_load_help_graph.
@@ -169,11 +177,13 @@ function blk_menu_init(menuId, graphDir, fileType) {
 function blk_init() {
     blk_menu_init('blkGraphMenu', 'graph', '.xml');
     blk_menu_init('blkHelpMenu', 'block', '.xml');
+    blk_menu_init('blkGuideMenu', 'guide', '.xml');
     blk_xml_input_init();
     //blk_json_input_init();
     blk_ws_init();
-    blk_load_and_process_utf8('sw/blksc3/html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
     blk_load_and_process_utf8('sw/blksc3/html/graph-menu.html', blk_set_inner_html_of('blkGraphMenu'));
+    blk_load_and_process_utf8('sw/blksc3/html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
+    blk_load_and_process_utf8('sw/blksc3/html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
 }
 
 // Fetch fileName and apply processFunc to the object read (stored as JSON).
@@ -183,18 +193,56 @@ function blk_load_and_process_json(fileName, processFunc) {
         .then(obj => processFunc(obj));
 }
 
+// Throw error if response status is not .ok
+function blk_handle_fetch_error(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+}
+
+// Log error and return default value
+function blk_log_error_and_return(from, reason, defaultValue) {
+    console.debug(from, ': ', reason);
+    return defaultValue;
+}
+
 // Fetch fileName and apply processFunc to the text read (stored as UTF-8).
 function blk_load_and_process_utf8(fileName, processFunc) {
-    fetch(fileName)
+    fetch(fileName, { cache: 'no-cache' })
+        .then(response => blk_handle_fetch_error(response))
         .then(response => response.text())
-        .then(text => processFunc(text));
+        .then(text => processFunc(text))
+        .catch(reason => processFunc(blk_log_error_and_return('utf8', reason, '')));
+}
+
+// Convert .md text to .html
+function blk_markdown_to_html(mdText) {
+    var mdReader = new commonmark.Parser();
+    var htmlWriter = new commonmark.HtmlRenderer();
+    console.debug('blk_markdown_to_html', mdText);
+    return htmlWriter.render(mdReader.parse(mdText));
+}
+
+// Load .md from fileName, convert to .html and pass to processFunc.
+function blk_load_and_process_md(fileName, processFunc) {
+    blk_load_and_process_utf8(fileName, mdText => processFunc(blk_markdown_to_html(mdText)));
 }
 
 // Send SC3.ccSet to websocket.
 function blk_cc_send(ccIndex) {
     if(blk_ws) {
         var ccElem = document.getElementById("cc" + ccIndex);
+        console.debug("cc: ", ccIndex, ccElem.value);
         blk_ws.send('SC3.ccSet(' + ccIndex + ', ' + ccElem.value + ');\n');
+    }
+}
+
+// Send SC3.swSet to websocket.
+function blk_sw_send(swIndex, swValue) {
+    if(blk_ws) {
+        console.debug("sw: ", swIndex, swValue);
+        blk_ws.send('SC3.swSet(' + swIndex + ', ' + swValue + ');\n');
     }
 }
 

@@ -9,6 +9,7 @@
     <script src="sw/blksc3/js/blksc3-gen.js"></script>
     <script src="sw/blksc3/js/blksc3-gen-ugen.js"></script>
     <script src="sw/blksc3/js/blksc3.js"></script>
+    <script src="https://unpkg.com/commonmark@0.30.0/dist/commonmark.js"></script>
     <script>
       Blockly.HSV_SATURATION = 0.20;
       Blockly.HSV_VALUE = 0.95;
@@ -20,8 +21,8 @@
   </head>
   <body>
     <p>Block SuperCollider</p>
-    <div id="blocklyDiv" style="height: 900px; width: 1500px;"></div> <!-- 720 900 ; 900 1350 -->
-    <div id="controlDiv">
+    <div id="blocklyContainer" style="height: 900px; width: 1500px;"></div> <!-- 720 900 ; 900 1350 -->
+    <div id="blkEdit">
       <input type="file" id="xmlInputFile" accept=".xml" onchange="blk_read_input_xml()" style="display:none">
       <button id="xmlInputFileSelect" title="Select local .xml file and load into workspace">Load Xml</button>
       <button title="Copy workspace Xml to clipboard" onclick="navigator.clipboard.writeText(blk_get_xml())">Copy Xml</button>
@@ -37,22 +38,36 @@
       <button title="Fit to workspace" onclick="blk_workspace.zoomToFit()">Fit</button>
       <select title="Example programs" id="blkGraphMenu"></select>
       <select title="Help programs" id="blkHelpMenu"></select>
+      <select title="Guide" id="blkGuideMenu"></select>
 
       <button title="Cleanup workspace" onclick="blk_workspace.cleanUp()">Cleanup</button>
       <button title="Delete all blocks and comments from Workspace" onclick="blk_workspace.clear()">Clear Workspace</button>
     </div>
 
-    <div id="ccDiv">
-      <details>
-        <summary>Cc</summary>
-        <input id="cc1" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(1)">
-        <input id="cc2" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(2)">
-        <input id="cc3" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(3)">
-        <input id="cc4" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(4)">
-        <input id="cc5" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(5)">
-        <input id="cc6" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(6)">
-        <input id="cc7" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(7)">
-        <input id="cc8" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(8)">
+    <div id="blkCtl">
+      <div id="blkNotes"></div>
+      <details id="blkSwCc">
+        <summary>Ctl</summary>
+        <div>
+          <button onpointerdown="blk_sw_send(1, 1)" onpointerup="blk_sw_send(1, 0)"></button>
+          <button onpointerdown="blk_sw_send(2, 1)" onpointerup="blk_sw_send(2, 0)"></button>
+          <button onpointerdown="blk_sw_send(3, 1)" onpointerup="blk_sw_send(3, 0)"></button>
+          <button onpointerdown="blk_sw_send(4, 1)" onpointerup="blk_sw_send(4, 0)"></button>
+          <button onpointerdown="blk_sw_send(5, 1)" onpointerup="blk_sw_send(5, 0)"></button>
+          <button onpointerdown="blk_sw_send(6, 1)" onpointerup="blk_sw_send(6, 0)"></button>
+          <button onpointerdown="blk_sw_send(7, 1)" onpointerup="blk_sw_send(7, 0)"></button>
+          <button onpointerdown="blk_sw_send(8, 1)" onpointerup="blk_sw_send(8, 0)"></button>
+        </div>
+        <div>
+          <input id="cc1" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(1)">
+          <input id="cc2" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(2)">
+          <input id="cc3" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(3)">
+          <input id="cc4" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(4)">
+          <input id="cc5" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(5)">
+          <input id="cc6" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(6)">
+          <input id="cc7" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(7)">
+          <input id="cc8" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(8)">
+        </div>
       </details>
     </div>
 
