@@ -1,6 +1,15 @@
 // ADSR ; event control
 var f = {
     arg e;
-    Blip(e.p.unitCps, e.o * 5) * ADSR(e.w, 0.5 * e.y, e.y * 0.75, 0.65, e.y * 4, 0.1, [-4], 0)
+    Blip(e.p.unitCps, e.o * 5) * ADSR(e.w, 0.5 * e.y, e.y * 0.75, 0.65, e.y * 4, -4)
 };
-Voicer(16, f).splay
+Voicer(16, f).splay * 0.1
+
+//---- notes.md
+_Adsr_ is an attack-decay-sustain-release envelope generator.
+
+The _gate_ input begins the envelope on a rising zero crossing and holds it open until a falling zero crossing.
+
+The _attack_, _decay_ and _release_ times are all given in seconds.
+
+The _curve_ input may be a scalar or an array of three places.

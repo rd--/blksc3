@@ -4,6 +4,60 @@ var blk_workspace;
 var blk_ws;
 var blk_config;
 
+function string_lines(string) {
+    return string.split('\n');
+}
+
+function array_unlines(array) {
+    return array.join('\n');
+}
+
+function string_is_prefix_of(string, prefix) {
+    return string.slice(0, prefix.length) === prefix;
+}
+
+// array_take_while([1, 2, 3, 4], x => x < 3) == [1, 2]
+function array_take_while(array, predicate) {
+    var [x, ...xs] = array;
+    if (array.length > 0 && predicate(x)) {
+        return [x, ...array_take_while(xs, predicate)];
+    } else {
+        return [];
+    }
+}
+
+// array_drop_while([1, 2, 3, 4], x => x < 3) == [3, 4]
+function array_drop_while(array, predicate) {
+    var [x, ...xs] = array;
+    if (array.length > 0 && predicate(x)) {
+        return array_drop_while(xs, predicate);
+    } else {
+        return array;
+    }
+}
+
+// array_tail([1, 2, 3, 4]) // => [2, 3, 4]
+function array_tail(array) {
+    return array.slice(1, array.size);
+}
+
+function array_head(array) {
+    return array[0];
+}
+
+// array_at([1, 2, 3, 4], 3) == 4
+function array_at(array, index) {
+    return array[index];
+}
+
+Array.prototype.takeWhile = function(predicate) {
+    return array_take_while(this, predicate);
+}
+
+Array.prototype.dropWhile = function(predicate) {
+    return array_drop_while(this, predicate);
+}
+
 // Configure and inject Blockly given XML format toolbox definition.
 function blk_inject_with_xml_toolbox(xml_toolbox) {
     blk_config = {
@@ -152,19 +206,14 @@ function blk_sc3_reset() {
 function blk_load_help_graph(graphDir, graphName, fileType) {
     var auto_play = false;
     var graphUrl = '?t=blksc3&e=help/' + graphDir + '/' + graphName + fileType;
-    var graphMd = 'sw/blksc3/help/' + graphDir + '/' + graphName + '.md';
+    var graphStc = 'sw/blksc3/help/' + graphDir + '/' + graphName + '.stc';
     console.log(graphName);
     blk_workspace.clear();
     if(auto_play) {
         blk_sc3_reset();
     }
     blk_fetch_xml(graphUrl, auto_play);
-    // at present only the guide has notes, this avoids GET errors in the console
-    if(graphDir == 'guide') {
-        blk_load_and_process_md(graphMd, blk_set_inner_html_of('blkNotes'));
-    } else {
-        blk_set_inner_html_of('blkNotes')('');
-    }
+    blk_load_and_process_notes(graphStc, blk_set_inner_html_of('blkNotes'));
 }
 
 // Intialise menuId to run blk_load_help_graph.
@@ -227,6 +276,18 @@ function blk_markdown_to_html(mdText) {
 // Load .md from fileName, convert to .html and pass to processFunc.
 function blk_load_and_process_md(fileName, processFunc) {
     blk_load_and_process_utf8(fileName, mdText => processFunc(blk_markdown_to_html(mdText)));
+}
+
+// .stc files can have a .md notes segment.
+function blk_md_notes_from_stc(stcText) {
+    var lines = string_lines(stcText);
+    var from_marker = array_drop_while(lines, str => !string_is_prefix_of(str, "//---- notes.md"));
+    return array_unlines(array_tail(from_marker));
+}
+
+// Load .stc from fileName, extract .md notes, convert to .html and pass to processFunc.
+function blk_load_and_process_notes(fileName, processFunc) {
+    blk_load_and_process_utf8(fileName, stcText => processFunc(blk_markdown_to_html(blk_md_notes_from_stc(stcText))));
 }
 
 // Send SC3.ccSet to websocket.

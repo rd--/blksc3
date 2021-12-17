@@ -1,6 +1,6 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
   <block type="sc3_Comment" id="5)o@zdm)+C@wMDSzv$?N" x="-592" y="-334">
-    <field name="COMMENT">dup ; list of COUNT elements ; each place has the result of evaluating PROC</field>
+    <field name="COMMENT">ArrayFill ; list of COUNT elements ; each place has the result of evaluating PROC</field>
     <next>
       <block type="sc3_Play" id="a$8oOG^(.DA{%%-GTwIB">
         <value name="CODE">
@@ -10,14 +10,14 @@
               <shadow type="math_number" id="TTA.sLC=mBE)bHH41(7)">
                 <field name="NUM">0</field>
               </shadow>
-              <block type="sc3_ArrayFill" id=",5v9i=}tch#c?|uv15j4" inline="true">
+              <block type="sc3_ArrayFill" id=",5v9i=}tch#c?|uv15j4" inline="false">
                 <value name="PROC">
                   <block type="sc3_Proc0" id="fzUgU(jHe=B_U.i/k=7X">
                     <value name="RETURN">
                       <shadow type="math_number" id="lgk(hIhP4jiq=)Z~)_au">
                         <field name="NUM">0</field>
                       </shadow>
-                      <block type="sc3_SinOsc" id="_1!Oq!_Mr0NbwL]Zdzi%" inline="true">
+                      <block type="sc3_SinOsc" id="_1!Oq!_Mr0NbwL]Zdzi%" inline="false">
                         <value name="FREQ">
                           <shadow type="math_number" id="%%T@e^5:$*#$6NeL*zg(">
                             <field name="NUM">110</field>
@@ -62,6 +62,28 @@
                           <shadow type="math_number" id="iU)[|q^p/`-i:D+vw?fH">
                             <field name="NUM">0.1</field>
                           </shadow>
+                          <block type="sc3_Rand" id="WLyUo/8IU@I;LkRuVn)Y" inline="true">
+                            <value name="LO">
+                              <shadow type="math_number" id="dn5`R0YO93SB)fW*Zvgs">
+                                <field name="NUM">0.05</field>
+                              </shadow>
+                            </value>
+                            <value name="HI">
+                              <shadow type="math_number" id="Y7*uDIq?v{Q%8s.wTj-u">
+                                <field name="NUM">0.1</field>
+                              </shadow>
+                            </value>
+                            <value name="MUL">
+                              <shadow type="math_number" id="T%rP*QmqmF8wHrJt8F0@">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="WT1*Cz-K|qvoxflzD#Om">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                          </block>
                         </value>
                         <value name="ADD">
                           <shadow type="math_number" id="dNmGoJWQDu]0UOcMMbQh">

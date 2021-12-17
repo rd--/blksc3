@@ -7,6 +7,7 @@ The .xml notation is old, there's a newer .json notation.
 
 import Data.Char {- base -}
 import Data.Either {- base -}
+import Data.List {- base -}
 import Data.Maybe {- base -}
 import Text.Printf {- base -}
 
@@ -236,6 +237,10 @@ assign_seq_xml e_seq =
 in_xml :: String -> String
 in_xml x = concat ["<xml>",x,"</xml>"]
 
+-- | .stc files may have .md notes sections, discard these.
+extract_stc_graph :: String -> String
+extract_stc_graph = unlines . takeWhile (not . isPrefixOf "//----") . lines
+
 stc_to_xml :: String -> String
 stc_to_xml = in_xml . expr_xml . Sc.stcToExpr
 
@@ -243,7 +248,7 @@ stc_file_to_xml_file :: FilePath -> IO ()
 stc_file_to_xml_file fn = do
   let dir = "/home/rohan/sw/blksc3/help/graph/"
   txt <- readFile (dir ++ fn)
-  writeFile (dir ++ fn ++ ".xml") (in_xml (expr_xml (Sc.stcToExpr txt)))
+  writeFile (dir ++ fn ++ ".xml") (in_xml (expr_xml (Sc.stcToExpr (extract_stc_graph txt))))
 
 filename_rewriter :: (Char -> Char) -> String -> String
 filename_rewriter caseFunc =

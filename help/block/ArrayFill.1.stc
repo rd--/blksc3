@@ -1,2 +1,7 @@
 // ArrayFill ; list of COUNT elements ; each place has the result of evaluating PROC
-{ SinOsc(Rand(36, 72).midicps, 0) * 0.1 }.dup(12).splay
+{ SinOsc(Rand(36, 72).midicps, 0) * Rand(0.05, 0.1) }.dup(12).splay
+
+//---- notes.md
+The _ArrayFill_ block, written _!_, creates an array of _n_ places by evaluating a no-argument procedure _n_ times.
+
+Here 12 sine oscillators (∿), each with a randomly selected frequency (ν) and amplitude, are equally spaces across the stereo spectrum.

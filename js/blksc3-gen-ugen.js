@@ -984,12 +984,10 @@ Blockly.JavaScript['sc3_ADSR'] = function(block) {
     var decayTime_value = Blockly.JavaScript.valueToCode(block, 'DECAYTIME', Blockly.JavaScript.ORDER_ATOMIC) || '0.3';
     var sustainLevel_value = Blockly.JavaScript.valueToCode(block, 'SUSTAINLEVEL', Blockly.JavaScript.ORDER_ATOMIC) || '0.5';
     var releaseTime_value = Blockly.JavaScript.valueToCode(block, 'RELEASETIME', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
-    var peakLevel_value = Blockly.JavaScript.valueToCode(block, 'PEAKLEVEL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
-    var curves_value = Blockly.JavaScript.valueToCode(block, 'CURVES', Blockly.JavaScript.ORDER_ATOMIC) || '-4.0';
-    var doneAction_value = Blockly.JavaScript.valueToCode(block, 'DONEACTION', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
-    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var curves_value = Blockly.JavaScript.valueToCode(block, 'CURVES', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '-4.0';
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
-    var ADSR_code = 'MulAdd(ADSR(' + gate_value + ', ' + attackTime_value + ', ' + decayTime_value + ', ' + sustainLevel_value + ', ' + releaseTime_value + ', ' + peakLevel_value + ', ' + curves_value + ', ' + doneAction_value + '), ' + mul_value + ', ' + add_value + ')';
+    var ADSR_code = 'MulAdd(ADSR(' + gate_value + ', ' + attackTime_value + ', ' + decayTime_value + ', ' + sustainLevel_value + ', ' + releaseTime_value + ', ' + curves_value + '), ' + mul_value + ', ' + add_value + ')';
     return [ADSR_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
