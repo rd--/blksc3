@@ -317,9 +317,9 @@ blk_graphs =
      ,"Tank"
      ,"Theremin"
      ,"Tremulate", "Tremulate (Event)"
-     ,"Uplink"
+     ,"Uplink" ,"Uplink (Texture)"
      ,"Why SuperCollider?"
-     ,"Wind Metals"
+     ,"Wind Metals", "Wind Metals (Variables)"
      ])
   ,("KL", ["Vibraphone"])
   ,("NV"
