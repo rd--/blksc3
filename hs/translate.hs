@@ -245,12 +245,14 @@ stc_file_to_xml_file fn = do
   txt <- readFile (dir ++ fn)
   writeFile (dir ++ fn ++ ".xml") (in_xml (expr_xml (Sc.stcToExpr txt)))
 
+filename_rewriter :: (Char -> Char) -> String -> String
+filename_rewriter caseFunc =
+  map caseFunc .
+  map (\c -> if c == ' ' then '-' else c) .
+  mapMaybe (\c -> if c `elem` "()?," then Nothing else Just c)
+
 blk_au_graph_filename :: String -> String -> String
-blk_au_graph_filename au nm =
-  let rewrite = map toLower .
-                map (\c -> if c == ' ' then '-' else c) .
-                mapMaybe (\c -> if c `elem` "()?," then Nothing else Just c)
-  in printf "%s-%s" (map toLower au) (rewrite nm)
+blk_au_graph_filename au nm = printf "%s-%s" (map toLower au) (filename_rewriter toLower nm)
 
 blk_au_graph_option :: String -> String -> String
 blk_au_graph_option au nm =
@@ -339,8 +341,8 @@ blk_graphs =
 blk_graphs_names :: [String]
 blk_graphs_names = concatMap (\(au, gr) -> map (blk_au_graph_filename au) gr) blk_graphs
 
-blk_help_option :: String -> String
-blk_help_option nm = printf "<option value='%s'>%s</option>" nm nm
+blk_help_option :: String -> String -> String
+blk_help_option = printf "<option value='%s'>%s</option>"
 
 blk_in_autogen :: String -> [String] -> [String]
 blk_in_autogen typ lst =
@@ -379,7 +381,10 @@ blk_help =
 
 blk_guide :: [String]
 blk_guide =
-  ["Guide.A.1", "Guide.A.2", "Guide.A.3"
+  ["1.1 Workspace, Toolbox, Synthesiser"
+  ,"1.2 Comment, SinOsc, Play"
+  ,"1.3 Arrays, Variables, Binary Operators"
+  ,"1.4 Noise Generators, Filters, Control Signals"
   ]
 
 gen_xml :: IO ()
@@ -387,7 +392,7 @@ gen_xml = do
   let rw nm fn = putStrLn nm >> stc_file_to_xml_file (fn ++ ".stc")
       rw_graph nm = rw nm nm
       rw_help nm = rw nm ("../block/" ++ nm)
-      rw_guide nm = rw nm ("../guide/" ++ nm)
+      rw_guide nm = rw nm ("../guide/" ++ filename_rewriter id nm)
   mapM_ rw_graph blk_graphs_names
   mapM_ rw_help blk_help
   mapM_ rw_guide blk_guide
@@ -397,8 +402,8 @@ main = do
   gen_xml
   let dir = "/home/rohan/sw/blksc3/html/"
       mk_menu fn typ dat = writeFile (dir ++ fn ++ "-menu.html") (unlines (blk_in_autogen typ dat))
-  mk_menu "help" "Help" (map blk_help_option blk_help)
-  mk_menu "guide" "Guide" (map blk_help_option blk_guide)
+  mk_menu "help" "Help" (zipWith blk_help_option blk_help blk_help)
+  mk_menu "guide" "Guide" (zipWith blk_help_option (map (filename_rewriter id) blk_guide) blk_guide)
   mk_menu "graph" "Graph" (concatMap (\(au, gr) -> map (blk_au_graph_option au) gr) blk_graphs)
 
 
