@@ -352,7 +352,7 @@ blk_help_option = printf "<option value='%s'>%s</option>"
 blk_in_autogen :: String -> [String] -> [String]
 blk_in_autogen typ lst =
   concat [["<!-- AUTOGEN -->"
-          ,"<option value=''>--" ++ typ ++ " Blocks--</option>"]
+          ,"<option value=''>--" ++ typ ++ " Programs--</option>"]
          ,lst
          ,["<!-- END AUTOGEN -->"]]
 
@@ -387,9 +387,10 @@ blk_help =
 blk_guide :: [String]
 blk_guide =
   ["1.1 Workspace, Toolbox, Synthesiser"
-  ,"1.2 Comment, SinOsc, Play"
-  ,"1.3 Arrays, Variables, Binary Operators"
-  ,"1.4 Noise Generators, Filters, Control Signals"
+  ,"1.2.Guide, Help, Graphs, Load, Copy"
+  ,"1.3 Comment, SinOsc, Play"
+  ,"1.4 Arrays, Variables, Binary Operators"
+  ,"1.5 Noise Generators, Filters, Control Signals"
   ]
 
 gen_xml :: IO ()
