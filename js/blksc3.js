@@ -1,62 +1,8 @@
 var blk_json;
 var blk_xml;
 var blk_workspace;
-var blk_ws;
+var blk_websocket;
 var blk_config;
-
-function string_lines(string) {
-    return string.split('\n');
-}
-
-function array_unlines(array) {
-    return array.join('\n');
-}
-
-function string_is_prefix_of(string, prefix) {
-    return string.slice(0, prefix.length) === prefix;
-}
-
-// array_take_while([1, 2, 3, 4], x => x < 3) == [1, 2]
-function array_take_while(array, predicate) {
-    var [x, ...xs] = array;
-    if (array.length > 0 && predicate(x)) {
-        return [x, ...array_take_while(xs, predicate)];
-    } else {
-        return [];
-    }
-}
-
-// array_drop_while([1, 2, 3, 4], x => x < 3) == [3, 4]
-function array_drop_while(array, predicate) {
-    var [x, ...xs] = array;
-    if (array.length > 0 && predicate(x)) {
-        return array_drop_while(xs, predicate);
-    } else {
-        return array;
-    }
-}
-
-// array_tail([1, 2, 3, 4]) // => [2, 3, 4]
-function array_tail(array) {
-    return array.slice(1, array.size);
-}
-
-function array_head(array) {
-    return array[0];
-}
-
-// array_at([1, 2, 3, 4], 3) == 4
-function array_at(array, index) {
-    return array[index];
-}
-
-Array.prototype.takeWhile = function(predicate) {
-    return array_take_while(this, predicate);
-}
-
-Array.prototype.dropWhile = function(predicate) {
-    return array_drop_while(this, predicate);
-}
 
 // Configure and inject Blockly given XML format toolbox definition.
 function blk_inject_with_xml_toolbox(xml_toolbox) {
@@ -77,9 +23,21 @@ function blk_inject_with_xml_toolbox(xml_toolbox) {
     blk_workspace = Blockly.inject('blocklyContainer', blk_config);
 };
 
-// Initialise websocket.  To send .stc to sclang as /eval message run "blksc3 stc-to-osc --host=192.168.1.104"
-function blk_ws_init() {
-    blk_ws = new WebSocket("ws://192.168.1.102:9160"); // 100 - 104
+// Initialise WebSocket.  To send .stc to sclang as /eval message run "blksc3 stc-to-osc --host=192.168.1.102 --port=9160"
+function blk_websocket_init(host, port) {
+    if(blk_websocket) {
+        blk_websocket.close();
+    }
+    blk_websocket = new WebSocket('ws://' + host + ':' + Number(port).toString());
+}
+
+// Prompt for WebSocket address (host and port) and initialise WebSocket.
+function blk_websocket_dialog() {
+    var reply = window.prompt("Set WebSocket address as Host:Port", "192.168.1.102:9160");
+    if(reply) {
+        var [host, port] = reply.split(':');
+        blk_websocket_init(host, Number(port));
+    }
 }
 
 // Get workspace as .stc code.
@@ -128,11 +86,18 @@ function blk_load_json(json_text, autoPlay) {
     blk_on_load(autoPlay);
 }
 
+// If websocket is connected, send text.
+function blk_websocket_send(string) {
+    if(blk_websocket && blk_websocket.readyState == 1) {
+        blk_websocket.send(string);
+    } else {
+        console.log('blk_websocket_send: websocket nil or not ready?');
+    }
+}
+
 // Send .stc code of workspace to websocket.
 function blk_send_stc(cmd) {
-    if(blk_ws) {
-        blk_ws.send('{ ' + blk_get_stc_code() + ' }.' + cmd + ';\n');
-    }
+    blk_websocket_send('{ ' + blk_get_stc_code() + ' }.' + cmd + ';\n');
 }
 
 // Initialise .xml file selector.
@@ -197,9 +162,7 @@ function blk_fetch_json(jsonUrl, autoPlay) {
 
 // Send SC3.reset to websocket.
 function blk_sc3_reset() {
-    if(blk_ws) {
-        blk_ws.send('SC3.reset');
-    }
+    blk_websocket_send('SC3.reset');
 }
 
 // Clear workspace, construct URL from arguments, fetch and load graph.
@@ -229,7 +192,7 @@ function blk_init() {
     blk_menu_init('blkGuideMenu', 'guide', '.xml');
     blk_xml_input_init();
     //blk_json_input_init();
-    blk_ws_init();
+    blk_websocket_init("192.168.1.102", 9160);
     blk_load_and_process_utf8('sw/blksc3/html/graph-menu.html', blk_set_inner_html_of('blkGraphMenu'));
     blk_load_and_process_utf8('sw/blksc3/html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
     blk_load_and_process_utf8('sw/blksc3/html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
@@ -281,7 +244,7 @@ function blk_load_and_process_md(fileName, processFunc) {
 // .stc files can have a .md notes segment.
 function blk_md_notes_from_stc(stcText) {
     var lines = string_lines(stcText);
-    var from_marker = array_drop_while(lines, str => !string_is_prefix_of(str, "//---- notes.md"));
+    var from_marker = array_drop_while(lines, str => !string_is_prefix_of("//---- notes.md", str));
     return array_unlines(array_tail(from_marker));
 }
 
@@ -292,19 +255,15 @@ function blk_load_and_process_notes(fileName, processFunc) {
 
 // Send SC3.ccSet to websocket.
 function blk_cc_send(ccIndex) {
-    if(blk_ws) {
-        var ccElem = document.getElementById("cc" + ccIndex);
-        console.debug("cc: ", ccIndex, ccElem.value);
-        blk_ws.send('SC3.ccSet(' + ccIndex + ', ' + ccElem.value + ');\n');
-    }
+    var ccElem = document.getElementById("cc" + ccIndex);
+    console.debug("cc: ", ccIndex, ccElem.value);
+    blk_websocket_send('SC3.ccSet(' + ccIndex + ', ' + ccElem.value + ');\n');
 }
 
 // Send SC3.swSet to websocket.
 function blk_sw_send(swIndex, swValue) {
-    if(blk_ws) {
-        console.debug("sw: ", swIndex, swValue);
-        blk_ws.send('SC3.swSet(' + swIndex + ', ' + swValue + ');\n');
-    }
+    console.debug("sw: ", swIndex, swValue);
+    blk_websocket_send('SC3.swSet(' + swIndex + ', ' + swValue + ');\n');
 }
 
 // Function to return a function to set the innerHTML of elemId

@@ -391,6 +391,7 @@ blk_guide =
   ,"1.3 Comment, SinOsc, Play"
   ,"1.4 Arrays, Variables, Binary Operators"
   ,"1.5 Noise Generators, Filters, Control Signals"
+  ,"2.1 Multiply and Add"
   ]
 
 gen_xml :: IO ()
