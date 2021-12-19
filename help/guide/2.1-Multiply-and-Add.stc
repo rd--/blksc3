@@ -1,5 +1,5 @@
 // Multiply and Add
-(PinkNoise() * [0.1, 0.1]) + ({ PinkNoise() }.dup(2) * 0.1)
+[PinkNoise() * [0.1, 0.1], SinOsc(LFNoise2([0.5, 0.5]) * 110 + 110, 0) * 0.1].sum
 
 //---- notes.md
 All blocks with an output connection have multiplier (×) and adder (+) inputs.
@@ -13,9 +13,16 @@ the × and + inputs don't form part of the multiple channel expansion protocol f
 
 In SuperCollider the expression
 
-> _PinkNoise(mul: [0.1, 0.1])_
+> _PinkNoise([0.1, 0.1])_
 
 describes a graph with two PinkNoise generators.
 The left and right channels are decorrelated.
 
 The equivalent block program has only one _PinkNoise_ generator.
+
+This is most noticeable for Noise generators that have no direct inputs,
+and that must therefore be written as
+
+> _{PinkNoise()}.dup(2) * 0.1_
+
+_LFNoise2_, which has a _frequency_ (ν) input, can be duplicated by passing an array of equal values.
