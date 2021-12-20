@@ -196,7 +196,7 @@ function blk_init() {
     blk_menu_init('blkGuideMenu', 'guide', '.xml');
     blk_xml_input_init();
     //blk_json_input_init();
-    blk_websocket_init("192.168.1.102", 9160);
+    //blk_websocket_init("192.168.1.102", 9160);
     blk_load_and_process_utf8('sw/blksc3/html/graph-menu.html', blk_set_inner_html_of('blkGraphMenu'));
     blk_load_and_process_utf8('sw/blksc3/html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
     blk_load_and_process_utf8('sw/blksc3/html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
