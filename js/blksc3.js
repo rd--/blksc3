@@ -28,7 +28,11 @@ function blk_websocket_init(host, port) {
     if(blk_websocket) {
         blk_websocket.close();
     }
-    blk_websocket = new WebSocket('ws://' + host + ':' + Number(port).toString());
+    try {
+        blk_websocket = new WebSocket('ws://' + host + ':' + Number(port).toString());
+    } catch(err) {
+        console.error('blk_websocket_init: ' + err);
+    }
 }
 
 // Prompt for WebSocket address (host and port) and initialise WebSocket.
@@ -195,11 +199,10 @@ function blk_init() {
     blk_menu_init('blkHelpMenu', 'block', '.xml');
     blk_menu_init('blkGuideMenu', 'guide', '.xml');
     blk_xml_input_init();
-    //blk_json_input_init();
-    //blk_websocket_init("192.168.1.102", 9160);
     blk_load_and_process_utf8('sw/blksc3/html/graph-menu.html', blk_set_inner_html_of('blkGraphMenu'));
     blk_load_and_process_utf8('sw/blksc3/html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
     blk_load_and_process_utf8('sw/blksc3/html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
+    blk_websocket_init("192.168.1.102", 9160);
 }
 
 // Fetch fileName and apply processFunc to the object read (stored as JSON).
