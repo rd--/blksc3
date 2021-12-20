@@ -2,6 +2,7 @@
   <variables>
     <variable id="VB48r2p[VJtxp10$-7(~">o</variable>
     <variable id="zO^|nt%qG@xL:D,b,pkK">f</variable>
+    <variable id="h}|1;U!tZ#JT6:zX`mhk">s</variable>
   </variables>
   <block type="sc3_Comment" id="iM?{]bg%!?Da#80VRf`h" x="-443" y="-329">
     <field name="COMMENT">analog bubbles ; var (jmcc)</field>
@@ -70,65 +71,75 @@
               </block>
             </value>
             <next>
-              <block type="sc3_Play" id="!Vk9G;%bH:A9!aXP[Ale">
-                <value name="CODE">
-                  <block type="sc3_CombC" id="wra_KDlxuqdV[b_Dk.!U">
-                    <value name="IN">
-                      <block type="sc3_SinOsc" id=";d0`+q]#T/-nxOO([Rrz">
-                        <value name="FREQ">
-                          <block type="sc3_UnaryOp" id="[NnzE,mTq+il#dG!4bC-">
-                            <field name="OP">midicps</field>
-                            <value name="IN">
-                              <block type="variables_get" id="X*2L`-oEfUl`fgGR;w;=">
-                                <field name="VAR" id="zO^|nt%qG@xL:D,b,pkK">f</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                        <value name="PHASE">
-                          <block type="math_number" id="k3YG;~#}*qO5c:HJYAJl">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="MUL">
-                          <block type="math_number" id="X[B+/KnF=hdhes(Mcnm6">
-                            <field name="NUM">0.04</field>
-                          </block>
-                        </value>
-                        <value name="ADD">
-                          <block type="math_number" id="c3MfqG26jx^rj=X@3mpC">
-                            <field name="NUM">0</field>
+              <block type="variables_set" id="DLk@+peQj75SAh43uE#(">
+                <field name="VAR" id="h}|1;U!tZ#JT6:zX`mhk">s</field>
+                <value name="VALUE">
+                  <block type="sc3_SinOsc" id=";d0`+q]#T/-nxOO([Rrz" inline="true">
+                    <value name="FREQ">
+                      <block type="sc3_UnaryOp" id="[NnzE,mTq+il#dG!4bC-">
+                        <field name="OP">midicps</field>
+                        <value name="IN">
+                          <block type="variables_get" id="X*2L`-oEfUl`fgGR;w;=">
+                            <field name="VAR" id="zO^|nt%qG@xL:D,b,pkK">f</field>
                           </block>
                         </value>
                       </block>
                     </value>
-                    <value name="MAXDELAYTIME">
-                      <block type="math_number" id="jrhd8U%5hwHB]Gku;|rv">
-                        <field name="NUM">0.2</field>
-                      </block>
-                    </value>
-                    <value name="DELAYTIME">
-                      <block type="math_number" id="fQ{dudbV_!_`BO)rN^#/">
-                        <field name="NUM">0.2</field>
-                      </block>
-                    </value>
-                    <value name="DECAYTIME">
-                      <block type="math_number" id="1px]yrnfMn9xG?$ScK{@">
-                        <field name="NUM">4</field>
+                    <value name="PHASE">
+                      <block type="math_number" id="k3YG;~#}*qO5c:HJYAJl">
+                        <field name="NUM">0</field>
                       </block>
                     </value>
                     <value name="MUL">
-                      <block type="math_number" id="m:?iN:2ub$M+Sgp.Z(Wm">
-                        <field name="NUM">0.1</field>
+                      <block type="math_number" id="X[B+/KnF=hdhes(Mcnm6">
+                        <field name="NUM">0.04</field>
                       </block>
                     </value>
                     <value name="ADD">
-                      <block type="math_number" id="T5;[)JMoT1T3D?CTjPXF">
+                      <block type="math_number" id="c3MfqG26jx^rj=X@3mpC">
                         <field name="NUM">0</field>
                       </block>
                     </value>
                   </block>
                 </value>
+                <next>
+                  <block type="sc3_Play" id="!Vk9G;%bH:A9!aXP[Ale">
+                    <value name="CODE">
+                      <block type="sc3_CombC" id="wra_KDlxuqdV[b_Dk.!U" inline="true">
+                        <value name="IN">
+                          <block type="variables_get" id="!-,?eN(^lj#9)97s2s/|">
+                            <field name="VAR" id="h}|1;U!tZ#JT6:zX`mhk">s</field>
+                          </block>
+                        </value>
+                        <value name="MAXDELAYTIME">
+                          <block type="math_number" id="jrhd8U%5hwHB]Gku;|rv">
+                            <field name="NUM">0.2</field>
+                          </block>
+                        </value>
+                        <value name="DELAYTIME">
+                          <block type="math_number" id="fQ{dudbV_!_`BO)rN^#/">
+                            <field name="NUM">0.2</field>
+                          </block>
+                        </value>
+                        <value name="DECAYTIME">
+                          <block type="math_number" id="1px]yrnfMn9xG?$ScK{@">
+                            <field name="NUM">4</field>
+                          </block>
+                        </value>
+                        <value name="MUL">
+                          <block type="math_number" id="m:?iN:2ub$M+Sgp.Z(Wm">
+                            <field name="NUM">0.1</field>
+                          </block>
+                        </value>
+                        <value name="ADD">
+                          <block type="math_number" id="T5;[)JMoT1T3D?CTjPXF">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
               </block>
             </next>
           </block>

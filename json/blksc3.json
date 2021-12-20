@@ -8,7 +8,7 @@
         "previousStatement": null,
         "nextStatement": null,
         "colour": 300,
-        "tooltip": "Workspace comment"
+        "tooltip": "Comment(text): Workspace comment"
     }
     ,
     {
@@ -19,7 +19,7 @@
         ],
         "previousStatement": null,
         "colour": 300,
-        "tooltip": "Play sound"
+        "tooltip": "Play(code): Play sound"
     }
     ,
     {
@@ -72,7 +72,7 @@
     ,
     {
         "type": "sc3_TimesRepeat",
-        "message0": "%1 TimesRepeat: %2",
+        "message0": "%1 ×𝄇 %2",
         "args0": [
             {"type": "input_value", "name": "COUNT", "check": "Number"},
             {"type": "input_statement", "name": "STATEMENTS"}
@@ -80,12 +80,12 @@
         "previousStatement": null,
         "nextStatement": null,
         "colour": 180,
-        "tooltip": "Repeat action indicated number of times"
+        "tooltip": "TimesRepeat(count, statements): Repeat action indicated number of times"
     }
     ,
     {
         "type": "sc3_OverlapTexture",
-        "message0": "overlap: %1 sustainTime: %2 transitionTime: %3 overlap: %4",
+        "message0": "ᨏ %1 ⌒ %2 ⤢ %3 # %4",
         "args0": [
             {"type": "input_value", "name": "PROC", "check": "Proc1"},
             {"type": "input_value", "name": "SUSTAINTIME", "check": "Number"},
@@ -94,7 +94,7 @@
         ],
         "output": "UGen",
         "colour": 180,
-        "tooltip": "Overlap add texture"
+        "tooltip": "OverlapTexture(proc, sustainTime, transitionTime, overlap): Overlap add texture"
     }
     ,
     {
@@ -147,9 +147,9 @@
     ,
     {
         "type": "sc3_UnaryOp",
-        "message0": "%1 of: %2",
+        "message0": "%1 %2",
         "args0": [
-            {"type": "field_dropdown", "name": "OP", "options": [["abs", "abs"], ["asLocalBuf","asLocalBuf"], ["⌈", "ceil"], ["choose","choose"], ["clearBuf", "clearBuf"], ["cubed","cubed"], ["dbamp","dbamp"], ["distort","distort"], ["exp","exp"], ["1º","first"], ["⌊", "floor"], ["kr","kr"], ["mean", "mean"], ["midicps", "midicps"], ["mix","mix"], ["-","negated"], ["∏","product"], ["reciprocal","reciprocal"], ["reverse","reverse"], ["rounded","rounded"], ["2º","second"], ["sin","sin"], ["size","size"], ["softclip","softclip"], ["splay","splay"], ["√","sqrt"], ["Σ","sum"], ["tanh","tanh"], ["transpose","transpose"], ["unitCps", "unitCps"], ["value", "value"]]},
+            {"type": "field_dropdown", "name": "OP", "options": [["|", "abs"], ["asLocalBuf","asLocalBuf"], ["⌈", "ceil"], ["choose","choose"], ["clearBuf", "clearBuf"], ["cubed","cubed"], ["dbamp","dbamp"], ["distort","distort"], ["exp","exp"], ["1º","first"], ["⌊", "floor"], ["kr","kr"], ["mean", "mean"], ["midicps", "midicps"], ["mix","mix"], ["-","negated"], ["∏","product"], ["reciprocal","reciprocal"], ["reverse","reverse"], ["rounded","rounded"], ["2º","second"], ["∿","sin"], ["size","size"], ["softclip","softclip"], ["splay","splay"], ["√","sqrt"], ["Σ","sum"], ["tanh","tanh"], ["ᵀ","transpose"], ["unitCps", "unitCps"], ["value", "value"]]},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]}
         ],
         "output": "UGen",
@@ -188,7 +188,7 @@
         "type": "sc3_KeywordBinaryOp",
         "message0": "%2 %1: %3",
         "args0": [
-            {"type": "field_dropdown", "name": "OP", "options": [["amclip", "amclip"], ["bitAnd", "bitAnd"], ["bitOr", "bitOr"], ["bitShiftRight","bitShiftRight"], ["clip2","clip2"], ["fromAssocArray","fromAssocArray"], ["lag", "lag"], ["lag2", "lag2"], ["lag3", "lag3"], ["⌊", "min"], ["⌈","max"], ["mrg","mrg"], ["nth","nth"], ["roundTo","roundTo"]]},
+            {"type": "field_dropdown", "name": "OP", "options": [["amclip", "amclip"], ["&", "bitAnd"], ["|", "bitOr"], ["»","bitShiftRight"], ["clip2","clip2"], ["fromAssocArray","fromAssocArray"], ["lag", "lag"], ["lag2", "lag2"], ["lag3", "lag3"], ["⌊", "min"], ["⌈","max"], ["⅄","mrg"], ["º","nth"], ["roundTo","roundTo"]]},
             {"type": "input_value", "name": "LHS", "check": ["Number", "Array", "UGen"]},
             {"type": "input_value", "name": "RHS", "check": ["Number", "Array", "UGen"]}
         ],
@@ -199,7 +199,7 @@
     ,
     {
         "type": "sc3_Voicer",
-        "message0": "Voicer %1 %2 of: %3",
+        "message0": "Voicer %1 # %2 𝑓 %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "COUNT", "check": "Number"},
@@ -212,7 +212,7 @@
     ,
     {
         "type": "sc3_VoiceWriter",
-        "message0": "VoiceWriter %1 %2 of: %3",
+        "message0": "VoiceWriter %1 # %2 𝑓 %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "COUNT", "check": "Number"},
@@ -225,7 +225,7 @@
     ,
     {
         "type": "sc3_EventParam",
-        "message0": "%1 of: %2",
+        "message0": "%1 %2",
         "args0": [
             {"type": "field_dropdown", "name": "PARAM", "options": [["v", "v"], ["w","w"], ["x","x"], ["y", "y"], ["z","z"], ["o","o"], ["rx","rx"], ["ry", "ry"], ["p", "p"], ["px", "px"]]},
             {"type": "input_value", "name": "EVENT"}

@@ -1,0 +1,24 @@
+// Block Names, Parameters, Messages
+Impulse(SinOsc(1, 0).max(0), 0) * 0.1
+
+//---- notes.md
+_Blocks_ and block _Parameters_ (inputs) all have names.
+These names are what is stored in block _.xml_ files, and what are used to form _.stc_ expressions.
+
+A block drawing displays a _Message_.
+This display message is distinct from it's names.
+This allows blocks to be translated into different languages,
+or to use symbolic message notations that would not be allowed in _.stc_.
+
+✐ is the message string indicating a _Comment_ block, 🔊 a _Play_ block, ∿ a _SinOsc_ block and ⊥ an _Impulse_ block.
+
+ν is the message string indicating a _frequency_ parameter, ϕ a _phase_ parameter, × a _mul_ parameter and + an _add_ parameter.
+
+⌈ is the message indicating the _max_ binary operator. (It also indicates the _ceil_ unary operator).
+
+Symbolic names for common blocks and parameters makes graphs drawings much more concise.
+These names do not ever need to be typed, only recognised.
+
+To see the names of blocks and their parameters hover the mouse a block and a small help message will appear.
+
+> _SinOsc(freq, phase): Interpolating sine wavetable oscillator._

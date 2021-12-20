@@ -378,6 +378,7 @@ blk_help =
   ,"LocalOut.1"
   ,"Pan2.1"
   ,"PMOsc.1", "PMOsc.2"
+  ,"PulseCount.1"
   ,"RingzBank.1"
   ,"SinOsc.1", "SinOsc.2", "SinOsc.3"
   ,"Stepper.1", "Stepper.2"
@@ -391,6 +392,7 @@ blk_guide =
   ,"1.3 Comment, SinOsc, Play"
   ,"1.4 Arrays, Variables, Binary Operators"
   ,"1.5 Noise Generators, Filters, Control Signals"
+  ,"1.x Block Names, Parameters, Messages"
   ,"2.1 Multiply and Add"
   ]
 

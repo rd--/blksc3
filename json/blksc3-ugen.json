@@ -1,7 +1,7 @@
 [
     {
         "type": "sc3_AllpassC",
-        "message0": "AllpassC %1 ∙: %2 maxdelaytime: %3 delaytime: %4 ↘: %5 × %6 + %7",
+        "message0": "AllpassC %1 ∙: %2 ⌈⎵: %3 ⎵: %4 ↘: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -13,13 +13,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Schroeder allpass delay line with cubic interpolation.",
+        "tooltip": "AllpassC(in, maxdelaytime, delaytime, decaytime): Schroeder allpass delay line with cubic interpolation.",
         "helpUrl": "https://doc.sccode.org/Classes/AllpassC.html"
     }
     ,
     {
         "type": "sc3_AllpassL",
-        "message0": "AllpassL %1 ∙: %2 maxdelaytime: %3 delaytime: %4 ↘: %5 × %6 + %7",
+        "message0": "AllpassL %1 ∙: %2 ⌈⎵: %3 ⎵: %4 ↘: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -31,7 +31,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Schroeder allpass delay line with linear interpolation.",
+        "tooltip": "AllpassL(in, maxdelaytime, delaytime, decaytime): Schroeder allpass delay line with linear interpolation.",
         "helpUrl": "https://doc.sccode.org/Classes/AllpassL.html"
     }
     ,
@@ -48,7 +48,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Basic psychoacoustic amplitude compensation.",
+        "tooltip": "AmpComp(freq, root, exp): Basic psychoacoustic amplitude compensation.",
         "helpUrl": "https://doc.sccode.org/Classes/AmpComp.html"
     }
     ,
@@ -65,7 +65,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Band Pass Filter",
+        "tooltip": "BBandPass(in, freq, bw): Band Pass Filter",
         "helpUrl": "https://doc.sccode.org/Classes/BBandPass.html"
     }
     ,
@@ -82,7 +82,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Band reject filter",
+        "tooltip": "BBandStop(in, freq, bw): Band reject filter",
         "helpUrl": "https://doc.sccode.org/Classes/BBandStop.html"
     }
     ,
@@ -99,7 +99,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "2nd order Butterworth bandpass filter.",
+        "tooltip": "BPF(in, freq, rq): 2nd order Butterworth bandpass filter.",
         "helpUrl": "https://doc.sccode.org/Classes/BPF.html"
     }
     ,
@@ -114,13 +114,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Two zero fixed midpass.",
+        "tooltip": "BPZ2(in): Two zero fixed midpass.",
         "helpUrl": "https://doc.sccode.org/Classes/BPZ2.html"
     }
     ,
     {
         "type": "sc3_Blip",
-        "message0": "Blip %1 ν: %2 numharm: %3 × %4 + %5",
+        "message0": "Blip %1 ν: %2 #: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -130,7 +130,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Band limited impulse oscillator.",
+        "tooltip": "Blip(freq, numharm): Band limited impulse oscillator.",
         "helpUrl": "https://doc.sccode.org/Classes/Blip.html"
     }
     ,
@@ -144,13 +144,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Brown Noise.",
+        "tooltip": "BrownNoise(): Brown Noise.",
         "helpUrl": "https://doc.sccode.org/Classes/BrownNoise.html"
     }
     ,
     {
         "type": "sc3_Clip",
-        "message0": "Clip %1 ∙: %2 ↓: %3 ↑: %4 × %5 + %6",
+        "message0": "Clip %1 ∙: %2 ⌊: %3 ⌉: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -161,13 +161,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Clip a signal outside given thresholds.",
+        "tooltip": "Clip(in, lo, hi): Clip a signal outside given thresholds.",
         "helpUrl": "https://doc.sccode.org/Classes/Clip.html"
     }
     ,
     {
         "type": "sc3_CombC",
-        "message0": "CombC %1 ∙: %2 maxdelaytime: %3 delaytime: %4 ↘: %5 × %6 + %7",
+        "message0": "ᚊ %1 ∙: %2 ⌈⎵: %3 ⎵: %4 ↘: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -179,13 +179,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Comb delay line with cubic interpolation.",
+        "tooltip": "CombC(in, maxdelaytime, delaytime, decaytime): Comb delay line with cubic interpolation.",
         "helpUrl": "https://doc.sccode.org/Classes/CombC.html"
     }
     ,
     {
         "type": "sc3_CombL",
-        "message0": "CombL %1 ∙: %2 maxdelaytime: %3 delaytime: %4 ↘: %5 × %6 + %7",
+        "message0": "ᚊL %1 ∙: %2 ⌈⎵: %3 ⎵: %4 ↘: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -197,7 +197,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Comb delay line with linear interpolation.",
+        "tooltip": "CombL(in, maxdelaytime, delaytime, decaytime): Comb delay line with linear interpolation.",
         "helpUrl": "https://doc.sccode.org/Classes/CombL.html"
     }
     ,
@@ -212,13 +212,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Chaotic noise function.",
+        "tooltip": "Crackle(chaosParam): Chaotic noise function.",
         "helpUrl": "https://doc.sccode.org/Classes/Crackle.html"
     }
     ,
     {
         "type": "sc3_Decay",
-        "message0": "Decay %1 ∙: %2 decayTime: %3 × %4 + %5",
+        "message0": "↘ %1 ∙: %2 ↘: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -228,13 +228,13 @@
         ],
         "output": "UGen",
         "colour": 300,
-        "tooltip": "Exponential decay",
+        "tooltip": "Decay(in, decayTime): Exponential decay",
         "helpUrl": "https://doc.sccode.org/Classes/Decay.html"
     }
     ,
     {
         "type": "sc3_Decay2",
-        "message0": "Decay2 %1 ∙: %2 attackTime: %3 decayTime: %4 × %5 + %6",
+        "message0": "↘2 %1 ∙: %2 ↗: %3 ↘: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -245,7 +245,7 @@
         ],
         "output": "UGen",
         "colour": 300,
-        "tooltip": "Exponential decay",
+        "tooltip": "Decay2(in, attackTime, decayTime): Exponential decay",
         "helpUrl": "https://doc.sccode.org/Classes/Decay2.html"
     }
     ,
@@ -262,13 +262,13 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Convert signal to modal pitch.",
+        "tooltip": "DegreeToKey(bufnum, in, octave): Convert signal to modal pitch.",
         "helpUrl": "https://doc.sccode.org/Classes/DegreeToKey.html"
     }
     ,
     {
         "type": "sc3_DelayC",
-        "message0": "DelayC %1 ∙: %2 maxdelaytime: %3 delaytime: %4 × %5 + %6",
+        "message0": "⎵ %1 ∙: %2 ⌈⎵: %3 ⎵: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -279,13 +279,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Simple delay line with cubic interpolation.",
+        "tooltip": "DelayC(in, maxdelaytime, delaytime): Simple delay line with cubic interpolation.",
         "helpUrl": "https://doc.sccode.org/Classes/DelayC.html"
     }
     ,
     {
         "type": "sc3_DelayL",
-        "message0": "DelayL %1 ∙: %2 maxdelaytime: %3 delaytime: %4 × %5 + %6",
+        "message0": "DelayL %1 ∙: %2 ⌈⎵: %3 ⎵: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -296,13 +296,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Simple delay line with linear interpolation.",
+        "tooltip": "DelayL(in, maxdelaytime, delaytime): Simple delay line with linear interpolation.",
         "helpUrl": "https://doc.sccode.org/Classes/DelayL.html"
     }
     ,
     {
         "type": "sc3_Demand",
-        "message0": "Demand %1 ⤴: %2 reset: %3 demandUGens: %4 × %5 + %6",
+        "message0": "Demand %1 ⤴: %2 ↻: %3 demandUGens: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -313,7 +313,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Demand results from demand rate UGens.",
+        "tooltip": "Demand(trig, reset, demandUGens): Demand results from demand rate UGens.",
         "helpUrl": "https://doc.sccode.org/Classes/Demand.html"
     }
     ,
@@ -329,7 +329,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Demand rate random sequence generator.",
+        "tooltip": "Drand(repeats, list): Demand rate random sequence generator.",
         "helpUrl": "https://doc.sccode.org/Classes/Drand.html"
     }
     ,
@@ -345,7 +345,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Demand rate sequence generator.",
+        "tooltip": "Dseq(repeats, list): Demand rate sequence generator.",
         "helpUrl": "https://doc.sccode.org/Classes/Dseq.html"
     }
     ,
@@ -361,13 +361,13 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Demand rate random sequence generator",
+        "tooltip": "Dshuf(repeats, list): Demand rate random sequence generator",
         "helpUrl": "https://doc.sccode.org/Classes/Dshuf.html"
     }
     ,
     {
         "type": "sc3_Dust",
-        "message0": "Dust %1 density: %2 × %3 + %4",
+        "message0": "⠇ %1 ▩: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "DENSITY", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -376,13 +376,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Random impulses.",
+        "tooltip": "Dust(density): Random impulses.",
         "helpUrl": "https://doc.sccode.org/Classes/Dust.html"
     }
     ,
     {
         "type": "sc3_Dust2",
-        "message0": "Dust2 %1 density: %2 × %3 + %4",
+        "message0": "Dust2 %1 ▩: %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "DENSITY", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -391,13 +391,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Random impulses.",
+        "tooltip": "Dust2(density): Random impulses.",
         "helpUrl": "https://doc.sccode.org/Classes/Dust2.html"
     }
     ,
     {
         "type": "sc3_Duty",
-        "message0": "Duty %1 dur: %2 reset: %3 doneAction: %4 level: %5 × %6 + %7",
+        "message0": "Duty %1 ⏲: %2 ↻: %3 ⌫: %4 ×: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -409,13 +409,13 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Demand results from demand rate UGens.",
+        "tooltip": "Duty(dur, reset, doneAction, level): Demand results from demand rate UGens.",
         "helpUrl": "https://doc.sccode.org/Classes/Duty.html"
     }
     ,
     {
         "type": "sc3_ExpRand",
-        "message0": "ExpRand %1 ↓: %2 ↑: %3 × %4 + %5",
+        "message0": "Exp⚁ %1 ⌊: %2 ⌉: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -425,7 +425,7 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Exponential single random number generator.",
+        "tooltip": "ExpRand(lo, hi): Exponential single random number generator.",
         "helpUrl": "https://doc.sccode.org/Classes/ExpRand.html"
     }
     ,
@@ -446,7 +446,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Feedback sine with chaotic phase indexing",
+        "tooltip": "FBSineC(freq, im, fb, a, c, xi, yi): Feedback sine with chaotic phase indexing",
         "helpUrl": "https://doc.sccode.org/Classes/FBSineC.html"
     }
     ,
@@ -463,7 +463,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Formant oscillator",
+        "tooltip": "Formant(fundfreq, formfreq, bwfreq): Formant oscillator",
         "helpUrl": "https://doc.sccode.org/Classes/Formant.html"
     }
     ,
@@ -482,7 +482,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "A two-channel reverb",
+        "tooltip": "FreeVerb2(in, in2, mix, room, damp): A two-channel reverb",
         "helpUrl": "https://doc.sccode.org/Classes/FreeVerb2.html"
     }
     ,
@@ -499,7 +499,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Frequency Shifter.",
+        "tooltip": "FreqShift(in, freq, phase): Frequency Shifter.",
         "helpUrl": "https://doc.sccode.org/Classes/FreqShift.html"
     }
     ,
@@ -523,7 +523,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "A two-channel reverb",
+        "tooltip": "GVerb(in, roomsize, revtime, damping, inputbw, spread, drylevel, earlyreflevel, taillevel, maxroomsize): A two-channel reverb",
         "helpUrl": "https://doc.sccode.org/Classes/GVerb.html"
     }
     ,
@@ -547,13 +547,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Dynamic stochastic synthesis generator.",
+        "tooltip": "Gendy1(ampdist, durdist, adparam, ddparam, minfreq, maxfreq, ampscale, durscale, initCPs, knum): Dynamic stochastic synthesis generator.",
         "helpUrl": "https://doc.sccode.org/Classes/Gendy1.html"
     }
     ,
     {
         "type": "sc3_GrainFM",
-        "message0": "GrainFM %1 numChannels: %2 trigger: %3 dur: %4 carfreq: %5 modfreq: %6 index: %7 pan: %8 envbufnum: %9 maxGrains: %10 × %11 + %12",
+        "message0": "GrainFM %1 #: %2 trigger: %3 ⏲: %4 carfreq: %5 modfreq: %6 index: %7 pan: %8 envbufnum: %9 maxGrains: %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -570,13 +570,13 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Granular synthesis with frequency modulated sine tones",
+        "tooltip": "GrainFM(numChan, trigger, dur, carfreq, modfreq, index, pan, envbufnum, maxGrains): Granular synthesis with frequency modulated sine tones",
         "helpUrl": "https://doc.sccode.org/Classes/GrainFM.html"
     }
     ,
     {
         "type": "sc3_GrainSin",
-        "message0": "GrainSin %1 numChannels: %2 trigger: %3 dur: %4 ν: %5 pan: %6 envbufnum: %7 maxGrains: %8 × %9 + %10",
+        "message0": "GrainSin %1 #: %2 trigger: %3 ⏲: %4 ν: %5 pan: %6 envbufnum: %7 maxGrains: %8 × %9 + %10",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -591,7 +591,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Granular synthesis with sine tones",
+        "tooltip": "GrainSin(numChan, trigger, dur, freq, pan, envbufnum, maxGrains): Granular synthesis with sine tones",
         "helpUrl": "https://doc.sccode.org/Classes/GrainSin.html"
     }
     ,
@@ -605,7 +605,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Gray Noise.",
+        "tooltip": "GrayNoise(): Gray Noise.",
         "helpUrl": "https://doc.sccode.org/Classes/GrayNoise.html"
     }
     ,
@@ -621,7 +621,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "2nd order Butterworth highpass filter.",
+        "tooltip": "HPF(in, freq): 2nd order Butterworth highpass filter.",
         "helpUrl": "https://doc.sccode.org/Classes/HPF.html"
     }
     ,
@@ -636,13 +636,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Two point difference filter",
+        "tooltip": "HPZ1(in): Two point difference filter",
         "helpUrl": "https://doc.sccode.org/Classes/HPZ1.html"
     }
     ,
     {
         "type": "sc3_IRand",
-        "message0": "IRand %1 ↓: %2 ↑: %3 × %4 + %5",
+        "message0": "IRand %1 ⌊: %2 ⌉: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -652,7 +652,7 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Single integer random number generator.",
+        "tooltip": "IRand(lo, hi): Single integer random number generator.",
         "helpUrl": "https://doc.sccode.org/Classes/IRand.html"
     }
     ,
@@ -668,13 +668,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Impulse oscillator.",
+        "tooltip": "Impulse(freq, phase): Impulse oscillator.",
         "helpUrl": "https://doc.sccode.org/Classes/Impulse.html"
     }
     ,
     {
         "type": "sc3_InFeedback",
-        "message0": "InFeedback %1 numChannels: %2 bus: %3 × %4 + %5",
+        "message0": "InFeedback %1 #: %2 bus: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -684,7 +684,7 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Read signal from a bus with a current or one cycle old timestamp.",
+        "tooltip": "InFeedback(numChan, bus): Read signal from a bus with a current or one cycle old timestamp.",
         "helpUrl": "https://doc.sccode.org/Classes/InFeedback.html"
     }
     ,
@@ -700,13 +700,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "A sine like shape made of two cubic pieces",
+        "tooltip": "LFCub(freq, iphase): A sine like shape made of two cubic pieces",
         "helpUrl": "https://doc.sccode.org/Classes/LFCub.html"
     }
     ,
     {
         "type": "sc3_LFGauss",
-        "message0": "LFGauss %1 duration: %2 ↔: %3 ϕ: %4 loop: %5 doneAction: %6 × %7 + %8",
+        "message0": "LFGauss %1 ⏲: %2 ↔: %3 ϕ: %4 ↻: %5 ⌫: %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "DURATION", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -719,7 +719,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Gaussian function oscillator",
+        "tooltip": "LFGauss(duration, width, iphase, loop, doneAction): Gaussian function oscillator",
         "helpUrl": "https://doc.sccode.org/Classes/LFGauss.html"
     }
     ,
@@ -734,7 +734,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Step noise",
+        "tooltip": "LFNoise0(freq): Step noise",
         "helpUrl": "https://doc.sccode.org/Classes/LFNoise0.html"
     }
     ,
@@ -749,7 +749,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Ramp noise",
+        "tooltip": "LFNoise1(freq): Ramp noise",
         "helpUrl": "https://doc.sccode.org/Classes/LFNoise1.html"
     }
     ,
@@ -764,7 +764,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Quadratic noise.",
+        "tooltip": "LFNoise2(freq): Quadratic noise.",
         "helpUrl": "https://doc.sccode.org/Classes/LFNoise2.html"
     }
     ,
@@ -780,7 +780,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Parabolic oscillator",
+        "tooltip": "LFPar(freq, iphase): Parabolic oscillator",
         "helpUrl": "https://doc.sccode.org/Classes/LFPar.html"
     }
     ,
@@ -797,7 +797,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "pulse oscillator",
+        "tooltip": "LFPulse(freq, iphase, width): pulse oscillator",
         "helpUrl": "https://doc.sccode.org/Classes/LFPulse.html"
     }
     ,
@@ -813,7 +813,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Sawtooth oscillator",
+        "tooltip": "LFSaw(freq, iphase): Sawtooth oscillator",
         "helpUrl": "https://doc.sccode.org/Classes/LFSaw.html"
     }
     ,
@@ -829,7 +829,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Triangle oscillator",
+        "tooltip": "LFTri(freq, iphase): Triangle oscillator",
         "helpUrl": "https://doc.sccode.org/Classes/LFTri.html"
     }
     ,
@@ -845,7 +845,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "2nd order Butterworth lowpass filter",
+        "tooltip": "LPF(in, freq): 2nd order Butterworth lowpass filter",
         "helpUrl": "https://doc.sccode.org/Classes/LPF.html"
     }
     ,
@@ -860,7 +860,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Two point average filter",
+        "tooltip": "LPZ1(in): Two point average filter",
         "helpUrl": "https://doc.sccode.org/Classes/LPZ1.html"
     }
     ,
@@ -876,7 +876,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Exponential lag",
+        "tooltip": "Lag(in, lagTime): Exponential lag",
         "helpUrl": "https://doc.sccode.org/Classes/Lag.html"
     }
     ,
@@ -893,7 +893,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Exponential lag",
+        "tooltip": "LagUD(in, lagTimeU, lagTimeD): Exponential lag",
         "helpUrl": "https://doc.sccode.org/Classes/LagUD.html"
     }
     ,
@@ -909,7 +909,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Sample and hold",
+        "tooltip": "Latch(in, trig): Sample and hold",
         "helpUrl": "https://doc.sccode.org/Classes/Latch.html"
     }
     ,
@@ -925,13 +925,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Remove DC",
+        "tooltip": "LeakDC(in, coef): Remove DC",
         "helpUrl": "https://doc.sccode.org/Classes/LeakDC.html"
     }
     ,
     {
         "type": "sc3_Limiter",
-        "message0": "Limiter %1 ∙: %2 level: %3 dur: %4 × %5 + %6",
+        "message0": "Limiter %1 ∙: %2 ×: %3 ⏲: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -942,13 +942,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Peak limiter",
+        "tooltip": "Limiter(in, level, dur): Peak limiter",
         "helpUrl": "https://doc.sccode.org/Classes/Limiter.html"
     }
     ,
     {
         "type": "sc3_LinExp",
-        "message0": "LinExp %1 ∙: %2 srclo: %3 srchi: %4 dstlo: %5 dsthi: %6 × %7 + %8",
+        "message0": "LinExp %1 ∙: %2 ⌊: %3 ⌈: %4 ⌋: %5 ⌉: %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -961,13 +961,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Map a linear range to an exponential range",
+        "tooltip": "LinExp(in, srclo, srchi, dstlo, dsthi): Map a linear range to an exponential range",
         "helpUrl": "https://doc.sccode.org/Classes/LinExp.html"
     }
     ,
     {
         "type": "sc3_LinRand",
-        "message0": "LinRand %1 ↓: %2 ↑: %3 minmax: %4 × %5 + %6",
+        "message0": "LinRand %1 ⌊: %2 ⌉: %3 minmax: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -978,7 +978,7 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Skewed random number generator.",
+        "tooltip": "LinRand(lo, hi, minmax): Skewed random number generator.",
         "helpUrl": "https://doc.sccode.org/Classes/LinRand.html"
     }
     ,
@@ -995,13 +995,13 @@
         ],
         "output": "UGen",
         "colour": 300,
-        "tooltip": "Two channel linear crossfade.",
+        "tooltip": "LinXFade2(inA, inB, pan): Two channel linear crossfade.",
         "helpUrl": "https://doc.sccode.org/Classes/LinXFade2.html"
     }
     ,
     {
         "type": "sc3_Line",
-        "message0": "Line %1 start: %2 end: %3 dur: %4 doneAction: %5 × %6 + %7",
+        "message0": "― %1 ⟜: %2 ⊸: %3 ⏲: %4 ⌫: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1013,13 +1013,13 @@
         ],
         "output": "UGen",
         "colour": 300,
-        "tooltip": "Line generator.",
+        "tooltip": "Line(start, end, dur, doneAction): Line generator.",
         "helpUrl": "https://doc.sccode.org/Classes/Line.html"
     }
     ,
     {
         "type": "sc3_LocalBuf",
-        "message0": "LocalBuf %1 numChannels: %2 numFrames: %3 × %4 + %5",
+        "message0": "LocalBuf %1 #: %2 numFrames: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1029,13 +1029,13 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Allocate a buffer local to the synth",
+        "tooltip": "LocalBuf(numChannels, numFrames): Allocate a buffer local to the synth",
         "helpUrl": "https://doc.sccode.org/Classes/LocalBuf.html"
     }
     ,
     {
         "type": "sc3_LocalIn",
-        "message0": "LocalIn %1 numChannels: %2 default: %3 × %4 + %5",
+        "message0": "LocalIn %1 #: %2 ⎕: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1045,26 +1045,26 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Define and read from buses local to a synth.",
+        "tooltip": "LocalIn(numChan, default): Define and read from buses local to a synth.",
         "helpUrl": "https://doc.sccode.org/Classes/LocalIn.html"
     }
     ,
     {
         "type": "sc3_LocalOut",
-        "message0": "LocalOut %1 channelsArray: %2",
+        "message0": "LocalOut %1 ⟦⟧: %2",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "CHANNELSARRAY", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Write to buses local to a synth.",
+        "tooltip": "LocalOut(channelsArray): Write to buses local to a synth.",
         "helpUrl": "https://doc.sccode.org/Classes/LocalOut.html"
     }
     ,
     {
         "type": "sc3_MoogFF",
-        "message0": "MoogFF %1 ∙: %2 ν: %3 gain: %4 reset: %5 × %6 + %7",
+        "message0": "MoogFF %1 ∙: %2 ν: %3 gain: %4 ↻: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1076,13 +1076,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Moog VCF implementation, designed by Federico Fontana",
+        "tooltip": "MoogFF(in, freq, gain, reset): Moog VCF implementation, designed by Federico Fontana",
         "helpUrl": "https://doc.sccode.org/Classes/MoogFF.html"
     }
     ,
     {
         "type": "sc3_MouseX",
-        "message0": "MouseX %1 minval: %2 maxval: %3 warp: %4 lag: %5 × %6 + %7",
+        "message0": "☟𝑥 %1 ⌊: %2 ⌉: %3 𝑓: %4 ~: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1094,13 +1094,13 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Cursor tracking UGen.",
+        "tooltip": "MouseX(minval, maxval, warp, lag): Cursor tracking UGen.",
         "helpUrl": "https://doc.sccode.org/Classes/MouseX.html"
     }
     ,
     {
         "type": "sc3_MouseY",
-        "message0": "MouseY %1 minval: %2 maxval: %3 warp: %4 lag: %5 × %6 + %7",
+        "message0": "☟𝑦 %1 ⌊: %2 ⌉: %3 𝑓: %4 ~: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1112,7 +1112,7 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Cursor tracking UGen.",
+        "tooltip": "MouseY(minval, maxval, warp, lag): Cursor tracking UGen.",
         "helpUrl": "https://doc.sccode.org/Classes/MouseY.html"
     }
     ,
@@ -1128,13 +1128,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "One pole filter.",
+        "tooltip": "OnePole(in, coef): One pole filter.",
         "helpUrl": "https://doc.sccode.org/Classes/OnePole.html"
     }
     ,
     {
         "type": "sc3_Out",
-        "message0": "Out %1 bus: %2 channelsArray: %3",
+        "message0": "Out %1 bus: %2 ⟦⟧: %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "BUS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1142,13 +1142,13 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Write a signal to a bus.",
+        "tooltip": "Out(bus, channelsArray): Write a signal to a bus.",
         "helpUrl": "https://doc.sccode.org/Classes/Out.html"
     }
     ,
     {
         "type": "sc3_Pan2",
-        "message0": "Pan2 %1 ∙: %2 pos: %3 level: %4 × %5 + %6",
+        "message0": "Pan2 %1 ∙: %2 pos: %3 ×: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1159,7 +1159,7 @@
         ],
         "output": "UGen",
         "colour": 300,
-        "tooltip": "Two channel equal power pan.",
+        "tooltip": "Pan2(in, pos, level): Two channel equal power pan.",
         "helpUrl": "https://doc.sccode.org/Classes/Pan2.html"
     }
     ,
@@ -1173,7 +1173,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Pink Noise.",
+        "tooltip": "PinkNoise(): Pink Noise.",
         "helpUrl": "https://doc.sccode.org/Classes/PinkNoise.html"
     }
     ,
@@ -1198,7 +1198,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Autocorrelation pitch follower",
+        "tooltip": "Pitch(in, initFreq, minFreq, maxFreq, execFreq, maxBinsPerOctave, median, ampThreshold, peakThreshold, downSample, clar): Autocorrelation pitch follower",
         "helpUrl": "https://doc.sccode.org/Classes/Pitch.html"
     }
     ,
@@ -1217,13 +1217,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Time domain pitch shifter.",
+        "tooltip": "PitchShift(in, windowSize, pitchRatio, pitchDispersion, timeDispersion): Time domain pitch shifter.",
         "helpUrl": "https://doc.sccode.org/Classes/PitchShift.html"
     }
     ,
     {
         "type": "sc3_Pluck",
-        "message0": "Pluck %1 ∙: %2 ⤴: %3 maxdelaytime: %4 delaytime: %5 ↘: %6 coef: %7 × %8 + %9",
+        "message0": "Pluck %1 ∙: %2 ⤴: %3 ⌈⎵: %4 ⎵: %5 ↘: %6 coef: %7 × %8 + %9",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1237,7 +1237,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "A Karplus-Strong UGen",
+        "tooltip": "Pluck(in, trig, maxdelaytime, delaytime, decaytime, coef): A Karplus-Strong UGen",
         "helpUrl": "https://doc.sccode.org/Classes/Pluck.html"
     }
     ,
@@ -1253,13 +1253,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Band limited pulse wave.",
+        "tooltip": "Pulse(freq, width): Band limited pulse wave.",
         "helpUrl": "https://doc.sccode.org/Classes/Pulse.html"
     }
     ,
     {
         "type": "sc3_PulseCount",
-        "message0": "PulseCount %1 ⤴: %2 reset: %3 × %4 + %5",
+        "message0": "⤴# %1 ⤴: %2 ↻: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1269,7 +1269,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Pulse counter.",
+        "tooltip": "PulseCount(trig, reset): Pulse counter.",
         "helpUrl": "https://doc.sccode.org/Classes/PulseCount.html"
     }
     ,
@@ -1286,7 +1286,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "A resonant high pass filter.",
+        "tooltip": "RHPF(in, freq, rq): A resonant high pass filter.",
         "helpUrl": "https://doc.sccode.org/Classes/RHPF.html"
     }
     ,
@@ -1303,13 +1303,13 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "A resonant low pass filter.",
+        "tooltip": "RLPF(in, freq, rq): A resonant low pass filter.",
         "helpUrl": "https://doc.sccode.org/Classes/RLPF.html"
     }
     ,
     {
         "type": "sc3_Rand",
-        "message0": "Rand %1 ↓: %2 ↑: %3 × %4 + %5",
+        "message0": "⚁ %1 ⌊: %2 ⌉: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1319,13 +1319,13 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Single random number generator.",
+        "tooltip": "Rand(lo, hi): Single random number generator.",
         "helpUrl": "https://doc.sccode.org/Classes/Rand.html"
     }
     ,
     {
         "type": "sc3_RecordBuf",
-        "message0": "RecordBuf %1 bufnum: %2 offset: %3 recLevel: %4 preLevel: %5 run: %6 loop: %7 trigger: %8 doneAction: %9 inputArray: %10 × %11 + %12",
+        "message0": "RecordBuf %1 bufnum: %2 offset: %3 recLevel: %4 preLevel: %5 run: %6 ↻: %7 trigger: %8 ⌫: %9 inputArray: %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1342,7 +1342,7 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Record or overdub into a Buffer.",
+        "tooltip": "RecordBuf(bufnum, offset, recLevel, preLevel, run, loop, trigger, doneAction, inputArray): Record or overdub into a Buffer.",
         "helpUrl": "https://doc.sccode.org/Classes/RecordBuf.html"
     }
     ,
@@ -1359,7 +1359,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Resonant filter.",
+        "tooltip": "Resonz(in, freq, bwr): Resonant filter.",
         "helpUrl": "https://doc.sccode.org/Classes/Resonz.html"
     }
     ,
@@ -1376,7 +1376,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Ringing filter.",
+        "tooltip": "Ringz(in, freq, decaytime): Ringing filter.",
         "helpUrl": "https://doc.sccode.org/Classes/Ringz.html"
     }
     ,
@@ -1393,7 +1393,7 @@
         ],
         "output": "UGen",
         "colour": 300,
-        "tooltip": "Rotate a sound field.",
+        "tooltip": "Rotate2(x, y, pos): Rotate a sound field.",
         "helpUrl": "https://doc.sccode.org/Classes/Rotate2.html"
     }
     ,
@@ -1409,7 +1409,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Track maximum level.",
+        "tooltip": "RunningMax(in, trig): Track maximum level.",
         "helpUrl": "https://doc.sccode.org/Classes/RunningMax.html"
     }
     ,
@@ -1424,13 +1424,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Band limited sawtooth.",
+        "tooltip": "Saw(freq): Band limited sawtooth.",
         "helpUrl": "https://doc.sccode.org/Classes/Saw.html"
     }
     ,
     {
         "type": "sc3_Select",
-        "message0": "Select %1 which: %2 array: %3 × %4 + %5",
+        "message0": "Select %1 which: %2 ⟦⟧: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "WHICH", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1440,7 +1440,7 @@
         ],
         "output": "UGen",
         "colour": 150,
-        "tooltip": "Select output from an array of inputs.",
+        "tooltip": "Select(which, array): Select output from an array of inputs.",
         "helpUrl": "https://doc.sccode.org/Classes/Select.html"
     }
     ,
@@ -1456,7 +1456,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Interpolating sine wavetable oscillator.",
+        "tooltip": "SinOsc(freq, phase): Interpolating sine wavetable oscillator.",
         "helpUrl": "https://doc.sccode.org/Classes/SinOsc.html"
     }
     ,
@@ -1472,13 +1472,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Feedback FM oscillator",
+        "tooltip": "SinOscFB(freq, feedback): Feedback FM oscillator",
         "helpUrl": "https://doc.sccode.org/Classes/SinOscFB.html"
     }
     ,
     {
         "type": "sc3_Stepper",
-        "message0": "Stepper %1 ⤴: %2 reset: %3 min: %4 max: %5 step: %6 resetval: %7 × %8 + %9",
+        "message0": "Stepper %1 ⤴: %2 ↻: %3 min: %4 max: %5 step: %6 resetval: %7 × %8 + %9",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1492,7 +1492,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Pulse counter.",
+        "tooltip": "Stepper(trig, reset, min, max, step, resetval): Pulse counter.",
         "helpUrl": "https://doc.sccode.org/Classes/Stepper.html"
     }
     ,
@@ -1508,7 +1508,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Triggered linear ramp",
+        "tooltip": "Sweep(trig, rate): Triggered linear ramp",
         "helpUrl": "https://doc.sccode.org/Classes/Sweep.html"
     }
     ,
@@ -1524,13 +1524,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Hard sync sawtooth wave.",
+        "tooltip": "SyncSaw(syncFreq, sawFreq): Hard sync sawtooth wave.",
         "helpUrl": "https://doc.sccode.org/Classes/SyncSaw.html"
     }
     ,
     {
         "type": "sc3_TExpRand",
-        "message0": "TExpRand %1 ↓: %2 ↑: %3 ⤴: %4 × %5 + %6",
+        "message0": "TExpRand %1 ⌊: %2 ⌉: %3 ⤴: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1541,13 +1541,13 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Triggered exponential random number generator.",
+        "tooltip": "TExpRand(lo, hi, trig): Triggered exponential random number generator.",
         "helpUrl": "https://doc.sccode.org/Classes/TExpRand.html"
     }
     ,
     {
         "type": "sc3_TGrains",
-        "message0": "TGrains %1 numChannels: %2 trigger: %3 bufnum: %4 rate: %5 centerPos: %6 dur: %7 pan: %8 amp: %9 interp: %10 × %11 + %12",
+        "message0": "TGrains %1 #: %2 trigger: %3 bufnum: %4 rate: %5 centerPos: %6 ⏲: %7 pan: %8 ×: %9 interp: %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1564,13 +1564,13 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Buffer granulator.",
+        "tooltip": "TGrains(numChan, trigger, bufnum, rate, centerPos, dur, pan, amp, interp): Buffer granulator.",
         "helpUrl": "https://doc.sccode.org/Classes/TGrains.html"
     }
     ,
     {
         "type": "sc3_TRand",
-        "message0": "TRand %1 ↓: %2 ↑: %3 ⤴: %4 × %5 + %6",
+        "message0": "⚁ %1 ⌊: %2 ⌉: %3 ⤴: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1581,7 +1581,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Triggered random number generator.",
+        "tooltip": "TRand(lo, hi, trig): Triggered random number generator.",
         "helpUrl": "https://doc.sccode.org/Classes/TRand.html"
     }
     ,
@@ -1596,13 +1596,13 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Toggle flip flop.",
+        "tooltip": "ToggleFF(trig): Toggle flip flop.",
         "helpUrl": "https://doc.sccode.org/Classes/ToggleFF.html"
     }
     ,
     {
         "type": "sc3_Trig",
-        "message0": "Trig %1 ∙: %2 dur: %3 × %4 + %5",
+        "message0": "⤴ %1 ∙: %2 ⏲: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1612,7 +1612,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Timed trigger.",
+        "tooltip": "Trig(in, dur): Timed trigger.",
         "helpUrl": "https://doc.sccode.org/Classes/Trig.html"
     }
     ,
@@ -1629,7 +1629,7 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "Variable duty saw",
+        "tooltip": "VarSaw(freq, iphase, width): Variable duty saw",
         "helpUrl": "https://doc.sccode.org/Classes/VarSaw.html"
     }
     ,
@@ -1643,13 +1643,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "White noise.",
+        "tooltip": "WhiteNoise(): White noise.",
         "helpUrl": "https://doc.sccode.org/Classes/WhiteNoise.html"
     }
     ,
     {
         "type": "sc3_XLine",
-        "message0": "XLine %1 start: %2 end: %3 dur: %4 doneAction: %5 × %6 + %7",
+        "message0": "XLine %1 ⟜: %2 ⊸: %3 ⏲: %4 ⌫: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1661,13 +1661,13 @@
         ],
         "output": "UGen",
         "colour": 300,
-        "tooltip": "Exponential line generator.",
+        "tooltip": "XLine(start, end, dur, doneAction): Exponential line generator.",
         "helpUrl": "https://doc.sccode.org/Classes/XLine.html"
     }
     ,
     {
         "type": "sc3_ADSR",
-        "message0": "ADSR %1 gate: %2 attackTime: %3 decayTime: %4 sustainLevel: %5 releaseTime: %6 curves: %7 × %8 + %9",
+        "message0": "ADSR %1 gate: %2 ↗: %3 ↘: %4 sustainLevel: %5 releaseTime: %6 curves: %7 × %8 + %9",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "GATE", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1687,7 +1687,7 @@
     ,
     {
         "type": "sc3_LinLin",
-        "message0": "LinLin %1 ∙: %2 srclo: %3 srchi: %4 dstlo: %5 dsthi: %6 × %7 + %8",
+        "message0": "LinLin %1 ∙: %2 ⌊: %3 ⌈: %4 ⌋: %5 ⌉: %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1724,7 +1724,7 @@
     ,
     {
         "type": "sc3_RingzBank",
-        "message0": "RingzBank %1 input: %2 ν: %3 amp: %4 time: %5 × %6 + %7",
+        "message0": "RingzBank %1 ∙: %2 ν: %3 ×: %4 ⏲: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "INPUT", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1759,7 +1759,7 @@
     ,
     {
         "type": "sc3_SinOscBank",
-        "message0": "SinOscBank %1 ν: %2 amp: %3 ϕ: %4 × %5 + %6",
+        "message0": "SinOscBank %1 ν: %2 ×: %3 ϕ: %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1776,7 +1776,7 @@
     ,
     {
         "type": "sc3_Splay",
-        "message0": "Splay %1 input: %2 spread: %3 level: %4 center: %5 levelComp: %6 × %7 + %8",
+        "message0": "Splay %1 ∙: %2 spread: %3 ×: %4 center: %5 levelComp: %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "INPUT", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1795,7 +1795,7 @@
     ,
     {
         "type": "sc3_TChoose",
-        "message0": "TChoose %1 ⤴: %2 array: %3 × %4 + %5",
+        "message0": "TChoose %1 ⤴: %2 ⟦⟧: %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1811,7 +1811,7 @@
     ,
     {
         "type": "sc3_TLine",
-        "message0": "TLine %1 start: %2 end: %3 dur: %4 ⤴: %5 × %6 + %7",
+        "message0": "TLine %1 ⟜: %2 ⊸: %3 ⏲: %4 ⤴: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1829,7 +1829,7 @@
     ,
     {
         "type": "sc3_TXLine",
-        "message0": "TXLine %1 start: %2 end: %3 dur: %4 ⤴: %5 × %6 + %7",
+        "message0": "TXLine %1 ⟜: %2 ⊸: %3 ⏲: %4 ⤴: %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
