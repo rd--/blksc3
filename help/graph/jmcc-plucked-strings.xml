@@ -21,7 +21,7 @@
                 <value name="RETURN">
                   <block type="sc3_Pan2" id="%=ik2@VrXa@-9,[2hgFq">
                     <value name="IN">
-                      <block type="sc3_CombL" id="`ejp@m+n63Y)n/p?;AqL">
+                      <block type="sc3_CombC" id="`ejp@m+n63Y)n/p?;AqL">
                         <value name="IN">
                           <block type="sc3_Decay" id="m/MfebG8n]s|TLS*Ni!l">
                             <value name="IN">
@@ -339,24 +339,18 @@
                   <block type="sc3_UnaryOp" id="YCx,|hYUa9m/8c*Ggx#U">
                     <field name="OP">sum</field>
                     <value name="IN">
-                      <block type="sc3_ArrayCollect" id="Tqxy.k[0tbx@K@,`(r#]" inline="true">
-                        <value name="ARRAY">
-                          <block type="sc3_ArrayFromTo" id="hcNF7$@G=7PG6p!!}Qai" inline="true">
-                            <value name="FROM">
-                              <block type="math_number" id="kVeGRu1qVtjdoHEZL2R~">
-                                <field name="NUM">1</field>
-                              </block>
-                            </value>
-                            <value name="TO">
-                              <block type="math_number" id="4UZcg4*)kcbk$p!^[]Zx">
-                                <field name="NUM">5</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
+                      <block type="sc3_ArrayFill" id="TV?t$~B;nYaxkf:9OA!J" inline="true">
                         <value name="PROC">
                           <block type="variables_get" id="iIv=-~3M)rL(8qSbph38">
                             <field name="VAR" id="lrrsR.Qa#{E}9TiWSLMr">strFunc</field>
+                          </block>
+                        </value>
+                        <value name="COUNT">
+                          <shadow type="math_number" id="Hs.sB2;~oOs$9?S[VGjM">
+                            <field name="NUM">10</field>
+                          </shadow>
+                          <block type="math_number" id="4UZcg4*)kcbk$p!^[]Zx">
+                            <field name="NUM">5</field>
                           </block>
                         </value>
                       </block>

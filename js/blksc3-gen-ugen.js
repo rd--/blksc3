@@ -68,6 +68,17 @@ Blockly.JavaScript['sc3_BPZ2'] = function(block) {
     return [BPZ2_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_Balance2'] = function(block) {
+    var left_value = Blockly.JavaScript.valueToCode(block, 'LEFT', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var right_value = Blockly.JavaScript.valueToCode(block, 'RIGHT', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var pos_value = Blockly.JavaScript.valueToCode(block, 'POS', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var level_value = Blockly.JavaScript.valueToCode(block, 'LEVEL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var Balance2_code = 'MulAdd(Balance2(' + left_value + ', ' + right_value + ', ' + pos_value + ', ' + level_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [Balance2_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_Blip'] = function(block) {
     var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '440.0';
     var numharm_value = Blockly.JavaScript.valueToCode(block, 'NUMHARM', Blockly.JavaScript.ORDER_ATOMIC) || '200.0';

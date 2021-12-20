@@ -144,6 +144,10 @@ function blk_read_input_json() {
     }
 }
 
+// Write selected .xml file.
+function blk_write_output_xml() {
+}
+
 // Read and load .xml format program from URL.
 function blk_fetch_xml(xmlUrl, autoPlay) {
     var request = new XMLHttpRequest();

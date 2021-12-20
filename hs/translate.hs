@@ -274,7 +274,7 @@ blk_graphs =
      ,"Tw 0041", "Tw 0045"
      ,"Tw 0051", "Tw 0059"
      ,"Tw 0084"
-     ,"Tw 0134"
+     ,"Tw 0134", "Tw 0134 (Var)"
      ,"Tw 0220", "Tw 0225"
      ,"Tw 0454598285861617665"
      ,"Tw 0456384156159574016"
@@ -360,6 +360,7 @@ blk_help :: [String]
 blk_help =
   ["ADSR.1"
   ,"ArrayFill.1"
+  ,"Balance2.1", "Balance2.2"
   ,"Blip.1", "Blip.2"
   ,"CombC.1"
   ,"Decay2.1"

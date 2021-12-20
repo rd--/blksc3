@@ -1,6 +1,6 @@
 // plucked strings (jmcc)
 var strFunc = {
-    Pan2(CombL(Decay(
+    Pan2(CombC(Decay(
         [
             Impulse(Rand(2, 2.2), 0) * 0.3,
             Dust(0.5) * 0.3,
@@ -8,4 +8,4 @@ var strFunc = {
         ].choose,
         0.1) * PinkNoise() * 0.1, 0.01, 1 / Rand(60, 90).floor.midicps, 4), Rand(-1, 1), 1)
 };
-1.to(5).collect(strFunc).sum
+strFunc.dup(5).sum

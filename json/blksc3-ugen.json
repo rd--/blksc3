@@ -119,6 +119,24 @@
     }
     ,
     {
+        "type": "sc3_Balance2",
+        "message0": "Balance2 %1 𝐿 %2 𝑅 %3 ⌖ %4 × %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "LEFT", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RIGHT", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "POS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Balance2(left, right, pos, level): Stereo signal balancer",
+        "helpUrl": "https://doc.sccode.org/Classes/Balance2.html"
+    }
+    ,
+    {
         "type": "sc3_Blip",
         "message0": "Blip %1 ν %2 # %3 × %4 + %5",
         "args0": [
@@ -150,7 +168,7 @@
     ,
     {
         "type": "sc3_Clip",
-        "message0": "Clip %1 ∙ %2 ⌊ %3 ⌉ %4 × %5 + %6",
+        "message0": "⊏ %1 ∙ %2 ⌊ %3 ⌉ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -415,7 +433,7 @@
     ,
     {
         "type": "sc3_ExpRand",
-        "message0": "Exp⚁ %1 ⌊ %2 ⌉ %3 × %4 + %5",
+        "message0": "𝑋⚁ %1 ⌊ %2 ⌉ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -452,7 +470,7 @@
     ,
     {
         "type": "sc3_Formant",
-        "message0": "Formant %1 fundfreq %2 formfreq %3 bwfreq %4 × %5 + %6",
+        "message0": "Formant %1 ν𝟎 %2 formfreq %3 ν↕ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "FUNDFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -505,7 +523,7 @@
     ,
     {
         "type": "sc3_GVerb",
-        "message0": "GVerb %1 ∙ %2 roomsize %3 revtime %4 damping %5 inputbw %6 spread %7 drylevel %8 earlyreflevel %9 taillevel %10 maxroomsize %11 × %12 + %13",
+        "message0": "GVerb %1 ∙ %2 ▣ %3 ⏲ %4 ⊕ %5 ∙↕ %6 ◠ %7 ∙× %8 ◿× %9 ◺× %10 ⌈▣ %11 × %12 + %13",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -803,7 +821,7 @@
     ,
     {
         "type": "sc3_LFSaw",
-        "message0": "LFSaw %1 ν %2 ϕ %3 × %4 + %5",
+        "message0": "Lf◿ %1 ν %2 ϕ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -819,7 +837,7 @@
     ,
     {
         "type": "sc3_LFTri",
-        "message0": "LFTri %1 ν %2 ϕ %3 × %4 + %5",
+        "message0": "△ %1 ν %2 ϕ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -866,7 +884,7 @@
     ,
     {
         "type": "sc3_Lag",
-        "message0": "Lag %1 ∙ %2 lagTime %3 × %4 + %5",
+        "message0": "Lag %1 ∙ %2 ⏲ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1082,7 +1100,7 @@
     ,
     {
         "type": "sc3_MouseX",
-        "message0": "☟𝑥 %1 ⌊ %2 ⌉ %3 𝑓 %4 ~ %5 × %6 + %7",
+        "message0": "☟𝑥 %1 ⌊ %2 ⌈ %3 𝑓 %4 ~ %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1100,7 +1118,7 @@
     ,
     {
         "type": "sc3_MouseY",
-        "message0": "☟𝑦 %1 ⌊ %2 ⌉ %3 𝑓 %4 ~ %5 × %6 + %7",
+        "message0": "☟𝑦 %1 ⌊ %2 ⌈ %3 𝑓 %4 ~ %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1148,7 +1166,7 @@
     ,
     {
         "type": "sc3_Pan2",
-        "message0": "Pan2 %1 ∙ %2 pos %3 × %4 × %5 + %6",
+        "message0": "Pan2 %1 ∙ %2 ⌖ %3 × %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1382,7 +1400,7 @@
     ,
     {
         "type": "sc3_Rotate2",
-        "message0": "Rotate2 %1 x %2 y %3 pos %4 × %5 + %6",
+        "message0": "Rotate2 %1 x %2 y %3 ⌖ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "X", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1415,7 +1433,7 @@
     ,
     {
         "type": "sc3_Saw",
-        "message0": "Saw %1 ν %2 × %3 + %4",
+        "message0": "◿ %1 ν %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1514,7 +1532,7 @@
     ,
     {
         "type": "sc3_SyncSaw",
-        "message0": "SyncSaw %1 syncFreq %2 sawFreq %3 × %4 + %5",
+        "message0": "↲◿ %1 ν↲ %2 ν◿ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "SYNCFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1570,7 +1588,7 @@
     ,
     {
         "type": "sc3_TRand",
-        "message0": "⚁ %1 ⌊ %2 ⌉ %3 ⤴ %4 × %5 + %6",
+        "message0": "⤴⚁ %1 ⌊ %2 ⌉ %3 ⤴ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1618,7 +1636,7 @@
     ,
     {
         "type": "sc3_VarSaw",
-        "message0": "VarSaw %1 ν %2 ϕ %3 ↔ %4 × %5 + %6",
+        "message0": "Var◿ %1 ν %2 ϕ %3 ↔ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1649,7 +1667,7 @@
     ,
     {
         "type": "sc3_XLine",
-        "message0": "XLine %1 ⟜ %2 ⊸ %3 ⏲ %4 ⌫ %5 × %6 + %7",
+        "message0": "𝑋― %1 ⟜ %2 ⊸ %3 ⏲ %4 ⌫ %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1776,7 +1794,7 @@
     ,
     {
         "type": "sc3_Splay",
-        "message0": "Splay %1 ∙ %2 spread %3 × %4 center %5 levelComp %6 × %7 + %8",
+        "message0": "◠ %1 ∙ %2 ◠ %3 × %4 center %5 levelComp %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "INPUT", "check": ["Number", "Array", "UGen", "Boolean"]},
