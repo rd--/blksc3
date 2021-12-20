@@ -6,6 +6,10 @@ Blockly.JavaScript['sc3_Play'] = function(block) {
     return Blockly.JavaScript.valueToCode(block, 'CODE', Blockly.JavaScript.ORDER_ATOMIC) || '0';
 };
 
+Blockly.JavaScript['sc3_Constant'] = function(block) {
+    return [block.getFieldValue('CONST'), Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_Proc0'] = function(block) {
     var return_value = Blockly.JavaScript.valueToCode(block, 'RETURN', Blockly.JavaScript.ORDER_ATOMIC) || '0';
     return ['{ ' + return_value + ' }', Blockly.JavaScript.ORDER_FUNCTION_CALL];

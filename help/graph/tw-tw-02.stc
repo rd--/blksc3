@@ -1,0 +1,16 @@
+// <https://swiki.hfbk-hamburg.de/MusicTechnology/899> (tw ; tim walters)
+var nd = {
+    arg k;
+    var x = {
+        arg p;
+        var f = p.nth(1);
+        var m = p.nth(2);
+        var j = p.nth(3);
+        SinOsc(f + (m * 4 * j), m) * LFNoise1(j + 1 / f * 4) / 2
+    };
+    var y = x.value([0.1, 0, 8]);
+    var i = 1;
+    9.timesRepeat({ y = x.value([i * k * [4, 8], y, i]); i = i + 1; });
+    y
+};
+1.to(8).collect(nd).sum / 4

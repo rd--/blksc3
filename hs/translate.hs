@@ -340,7 +340,7 @@ blk_graphs =
   ,("PJ"
    ,["Forest Sounds"])
   ,("TW"
-   ,["Tw 01"])
+   ,["Tw 01", "Tw 02"])
   ]
 
 blk_graphs_names :: [String]
