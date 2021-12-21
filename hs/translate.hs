@@ -292,9 +292,13 @@ blk_graphs =
   ,("JAR", ["1-4Qx", "rk_20120422"])
   ,("JL", ["1 9", "1 Z", "Bitwise", "Dark Sea Horns", "Rain, Thunder"])
   ,("JMcC",
-     ["Alien Meadow"
+     ["Aleatoric Quartet"
+     ,"Alien Froggies"
+     ,"Alien Meadow"
+     ,"Analogue Daze"
      ,"Analog Bubbles", "Analog Bubbles (Mouse)", "Analog Bubbles (Var)"
      ,"Babbling Brook"
+     ,"Berlin, 1977"
      ,"Birdies"
      ,"Coolant", "Coolant (Texture)"
      ,"Deep Trip"

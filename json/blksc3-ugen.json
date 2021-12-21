@@ -88,7 +88,7 @@
     ,
     {
         "type": "sc3_BPF",
-        "message0": "BPF %1 ∙ %2 ν %3 rq %4 × %5 + %6",
+        "message0": "BPF %1 ∙ %2 ν %3 ¹⁄𝑄 %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -320,7 +320,7 @@
     ,
     {
         "type": "sc3_Demand",
-        "message0": "Demand %1 ⤴ %2 ↻ %3 demandUGens %4 × %5 + %6",
+        "message0": "Demand %1 ⤴ %2 ↻ %3 ∙ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -337,7 +337,7 @@
     ,
     {
         "type": "sc3_Drand",
-        "message0": "Drand %1 repeats %2 list %3 × %4 + %5",
+        "message0": "Drand %1 # %2 list %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -353,7 +353,7 @@
     ,
     {
         "type": "sc3_Dseq",
-        "message0": "Dseq %1 repeats %2 list %3 × %4 + %5",
+        "message0": "Dseq %1 # %2 list %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -369,7 +369,7 @@
     ,
     {
         "type": "sc3_Dshuf",
-        "message0": "Dshuf %1 repeats %2 list %3 × %4 + %5",
+        "message0": "Dshuf %1 # %2 list %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -466,6 +466,23 @@
         "colour": 210,
         "tooltip": "FBSineC(freq, im, fb, a, c, xi, yi): Feedback sine with chaotic phase indexing",
         "helpUrl": "https://doc.sccode.org/Classes/FBSineC.html"
+    }
+    ,
+    {
+        "type": "sc3_Fold",
+        "message0": "Fold %1 ∙ %2 ⌊ %3 ⌉ %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Fold(in, lo, hi): Fold a signal outside given thresholds.",
+        "helpUrl": "https://doc.sccode.org/Classes/Fold.html"
     }
     ,
     {
@@ -660,7 +677,7 @@
     ,
     {
         "type": "sc3_IRand",
-        "message0": "IRand %1 ⌊ %2 ⌉ %3 × %4 + %5",
+        "message0": "𝐼⚁ %1 ⌊ %2 ⌉ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -884,7 +901,7 @@
     ,
     {
         "type": "sc3_Lag",
-        "message0": "Lag %1 ∙ %2 ⏲ %3 × %4 + %5",
+        "message0": "⏥ %1 ∙ %2 ⏲ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1292,8 +1309,25 @@
     }
     ,
     {
+        "type": "sc3_PulseDivider",
+        "message0": "PulseDivider %1 ⤴ %2 ÷ %3 ⟜ %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DIV", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "PulseDivider(trig, div, start): Pulse divider.",
+        "helpUrl": "https://doc.sccode.org/Classes/PulseDivider.html"
+    }
+    ,
+    {
         "type": "sc3_RHPF",
-        "message0": "RHPF %1 ∙ %2 ν %3 rq %4 × %5 + %6",
+        "message0": "RHPF %1 ∙ %2 ν %3 ¹⁄𝑄 %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1310,7 +1344,7 @@
     ,
     {
         "type": "sc3_RLPF",
-        "message0": "RLPF %1 ∙ %2 ν %3 rq %4 × %5 + %6",
+        "message0": "RLPF %1 ∙ %2 ν %3 ¹⁄𝑄 %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1773,6 +1807,38 @@
         "colour": 150,
         "tooltip": "Select signal branch based on predicate value",
         "helpUrl": "https://doc.sccode.org/Classes/Select2.html"
+    }
+    ,
+    {
+        "type": "sc3_Seq",
+        "message0": "Seq %1 # %2 ⟦⟧ %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Sequence generator with repeats count",
+        "helpUrl": "https://doc.sccode.org/Classes/Seq.html"
+    }
+    ,
+    {
+        "type": "sc3_Shuf",
+        "message0": "Shuf %1 # %2 ⟦⟧ %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Random sequence generator with repeats count",
+        "helpUrl": "https://doc.sccode.org/Classes/Shuf.html"
     }
     ,
     {
