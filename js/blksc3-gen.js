@@ -6,8 +6,17 @@ Blockly.JavaScript['sc3_Play'] = function(block) {
     return Blockly.JavaScript.valueToCode(block, 'CODE', Blockly.JavaScript.ORDER_ATOMIC) || '0';
 };
 
+function blksc3_const(c) {
+    switch(c) {
+    case 'e': return '2.718281828459045';
+    case 'pi': return '3.141592653589793';
+    case 'twoPi': return '6.283185307179586';
+    default: throw 'blksc3_const';
+    }
+};
+
 Blockly.JavaScript['sc3_Constant'] = function(block) {
-    return [block.getFieldValue('CONST'), Blockly.JavaScript.ORDER_FUNCTION_CALL];
+    return [blksc3_const(block.getFieldValue('CONST')), Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_Proc0'] = function(block) {

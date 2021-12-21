@@ -302,6 +302,7 @@ blk_graphs =
      ,"Fast LFOs with Slow Beats"
      ,"Hard-Sync Sawtooth with LFO"
      ,"Harmonic Cloud"
+     ,"Harmonic Swimming"
      ,"Harmonic Zither"
      ,"Inharmonic Warbulence"
      ,"Lfo Modulation"
