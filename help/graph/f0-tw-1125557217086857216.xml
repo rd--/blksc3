@@ -6,7 +6,7 @@
     <variable id="bFc*E~;Bp)QZ,?P{$($n">o</variable>
     <variable id="jXAG.$(?Ev{!UC2$@WDh">s</variable>
   </variables>
-  <block type="sc3_Comment" id="[E:.KWE~zE)33y.vi?H*" x="280" y="126">
+  <block type="sc3_Comment" id="[E:.KWE~zE)33y.vi?H*" x="0" y="0">
     <field name="COMMENT">https://twitter.com/redFrik/status/1125557217086857216</field>
     <next>
       <block type="variables_set" id="7sCB`i/##{(8ScUX.LcT">
@@ -344,47 +344,55 @@
                               </block>
                             </value>
                             <value name="FREQ">
-                              <block type="sc3_BinaryOp" id="1m|@Jvx:r$D|N~$|/,Yz" inline="true">
-                                <field name="OP">*</field>
-                                <value name="LHS">
-                                  <block type="sc3_KeywordBinaryOp" id="HHC}QmH^}w~j^zBgFa4D" inline="true">
-                                    <field name="OP">lag2</field>
+                              <block type="sc3_Lag2" id=";h.gfN1!eCrpkVUV6$a1" inline="true">
+                                <value name="IN">
+                                  <shadow type="math_number" id="!^t:UQu]RD~lg2~;#-I1">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="variables_get" id="i-z^O^p7^:!L]NEiG5_O">
+                                    <field name="VAR" id="G]LJA9QGv6v,Q}.$ttQ4">m</field>
+                                  </block>
+                                </value>
+                                <value name="LAGTIME">
+                                  <shadow type="math_number" id="Rlr8$zBp^B,w!Ur5[N}8">
+                                    <field name="NUM">0.1</field>
+                                  </shadow>
+                                  <block type="sc3_BinaryOp" id="U/@/G1.iIHPhh5)m6iV4" inline="true">
+                                    <field name="OP">%</field>
                                     <value name="LHS">
-                                      <block type="variables_get" id="i-z^O^p7^:!L]NEiG5_O">
-                                        <field name="VAR" id="G]LJA9QGv6v,Q}.$ttQ4">m</field>
-                                      </block>
-                                    </value>
-                                    <value name="RHS">
-                                      <block type="sc3_BinaryOp" id="U/@/G1.iIHPhh5)m6iV4" inline="true">
-                                        <field name="OP">%</field>
+                                      <block type="sc3_BinaryOp" id="hkaxAaY#1D;vgXL8Q0xJ" inline="true">
+                                        <field name="OP">/</field>
                                         <value name="LHS">
-                                          <block type="sc3_BinaryOp" id="hkaxAaY#1D;vgXL8Q0xJ" inline="true">
-                                            <field name="OP">/</field>
-                                            <value name="LHS">
-                                              <block type="math_number" id=":EMNtsh;NgMh5*tDQPjg">
-                                                <field name="NUM">1</field>
-                                              </block>
-                                            </value>
-                                            <value name="RHS">
-                                              <block type="variables_get" id="g(~Y$+fhw$C8TAR-t4Zo">
-                                                <field name="VAR" id="k@[Q0{!GzSkG+uPI`Xt;">b</field>
-                                              </block>
-                                            </value>
-                                          </block>
-                                        </value>
-                                        <value name="RHS">
-                                          <block type="math_number" id=";A8.m4t)e|mDNBq%Yxiw">
+                                          <block type="math_number" id=":EMNtsh;NgMh5*tDQPjg">
                                             <field name="NUM">1</field>
                                           </block>
                                         </value>
+                                        <value name="RHS">
+                                          <block type="variables_get" id="g(~Y$+fhw$C8TAR-t4Zo">
+                                            <field name="VAR" id="k@[Q0{!GzSkG+uPI`Xt;">b</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="RHS">
+                                      <block type="math_number" id=";A8.m4t)e|mDNBq%Yxiw">
+                                        <field name="NUM">1</field>
                                       </block>
                                     </value>
                                   </block>
                                 </value>
-                                <value name="RHS">
+                                <value name="MUL">
+                                  <shadow type="math_number" id=";b[PeHyNqJ+Y4T2nHZz7">
+                                    <field name="NUM">1</field>
+                                  </shadow>
                                   <block type="math_number" id="W1KJGJRQfSWoD5)LqG]b">
                                     <field name="NUM">3</field>
                                   </block>
+                                </value>
+                                <value name="ADD">
+                                  <shadow type="math_number" id="DN;7B!!!,nf!S(N0VSG0">
+                                    <field name="NUM">0</field>
+                                  </shadow>
                                 </value>
                               </block>
                             </value>

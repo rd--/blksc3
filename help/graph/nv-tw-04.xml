@@ -4,7 +4,7 @@
     <variable id="W[XG6Fn4}lUw=z,Z-q*|">f</variable>
     <variable id="RX|avoH,|5qk?qtl5eHU">a</variable>
   </variables>
-  <block type="sc3_Comment" id="}biI?;X?3m?R?D+wc-E_" x="-599" y="-284">
+  <block type="sc3_Comment" id="}biI?;X?3m?R?D+wc-E_" x="0" y="0">
     <field name="COMMENT">nv https://swiki.hfbk-hamburg.de/MusicTechnology/899</field>
     <next>
       <block type="variables_set" id="ICyDYkVh.w8=K7`No:l2">
@@ -75,10 +75,9 @@
                       </block>
                     </value>
                     <value name="RHS">
-                      <block type="sc3_KeywordBinaryOp" id="ByY07$F,ynz5S4k[S`3C" inline="true">
-                        <field name="OP">lag</field>
-                        <value name="LHS">
-                          <shadow type="math_number" id="Dy,?rV,!E~Jr88)by$(1">
+                      <block type="sc3_Lag" id="YVdCwx`-,)F)3A%UfMSP" inline="true">
+                        <value name="IN">
+                          <shadow type="math_number" id="?opt!XIlUYFE8Ml_Nv32">
                             <field name="NUM">0</field>
                           </shadow>
                           <block type="sc3_LFNoise0" id="1W)`j2b4hpmeBd=DL/^f" inline="true">
@@ -112,9 +111,19 @@
                             </value>
                           </block>
                         </value>
-                        <value name="RHS">
-                          <shadow type="math_number" id="nl~NsW9o!A4(#.Oo[CmS">
+                        <value name="LAGTIME">
+                          <shadow type="math_number" id="CR6.@U[`@7k|sLEvs#}@">
                             <field name="NUM">0.1</field>
+                          </shadow>
+                        </value>
+                        <value name="MUL">
+                          <shadow type="math_number" id="vl.,A-OcFKgxx`0e@95A">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <value name="ADD">
+                          <shadow type="math_number" id="jRRgDdBFN`FY.H^0Vqc{">
+                            <field name="NUM">0</field>
                           </shadow>
                         </value>
                       </block>

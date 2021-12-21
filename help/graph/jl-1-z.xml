@@ -22,9 +22,11 @@
           <block type="variables_set" id="[jE~5eqB4.WV~P6+1E#K">
             <field name="VAR" id="j/;$,/bs0cF)30l#[Vus">a</field>
             <value name="VALUE">
-              <block type="sc3_KeywordBinaryOp" id="zQ:.NvbSv;PGZA`BYM]m" inline="true">
-                <field name="OP">lag</field>
-                <value name="LHS">
+              <block type="sc3_Lag" id="+RK9%k+sq.k+A}iZ+b]u" inline="true">
+                <value name="IN">
+                  <shadow type="math_number" id="wM]FsaXnSRn4(miDQM@d">
+                    <field name="NUM">0</field>
+                  </shadow>
                   <block type="sc3_Trig" id="lb`[C!%XM5nHS!`SC3Q}" inline="true">
                     <value name="IN">
                       <block type="sc3_Impulse" id="Fd$EbnJeih*AqSzewPNp" inline="true">
@@ -77,10 +79,20 @@
                     </value>
                   </block>
                 </value>
-                <value name="RHS">
-                  <block type="math_number" id="*U7VwM(p79!R@B:(eD%B">
+                <value name="LAGTIME">
+                  <shadow type="math_number" id="iVBEMow4}1h={y4n(ATI">
                     <field name="NUM">0.1</field>
-                  </block>
+                  </shadow>
+                </value>
+                <value name="MUL">
+                  <shadow type="math_number" id="v4PhshXT,UZ5U[KREaEV">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="ADD">
+                  <shadow type="math_number" id="GXZ+{dpFze5gIM/$S^iI">
+                    <field name="NUM">0</field>
+                  </shadow>
                 </value>
               </block>
             </value>
@@ -90,9 +102,11 @@
                 <value name="VALUE">
                   <block type="sc3_Crackle" id="n20)L*p+YLe/BJ,gD4Ta" inline="true">
                     <value name="CHAOSPARAM">
-                      <block type="sc3_KeywordBinaryOp" id="cFvcRSo|/upSILMKXf,7" inline="true">
-                        <field name="OP">lag</field>
-                        <value name="LHS">
+                      <block type="sc3_Lag" id="_OgtCneA#9~[5odr^9if" inline="true">
+                        <value name="IN">
+                          <shadow type="math_number" id="d^T%,B+:e_[`DE(iRhs=">
+                            <field name="NUM">0</field>
+                          </shadow>
                           <block type="sc3_UnaryOp" id="@oE~/YaB$Qn~(%usMLJG">
                             <field name="OP">abs</field>
                             <value name="IN">
@@ -124,10 +138,20 @@
                             </value>
                           </block>
                         </value>
-                        <value name="RHS">
-                          <block type="math_number" id="g|[$G[{dHkp~5|y6+_!v">
+                        <value name="LAGTIME">
+                          <shadow type="math_number" id="4CQ][LP1;AL;TPW.:9JF">
                             <field name="NUM">0.1</field>
-                          </block>
+                          </shadow>
+                        </value>
+                        <value name="MUL">
+                          <shadow type="math_number" id="oM?D,ud;?WD-q_;;iR[E">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <value name="ADD">
+                          <shadow type="math_number" id="7Vp0Tg-L%HmT6Ko2zQ){">
+                            <field name="NUM">0</field>
+                          </shadow>
                         </value>
                       </block>
                     </value>
@@ -165,9 +189,11 @@
                       <block type="variables_set" id="[ti(`~;bWhNG}U=r`$u5">
                         <field name="VAR" id="[h{,N:$UUrO]`LC*26S@">d</field>
                         <value name="VALUE">
-                          <block type="sc3_KeywordBinaryOp" id="`2)PgbE.5BGuYCHi,NR0" inline="true">
-                            <field name="OP">lag</field>
-                            <value name="LHS">
+                          <block type="sc3_Lag" id="+CqrJBH*{!9|-L2V|*C8" inline="true">
+                            <value name="IN">
+                              <shadow type="math_number" id="1$8r-,qgA=[#BKu2ToW{">
+                                <field name="NUM">0</field>
+                              </shadow>
                               <block type="sc3_Trig" id="YCBvK3p2ag%Ds-1ZvYp0" inline="true">
                                 <value name="IN">
                                   <block type="sc3_Impulse" id="pUdY,+zO{wo3TkBn8m`S" inline="true">
@@ -232,10 +258,20 @@
                                 </value>
                               </block>
                             </value>
-                            <value name="RHS">
-                              <block type="math_number" id="22dl.`q4eswPhMq,PZH;">
+                            <value name="LAGTIME">
+                              <shadow type="math_number" id=".KR.gT7nhM-x8;@az=#L">
                                 <field name="NUM">0.1</field>
-                              </block>
+                              </shadow>
+                            </value>
+                            <value name="MUL">
+                              <shadow type="math_number" id="2)y/DdnDr8D]R#wOUgx?">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="sld9*jGn^nS2O@Z4pz40">
+                                <field name="NUM">0</field>
+                              </shadow>
                             </value>
                           </block>
                         </value>
@@ -290,16 +326,16 @@
                                 <next>
                                   <block type="sc3_Play" id="*C^o!XArzpzs4LarZQ-Y">
                                     <value name="CODE">
-                                      <block type="sc3_BinaryOp" id=".SSn(KOst[La%T6;HHe1">
+                                      <block type="sc3_BinaryOp" id=".SSn(KOst[La%T6;HHe1" inline="true">
                                         <field name="OP">*</field>
                                         <value name="LHS">
                                           <block type="sc3_UnaryOp" id="(f*=5RfK4S1N-o?.:!%_">
                                             <field name="OP">tanh</field>
                                             <value name="IN">
-                                              <block type="sc3_BinaryOp" id=":|uvW(MHy3!j[7]wsdX5">
+                                              <block type="sc3_BinaryOp" id=":|uvW(MHy3!j[7]wsdX5" inline="true">
                                                 <field name="OP">*</field>
                                                 <value name="LHS">
-                                                  <block type="sc3_GVerb" id="U0?w_okNxca.M^j;dYnQ" inline="false">
+                                                  <block type="sc3_GVerb" id="U0?w_okNxca.M^j;dYnQ" inline="true">
                                                     <value name="IN">
                                                       <block type="variables_get" id="PI_eSnHyXPcL:emH.uw*">
                                                         <field name="VAR" id="@TEEN6VKR3QdY6TYEC-h">f</field>

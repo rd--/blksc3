@@ -221,7 +221,7 @@
     ,
     {
         "type": "sc3_Crackle",
-        "message0": "Crackle %1 chaosParam %2 × %3 + %4",
+        "message0": "Crackle %1 𝛼 %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "CHAOSPARAM", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -333,54 +333,6 @@
         "colour": 30,
         "tooltip": "Demand(trig, reset, demandUGens): Demand results from demand rate UGens.",
         "helpUrl": "https://doc.sccode.org/Classes/Demand.html"
-    }
-    ,
-    {
-        "type": "sc3_Drand",
-        "message0": "Drand %1 # %2 list %3 × %4 + %5",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
-        ],
-        "output": "UGen",
-        "colour": 30,
-        "tooltip": "Drand(repeats, list): Demand rate random sequence generator.",
-        "helpUrl": "https://doc.sccode.org/Classes/Drand.html"
-    }
-    ,
-    {
-        "type": "sc3_Dseq",
-        "message0": "Dseq %1 # %2 list %3 × %4 + %5",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
-        ],
-        "output": "UGen",
-        "colour": 30,
-        "tooltip": "Dseq(repeats, list): Demand rate sequence generator.",
-        "helpUrl": "https://doc.sccode.org/Classes/Dseq.html"
-    }
-    ,
-    {
-        "type": "sc3_Dshuf",
-        "message0": "Dshuf %1 # %2 list %3 × %4 + %5",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "LIST", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
-        ],
-        "output": "UGen",
-        "colour": 30,
-        "tooltip": "Dshuf(repeats, list): Demand rate random sequence generator",
-        "helpUrl": "https://doc.sccode.org/Classes/Dshuf.html"
     }
     ,
     {
@@ -564,7 +516,7 @@
     ,
     {
         "type": "sc3_Gendy1",
-        "message0": "Gendy1 %1 ampdist %2 durdist %3 adparam %4 ddparam %5 minfreq %6 maxfreq %7 ampscale %8 durscale %9 initCPs %10 knum %11 × %12 + %13",
+        "message0": "Gendy1 %1 ampdist %2 durdist %3 adparam %4 ddparam %5 ⌈ν %6 ⌊ν %7 ampscale %8 durscale %9 initCPs %10 knum %11 × %12 + %13",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "AMPDIST", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -916,8 +868,40 @@
     }
     ,
     {
+        "type": "sc3_Lag2",
+        "message0": "⏥⏥ %1 ∙ %2 ⏲ %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LAGTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Lag2(in, lagTime): Exponential lag",
+        "helpUrl": "https://doc.sccode.org/Classes/Lag2.html"
+    }
+    ,
+    {
+        "type": "sc3_Lag3",
+        "message0": "⏥⏥⏥ %1 ∙ %2 ⏲ %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LAGTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Lag3(in, lagTime): Exponential lag",
+        "helpUrl": "https://doc.sccode.org/Classes/Lag3.html"
+    }
+    ,
+    {
         "type": "sc3_LagUD",
-        "message0": "LagUD %1 ∙ %2 lagTimeU %3 lagTimeD %4 × %5 + %6",
+        "message0": "⏥↕ %1 ∙ %2 lagTimeU %3 lagTimeD %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1214,7 +1198,7 @@
     ,
     {
         "type": "sc3_Pitch",
-        "message0": "Pitch %1 ∙ %2 initFreq %3 minFreq %4 maxFreq %5 execFreq %6 maxBinsPerOctave %7 median %8 ampThreshold %9 peakThreshold %10 downSample %11 clar %12 × %13 + %14",
+        "message0": "Pitch %1 ∙ %2 𝑖ν %3 ⌈ν %4 ⌊ν %5 ⤴ν %6 maxBinsPerOctave %7 median %8 ampThreshold %9 peakThreshold %10 downSample %11 clar %12 × %13 + %14",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1738,6 +1722,22 @@
     }
     ,
     {
+        "type": "sc3_Choose",
+        "message0": "Choose %1 𝄇 %2 ⟦⟧ %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Random sequence generator with repeats count",
+        "helpUrl": "https://doc.sccode.org/Classes/Choose.html"
+    }
+    ,
+    {
         "type": "sc3_LinLin",
         "message0": "LinLin %1 ∙ %2 ⌊ %3 ⌈ %4 ⌋ %5 ⌉ %6 × %7 + %8",
         "args0": [
@@ -1811,7 +1811,7 @@
     ,
     {
         "type": "sc3_Seq",
-        "message0": "Seq %1 # %2 ⟦⟧ %3 × %4 + %5",
+        "message0": "Seq %1 𝄇 %2 ⟦⟧ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1827,7 +1827,7 @@
     ,
     {
         "type": "sc3_Shuf",
-        "message0": "Shuf %1 # %2 ⟦⟧ %3 × %4 + %5",
+        "message0": "Shuf %1 𝄇 %2 ⟦⟧ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean"]},

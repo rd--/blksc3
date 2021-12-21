@@ -6,7 +6,7 @@
     <variable id="]Orose=0ZnF_+]a1dCUF">f</variable>
     <variable id="/:6@?OAKihO_/p-@RQO_">i</variable>
   </variables>
-  <block type="sc3_Comment" id="bA^I+HIr3X.s6b(L.H?[" x="0" y="0">
+  <block type="sc3_Comment" id="bA^I+HIr3X.s6b(L.H?[" x="38" y="43">
     <field name="COMMENT">https://twitter.com/headcube/status/528187147543511041 (nv)</field>
     <next>
       <block type="variables_set" id="UC=a+Jm]vR$3=BtRnLfO">
@@ -282,32 +282,40 @@
                       </block>
                     </value>
                     <value name="FREQ">
-                      <block type="sc3_BinaryOp" id=")az:E?o}O$!zaFTrz3tT" inline="true">
-                        <field name="OP">*</field>
-                        <value name="LHS">
-                          <block type="sc3_KeywordBinaryOp" id="oHRj`lIzB0m|g(B}Cybj" inline="true">
-                            <field name="OP">lag</field>
-                            <value name="LHS">
-                              <block type="sc3_UnaryOp" id=")-ERPyoTe|j#3X%1rHn=">
-                                <field name="OP">sqrt</field>
-                                <value name="IN">
-                                  <block type="variables_get" id="N!/`-{Hmg2orD;uKsuIF">
-                                    <field name="VAR" id="]Orose=0ZnF_+]a1dCUF">f</field>
-                                  </block>
-                                </value>
-                              </block>
-                            </value>
-                            <value name="RHS">
-                              <block type="math_number" id="9o|t,A$*gOjqlp,byHte">
-                                <field name="NUM">2</field>
+                      <block type="sc3_Lag" id="/bTs*2Z5hY}1{X82Zh9c" inline="true">
+                        <value name="IN">
+                          <shadow type="math_number" id="9=eA+$x;HnMcwZkb__yy">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="sc3_UnaryOp" id=")-ERPyoTe|j#3X%1rHn=">
+                            <field name="OP">sqrt</field>
+                            <value name="IN">
+                              <block type="variables_get" id="N!/`-{Hmg2orD;uKsuIF">
+                                <field name="VAR" id="]Orose=0ZnF_+]a1dCUF">f</field>
                               </block>
                             </value>
                           </block>
                         </value>
-                        <value name="RHS">
+                        <value name="LAGTIME">
+                          <shadow type="math_number" id="Wb=kZ!)--qi{n=dnHdBT">
+                            <field name="NUM">0.1</field>
+                          </shadow>
+                          <block type="math_number" id="9o|t,A$*gOjqlp,byHte">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                        <value name="MUL">
+                          <shadow type="math_number" id="tf4S@M,~swe^2Szw+6ds">
+                            <field name="NUM">1</field>
+                          </shadow>
                           <block type="math_number" id=":aaBoF[gSY21c;;x2EJW">
                             <field name="NUM">30</field>
                           </block>
+                        </value>
+                        <value name="ADD">
+                          <shadow type="math_number" id="jTSt90J@`_CLz/EBaq[0">
+                            <field name="NUM">0</field>
+                          </shadow>
                         </value>
                       </block>
                     </value>
