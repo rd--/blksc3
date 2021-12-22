@@ -1,8 +1,8 @@
 // Multiply and Add
-[PinkNoise() * [0.1, 0.1], SinOsc(LFNoise2([0.5, 0.5]) * 110 + 110, 0) * 0.1].sum
+[PinkNoise() * [0.05, 0.05], SinOsc(LFNoise2([0.5, 0.5]) * 110 + 110, 0) * 0.1].sum
 
 //---- notes.md
-All blocks with an output connection have multiplier (×) and adder (+) inputs.
+All blocks with an _Output Connection_ have _multiplier_ (×) and _adder_ (+) inputs.
 
 These inputs, initialised to one and zero respectively, allow adjusting the scale and bias of blocks without introducing an extra block.
 
@@ -20,9 +20,11 @@ The left and right channels are decorrelated.
 
 The equivalent block program has only one _PinkNoise_ generator.
 
-This is most noticeable for Noise generators that have no direct inputs,
+This distinction is most noticeable for noise generators that have no direct inputs,
 and that must therefore be written as
 
 > _{PinkNoise()}.dup(2) * 0.1_
 
 _LFNoise2_, which has a _frequency_ (ν) input, can be duplicated by passing an array of equal values.
+
+This program generates quite correlated stereo pink noise mixed with two sine oscillators, one in each channel, following distinct time varying frequencies.
