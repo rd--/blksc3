@@ -319,23 +319,6 @@
     }
     ,
     {
-        "type": "sc3_Demand",
-        "message0": "Demand %1 ⤴ %2 ↻ %3 ∙ %4 × %5 + %6",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "DEMANDUGENS", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
-        ],
-        "output": "UGen",
-        "colour": 30,
-        "tooltip": "Demand(trig, reset, demandUGens): Demand results from demand rate UGens.",
-        "helpUrl": "https://doc.sccode.org/Classes/Demand.html"
-    }
-    ,
-    {
         "type": "sc3_Dust",
         "message0": "⠇ %1 ▩ %2 × %3 + %4",
         "args0": [
@@ -363,24 +346,6 @@
         "colour": 210,
         "tooltip": "Dust2(density): Random impulses.",
         "helpUrl": "https://doc.sccode.org/Classes/Dust2.html"
-    }
-    ,
-    {
-        "type": "sc3_Duty",
-        "message0": "Duty %1 ⏲ %2 ↻ %3 ⌫ %4 × %5 × %6 + %7",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
-        ],
-        "output": "UGen",
-        "colour": 30,
-        "tooltip": "Duty(dur, reset, doneAction, level): Demand results from demand rate UGens.",
-        "helpUrl": "https://doc.sccode.org/Classes/Duty.html"
     }
     ,
     {
@@ -901,7 +866,7 @@
     ,
     {
         "type": "sc3_LagUD",
-        "message0": "⏥↕ %1 ∙ %2 lagTimeU %3 lagTimeD %4 × %5 + %6",
+        "message0": "⏥↕ %1 ∙ %2 ⏲↑ %3 ⏲↓ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1702,6 +1667,22 @@
     }
     ,
     {
+        "type": "sc3_TScramble",
+        "message0": "TScramble %1 trigger %2 inputs %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INPUTS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "TScramble(trigger, inputs): (Undocumented class)",
+        "helpUrl": "https://doc.sccode.org/Classes/TScramble.html"
+    }
+    ,
+    {
         "type": "sc3_ADSR",
         "message0": "ADSR %1 gate %2 ↗ %3 ↘ %4 sustainLevel %5 releaseTime %6 curves %7 × %8 + %9",
         "args0": [
@@ -1735,6 +1716,40 @@
         "colour": 30,
         "tooltip": "Random sequence generator with repeats count",
         "helpUrl": "https://doc.sccode.org/Classes/Choose.html"
+    }
+    ,
+    {
+        "type": "sc3_DmdFor",
+        "message0": "DmdFor %1 ⏲ %2 ↻ %3 × %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Demand results from demand rate UGens at inttervals",
+        "helpUrl": "https://doc.sccode.org/Classes/DmdFor.html"
+    }
+    ,
+    {
+        "type": "sc3_DmdOn",
+        "message0": "DmdOn %1 ⤴ %2 ↻ %3 ∙ %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DEMANDUGENS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Demand results from demand rate UGens on trigger",
+        "helpUrl": "https://doc.sccode.org/Classes/DmdOn.html"
     }
     ,
     {
