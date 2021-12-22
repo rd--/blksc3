@@ -963,6 +963,22 @@ Blockly.JavaScript['sc3_XLine'] = function(block) {
     return [XLine_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_GreyholeRaw'] = function(block) {
+    var in1_value = Blockly.JavaScript.valueToCode(block, 'IN1', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var in2_value = Blockly.JavaScript.valueToCode(block, 'IN2', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var damping_value = Blockly.JavaScript.valueToCode(block, 'DAMPING', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var delaytime_value = Blockly.JavaScript.valueToCode(block, 'DELAYTIME', Blockly.JavaScript.ORDER_ATOMIC) || '2.0';
+    var diffusion_value = Blockly.JavaScript.valueToCode(block, 'DIFFUSION', Blockly.JavaScript.ORDER_ATOMIC) || '0.5';
+    var feedback_value = Blockly.JavaScript.valueToCode(block, 'FEEDBACK', Blockly.JavaScript.ORDER_ATOMIC) || '0.9';
+    var moddepth_value = Blockly.JavaScript.valueToCode(block, 'MODDEPTH', Blockly.JavaScript.ORDER_ATOMIC) || '0.1';
+    var modfreq_value = Blockly.JavaScript.valueToCode(block, 'MODFREQ', Blockly.JavaScript.ORDER_ATOMIC) || '2.0';
+    var size_value = Blockly.JavaScript.valueToCode(block, 'SIZE', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var GreyholeRaw_code = 'MulAdd(GreyholeRaw(' + in1_value + ', ' + in2_value + ', ' + damping_value + ', ' + delaytime_value + ', ' + diffusion_value + ', ' + feedback_value + ', ' + moddepth_value + ', ' + modfreq_value + ', ' + size_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [GreyholeRaw_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_TScramble'] = function(block) {
     var trigger_value = Blockly.JavaScript.valueToCode(block, 'TRIGGER', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var inputs_value = Blockly.JavaScript.valueToCode(block, 'INPUTS', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';

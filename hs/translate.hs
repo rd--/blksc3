@@ -54,12 +54,12 @@ ugen_xml nm l =
   let (p, o) = ugen_param nm
       i = p ++ (if o then ["mul","add"] else [])
       l' = l ++ (if o then [lit_int_xml "shadow" 1, lit_int_xml "shadow" 0] else [])
-  in printf "<block type='sc3_%s'>%s</block>" nm (concatMap named_value_xml (zip i l'))
+  in printf "<block type='sc3_%s' inline='true'>%s</block>" nm (concatMap named_value_xml (zip i l'))
 
 block_xml_for :: String -> [String] -> [String] -> String
 block_xml_for nm p d =
   let l = concatMap named_value_xml (zip p d)
-  in printf "<block type='sc3_%s'>%s</block>" nm l
+  in printf "<block type='sc3_%s' inline='true'>%s</block>" nm l
 
 {- | Some names are handled specially.
 
@@ -99,7 +99,7 @@ uop_xml o e =
   case o of
     "dup" ->
       printf
-      "<block type='sc3_ArrayFill'><value name='PROC'>%s</value><value name='COUNT'>%s</value></block>"
+      "<block type='sc3_ArrayFill' inline='true'><value name='PROC'>%s</value><value name='COUNT'>%s</value></block>"
       e (lit_int_xml "block" 2)
     _ ->
       printf
@@ -109,7 +109,7 @@ uop_xml o e =
 binop_xml :: String -> String -> String -> String
 binop_xml o lhs rhs =
   printf
-  "<block type='sc3_BinaryOp'><field name='OP'>%s</field><value name='LHS'>%s</value><value name='RHS'>%s</value></block>"
+  "<block type='sc3_BinaryOp' inline='true'><field name='OP'>%s</field><value name='LHS'>%s</value><value name='RHS'>%s</value></block>"
   o lhs rhs
 
 {- | Some operators are handled specially.
@@ -124,11 +124,11 @@ keybinop_xml msg lhs rhs  =
   case msg of
     "collect:" ->
       printf
-      "<block type='sc3_ArrayCollect'><value name='ARRAY'>%s</value><value name='PROC'>%s</value></block>"
+      "<block type='sc3_ArrayCollect' inline='true'><value name='ARRAY'>%s</value><value name='PROC'>%s</value></block>"
       lhs rhs
     "dup:" ->
       printf
-      "<block type='sc3_ArrayFill'><value name='PROC'>%s</value><value name='COUNT'>%s</value></block>"
+      "<block type='sc3_ArrayFill' inline='true'><value name='PROC'>%s</value><value name='COUNT'>%s</value></block>"
       lhs rhs
     "timesRepeat:" ->
       printf
@@ -136,11 +136,11 @@ keybinop_xml msg lhs rhs  =
       lhs rhs
     "to:" ->
       printf
-      "<block type='sc3_ArrayFromTo'><value name='FROM'>%s</value><value name='TO'>%s</value></block>"
+      "<block type='sc3_ArrayFromTo' inline='true'><value name='FROM'>%s</value><value name='TO'>%s</value></block>"
       lhs rhs
     _ ->
       printf
-      "<block type='sc3_KeywordBinaryOp'><field name='OP'>%s</field><value name='LHS'>%s</value><value name='RHS'>%s</value></block>"
+      "<block type='sc3_KeywordBinaryOp' inline='true'><field name='OP'>%s</field><value name='LHS'>%s</value><value name='RHS'>%s</value></block>"
       (init msg) lhs rhs
 
 var_decl :: [String] -> String
@@ -174,7 +174,7 @@ array_elem_xml k x = printf "<value name='ADD%d'>%s</value>" k x
 array_xml :: [String] -> String
 array_xml l =
   printf
-  "<block type='lists_create_with'><mutation items='%d'></mutation>%s</block>"
+  "<block type='lists_create_with' inline='true'><mutation items='%d'></mutation>%s</block>"
   (length l) (concat (zipWith array_elem_xml [0..] l))
 
 proc_xml :: [String] -> [String] -> [Expr t] -> String
@@ -192,7 +192,7 @@ proc_xml a _v e =
       (expr_xml (last e))
     ([a1], [e1]) ->
       printf
-      "<block type='sc3_Proc1'><value name='VAR'>%s</value><value name='RETURN'>%s</value></block>"
+      "<block type='sc3_Proc1' inline='true'><value name='VAR'>%s</value><value name='RETURN'>%s</value></block>"
       (var_get a1)
       (expr_xml e1)
     ([a1], _) ->
@@ -266,7 +266,8 @@ blk_au_graph_option au nm =
 blk_graphs :: [(String, [String])]
 blk_graphs =
   [("ES",
-    ["Tw 435684664200540161"])
+    ["Tw 435684664200540161"
+    ,"Tw 570012853274615808"])
   ,("F0",
      ["Pkt 00", "Pkt 07"
      ,"Pkt 26", "Pkt 28"
@@ -291,6 +292,7 @@ blk_graphs =
      ,"Tw 1452318302768963589"
      ,"Tw 1453520892374441986"
      ,"Tw 1464534258173849611"
+     ,"Tw 1467507942664646661"
      ])
   ,("JAR", ["1-4Qx", "rk_20120422"])
   ,("JL", ["1 9", "1 Z", "Bitwise", "Dark Sea Horns", "Rain, Thunder"])
