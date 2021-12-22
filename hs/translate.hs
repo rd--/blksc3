@@ -397,6 +397,7 @@ blk_help =
   ,"Seq.1", "Seq.2"
   ,"SinOsc.1", "SinOsc.2", "SinOsc.3"
   ,"Stepper.1", "Stepper.2"
+  ,"TScramble.1"
   ,"VoiceWriter.1"
   ,"XLine.1"]
 

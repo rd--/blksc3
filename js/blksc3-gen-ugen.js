@@ -979,13 +979,13 @@ Blockly.JavaScript['sc3_GreyholeRaw'] = function(block) {
     return [GreyholeRaw_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
-Blockly.JavaScript['sc3_RTScramble'] = function(block) {
+Blockly.JavaScript['sc3_TScramble'] = function(block) {
     var trigger_value = Blockly.JavaScript.valueToCode(block, 'TRIGGER', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var inputs_value = Blockly.JavaScript.valueToCode(block, 'INPUTS', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
-    var RTScramble_code = 'MulAdd(RTScramble(' + trigger_value + ', ' + inputs_value + '), ' + mul_value + ', ' + add_value + ')';
-    return [RTScramble_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+    var TScramble_code = 'MulAdd(TScramble(' + trigger_value + ', ' + inputs_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [TScramble_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_ADSR'] = function(block) {

@@ -421,7 +421,7 @@
     ,
     {
         "type": "sc3_FreeVerb2",
-        "message0": "FreeVerb2 %1 ∙ %2 in2 %3 mix %4 room %5 damp %6 × %7 + %8",
+        "message0": "FreeVerb2 %1 ∙ %2 ∙₂ %3 mix %4 room %5 damp %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1035,7 +1035,7 @@
     ,
     {
         "type": "sc3_LocalOut",
-        "message0": "LocalOut %1 ⟦⟧ %2",
+        "message0": "LocalOut %1 ⟦∙⟧ %2",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "CHANNELSARRAY", "check": ["Number", "Array", "UGen", "Boolean"]}
@@ -1118,7 +1118,7 @@
     ,
     {
         "type": "sc3_Out",
-        "message0": "Out %1 bus %2 ⟦⟧ %3",
+        "message0": "Out %1 bus %2 ⟦∙⟧ %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "BUS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1645,7 +1645,7 @@
     ,
     {
         "type": "sc3_GreyholeRaw",
-        "message0": "GreyholeRaw %1 in1 %2 in2 %3 ⊕ %4 ⎵ %5 diffusion %6 feedback %7 moddepth %8 modfreq %9 size %10 × %11 + %12",
+        "message0": "GreyholeRaw %1 ∙₁ %2 ∙₂ %3 ⊕ %4 ⎵ %5 diffusion %6 feedback %7 moddepth %8 modfreq %9 size %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN1", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1667,8 +1667,8 @@
     }
     ,
     {
-        "type": "sc3_RTScramble",
-        "message0": "RTScramble %1 ⤴ %2 inputs %3 × %4 + %5",
+        "type": "sc3_TScramble",
+        "message0": "TScramble %1 ⤴ %2 ⟦∙⟧ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1678,13 +1678,13 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "RTScramble(trigger, inputs): (Undocumented class)",
-        "helpUrl": "https://doc.sccode.org/Classes/RTScramble.html"
+        "tooltip": "TScramble(trigger, inputs): (Undocumented class)",
+        "helpUrl": "https://doc.sccode.org/Classes/TScramble.html"
     }
     ,
     {
         "type": "sc3_ADSR",
-        "message0": "ADSR %1 ⎇ %2 ↗ %3 ↘ %4 ⎺× %5 ⇲ %6 ⟦𝑓⟧ %7 × %8 + %9",
+        "message0": "ADSR %1 ⎇ %2 ↗ %3 ↘ %4 ⎺ %5 ⇲ %6 ⟦𝑓⟧ %7 × %8 + %9",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "GATE", "check": ["Number", "Array", "UGen", "Boolean"]},
