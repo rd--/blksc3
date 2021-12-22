@@ -269,7 +269,7 @@
     ,
     {
         "type": "sc3_DegreeToKey",
-        "message0": "DegreeToKey %1 bufnum %2 ∙ %3 octave %4 × %5 + %6",
+        "message0": "DegreeToKey %1 ⛁ %2 ∙ %3 octave %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -505,7 +505,7 @@
     ,
     {
         "type": "sc3_GrainFM",
-        "message0": "GrainFM %1 # %2 trigger %3 ⏲ %4 carfreq %5 modfreq %6 index %7 pan %8 envbufnum %9 maxGrains %10 × %11 + %12",
+        "message0": "GrainFM %1 # %2 ⤴ %3 ⏲ %4 carfreq %5 modfreq %6 index %7 pan %8 envbufnum %9 maxGrains %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -528,7 +528,7 @@
     ,
     {
         "type": "sc3_GrainSin",
-        "message0": "GrainSin %1 # %2 trigger %3 ⏲ %4 ν %5 pan %6 envbufnum %7 maxGrains %8 × %9 + %10",
+        "message0": "GrainSin %1 # %2 ⤴ %3 ⏲ %4 ν %5 pan %6 envbufnum %7 maxGrains %8 × %9 + %10",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1325,29 +1325,6 @@
     }
     ,
     {
-        "type": "sc3_RecordBuf",
-        "message0": "RecordBuf %1 bufnum %2 offset %3 recLevel %4 preLevel %5 run %6 ↻ %7 trigger %8 ⌫ %9 inputArray %10 × %11 + %12",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "OFFSET", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "RECLEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "PRELEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "RUN", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "LOOP", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "INPUTARRAY", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
-        ],
-        "output": "UGen",
-        "colour": 60,
-        "tooltip": "RecordBuf(bufnum, offset, recLevel, preLevel, run, loop, trigger, doneAction, inputArray): Record or overdub into a Buffer.",
-        "helpUrl": "https://doc.sccode.org/Classes/RecordBuf.html"
-    }
-    ,
-    {
         "type": "sc3_Resonz",
         "message0": "Resonz %1 ∙ %2 ν %3 bwr %4 × %5 + %6",
         "args0": [
@@ -1548,7 +1525,7 @@
     ,
     {
         "type": "sc3_TGrains",
-        "message0": "TGrains %1 # %2 trigger %3 bufnum %4 rate %5 centerPos %6 ⏲ %7 pan %8 × %9 interp %10 × %11 + %12",
+        "message0": "TGrains %1 # %2 ⤴ %3 ⛁ %4 rate %5 centerPos %6 ⏲ %7 pan %8 × %9 𝑓 %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1668,7 +1645,7 @@
     ,
     {
         "type": "sc3_TScramble",
-        "message0": "TScramble %1 trigger %2 inputs %3 × %4 + %5",
+        "message0": "TScramble %1 ⤴ %2 inputs %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1700,6 +1677,23 @@
         "colour": 300,
         "tooltip": "Attack-decay-sustain-release envelope",
         "helpUrl": "https://doc.sccode.org/Classes/ADSR.html"
+    }
+    ,
+    {
+        "type": "sc3_BufRec",
+        "message0": "BufRec %1 ⛁ %2 ↻ %3 inputArray %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INPUTARRAY", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Record signal into a buffer",
+        "helpUrl": "https://doc.sccode.org/Classes/BufRec.html"
     }
     ,
     {

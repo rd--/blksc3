@@ -777,22 +777,6 @@ Blockly.JavaScript['sc3_Rand'] = function(block) {
     return [Rand_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
-Blockly.JavaScript['sc3_RecordBuf'] = function(block) {
-    var bufnum_value = Blockly.JavaScript.valueToCode(block, 'BUFNUM', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
-    var offset_value = Blockly.JavaScript.valueToCode(block, 'OFFSET', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
-    var recLevel_value = Blockly.JavaScript.valueToCode(block, 'RECLEVEL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
-    var preLevel_value = Blockly.JavaScript.valueToCode(block, 'PRELEVEL', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
-    var run_value = Blockly.JavaScript.valueToCode(block, 'RUN', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
-    var loop_value = Blockly.JavaScript.valueToCode(block, 'LOOP', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
-    var trigger_value = Blockly.JavaScript.valueToCode(block, 'TRIGGER', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
-    var doneAction_value = Blockly.JavaScript.valueToCode(block, 'DONEACTION', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
-    var inputArray_value = Blockly.JavaScript.valueToCode(block, 'INPUTARRAY', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
-    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
-    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
-    var RecordBuf_code = 'MulAdd(RecordBuf(' + bufnum_value + ', ' + offset_value + ', ' + recLevel_value + ', ' + preLevel_value + ', ' + run_value + ', ' + loop_value + ', ' + trigger_value + ', ' + doneAction_value + ', ' + inputArray_value + '), ' + mul_value + ', ' + add_value + ')';
-    return [RecordBuf_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
-};
-
 Blockly.JavaScript['sc3_Resonz'] = function(block) {
     var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '440.0';
@@ -984,7 +968,7 @@ Blockly.JavaScript['sc3_TScramble'] = function(block) {
     var inputs_value = Blockly.JavaScript.valueToCode(block, 'INPUTS', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
-    var TScramble_code = 'MulAdd(TScramble(' + trigger_value + ', ' + inputs_value + '), ' + mul_value + ', ' + add_value + ')';
+    var TScramble_code = 'MulAdd(RTScramble(' + trigger_value + ', ' + inputs_value + '), ' + mul_value + ', ' + add_value + ')';
     return [TScramble_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
@@ -999,6 +983,16 @@ Blockly.JavaScript['sc3_ADSR'] = function(block) {
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var ADSR_code = 'MulAdd(ADSR(' + gate_value + ', ' + attackTime_value + ', ' + decayTime_value + ', ' + sustainLevel_value + ', ' + releaseTime_value + ', ' + curves_value + '), ' + mul_value + ', ' + add_value + ')';
     return [ADSR_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_BufRec'] = function(block) {
+    var bufnum_value = Blockly.JavaScript.valueToCode(block, 'BUFNUM', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var reset_value = Blockly.JavaScript.valueToCode(block, 'RESET', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var inputArray_value = Blockly.JavaScript.valueToCode(block, 'INPUTARRAY', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var BufRec_code = 'MulAdd(BufRec(' + bufnum_value + ', ' + reset_value + ', ' + inputArray_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [BufRec_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_Choose'] = function(block) {
