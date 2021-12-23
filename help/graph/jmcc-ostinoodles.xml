@@ -544,77 +544,89 @@
                 <field name="NUM">6</field>
               </block>
             </value>
-            <statement name="STATEMENTS">
-              <block type="variables_set" id="g%PuH.5k)bSinc3b`1}0">
-                <field name="VAR" id="mq57[Gn{d0h;!,L5F_je">z</field>
-                <value name="VALUE">
-                  <block type="sc3_AllpassC" id="-M)izylK.vG3,FeiNr~H" inline="true">
-                    <value name="IN">
-                      <block type="variables_get" id="ncLt3SLOP~dX:jXy(@#)">
-                        <field name="VAR" id="mq57[Gn{d0h;!,L5F_je">z</field>
-                      </block>
-                    </value>
-                    <value name="MAXDELAYTIME">
-                      <block type="math_number" id="|A^],N-)hQ.5UZ3tyTst">
-                        <field name="NUM">0.04</field>
-                      </block>
-                    </value>
-                    <value name="DELAYTIME">
-                      <block type="sc3_ArrayFill" id="YO!FhofnBfatEZbfhfwP" inline="true">
-                        <value name="PROC">
-                          <block type="sc3_Proc0" id="JV!w1#u54^@I^m(^Z-`?">
-                            <value name="RETURN">
-                              <block type="sc3_Rand" id="U!g=5dty7KGlX$OGG_8T" inline="true">
-                                <value name="LO">
-                                  <block type="math_number" id="CBl-{.t!sXTP/;=7qt4U">
-                                    <field name="NUM">0</field>
+            <value name="PROC">
+              <block type="sc3_Proc0Stm" id="7;=}Z=cbN3;j;TH)r5UM">
+                <statement name="STATEMENTS">
+                  <block type="variables_set" id="g%PuH.5k)bSinc3b`1}0">
+                    <field name="VAR" id="mq57[Gn{d0h;!,L5F_je">z</field>
+                    <value name="VALUE">
+                      <block type="sc3_AllpassC" id="-M)izylK.vG3,FeiNr~H" inline="true">
+                        <value name="IN">
+                          <block type="variables_get" id="ncLt3SLOP~dX:jXy(@#)">
+                            <field name="VAR" id="mq57[Gn{d0h;!,L5F_je">z</field>
+                          </block>
+                        </value>
+                        <value name="MAXDELAYTIME">
+                          <block type="math_number" id="|A^],N-)hQ.5UZ3tyTst">
+                            <field name="NUM">0.04</field>
+                          </block>
+                        </value>
+                        <value name="DELAYTIME">
+                          <block type="sc3_ArrayFill" id="YO!FhofnBfatEZbfhfwP" inline="true">
+                            <value name="PROC">
+                              <block type="sc3_Proc0" id="JV!w1#u54^@I^m(^Z-`?">
+                                <value name="RETURN">
+                                  <block type="sc3_Rand" id="U!g=5dty7KGlX$OGG_8T" inline="true">
+                                    <value name="LO">
+                                      <block type="math_number" id="CBl-{.t!sXTP/;=7qt4U">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <value name="HI">
+                                      <block type="math_number" id="?]f_BY2D2$T;M0;s|NSQ">
+                                        <field name="NUM">0.04</field>
+                                      </block>
+                                    </value>
+                                    <value name="MUL">
+                                      <shadow type="math_number" id="cU$5npcsRf-8N;.(_hEs">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="ADD">
+                                      <shadow type="math_number" id=")JW/^#=q9]R:2TToF^6-">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                    </value>
                                   </block>
                                 </value>
-                                <value name="HI">
-                                  <block type="math_number" id="?]f_BY2D2$T;M0;s|NSQ">
-                                    <field name="NUM">0.04</field>
-                                  </block>
-                                </value>
-                                <value name="MUL">
-                                  <shadow type="math_number" id="cU$5npcsRf-8N;.(_hEs">
-                                    <field name="NUM">1</field>
-                                  </shadow>
-                                </value>
-                                <value name="ADD">
-                                  <shadow type="math_number" id=")JW/^#=q9]R:2TToF^6-">
-                                    <field name="NUM">0</field>
-                                  </shadow>
-                                </value>
+                              </block>
+                            </value>
+                            <value name="COUNT">
+                              <block type="math_number" id="qRDufRvz(7bdPT8mhrM]">
+                                <field name="NUM">2</field>
                               </block>
                             </value>
                           </block>
                         </value>
-                        <value name="COUNT">
-                          <block type="math_number" id="qRDufRvz(7bdPT8mhrM]">
-                            <field name="NUM">2</field>
+                        <value name="DECAYTIME">
+                          <block type="math_number" id="dnszPOUuy=552t$hzsWN">
+                            <field name="NUM">16</field>
                           </block>
+                        </value>
+                        <value name="MUL">
+                          <shadow type="math_number" id="U[]lui3v86zx;jpIb(Kj">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <value name="ADD">
+                          <shadow type="math_number" id="H6?_kLh/0RniY,ip1u!J">
+                            <field name="NUM">0</field>
+                          </shadow>
                         </value>
                       </block>
                     </value>
-                    <value name="DECAYTIME">
-                      <block type="math_number" id="dnszPOUuy=552t$hzsWN">
-                        <field name="NUM">16</field>
-                      </block>
-                    </value>
-                    <value name="MUL">
-                      <shadow type="math_number" id="U[]lui3v86zx;jpIb(Kj">
-                        <field name="NUM">1</field>
-                      </shadow>
-                    </value>
-                    <value name="ADD">
-                      <shadow type="math_number" id="H6?_kLh/0RniY,ip1u!J">
-                        <field name="NUM">0</field>
-                      </shadow>
-                    </value>
+                  </block>
+                </statement>
+                <value name="RETURN">
+                  <shadow type="math_number" id="XZp3jI:XjL9D:K%nt7o=">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="variables_get" id="2zXaw%XRs]#57ig$l}fU">
+                    <field name="VAR" id="mq57[Gn{d0h;!,L5F_je">z</field>
                   </block>
                 </value>
               </block>
-            </statement>
+            </value>
             <next>
               <block type="sc3_Play" id="?^+?Q:@1pKnuxvQ=.l6{">
                 <value name="CODE">

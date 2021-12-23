@@ -1,0 +1,21 @@
+// Lambda, Overlap Texture
+var f = {
+    arg tr;
+    Pan2(
+        SinOsc(80 + TRand(0, 2000, tr), 0),
+        LFNoise1(0.4 + TRand(0, 0.8, tr)),
+        LFNoise1(0.4 + TRand(0, 0.8, tr)) * 0.4 + 0.5
+    )
+};
+OverlapTexture(f, 2, 8, 12) * 0.1
+
+//---- notes.md
+λ (_Lambda_) is the anonymous procedure block.
+It is located in the _Proc_ category of the toolbox.
+λ has a number of distinct shapes.
+It may take zero or one or two arguments, and it may or may not allow a sequence of statements.
+In all cases it is a _Value Block_, it has an _Output Connector_ to return a value.
+
+ᨏ (_OverlapTexture_) is a graph combinator.
+It requires a λ block as an argument.
+In mathematics ᨏ is called a _higher order function_, since it takes a function (λ) as an argument.

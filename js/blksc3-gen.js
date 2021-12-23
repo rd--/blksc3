@@ -49,8 +49,8 @@ Blockly.JavaScript['sc3_Proc1Stm'] = function(block) {
 
 Blockly.JavaScript['sc3_TimesRepeat'] = function(block) {
     var count_value = Blockly.JavaScript.valueToCode(block, 'COUNT', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    var statements_code = Blockly.JavaScript.statementToCode(block, 'STATEMENTS');
-    return count_value + '.timesRepeat({ ' + statements_code + '});';
+    var proc_code = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '{}';
+    return count_value + '.timesRepeat( ' + proc_code + ');';
 };
 
 Blockly.JavaScript['sc3_OverlapTexture'] = function(block) {

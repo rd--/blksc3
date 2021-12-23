@@ -132,7 +132,7 @@ keybinop_xml msg lhs rhs  =
       lhs rhs
     "timesRepeat:" ->
       printf
-      "<block type='sc3_TimesRepeat'><value name='COUNT'>%s</value><value name='STATEMENTS'>%s</value></block>"
+      "<block type='sc3_TimesRepeat'><value name='COUNT'>%s</value><value name='PROC'>%s</value></block>"
       lhs rhs
     "to:" ->
       printf
@@ -177,30 +177,40 @@ array_xml l =
   "<block type='lists_create_with' inline='true'><mutation items='%d'></mutation>%s</block>"
   (length l) (concat (zipWith array_elem_xml [0..] l))
 
+-- | If the last expression is an assignment (ie. if the rhs is null), return the variable getter.
+expr_group_assignments :: [Expr t] -> ([Expr t], Expr t)
+expr_group_assignments e =
+  case span exprIsAssignment e of
+    (a, []) -> (a, Identifier (fromMaybe (error "expr_group_assignments: id?") (assignmentIdentifier (last a))))
+    (a, [v]) -> (a, v)
+    _ -> error "expr_group_assignments?"
+
+{- | Xml for Proc (Lambda).
+     If the last expression is an assignment return the variable assigned to.
+-}
 proc_xml :: [String] -> [String] -> [Expr t] -> String
 proc_xml a _v e =
-  case (a, e) of
-    (_, []) -> error "proc_xml: empty procedure?"
-    ([], [e1]) ->
+  case (a, expr_group_assignments e) of
+    ([], ([], r)) ->
       printf
       "<block type='sc3_Proc0'><value name='RETURN'>%s</value></block>"
-      (expr_xml e1)
-    ([], _) ->
+      (expr_xml r)
+    ([], (s, r)) ->
       printf
       "<block type='sc3_Proc0Stm'><value name='STATEMENTS'>%s</value><value name='RETURN'>%s</value></block>"
-      (assign_seq_xml (init e))
-      (expr_xml (last e))
-    ([a1], [e1]) ->
+      (assign_seq_xml s)
+      (expr_xml r)
+    ([a1], ([], r)) ->
       printf
       "<block type='sc3_Proc1' inline='true'><value name='VAR'>%s</value><value name='RETURN'>%s</value></block>"
       (var_get a1)
-      (expr_xml e1)
-    ([a1], _) ->
+      (expr_xml r)
+    ([a1], (s, r)) ->
       printf
       "<block type='sc3_Proc1Stm'><value name='VAR'>%s</value><value name='STATEMENTS'>%s</value><value name='RETURN'>%s</value></block>"
       (var_get a1)
-      (assign_seq_xml (init e))
-      (expr_xml (last e))
+      (assign_seq_xml s)
+      (expr_xml r)
     _ -> error (show ("proc_xml: not 0 or 1 argument", a, e))
 
 comment_xml :: St.Comment -> String
@@ -408,6 +418,7 @@ blk_guide =
   ,"1.2.Guide, Help, Graphs, Load, Copy"
   ,"1.3 Comment, SinOsc, Play"
   ,"1.4 Arrays, Variables, Binary Operators"
+  ,"1.x Lambda, Overlap Texture"
   ,"1.5 Noise Generators, Filters, Control Signals"
   ,"1.x Block Names, Parameters, Messages"
   ,"2.1 Multiply and Add"
