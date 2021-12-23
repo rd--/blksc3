@@ -33,8 +33,9 @@
     ,
     {
         "type": "sc3_Proc0",
-        "message0": "λ %1",
+        "message0": "λ %1 ← %2",
         "args0": [
+            {"type": "input_dummy"},
             {"type": "input_value", "name": "RETURN", "check": ["Array", "Number", "UGen"]}
         ],
         "output": "Proc0",
@@ -44,8 +45,9 @@
     ,
     {
         "type": "sc3_Proc1",
-        "message0": "%1 λ %2",
+        "message0": "λ %1 ⍵ %2 ← %3",
         "args0": [
+            {"type": "input_dummy"},
             {"type": "input_value", "name": "VAR"},
             {"type": "input_value", "name": "RETURN", "check": ["Array", "Number", "UGen"]}
         ],
@@ -56,8 +58,9 @@
     ,
     {
         "type": "sc3_Proc0Stm",
-        "message0": "λ %1 %2",
+        "message0": "λ %1 … %2 ← %3",
         "args0": [
+            {"type": "input_dummy"},
             {"type": "input_statement", "name": "STATEMENTS"},
             {"type": "input_value", "name": "RETURN", "check": ["Array", "Number", "UGen"]}
         ],
@@ -68,8 +71,9 @@
     ,
     {
         "type": "sc3_Proc1Stm",
-        "message0": "λ %1 %2 %3",
+        "message0": "λ %1 ⍵ %2 … %3 ← %4",
         "args0": [
+            {"type": "input_dummy"},
             {"type": "input_value", "name": "VAR"},
             {"type": "input_statement", "name": "STATEMENTS"},
             {"type": "input_value", "name": "RETURN", "check": ["Array", "Number", "UGen"]}
@@ -94,8 +98,9 @@
     ,
     {
         "type": "sc3_OverlapTexture",
-        "message0": "ᨏ %1 ⌒ %2 ⤢ %3 # %4",
+        "message0": "ᨏ %1 𝑓 %2 ⌒ %3 ⤢ %4 # %5",
         "args0": [
+            {"type": "input_dummy"},
             {"type": "input_value", "name": "PROC", "check": "Proc1"},
             {"type": "input_value", "name": "SUSTAINTIME", "check": "Number"},
             {"type": "input_value", "name": "TRANSITIONTIME", "check": "Number"},

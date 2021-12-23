@@ -7,15 +7,36 @@ var f = {
         LFNoise1(0.4 + TRand(0, 0.8, tr)) * 0.4 + 0.5
     )
 };
-OverlapTexture(f, 2, 8, 12) * 0.1
+OverlapTexture(f, 2, 8, 12) * 0.05
 
 //---- notes.md
 λ (_Lambda_) is the anonymous procedure block.
 It is located in the _Proc_ category of the toolbox.
-λ has a number of distinct shapes.
-It may take zero or one or two arguments, and it may or may not allow a sequence of statements.
-In all cases it is a _Value Block_, it has an _Output Connector_ to return a value.
+λ _Value Block_, it has an _Output Connector_ to receive the ← (_return_) value.
 
-ᨏ (_OverlapTexture_) is a graph combinator.
-It requires a λ block as an argument.
-In mathematics ᨏ is called a _higher order function_, since it takes a function (λ) as an argument.
+λ has a number of distinct shapes.
+It may take zero, one (⍵) or two (⍵ & ⍺) input parameter names.
+It may or may not allow a sequence of statements (…).
+
+λ encapsulates a program fragment.
+λ blocks may be _evaluated_ to run the program fragment they hold and to return its result.
+When evaluated, a λ block must be passed the appropriate number of arguments, one for each declared parameter.
+
+ᨏ (_OverlapTexture_) is a graph combinator, a form of _higher order function_.
+ᨏ requires a λ block as an input.
+
+ᨏ makes # (_overlap_) parallel copies of the graph fragment at 𝑓 (_proc_).
+Each copy forms one voice of an evolving texture.
+
+ᨏ applies a simple linear envelope to each voice.
+The envelope is defined by ⤢ (_transition time_) and ⌒ (_sustain time_).
+The duration of the envelope is: 2 × ⤢ + ⌒.
+
+The envelopes of each voice are reset at equally spaced regular intervals.
+The interval between between resets is: (2 × ⤢ + ⌒) ÷ #.
+
+The argument to 𝑓 is a signal that indicates to the voice when its envelope is reset,
+allowing voices to move to a new state for each iteration.
+
+The program here is a texture of 12 voices, each a single ∿ (_SinOsc_).
+On each envelope reset the ν (_frequency_), ⌖ (_stereo location_) and × (_amplitude_) are reset to new randomly selected values (⤴⚁).
