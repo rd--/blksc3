@@ -2,11 +2,11 @@
   <variables>
     <variable id="mq57[Gn{d0h;!,L5F_je">z</variable>
     <variable id="ERGs_3)#|vGW,xrg^m0,">tr</variable>
-    <variable id="^oS)KC?:i$*w4Ge/jd5n">root</variable>
-    <variable id="6)[_7~~6qF?n1?B44IeP">major</variable>
+    <variable id="^oS)KC?:i$*w4Ge/jd5n">rt</variable>
+    <variable id="6)[_7~~6qF?n1?B44IeP">scl</variable>
     <variable id="DTn,2qk8Pj}s_yq_a9yH">sig</variable>
-    <variable id="ivE+}Bv|)yhh#~aI+q.:">offset</variable>
-    <variable id="kf,HNkd4JJDrz.o{aGgg">sequence</variable>
+    <variable id="ivE+}Bv|)yhh#~aI+q.:">o</variable>
+    <variable id="kf,HNkd4JJDrz.o{aGgg">sq</variable>
     <variable id="U07N[i,4]UERw/B)rD=I">f</variable>
     <variable id="2uqN-qUFN$M7ao?6YUHt">trig</variable>
     <variable id="vsL+XS4LtJ*I)I.(`Ryr">freq</variable>
@@ -27,7 +27,7 @@
                 </value>
                 <statement name="STATEMENTS">
                   <block type="variables_set" id=".qz`,cU9wle`pOKUAvLv">
-                    <field name="VAR" id="^oS)KC?:i$*w4Ge/jd5n">root</field>
+                    <field name="VAR" id="^oS)KC?:i$*w4Ge/jd5n">rt</field>
                     <value name="VALUE">
                       <block type="sc3_TRand" id="4H8NsxYgDn^./c^2/EJd" inline="true">
                         <value name="LO">
@@ -62,7 +62,7 @@
                     </value>
                     <next>
                       <block type="variables_set" id="l59-1cDg.WV6+.?G]*-4">
-                        <field name="VAR" id="6)[_7~~6qF?n1?B44IeP">major</field>
+                        <field name="VAR" id="6)[_7~~6qF?n1?B44IeP">scl</field>
                         <value name="VALUE">
                           <block type="sc3_UnaryOp" id="}11.P!c];k;]*/5B+S.5">
                             <field name="OP">asLocalBuf</field>
@@ -110,7 +110,7 @@
                         </value>
                         <next>
                           <block type="variables_set" id="/f9}bUZ}nl*Xz8p|cZ^l">
-                            <field name="VAR" id="ivE+}Bv|)yhh#~aI+q.:">offset</field>
+                            <field name="VAR" id="ivE+}Bv|)yhh#~aI+q.:">o</field>
                             <value name="VALUE">
                               <block type="sc3_TRand" id="?zskEdQjk?[!Lb~.aQFt" inline="true">
                                 <value name="LO">
@@ -142,12 +142,12 @@
                             </value>
                             <next>
                               <block type="variables_set" id="z}!E~dk/m=(ya}uefX^}">
-                                <field name="VAR" id="kf,HNkd4JJDrz.o{aGgg">sequence</field>
+                                <field name="VAR" id="kf,HNkd4JJDrz.o{aGgg">sq</field>
                                 <value name="VALUE">
                                   <block type="sc3_DegreeToKey" id="Pj]8V8pbI$;^%hQH#y:h" inline="true">
                                     <value name="BUFNUM">
                                       <block type="variables_get" id="e}-g283B;6hRp{J|D^sW">
-                                        <field name="VAR" id="6)[_7~~6qF?n1?B44IeP">major</field>
+                                        <field name="VAR" id="6)[_7~~6qF?n1?B44IeP">scl</field>
                                       </block>
                                     </value>
                                     <value name="IN">
@@ -187,7 +187,7 @@
                                             </value>
                                             <value name="RHS">
                                               <block type="variables_get" id="[oe[mD@RvE{Vhf(%7xH(">
-                                                <field name="VAR" id="ivE+}Bv|)yhh#~aI+q.:">offset</field>
+                                                <field name="VAR" id="ivE+}Bv|)yhh#~aI+q.:">o</field>
                                               </block>
                                             </value>
                                           </block>
@@ -219,7 +219,7 @@
                                         <field name="NUM">0</field>
                                       </shadow>
                                       <block type="variables_get" id="yJN#MO5kqot`.aeO4_NC">
-                                        <field name="VAR" id="^oS)KC?:i$*w4Ge/jd5n">root</field>
+                                        <field name="VAR" id="^oS)KC?:i$*w4Ge/jd5n">rt</field>
                                       </block>
                                     </value>
                                   </block>
@@ -228,7 +228,7 @@
                                   <block type="variables_set" id="GpR5dKHg@zAu0z#:VC.X">
                                     <field name="VAR" id="U07N[i,4]UERw/B)rD=I">f</field>
                                     <value name="VALUE">
-                                      <block type="sc3_TXLine" id="Il1mHQUIiqR`;Q^{Tnci" inline="true">
+                                      <block type="sc3_TXLine" id="Il1mHQUIiqR`;Q^{Tnci" inline="false">
                                         <value name="START">
                                           <block type="sc3_TExpRand" id="Thv~{NlA(LnYoplHt5`." inline="true">
                                             <value name="LO">
@@ -363,7 +363,7 @@
                                                         <field name="OP">midicps</field>
                                                         <value name="IN">
                                                           <block type="variables_get" id="_UbkuF`.l0.E^B}2b{`2">
-                                                            <field name="VAR" id="kf,HNkd4JJDrz.o{aGgg">sequence</field>
+                                                            <field name="VAR" id="kf,HNkd4JJDrz.o{aGgg">sq</field>
                                                           </block>
                                                         </value>
                                                       </block>
@@ -398,13 +398,8 @@
                                                 <value name="VALUE">
                                                   <block type="sc3_LFTri" id="l}W`fkkkUXJ$`EKon7l6" inline="true">
                                                     <value name="FREQ">
-                                                      <block type="sc3_UnaryOp" id="X$/@/k=?R;^w.#t2#q1h">
-                                                        <field name="OP">kr</field>
-                                                        <value name="IN">
-                                                          <block type="variables_get" id="v{2Bw1}+vvK5KxAy-c@D">
-                                                            <field name="VAR" id="vsL+XS4LtJ*I)I.(`Ryr">freq</field>
-                                                          </block>
-                                                        </value>
+                                                      <block type="variables_get" id="v{2Bw1}+vvK5KxAy-c@D">
+                                                        <field name="VAR" id="vsL+XS4LtJ*I)I.(`Ryr">freq</field>
                                                       </block>
                                                     </value>
                                                     <value name="IPHASE">

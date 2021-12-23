@@ -316,7 +316,7 @@ blk_graphs =
      ,"Impulse Sequencer"
      ,"Inharmonic Warbulence"
      ,"Lfo Modulation"
-     ,"Modal Space", "Modal Space (Collect)"
+     ,"Modal Space", "Modal Space (Partial)"
      ,"Moto Rev"
      ,"Narrow Band Filtered Crackle Noise"
      ,"Ostinoodles"
@@ -372,6 +372,7 @@ blk_in_autogen typ lst =
 blk_help :: [String]
 blk_help =
   ["ADSR.1"
+  ,"AR.1"
   ,"ArrayFill.1"
   ,"Balance2.1", "Balance2.2"
   ,"Blip.1", "Blip.2"
@@ -388,7 +389,7 @@ blk_help =
   ,"LFNoise0.1"
   ,"LFNoise1.1", "LFNoise1.2"
   ,"LFSaw.1", "LFSaw.2"
-  ,"Line.1"
+  ,"Ln.1"
   ,"LocalOut.1"
   ,"Pan2.1"
   ,"PMOsc.1", "PMOsc.2"
@@ -399,7 +400,7 @@ blk_help =
   ,"Stepper.1", "Stepper.2"
   ,"TScramble.1"
   ,"VoiceWriter.1"
-  ,"XLine.1"]
+  ,"XLn.1"]
 
 blk_guide :: [String]
 blk_guide =

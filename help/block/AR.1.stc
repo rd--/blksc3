@@ -1,0 +1,17 @@
+// AR ; event control
+var f = {
+    arg e;
+    Blip(e.p.unitCps, e.o * 5) * AR(e.w, 0.5 * e.y, e.y * 4, -4)
+};
+Voicer(16, f).splay * 0.1
+
+//---- notes.md
+⏢ (_Ar_) is an attack-release envelope generator.
+
+The ⎇ (_gate_) input begins the envelope on a rising zero crossing and holds it open until a falling zero crossing.
+
+The ↗ (_attack_) and ⇲ (_release_) times are given in seconds.
+
+The (implicit) _peak level_ is 1.
+
+The ⟦𝑓⟧ (_curves_) input may be either a scalar or an array of two places.

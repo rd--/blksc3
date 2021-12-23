@@ -1,0 +1,166 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="N1VA=s_5(dc:PI[%za]Y">f</variable>
+    <variable id="#}MW.HrcdJeQP]gtMWsq">e</variable>
+  </variables>
+  <block type="sc3_Comment" id="BKNeF?[5?sx.w@~ZH)CB" x="0" y="0">
+    <field name="COMMENT">AR ; event control</field>
+    <next>
+      <block type="variables_set" id="Tl{J*4i!Vi%OIYoet6Bb">
+        <field name="VAR" id="N1VA=s_5(dc:PI[%za]Y">f</field>
+        <value name="VALUE">
+          <block type="sc3_Proc1" id="}$v7~1j+8Q[nQ4OhD_S8" inline="false">
+            <value name="VAR">
+              <block type="variables_get" id="-JUH^@y~A|{/jLO=N^kh">
+                <field name="VAR" id="#}MW.HrcdJeQP]gtMWsq">e</field>
+              </block>
+            </value>
+            <value name="RETURN">
+              <block type="sc3_Blip" id=",V(94^`nPs0L`GRI_djL" inline="false">
+                <value name="FREQ">
+                  <block type="sc3_UnaryOp" id=")Fdu)*Z]q/Axm}`/=8{#">
+                    <field name="OP">unitCps</field>
+                    <value name="IN">
+                      <block type="sc3_EventParam" id="G=(*(//U[sSfyhBq_GD6">
+                        <field name="PARAM">p</field>
+                        <value name="EVENT">
+                          <block type="variables_get" id="GIE_{HPwgvi~{w$6:L~Q">
+                            <field name="VAR" id="#}MW.HrcdJeQP]gtMWsq">e</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="NUMHARM">
+                  <block type="sc3_BinaryOp" id="jHmZC~Tl@x1v~o`i06OF" inline="true">
+                    <field name="OP">*</field>
+                    <value name="LHS">
+                      <block type="sc3_EventParam" id="$}.r.Lx?i7gT-rd]rvKr">
+                        <field name="PARAM">o</field>
+                        <value name="EVENT">
+                          <block type="variables_get" id="1=9x#;]V!,xOt^,q~|25">
+                            <field name="VAR" id="#}MW.HrcdJeQP]gtMWsq">e</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="RHS">
+                      <block type="math_number" id="R!@*y?y}a][dgo3?CC}.">
+                        <field name="NUM">5</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="MUL">
+                  <shadow type="math_number" id="NCrjMF7f!]-ZRJ9IFHCX">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="sc3_AR" id="Ug`/hLHSMr8uod0D172;" inline="true">
+                    <value name="GATE">
+                      <block type="sc3_EventParam" id="4%^UH{mk:]]|sUOd_CM!">
+                        <field name="PARAM">w</field>
+                        <value name="EVENT">
+                          <block type="variables_get" id="myp1QfDK#3bQ9nO/tBjP">
+                            <field name="VAR" id="#}MW.HrcdJeQP]gtMWsq">e</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ATTACKTIME">
+                      <block type="sc3_BinaryOp" id="+X[~r31[pmWA@=seArWa" inline="true">
+                        <field name="OP">*</field>
+                        <value name="LHS">
+                          <block type="math_number" id="*?ZPzLlMe:iKB(@a=j8.">
+                            <field name="NUM">0.5</field>
+                          </block>
+                        </value>
+                        <value name="RHS">
+                          <block type="sc3_EventParam" id="Gq#,;8}M}TgMp:d+8m2a">
+                            <field name="PARAM">y</field>
+                            <value name="EVENT">
+                              <block type="variables_get" id="Pb2anCQUZ5]Y(NG,Sy|N">
+                                <field name="VAR" id="#}MW.HrcdJeQP]gtMWsq">e</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="RELEASETIME">
+                      <block type="sc3_BinaryOp" id="+i1q7CvS54y+-A(:A-TM" inline="true">
+                        <field name="OP">*</field>
+                        <value name="LHS">
+                          <block type="sc3_EventParam" id="zyz3li$6LNY*:q!$ntgf">
+                            <field name="PARAM">y</field>
+                            <value name="EVENT">
+                              <block type="variables_get" id="+zk%iG.XZA*v+UbPDk@|">
+                                <field name="VAR" id="#}MW.HrcdJeQP]gtMWsq">e</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="RHS">
+                          <block type="math_number" id="p:i;m!)CRzH;oMlxy2?D">
+                            <field name="NUM">4</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="CURVES">
+                      <block type="math_number" id=".:)bR)+1O:|Z`80RP({C">
+                        <field name="NUM">-4</field>
+                      </block>
+                    </value>
+                    <value name="MUL">
+                      <shadow type="math_number" id="ZY_}E9YYGX5-_%q[Sd!b">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="math_number" id="C[}=86m2V5x`IH^}Dem_">
+                        <field name="NUM">0.1</field>
+                      </block>
+                    </value>
+                    <value name="ADD">
+                      <shadow type="math_number" id="UxV3J^GF_~EpD!UCSd=g">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="ADD">
+                  <shadow type="math_number" id="}dmHOb(WqpgwG8D[QB1c">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="sc3_Play" id="InQ)`Z.g;uzwXR]v]`:f">
+            <value name="CODE">
+              <block type="sc3_UnaryOp" id="39D7P=M*J8Z-eLe]K@(9">
+                <field name="OP">splay</field>
+                <value name="IN">
+                  <block type="sc3_Voicer" id="NRBHYH$J:{c4lP^e|`Y}" inline="true">
+                    <value name="COUNT">
+                      <block type="math_number" id="ki/L8(dm;c!u]dA_q4K*">
+                        <field name="NUM">16</field>
+                      </block>
+                    </value>
+                    <value name="PROC">
+                      <block type="variables_get" id="#?UUp$c}%o]~f%db}E:c">
+                        <field name="VAR" id="N1VA=s_5(dc:PI[%za]Y">f</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
+
