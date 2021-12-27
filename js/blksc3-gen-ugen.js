@@ -659,6 +659,18 @@ Blockly.JavaScript['sc3_Pan2'] = function(block) {
     return [Pan2_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_Phasor'] = function(block) {
+    var trig_value = Blockly.JavaScript.valueToCode(block, 'TRIG', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var rate_value = Blockly.JavaScript.valueToCode(block, 'RATE', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var start_value = Blockly.JavaScript.valueToCode(block, 'START', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var end_value = Blockly.JavaScript.valueToCode(block, 'END', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var resetPos_value = Blockly.JavaScript.valueToCode(block, 'RESETPOS', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var Phasor_code = 'MulAdd(Phasor(' + trig_value + ', ' + rate_value + ', ' + start_value + ', ' + end_value + ', ' + resetPos_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [Phasor_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_PinkNoise'] = function(block) {
     var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
@@ -803,6 +815,13 @@ Blockly.JavaScript['sc3_RunningMax'] = function(block) {
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var RunningMax_code = 'MulAdd(RunningMax(' + in_value + ', ' + trig_value + '), ' + mul_value + ', ' + add_value + ')';
     return [RunningMax_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_SampleRate'] = function(block) {
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var SampleRate_code = 'MulAdd(SampleRate(), ' + mul_value + ', ' + add_value + ')';
+    return [SampleRate_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_Saw'] = function(block) {
@@ -1017,6 +1036,16 @@ Blockly.JavaScript['sc3_DmdFor'] = function(block) {
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var DmdFor_code = 'MulAdd(DmdFor(' + dur_value + ', ' + reset_value + ', ' + level_value + '), ' + mul_value + ', ' + add_value + ')';
     return [DmdFor_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_TDmdFor'] = function(block) {
+    var dur_value = Blockly.JavaScript.valueToCode(block, 'DUR', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var reset_value = Blockly.JavaScript.valueToCode(block, 'RESET', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var level_value = Blockly.JavaScript.valueToCode(block, 'LEVEL', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var TDmdFor_code = 'MulAdd(TDmdFor(' + dur_value + ', ' + reset_value + ', ' + level_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [TDmdFor_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_DmdOn'] = function(block) {

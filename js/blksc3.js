@@ -23,7 +23,7 @@ function blk_inject_with_xml_toolbox(xml_toolbox) {
     blk_workspace = Blockly.inject('blocklyContainer', blk_config);
 };
 
-// Initialise WebSocket.  To send .stc to sclang as /eval message run "blksc3 stc-to-osc --host=192.168.1.102 --port=9160"
+// Initialise WebSocket.  To send .stc to sclang as /eval message run "blksc3 stc-to-osc"
 function blk_websocket_init(host, port) {
     if(blk_websocket) {
         blk_websocket.close();
@@ -37,7 +37,7 @@ function blk_websocket_init(host, port) {
 
 // Prompt for WebSocket address (host and port) and initialise WebSocket.
 function blk_websocket_dialog() {
-    var reply = window.prompt("Set WebSocket address as Host:Port", "192.168.1.102:9160");
+    var reply = window.prompt("Set WebSocket address as Host:Port", "loclhost:9160");
     if(reply) {
         var [host, port] = reply.split(':');
         blk_websocket_init(host, Number(port));
@@ -202,7 +202,7 @@ function blk_init() {
     blk_load_and_process_utf8('sw/blksc3/html/graph-menu.html', blk_set_inner_html_of('blkGraphMenu'));
     blk_load_and_process_utf8('sw/blksc3/html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
     blk_load_and_process_utf8('sw/blksc3/html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
-    blk_websocket_init("192.168.1.102", 9160);
+    blk_websocket_init("localhost", 9160);
 }
 
 // Fetch fileName and apply processFunc to the object read (stored as JSON).

@@ -505,7 +505,7 @@
     ,
     {
         "type": "sc3_GrainFM",
-        "message0": "GrainFM %1 # %2 ⤴ %3 ⏲ %4 carfreq %5 modfreq %6 index %7 pan %8 envbufnum %9 maxGrains %10 × %11 + %12",
+        "message0": "GrainFM %1 # %2 ⤴ %3 ⏲ %4 carfreq %5 modfreq %6 index %7 pan %8 ⏢⛁ %9 maxGrains %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -528,7 +528,7 @@
     ,
     {
         "type": "sc3_GrainSin",
-        "message0": "GrainSin %1 # %2 ⤴ %3 ⏲ %4 ν %5 pan %6 envbufnum %7 maxGrains %8 × %9 + %10",
+        "message0": "GrainSin %1 # %2 ⤴ %3 ⏲ %4 ν %5 pan %6 ⏢⛁ %7 maxGrains %8 × %9 + %10",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1130,6 +1130,25 @@
     }
     ,
     {
+        "type": "sc3_Phasor",
+        "message0": "Phasor %1 ⤴ %2 rate %3 ⟜ %4 ⊸ %5 resetPos %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RATE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "END", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RESETPOS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Phasor(trig, rate, start, end, resetPos): A resettable linear ramp between two levels.",
+        "helpUrl": "https://doc.sccode.org/Classes/Phasor.html"
+    }
+    ,
+    {
         "type": "sc3_PinkNoise",
         "message0": "⍰𝒑 %1 × %2 + %3",
         "args0": [
@@ -1371,6 +1390,20 @@
         "colour": 30,
         "tooltip": "RunningMax(in, trig): Track maximum level.",
         "helpUrl": "https://doc.sccode.org/Classes/RunningMax.html"
+    }
+    ,
+    {
+        "type": "sc3_SampleRate",
+        "message0": "SampleRate %1 × %2 + %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "SampleRate(): Server sample rate.",
+        "helpUrl": "https://doc.sccode.org/Classes/SampleRate.html"
     }
     ,
     {
@@ -1730,8 +1763,25 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Demand results from demand rate UGens at inttervals",
+        "tooltip": "Demand results from demand rate UGens at intervals",
         "helpUrl": "https://doc.sccode.org/Classes/DmdFor.html"
+    }
+    ,
+    {
+        "type": "sc3_TDmdFor",
+        "message0": "TDmdFor %1 ⏲ %2 ↻ %3 × %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RESET", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Demand results as trigger from demand rate UGens at intervals",
+        "helpUrl": "https://doc.sccode.org/Classes/TDmdFor.html"
     }
     ,
     {

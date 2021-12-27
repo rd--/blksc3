@@ -305,6 +305,7 @@ blk_graphs =
      ,"Tw 1467507942664646661"
      ])
   ,("JAR", ["1-4Qx", "rk_20120422"])
+  ,("JH", ["4157"])
   ,("JL", ["1 9", "1 Z", "Bitwise", "Dark Sea Horns", "Rain, Thunder"])
   ,("JMcC",
      ["Aleatoric Quartet"
@@ -351,6 +352,7 @@ blk_graphs =
      ,"Why SuperCollider?"
      ,"Wind Metals", "Wind Metals (Variables)"
      ])
+  ,("JR", ["Sturmian Sequencer I", "Sturmian Sequencer II", "Sturmian Sequencer III"])
   ,("KL", ["Vibraphone"])
   ,("NV"
     ,["Tw 2013-12-04", "Tw 2013-12-04 (TimesRepeat)"

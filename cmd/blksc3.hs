@@ -7,16 +7,18 @@
 
 import Control.Monad {- base -}
 import Data.List {- base -}
-import System.Environment {- base -}
 
 import qualified Data.ByteString.Char8 as Char8 {- bytestring -}
 import qualified Network.WebSockets as Ws {- websockets -}
 
 import qualified Sound.OSC as Osc {- hosc -}
+
 import qualified Sound.SC3.UGen.DB as Db {- hsc3-db -}
 import qualified Sound.SC3.UGen.DB.Bindings.Blockly as Blockly {- hsc3-db -}
 import qualified Sound.SC3.UGen.DB.Pseudo as Db {- hsc3-db -}
 import qualified Sound.SC3.UGen.DB.Record as Db {- hsc3-db -}
+
+import qualified Music.Theory.Opt as Opt {- hmt-base -}
 
 -- * Stc to Osc
 
@@ -37,11 +39,8 @@ ws_to_sclang rq = do
   c <- Ws.acceptRequest rq
   forever (ws_recv c)
 
-stc_to_osc :: IO ()
-stc_to_osc = do
-  let ws_host = "192.168.1.102"
-      ws_port = 9160
-  Ws.runServer ws_host ws_port ws_to_sclang
+stc_to_osc :: (String,Int) -> IO ()
+stc_to_osc (ws_host, ws_port) = Ws.runServer ws_host ws_port ws_to_sclang
 
 -- * Blk Gen
 
@@ -59,16 +58,21 @@ blk_gen = do
 
 -- * Main
 
-usage :: [String]
+usage :: Opt.OptHelp
 usage =
   ["blksc3 command"
   ,"  blk-gen"
   ,"  stc-to-osc"]
 
+opt :: [Opt.OptUsr]
+opt =
+  [("host","localhost","string","Host name")
+  ,("port","9160","int","port number")]
+
 main :: IO ()
 main = do
-  a <- getArgs
+  (o, a) <- Opt.opt_get_arg True usage opt
   case a of
     ["blk-gen"] -> blk_gen
-    ["stc-to-osc"] -> stc_to_osc
-    _ -> putStrLn (unlines usage)
+    ["stc-to-osc"] -> stc_to_osc (Opt.opt_get o "host", Opt.opt_read o "port")
+    _ -> Opt.opt_usage usage opt

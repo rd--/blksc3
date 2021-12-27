@@ -1,0 +1,16 @@
+// sturmian sequencer iii (jrhb)
+var rules = [[0, 1], [0]];
+var rewrite = {
+    arg n;
+    var r = [0];
+    var u = n.timesRepeat({ r = r.collect({ arg e; rules.nth(e + 1) }).concatenation });  // for translator...
+    r
+};
+var n = 9;
+var strFunc = {
+    arg i;
+    var str = rewrite.value(i + 6);
+    var dt = 1 / SampleRate() / (n - i + 2) * MouseX(1, SampleRate(), 2, 0.2);
+    TDmdFor(dt, 0, Seq(inf, str - 0.5))
+};
+0.to(n - 1).collect(strFunc).splay * 0.3
