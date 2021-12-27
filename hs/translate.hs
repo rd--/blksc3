@@ -207,7 +207,7 @@ proc_xml a _v e =
       (expr_xml r)
     ([a1], (s, r)) ->
       printf
-      "<block type='sc3_Proc1Stm'><value name='VAR'>%s</value><value name='STATEMENTS'>%s</value><value name='RETURN'>%s</value></block>"
+      "<block type='sc3_Proc1Stm' inline='true'><value name='VAR'>%s</value><value name='STATEMENTS'>%s</value><value name='RETURN'>%s</value></block>"
       (var_get a1)
       (assign_seq_xml s)
       (expr_xml r)
@@ -334,10 +334,12 @@ blk_graphs =
      ,"Pond Life", "Pond Life (Texture)"
      ,"Pentatonic Pipes"
      ,"Plucked Strings"
+     ,"Pulsing Bottles"
      ,"Random Panning Sines"
      ,"Random Pulsations"
      ,"Random Sine Waves"
      ,"Repeating Harmonic Klank"
+     ,"Resonant Dust"
      ,"Reverberated Sine Percussion"
      ,"Sample and Hold Liquidities"
      ,"Scratchy"
@@ -345,6 +347,8 @@ blk_graphs =
      ,"Sprinkler", "Sprinkler (Mouse)"
      ,"Strummable Metals"
      ,"Strummable Silk"
+     ,"Sweepy Noise"
+     ,"Synthetic Piano"
      ,"Tank"
      ,"Theremin"
      ,"Tremulate", "Tremulate (Event)"
