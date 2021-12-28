@@ -1,0 +1,15 @@
+stages:
+  - build
+
+build:8:
+  image: haskell:8
+  stage: build
+  script:
+    - apt-get update -qq && apt-get install -y -qq zip
+    - cabal update && cabal install --installdir public --install-method copy
+    - zip -r public/blksc3.zip public/blksc3
+  rules:
+    - when: manual
+  artifacts:
+    paths:
+      - public/blksc3.zip
