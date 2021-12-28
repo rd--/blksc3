@@ -37,7 +37,7 @@ function blk_websocket_init(host, port) {
 
 // Prompt for WebSocket address (host and port) and initialise WebSocket.
 function blk_websocket_dialog() {
-    var reply = window.prompt("Set WebSocket address as Host:Port", "loclhost:9160");
+    var reply = window.prompt("Set WebSocket address as Host:Port", "localhost:9160");
     if(reply) {
         var [host, port] = reply.split(':');
         blk_websocket_init(host, Number(port));

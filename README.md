@@ -12,6 +12,7 @@ Tested with:
 [Firefox](https://www.mozilla.org/firefox/) 91.4.0,
 [SuperCollider](https://www.audiosynth.com/) 3.11.2,
 [Blockly](https://developers.google.com/blockly) 7.20211209.1
+[Commonmark.js](https://github.com/commonmark/commonmark.js/) 0.30.0
 
 References:
 
