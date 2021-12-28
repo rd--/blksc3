@@ -366,6 +366,7 @@ blk_graphs =
      ])
   ,("JR", ["Sturmian Sequencer I", "Sturmian Sequencer II", "Sturmian Sequencer III"])
   ,("KL", ["Vibraphone"])
+  ,("NC", ["SC Tutorial"])
   ,("NV"
     ,["Tw 2013-12-04", "Tw 2013-12-04 (TimesRepeat)"
      ,"TW 2014-06-03"
@@ -436,6 +437,7 @@ blk_guide =
   ,"1.5 Noise Generators, Filters, Control Signals"
   ,"1.x Block Names, Parameters, Messages"
   ,"2.1 Multiply and Add"
+  ,"2.x Authors, Initials"
   ]
 
 gen_xml :: IO ()

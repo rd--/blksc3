@@ -9,6 +9,11 @@
     <block type='sc3_Constant'><field name='CONST'>pi</field></block>
     <block type='sc3_Constant'><field name='CONST'>twoPi</field></block>
     <block type='sc3_Constant'><field name='CONST'>e</field></block>
+    <block type='sc3_Constant'><field name='CONST'>inf</field></block>
+    <block type='sc3_UnaryOp'>
+      <field name='OP'>dbamp</field>
+      <value name='IN'><shadow type='math_number'><field name='NUM'>-24</field></shadow></value>
+    </block>
     <block type='logic_boolean'><field name='BOOL'>TRUE</field></block>
     <block type='logic_boolean'><field name='BOOL'>FALSE</field></block>
   </category>
@@ -19,28 +24,28 @@
       <field name='OP'>abs</field>
       <value name='IN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
-    <block type='sc3_BinaryOp' inline='false'>
+    <block type='sc3_BinaryOp' inline='true'>
       <field name='OP'>+</field>
       <value name='LHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
       <value name='RHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
-    <block type='sc3_MulAdd'>
+    <block type='sc3_MulAdd' inline='true'>
       <value name='IN'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
       <value name='MUL'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
       <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
     </block>
-    <block type='sc3_KeywordBinaryOp'>
+    <block type='sc3_KeywordBinaryOp' inline='true'>
       <field name='OP'>min</field>
       <value name='LHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
       <value name='RHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
   </category>
   <category name='Array' colour='260'>
-    <block type='sc3_ArrayAt'>
+    <block type='sc3_ArrayAt' inline='true'>
       <value name='ARRAY'></value>
       <value name='INDEX'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
     </block>
-    <block type='sc3_ArrayFromTo'>
+    <block type='sc3_ArrayFromTo' inline='true'>
       <value name='FROM'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
       <value name='TO'><shadow type='math_number'><field name='NUM'>9</field></shadow></value>
     </block>
@@ -48,25 +53,25 @@
       <value name='COUNT'><shadow type='math_number'><field name='NUM'>10</field></shadow></value>
       <value name='PROC'>
         <block type='sc3_Proc0'>
-          <value name='PROC'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+          <value name='RETURN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
         </block>
       </value>
     </block>
-    <block type='sc3_ArrayCollect'>
+    <block type='sc3_ArrayCollect' inline='false'>
       <value name='ARRAY'></value>
       <value name='PROC'>
         <block type='sc3_Proc1'>
           <value name='VAR'><block type='variables_get'><field name='VAR'>item</field></block></value>
-          <value name='PROC'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+          <value name='RETURN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
         </block>
       </value>
     </block>
-    <block type='lists_create_with'>
+    <block type='lists_create_with' inline='true'>
       <mutation items='2'></mutation>
       <value name='ADD0'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
       <value name='ADD1'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
-    <block type='lists_create_with'>
+    <block type='lists_create_with' inline='true'>
       <mutation items='3'></mutation>
       <value name='ADD0'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
       <value name='ADD1'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
@@ -74,10 +79,10 @@
     </block>
   </category>
   <category name='Proc' colour='180'>
-    <block type='sc3_Proc0'>
+    <block type='sc3_Proc0' inline='true'>
       <value name='RETURN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
-    <block type='sc3_Proc1'>
+    <block type='sc3_Proc1' inline='true'>
       <value name='VAR'></value>
       <value name='RETURN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
@@ -92,15 +97,19 @@
     </block>
   </category>
   <category name='Iter' colour='180'>
-    <block type='sc3_TimesRepeat'>
+    <block type='sc3_TimesRepeat' inline='true'>
       <value name='COUNT'><shadow type='math_number'><field name='NUM'>9</field></shadow></value>
-      <value name='PROC'></value>
+      <value name='PROC'>
+        <block type='sc3_Proc0' inline='true'>
+          <value name='RETURN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+        </block>
+      </value>
     </block>
     <block type='sc3_OverlapTexture'>
       <value name='PROC'>
         <block type='sc3_Proc1'>
           <value name='VAR'><block type='variables_get'><field name='VAR'>tr</field></block></value>
-          <value name='PROC'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+          <value name='RETURN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
         </block>
       </value>
       <value name='SUSTAINTIME'><shadow type='math_number'><field name='NUM'>4</field></shadow></value>
@@ -114,7 +123,7 @@
       <value name='PROC'>
         <block type='sc3_Proc1'>
           <value name='VAR'><block type='variables_get'><field name='VAR'>e</field></block></value>
-          <value name='PROC'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+          <value name='RETURN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
         </block>
       </value>
     </block>
