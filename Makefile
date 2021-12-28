@@ -7,3 +7,4 @@ clean:
 
 push-all:
 	r.gitlab-push.sh blksc3
+	r.github-push.sh blksc3
