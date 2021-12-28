@@ -329,16 +329,18 @@ blk_graphs =
      ,"Harmonic Swimming"
      ,"Harmonic Tumbling"
      ,"Harmonic Zither"
+     ,"Hell Is Busy"
      ,"Impulse Sequencer"
      ,"Inharmonic Warbulence"
      ,"Lfo Modulation"
      ,"Modal Space", "Modal Space (Partial)"
      ,"Moto Rev"
      ,"Narrow Band Filtered Crackle Noise"
+     ,"Noise Modulated Sines"
      ,"Ostinoodles"
-     ,"Pond Life", "Pond Life (Texture)"
      ,"Pentatonic Pipes"
      ,"Plucked Strings"
+     ,"Pond Life", "Pond Life (Texture)"
      ,"Pulsing Bottles"
      ,"Random Panning Sines"
      ,"Random Pulsations"
@@ -360,6 +362,7 @@ blk_graphs =
      ,"Uplink" ,"Uplink (Texture)"
      ,"Why SuperCollider?"
      ,"Wind Metals", "Wind Metals (Variables)"
+     ,"Zizle"
      ])
   ,("JR", ["Sturmian Sequencer I", "Sturmian Sequencer II", "Sturmian Sequencer III"])
   ,("KL", ["Vibraphone"])
