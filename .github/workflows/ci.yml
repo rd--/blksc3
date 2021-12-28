@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: ${{ matrix.os }}, ghc-${{ matrix.ghc }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        ghc:
+          - 8.10.1
+        cabal:
+          - 3.2.0.0
+        os:
+          - ubuntu-latest
+          - macos-latest
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup
+        uses: haskell/actions/setup@v1
+        with:
+          ghc-version: ${{ matrix.ghc }}
+          cabal-version: ${{ matrix.cabal }}
+      - name: Build
+        run: |
+          cabal update
+          cabal install --installdir public --install-method copy
+          zip -r public/blksc3-${{ runner.os }}.zip public/blksc3
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.run_id }}
+          files: public/blksc3-${{ runner.os }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

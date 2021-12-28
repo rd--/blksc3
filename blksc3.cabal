@@ -1,0 +1,32 @@
+Cabal-Version:      2.4
+Name:               blksc3
+Version:            0.20
+Synopsis:           Block SuperCollider
+Description:        Block SuperCollider
+License:            GPL-3.0-only
+Category:           Sound
+Copyright:          (c) Rohan Drape, 2021
+Author:             Rohan Drape
+Maintainer:         rd@rohandrape.net
+Stability:          Experimental
+Homepage:           http://rohandrape.net/t/blksc3
+Tested-With:        GHC == 8.8.4
+Build-Type:         Simple
+
+Data-files:         README.md
+
+executable stsc3
+  build-depends:    base >= 4.8 && < 5,
+                    bytestring,
+                    hmt-base == 0.20.*,
+                    hosc == 0.20.*,
+                    hsc3-db == 0.20.*,
+                    websockets
+  hs-source-dirs:   cmd
+  main-is:          blksc3.hs
+  default-language: Haskell2010
+  ghc-options:      -Wall -fno-warn-orphans -fwarn-tabs
+
+Source-Repository   head
+  Type:             git
+  Location:         https://gitlab.com/rd--/stsc3/
