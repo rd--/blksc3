@@ -2,7 +2,8 @@ all:
 	echo "blksc3"
 
 clean:
-	rm -Rf *~
+	rm -Rf *~ dist
+	(cd cmd ; make clean)
 	(cd help ; make clean)
 
 push-all:
