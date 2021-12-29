@@ -413,7 +413,7 @@ blk_help =
   ,"ArrayFill.1"
   ,"Balance2.1", "Balance2.2"
   ,"Blip.1", "Blip.2"
-  ,"CombC.1"
+  ,"CombC.1", "CombC.2"
   ,"Decay2.1"
   ,"ExpRand.1"
   ,"FBSineC.1"
