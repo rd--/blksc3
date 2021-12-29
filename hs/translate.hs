@@ -450,6 +450,7 @@ blk_guide =
   ,"1.x Block Names, Parameters, Messages"
   ,"2.1 Multiply and Add"
   ,"2.x Authors, Initials"
+  ,"2.x Code Generation, SuperCollider, Smalltalk, Scheme"
   ]
 
 gen_xml :: IO ()

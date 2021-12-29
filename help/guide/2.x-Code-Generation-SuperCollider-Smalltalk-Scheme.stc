@@ -1,0 +1,40 @@
+// Code Generation, SuperCollider, Smalltalk, Scheme
+var a = SinOsc(1,0).abs * 0.1;
+SinOsc(440, 0) * a
+
+//---- notes.md
+Blocks print themselves using _.stc_ notation.
+This notation is a close relative of the SuperCollider language notation (_.sc_).
+
+The three block fragment assigned to the variable _a_ (×, |, ∿) prints as:
+
+> _SinOsc(1, 0).abs * 0.1_
+
+In SuperCollider this has the meaning:
+
+> _SinOsc.new(1, 0).abs * 0.1_
+
+In SuperCollider the _new_ method at _SinOsc_ is not defined.
+[stsc3](http://rd.slavepianos.org/?t=stsc3) defines _new_ for _SinOsc_ and other _unit generators_.
+These definitions call the _ar_ method if it exists, else the _kr_ method, else the _ir_ method.
+Therefore _a_ has the meaning:
+
+> _SinOsc.ar(1, 0).abs * 0.1_
+
+SuperCollider notation is a _C_-like notation for Smalltalk.
+The _.stc_ notation can also be translated to Smalltalk notation (_.st_), as:
+
+> _((SinOsc apply: #(1 0)) abs) * 0.1_
+
+The _apply:_ method is defined to _perform:withArguments:_ the _primaryFactoryMethod_ of a class.
+For of _SinOsc_ this method is _#freq:iphase:_, so the above has the meaning:
+
+> _(SinOsc freq: 1 phase: 0) abs * 0.1_
+
+The _.stc_ notation can also be translated into Scheme (_.scm_) notation, as:
+
+> _(* (abs (SinOsc 1 0)))_
+
+During translation a lookup table can be consulted to rewrite this as:
+
+> _(Mul (Abs (SinOsc 1 0)))_
