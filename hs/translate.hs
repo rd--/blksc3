@@ -275,7 +275,8 @@ blk_au_graph_option au nm =
 
 blk_graphs :: [(String, [String])]
 blk_graphs =
-  [("ES",
+  [("CR", ["Lucier"])
+  ,("ES",
     ["Tw 435684664200540161"
     ,"Tw 570012853274615808"])
   ,("F0",

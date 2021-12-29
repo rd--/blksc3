@@ -30,6 +30,16 @@ Blockly.JavaScript['sc3_AmpComp'] = function(block) {
     return [AmpComp_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_Amplitude'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var attackTime_value = Blockly.JavaScript.valueToCode(block, 'ATTACKTIME', Blockly.JavaScript.ORDER_ATOMIC) || '0.01';
+    var releaseTime_value = Blockly.JavaScript.valueToCode(block, 'RELEASETIME', Blockly.JavaScript.ORDER_ATOMIC) || '0.01';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var Amplitude_code = 'MulAdd(Amplitude(' + in_value + ', ' + attackTime_value + ', ' + releaseTime_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [Amplitude_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_BBandPass'] = function(block) {
     var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '1200.0';
@@ -633,6 +643,16 @@ Blockly.JavaScript['sc3_MouseY'] = function(block) {
     return [MouseY_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_Normalizer'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var level_value = Blockly.JavaScript.valueToCode(block, 'LEVEL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var dur_value = Blockly.JavaScript.valueToCode(block, 'DUR', Blockly.JavaScript.ORDER_ATOMIC) || '0.01';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var Normalizer_code = 'MulAdd(Normalizer(' + in_value + ', ' + level_value + ', ' + dur_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [Normalizer_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_OnePole'] = function(block) {
     var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var coef_value = Blockly.JavaScript.valueToCode(block, 'COEF', Blockly.JavaScript.ORDER_ATOMIC) || '0.5';
@@ -776,6 +796,13 @@ Blockly.JavaScript['sc3_Rand'] = function(block) {
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var Rand_code = 'MulAdd(Rand(' + lo_value + ', ' + hi_value + '), ' + mul_value + ', ' + add_value + ')';
     return [Rand_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_ReplaceOut'] = function(block) {
+    var bus_value = Blockly.JavaScript.valueToCode(block, 'BUS', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var channelsArray_value = Blockly.JavaScript.valueToCode(block, 'CHANNELSARRAY', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var ReplaceOut_code = 'ReplaceOut(' + bus_value + ', ' + channelsArray_value + ')';
+    return [ReplaceOut_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_Resonz'] = function(block) {

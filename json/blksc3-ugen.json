@@ -53,6 +53,23 @@
     }
     ,
     {
+        "type": "sc3_Amplitude",
+        "message0": "Amplitude %1 ∙ %2 ↗ %3 ⇲ %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ATTACKTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RELEASETIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Amplitude(in, attackTime, releaseTime): Amplitude follower",
+        "helpUrl": "https://doc.sccode.org/Classes/Amplitude.html"
+    }
+    ,
+    {
         "type": "sc3_BBandPass",
         "message0": "BBandPass %1 ∙ %2 ν %3 ↕ %4 × %5 + %6",
         "args0": [
@@ -1083,6 +1100,23 @@
     }
     ,
     {
+        "type": "sc3_Normalizer",
+        "message0": "Normalizer %1 ∙ %2 × %3 ⏲ %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Normalizer(in, level, dur): Flattens dynamics.",
+        "helpUrl": "https://doc.sccode.org/Classes/Normalizer.html"
+    }
+    ,
+    {
         "type": "sc3_OnePole",
         "message0": "OnePole %1 ∙ %2 ⊗ %3 × %4 + %5",
         "args0": [
@@ -1323,6 +1357,20 @@
         "colour": 60,
         "tooltip": "Rand(lo, hi): Single random number generator.",
         "helpUrl": "https://doc.sccode.org/Classes/Rand.html"
+    }
+    ,
+    {
+        "type": "sc3_ReplaceOut",
+        "message0": "ReplaceOut %1 bus %2 ⟦∙⟧ %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "BUS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "CHANNELSARRAY", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "ReplaceOut(bus, channelsArray): Send signal to a bus, overwriting previous contents.",
+        "helpUrl": "https://doc.sccode.org/Classes/ReplaceOut.html"
     }
     ,
     {
