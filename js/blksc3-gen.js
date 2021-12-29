@@ -1,5 +1,6 @@
+// Comments should not contain newlines
 Blockly.JavaScript['sc3_Comment'] = function(block) {
-    return '/* ' + block.getFieldValue('COMMENT') + ' */\n';
+    return '// ' + block.getFieldValue('COMMENT') + '\n';
 };
 
 Blockly.JavaScript['sc3_Play'] = function(block) {

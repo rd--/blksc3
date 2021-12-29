@@ -176,8 +176,8 @@ function blk_sc3_reset() {
 // Clear workspace, construct URL from arguments, fetch and load graph.
 function blk_load_help_graph(graphDir, graphName, fileType) {
     var auto_play = false;
-    var graphUrl = '?t=blksc3&e=help/' + graphDir + '/' + graphName + fileType;
-    var graphStc = 'sw/blksc3/help/' + graphDir + '/' + graphName + '.stc';
+    var graphUrl = 'help/' + graphDir + '/' + graphName + fileType;
+    var graphStc = 'help/' + graphDir + '/' + graphName + '.stc';
     console.log(graphName);
     blk_workspace.clear();
     if(auto_play) {
@@ -199,9 +199,9 @@ function blk_init() {
     blk_menu_init('blkHelpMenu', 'block', '.xml');
     blk_menu_init('blkGuideMenu', 'guide', '.xml');
     blk_xml_input_init();
-    blk_load_and_process_utf8('sw/blksc3/html/graph-menu.html', blk_set_inner_html_of('blkGraphMenu'));
-    blk_load_and_process_utf8('sw/blksc3/html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
-    blk_load_and_process_utf8('sw/blksc3/html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
+    blk_load_and_process_utf8('html/graph-menu.html', blk_set_inner_html_of('blkGraphMenu'));
+    blk_load_and_process_utf8('html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
+    blk_load_and_process_utf8('html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
     blk_websocket_init("localhost", 9160);
 }
 

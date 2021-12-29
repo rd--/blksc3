@@ -51,7 +51,7 @@ In M. Guzdial (ed.), _Squeak : Open Personal Computing for Multimedia_.
 
 * * *
 
-[HTML](https://rohandrape.net/?t=blksc3&e=blksc3.html)
+[HTML](https://rohandrape.net/sw/blksc3/blksc3.html)
 [VIDEO](https://rohandrape.net/?t=blksc3&e=md/video.md)
 [CLI](https://rohandrape.net/?t=blksc3&e=md/blksct3.md)
 [BLOCKLY](https://developers.google.com/blockly)
