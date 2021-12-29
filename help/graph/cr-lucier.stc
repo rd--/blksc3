@@ -17,12 +17,14 @@ OverlapTexture({
     var stringL = mk_delay.value([pk2_L, 1 - pk2_pos]);
     var pk2_R = mk_allpass.value([stringL * -1, 1 - pk2_pos, 2 + TRand(0.001, 0.11, tr)]) * 0.99;
     var stringR = mk_delay.value([pk2_R, pk2_pos - src_pos]);
-    var s = SinOsc(220, 0) * 0.01;
-    var a = Amplitude(drv, 0.01, 0.01) * 11;
-    var p = Pulse(60 + a, 0.5) * 0.1;
-    var f = RLPF(s + p, 320, 0.05);
-    var e = 1 - Amplitude(drv, 0.01, 0.01).min(1);
-    var source = Normalizer(f, 0.7, 0.01) * e;
+    var source = {
+        var s = SinOsc(220, 0) * 0.01;
+        var a = Amplitude(drv, 0.01, 0.01) * 11;
+        var p = Pulse(60 + a, 0.5) * 0.1;
+        var f = RLPF(s + p, 320, 0.05);
+        var e = 1 - Amplitude(drv, 0.01, 0.01).min(1);
+        Normalizer(f, 0.7, 0.01) * e
+    }.value;
     var l_out = ReplaceOut(bus, source * 0.2 + stringR);
     var outL = pk1_L + pk1_R;
     var outR = pk2_L + pk2_R;

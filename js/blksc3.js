@@ -152,11 +152,17 @@ function blk_read_input_json() {
 function blk_write_output_xml() {
 }
 
+// Append timestamp to URL to defeat cache
+function blk_append_timestamp(url) {
+    var ext = ((/\?/).test(url) ? "&" : "?") + (new Date()).getTime();
+    return url + ext;
+}
+
 // Read and load .xml format program from URL.
 function blk_fetch_xml(xmlUrl, autoPlay) {
     var request = new XMLHttpRequest();
     request.addEventListener("load", () => blk_load_xml(request.response, autoPlay));
-    request.open("GET", xmlUrl)
+    request.open("GET", blk_append_timestamp(xmlUrl))
     request.send();
 }
 
@@ -164,7 +170,7 @@ function blk_fetch_xml(xmlUrl, autoPlay) {
 function blk_fetch_json(jsonUrl, autoPlay) {
     var request = new JSONHttpRequest();
     request.addEventListener("load", () => blk_load_json(request.response, autoPlay));
-    request.open("GET", jsonUrl)
+    request.open("GET", blk_append_timestamp(jsonUrl))
     request.send();
 }
 
@@ -207,7 +213,7 @@ function blk_init() {
 
 // Fetch fileName and apply processFunc to the object read (stored as JSON).
 function blk_load_and_process_json(fileName, processFunc) {
-    fetch(fileName)
+    fetch(fileName, { cache: 'no-cache' })
         .then(response => response.json())
         .then(obj => processFunc(obj));
 }

@@ -93,6 +93,7 @@ event_param_xml o e =
 {- | Some operators are handled specially.
 
 1. dup -> sc3_ArrayFill
+2. value -> sc3_Value0
 -}
 uop_xml :: String -> String -> String
 uop_xml o e =
@@ -101,6 +102,10 @@ uop_xml o e =
       printf
       "<block type='sc3_ArrayFill' inline='true'><value name='PROC'>%s</value><value name='COUNT'>%s</value></block>"
       e (lit_int_xml "block" 2)
+    "value" ->
+      printf
+      "<block type='sc3_Value0' inline='true'><value name='PROC'>%s</value></block>"
+      e
     _ ->
       printf
       "<block type='sc3_UnaryOp'><field name='OP'>%s</field><value name='IN'>%s</value></block>"
@@ -118,6 +123,7 @@ binop_xml o lhs rhs =
 2. dup -> sc3_ArrayFill
 3. to -> sc3_ArrayFromTo
 4. timesRepeat -> sc3_TimesRepeat
+5. value -> sc3_Value1
 -}
 keybinop_xml :: String -> String -> String -> String
 keybinop_xml msg lhs rhs  =
@@ -137,6 +143,10 @@ keybinop_xml msg lhs rhs  =
     "to:" ->
       printf
       "<block type='sc3_ArrayFromTo' inline='true'><value name='FROM'>%s</value><value name='TO'>%s</value></block>"
+      lhs rhs
+    "value:" ->
+      printf
+      "<block type='sc3_Value1' inline='true'><value name='PROC'>%s</value><value name='VALUE'>%s</value></block>"
       lhs rhs
     _ ->
       printf
