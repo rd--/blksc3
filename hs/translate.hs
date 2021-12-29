@@ -193,7 +193,7 @@ proc_xml a _v e =
   case (a, expr_group_assignments e) of
     ([], ([], r)) ->
       printf
-      "<block type='sc3_Proc0'><value name='RETURN'>%s</value></block>"
+      "<block type='sc3_Proc0' inline='true'><value name='RETURN'>%s</value></block>"
       (expr_xml r)
     ([], (s, r)) ->
       printf
@@ -207,7 +207,7 @@ proc_xml a _v e =
       (expr_xml r)
     ([a1], (s, r)) ->
       printf
-      "<block type='sc3_Proc1Stm' inline='true'><value name='VAR'>%s</value><value name='STATEMENTS'>%s</value><value name='RETURN'>%s</value></block>"
+      "<block type='sc3_Proc1Stm'><value name='VAR'>%s</value><value name='STATEMENTS'>%s</value><value name='RETURN'>%s</value></block>"
       (var_get a1)
       (assign_seq_xml s)
       (expr_xml r)
