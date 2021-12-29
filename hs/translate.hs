@@ -388,6 +388,7 @@ blk_graphs =
      ,"Tw 528187147543511041"])
   ,("PJ"
    ,["Forest Sounds"])
+  ,("RD", ["Cricket", "Oscillator Cluster"])
   ,("TW"
    ,["Tw 01", "Tw 02"])
   ]
