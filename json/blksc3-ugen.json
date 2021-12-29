@@ -610,6 +610,21 @@
     }
     ,
     {
+        "type": "sc3_Hasher",
+        "message0": "Hasher %1 ∙ %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Hasher(in): Scrambled value with a hash function.",
+        "helpUrl": "https://doc.sccode.org/Classes/Hasher.html"
+    }
+    ,
+    {
         "type": "sc3_IRand",
         "message0": "𝐼⚁ %1 ⌊ %2 ⌉ %3 × %4 + %5",
         "args0": [
@@ -882,6 +897,23 @@
     }
     ,
     {
+        "type": "sc3_Lag3UD",
+        "message0": "Lag3UD %1 ∙ %2 ⏲↑ %3 ⏲↓ %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LAGTIMEU", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LAGTIMED", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Lag3UD(in, lagTimeU, lagTimeD): Exponential lag",
+        "helpUrl": "https://doc.sccode.org/Classes/Lag3UD.html"
+    }
+    ,
+    {
         "type": "sc3_LagUD",
         "message0": "⎎↕ %1 ∙ %2 ⏲↑ %3 ⏲↓ %4 × %5 + %6",
         "args0": [
@@ -949,7 +981,7 @@
     ,
     {
         "type": "sc3_LinExp",
-        "message0": "LinExp %1 ∙ %2 ⌊ %3 ⌈ %4 ⌋ %5 ⌉ %6 × %7 + %8",
+        "message0": "/ノ %1 ∙ %2 ⌊ %3 ⌈ %4 ⌋ %5 ⌉ %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1043,6 +1075,22 @@
         "colour": 60,
         "tooltip": "LocalOut(channelsArray): Write to buses local to a synth.",
         "helpUrl": "https://doc.sccode.org/Classes/LocalOut.html"
+    }
+    ,
+    {
+        "type": "sc3_MantissaMask",
+        "message0": "MantissaMask %1 ∙ %2 bits %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "BITS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "MantissaMask(in, bits): Reduce precision.",
+        "helpUrl": "https://doc.sccode.org/Classes/MantissaMask.html"
     }
     ,
     {
@@ -1503,7 +1551,7 @@
     ,
     {
         "type": "sc3_SinOscFB",
-        "message0": "∿↻ %1 ν %2 feedback %3 × %4 + %5",
+        "message0": "∿↻ %1 ν %2 ↻ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1515,6 +1563,21 @@
         "colour": 210,
         "tooltip": "SinOscFB(freq, feedback): Feedback FM oscillator",
         "helpUrl": "https://doc.sccode.org/Classes/SinOscFB.html"
+    }
+    ,
+    {
+        "type": "sc3_Slew",
+        "message0": "Slew %1 ∙ %2 up %3 dn %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "UP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DN", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Slew(in, up, dn): Slew rate limiter.",
+        "helpUrl": "https://doc.sccode.org/Classes/Slew.html"
     }
     ,
     {
@@ -1690,7 +1753,7 @@
     ,
     {
         "type": "sc3_GreyholeRaw",
-        "message0": "GreyholeRaw %1 ∙₁ %2 ∙₂ %3 ⊕ %4 ⎵ %5 diffusion %6 feedback %7 moddepth %8 ν𝑚 %9 size %10 × %11 + %12",
+        "message0": "GreyholeRaw %1 ∙₁ %2 ∙₂ %3 ⊕ %4 ⎵ %5 diffusion %6 ↻ %7 moddepth %8 ν𝑚 %9 size %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN1", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1851,7 +1914,7 @@
     ,
     {
         "type": "sc3_LinLin",
-        "message0": "LinLin %1 ∙ %2 ⌊ %3 ⌈ %4 ⌋ %5 ⌉ %6 × %7 + %8",
+        "message0": "// %1 ∙ %2 ⌊ %3 ⌈ %4 ⌋ %5 ⌉ %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1952,6 +2015,23 @@
         "colour": 30,
         "tooltip": "Sequence generator with repeats count",
         "helpUrl": "https://doc.sccode.org/Classes/Seq.html"
+    }
+    ,
+    {
+        "type": "sc3_Ser",
+        "message0": "Ser %1 length %2 ⟜ %3 step %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "LENGTH", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "START", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "STEP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Demand rate arithmetic series UGen",
+        "helpUrl": "https://doc.sccode.org/Classes/Ser.html"
     }
     ,
     {
