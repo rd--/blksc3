@@ -367,12 +367,15 @@ blk_graphs =
      ,"Resonant Dust"
      ,"Reverberated Sine Percussion"
      ,"Sample and Hold Liquidities"
+     ,"Saucer Base"
      ,"Scratchy"
+     ,"Sidereal Time"
      ,"Spe"
      ,"Sprinkler", "Sprinkler (Mouse)"
      ,"Strummable Metals"
      ,"Strummable Silk"
      ,"Sweepy Noise"
+     ,"Swept Resonant Noise"
      ,"Synthetic Piano"
      ,"Tank"
      ,"Theremin"
@@ -382,7 +385,7 @@ blk_graphs =
      ,"Wind Metals", "Wind Metals (Variables)"
      ,"Zizle"
      ])
-  ,("JR", ["Sturmian Sequencer I", "Sturmian Sequencer II", "Sturmian Sequencer III"])
+  ,("JR", ["Deepsea", "Sturmian Sequencer I", "Sturmian Sequencer II", "Sturmian Sequencer III"])
   ,("KL", ["Vibraphone"])
   ,("NC", ["SC Tutorial"])
   ,("NV"
@@ -395,7 +398,7 @@ blk_graphs =
      ,"Tw 528187147543511041"])
   ,("PJ"
    ,["Forest Sounds"])
-  ,("RD", ["Cricket", "Oscillator Cluster"])
+  ,("RD", ["Cricket", "Klnk", "LF Pulses", "Oscillator Cluster", "Three Cpsw"])
   ,("TW"
    ,["Tw 01", "Tw 02"])
   ]

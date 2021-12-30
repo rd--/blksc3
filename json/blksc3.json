@@ -28,7 +28,7 @@
         "args0": [{"type": "field_dropdown", "name": "CONST", "options": [["π", "pi"], ["2×π", "twoPi"], ["𝑒", "e"], ["∞", "inf"]]}],
         "output": "Number",
         "colour": 230,
-        "tooltip": "Mathematical constants, such as π."
+        "tooltip": "Constant(n): Mathematical constants, such as π."
     }
     ,
     {
@@ -40,7 +40,7 @@
         ],
         "output": "Proc0",
         "colour": 180,
-        "tooltip": "Make zero argument procedure with return block"
+        "tooltip": "Proc(return): Zero argument procedure"
     }
     ,
     {
@@ -51,7 +51,7 @@
         ],
         "output": null,
         "colour": 180,
-        "tooltip": "Evaluate zero argument procedure"
+        "tooltip": "Value(proc): Evaluate zero argument procedure"
     }
     ,
     {
@@ -64,19 +64,19 @@
         ],
         "output": "Proc1",
         "colour": 180,
-        "tooltip": "Make one argument procedure with return block setting arg to var"
+        "tooltip": "Proc(var, return): One argument procedure setting arg to var"
     }
     ,
     {
         "type": "sc3_Value1",
         "message0": "⇐ 𝑓 %1 ∙ %2",
         "args0": [
-            {"type": "input_value", "name": "PROC", "check": ["Proc0"]},
+            {"type": "input_value", "name": "PROC", "check": ["Proc1"]},
             {"type": "input_value", "name": "VALUE"}
         ],
         "output": null,
         "colour": 180,
-        "tooltip": "Evaluate one argument procedure"
+        "tooltip": "Value(proc, value): Evaluate one argument procedure"
     }
     ,
     {
@@ -89,7 +89,7 @@
         ],
         "output": "Proc0",
         "colour": 180,
-        "tooltip": "Make zero argument procedure with statements and return block"
+        "tooltip": "Proc(statements, return): Zero argument procedure, with statements"
     }
     ,
     {
@@ -103,7 +103,7 @@
         ],
         "output": "Proc1",
         "colour": 180,
-        "tooltip": "Make one argument procedure with statements and return block"
+        "tooltip": "Proc(var, statements, return): One argument procedure, with statements"
     }
     ,
     {
@@ -143,7 +143,7 @@
         ],
         "output": "Array",
         "colour": 260,
-        "tooltip": "List of consecutive numbers"
+        "tooltip": "ArrayFromTo(from, to): Array of consecutive numbers"
     }
     ,
     {
@@ -156,7 +156,7 @@
         ],
         "output": "Array",
         "colour": 260,
-        "tooltip": "Fill list by evaluating function once for each place"
+        "tooltip": "ArrayFill(proc, count): Array of count places, evaulating proc to generate a value for each place"
     }
     ,
     {
@@ -168,7 +168,7 @@
         ],
         "output": "Array",
         "colour": 260,
-        "tooltip": "Collect over ARRAY by evaluating PROC once for each place"
+        "tooltip": "ArrayCollect(array, proc): Collect over array by evaluating proc once for each place"
     }
     ,
     {
@@ -180,7 +180,7 @@
         ],
         "output": "UGen",
         "colour": 260,
-        "tooltip": "Element of list at index.  One is the first element."
+        "tooltip": "ArrayAt(array, index): Element of array at index.  One is the first element."
     }
     ,
     {
@@ -192,7 +192,7 @@
         ],
         "output": "UGen",
         "colour": 230,
-        "tooltip": "Unary operators"
+        "tooltip": "UnaryOp(op, in): Unary operators"
     }
     ,
     {
@@ -205,7 +205,7 @@
         ],
         "output": "UGen",
         "colour": 230,
-        "tooltip": "Binary operators"
+        "tooltip": "BinaryOp(op, lhs, rhs): Binary operators"
     }
     ,
     {
@@ -218,7 +218,7 @@
         ],
         "output": "UGen",
         "colour": 230,
-        "tooltip": "Multiply add",
+        "tooltip": "MulAdd(in, mul, add): Multiply and add, i.e. in * mul + add.",
         "helpUrl": "https://doc.sccode.org/Classes/MulAdd.html"
     }
     ,
@@ -245,7 +245,7 @@
         ],
         "output": "UGen",
         "colour": 180,
-        "tooltip": "Voicer"
+        "tooltip": "Voicer(count, proc): Array of results of evaluating proc count times, each time receiving an event as argument"
     }
     ,
     {
@@ -258,7 +258,7 @@
         ],
         "output": "UGen",
         "colour": 180,
-        "tooltip": "Voicer"
+        "tooltip": "VoicerWriter(count, proc)"
     }
     ,
     {
@@ -270,6 +270,6 @@
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Read voice event parameter"
+        "tooltip": "EventParam(param, event): Read voice event parameter"
     }
 ]

@@ -122,7 +122,7 @@
     ,
     {
         "type": "sc3_BPF",
-        "message0": "BPF %1 ∙ %2 ν %3 ¹⁄𝑄 %4 × %5 + %6",
+        "message0": "◫ %1 ∙ %2 ν %3 ¹⁄𝑄 %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -451,6 +451,24 @@
         "colour": 210,
         "tooltip": "Formant(fundfreq, formfreq, bwfreq): Formant oscillator",
         "helpUrl": "https://doc.sccode.org/Classes/Formant.html"
+    }
+    ,
+    {
+        "type": "sc3_Formlet",
+        "message0": "Formlet %1 ∙ %2 ν %3 ↗ %4 ↘ %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ATTACKTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Formlet(in, freq, attacktime, decaytime): FOF-like filter.",
+        "helpUrl": "https://doc.sccode.org/Classes/Formlet.html"
     }
     ,
     {
@@ -1130,7 +1148,7 @@
     ,
     {
         "type": "sc3_MouseX",
-        "message0": "☟𝑥 %1 ⌊ %2 ⌈ %3 𝑓 %4 ~ %5 × %6 + %7",
+        "message0": "☟𝑥 %1 ⌊ %2 ⌈ %3 𝑓 %4 ⎎ %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1148,7 +1166,7 @@
     ,
     {
         "type": "sc3_MouseY",
-        "message0": "☟𝑦 %1 ⌊ %2 ⌈ %3 𝑓 %4 ~ %5 × %6 + %7",
+        "message0": "☟𝑦 %1 ⌊ %2 ⌈ %3 𝑓 %4 ⎎ %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1595,6 +1613,21 @@
         "colour": 150,
         "tooltip": "Slew(in, up, dn): Slew rate limiter.",
         "helpUrl": "https://doc.sccode.org/Classes/Slew.html"
+    }
+    ,
+    {
+        "type": "sc3_Slope",
+        "message0": "𝑓' %1 ∙ %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Slope(in): Slope of signal",
+        "helpUrl": "https://doc.sccode.org/Classes/Slope.html"
     }
     ,
     {

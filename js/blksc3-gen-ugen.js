@@ -263,6 +263,17 @@ Blockly.JavaScript['sc3_Formant'] = function(block) {
     return [Formant_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_Formlet'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '440.0';
+    var attacktime_value = Blockly.JavaScript.valueToCode(block, 'ATTACKTIME', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var decaytime_value = Blockly.JavaScript.valueToCode(block, 'DECAYTIME', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var Formlet_code = 'MulAdd(Formlet(' + in_value + ', ' + freq_value + ', ' + attacktime_value + ', ' + decaytime_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [Formlet_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_FreeVerb2'] = function(block) {
     var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var in2_value = Blockly.JavaScript.valueToCode(block, 'IN2', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
@@ -929,6 +940,14 @@ Blockly.JavaScript['sc3_Slew'] = function(block) {
     var dn_value = Blockly.JavaScript.valueToCode(block, 'DN', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
     var Slew_code = 'Slew(' + in_value + ', ' + up_value + ', ' + dn_value + ')';
     return [Slew_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_Slope'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var Slope_code = 'MulAdd(Slope(' + in_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [Slope_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_Stepper'] = function(block) {
