@@ -10,9 +10,9 @@ var f = {
 OverlapTexture(f, 2, 8, 12) * 0.05
 
 //---- notes.md
-λ (_Lambda_) is the anonymous procedure block.
+λ (_Proc_) is the anonymous procedure block.
 It is located in the _Proc_ category of the toolbox.
-λ _Value Block_, it has an _Output Connector_ to receive the ← (_return_) value.
+λ is a _Value Block_, it has an _Output Connector_ to receive the ← (_return_) value.
 
 λ has a number of distinct shapes.
 It may take zero, one (⍵) or two (⍵ & ⍺) input parameter names.
@@ -29,7 +29,7 @@ When evaluated, a λ block must be passed the appropriate number of arguments, o
 Each copy forms one voice of an evolving texture.
 
 ᨏ applies a simple linear envelope to each voice.
-The envelope is defined by ⤢ (_transition time_) and ⌒ (_sustain time_).
+The envelope is defined by two parameters, ⤢ (_transition time_) and ⌒ (_sustain time_).
 The duration of the envelope is: 2 × ⤢ + ⌒.
 
 The envelopes of each voice are reset at equally spaced regular intervals.
@@ -38,5 +38,5 @@ The interval between between resets is: (2 × ⤢ + ⌒) ÷ #.
 The argument to 𝑓 is a signal that indicates to the voice when its envelope is reset,
 allowing voices to move to a new state for each iteration.
 
-The program here is a texture of 12 voices, each a single ∿ (_SinOsc_).
+This program generates a texture of 12 voices, each a single ∿ (_SinOsc_).
 On each envelope reset the ν (_frequency_), ⌖ (_stereo location_) and × (_amplitude_) are reset to new randomly selected values (⤴⚁).
