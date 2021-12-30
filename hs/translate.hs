@@ -332,6 +332,7 @@ blk_graphs =
      ,"Analogue Daze"
      ,"Analog Bubbles", "Analog Bubbles (Mouse)", "Analog Bubbles (Var)"
      ,"Babbling Brook"
+     ,"Bach Prelude"
      ,"Berlin, 1977"
      ,"Bidirectional Strummable Guitar"
      ,"Birdies"

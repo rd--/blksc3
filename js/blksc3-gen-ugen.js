@@ -274,6 +274,17 @@ Blockly.JavaScript['sc3_Formlet'] = function(block) {
     return [Formlet_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_FreeVerb'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var mix_value = Blockly.JavaScript.valueToCode(block, 'MIX', Blockly.JavaScript.ORDER_ATOMIC) || '0.33';
+    var room_value = Blockly.JavaScript.valueToCode(block, 'ROOM', Blockly.JavaScript.ORDER_ATOMIC) || '0.5';
+    var damp_value = Blockly.JavaScript.valueToCode(block, 'DAMP', Blockly.JavaScript.ORDER_ATOMIC) || '0.5';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var FreeVerb_code = 'MulAdd(FreeVerb(' + in_value + ', ' + mix_value + ', ' + room_value + ', ' + damp_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [FreeVerb_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_FreeVerb2'] = function(block) {
     var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var in2_value = Blockly.JavaScript.valueToCode(block, 'IN2', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';

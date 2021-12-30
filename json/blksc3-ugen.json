@@ -472,6 +472,24 @@
     }
     ,
     {
+        "type": "sc3_FreeVerb",
+        "message0": "⧈𝑓 %1 ∙ %2 mix %3 room %4 damp %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MIX", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ROOM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "DAMP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "FreeVerb(in, mix, room, damp): A reverb",
+        "helpUrl": "https://doc.sccode.org/Classes/FreeVerb.html"
+    }
+    ,
+    {
         "type": "sc3_FreeVerb2",
         "message0": "⧈𝑓₂ %1 ∙ %2 ∙₂ %3 mix %4 room %5 damp %6 × %7 + %8",
         "args0": [
@@ -1617,7 +1635,7 @@
     ,
     {
         "type": "sc3_Slope",
-        "message0": "𝑓' %1 ∙ %2 × %3 + %4",
+        "message0": "𝑓′ %1 ∙ %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
