@@ -104,6 +104,23 @@
     }
     ,
     {
+        "type": "sc3_BLowPass",
+        "message0": "BLowPass %1 ∙ %2 ν %3 ¹⁄𝑄 %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "BLowPass(in, freq, rq): 12db/oct rolloff - 2nd order resonant Low Pass Filter",
+        "helpUrl": "https://doc.sccode.org/Classes/BLowPass.html"
+    }
+    ,
+    {
         "type": "sc3_BPF",
         "message0": "BPF %1 ∙ %2 ν %3 ¹⁄𝑄 %4 × %5 + %6",
         "args0": [

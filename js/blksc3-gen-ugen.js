@@ -60,6 +60,16 @@ Blockly.JavaScript['sc3_BBandStop'] = function(block) {
     return [BBandStop_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_BLowPass'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '1200.0';
+    var rq_value = Blockly.JavaScript.valueToCode(block, 'RQ', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var BLowPass_code = 'MulAdd(BLowPass(' + in_value + ', ' + freq_value + ', ' + rq_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [BLowPass_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_BPF'] = function(block) {
     var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '440.0';
