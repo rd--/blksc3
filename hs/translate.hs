@@ -389,7 +389,7 @@ blk_graphs =
      ,"Wind Metals", "Wind Metals (Variables)"
      ,"Zizle"
      ])
-  ,("JR", ["A Bath", "Deepsea", "Sturmian Sequencer I", "Sturmian Sequencer II", "Sturmian Sequencer III"])
+  ,("JR", ["A Bath", "Deepsea", "(Stereo) Half Life", "Sturmian Sequencer I", "Sturmian Sequencer II", "Sturmian Sequencer III"])
   ,("KL", ["Vibraphone"])
   ,("NC", ["SC Tutorial"])
   ,("NV"
