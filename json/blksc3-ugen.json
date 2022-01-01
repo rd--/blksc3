@@ -742,6 +742,36 @@
     }
     ,
     {
+        "type": "sc3_LFDNoise1",
+        "message0": "LFDNoise1 %1 ν %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "LFDNoise1(freq): Dynamic ramp noise",
+        "helpUrl": "https://doc.sccode.org/Classes/LFDNoise1.html"
+    }
+    ,
+    {
+        "type": "sc3_LFDNoise3",
+        "message0": "LFDNoise3 %1 ν %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "LFDNoise3(freq): Dynamic cubic noise",
+        "helpUrl": "https://doc.sccode.org/Classes/LFDNoise3.html"
+    }
+    ,
+    {
         "type": "sc3_LFGauss",
         "message0": "LFGauss %1 ⏲ %2 ↔ %3 ϕ %4 ↻ %5 ⌫ %6 × %7 + %8",
         "args0": [
@@ -2067,6 +2097,22 @@
         "colour": 150,
         "tooltip": "Select signal branch based on predicate value",
         "helpUrl": "https://doc.sccode.org/Classes/Select2.html"
+    }
+    ,
+    {
+        "type": "sc3_SelectX",
+        "message0": "SelectX %1 ☞ %2 ⟦⟧ %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "WHICH", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Mix one output from many sources",
+        "helpUrl": "https://doc.sccode.org/Classes/SelectX.html"
     }
     ,
     {

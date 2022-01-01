@@ -439,6 +439,22 @@ Blockly.JavaScript['sc3_LFCub'] = function(block) {
     return [LFCub_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_LFDNoise1'] = function(block) {
+    var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '500.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var LFDNoise1_code = 'MulAdd(LFDNoise1(' + freq_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [LFDNoise1_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_LFDNoise3'] = function(block) {
+    var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '500.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var LFDNoise3_code = 'MulAdd(LFDNoise3(' + freq_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [LFDNoise3_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_LFGauss'] = function(block) {
     var duration_value = Blockly.JavaScript.valueToCode(block, 'DURATION', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
     var width_value = Blockly.JavaScript.valueToCode(block, 'WIDTH', Blockly.JavaScript.ORDER_ATOMIC) || '0.1';
@@ -1212,6 +1228,15 @@ Blockly.JavaScript['sc3_Select2'] = function(block) {
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var Select2_code = 'MulAdd(Select2(' + predicate_value + ', ' + ifTrue_value + ', ' + ifFalse_value + '), ' + mul_value + ', ' + add_value + ')';
     return [Select2_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_SelectX'] = function(block) {
+    var which_value = Blockly.JavaScript.valueToCode(block, 'WHICH', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var array_value = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var SelectX_code = 'MulAdd(SelectX(' + which_value + ', ' + array_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [SelectX_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_Seq'] = function(block) {
