@@ -1188,6 +1188,15 @@ Blockly.JavaScript['sc3_LinLin'] = function(block) {
     return [LinLin_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_LinSeg'] = function(block) {
+    var gate_value = Blockly.JavaScript.valueToCode(block, 'GATE', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var coord_value = Blockly.JavaScript.valueToCode(block, 'COORD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var LinSeg_code = 'MulAdd(LinSeg(' + gate_value + ', ' + coord_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [LinSeg_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_Ln'] = function(block) {
     var start_value = Blockly.JavaScript.valueToCode(block, 'START', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var end_value = Blockly.JavaScript.valueToCode(block, 'END', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';

@@ -336,9 +336,11 @@ blk_graphs =
      ,"Berlin, 1977"
      ,"Bidirectional Strummable Guitar"
      ,"Birdies"
+     ,"Blips 001"
      ,"Bowed String"
      ,"Choip Choip Choip"
      ,"Clipped Inharmonic Warbulence"
+     ,"Contamination Zone"
      ,"Coolant", "Coolant (Texture)"
      ,"Data Space"
      ,"Deep Trip"
@@ -352,6 +354,7 @@ blk_graphs =
      ,"Hell Is Busy"
      ,"Impulse Sequencer"
      ,"Inharmonic Warbulence"
+     ,"Landon Rose"
      ,"Lfo Modulation"
      ,"Modal Space", "Modal Space (Partial)"
      ,"Moto Rev"
@@ -361,6 +364,7 @@ blk_graphs =
      ,"Ostinoodles"
      ,"Pentatonic Pipes"
      ,"Plucked Strings"
+     ,"Police State"
      ,"Pond Life", "Pond Life (Texture)"
      ,"Pulse Harmonic Warbulence"
      ,"Pulsing Bottles"
@@ -372,6 +376,7 @@ blk_graphs =
      ,"Reverberated Sine Percussion"
      ,"Sample and Hold Liquidities"
      ,"Saucer Base"
+     ,"Sawed Cymbals"
      ,"Scratchy"
      ,"Sidereal Time"
      ,"Spe"
@@ -385,6 +390,7 @@ blk_graphs =
      ,"Theremin"
      ,"Tremulate", "Tremulate (Event)"
      ,"Uplink" ,"Uplink (Texture)"
+     ,"What Was I Thinking?"
      ,"Why SuperCollider?"
      ,"Wind Metals", "Wind Metals (Variables)"
      ,"Zizle"
@@ -403,7 +409,7 @@ blk_graphs =
   ,("PJ"
    ,["Forest Sounds"])
   ,("RD", ["Cricket", "Klnk", "LF Pulses", "Oscillator Cluster", "Three Cpsw"])
-  ,("TM", ["Tw 463992770596577280"])
+  ,("TM", ["Drummer","Tw 463992770596577280"])
   ,("TW"
    ,["Tw 01", "Tw 02"])
   ]
