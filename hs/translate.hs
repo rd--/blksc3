@@ -483,6 +483,7 @@ blk_guide =
   ,"2.1 Multiply and Add"
   ,"2.x Authors, Initials"
   ,"2.x Code Generation, SuperCollider, Smalltalk, Scheme"
+  ,"2.x Code Generation, Macros"
   ]
 
 gen_xml :: IO ()
