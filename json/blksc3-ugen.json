@@ -981,7 +981,7 @@
     ,
     {
         "type": "sc3_Lag3UD",
-        "message0": "Lag3UD %1 ∙ %2 ⏲↑ %3 ⏲↓ %4 × %5 + %6",
+        "message0": "⎎₃↕ %1 ∙ %2 ⏲↑ %3 ⏲↓ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1768,6 +1768,23 @@
         "colour": 30,
         "tooltip": "TGrains(numChan, trigger, bufnum, rate, centerPos, dur, pan, amp, interp): Buffer granulator.",
         "helpUrl": "https://doc.sccode.org/Classes/TGrains.html"
+    }
+    ,
+    {
+        "type": "sc3_TIRand",
+        "message0": "⤴𝐼⚁ %1 ⌊ %2 ⌉ %3 ⤴ %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "TIRand(lo, hi, trig): Triggered integer random number generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/TIRand.html"
     }
     ,
     {

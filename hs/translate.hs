@@ -285,7 +285,9 @@ blk_au_graph_option au nm =
 
 blk_graphs :: [(String, [String])]
 blk_graphs =
-  [("CR", ["Lucier"])
+  [("AN", ["Tw 99846300173991936"])
+  ,("CR", ["Lucier"])
+  ,("DMC", ["PM Crotale"])
   ,("ES",
     ["Tw 435684664200540161"
     ,"Tw 570012853274615808"])
@@ -337,12 +339,14 @@ blk_graphs =
      ,"Bidirectional Strummable Guitar"
      ,"Birdies"
      ,"Blips 001"
+     ,"Bouncing Objects"
      ,"Bowed String"
      ,"Choip Choip Choip"
      ,"Clipped Inharmonic Warbulence"
      ,"Clustered Sines"
      ,"Contamination Zone"
      ,"Coolant", "Coolant (Texture)"
+     ,"Cymbalism Accellerando"
      ,"Data Space"
      ,"Deep Trip"
      ,"Demanding Studies"
