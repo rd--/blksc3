@@ -1,3 +1,15 @@
-// Cc ; continous controller
-Pan2(SinOsc(Cc(1) * 110 + 110, 0), Cc(2) * 2 - 1, Cc(3) * 0.2)
+// Cc ; continuous controller
+Pan2(Blip(Lag(Cc(1), 0.1) * 110 + 110, Lag(Cc(2), 0.2) * 9 + 1) * Lag(Cc(3), 0.3) * 0.1, Lag(Cc(4), 0.4) * 2 - 1, 1)
 
+//---- notes.md
+_Cc_ reads input from external continous controllers.
+
+Continous controllers are implicitly in the range _(0, 1)_.
+
+In this program
+_Cc1_ controls pitch,
+_Cc2_ controls the number of harmonics,
+_Cc3_ controls amplitude and
+_Cc4_ controls stereo location.
+
+_blksc3_ has a _Cc_ section that provides simple _UI_ sliders to send the appropriate control messages to the synthesiser.

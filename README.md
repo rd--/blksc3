@@ -49,6 +49,8 @@ John Steinmetz.
 2000.
 In M. Guzdial (ed.), _Squeak : Open Personal Computing for Multimedia_.
 
+© [rohan drape](http://rohandrape.net/), 2021-2022, [gpl](http://gnu.org/copyleft/)
+
 * * *
 
 [HTML](https://rohandrape.net/sw/blksc3/blksc3.html)

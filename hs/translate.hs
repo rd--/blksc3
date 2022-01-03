@@ -46,7 +46,7 @@ ugen_param nm =
   case Db.u_lookup_cs nm of
     Just u -> (Db.u_input_names u, isJust (Db.ugen_outputs u))
     Nothing -> case Db.pseudo_ugen_db_lookup nm of
-                 Just (_,p,o,_,_,_)  -> (p, o)
+                 Just (_,p,o,_,_)  -> (p, o)
                  Nothing -> error ("ugen_param: " ++ nm)
 
 ugen_xml :: String -> [String] -> String
@@ -441,6 +441,7 @@ blk_help =
   ,"ArrayFill.1"
   ,"Balance2.1", "Balance2.2"
   ,"Blip.1", "Blip.2"
+  ,"Cc.1"
   ,"CombC.1", "CombC.2"
   ,"Decay2.1"
   ,"ExpRand.1"
