@@ -480,6 +480,7 @@ blk_guide =
   ,"1.4 Arrays, Variables, Binary Operators"
   ,"1.x Lambda, Overlap Texture"
   ,"1.5 Noise Generators, Filters, Control Signals"
+  ,"1.x External Control, Events, Signals"
   ,"1.x Block Names, Parameters, Messages"
   ,"2.1 Multiply and Add"
   ,"2.x Authors, Initials"

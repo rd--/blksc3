@@ -1,0 +1,29 @@
+// External Control, Events, Signals
+FreeVerb(Voicer(16, {
+    arg e;
+    Blip(e.p.unitCps, e.y * 9) * e.w * e.z
+}).splay, Cc(1), Cc(2), 0.5)
+
+//---- notes.md
+Many music synthesisers, including _SuperCollider_, have two distinct operating rates, audio rate and control rate.
+A typical configuration sets the audio rate to 48,000 _hz_ and the control rate to 1,000 _hz_.
+
+There are two ways the _SuperCollider_ synthesiser receives control signals.
+One is directly from a special purpose unit generator, such as ☟𝑥 (_MouseX_).
+The other is indirectly by reading from a control bus.
+
+Control buses are integer indexed.
+They are set by sending a _/c_set_ message to the synthesiser, and read using a unit generator.
+
+Values at control buses have no fixed meaning.
+A control system consists of an agreement between about the meaning of signals at particular control buses.
+
+Three such systems are:
+
+1. _Cc(n)_ reads from continuous controller _n_ with the implicit range _(0, 1)_.
+2. _Sw(n)_ reads from switch _n_ that is either _closed_ (0) or _open_ (1).
+3. _Voicer(f, n)_ reads _n_ event streams, where an event is a set of control parameters associated with a _gate_ signal.
+
+In this program event data is read for parameters _p_ (linear pitch), _y_ (location in y-axis), _w_ (gate) and _z_ (pressure).
+
+The first two continuous controller inputs are read and set the reverb _mix_ and _room_ parameters.

@@ -1,66 +1,261 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
-  <block type="sc3_Comment" id="h?TXR#M-4nknQ`XLR*/@" x="10" y="10">
+  <variables>
+    <variable id="TA`:q~vM;^L27/a:!=Iv">x</variable>
+    <variable id="@Gd5D@TVr!d3R5Ks`A}8">y</variable>
+    <variable id="iF7;w:b=T.-uW?xkkf`$">f</variable>
+    <variable id="!Trg~`WmzUfA-qa);%Q7">a</variable>
+  </variables>
+  <block type="sc3_Comment" id="sQ3xp9#.DubEW%lM.$Z6" x="0" y="0">
     <field name="COMMENT">Mouse control ; jmcc #3</field>
-  </block>
-  <block type="sc3_BinaryOp" id="%i#tVmc:yPqbHMlGZYnu" inline="true" x="10" y="10">
-    <field name="OP">*</field>
-    <value name="LHS">
-      <block type="sc3_SinOsc" id="x)`MdoMX_qp|BA|D9(%T" inline="true">
-        <value name="FREQ">
-          <block type="sc3_MouseX" id="T=v]7fGsweHA!C./En8e" inline="true">
+    <next>
+      <block type="variables_set" id="`.-YZaUj_|jF_eK*{=x%">
+        <field name="VAR" id="TA`:q~vM;^L27/a:!=Iv">x</field>
+        <value name="VALUE">
+          <block type="sc3_MouseX" id="/a*MWnH2vCKHRJef+SUq" inline="true">
             <value name="MINVAL">
-              <block type="math_number" id="Dy`}IVd^F}$1.gqJJ%=c">
+              <block type="math_number" id="Hf!n/*!E$D:3V@VZay3q">
                 <field name="NUM">200</field>
               </block>
             </value>
             <value name="MAXVAL">
-              <block type="math_number" id="K=YhCTjOimA?n_m*s45$">
+              <block type="math_number" id="tP3|Y6c3C|oLC*;ZI_Kq">
                 <field name="NUM">2000</field>
               </block>
             </value>
             <value name="WARP">
-              <block type="math_number" id="4Hl+#MKHFJD8=Z#IS~t1">
+              <block type="math_number" id="o{/:.dPmN4vK8u.GTUp5">
                 <field name="NUM">1</field>
               </block>
             </value>
             <value name="LAG">
-              <block type="math_number" id="l7f7A+dH/09r^U~2,oLY">
+              <block type="math_number" id="kPC1,pLbeW9KWPmNaHiI">
                 <field name="NUM">0.2</field>
               </block>
             </value>
             <value name="MUL">
-              <shadow type="math_number" id="%^@KkSo`BNjWtUA}~i+=">
+              <shadow type="math_number" id="58=H8:HSuuG|g#[pR~no">
                 <field name="NUM">1</field>
               </shadow>
             </value>
             <value name="ADD">
-              <shadow type="math_number" id="^.D~zEEKmN}SxM+#$Z4w">
+              <shadow type="math_number" id="yWe%j*upi?X~p`Ld!8BU">
                 <field name="NUM">0</field>
               </shadow>
             </value>
           </block>
         </value>
-        <value name="PHASE">
-          <block type="math_number" id="=%51}nz|{1I}s/p5S`Du">
-            <field name="NUM">0</field>
+        <next>
+          <block type="variables_set" id="6$incnf1*1B!rQN}L=j8">
+            <field name="VAR" id="@Gd5D@TVr!d3R5Ks`A}8">y</field>
+            <value name="VALUE">
+              <block type="sc3_MouseY" id="G[%T2bu$h8.zKi)pL#gB" inline="true">
+                <value name="MINVAL">
+                  <block type="math_number" id="]Nb+Jii%+mp0mBG1BDyD">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="MAXVAL">
+                  <block type="math_number" id="d_+;L1snb/Mr6a{:6}0y">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <value name="WARP">
+                  <block type="math_number" id="lsAyA`iRC||sQDRn@pip">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="LAG">
+                  <block type="math_number" id="Fs|HiSP|U-((Ec]jVmmt">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="MUL">
+                  <shadow type="math_number" id=":pBGDuyza%!RcXJ]kwqg">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="ADD">
+                  <shadow type="math_number" id="@f,%T`cgRwQ^]=gx]Q@[">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="[t||S!MoAx6;;~oKDbIE">
+                <field name="VAR" id="iF7;w:b=T.-uW?xkkf`$">f</field>
+                <value name="VALUE">
+                  <block type="lists_create_with" id="1qmY9@+hw[kpflt`!JIT" inline="true">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="variables_get" id="C]/dG=D+X8F;;Y]sa`32">
+                        <field name="VAR" id="TA`:q~vM;^L27/a:!=Iv">x</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="sc3_Lag" id="bzz/vF$o%!UZ`hF;.Vr." inline="true">
+                        <value name="IN">
+                          <block type="sc3_LinExp" id="Z;0FlpDKEcjLxP+G3o={" inline="true">
+                            <value name="IN">
+                              <block type="variables_get" id=")-ZG[~9J]NC]~-BsGSBQ">
+                                <field name="VAR" id="@Gd5D@TVr!d3R5Ks`A}8">y</field>
+                              </block>
+                            </value>
+                            <value name="SRCLO">
+                              <block type="math_number" id="W*(O|C}a*mIKk9Hh((th">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="SRCHI">
+                              <block type="math_number" id=")?A_4Q.ccR:5$e,3TS@G">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="DSTLO">
+                              <block type="math_number" id=";LuenI5o_$1_rjnMlc{%">
+                                <field name="NUM">200</field>
+                              </block>
+                            </value>
+                            <value name="DSTHI">
+                              <block type="math_number" id="^^CF#JM2}WEbv?,4D;+A">
+                                <field name="NUM">2000</field>
+                              </block>
+                            </value>
+                            <value name="MUL">
+                              <shadow type="math_number" id="hmb]FiC7]c(^T^%9r(Kn">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="pjKzdWL.1[fR?Ix3C9H3">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="LAGTIME">
+                          <block type="math_number" id="M,:_9+X/0erfTjzCKXSx">
+                            <field name="NUM">0.2</field>
+                          </block>
+                        </value>
+                        <value name="MUL">
+                          <shadow type="math_number" id="1[%V.*W`dW67mFybxc*^">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <value name="ADD">
+                          <shadow type="math_number" id="_VP=edr*v`!q+bPr??(3">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="KxpRMX6G1Y8l6K@i)6;^">
+                    <field name="VAR" id="!Trg~`WmzUfA-qa);%Q7">a</field>
+                    <value name="VALUE">
+                      <block type="sc3_UnaryOp" id="(0E!{].et@3G6z^]=%w?">
+                        <field name="OP">dbamp</field>
+                        <value name="IN">
+                          <block type="sc3_Lag" id="lq.}(_Cg6Qf2r~avbc{a" inline="true">
+                            <value name="IN">
+                              <block type="sc3_LinLin" id="?|z!GdWRI{q,Wh@.fryd" inline="true">
+                                <value name="IN">
+                                  <block type="variables_get" id="uqFsd+Rlm!Mtkz?/aK/A">
+                                    <field name="VAR" id="@Gd5D@TVr!d3R5Ks`A}8">y</field>
+                                  </block>
+                                </value>
+                                <value name="SRCLO">
+                                  <block type="math_number" id="cCUiR`o;n9yQ];HxvE)]">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="SRCHI">
+                                  <block type="math_number" id="XoX!fz/r~%C0Nob2%~fG">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <value name="DSTLO">
+                                  <block type="math_number" id="+uo(TMHD0^F+M_tqo{b6">
+                                    <field name="NUM">-90</field>
+                                  </block>
+                                </value>
+                                <value name="DSTHI">
+                                  <block type="math_number" id="L/JKk(6-fYAx.;(Y7s.n">
+                                    <field name="NUM">-36</field>
+                                  </block>
+                                </value>
+                                <value name="MUL">
+                                  <shadow type="math_number" id="rW/iNdM7UfW5)g^g[Fo[">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                                <value name="ADD">
+                                  <shadow type="math_number" id="7YyfeU4ZOF-{+yy.z2^M">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="LAGTIME">
+                              <block type="math_number" id="=a;|@(I$}H@sIl8q`hB)">
+                                <field name="NUM">0.2</field>
+                              </block>
+                            </value>
+                            <value name="MUL">
+                              <shadow type="math_number" id="x0]_r(4CtTUhR1VE2bIa">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="^x,^8I,JhZN{M#8vDW9(">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="sc3_Play" id="Od)_YGG7NRms[02!,Jg9">
+                        <value name="CODE">
+                          <block type="sc3_SinOsc" id="*F61K8{!ot6;]2=`p9[m" inline="true">
+                            <value name="FREQ">
+                              <block type="variables_get" id="=b*x,lb{hfu92$%vI/B_">
+                                <field name="VAR" id="iF7;w:b=T.-uW?xkkf`$">f</field>
+                              </block>
+                            </value>
+                            <value name="PHASE">
+                              <block type="math_number" id="O5YO@1v;VVgaBek}8,)_">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="MUL">
+                              <shadow type="math_number" id="dPz.SD-0p{f8z{yf#=iH">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="igs`5C,W`J{Z0eM3j61G">
+                                <field name="VAR" id="!Trg~`WmzUfA-qa);%Q7">a</field>
+                              </block>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="}1z_@-5_;_{?TsZZ8(4g">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
-        </value>
-        <value name="MUL">
-          <shadow type="math_number" id="tuXra6Ow#;_^%:eb+BD6">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-        <value name="ADD">
-          <shadow type="math_number" id="Y(^cEQ4S;99V_{q#aJe(">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
+        </next>
       </block>
-    </value>
-    <value name="RHS">
-      <block type="math_number" id=".%kp(IT/].erSorpLxb6">
-        <field name="NUM">0.1</field>
-      </block>
-    </value>
+    </next>
   </block>
 </xml>
