@@ -575,7 +575,7 @@
     ,
     {
         "type": "sc3_GrainFM",
-        "message0": "GrainFM %1 # %2 ⤴ %3 ⏲ %4 ν𝑐 %5 ν𝑚 %6 index %7 pan %8 ⏢⛁ %9 maxGrains %10 × %11 + %12",
+        "message0": "GrainFM %1 # %2 ⤴ %3 ⏲ %4 ν𝑐 %5 ν𝑚 %6 ☞ %7 pan %8 ⏢⛁ %9 maxGrains %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -2246,6 +2246,21 @@
         "colour": 300,
         "tooltip": "Pan a set of channels across the stereo field",
         "helpUrl": "https://doc.sccode.org/Classes/Splay.html"
+    }
+    ,
+    {
+        "type": "sc3_Sw",
+        "message0": "Sw %1 ☞ %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "INDEX", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Read switch controller input at index",
+        "helpUrl": "https://doc.sccode.org/Classes/Sw.html"
     }
     ,
     {

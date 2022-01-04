@@ -62,33 +62,51 @@
         <summary>Notes</summary>
         <div id="blkNotes"></div>
       </details>
-      <details id="blkCc">
-        <summary>Cc</summary>
-        <div>
-          <input id="cc1" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(1)">
-          <input id="cc2" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(2)">
-          <input id="cc3" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(3)">
-          <input id="cc4" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(4)">
-          <input id="cc5" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(5)">
-          <input id="cc6" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(6)">
-          <input id="cc7" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(7)">
-          <input id="cc8" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(8)">
+      <details id="blkUi">
+        <summary>Ui</summary>
+        <div id="blkUi">
+          <details id="blkCc">
+            <summary>Cc</summary>
+            <div>
+              <input id="cc1" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(1)">
+              <input id="cc2" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(2)">
+              <input id="cc3" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(3)">
+              <input id="cc4" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(4)">
+              <input id="cc5" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(5)">
+              <input id="cc6" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(6)">
+              <input id="cc7" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(7)">
+              <input id="cc8" type="range" min="0" max="1" step="0.01" value="0" oninput="blk_cc_send(8)">
+            </div>
+          </details>
+          <details id="blkSwC">
+            <summary>Sw:maintained</summary>
+            <div>
+              <input id="swC1" type="checkbox" oninput="blk_sw_maintained_send(1)">
+              <input id="swC2" type="checkbox" oninput="blk_sw_maintained_send(2)">
+              <input id="swC3" type="checkbox" oninput="blk_sw_maintained_send(3)">
+              <input id="swC4" type="checkbox" oninput="blk_sw_maintained_send(4)">
+              <input id="swC5" type="checkbox" oninput="blk_sw_maintained_send(5)">
+              <input id="swC6" type="checkbox" oninput="blk_sw_maintained_send(6)">
+              <input id="swC7" type="checkbox" oninput="blk_sw_maintained_send(7)">
+              <input id="swC8" type="checkbox" oninput="blk_sw_maintained_send(8)">
+            </div>
+          </details>
+          <details id="blkSwB">
+            <summary>Sw:momentary</summary>
+            <div>
+              <button id="swB1" onmousedown="blk_sw_momentary_send(1, 1)" onmouseup="blk_sw_momentary_send(1, 0)"></button>
+              <button id="swB2" onmousedown="blk_sw_momentary_send(2, 1)" onmouseup="blk_sw_momentary_send(2, 0)"></button>
+              <button id="swB3" onmousedown="blk_sw_momentary_send(3, 1)" onmouseup="blk_sw_momentary_send(3, 0)"></button>
+              <button id="swB4" onmousedown="blk_sw_momentary_send(4, 1)" onmouseup="blk_sw_momentary_send(4, 0)"></button>
+              <button id="swB5" onmousedown="blk_sw_momentary_send(5, 1)" onmouseup="blk_sw_momentary_send(5, 0)"></button>
+              <button id="swB6" onmousedown="blk_sw_momentary_send(6, 1)" onmouseup="blk_sw_momentary_send(6, 0)"></button>
+              <button id="swB7" onmousedown="blk_sw_momentary_send(7, 1)" onmouseup="blk_sw_momentary_send(7, 0)"></button>
+              <button id="swB8" onmousedown="blk_sw_momentary_send(8, 1)" onmouseup="blk_sw_momentary_send(8, 0)"></button>
+            </div>
+          </details>
         </div>
       </details>
-        <!--
-        <div>
-          <button onpointerdown="blk_sw_send(1, 1)" onpointerup="blk_sw_send(1, 0)"></button>
-          <button onpointerdown="blk_sw_send(2, 1)" onpointerup="blk_sw_send(2, 0)"></button>
-          <button onpointerdown="blk_sw_send(3, 1)" onpointerup="blk_sw_send(3, 0)"></button>
-          <button onpointerdown="blk_sw_send(4, 1)" onpointerup="blk_sw_send(4, 0)"></button>
-          <button onpointerdown="blk_sw_send(5, 1)" onpointerup="blk_sw_send(5, 0)"></button>
-          <button onpointerdown="blk_sw_send(6, 1)" onpointerup="blk_sw_send(6, 0)"></button>
-          <button onpointerdown="blk_sw_send(7, 1)" onpointerup="blk_sw_send(7, 0)"></button>
-          <button onpointerdown="blk_sw_send(8, 1)" onpointerup="blk_sw_send(8, 0)"></button>
-        </div>
-        -->
     </div>
-
   </body>
 </html>
 

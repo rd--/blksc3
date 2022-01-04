@@ -274,8 +274,17 @@ function blk_cc_send(ccIndex) {
 }
 
 // Send SC3.swSet to websocket.
-function blk_sw_send(swIndex, swValue) {
-    console.debug("sw: ", swIndex, swValue);
+function blk_sw_maintained_send(swIndex) {
+    var swElem = document.getElementById("swC" + swIndex);
+    var swValue = swElem.checked ? 1 : 0;
+    console.log("sw/checkbox: ", swIndex, swValue);
+    blk_websocket_send('SC3.swSet(' + swIndex + ', ' + swValue + ');\n');
+}
+
+// Send SC3.swSet to websocket.
+function blk_sw_momentary_send(swIndex, swValue) {
+    var swElem = document.getElementById("swB" + swIndex);
+    console.log("sw/button: ", swIndex, swValue);
     blk_websocket_send('SC3.swSet(' + swIndex + ', ' + swValue + ');\n');
 }
 
