@@ -1,0 +1,10 @@
+// PMOsc ; event control
+var s = Voicer(16, {
+    arg e;
+    var cps = (e.x * 24 + 42).midicps;
+    var cpsv = cps + (cps * SinOsc(e.y * 4 + 4, 0) * 0.02);
+    var mfreq = LinLin(LFPulse(1 / 8, 0, 0.5), 0, 1, 1.01, 2.01) * cps;
+    var ix = TXLine(3, 0.001, 0.2, e.w);
+    PMOsc(cpsv, mfreq, ix, 0) * e.z * e.w
+}).sum;
+XFade2(s, GVerb(BPF(s, 90.midicps, 1), 50, 5, 0.5, 0.5, 15, 0, 0.7, 0.5, 300), 0.2, 1)

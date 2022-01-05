@@ -473,7 +473,7 @@
     ,
     {
         "type": "sc3_FreeVerb",
-        "message0": "⧈𝑓 %1 ∙ %2 mix %3 room %4 damp %5 × %6 + %7",
+        "message0": "⧈𝑓 %1 ∙ %2 ⊕ %3 ▣ %4 ⊗ %5 × %6 + %7",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -491,7 +491,7 @@
     ,
     {
         "type": "sc3_FreeVerb2",
-        "message0": "⧈𝑓₂ %1 ∙ %2 ∙₂ %3 mix %4 room %5 damp %6 × %7 + %8",
+        "message0": "⧈𝑓₂ %1 ∙ %2 ∙₂ %3 ⊕ %4 ▣ %5 ⊗ %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -527,7 +527,7 @@
     ,
     {
         "type": "sc3_GVerb",
-        "message0": "⧈𝒈 %1 ∙ %2 ▣ %3 ⏲ %4 ⊕ %5 ∙↕ %6 ◠ %7 ∙× %8 ◿× %9 ◺× %10 ⌈▣ %11 × %12 + %13",
+        "message0": "⧈𝒈 %1 ∙ %2 ▣ %3 ⏲ %4 ⊗ %5 ∙↕ %6 ◠ %7 ∙× %8 ◿× %9 ◺× %10 ⌈▣ %11 × %12 + %13",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -575,7 +575,7 @@
     ,
     {
         "type": "sc3_GrainFM",
-        "message0": "GrainFM %1 # %2 ⤴ %3 ⏲ %4 ν𝑐 %5 ν𝑚 %6 ☞ %7 pan %8 ⏢⛁ %9 maxGrains %10 × %11 + %12",
+        "message0": "GrainFM %1 # %2 ⤴ %3 ⏲ %4 ν𝑐 %5 ν𝑚 %6 ☞ %7 ⌖ %8 ⏢⛁ %9 maxGrains %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -598,7 +598,7 @@
     ,
     {
         "type": "sc3_GrainSin",
-        "message0": "GrainSin %1 # %2 ⤴ %3 ⏲ %4 ν %5 pan %6 ⏢⛁ %7 maxGrains %8 × %9 + %10",
+        "message0": "GrainSin %1 # %2 ⤴ %3 ⏲ %4 ν %5 ⌖ %6 ⏢⛁ %7 maxGrains %8 × %9 + %10",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -707,22 +707,6 @@
         "colour": 210,
         "tooltip": "Impulse(freq, phase): Impulse oscillator.",
         "helpUrl": "https://doc.sccode.org/Classes/Impulse.html"
-    }
-    ,
-    {
-        "type": "sc3_InFeedback",
-        "message0": "InFeedback %1 # %2 bus %3 × %4 + %5",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "BUS", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
-        ],
-        "output": "UGen",
-        "colour": 60,
-        "tooltip": "InFeedback(numChan, bus): Read signal from a bus with a current or one cycle old timestamp.",
-        "helpUrl": "https://doc.sccode.org/Classes/InFeedback.html"
     }
     ,
     {
@@ -1100,7 +1084,7 @@
     ,
     {
         "type": "sc3_LinXFade2",
-        "message0": "LinXFade2 %1 inA %2 inB %3 pan %4 × %5 + %6",
+        "message0": "LinXFade2 %1 inA %2 inB %3 ⌖ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "INA", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1113,22 +1097,6 @@
         "colour": 300,
         "tooltip": "LinXFade2(inA, inB, pan): Two channel linear crossfade.",
         "helpUrl": "https://doc.sccode.org/Classes/LinXFade2.html"
-    }
-    ,
-    {
-        "type": "sc3_LocalBuf",
-        "message0": "LocalBuf %1 # %2 numFrames %3 × %4 + %5",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "NUMFRAMES", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
-        ],
-        "output": "UGen",
-        "colour": 60,
-        "tooltip": "LocalBuf(numChannels, numFrames): Allocate a buffer local to the synth",
-        "helpUrl": "https://doc.sccode.org/Classes/LocalBuf.html"
     }
     ,
     {
@@ -1749,7 +1717,7 @@
     ,
     {
         "type": "sc3_TGrains",
-        "message0": "TGrains %1 # %2 ⤴ %3 ⛁ %4 rate %5 centerPos %6 ⏲ %7 pan %8 × %9 𝑓 %10 × %11 + %12",
+        "message0": "TGrains %1 # %2 ⤴ %3 ⛁ %4 rate %5 centerPos %6 ⏲ %7 ⌖ %8 × %9 𝑓 %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1867,8 +1835,26 @@
     }
     ,
     {
+        "type": "sc3_XFade2",
+        "message0": "XFade2 %1 inA %2 inB %3 ⌖ %4 × %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "INA", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INB", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PAN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "XFade2(inA, inB, pan, level): Equal power two channel cross fade.",
+        "helpUrl": "https://doc.sccode.org/Classes/XFade2.html"
+    }
+    ,
+    {
         "type": "sc3_GreyholeRaw",
-        "message0": "GreyholeRaw %1 ∙₁ %2 ∙₂ %3 ⊕ %4 ⎵ %5 diffusion %6 ↻ %7 moddepth %8 ν𝑚 %9 size %10 × %11 + %12",
+        "message0": "GreyholeRaw %1 ∙₁ %2 ∙₂ %3 ⊗ %4 ⎵ %5 diffusion %6 ↻ %7 moddepth %8 ν𝑚 %9 size %10 × %11 + %12",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN1", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1941,6 +1927,22 @@
         "colour": 300,
         "tooltip": "Attack-release envelope",
         "helpUrl": "https://doc.sccode.org/Classes/AR.html"
+    }
+    ,
+    {
+        "type": "sc3_BufAlloc",
+        "message0": "BufAlloc %1 # %2 numFrames %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "NUMFRAMES", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Allocate a buffer local to the synth",
+        "helpUrl": "https://doc.sccode.org/Classes/BufAlloc.html"
     }
     ,
     {
@@ -2040,6 +2042,22 @@
         "colour": 30,
         "tooltip": "Demand results from demand rate UGens on trigger",
         "helpUrl": "https://doc.sccode.org/Classes/DmdOn.html"
+    }
+    ,
+    {
+        "type": "sc3_InFb",
+        "message0": "InFb %1 # %2 bus %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "BUS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Read signal from a bus with a current or one cycle old timestamp",
+        "helpUrl": "https://doc.sccode.org/Classes/InFb.html"
     }
     ,
     {

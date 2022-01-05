@@ -10,7 +10,7 @@ OverlapTexture({
     var max_delay = 1;
     var mk_delay = { arg p; var i = p.first; var r = p.second; LPZ1(DelayC(i, max_delay, r * string_delay)) };
     var mk_allpass = { arg p; var i = p.first; var r = p.second; var dt = p.third; LPZ1(AllpassC(i, max_delay, r * string_delay, dt)) };
-    var drv = InFeedback(1, bus);
+    var drv = InFb(1, bus);
     var pk1_R = mk_delay.value([drv, src_pos - pk1_pos]);
     var pk1_L = mk_allpass.value([pk1_R * -1, pk1_pos * 2,  TRand(0.001, 0.11, tr)]);
     var pk2_L = mk_delay.value([pk1_L, pk2_pos - pk1_pos]) * 0.99;
