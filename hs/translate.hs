@@ -463,6 +463,7 @@ blk_help =
   ,"LocalOut.1"
   ,"MouseX.1"
   ,"Pan2.1"
+  ,"Pluck.1"
   ,"PMOsc.1", "PMOsc.2", "PMOsc.3"
   ,"PulseCount.1"
   ,"RingzBank.1"
