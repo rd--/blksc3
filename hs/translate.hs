@@ -294,6 +294,7 @@ blk_graphs =
   ,("F0",
      ["Pkt 00", "Pkt 07"
      ,"Pkt 26", "Pkt 28"
+     ,"Tw 0026"
      ,"Tw 0030", "Tw 0033"
      ,"Tw 0041", "Tw 0045"
      ,"Tw 0051", "Tw 0059"
@@ -444,6 +445,7 @@ blk_help =
   ,"Cc.1"
   ,"CombC.1", "CombC.2"
   ,"Decay2.1"
+  ,"DegreeToKey.1"
   ,"ExpRand.1"
   ,"FBSineC.1"
   ,"Formant.1"
