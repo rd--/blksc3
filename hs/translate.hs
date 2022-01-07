@@ -473,6 +473,7 @@ blk_help =
   ,"Sw.1", "Sw.2"
   ,"TScramble.1"
   ,"VarSaw.1"
+  ,"Voicer.1"
   ,"VoiceWriter.1"
   ,"XLn.1"]
 

@@ -23,7 +23,7 @@ function blk_inject_with_xml_toolbox(xml_toolbox) {
     blk_workspace = Blockly.inject('blocklyContainer', blk_config);
 };
 
-// Initialise WebSocket.  To send .stc to sclang as /eval message run "blksc3 stc-to-osc"
+// Initialise WebSocket.  To send .stc to sclang as /eval message run 'blksc3 stc-to-osc'
 function blk_websocket_init(host, port) {
     if(blk_websocket) {
         blk_websocket.close();
@@ -37,7 +37,7 @@ function blk_websocket_init(host, port) {
 
 // Prompt for WebSocket address (host and port) and initialise WebSocket.
 function blk_websocket_dialog() {
-    var reply = window.prompt("Set WebSocket address as Host:Port", "localhost:9160");
+    var reply = window.prompt('Set WebSocket address as Host:Port', 'localhost:9160');
     if(reply) {
         var [host, port] = reply.split(':');
         blk_websocket_init(host, Number(port));
@@ -106,35 +106,35 @@ function blk_send_stc(cmd) {
 
 // Initialise .xml file selector.
 function blk_xml_input_init () {
-    var xmlInput = document.getElementById("xmlInputFile");
-    var xmlSelect = document.getElementById("xmlInputFileSelect");
-    xmlSelect.addEventListener("click", e => xmlInput.click(), false);
+    var xmlInput = document.getElementById('xmlInputFile');
+    var xmlSelect = document.getElementById('xmlInputFileSelect');
+    xmlSelect.addEventListener('click', e => xmlInput.click(), false);
 }
 
 // Initialise .json file selector.
 function blk_json_input_init () {
-    var jsonInput = document.getElementById("jsonInputFile");
-    var jsonSelect = document.getElementById("jsonInputFileSelect");
-    jsonSelect.addEventListener("click", e => jsonInput.click(), false);
+    var jsonInput = document.getElementById('jsonInputFile');
+    var jsonSelect = document.getElementById('jsonInputFileSelect');
+    jsonSelect.addEventListener('click', e => jsonInput.click(), false);
 }
 
 // Read and load named .xml file.
 function blk_read_xml(xmlFile) {
     var reader = new FileReader();
-    reader.addEventListener("load", () => blk_load_xml(reader.result), false);
+    reader.addEventListener('load', () => blk_load_xml(reader.result), false);
     reader.readAsText(xmlFile);
 }
 
 // Read and load named .json file.
 function blk_read_json(jsonFile) {
     var reader = new FileReader();
-    reader.addEventListener("load", () => blk_load_json(reader.result), false);
+    reader.addEventListener('load', () => blk_load_json(reader.result), false);
     reader.readAsText(jsonFile);
 }
 
 // Read selected .xml file.
 function blk_read_input_xml() {
-    var file = document.getElementById("xmlInputFile").files[0];
+    var file = document.getElementById('xmlInputFile').files[0];
     if (file) {
         blk_read_xml(file);
     }
@@ -142,7 +142,7 @@ function blk_read_input_xml() {
 
 // Read selected .json file.
 function blk_read_input_json() {
-    var file = document.getElementById("jsonInputFile").files[0];
+    var file = document.getElementById('jsonInputFile').files[0];
     if (file) {
         blk_read_json(file);
     }
@@ -154,23 +154,23 @@ function blk_write_output_xml() {
 
 // Append timestamp to URL to defeat cache
 function blk_append_timestamp(url) {
-    var ext = ((/\?/).test(url) ? "&" : "?") + (new Date()).getTime();
+    var ext = ((/\?/).test(url) ? '&' : '?') + (new Date()).getTime();
     return url + ext;
 }
 
 // Read and load .xml format program from URL.
 function blk_fetch_xml(xmlUrl, autoPlay) {
     var request = new XMLHttpRequest();
-    request.addEventListener("load", () => blk_load_xml(request.response, autoPlay));
-    request.open("GET", blk_append_timestamp(xmlUrl))
+    request.addEventListener('load', () => blk_load_xml(request.response, autoPlay));
+    request.open('GET', blk_append_timestamp(xmlUrl))
     request.send();
 }
 
 // Read and load .json format program from URL.
 function blk_fetch_json(jsonUrl, autoPlay) {
     var request = new JSONHttpRequest();
-    request.addEventListener("load", () => blk_load_json(request.response, autoPlay));
-    request.open("GET", blk_append_timestamp(jsonUrl))
+    request.addEventListener('load', () => blk_load_json(request.response, autoPlay));
+    request.open('GET', blk_append_timestamp(jsonUrl))
     request.send();
 }
 
@@ -208,7 +208,7 @@ function blk_init() {
     blk_load_and_process_utf8('html/graph-menu.html', blk_set_inner_html_of('blkGraphMenu'));
     blk_load_and_process_utf8('html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
     blk_load_and_process_utf8('html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
-    blk_websocket_init("localhost", 9160);
+    blk_websocket_init('localhost', 9160);
 }
 
 // Fetch fileName and apply processFunc to the object read (stored as JSON).
@@ -257,7 +257,7 @@ function blk_load_and_process_md(fileName, processFunc) {
 // .stc files can have a .md notes segment.
 function blk_md_notes_from_stc(stcText) {
     var lines = string_lines(stcText);
-    var from_marker = array_drop_while(lines, str => !string_is_prefix_of("//---- notes.md", str));
+    var from_marker = array_drop_while(lines, str => !string_is_prefix_of('//---- notes.md', str));
     return array_unlines(array_tail(from_marker));
 }
 
@@ -268,23 +268,23 @@ function blk_load_and_process_notes(fileName, processFunc) {
 
 // Send SC3.ccSet to websocket.
 function blk_cc_send(ccIndex) {
-    var ccElem = document.getElementById("cc" + ccIndex);
-    console.debug("cc: ", ccIndex, ccElem.value);
+    var ccElem = document.getElementById('cc' + ccIndex);
+    console.debug('cc: ', ccIndex, ccElem.value);
     blk_websocket_send('SC3.ccSet(' + ccIndex + ', ' + ccElem.value + ');\n');
 }
 
 // Send SC3.swSet to websocket.
 function blk_sw_maintained_send(swIndex) {
-    var swElem = document.getElementById("swC" + swIndex);
+    var swElem = document.getElementById('swC' + swIndex);
     var swValue = swElem.checked ? 1 : 0;
-    console.log("sw/checkbox: ", swIndex, swValue);
+    console.log('sw/checkbox: ', swIndex, swValue);
     blk_websocket_send('SC3.swSet(' + swIndex + ', ' + swValue + ');\n');
 }
 
 // Send SC3.swSet to websocket.
 function blk_sw_momentary_send(swIndex, swValue) {
-    var swElem = document.getElementById("swB" + swIndex);
-    console.log("sw/button: ", swIndex, swValue);
+    var swElem = document.getElementById('swB' + swIndex);
+    console.log('sw/button: ', swIndex, swValue);
     blk_websocket_send('SC3.swSet(' + swIndex + ', ' + swValue + ');\n');
 }
 
