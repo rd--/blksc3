@@ -473,6 +473,7 @@ blk_help =
   ,"SinOsc.1", "SinOsc.2", "SinOsc.3"
   ,"Stepper.1", "Stepper.2"
   ,"Sw.1", "Sw.2"
+  ,"TRand.1"
   ,"TScramble.1"
   ,"VarSaw.1"
   ,"Voicer.1"
