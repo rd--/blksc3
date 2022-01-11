@@ -397,6 +397,7 @@ blk_graphs =
      ,"Swept Resonant Noise"
      ,"Synthetic Piano"
      ,"Tank"
+     ,"Tarmac"
      ,"Theremin"
      ,"Tremulate", "Tremulate (Event)"
      ,"Uplink" ,"Uplink (Texture)"
