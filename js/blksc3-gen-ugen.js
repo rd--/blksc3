@@ -421,6 +421,17 @@ Blockly.JavaScript['sc3_Impulse'] = function(block) {
     return [Impulse_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_KeyState'] = function(block) {
+    var keycode_value = Blockly.JavaScript.valueToCode(block, 'KEYCODE', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var minval_value = Blockly.JavaScript.valueToCode(block, 'MINVAL', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var maxval_value = Blockly.JavaScript.valueToCode(block, 'MAXVAL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var lag_value = Blockly.JavaScript.valueToCode(block, 'LAG', Blockly.JavaScript.ORDER_ATOMIC) || '0.2';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var KeyState_code = 'MulAdd(KeyState(' + keycode_value + ', ' + minval_value + ', ' + maxval_value + ', ' + lag_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [KeyState_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_LFCub'] = function(block) {
     var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '440.0';
     var iphase_value = Blockly.JavaScript.valueToCode(block, 'IPHASE', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';

@@ -75,6 +75,11 @@ To install [budo](https://www.npmjs.com/package/budo) type:
 
     > npm install budo -g
 
+## Caveats
+
+At present the layout is fixed size, and designed for 1920×1080 pixel displays.
+On smaller displays parts of the system may not be visible.
+
 ## Credits
 
 Thanks to [Fredrik Olofsson](https://fredrikolofsson.com/) for working out how to set all this up, fixing various mistakes, and writing it down.
