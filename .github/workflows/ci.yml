@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    name: ${{ matrix.os }}, ghc-${{ matrix.ghc }}
+    name: ${{ matrix.os }} / ghc-${{ matrix.ghc }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -14,20 +14,31 @@ jobs:
         cabal:
           - 3.2.0.0
         os:
-          - ubuntu-latest
-          - macos-latest
+          - windows-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup
+      - name: Source checkout
+        uses: actions/checkout@v2
+
+      - name: Haskell setup
         uses: haskell/actions/setup@v1
         with:
           ghc-version: ${{ matrix.ghc }}
           cabal-version: ${{ matrix.cabal }}
-      - name: Build
+
+      - name: Cabal update and install
         run: |
           cabal update
           cabal install --installdir public --install-method copy
-          zip -r public/blksc3-${{ runner.os }}.zip public/blksc3
+
+      - if: matrix.os != 'windows-latest'
+        name: Zip / Unix
+        run: zip -r public/blksc3-${{ runner.os }}.zip public/blksc3
+
+      - if: matrix.os == 'windows-latest'
+        name: Zip / Windows
+        run: powershell Compress-Archive -Path public/blksc3.exe -DestinationPath public/blksc3-${{ runner.os }}.zip
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
