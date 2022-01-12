@@ -17,7 +17,6 @@ jobs:
           - ubuntu-latest
           - macos-latest
           - windows-latest
-      fail-fast: false
     steps:
       - uses: actions/checkout@v2
       - name: Setup
@@ -29,7 +28,13 @@ jobs:
         run: |
           cabal update
           cabal install --installdir public --install-method copy
+      - if: matrix.os != 'windows-latest'
+        name: Compress (debian, macos)
+        run: |
           zip -r public/blksc3-${{ runner.os }}.zip public/blksc3
+      - if: matrix.os == 'windows-latest'
+        name: Compress (windows...)
+        run: powershell Compress-Archive -Path public/blksc3 -DestinationPath public/blksc3-${{ runner.os }}.zip
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
