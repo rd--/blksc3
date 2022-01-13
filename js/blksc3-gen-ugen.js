@@ -689,6 +689,16 @@ Blockly.JavaScript['sc3_MoogFF'] = function(block) {
     return [MoogFF_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_MouseButton'] = function(block) {
+    var minval_value = Blockly.JavaScript.valueToCode(block, 'MINVAL', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var maxval_value = Blockly.JavaScript.valueToCode(block, 'MAXVAL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var lag_value = Blockly.JavaScript.valueToCode(block, 'LAG', Blockly.JavaScript.ORDER_ATOMIC) || '0.2';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var MouseButton_code = 'MulAdd(MouseButton(' + minval_value + ', ' + maxval_value + ', ' + lag_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [MouseButton_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_MouseX'] = function(block) {
     var minval_value = Blockly.JavaScript.valueToCode(block, 'MINVAL', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var maxval_value = Blockly.JavaScript.valueToCode(block, 'MAXVAL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
