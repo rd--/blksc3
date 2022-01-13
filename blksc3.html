@@ -34,32 +34,36 @@
   </head>
   <body>
     <!-- <p>Block SuperCollider</p> -->
-    <div id="blocklyContainer" style="height: 900px; width: 1500px;"></div> <!-- 720 900 ; 900 1350 -->
+    <div id="blocklyContainer"></div>
     <!--
         Access keys:
         Chrome: d is "go to address box" (cannot be draw), e & f are "chrome menu" (cannot be erase or fit)
         Firefox: f,e,v,s,b,t and h are menus (cannot be erase or fit)
     -->
     <div id="blkEdit">
-      <input type="file" id="xmlInputFile" accept=".xml" onchange="blk_read_input_xml()" style="display:none">
-      <button id="xmlInputFileSelect" title="Select and load .xml file to workspace (l)" accesskey="l">Load</button>
-      <button title="Copy workspace Xml to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(blk_get_xml())">Copy</button>
+      <div id="blkMenu">
+        <select id="blkGraphMenu" title="Graph programs (p)" accesskey="p"></select>
+        <select id="blkHelpMenu" title="Help programs (h)" accesskey="h"></select>
+        <select id="blkGuideMenu" title="Guide programs (g)" accesskey="g"></select>
+      </div>
+      <div id="blkCmd">
+        <input type="file" id="xmlInputFile" accept=".xml" onchange="blk_read_input_xml()" style="display:none">
+        <button id="xmlInputFileSelect" title="Select and load .xml file to workspace (l)" accesskey="l">Load</button>
+        <button title="Copy workspace Xml to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(blk_get_xml())">Copy</button>
 <!--
-      <input type="file" id="jsonInputFile" accept=".json" onchange="blk_read_input_json()" style="display:none">
-      <button id="jsonInputFileSelect" title="Select local .json file and load into workspace">Load Json</button>
-      <button title="Copy workspace Json to clipboard" onclick="navigator.clipboard.writeText(blk_get_json())">Copy Json</button>
+        <input type="file" id="jsonInputFile" accept=".json" onchange="blk_read_input_json()" style="display:none">
+        <button id="jsonInputFileSelect" title="Select local .json file and load into workspace">Load Json</button>
+        <button title="Copy workspace Json to clipboard" onclick="navigator.clipboard.writeText(blk_get_json())">Copy Json</button>
 -->
-      <button title="Cleanup workspace (o)" accesskey="o" onclick="blk_workspace.cleanUp()">Cleanup</button>
-      <button title="Center workspace" onclick="blk_workspace.scrollCenter()">Center</button>
-      <button title="Fit to workspace (=)" accesskey="=" onclick="blk_workspace.zoomToFit()">Fit</button>
-      <button title="Draw current workspace as UGen graph (i)" accesskey="i" onclick="blk_send_stc('draw')">Draw</button>
-      <button title="Send current workspace Stc to Websocket (,)" accesskey="," onclick="blk_send_stc('play')">Play</button>
-      <button title="Send reset command to Websocket (.)" accesskey="." onclick="blk_sc3_reset()">Reset</button>
-      <select id="blkGraphMenu" title="Graph programs (p)" accesskey="p"></select>
-      <select id="blkHelpMenu" title="Help programs (h)" accesskey="h"></select>
-      <select id="blkGuideMenu" title="Guide programs (g)" accesskey="g"></select>
-      <button title="Delete all blocks and comments from Workspace (k)" accesskey="k" onclick="blk_workspace.clear()">Clear</button>
-      <button title="Set Websocket address and reinitialise" accesskey="w" onclick="blk_websocket_dialog()">Websocket</button>
+        <button title="Cleanup workspace (o)" accesskey="o" onclick="blk_workspace.cleanUp()">Cleanup</button>
+        <button title="Center workspace" onclick="blk_workspace.scrollCenter()">Center</button>
+        <button title="Fit to workspace (=)" accesskey="=" onclick="blk_workspace.zoomToFit()">Fit</button>
+        <button title="Draw current workspace as UGen graph (i)" accesskey="i" onclick="blk_send_stc('draw')">Draw</button>
+        <button title="Send current workspace Stc to Websocket (,)" accesskey="," onclick="blk_send_stc('play')">Play</button>
+        <button title="Send reset command to Websocket (.)" accesskey="." onclick="blk_sc3_reset()">Reset</button>
+        <button title="Delete all blocks and comments from Workspace (k)" accesskey="k" onclick="blk_workspace.clear()">Clear</button>
+        <button title="Set Websocket address and reinitialise" accesskey="w" onclick="blk_websocket_dialog()">Websocket</button>
+      </div>
     </div>
 
     <div id="blkCtl">

@@ -1,4 +1,4 @@
-// Code Generation, SuperCollider, Smalltalk, Scheme
+// Code Generation, SuperCollider
 var a = SinOsc(1,0).abs * 0.1;
 SinOsc(440, 0) * a
 
@@ -20,21 +20,3 @@ These definitions call the _ar_ method if it exists, else the _kr_ method, else 
 Therefore _a_ has the meaning:
 
 > _SinOsc.ar(1, 0).abs * 0.1_
-
-SuperCollider notation is a _C_-like notation for Smalltalk.
-The _.stc_ notation can also be translated to Smalltalk notation (_.st_), as:
-
-> _((SinOsc apply: #(1 0)) abs) * 0.1_
-
-The _apply:_ method is defined to _perform:withArguments:_ the _primaryFactoryMethod_ of a class.
-For _SinOsc_ this method is _#freq:iphase:_, so the above has the meaning:
-
-> _(SinOsc freq: 1 phase: 0) abs * 0.1_
-
-The _.stc_ notation can also be translated into Scheme (_.scm_) notation, as:
-
-> _(* (abs (SinOsc 1 0)))_
-
-During translation a lookup table can be consulted to rewrite this as:
-
-> _(Mul (Abs (SinOsc 1 0)))_

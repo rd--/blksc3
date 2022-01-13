@@ -1,5 +1,5 @@
 body {
-  margin: 1em 2em;
+  margin: 1em 1em;
   background-color: #FFFACD;
 }
 
@@ -19,20 +19,33 @@ body, button, select, .blocklyText, .blocklyTreeLabel {
   background-color: #fddde6;
 }
 
+/* 720 1080 (macbook/3) = 3/2 ; 850 1275 (macbook/4) = 3/2 ; 900 1500 (x1) = 5/3 */
+div#blocklyContainer {
+    padding-top: 5px;
+    height: 720px;
+    width: 1080px;
+}
+
 div#blkEdit {
   margin-top: 1em;
 }
 
-div#blkCtl {
-  position: absolute;
-  top: 15px;
-  left: 1550px;
-  width: 350px;
+div#blkMenu {
+  margin-bottom: 5px;
 }
 
+/* 1100 325 (macbook/3) ; 1300 375 (macbook/4) ; 1525 375 (x1) */
+div#blkCtl {
+  position: absolute;
+  top: 0px;
+  left: 1100px;
+  width: 325px;
+}
+
+/* 720 (macbook/3) ; 850 (macbook/4) ; 900px (x1) */
 div#blkNotes {
   width: 100%;
-  height: 55em;
+  height: 720px;
   border: 1px dotted;
 }
 

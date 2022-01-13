@@ -485,18 +485,22 @@ blk_help =
 
 blk_guide :: [String]
 blk_guide =
-  ["1.1 Workspace, Toolbox, Synthesiser"
-  ,"1.2.Guide, Help, Graphs, Load, Copy"
+  ["1.1 Workspace, Synthesiser"
+  ,"1.x Toolbox"
+  ,"1.2 Guide, Help, Graphs"
+  ,"1.x Load, Copy"
   ,"1.3 Comment, SinOsc, Play"
   ,"1.4 Arrays, Variables, Binary Operators"
-  ,"1.x Lambda, Overlap Texture"
+  ,"1.x Lambda, Duplicate"
+  ,"1.x Overlap Texture"
   ,"1.5 Noise Generators, Filters, Control Signals"
   ,"1.x External Control, Events, Signals"
   ,"1.x Block Names, Parameters, Messages"
   ,"1.x Keyboard Shortcuts"
   ,"2.1 Multiply and Add"
   ,"2.x Authors, Initials"
-  ,"2.x Code Generation, SuperCollider, Smalltalk, Scheme"
+  ,"2.x Code Generation, SuperCollider"
+  ,"2.x Code Generation, Smalltalk, Scheme"
   ,"2.x Code Generation, Macros"
   ]
 
