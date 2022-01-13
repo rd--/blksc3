@@ -409,6 +409,7 @@ blk_graphs =
   ,("JR", ["A Bath", "Deepsea", "(Stereo) Half Life", "Sturmian Sequencer I", "Sturmian Sequencer II", "Sturmian Sequencer III"])
   ,("KL", ["Vibraphone"])
   ,("NC", ["SC Tutorial"])
+  ,("NH", ["Phase Vocoder"])
   ,("NV"
     ,["Tw 2013-12-04", "Tw 2013-12-04 (TimesRepeat)"
      ,"TW 2014-06-03"

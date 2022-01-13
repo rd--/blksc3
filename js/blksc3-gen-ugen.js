@@ -1104,6 +1104,14 @@ Blockly.JavaScript['sc3_XFade2'] = function(block) {
     return [XFade2_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_ZeroCrossing'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var ZeroCrossing_code = 'MulAdd(ZeroCrossing(' + in_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [ZeroCrossing_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_GreyholeRaw'] = function(block) {
     var in1_value = Blockly.JavaScript.valueToCode(block, 'IN1', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var in2_value = Blockly.JavaScript.valueToCode(block, 'IN2', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
@@ -1151,6 +1159,14 @@ Blockly.JavaScript['sc3_AR'] = function(block) {
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var AR_code = 'MulAdd(AR(' + gate_value + ', ' + attackTime_value + ', ' + releaseTime_value + ', ' + curves_value + '), ' + mul_value + ', ' + add_value + ')';
     return [AR_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_AudioIn'] = function(block) {
+    var channelArray_value = Blockly.JavaScript.valueToCode(block, 'CHANNELARRAY', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var AudioIn_code = 'MulAdd(AudioIn(' + channelArray_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [AudioIn_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_BufAlloc'] = function(block) {
