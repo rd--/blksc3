@@ -1,28 +1,22 @@
 // Block Names, Parameters, Messages
-Impulse(SinOsc(1, 0).max(0), 0) * 0.1
+SinOsc(SinOsc(1 / #[7, 9], 0) * #[55, 57] + 110, 0) * SinOsc(1 / #[5, 7], 0) * 0.1
 
 //---- notes.md
-_Blocks_ and block _Parameters_ (inputs) all have _Names_.
-These names are used as identifiers when programs are stored in _.xml_ files,
+_Blocks_ and _parameters_ all have _names_,
+which are used as identifiers when programs are stored in _.xml_ files,
 and when they are sent to the synthesiser as _.stc_ expressions.
 
-Blocks also define a _Message_, which is used to construct the text displayed in the block drawing.
+Blocks also define a _message_, which is used to construct the text displayed in the block drawing.
+
 This message is distinct from both the block name and from the parameter names.
 
-Having a separate message allows blocks to be translated into different languages,
-and to be displayed using symbolic notations that would not be allowed as identifiers in _.stc_.
-
-✐ is the message indicating a _Comment_ block, 🔊 a _Play_ block, ∿ a _SinOsc_ block and ⊥ an _Impulse_ block.
-
-ν is symbol used in messages to indicate a _frequency_ parameter, ϕ a _phase_ parameter, × a _mul_ parameter and + an _add_ parameter.
-
-⌈ is the symbol used in messages to indicate the _max_ binary operator. (It also indicates the _ceil_ unary operator).
-
-Symbolic names for common blocks and parameters makes graphs drawings much more concise.
-These names do not ever need to be typed, only recognised.
+∿ is the symbol used in messages to indicate the block name _SinOsc_,
+and ν is the symbol used to indicate the parameter name _freq_.
 
 To see the names of blocks and their parameters hover the mouse over a block and a small help message will appear:
 
 > _SinOsc(freq, phase): Interpolating sine wavetable oscillator._
 
-This program generates a quiet impulse stream of time varying frequency in the left channel.
+This program generates two quiet sine oscillators,
+each with distinct frequency amplitude modulators,
+also sine oscillators.

@@ -408,6 +408,7 @@ blk_graphs =
      ])
   ,("JR", ["A Bath", "Deepsea", "(Stereo) Half Life", "Sturmian Sequencer I", "Sturmian Sequencer II", "Sturmian Sequencer III"])
   ,("KL", ["Vibraphone"])
+  ,("LJP", ["One Line"])
   ,("NC", ["SC Tutorial"])
   ,("NH", ["Phase Vocoder"])
   ,("NV"
@@ -488,14 +489,16 @@ blk_guide =
   ["1.1 Workspace, Synthesiser"
   ,"1.x Toolbox"
   ,"1.2 Guide, Help, Graphs"
-  ,"1.x Load, Copy"
+  ,"1.x Load, Copy, Translate"
   ,"1.3 Comment, SinOsc, Play"
   ,"1.4 Arrays, Variables, Binary Operators"
   ,"1.x Lambda, Duplicate"
   ,"1.x Overlap Texture"
   ,"1.5 Noise Generators, Filters, Control Signals"
-  ,"1.x External Control, Events, Signals"
+  ,"1.x External Control, Cc, Sw"
+  ,"1.x External Control, Events"
   ,"1.x Block Names, Parameters, Messages"
+  ,"1.x Names, Symbols, Unicode"
   ,"1.x Keyboard Shortcuts"
   ,"2.1 Multiply and Add"
   ,"2.x Authors, Initials"

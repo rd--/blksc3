@@ -2,12 +2,9 @@
 [PinkNoise() * [0.05, 0.05], SinOsc(LFNoise2([0.5, 0.5]) * 110 + 110, 0) * 0.1].sum
 
 //---- notes.md
-All blocks with an _Output Connector_ have × (_multiplier_) and + (_adder_) inputs.
-
+All blocks with an _output connector_ have × (_multiplier_) and + (_adder_) inputs.
 These inputs, initialised to one and zero respectively, allow adjusting the scale and bias of blocks without introducing an extra block.
-
 These adjustments are made to the block after it is defined.
-
 This means that, in constrast to the SuperCollider language forms,
 the × and + inputs don't form part of the multiple channel expansion protocol for the block.
 
@@ -17,9 +14,7 @@ In SuperCollider the expression
 
 describes a graph with two PinkNoise generators.
 The left and right channels are decorrelated.
-
 The equivalent block program has only one _PinkNoise_ generator.
-
 This distinction is most noticeable for noise generators that have no direct inputs,
 and that must therefore be written as
 
