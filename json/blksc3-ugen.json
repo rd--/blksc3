@@ -1672,12 +1672,14 @@
     ,
     {
         "type": "sc3_Slew",
-        "message0": "Slew %1 ∙ %2 up %3 dn %4",
+        "message0": "Slew %1 ∙ %2 up %3 dn %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
             {"type": "input_value", "name": "UP", "check": ["Number", "Array", "UGen", "Boolean"]},
-            {"type": "input_value", "name": "DN", "check": ["Number", "Array", "UGen", "Boolean"]}
+            {"type": "input_value", "name": "DN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -2346,8 +2348,23 @@
         ],
         "output": "UGen",
         "colour": 300,
-        "tooltip": "Pan a set of channels across the stereo field",
+        "tooltip": "Pan an array of channels across the stereo field",
         "helpUrl": "https://doc.sccode.org/Classes/Splay.html"
+    }
+    ,
+    {
+        "type": "sc3_Splay2",
+        "message0": "◠ %1 ∙⟦⟧ %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "INARRAY", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Pan an array of channels across the stereo field",
+        "helpUrl": "https://doc.sccode.org/Classes/Splay2.html"
     }
     ,
     {
