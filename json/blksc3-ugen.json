@@ -153,6 +153,23 @@
     }
     ,
     {
+        "type": "sc3_BRF",
+        "message0": "BRF %1 ∙ %2 ν %3 ¹⁄𝑄 %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "BRF(in, freq, rq): 2nd order Butterworth band reject filter.",
+        "helpUrl": "https://doc.sccode.org/Classes/BRF.html"
+    }
+    ,
+    {
         "type": "sc3_Balance2",
         "message0": "Balance2 %1 𝐿 %2 𝑅 %3 ⌖ %4 × %5 × %6 + %7",
         "args0": [
@@ -1891,6 +1908,23 @@
     }
     ,
     {
+        "type": "sc3_Wrap",
+        "message0": "Wrap %1 ∙ %2 ⌊ %3 ⌉ %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "Wrap(in, lo, hi): Wrap a signal outside given thresholds.",
+        "helpUrl": "https://doc.sccode.org/Classes/Wrap.html"
+    }
+    ,
+    {
         "type": "sc3_XFade2",
         "message0": "XFade2 %1 inA %2 inB %3 ⌖ %4 × %5 × %6 + %7",
         "args0": [
@@ -2354,7 +2388,7 @@
     ,
     {
         "type": "sc3_Splay2",
-        "message0": "◠ %1 ∙⟦⟧ %2 × %3 + %4",
+        "message0": "◠ %1 inArray %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "INARRAY", "check": ["Number", "Array", "UGen", "Boolean"]},

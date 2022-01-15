@@ -88,6 +88,16 @@ Blockly.JavaScript['sc3_BPZ2'] = function(block) {
     return [BPZ2_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_BRF'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var freq_value = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_ATOMIC) || '440.0';
+    var rq_value = Blockly.JavaScript.valueToCode(block, 'RQ', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var BRF_code = 'MulAdd(BRF(' + in_value + ', ' + freq_value + ', ' + rq_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [BRF_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_Balance2'] = function(block) {
     var left_value = Blockly.JavaScript.valueToCode(block, 'LEFT', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var right_value = Blockly.JavaScript.valueToCode(block, 'RIGHT', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
@@ -1103,6 +1113,16 @@ Blockly.JavaScript['sc3_WhiteNoise'] = function(block) {
     var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var WhiteNoise_code = 'MulAdd(WhiteNoise(), ' + mul_value + ', ' + add_value + ')';
     return [WhiteNoise_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['sc3_Wrap'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var lo_value = Blockly.JavaScript.valueToCode(block, 'LO', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var hi_value = Blockly.JavaScript.valueToCode(block, 'HI', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var mul_value = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var add_value = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var Wrap_code = 'MulAdd(Wrap(' + in_value + ', ' + lo_value + ', ' + hi_value + '), ' + mul_value + ', ' + add_value + ')';
+    return [Wrap_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_XFade2'] = function(block) {
