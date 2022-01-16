@@ -65,8 +65,7 @@ block_xml_for nm p d =
 
 1. OverlapTexture -> OverlapTexture
 2. Voicer -> Voicer
-2. VoiceWriter -> VoiceWriter
-
+3. VoiceWriter -> VoiceWriter
 -}
 implicit_send_xml :: String -> [String] -> String
 implicit_send_xml nm l =
@@ -94,6 +93,8 @@ event_param_xml o e =
 
 1. dup -> sc3_ArrayFill
 2. value -> sc3_Value0
+3. splay2 -> sc3_Splay2
+4. ++ -> sc3_ArrayConcatenate (not yet implemented)
 -}
 uop_xml :: String -> String -> String
 uop_xml o e =
@@ -106,11 +107,19 @@ uop_xml o e =
       printf
       "<block type='sc3_Value0' inline='true'><value name='PROC'>%s</value></block>"
       e
+    "splay2" ->
+      printf
+      "<block type='sc3_Splay2' inline='true'><value name='INARRAY'>%s</value></value></block>"
+      e
     _ ->
       printf
       "<block type='sc3_UnaryOp'><field name='OP'>%s</field><value name='IN'>%s</value></block>"
       o e
 
+{- | Some operators are handled specially.
+
+1. ++ -> sc3_ArrayAppend (not yet implemented)
+-}
 binop_xml :: String -> String -> String -> String
 binop_xml o lhs rhs =
   printf
@@ -475,6 +484,7 @@ blk_help =
   ,"Play.1"
   ,"Pluck.1"
   ,"PMOsc.1", "PMOsc.2", "PMOsc.3"
+  ,"Pulse.1"
   ,"PulseCount.1"
   ,"RingzBank.1"
   ,"Seq.1", "Seq.2"

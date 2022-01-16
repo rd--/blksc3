@@ -6,7 +6,7 @@
     <variable id="Wi)GnCeE~},^fMl~8Tj%">f</variable>
     <variable id="s3OYp;%^-Ng@uvOqG?%F">i</variable>
   </variables>
-  <block type="sc3_Comment" id="h3?a|_+lV/7-ErSF#vPR" x="-157" y="146">
+  <block type="sc3_Comment" id="h3?a|_+lV/7-ErSF#vPR" x="0" y="0">
     <field name="COMMENT">Impulse ; synchronised impulses ; https://github.com/cianoc/supercollider_fragments</field>
     <next>
       <block type="variables_set" id="7W`;K(s+*z`.N15;t3(Q">
@@ -162,7 +162,7 @@
                               </block>
                             </value>
                             <value name="RHS">
-                              <block type="sc3_Decay2" id="6GoJmxu_)by.TVJHwimt" inline="true">
+                              <block type="sc3_Decay2" id="6GoJmxu_)by.TVJHwimt" inline="false">
                                 <value name="IN">
                                   <block type="sc3_Impulse" id="g9x5SDXQvgIGByM-aG-Q" inline="true">
                                     <value name="FREQ">
@@ -238,45 +238,50 @@
                     <next>
                       <block type="sc3_Play" id="jzzYkEmV$uZ!jz@%Gv,}">
                         <value name="CODE">
-                          <block type="sc3_BinaryOp" id="s#W#7*4G)Be?=!lg$t@p" inline="true">
-                            <field name="OP">*</field>
-                            <value name="LHS">
-                              <block type="sc3_UnaryOp" id="[@4:Q]lcbmk9~O`Fvq4U">
-                                <field name="OP">splay</field>
-                                <value name="IN">
-                                  <block type="sc3_ArrayCollect" id="niqC|}g,tCqx)sp^J49h" inline="true">
-                                    <value name="ARRAY">
-                                      <block type="sc3_ArrayFromTo" id="4^aRWaqncwoSrBuEr?S_" inline="true">
-                                        <value name="FROM">
-                                          <block type="math_number" id="JQlYp!OI4o!2BtJ,sOKV">
-                                            <field name="NUM">1</field>
-                                          </block>
-                                        </value>
-                                        <value name="TO">
-                                          <block type="sc3_UnaryOp" id=")Y]4Hih=4^@qdo.{/v@~">
-                                            <field name="OP">size</field>
-                                            <value name="IN">
-                                              <block type="variables_get" id=";v(_}Q%|0g9SO/d*x#:k">
-                                                <field name="VAR" id="D``wi#9s8H`lsnUdJg#b">freq</field>
-                                              </block>
-                                            </value>
-                                          </block>
-                                        </value>
+                          <block type="sc3_Splay2" id="rlXy/FrkR`S4|/*9#~{F" inline="true">
+                            <value name="INARRAY">
+                              <shadow type="math_number" id="kP+nn3X4`w$1(uL#=,Bv">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="sc3_ArrayCollect" id="niqC|}g,tCqx)sp^J49h" inline="true">
+                                <value name="ARRAY">
+                                  <block type="sc3_ArrayFromTo" id="4^aRWaqncwoSrBuEr?S_" inline="true">
+                                    <value name="FROM">
+                                      <block type="math_number" id="JQlYp!OI4o!2BtJ,sOKV">
+                                        <field name="NUM">1</field>
                                       </block>
                                     </value>
-                                    <value name="PROC">
-                                      <block type="variables_get" id="FU:W^aG=/*zZ1A2[.3*2">
-                                        <field name="VAR" id="Wi)GnCeE~},^fMl~8Tj%">f</field>
+                                    <value name="TO">
+                                      <block type="sc3_UnaryOp" id=")Y]4Hih=4^@qdo.{/v@~">
+                                        <field name="OP">size</field>
+                                        <value name="IN">
+                                          <block type="variables_get" id=";v(_}Q%|0g9SO/d*x#:k">
+                                            <field name="VAR" id="D``wi#9s8H`lsnUdJg#b">freq</field>
+                                          </block>
+                                        </value>
                                       </block>
                                     </value>
                                   </block>
                                 </value>
+                                <value name="PROC">
+                                  <block type="variables_get" id="FU:W^aG=/*zZ1A2[.3*2">
+                                    <field name="VAR" id="Wi)GnCeE~},^fMl~8Tj%">f</field>
+                                  </block>
+                                </value>
                               </block>
                             </value>
-                            <value name="RHS">
+                            <value name="MUL">
+                              <shadow type="math_number" id="b=HYI5UK%BbBj;])q]Lg">
+                                <field name="NUM">1</field>
+                              </shadow>
                               <block type="math_number" id="jy292Z27m@T.=4I7XmX,">
                                 <field name="NUM">0.1</field>
                               </block>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="JYI8pQ*Cn:(_cd0;AOfv">
+                                <field name="NUM">0</field>
+                              </shadow>
                             </value>
                           </block>
                         </value>

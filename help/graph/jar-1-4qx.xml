@@ -5,7 +5,7 @@
     <variable id="IJoz?G0Bc}9NVDO:pOWU">h</variable>
     <variable id="[VT$18Q,V93f/XK7gjg|">s</variable>
   </variables>
-  <block type="sc3_Comment" id="^5lz6]%7i?ttDz8#=d:X" x="559" y="-151">
+  <block type="sc3_Comment" id="^5lz6]%7i?ttDz8#=d:X" x="0" y="0">
     <field name="COMMENT">http://sccode.org/1-4Qx (jar)</field>
     <next>
       <block type="variables_set" id="5SrEUT;~/gu5UqSQ{j%U">
@@ -74,7 +74,7 @@
           <block type="variables_set" id="Gc^8mXshTQB~^3!s.3BB">
             <field name="VAR" id="9D:/$+%9Fc7VpA25}!G3">g</field>
             <value name="VALUE">
-              <block type="sc3_LFPar" id="@-gi(g-*De-WLFIZMP:4" inline="true">
+              <block type="sc3_LFPar" id="@-gi(g-*De-WLFIZMP:4" inline="false">
                 <value name="FREQ">
                   <block type="math_number" id="uxg#?S,NMbPP%*@#MhU)">
                     <field name="NUM">9</field>
@@ -247,22 +247,27 @@
                     <next>
                       <block type="sc3_Play" id="knTmM@}987nN_,o#%Oq.">
                         <value name="CODE">
-                          <block type="sc3_BinaryOp" id="+p8bj;+s6z3z1f0GIU5?" inline="true">
-                            <field name="OP">*</field>
-                            <value name="LHS">
-                              <block type="sc3_UnaryOp" id="%*2Ym{s*lVFM]66Sv(?J">
-                                <field name="OP">splay</field>
-                                <value name="IN">
-                                  <block type="variables_get" id="z;06A/$P@!A+GD##o!i*">
-                                    <field name="VAR" id="[VT$18Q,V93f/XK7gjg|">s</field>
-                                  </block>
-                                </value>
+                          <block type="sc3_Splay2" id="M+s7[Nt30fgpV#9=u96#" inline="true">
+                            <value name="INARRAY">
+                              <shadow type="math_number" id=".J,JZHA;{`MW*%FO,_xW">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="variables_get" id="z;06A/$P@!A+GD##o!i*">
+                                <field name="VAR" id="[VT$18Q,V93f/XK7gjg|">s</field>
                               </block>
                             </value>
-                            <value name="RHS">
+                            <value name="MUL">
+                              <shadow type="math_number" id="lv:T9DN7nv_@`rfE+yBH">
+                                <field name="NUM">1</field>
+                              </shadow>
                               <block type="math_number" id="ZW=Y;-3%`at(tGeCp!Ve">
                                 <field name="NUM">0.075</field>
                               </block>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="fs2If0%~g#*`QB;y?;Hy">
+                                <field name="NUM">0</field>
+                              </shadow>
                             </value>
                           </block>
                         </value>

@@ -4,7 +4,7 @@
     <variable id="@J1?-a?N:`nsQ}Ayju27">osc</variable>
     <variable id="/UIH]*c@$Ki:miC@z.6;">e</variable>
   </variables>
-  <block type="sc3_Comment" id="BPv4p_?YBW3Yo.w:KhrN" x="12" y="43">
+  <block type="sc3_Comment" id="BPv4p_?YBW3Yo.w:KhrN" x="0" y="0">
     <field name="COMMENT">combc ; event control</field>
     <next>
       <block type="variables_set" id="ILOd%DzSOiEIW=+McNen">
@@ -44,14 +44,14 @@
                   </block>
                 </value>
                 <value name="PROC">
-                  <block type="sc3_Proc1" id="Y6C(:jp@v60ENG1,k5^5" inline="true">
+                  <block type="sc3_Proc1" id="Y6C(:jp@v60ENG1,k5^5" inline="false">
                     <value name="VAR">
                       <block type="variables_get" id="OWPcu4]!d~bh$*#w?8Wa">
                         <field name="VAR" id="/UIH]*c@$Ki:miC@z.6;">e</field>
                       </block>
                     </value>
                     <value name="RETURN">
-                      <block type="sc3_SinOsc" id="-OF05%itET%w,HTVUp,E" inline="true">
+                      <block type="sc3_SinOsc" id="-OF05%itET%w,HTVUp,E" inline="false">
                         <value name="FREQ">
                           <block type="sc3_UnaryOp" id="?+j,8O-ZEKm|0RK$jooO">
                             <field name="OP">unitCps</field>
@@ -126,12 +126,24 @@
                 <value name="CODE">
                   <block type="sc3_CombC" id="}_RzM_{.Xdy0C[.H;X/+" inline="true">
                     <value name="IN">
-                      <block type="sc3_UnaryOp" id="|q8EjAtVCYiKw$4WI*|9">
-                        <field name="OP">splay</field>
-                        <value name="IN">
+                      <block type="sc3_Splay2" id="(bH3JE-0I.*2)bA0%=Ai" inline="true">
+                        <value name="INARRAY">
+                          <shadow type="math_number" id="@nwfq(eZTJ;l9/?`A1%)">
+                            <field name="NUM">0</field>
+                          </shadow>
                           <block type="variables_get" id="py$`c_g]JgtqL?BZ%ZgO">
                             <field name="VAR" id="@J1?-a?N:`nsQ}Ayju27">osc</field>
                           </block>
+                        </value>
+                        <value name="MUL">
+                          <shadow type="math_number" id="FiAl=DDvhXdRHE(,-s[s">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <value name="ADD">
+                          <shadow type="math_number" id="UX+(ni#~1Dc^wXjlU/tC">
+                            <field name="NUM">0</field>
+                          </shadow>
                         </value>
                       </block>
                     </value>

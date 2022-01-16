@@ -58,7 +58,7 @@
           <block type="variables_set" id="zssy@QTbX7f/-DvP.$nL">
             <field name="VAR" id="@}=u8ah1j%0o%-/Jj.v}">s</field>
             <value name="VALUE">
-              <block type="sc3_Lag3" id="+|!gxq-AfKQY;tCJF)xY" inline="true">
+              <block type="sc3_Lag3" id="+|!gxq-AfKQY;tCJF)xY" inline="false">
                 <value name="IN">
                   <shadow type="math_number" id="!9*jhPGv1yYou{%JnDsv">
                     <field name="NUM">0</field>
@@ -147,10 +147,10 @@
               <block type="variables_set" id="0SzY:.}21Coy^/Nq+uxB">
                 <field name="VAR" id="`,]{eQ$++Ol]-2?9Dd+?">f</field>
                 <value name="VALUE">
-                  <block type="sc3_BinaryOp" id="NXpt!5eIa[^kZB;)|!T*" inline="true">
+                  <block type="sc3_BinaryOp" id="NXpt!5eIa[^kZB;)|!T*" inline="false">
                     <field name="OP">/</field>
                     <value name="LHS">
-                      <block type="sc3_MulAdd" id="gI7FIQBUBgl`SCLhj[th" inline="true">
+                      <block type="sc3_MulAdd" id="gI7FIQBUBgl`SCLhj[th" inline="false">
                         <value name="IN">
                           <shadow type="math_number" id="Llx85hXr:W[Z%sf7wATd">
                             <field name="NUM">0</field>
@@ -236,10 +236,12 @@
                 <next>
                   <block type="sc3_Play" id="14J*0:7ZF#EW+D!^D%U;">
                     <value name="CODE">
-                      <block type="sc3_UnaryOp" id="FX@(M[m7~|Zn*FYygZB[">
-                        <field name="OP">splay</field>
-                        <value name="IN">
-                          <block type="sc3_SinOsc" id="bBrcxSiedz3ZH)SzFMS," inline="true">
+                      <block type="sc3_Splay2" id="7MYxY#p%(-;h0a^p|`z[" inline="false">
+                        <value name="INARRAY">
+                          <shadow type="math_number" id="P$sis.*zD4[LPuAk=cG9">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="sc3_SinOsc" id="bBrcxSiedz3ZH)SzFMS," inline="false">
                             <value name="FREQ">
                               <block type="sc3_HPF" id="UjG**^_T9iMCBh}R{wSr" inline="true">
                                 <value name="IN">
@@ -307,6 +309,16 @@
                               </shadow>
                             </value>
                           </block>
+                        </value>
+                        <value name="MUL">
+                          <shadow type="math_number" id="mrY{Hgih4^,T.IrGYKX^">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <value name="ADD">
+                          <shadow type="math_number" id="R8Z|Cdbpo@Qf73gl.50L">
+                            <field name="NUM">0</field>
+                          </shadow>
                         </value>
                       </block>
                     </value>

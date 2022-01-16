@@ -20,7 +20,7 @@
               <block type="variables_set" id="xECvB1Bj_tAh+gTQL-rQ">
                 <field name="VAR" id="ybL4RE#S_}BZ%|6]+g$,">m</field>
                 <value name="VALUE">
-                  <block type="sc3_BinaryOp" id="@@3/v,L*_}zD29cr}xty" inline="true">
+                  <block type="sc3_BinaryOp" id="@@3/v,L*_}zD29cr}xty" inline="false">
                     <field name="OP">+</field>
                     <value name="LHS">
                       <block type="sc3_BinaryOp" id=",R.n.n1!2pe|IFdW2n8$" inline="true">
@@ -87,7 +87,7 @@
               </block>
             </statement>
             <value name="RETURN">
-              <block type="sc3_SinOsc" id="pU;-z{*g.4^m4:?h8ea~" inline="true">
+              <block type="sc3_SinOsc" id="pU;-z{*g.4^m4:?h8ea~" inline="false">
                 <value name="FREQ">
                   <block type="sc3_UnaryOp" id="TR%*SX:;A@vca`k}CT)A">
                     <field name="OP">midicps</field>
@@ -143,9 +143,11 @@
         <next>
           <block type="sc3_Play" id="2_L|qu]521WUny*I=VUe">
             <value name="CODE">
-              <block type="sc3_UnaryOp" id="AF^gRgFnW8biG37;i:pL">
-                <field name="OP">splay</field>
-                <value name="IN">
+              <block type="sc3_Splay2" id="MqfXDn!IL:10n3)y`D(B" inline="true">
+                <value name="INARRAY">
+                  <shadow type="math_number" id="{s]Q|;*D+PR$8ui)r20+">
+                    <field name="NUM">0</field>
+                  </shadow>
                   <block type="sc3_ArrayCollect" id="e2_4W/DW)KgHtxOknicR" inline="true">
                     <value name="ARRAY">
                       <block type="sc3_ArrayFromTo" id="?Y$J3AfO!_ZPFpPP?ApE" inline="true">
@@ -167,6 +169,16 @@
                       </block>
                     </value>
                   </block>
+                </value>
+                <value name="MUL">
+                  <shadow type="math_number" id="H[i8=[{dkt7*4ik8)@Ei">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="ADD">
+                  <shadow type="math_number" id="zUHAUF75UFK%:zmFL}E~">
+                    <field name="NUM">0</field>
+                  </shadow>
                 </value>
               </block>
             </value>
