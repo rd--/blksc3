@@ -11,17 +11,12 @@ Procedures:
 
 Array operations:
 
-- ++ (binary) -> ArrayAppend p q
-- ++ (unary) -> ArrayConcatenate
-- asLocalBuf -> LocalBufFromArray
-- choose -> ArrayChoose
-- first, second, third -> ...
-- transpose -> ArrayTranspose
-- mean
-- sum
-- mix (delete)
-- reverse
-- size
+unary -> ArrayProc1
+binary -> ArrayProc2
+
+Association:
+
+-> -> Assoc
 
 Rate:
 

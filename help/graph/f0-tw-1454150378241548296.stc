@@ -8,4 +8,4 @@ var z = [
   RLPF(Impulse(3, 0), Select(LFSaw(x * 2, 0.5) * 88 % 5, #[0, 3, 5, 7, 10] + 63).midicps, x * 7) / 4
 ];
 var o = z.sum.splay;
-o + GVerb(o.mix / 9, 50, 3, 0.5, 0.5, 15, 1, 0.7, 0.5, 300)
+o + GVerb(o.sum / 9, 50, 3, 0.5, 0.5, 15, 1, 0.7, 0.5, 300)

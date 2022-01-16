@@ -41,9 +41,14 @@
     </block>
   </category>
   <category name='Array' colour='260'>
-    <block type='sc3_ArrayAt' inline='true'>
-      <value name='ARRAY'></value>
-      <value name='INDEX'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
+    <block type='sc3_ArrayProc1'>
+      <field name='OP'>sum</field>
+      <value name='IN'></value>
+    </block>
+    <block type='sc3_ArrayProc2' inline='true'>
+      <field name='OP'>++</field>
+      <value name='LHS'></value>
+      <value name='RHS'></value>
     </block>
     <block type='sc3_ArrayFromTo' inline='true'>
       <value name='FROM'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
@@ -53,15 +58,6 @@
       <value name='COUNT'><shadow type='math_number'><field name='NUM'>10</field></shadow></value>
       <value name='PROC'>
         <block type='sc3_Proc0'>
-          <value name='RETURN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
-        </block>
-      </value>
-    </block>
-    <block type='sc3_ArrayCollect' inline='false'>
-      <value name='ARRAY'></value>
-      <value name='PROC'>
-        <block type='sc3_Proc1'>
-          <value name='VAR'><block type='variables_get'><field name='VAR'>item</field></block></value>
           <value name='RETURN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
         </block>
       </value>

@@ -98,6 +98,19 @@ Blockly.JavaScript['sc3_ArrayCollect'] = function(block) {
     return [array_value + '.collect(' + proc_value + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_ArrayProc1'] = function(block) {
+    var op_value = block.getFieldValue('OP');
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '[]';
+    return [in_value + '.' + op_value, Blockly.JavaScript.ORDER_MEMBER];
+};
+
+Blockly.JavaScript['sc3_ArrayProc2'] = function(block) {
+    var op_value = block.getFieldValue('OP');
+    var lhs_value = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC) || '[]';
+    var rhs_value = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC) || 'nil';
+    return [lhs_value + '.' + op_value + '(' + rhs_value + ')', Blockly.JavaScript.ORDER_NONE];
+};
+
 Blockly.JavaScript['sc3_UnaryOp'] = function(block) {
     var op_value = block.getFieldValue('OP');
     var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0';
@@ -111,7 +124,6 @@ Blockly.JavaScript['sc3_BinaryOp'] = function(block) {
     var BinaryOp_code = lhs_value + ' ' + op_value + ' ' + rhs_value;
     return [BinaryOp_code, Blockly.JavaScript.ORDER_NONE];
 };
-
 
 Blockly.JavaScript['sc3_MulAdd'] = function(block) {
     var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0';
