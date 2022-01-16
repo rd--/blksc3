@@ -1,23 +1,11 @@
-Operators that are not SC3 operators should not be written as such.
+The _math_ operator blocks should only hold _UGen_ operators.
 
-UGens:
+_splay2_ should be written as a block constructor, not a method.
 
-- splay2 -> Splay2
-- clearBuf -> ...
+_clearBuf_ is an interesting case, it is a method because it constructs an _Mrg_ node.
 
-Procedures:
+There are array operation blocks with menus, _ArrayProc1_ and _ArrayProc2_.
 
-- value -> Value0
+_fromAssocArray_ and _->_ belong at _Event_, not _Math_.
 
-Array operations:
-
-unary -> ArrayProc1
-binary -> ArrayProc2
-
-Association:
-
--> -> Assoc
-
-Rate:
-
-- kr
+_kr_ should not exist.

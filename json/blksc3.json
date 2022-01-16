@@ -175,7 +175,7 @@
         "type": "sc3_ArrayProc2",
         "message0": "%2 %1 %3",
         "args0": [
-            {"type": "field_dropdown", "name": "OP", "options": [["++","++"], ["⇛","collect"],["☞","at"]]},
+            {"type": "field_dropdown", "name": "OP", "options": [["++","++"], ["⇛","collect"], ["☞","nth"]]},
             {"type": "input_value", "name": "LHS"},
             {"type": "input_value", "name": "RHS"}
         ],
@@ -197,22 +197,10 @@
     }
     ,
     {
-        "type": "sc3_ArrayAt",
-        "message0": "%1 ☞ %2",
-        "args0": [
-            {"type": "input_value", "name": "ARRAY", "check": ["Array", "UGen"]},
-            {"type": "input_value", "name": "INDEX", "check": ["Number"]}
-        ],
-        "output": "UGen",
-        "colour": 260,
-        "tooltip": "ArrayAt(array, index): Element of array at index.  One is the first element."
-    }
-    ,
-    {
         "type": "sc3_UnaryOp",
         "message0": "%1 %2",
         "args0": [
-            {"type": "field_dropdown", "name": "OP", "options": [["|", "abs"], ["asLocalBuf","asLocalBuf"], ["⌈", "ceil"], ["⚂","choose"], ["clearBuf", "clearBuf"], ["ν→♩", "cpsmidi"], ["cubed","cubed"], ["㏈→×","dbamp"], ["distort","distort"], ["𝑒ⁿ","exp"], ["1º","first"], ["⌊", "floor"], ["kr","kr"], ["log","log"], ["mean", "mean"], ["♩→ν", "midicps"], ["-","negated"], ["∏","product"], ["¹⁄","reciprocal"], ["ᴙ","reverse"], ["⌊⌉","rounded"], ["2º","second"], ["∿","sin"], ["size","size"], ["softclip","softclip"], ["◠","splay"], ["◠₂", "splay2"], ["√","sqrt"], ["Σ","sum"], ["tanh","tanh"], ["3º","third"], ["ᵀ","transpose"], ["₀¹→ν", "unitCps"], ["value", "value"]]},
+            {"type": "field_dropdown", "name": "OP", "options": [["|", "abs"], ["⌈", "ceil"], ["clearBuf", "clearBuf"], ["ν→♩", "cpsmidi"], ["cubed","cubed"], ["㏈→×","dbamp"], ["distort","distort"], ["𝑒ⁿ","exp"], ["⌊", "floor"], ["kr","kr"], ["log","log"], ["♩→ν", "midicps"], ["-","negated"], ["∏","product"], ["¹⁄","reciprocal"], ["⌊⌉","rounded"], ["∿","sin"], ["softclip","softclip"], ["◠₂", "splay2"], ["√","sqrt"], ["tanh","tanh"], ["₀¹→ν", "unitCps"]]},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]}
         ],
         "output": "UGen",
@@ -251,7 +239,7 @@
         "type": "sc3_KeywordBinaryOp",
         "message0": "%2 %1 %3",
         "args0": [
-            {"type": "field_dropdown", "name": "OP", "options": [["amclip", "amclip"], ["&", "bitAnd"], ["|", "bitOr"], ["»","bitShiftRight"], ["⊏","clip2"], ["clump", "clump"], ["fromAssocArray","fromAssocArray"], ["⏥", "lag"], ["⏥⏥", "lag2"], ["⏥⏥⏥", "lag3"], ["⌊", "min"], ["⌈","max"], ["⅄","mrg"], ["º","nth"], ["⌊⌉","roundTo"], ["truncateTo","truncateTo"], ["value", "value"]]},
+            {"type": "field_dropdown", "name": "OP", "options": [["amclip", "amclip"], ["&", "bitAnd"], ["|", "bitOr"], ["»","bitShiftRight"], ["⊏","clip2"], ["clump", "clump"], ["fromAssocArray","fromAssocArray"], ["⏥", "lag"], ["⏥⏥", "lag2"], ["⏥⏥⏥", "lag3"], ["⌊", "min"], ["⌈","max"], ["⅄","mrg"], ["⌊⌉","roundTo"], ["truncateTo","truncateTo"]]},
             {"type": "input_value", "name": "LHS", "check": ["Number", "Array", "UGen"]},
             {"type": "input_value", "name": "RHS", "check": ["Number", "Array", "UGen"]}
         ],

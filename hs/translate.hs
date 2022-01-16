@@ -89,12 +89,16 @@ event_param_xml o e =
   "<block type='sc3_EventParam'><field name='PARAM'>%s</field><value name='EVENT'>%s</value></block>"
   o e
 
+-- | Method names that belong to Array not UGen
+array_proc_1 :: [String]
+array_proc_1 = ["asLocalBuf","choose","concatenation","first","mean","reverse","second","size","sum","third","transpose"]
+
 {- | Some operators are handled specially.
 
 1. dup -> sc3_ArrayFill
 2. value -> sc3_Value0
 3. splay2 -> sc3_Splay2
-4. ++ -> sc3_ArrayConcatenate (not yet implemented)
+4. array operators -> sc3_ArrayProc1
 -}
 uop_xml :: String -> String -> String
 uop_xml o e =
@@ -112,19 +116,25 @@ uop_xml o e =
       "<block type='sc3_Splay2' inline='true'><value name='INARRAY'>%s</value></value></block>"
       e
     _ ->
-      printf
-      "<block type='sc3_UnaryOp'><field name='OP'>%s</field><value name='IN'>%s</value></block>"
-      o e
+      let ty = if o `elem` array_proc_1 then "ArrayProc1" else "UnaryOp"
+      in printf
+         "<block type='sc3_%s'><field name='OP'>%s</field><value name='IN'>%s</value></block>"
+         ty o e
+
+-- | Operator and method names that belong to Array not UGen
+array_proc_2 :: [String]
+array_proc_2 = ["++","collect","nth"]
 
 {- | Some operators are handled specially.
 
-1. ++ -> sc3_ArrayAppend (not yet implemented)
+1. array operators -> ArrayProc2
 -}
 binop_xml :: String -> String -> String -> String
 binop_xml o lhs rhs =
-  printf
-  "<block type='sc3_BinaryOp' inline='true'><field name='OP'>%s</field><value name='LHS'>%s</value><value name='RHS'>%s</value></block>"
-  o lhs rhs
+  let ty = if o `elem` array_proc_2 then "ArrayProc2" else "BinaryOp"
+  in printf
+     "<block type='sc3_%s' inline='true'><field name='OP'>%s</field><value name='LHS'>%s</value><value name='RHS'>%s</value></block>"
+     ty o lhs rhs
 
 {- | Some operators are handled specially.
 
@@ -133,6 +143,7 @@ binop_xml o lhs rhs =
 3. to -> sc3_ArrayFromTo
 4. timesRepeat -> sc3_TimesRepeat
 5. value -> sc3_Value1
+6. array operators -> ArrayProc2
 -}
 keybinop_xml :: String -> String -> String -> String
 keybinop_xml msg lhs rhs  =
@@ -158,9 +169,10 @@ keybinop_xml msg lhs rhs  =
       "<block type='sc3_Value1' inline='true'><value name='PROC'>%s</value><value name='VALUE'>%s</value></block>"
       lhs rhs
     _ ->
-      printf
-      "<block type='sc3_KeywordBinaryOp' inline='true'><field name='OP'>%s</field><value name='LHS'>%s</value><value name='RHS'>%s</value></block>"
-      (init msg) lhs rhs
+      let ty = if (init msg) `elem` array_proc_2 then "ArrayProc2" else "KeywordBinaryOp"
+      in printf
+         "<block type='sc3_%s' inline='true'><field name='OP'>%s</field><value name='LHS'>%s</value><value name='RHS'>%s</value></block>"
+         ty (init msg) lhs rhs
 
 var_decl :: [String] -> String
 var_decl v =

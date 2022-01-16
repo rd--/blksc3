@@ -74,12 +74,6 @@ Blockly.JavaScript['sc3_OverlapTexture'] = function(block) {
     return [OverlapTexture_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
-Blockly.JavaScript['sc3_ArrayAt'] = function(block) {
-    var array_value = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC) || '[]';
-    var index_value = Blockly.JavaScript.valueToCode(block, 'INDEX', Blockly.JavaScript.ORDER_ATOMIC) || '1';
-    return [array_value + '.nth(' + index_value + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
-};
-
 Blockly.JavaScript['sc3_ArrayFromTo'] = function(block) {
     var from_value = Blockly.JavaScript.valueToCode(block, 'FROM', Blockly.JavaScript.ORDER_ATOMIC) || '1';
     var to_value = Blockly.JavaScript.valueToCode(block, 'TO', Blockly.JavaScript.ORDER_ATOMIC) || '9';
