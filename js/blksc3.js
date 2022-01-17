@@ -298,7 +298,7 @@ function blk_set_inner_html_of(elemId) {
 }
 
 // Dictionary of layouts configurations indexed by display dimensions.
-// 1366x768 (x270) =16/9 ; 1440x900 (macbook/3) = 8/5 ; 1680x1050 (macbook/4) = 8/5 ; 1920x1080 (x1) = 16/9
+// 1366×768 (x270) =16/9 ; 1440×900 (macbook/3) = 8/5 ; 1680×1050 (macbook/4) = 8/5 ; 1920×1080 (x1) = 16/9
 var blk_layouts = JSON.parse(`
  {
  "1366×768":{"workspaceHeight": "585px", "workspaceWidth":"975px", "ctlLeft":"1000px", "ctlWidth":"350px", "notesFontSize":"11pt"},
@@ -310,17 +310,19 @@ var blk_layouts = JSON.parse(`
 
 // Set properties given layout configuration name.
 function blk_set_layout(configName) {
-    var w = document.getElementById('blocklyContainer');
-    var c = document.getElementById('blkCtl');
-    var n = document.getElementById('blkNotes');
-    var o = blk_layouts[configName];
-    w.style.height = o.workspaceHeight;
-    w.style.width = o.workspaceWidth;
-    c.style.left = o.ctlLeft;
-    c.style.width = o.ctlWidth;
-    n.style['font-size'] = o.notesFontSize;
-    n.style.height = o.workspaceHeight;
-    Blockly.svgResize(blk_workspace);
+    if(configName) {
+        var w = document.getElementById('blocklyContainer');
+        var c = document.getElementById('blkCtl');
+        var n = document.getElementById('blkNotes');
+        var o = blk_layouts[configName];
+        w.style.height = o.workspaceHeight;
+        w.style.width = o.workspaceWidth;
+        c.style.left = o.ctlLeft;
+        c.style.width = o.ctlWidth;
+        n.style['font-size'] = o.notesFontSize;
+        n.style.height = o.workspaceHeight;
+        Blockly.svgResize(blk_workspace);
+    }
 }
 
 // Set event listener for layout menu.

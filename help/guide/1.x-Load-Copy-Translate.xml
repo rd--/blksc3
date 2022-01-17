@@ -5,10 +5,11 @@
     <variable id="=j(~I4mZD/#@bBb^y!~;">cf</variable>
     <variable id="Yv@6y`Y9J4iWnC=Yz[7Y">mf</variable>
     <variable id="Aqmr-:/]VJhGcmH@-J*F">lc</variable>
+    <variable id="(%sJXqo47hx,hsPm)v==">snd</variable>
     <variable id="GEgs*8wzh,8D1wi^^{xM">pme</variable>
-    <variable id="FHa*l-{LIxNd54+KgP]0">pm</variable>
     <variable id="qqoi0x]{j^v3=uHNlTM}">l1</variable>
     <variable id="u)fQ(+`N|]%p|MF=4.3l">l2</variable>
+    <variable id="FHa*l-{LIxNd54+KgP]0">pm</variable>
   </variables>
   <block type="sc3_Comment" id="-y;hT.YraSYG8?AfAAV4" x="0" y="0">
     <field name="COMMENT">Load, Copy, Translate</field>
@@ -265,6 +266,45 @@
                                                     </value>
                                                   </block>
                                                 </value>
+                                                <next>
+                                                  <block type="variables_set" id="b,pHH-jM^#J6~uxOKR*Z">
+                                                    <field name="VAR" id="(%sJXqo47hx,hsPm)v==">snd</field>
+                                                    <value name="VALUE">
+                                                      <block type="sc3_PMOsc" id="f=*+K]|6OiLG#U5d4u/," inline="true">
+                                                        <value name="CARFREQ">
+                                                          <block type="variables_get" id="M*0iI!,?;#]1Gs?o4pj2">
+                                                            <field name="VAR" id="=j(~I4mZD/#@bBb^y!~;">cf</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="MODFREQ">
+                                                          <block type="variables_get" id="@qj8EZ{=|kg/v)j|r/We">
+                                                            <field name="VAR" id="Yv@6y`Y9J4iWnC=Yz[7Y">mf</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="PMINDEX">
+                                                          <block type="variables_get" id="oFw{1_/Cs3./YeYU-3z:">
+                                                            <field name="VAR" id="FHa*l-{LIxNd54+KgP]0">pm</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="MODPHASE">
+                                                          <block type="math_number" id="VTDjRer139h~TAYZ1Hu$">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="MUL">
+                                                          <shadow type="math_number" id="2`+:dH`x$a|MZP|}Z1oP">
+                                                            <field name="NUM">1</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="ADD">
+                                                          <shadow type="math_number" id="2FBWj%$@vxgdc%L0.R0n">
+                                                            <field name="NUM">0</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </next>
                                               </block>
                                             </next>
                                           </block>
@@ -280,39 +320,10 @@
                       </block>
                     </statement>
                     <value name="RETURN">
-                      <block type="sc3_Pan2" id="m*HTUbPrFccIL_Yp#z8Q" inline="false">
+                      <block type="sc3_Pan2" id="m*HTUbPrFccIL_Yp#z8Q" inline="true">
                         <value name="IN">
-                          <block type="sc3_PMOsc" id="f=*+K]|6OiLG#U5d4u/," inline="true">
-                            <value name="CARFREQ">
-                              <block type="variables_get" id="M*0iI!,?;#]1Gs?o4pj2">
-                                <field name="VAR" id="=j(~I4mZD/#@bBb^y!~;">cf</field>
-                              </block>
-                            </value>
-                            <value name="MODFREQ">
-                              <block type="variables_get" id="@qj8EZ{=|kg/v)j|r/We">
-                                <field name="VAR" id="Yv@6y`Y9J4iWnC=Yz[7Y">mf</field>
-                              </block>
-                            </value>
-                            <value name="PMINDEX">
-                              <block type="variables_get" id="oFw{1_/Cs3./YeYU-3z:">
-                                <field name="VAR" id="FHa*l-{LIxNd54+KgP]0">pm</field>
-                              </block>
-                            </value>
-                            <value name="MODPHASE">
-                              <block type="math_number" id="VTDjRer139h~TAYZ1Hu$">
-                                <field name="NUM">0</field>
-                              </block>
-                            </value>
-                            <value name="MUL">
-                              <shadow type="math_number" id="2`+:dH`x$a|MZP|}Z1oP">
-                                <field name="NUM">1</field>
-                              </shadow>
-                            </value>
-                            <value name="ADD">
-                              <shadow type="math_number" id="2FBWj%$@vxgdc%L0.R0n">
-                                <field name="NUM">0</field>
-                              </shadow>
-                            </value>
+                          <block type="variables_get" id="h$q!_#~t-r|!Ty~pEDhw">
+                            <field name="VAR" id="(%sJXqo47hx,hsPm)v==">snd</field>
                           </block>
                         </value>
                         <value name="POS">

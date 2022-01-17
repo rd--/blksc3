@@ -9,14 +9,13 @@ OverlapTexture({
     var l2 = TRand(-1, 1, tr);
     var lc = TLine(l1, l2, dur, tr);
     var pm = TLine(0, pme, dur, tr);
-    Pan2 (PMOsc(cf, mf, pm, 0), lc, 0.05)
+    var snd = PMOsc(cf, mf, pm, 0);
+    Pan2 (snd, lc, 0.05)
 }, 1, 3, 4)
 
 //---- notes.md
 Programs are stored as _.xml_ files.
-
 _Load_ prompts to select an _.xml_ file and loads it into the workspace.
-
 _Copy_ copies the _.xml_ text describing the current workspace state to the clipboard,
 from where it can be pasted into an _.xml_ file.
 
@@ -33,9 +32,10 @@ This program was translated from the _.stc_ program:
     var pme = TRand(0, 12, tr);
     var l1 = TRand(-1, 1, tr);
     var l2 = TRand(-1, 1, tr);
-    var l = TLine(l1, l2, dur, tr);
+    var lc = TLine(l1, l2, dur, tr);
     var pm = TLine(0, pme, dur, tr);
-    Pan2 (PMOsc(cf, mf, pm, 0), l, 0.05)
+    var snd = PMOsc(cf, mf, pm, 0);
+    Pan2 (snd, lc, 0.05)
   }, 1, 3, 4)
 ~~~~
 
