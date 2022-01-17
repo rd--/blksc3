@@ -1,3 +1,5 @@
+'use strict';
+
 // String -> [String]
 function string_lines(string) {
     return string.split('\n');

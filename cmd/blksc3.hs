@@ -70,7 +70,7 @@ blk_gen = do
       u_seq = filter (\u -> Db.ugen_name u `elem` lst) Db.ugen_db
       p_seq = filter (\p -> Db.pseudo_ugen_name p `elem` lst) Db.pseudo_ugen_db
       dir = "/home/rohan/sw/blksc3/"
-      gen_js = unlines (map Blockly.u_blk_gen u_seq ++ map Blockly.p_blk_gen p_seq)
+      gen_js = unlines ("'use strict';\n" : map Blockly.u_blk_gen u_seq ++ map Blockly.p_blk_gen p_seq)
       gen_json = "[\n" ++ (intercalate "    ,\n" (map Blockly.u_blk_dfn u_seq ++ map Blockly.p_blk_dfn p_seq)) ++ "]"
   writeFile (dir ++ "js/blksc3-gen-ugen.js") gen_js
   writeFile (dir ++ "json/blksc3-ugen.json") gen_json

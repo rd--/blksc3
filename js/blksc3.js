@@ -1,3 +1,5 @@
+'use strict';
+
 var blk_json;
 var blk_xml;
 var blk_workspace;
@@ -95,7 +97,7 @@ function blk_websocket_send(string) {
     if(blk_websocket && blk_websocket.readyState == 1) {
         blk_websocket.send(string);
     } else {
-        console.log('blk_websocket_send: websocket nil or not ready?');
+        console.error('blk_websocket_send: websocket nil or not ready?');
     }
 }
 
@@ -278,14 +280,14 @@ function blk_cc_send(ccIndex) {
 function blk_sw_maintained_send(swIndex) {
     var swElem = document.getElementById('swC' + swIndex);
     var swValue = swElem.checked ? 1 : 0;
-    console.log('sw/checkbox: ', swIndex, swValue);
+    console.debug('sw/checkbox: ', swIndex, swValue);
     blk_websocket_send('SC3.swSet(' + swIndex + ', ' + swValue + ');\n');
 }
 
 // Send SC3.swSet to websocket.
 function blk_sw_momentary_send(swIndex, swValue) {
     var swElem = document.getElementById('swB' + swIndex);
-    console.log('sw/button: ', swIndex, swValue);
+    console.debug('sw/button: ', swIndex, swValue);
     blk_websocket_send('SC3.swSet(' + swIndex + ', ' + swValue + ');\n');
 }
 
@@ -301,10 +303,10 @@ function blk_set_inner_html_of(elemId) {
 // 1366×768 (x270) =16/9 ; 1440×900 (macbook/3) = 8/5 ; 1680×1050 (macbook/4) = 8/5 ; 1920×1080 (x1) = 16/9
 var blk_layouts = JSON.parse(`
  {
- "1366×768":{"workspaceHeight": "585px", "workspaceWidth":"975px", "ctlLeft":"1000px", "ctlWidth":"350px", "notesFontSize":"11pt"},
+ "1366×768":{"workspaceHeight": "585px", "workspaceWidth":"975px", "ctlLeft":"995px", "ctlWidth":"350px", "notesFontSize":"11pt"},
  "1440×900":{"workspaceHeight": "720px", "workspaceWidth":"1080px", "ctlLeft":"1100px", "ctlWidth":"325px", "notesFontSize":"12pt"},
- "1680×1050":{"workspaceHeight": "850px", "workspaceWidth":"1275px", "ctlLeft":"1300px", "ctlWidth":"375px", "notesFontSize":"12pt"},
- "1920×1080":{"workspaceHeight": "900px", "workspaceWidth":"1500px", "ctlLeft":"1525px", "ctlWidth":"375px", "notesFontSize":"12pt"}
+ "1680×1050":{"workspaceHeight": "850px", "workspaceWidth":"1275px", "ctlLeft":"1295px", "ctlWidth":"375px", "notesFontSize":"13pt"},
+ "1920×1080":{"workspaceHeight": "888px", "workspaceWidth":"1480px", "ctlLeft":"1500px", "ctlWidth":"390px", "notesFontSize":"13pt"}
  }
 `);
 
@@ -329,4 +331,20 @@ function blk_set_layout(configName) {
 function blk_layout_menu_init() {
     var select = document.getElementById('blkLayoutMenu');
     select.addEventListener('change', (e) => blk_set_layout(e.target.value));
+}
+
+function blk_append_mul_add(block, codeStr) {
+    var mulStr = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var addStr = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var reqMul = Number.parseFloat(mulStr) != 1;
+    var reqAdd = Number.parseFloat(addStr) != 0;
+    if(reqMul && reqAdd) {
+        return 'MulAdd(' + codeStr + ', ' + mulStr + ', ' + addStr + ')';
+    } else if(reqMul) {
+        return '(' + codeStr + ' * ' + mulStr + ')';
+    } else if(reqAdd) {
+        return '(' + codeStr + ' + ' + addStr + ')';
+    } else {
+        return codeStr;
+    }
 }

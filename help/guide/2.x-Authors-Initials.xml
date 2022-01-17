@@ -497,26 +497,34 @@
                                 <value name="CODE">
                                   <block type="sc3_Pan2" id=".d#z[2].yp#J,*5*+Ebt" inline="false">
                                     <value name="IN">
-                                      <block type="sc3_SinOsc" id="VR(lK(y@DaInI3Akf[`*" inline="true">
-                                        <value name="FREQ">
-                                          <block type="variables_get" id="D=GV5Uq!pfpFPbaB)]!8">
-                                            <field name="VAR" id="=hM^K~kM_k%#]T_CPKAC">f</field>
-                                          </block>
-                                        </value>
-                                        <value name="PHASE">
-                                          <block type="math_number" id="ybX0L8c,lDRp~BK`.+|Q">
-                                            <field name="NUM">0</field>
-                                          </block>
-                                        </value>
-                                        <value name="MUL">
-                                          <shadow type="math_number" id="2:i*6Ss]/a;y1ZwzDpyX">
-                                            <field name="NUM">1</field>
-                                          </shadow>
-                                        </value>
-                                        <value name="ADD">
-                                          <shadow type="math_number" id="iNUQ_Wkvm}be^/CkbE-s">
+                                      <block type="sc3_UnaryOp" id="vz*:hsW*eDiG.UZG*B%(">
+                                        <field name="OP">tanh</field>
+                                        <value name="IN">
+                                          <shadow type="math_number" id="S|aM@@aB4^esG|#?GfEL">
                                             <field name="NUM">0</field>
                                           </shadow>
+                                          <block type="sc3_SinOsc" id="VR(lK(y@DaInI3Akf[`*" inline="true">
+                                            <value name="FREQ">
+                                              <block type="variables_get" id="D=GV5Uq!pfpFPbaB)]!8">
+                                                <field name="VAR" id="=hM^K~kM_k%#]T_CPKAC">f</field>
+                                              </block>
+                                            </value>
+                                            <value name="PHASE">
+                                              <block type="math_number" id="ybX0L8c,lDRp~BK`.+|Q">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                            <value name="MUL">
+                                              <shadow type="math_number" id="2:i*6Ss]/a;y1ZwzDpyX">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="ADD">
+                                              <shadow type="math_number" id="iNUQ_Wkvm}be^/CkbE-s">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                            </value>
+                                          </block>
                                         </value>
                                       </block>
                                     </value>
