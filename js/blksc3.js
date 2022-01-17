@@ -208,6 +208,7 @@ function blk_init() {
     blk_load_and_process_utf8('html/graph-menu.html', blk_set_inner_html_of('blkGraphMenu'));
     blk_load_and_process_utf8('html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
     blk_load_and_process_utf8('html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
+    blk_layout_menu_init();
     blk_websocket_init('localhost', 9160);
 }
 
@@ -294,4 +295,36 @@ function blk_set_inner_html_of(elemId) {
     return function(innerHtml) {
         selectElem.innerHTML = innerHtml;
     }
+}
+
+// Dictionary of layouts configurations indexed by display dimensions.
+// 1366x768 (x270) =16/9 ; 1440x900 (macbook/3) = 8/5 ; 1680x1050 (macbook/4) = 8/5 ; 1920x1080 (x1) = 16/9
+var blk_layouts = JSON.parse(`
+ {
+ "1366×768":{"workspaceHeight": "585px", "workspaceWidth":"975px", "ctlLeft":"1000px", "ctlWidth":"350px", "notesFontSize":"11pt"},
+ "1440×900":{"workspaceHeight": "720px", "workspaceWidth":"1080px", "ctlLeft":"1100px", "ctlWidth":"325px", "notesFontSize":"12pt"},
+ "1680×1050":{"workspaceHeight": "850px", "workspaceWidth":"1275px", "ctlLeft":"1300px", "ctlWidth":"375px", "notesFontSize":"12pt"},
+ "1920×1080":{"workspaceHeight": "900px", "workspaceWidth":"1500px", "ctlLeft":"1525px", "ctlWidth":"375px", "notesFontSize":"12pt"}
+ }
+`);
+
+// Set properties given layout configuration name.
+function blk_set_layout(configName) {
+    var w = document.getElementById('blocklyContainer');
+    var c = document.getElementById('blkCtl');
+    var n = document.getElementById('blkNotes');
+    var o = blk_layouts[configName];
+    w.style.height = o.workspaceHeight;
+    w.style.width = o.workspaceWidth;
+    c.style.left = o.ctlLeft;
+    c.style.width = o.ctlWidth;
+    n.style['font-size'] = o.notesFontSize;
+    n.style.height = o.workspaceHeight;
+    Blockly.svgResize(blk_workspace);
+}
+
+// Set event listener for layout menu.
+function blk_layout_menu_init() {
+    var select = document.getElementById('blkLayoutMenu');
+    select.addEventListener('change', (e) => blk_set_layout(e.target.value));
 }
