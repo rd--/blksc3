@@ -46,8 +46,8 @@ To run these programs set the following server options before starting the serve
     s.options.numWireBufs = 512;
     s.options.memSize = 524288;
 
-The listener can be started and the server options can be set in the _startup.scd_ file.
-That way they will run automatically whenever SuperCollider starts.
+The listener can be started and the server options can be set in the SuperCollider _startup.scd_ file,
+in which case they will run automatically whenever SuperCollider starts.
 
 ## [MacOS](https://www.apple.com/macos/) Instructions
 
@@ -58,18 +58,29 @@ That way they will run automatically whenever SuperCollider starts.
 - Open browser and go to http://127.0.0.1:9966/blksc3.html
 - Start SuperCollider
 - In the blksc3 browser window load a graph by selecting from the _Graph Programs_ menu
-- Click _Send Stc_ to send the program to SuperCollider.
-- Click _Send Reset_ to stop the sound.
+- Click _Play_ to send the program to SuperCollider.
+- Click _Reset_ to stop the sound.
 
-## Npm Instructions
+## Node and Npm Instructions
 
-To install [node](https://nodejs.org/) and [npm](https://www.npmjs.com/) in [Debian](https://www.debian.org/) type:
+To install [node](https://nodejs.org/) and [npm](https://www.npmjs.com/):
+
+In [Debian](https://www.debian.org/) type:
 
     > sudo apt install npm
 
-To set the npm install prefix to `~/opt` type:
+To set the npm install prefix, for instance to `~/opt`, type:
 
     > npm config set prefix ~/opt
+
+In MacOs first follow the instructions at [https://brew.sh/](brew.sh) to install Homebrew, then in Terminal type:
+
+    > brew update
+    > brew install node
+
+In Windows follow the instructions at <https://nodejs.org/en/download/>.
+
+## Budo Instructions
 
 To install [budo](https://www.npmjs.com/package/budo) type:
 
@@ -77,7 +88,7 @@ To install [budo](https://www.npmjs.com/package/budo) type:
 
 ## Caveats
 
-The blksc3 layout is fixed, however there is a menu to select layouts for various display sizes.
+The blksc3 layout is fixed, however the default size is proprtional to the viewport and there is a menu to select layouts for various display sizes.
 
 ## Credits
 

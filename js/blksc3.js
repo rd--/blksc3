@@ -300,9 +300,10 @@ function blk_set_inner_html_of(elemId) {
 }
 
 // Dictionary of layouts configurations indexed by display dimensions.
-// 1366×768 (x270) =16/9 ; 1440×900 (macbook/3) = 8/5 ; 1680×1050 (macbook/4) = 8/5 ; 1920×1080 (x1) = 16/9
+// %×% = proportional ; 1366×768 (x270) =16/9 ; 1440×900 (macbook/3) = 8/5 ; 1680×1050 (macbook/4) = 8/5 ; 1920×1080 (x1) = 16/9
 var blk_layouts = JSON.parse(`
  {
+ "%×%":{"workspaceHeight": "87.5vh", "workspaceWidth":"77.5vw", "ctlLeft":"78.75vw", "ctlWidth":"20vw", "notesFontSize":"12pt"},
  "1366×768":{"workspaceHeight": "585px", "workspaceWidth":"975px", "ctlLeft":"995px", "ctlWidth":"350px", "notesFontSize":"11pt"},
  "1440×900":{"workspaceHeight": "720px", "workspaceWidth":"1080px", "ctlLeft":"1100px", "ctlWidth":"325px", "notesFontSize":"12pt"},
  "1680×1050":{"workspaceHeight": "850px", "workspaceWidth":"1275px", "ctlLeft":"1295px", "ctlWidth":"375px", "notesFontSize":"13pt"},
