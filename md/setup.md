@@ -77,8 +77,7 @@ To install [budo](https://www.npmjs.com/package/budo) type:
 
 ## Caveats
 
-At present the layout is fixed size, and designed for 1920×1080 pixel displays.
-On smaller displays parts of the system may not be visible.
+The blksc3 layout is fixed, however there is a menu to select layouts for various display sizes.
 
 ## Credits
 

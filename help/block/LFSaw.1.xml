@@ -3,7 +3,7 @@
     <variable id="5X;[Yvv|z(Vh=d(1=oj.">f</variable>
     <variable id="yNK9Wmy7ed6N@DB95Jw!">c</variable>
   </variables>
-  <block type="sc3_Comment" id="lrzN@M!z;AO$1-ELQ*g#" x="-59" y="58">
+  <block type="sc3_Comment" id="lrzN@M!z;AO$1-ELQ*g#" x="0" y="0">
     <field name="COMMENT">LFSaw ; interesting rising sounds ; https://github.com/cianoc/supercollider_fragments</field>
     <next>
       <block type="variables_set" id="pzMPxrcOAkWFPfA+sjpu">
@@ -140,8 +140,9 @@
               <block type="sc3_ArrayProc1" id="[O~MoRA+Nl-*PNNb:sVY">
                 <field name="OP">sum</field>
                 <value name="IN">
-                  <block type="sc3_ArrayCollect" id="7b1p{J?c|Y]FvpBQB[PW" inline="true">
-                    <value name="ARRAY">
+                  <block type="sc3_ArrayProc2" id=";!DX#0Hcj?Eo5-t4jA#X" inline="true">
+                    <field name="OP">collect</field>
+                    <value name="LHS">
                       <block type="sc3_ArrayFromTo" id="-1ptL6(f[lb]t.3i@H12" inline="true">
                         <value name="FROM">
                           <block type="math_number" id="lG{!GZu4M]Bj;[-XFvua">
@@ -155,7 +156,7 @@
                         </value>
                       </block>
                     </value>
-                    <value name="PROC">
+                    <value name="RHS">
                       <block type="variables_get" id="CszQ$;(=RAH5ya(2hm,F">
                         <field name="VAR" id="5X;[Yvv|z(Vh=d(1=oj.">f</field>
                       </block>

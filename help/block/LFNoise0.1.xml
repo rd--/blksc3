@@ -3,7 +3,7 @@
     <variable id="j~o~2v(4}ZQpaeytDdiN">f</variable>
     <variable id="T1Q9y@f[*[kWk`u0n9PA">i</variable>
   </variables>
-  <block type="sc3_Comment" id="zW{?:zOt*E^60qksa+78" x="70" y="114">
+  <block type="sc3_Comment" id="zW{?:zOt*E^60qksa+78" x="0" y="0">
     <field name="COMMENT">LFNoise0 ; pretty ; nice, but inessential ; https://github.com/cianoc/supercollider_fragments ; Rand</field>
     <next>
       <block type="variables_set" id="R}_(YOzR.e`m67!w=):W">
@@ -331,8 +331,9 @@
               <block type="sc3_ArrayProc1" id="GvCKV)I.bS13rl`LE~dM">
                 <field name="OP">sum</field>
                 <value name="IN">
-                  <block type="sc3_ArrayCollect" id="~RC/0imL~BIHD3.|O8/1" inline="true">
-                    <value name="ARRAY">
+                  <block type="sc3_ArrayProc2" id="-VH6[!yYw_7K0)p).@P1" inline="true">
+                    <field name="OP">collect</field>
+                    <value name="LHS">
                       <block type="sc3_ArrayFromTo" id="LzZOCItED_0g:#.7BnAz" inline="true">
                         <value name="FROM">
                           <block type="math_number" id="^:(Iw3TwqeR^XPc9V#%d">
@@ -346,7 +347,7 @@
                         </value>
                       </block>
                     </value>
-                    <value name="PROC">
+                    <value name="RHS">
                       <block type="variables_get" id="}6@,Px?x}slbQ,|jB1X:">
                         <field name="VAR" id="j~o~2v(4}ZQpaeytDdiN">f</field>
                       </block>

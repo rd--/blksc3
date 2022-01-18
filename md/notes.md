@@ -6,6 +6,8 @@ _clearBuf_ is an interesting case, it is a method because it constructs an _Mrg_
 
 There are array operation blocks with menus, _ArrayProc1_ and _ArrayProc2_.
 
+There is an _ArrayCollect_ block, however it should be deleted in favour of _ArrayProc2.collect_.
+
 _fromAssocArray_ and _->_ belong at _Event_, not _Math_.
 
 _kr_ should not exist.
