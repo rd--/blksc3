@@ -1,12 +1,12 @@
-// AR ; event control
-var f = {
-    arg e;
-    Blip(e.p.unitCps, e.o * 5) * AR(e.w, 0.5 * e.y, e.y * 4, -4)
-};
-Splay2(Voicer(16, f)) * 0.1
+// ASR
+var tr = Impulse(#[1, 0.75], 0);
+var gt = Trig(tr, TRand(0.1, 0.2, tr));
+var o = Blip(TRand(36, #[48, 60], tr).midicps, TRand(1, 7, tr));
+var a = ASR(gt, TRand(0.01, 0.2, tr), TRand(0.2, 2, tr), -4);
+o * a * 0.1
 
 //---- notes.md
-⏢ (_Ar_) is an attack-release envelope generator.
+⏢ (_Asr_) is an attack-sustain-release envelope generator.
 
 The ⎇ (_gate_) input begins the envelope on a rising zero crossing and holds it open until a falling zero crossing.
 

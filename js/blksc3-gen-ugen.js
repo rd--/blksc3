@@ -952,13 +952,13 @@ Blockly.JavaScript['sc3_ADSR'] = function(block) {
     return [ADSR_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
-Blockly.JavaScript['sc3_AR'] = function(block) {
+Blockly.JavaScript['sc3_ASR'] = function(block) {
     var gate_value = Blockly.JavaScript.valueToCode(block, 'GATE', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
     var attackTime_value = Blockly.JavaScript.valueToCode(block, 'ATTACKTIME', Blockly.JavaScript.ORDER_ATOMIC) || '0.01';
     var releaseTime_value = Blockly.JavaScript.valueToCode(block, 'RELEASETIME', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
     var curves_value = Blockly.JavaScript.valueToCode(block, 'CURVES', Blockly.JavaScript.ORDER_ATOMIC) || '-4.0';
-    var AR_code = blk_append_mul_add(block, 'AR(' + gate_value + ', ' + attackTime_value + ', ' + releaseTime_value + ', ' + curves_value + ')');
-    return [AR_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+    var ASR_code = blk_append_mul_add(block, 'ASR(' + gate_value + ', ' + attackTime_value + ', ' + releaseTime_value + ', ' + curves_value + ')');
+    return [ASR_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
 Blockly.JavaScript['sc3_AudioIn'] = function(block) {
