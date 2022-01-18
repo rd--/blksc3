@@ -9,7 +9,9 @@ A [Block](https://developers.google.com/blockly) editor for the
 Tested with:
 
 [Chromium](https://www.chromium.org/) 90.0.4430.212,
-[Firefox](https://www.mozilla.org/firefox/) 91.4.0,
+[Chrome](https://www.google.com/chrome/) 97.0.4692.71,
+[Firefox](https://www.mozilla.org/firefox/) 91.4.0 & 96.0.1,
+[Safari](https://apple.com/safari/) 15.2,
 [SuperCollider](https://www.audiosynth.com/) 3.11.2,
 [Blockly](https://developers.google.com/blockly) 7.20211209.1
 [Commonmark.js](https://github.com/commonmark/commonmark.js/) 0.30.0
