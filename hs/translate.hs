@@ -515,6 +515,8 @@ blk_guide =
   ,"1.x Load, Copy, Translate"
   ,"1.3 Comment, SinOsc, Play"
   ,"1.4 Arrays, Variables, Binary Operators"
+  ,"1.x Operators"
+  ,"1.x Array Inputs, Array Expansion"
   ,"1.x Lambda, Duplicate"
   ,"1.x Overlap Texture"
   ,"1.5 Noise Generators, Filters, Control Signals"
