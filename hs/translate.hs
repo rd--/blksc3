@@ -138,20 +138,15 @@ binop_xml o lhs rhs =
 
 {- | Some operators are handled specially.
 
-1. collect -> sc3_ArrayCollect
-2. dup -> sc3_ArrayFill
-3. to -> sc3_ArrayFromTo
-4. timesRepeat -> sc3_TimesRepeat
-5. value -> sc3_Value1
-6. array operators -> ArrayProc2
+1. array operators -> ArrayProc2
+2. dup -> ArrayFill
+3. to -> ArrayFromTo
+4. timesRepeat -> TimesRepeat
+5. value -> Value1
 -}
 keybinop_xml :: String -> String -> String -> String
 keybinop_xml msg lhs rhs  =
   case msg of
-    "collect:" ->
-      printf
-      "<block type='sc3_ArrayCollect' inline='true'><value name='ARRAY'>%s</value><value name='PROC'>%s</value></block>"
-      lhs rhs
     "dup:" ->
       printf
       "<block type='sc3_ArrayFill' inline='true'><value name='PROC'>%s</value><value name='COUNT'>%s</value></block>"
@@ -512,7 +507,8 @@ blk_help =
 
 blk_guide :: [String]
 blk_guide =
-  ["1.1 Workspace, Synthesiser"
+  ["1.x Block SuperCollider"
+  ,"1.1 Workspace, Synthesiser"
   ,"1.x Toolbox"
   ,"1.2 Guide, Help, Graphs"
   ,"1.x Load, Copy, Translate"

@@ -5,7 +5,7 @@
     <variable id="D$SyTlj0dxDg5VoL7%$(">s</variable>
     <variable id="RWhpM9JocyTZMArMiNv4">i</variable>
   </variables>
-  <block type="sc3_Comment" id="mV$$Hn%@Ot|1K_9`h|px" x="-1148" y="-544">
+  <block type="sc3_Comment" id="mV$$Hn%@Ot|1K_9`h|px" x="0" y="0">
     <field name="COMMENT">https://swiki.hfbk-hamburg.de/MusicTechnology/899 ; tw</field>
     <next>
       <block type="variables_set" id="y,cB~RqlhvTR?S3e$`2S">
@@ -195,8 +195,9 @@
                       <block type="sc3_ArrayProc1" id="+)WuY%vlPqgK-~6j[W0B">
                         <field name="OP">sum</field>
                         <value name="IN">
-                          <block type="sc3_ArrayCollect" id="VRAU2kQKr6?uRxKV1Lw~" inline="true">
-                            <value name="ARRAY">
+                          <block type="sc3_ArrayProc2" id="usvb:`lNlY_Y+Tylts.9" inline="true">
+                            <field name="OP">collect</field>
+                            <value name="LHS">
                               <block type="sc3_ArrayFromTo" id="4Er.!MM#Zb-//DJm=754" inline="true">
                                 <value name="FROM">
                                   <block type="math_number" id="Ypp~DhP1s#E+=d9l(Bex">
@@ -210,7 +211,7 @@
                                 </value>
                               </block>
                             </value>
-                            <value name="PROC">
+                            <value name="RHS">
                               <block type="variables_get" id="x0Cr]E=0+iuQ+;|E::T:">
                                 <field name="VAR" id="Py5[E/u7VR/0tEs9i`M%">f</field>
                               </block>
@@ -235,8 +236,9 @@
                                   <block type="sc3_ArrayProc1" id="-V-R:OtX8kLZTij2le?3">
                                     <field name="OP">sum</field>
                                     <value name="IN">
-                                      <block type="sc3_ArrayCollect" id="xW+hJNSK2p?6*)b3+J6e" inline="true">
-                                        <value name="ARRAY">
+                                      <block type="sc3_ArrayProc2" id=",i=nj]Sy1%I(SI4y4rmV" inline="true">
+                                        <field name="OP">collect</field>
+                                        <value name="LHS">
                                           <block type="sc3_ArrayFromTo" id="u?,KoQFQ[ybi[urxq.X]" inline="true">
                                             <value name="FROM">
                                               <block type="math_number" id="pNy^=na!ihO90D=2F=S#">
@@ -250,7 +252,7 @@
                                             </value>
                                           </block>
                                         </value>
-                                        <value name="PROC">
+                                        <value name="RHS">
                                           <block type="variables_get" id="bF4[hPnRcq=/H?%*z5p4">
                                             <field name="VAR" id="D$SyTlj0dxDg5VoL7%$(">s</field>
                                           </block>

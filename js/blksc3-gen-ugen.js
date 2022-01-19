@@ -516,6 +516,14 @@ Blockly.JavaScript['sc3_LinExp'] = function(block) {
     return [LinExp_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['sc3_LinPan2'] = function(block) {
+    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var pos_value = Blockly.JavaScript.valueToCode(block, 'POS', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
+    var level_value = Blockly.JavaScript.valueToCode(block, 'LEVEL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
+    var LinPan2_code = blk_append_mul_add(block, 'LinPan2(' + in_value + ', ' + pos_value + ', ' + level_value + ')');
+    return [LinPan2_code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
 Blockly.JavaScript['sc3_LinRand'] = function(block) {
     var lo_value = Blockly.JavaScript.valueToCode(block, 'LO', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var hi_value = Blockly.JavaScript.valueToCode(block, 'HI', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
