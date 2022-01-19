@@ -503,6 +503,7 @@ blk_help =
   ,"VarSaw.1"
   ,"Voicer.1"
   ,"VoiceWriter.1"
+  ,"XFade2.1"
   ,"XLn.1"]
 
 blk_guide :: [String]
