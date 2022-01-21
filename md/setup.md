@@ -3,8 +3,13 @@
 Requirements:
 
 - [SuperCollider](https://github.com/supercollider/supercollider) (Music Synthesiser)
-- [Firefox](https://www.mozilla.org/firefox/) or [Chromium](https://www.chromium.org/) or equivalent (Html browser)
-- [Budo](https://www.npmjs.com/package/budo) or [Lighttpd](https://www.lighttpd.net/) or equivalent (Http server)
+- Html browser:
+  [Firefox](https://www.mozilla.org/firefox/)
+  or [Chromium](https://www.chromium.org/) or equivalent
+- Http server:
+  [Python](https://www.python.org/)
+  or [Budo](https://www.npmjs.com/package/budo)
+  or [Lighttpd](https://www.lighttpd.net/) or equivalent
 
 Requirements to connect to SuperCollider:
 
@@ -54,12 +59,21 @@ in which case they will run automatically whenever SuperCollider starts.
 - Download the MacOS binary for the [blksc3](https://github.com/rd--/blksc3/releases) command line program and unpack it
 - Start blksc3 in [Terminal](https://support.apple.com/guide/terminal/) by typing `./blksc3 stc-to-osc`
 - Download the [blksc3](https://gitlab.com/rd--/blksc3) archive and `cd` to the blksc3 directory
-- Start an Http Server by typing: `budo`
+- Start an Http Server by typing: `budo` or `python3 -m http.server`
 - Open browser and go to http://127.0.0.1:9966/blksc3.html
 - Start SuperCollider
 - In the blksc3 browser window load a graph by selecting from the _Graph Programs_ menu
 - Click _Play_ to send the program to SuperCollider.
 - Click _Reset_ to stop the sound.
+
+## Python Instructions
+
+Install python according to the instructions for your operating system.
+To start a local http server type:
+
+    python3 -m http.server
+
+The server will print the address to navigate to.
 
 ## Node and Npm Instructions
 
