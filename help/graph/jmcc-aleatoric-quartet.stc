@@ -7,7 +7,7 @@ var mkSig = {
   arg ix;
   var x = PinkNoise() * (LFNoise1(8) * dmul + dadd).max(0);
   var n0 = LFNoise0(Select(IRand(0, 2), #[1, 0.5, 0.25]));
-  var freq = Lag((n0 * 7 + 66 + Rand(-30, 30)).rounded, 0.2).midicps;
+  var freq = Lag((n0 * 7 + 66 + Rand(-30, 30)).rounded, 0.2).midiCps;
   Pan2(CombC(x, 0.02, freq.reciprocal, 3), Rand(-1, 1), 1)
 };
 var g = 1.to(4).collect(mkSig).sum;

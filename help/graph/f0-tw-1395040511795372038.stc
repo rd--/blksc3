@@ -1,7 +1,7 @@
 // f0 ; https://twitter.com/redFrik/status/1395040511795372038
 var b = #[2, 6, 3, 1];
 var c = 500;
-var f = DmdFor(b, SinOscFB(b / 9, 0), Seq(inf, (SinOscFB(b / 24, 0).rounded + 0.to(9) * 7 + 29.17).midicps));
+var f = DmdFor(b, SinOscFB(b / 9, 0), Seq(inf, (SinOscFB(b / 24, 0).rounded + 0.to(9) * 7 + 29.17).midiCps));
 var o = SinOscFB(f, SinOscFB(b / 13, 0).max(0) / 3 * 2);
 var p = AllpassC(o/8, 1, 0.51, 8);
 var q = BPF(Hasher(SinOscFB(b / 12, 0).max(0)) * SinOscFB(b / c, 0).max(0) / c, 2 ** SinOscFB(b / c * 2, 0) * 1000, 1 / 99);

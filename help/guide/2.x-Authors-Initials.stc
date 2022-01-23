@@ -4,7 +4,7 @@ var d = [1,1,1,1, 1,1,2, 1,1,2, 1,1,2].append([1,1,1,1, 1,1,1,1, 1,1,1,1, 4]);
 var t = TDmdFor(Seq(inf, d) / 4, 0, 1);
 var p = { arg i; [0, 2, 4, 5, 7].nth(i) };
 var m = 60 + n.collect(p);
-var f = DmdOn(t, 0, Seq(inf, m)).midicps;
+var f = DmdOn(t, 0, Seq(inf, m)).midiCps;
 Pan2(SinOsc(f, 0).tanh, 0, Decay2(t, 0.05, 0.2) * 0.1)
 
 //---- notes.md

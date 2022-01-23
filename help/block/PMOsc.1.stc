@@ -1,7 +1,7 @@
 // PMOsc ; ping pong ; https://github.com/cianoc/supercollider_fragments
 var rate = 5;
 var trig = Impulse(5, 0);
-var freq = TRand([36, 60], [72, 86], trig).midicps;
+var freq = TRand([36, 60], [72, 86], trig).midiCps;
 var ratio = 2;
 var env = Decay2(trig, 0, 1.25 / rate);
 PMOsc(freq, freq * ratio, 3 + env * 4, 0) * env * 0.25

@@ -6,7 +6,7 @@ var mk = {
     Splay2(SinOsc(f, 0).tanh * a)
 };
 var m = { IRand(0, 12) }.dup(k) + 48;
-[m, m.reverse].collect({ arg x; mk.value(x.midicps) }).sum
+[m, m.reverse].collect({ arg x; mk.value(x.midiCps) }).sum
 
 //---- notes.md
 _Operator_ blocks have a menu to select the required operator.
@@ -26,5 +26,5 @@ The program has instances of all four basic operators:
 
 1. Σ (_sum_) & ᴙ (_reverse_)
 2. ⇛ (_collect_)
-3. ♩→ν (_midicps_) & _tanh_
+3. ♩→ν (_midiCps_) & _tanh_
 4. \+ (_add_)

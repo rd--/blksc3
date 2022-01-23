@@ -1,7 +1,7 @@
 // ASR
 var tr = Impulse(#[1, 0.75], 0);
 var gt = Trig(tr, TRand(0.1, 0.2, tr));
-var o = Blip(TRand(36, #[48, 60], tr).midicps, TRand(1, 7, tr));
+var o = Blip(TRand(36, #[48, 60], tr).midiCps, TRand(1, 7, tr));
 var a = ASR(gt, TRand(0.01, 0.2, tr), TRand(0.2, 2, tr), -4);
 o * a * 0.1
 

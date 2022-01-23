@@ -5,9 +5,9 @@ var n = LFNoise1([3, 3]);
 var c = {
     arg r;
     CombN(
-        SinOsc((r + k + (n * 0.04)).midicps, 0) * 0.1
+        SinOsc((r + k + (n * 0.04)).midiCps, 0) * 0.1
         +
-        (RLPF(LFPulse([48, 55].midicps, 0, 0.15), (SinOsc(0.1, 0) * 10 + r).midicps, 0.1) * 0.1),
+        (RLPF(LFPulse([48, 55].midiCps, 0, 0.15), (SinOsc(0.1, 0) * 10 + r).midiCps, 0.1) * 0.1),
         0.31,
         0.31,
         2)

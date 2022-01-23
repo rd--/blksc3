@@ -6,7 +6,7 @@ var fn = {
     var e = Decay2(tr, 0.05, TRand(0.05, 0.75, tr));
     var x = PinkNoise() * e * 0.1;
     var m = LFNoise2(0.1);
-    var f = Lag(n.midicps, 0.25);
-    CombC(x, lwr.midicps.reciprocal, f.reciprocal, LinLin(m, -1, 1, 1, 8))
+    var f = Lag(n.midiCps, 0.25);
+    CombC(x, lwr.midiCps.reciprocal, f.reciprocal, LinLin(m, -1, 1, 1, 8))
 };
 fn.dup(12).sum * 0.1
