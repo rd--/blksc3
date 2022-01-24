@@ -25,26 +25,27 @@ import qualified Music.Theory.Opt as Opt {- hmt-base -}
 
 -- * Stc to Osc
 
--- | (host, port, addr).  ("localhost", 9160, "/eval")
-type StcToOscOpt = (String, Int, String)
+-- | (ws-host, ws-port, udp-host, udp-port, osc-addr).  ("localhost", 9160, "localhost", 57120, "/eval")
+type StcToOscOpt = (String, Int, String, Int, String)
 
 send_osc :: StcToOscOpt -> String -> IO ()
-send_osc (osc_host, osc_port, osc_addr) txt = do
+send_osc (_, _, osc_host, osc_port, osc_addr) txt = do
   let msg = Osc.message osc_addr [Osc.ASCII_String (Osc.ascii txt)]
   Osc.withTransport (Osc.openUDP osc_host osc_port) (Osc.sendMessage msg)
 
+-- | Translate incoming Websocket .stc text to Osc message.
 ws_to_sclang :: StcToOscOpt -> Ws.ServerApp
-ws_to_sclang osc_opt rq = do
+ws_to_sclang opt rq = do
   let ws_recv c = do
         dat <- Ws.receiveData c
         let txt = Char8.unpack dat
         putStrLn txt
-        send_osc osc_opt txt
+        send_osc opt txt
   c <- Ws.acceptRequest rq
   forever (ws_recv c)
 
 stc_to_osc :: StcToOscOpt -> IO ()
-stc_to_osc (ws_host, ws_port, osc_addr) = Ws.runServer ws_host ws_port (ws_to_sclang (ws_host, 57120, osc_addr))
+stc_to_osc opt@(ws_host, ws_port, _, _, _) = Ws.runServer ws_host ws_port (ws_to_sclang opt)
 
 -- * Ws to St
 
@@ -62,6 +63,24 @@ ws_to_st rq = do
 stc_to_st :: (String, Int) -> IO ()
 stc_to_st (ws_host, ws_port) = Ws.runServer ws_host ws_port ws_to_st
 
+-- * Ws Osc to Udp Osc
+
+-- | (ws-host, ws-port, osc-host, osc-port).  ("localhost", 9160, "localhost", 57110)
+type WsToUdpOpt = (String, Int, String, Int)
+
+-- | Send incoming Websocket Osc out over Udp.
+ws_osc_to_udp_osc_app :: WsToUdpOpt -> Ws.ServerApp
+ws_osc_to_udp_osc_app (_,_,h,p) rq = do
+  let ws_recv c fd = do
+        dat <- Ws.receiveData c
+        putStrLn (show dat)
+        Osc.udp_send_data fd dat
+  c <- Ws.acceptRequest rq
+  forever (Osc.with_udp (Osc.openUDP h p) (ws_recv c))
+
+ws_osc_to_udp_osc :: WsToUdpOpt -> IO ()
+ws_osc_to_udp_osc opt@(ws_host, ws_port, _, _) = Ws.runServer ws_host ws_port (ws_osc_to_udp_osc_app opt)
+
 -- * Blk Gen
 
 blk_gen :: IO ()
@@ -78,24 +97,32 @@ blk_gen = do
 
 -- * Main
 
-usage :: Opt.OptHelp
-usage =
+blksc3_usage :: Opt.OptHelp
+blksc3_usage =
   ["blksc3 command"
   ,"  blk-gen"
   ,"  stc-to-osc"
-  ,"  stc-to-st"]
+  ,"  stc-to-st"
+  ,"  ws-osc-to-udp-osc"]
 
-opt :: [Opt.OptUsr]
-opt =
-  [("addr","/eval","string","osc message address")
-  ,("host","localhost","string","Host name")
-  ,("port","9160","int","port number")]
+blksc3_opt :: [Opt.OptUsr]
+blksc3_opt =
+  [("osc-addr","/eval","string","Osc message address")
+  ,("udp-host","localhost","string","Udp host name")
+  ,("udp-port","57120","int","Udp port number")
+  ,("ws-host","localhost","string","Ws host name")
+  ,("ws-port","9160","int","Ws port number")
+  ]
 
 main :: IO ()
 main = do
-  (o, a) <- Opt.opt_get_arg True usage opt
+  (o, a) <- Opt.opt_get_arg True blksc3_usage blksc3_opt
+  let (wh, wp) = (Opt.opt_get o "ws-host", Opt.opt_read o "ws-port")
+      uh = Opt.opt_get o "udp-host"
+      oa = Opt.opt_get o "osc-addr"
   case a of
     ["blk-gen"] -> blk_gen
-    ["stc-to-osc"] -> stc_to_osc (Opt.opt_get o "host", Opt.opt_read o "port", Opt.opt_get o "addr")
-    ["stc-to-st"] -> stc_to_st (Opt.opt_get o "host", Opt.opt_read o "port")
-    _ -> Opt.opt_usage usage opt
+    ["stc-to-osc"] -> stc_to_osc (wh, wp, uh, 57120, oa) -- sclang
+    ["stc-to-st"] -> stc_to_st (wh, wp)
+    ["ws-osc-to-udp-osc"] -> ws_osc_to_udp_osc (wh, wp, uh, 57110) -- scsynth
+    _ -> Opt.opt_usage blksc3_usage blksc3_opt

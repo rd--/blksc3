@@ -1,5 +1,5 @@
 // Sw ; switch
-1.to(8).collect({ arg i; SinOsc(110 * i, 0) * ASR(Sw(i), 0.01, 0.25) * 0.1 }).splay2
+Splay2(1.to(8).collect({ arg i; SinOsc(110 * i, 0) * ASR(Sw(i), 0.01, 0.25) * 0.1 }))
 
 //---- notes.md
 This program reads from the first 8 input switches.
