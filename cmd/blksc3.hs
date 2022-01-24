@@ -9,6 +9,7 @@ import Control.Monad {- base -}
 import Data.List {- base -}
 import System.IO {- base -}
 
+import qualified Data.ByteString {- bytestring -}
 import qualified Data.ByteString.Char8 as Char8 {- bytestring -}
 import qualified Network.WebSockets as Ws {- websockets -}
 
@@ -68,15 +69,18 @@ stc_to_st (ws_host, ws_port) = Ws.runServer ws_host ws_port ws_to_st
 -- | (ws-host, ws-port, osc-host, osc-port).  ("localhost", 9160, "localhost", 57110)
 type WsToUdpOpt = (String, Int, String, Int)
 
+send_udp :: String -> Int -> Data.ByteString.ByteString -> IO ()
+send_udp h p dat = Osc.with_udp (Osc.openUDP h p) (\fd -> Osc.udp_send_data fd dat)
+
 -- | Send incoming Websocket Osc out over Udp.
 ws_osc_to_udp_osc_app :: WsToUdpOpt -> Ws.ServerApp
 ws_osc_to_udp_osc_app (_,_,h,p) rq = do
-  let ws_recv c fd = do
+  let ws_recv c = do
         dat <- Ws.receiveData c
-        putStrLn (show dat)
-        Osc.udp_send_data fd dat
+        putStrLn ("ws_recv: #" ++ show (Data.ByteString.length dat))
+        send_udp h p dat
   c <- Ws.acceptRequest rq
-  forever (Osc.with_udp (Osc.openUDP h p) (ws_recv c))
+  forever (ws_recv c)
 
 ws_osc_to_udp_osc :: WsToUdpOpt -> IO ()
 ws_osc_to_udp_osc opt@(ws_host, ws_port, _, _) = Ws.runServer ws_host ws_port (ws_osc_to_udp_osc_app opt)
