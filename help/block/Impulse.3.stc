@@ -2,5 +2,5 @@
 var sync = 5;
 var freq = [1, 3, 5, 7, 9, 11, 13];
 var numer = [3, 7, 5, 2, 9, 6, 1];
-var f = { arg i; SinOsc(freq.at(i) * 100, 0) * Decay2(Impulse(numer.at(i) / sync, 0), 0.01, 1) };
+var f = { arg i; SinOsc(freq.nth(i) * 100, 0) * Decay2(Impulse(numer.nth(i) / sync, 0), 0.01, 1) };
 Splay2(1.to(freq.size).collect(f)) * 0.1
