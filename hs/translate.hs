@@ -503,7 +503,7 @@ blk_help =
   ,"TRand.1", "TRand.2"
   ,"TScramble.1","TScramble.2"
   ,"VarSaw.1"
-  ,"Voicer.1"
+  ,"Voicer.1", "Voicer.2", "Voicer.3"
   ,"VoiceWriter.1"
   ,"XFade2.1"
   ,"XLn.1"]
