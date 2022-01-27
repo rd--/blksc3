@@ -368,7 +368,7 @@ blk_graphs =
      ,"Coolant", "Coolant (Texture)"
      ,"Cymbalism Accellerando"
      ,"Data Space"
-     ,"Deep Trip"
+     ,"Deep Trip", "Deep Trip (Texture)"
      ,"Demanding Studies"
      ,"Fast LFOs with Slow Beats"
      ,"Hard-Sync Sawtooth with LFO"

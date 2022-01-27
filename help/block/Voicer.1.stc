@@ -1,5 +1,5 @@
 // Voicer
-Voicer(16, {
+Voicer(1, {
     arg e;
     var freq = (e.x * [25, LFNoise2(0.25) * 0.25 + 25] + 48).midiCps;
     Pan2(RLPF(Saw(freq), e.y + 0.75 * freq, e.y * 0.5).sum, e.o * 2 - 1, e.w * e.z)
