@@ -79,7 +79,9 @@ ws_osc_to_udp_osc_app (_,_,h,p) rq = do
         dat <- Ws.receiveData c
         putStrLn ("ws_recv: #" ++ show (Data.ByteString.length dat))
         send_udp h p dat
+        putStrLn "udp sent"
   c <- Ws.acceptRequest rq
+  putStrLn "ws_osc_to_udp_osc_app: accept request"
   forever (ws_recv c)
 
 ws_osc_to_udp_osc :: WsToUdpOpt -> IO ()

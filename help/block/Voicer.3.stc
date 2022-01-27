@@ -1,0 +1,9 @@
+// Voicer
+Voicer(16, {
+    arg e;
+    Pan2(
+        SinOsc((e.x * 24 + 48).midiCps, 0),
+        e.o * 2 - 1,
+        e.w * e.z
+    );
+}).sum
