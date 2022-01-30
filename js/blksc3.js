@@ -198,16 +198,17 @@ function blk_load_help_graph(graphDir, graphName, fileType) {
 // Intialise menuId to run blk_load_help_graph.
 function blk_menu_init(menuId, graphDir, fileType) {
     var blk_graph = document.getElementById(menuId);
-    blk_graph.addEventListener('change', (e) => blk_load_help_graph(graphDir, e.target.value, fileType));
+    blk_graph.addEventListener('change', e => e.target.value ? blk_load_help_graph(graphDir, e.target.value, fileType) : null);
 }
 
 // Initialisation function, to be called on document load.
 function blk_init() {
-    blk_menu_init('blkGraphMenu', 'graph', '.xml');
+    blk_menu_init('blkProgramsMenu', 'graph', '.xml');
     blk_menu_init('blkHelpMenu', 'block', '.xml');
     blk_menu_init('blkGuideMenu', 'guide', '.xml');
+    blk_local_storage_menu_init();
     blk_xml_input_init();
-    blk_load_and_process_utf8('html/graph-menu.html', blk_set_inner_html_of('blkGraphMenu'));
+    blk_load_and_process_utf8('html/program-menu.html', blk_set_inner_html_of('blkProgramsMenu'));
     blk_load_and_process_utf8('html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
     blk_load_and_process_utf8('html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
     blk_layout_menu_init();
@@ -331,7 +332,7 @@ function blk_set_layout(configName) {
 // Set event listener for layout menu.
 function blk_layout_menu_init() {
     var select = document.getElementById('blkLayoutMenu');
-    select.addEventListener('change', (e) => blk_set_layout(e.target.value));
+    select.addEventListener('change', e => blk_set_layout(e.target.value));
 }
 
 function blk_append_mul_add(block, codeStr) {
@@ -347,5 +348,68 @@ function blk_append_mul_add(block, codeStr) {
         return '(' + codeStr + ' + ' + addStr + ')';
     } else {
         return codeStr;
+    }
+}
+
+function select_add_option(elemId, value, text) {
+    var select = document.getElementById(elemId);
+    var option = document.createElement('option');
+    option.value = value;
+    option.text = text;
+    select.add(option, null);
+}
+
+function select_clear_from(elemId, startIndex) {
+    var select = document.getElementById(elemId);
+    var k = select.length;
+    for(let i = startIndex; i < k; i++) {
+        select.remove(startIndex);
+    }
+}
+
+function blk_local_storage_menu_add_entry(programName) {
+    select_add_option('blkUserMenu', programName, programName);
+}
+
+function blk_local_storage_menu_clear() {
+    select_clear_from('blkUserMenu', 1);
+}
+
+function blk_local_storage_menu_init() {
+    var k = localStorage.length;
+    var userMenu = document.getElementById('blkUserMenu');
+    blkUserMenu.addEventListener('change', e => e.target.value ? blk_local_storage_load(e.target.value) : null);
+    for(let i = 0; i < k; i++) {
+        var menuOption = document.createElement("option");
+        var entry = localStorage.key(i);
+        menuOption.value = entry;
+        menuOption.text = entry;
+        userMenu.add(menuOption, null);
+        console.log('blk_local_storage_init_menu', entry);
+    }
+}
+
+function blk_local_storage_save_to() {
+    var timeStamp = (new Date()).toISOString();
+    var programName = window.prompt('Set program name', timeStamp);
+    if(programName) {
+        localStorage.setItem(programName, blk_get_xml());
+        blk_local_storage_menu_add_entry(programName);
+    }
+}
+
+function blk_local_storage_load(programName, autoPlay) {
+    var xmlText = localStorage.getItem(programName);
+    var xml = Blockly.Xml.textToDom(xmlText);
+    console.log('local', programName);
+    blk_workspace.clear();
+    Blockly.Xml.domToWorkspace(xml, blk_workspace);
+    blk_on_load(autoPlay);
+}
+
+function blk_local_storage_clear() {
+    if (window.confirm("Clear user program storage?")) {
+        blk_local_storage_menu_clear();
+        localStorage.clear();
     }
 }

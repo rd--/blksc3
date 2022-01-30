@@ -33,20 +33,57 @@ function blk_proc_def_code(block, numArg, hasStm) {
     }
 }
 
+function stc_is_binary_selector(text) {
+    var allowed = Array.from('!%&*+/<=>?@\\~|-');
+    var answer = Array.from(text).every(item => allowed.includes(item));
+    // console.log('stc_is_binary_selector', text, answer);
+    return answer;
+}
+
+function stc_binary_selector_to_js(text) {
+    switch(text) {
+        case '+': return 'add';
+        case '-': return 'sub';
+        case '*': return 'mul';
+        case '/': return 'fdiv';
+        case '%': return 'mod';
+        case '==': return 'eq';
+        case '!=': return 'neq';
+        case '<': return 'lt';
+        case '>': return 'gt';
+        case '<=': return 'le';
+        case '>=': return 'ge';
+        case '&': return 'bitAnd';
+        case '|': return 'bitOr';
+        case '<<': return 'bitShiftLeft';
+        case '>>': return 'bitShiftRight';
+        case '**': return 'pow';
+        default: return text;
+    }
+}
+
 function blk_method_call_code(name, argArray) {
     if(blk_output_format === '.stc') {
         switch(argArray.length) {
         case 1: return [argArray[0] + '.' + name, Blockly.JavaScript.ORDER_MEMBER];
-        case 2: return [argArray[0] + '.' + name + '(' + argArray[1] + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
+        case 2: return stc_is_binary_selector(name) ?
+                [argArray[0] + ' ' + name + ' ' + argArray[1], Blockly.JavaScript.ORDER_NONE] :
+                [argArray[0] + '.' + name + '(' + argArray[1] + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
         }
     } else if(blk_output_format === '.js') {
         switch(argArray.length) {
         case 1: return [name + '(' + argArray[0] + ')', Blockly.JavaScript.ORDER_MEMBER];
-        case 2: return [name + '(' + argArray[0] + ', ' + argArray[1] + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
+        case 2: return [stc_binary_selector_to_js(name) + '(' + argArray[0] + ', ' + argArray[1] + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
         }
     } else {
         return console.error('blk_method_call_code', blk_output_format, name, argArray);
     }
+}
+
+function blk_method_call_code_from_names(block, name, argNameArray) {
+    var nilValue = blk_output_format === '.stc' ? 'nil' : 'null';
+    var argArray = argNameArray.map(item => Blockly.JavaScript.valueToCode(block, item, Blockly.JavaScript.ORDER_ATOMIC) || nilValue);
+    return blk_method_call_code(name, argArray);
 }
 
 Blockly.JavaScript['sc3_Proc0'] = function(block) {
@@ -54,8 +91,7 @@ Blockly.JavaScript['sc3_Proc0'] = function(block) {
 };
 
 Blockly.JavaScript['sc3_Value0'] = function(block) {
-    var proc_value = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '{}';
-    return blk_method_call_code('value', [proc_value]);
+    return blk_method_call_code_from_names(block, 'value', ['PROC']);
 };
 
 Blockly.JavaScript['sc3_Proc1'] = function(block) {
@@ -63,9 +99,7 @@ Blockly.JavaScript['sc3_Proc1'] = function(block) {
 };
 
 Blockly.JavaScript['sc3_Value1'] = function(block) {
-    var proc_value = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '{}';
-    var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    return blk_method_call_code('value', [proc_value, value_value]);
+    return blk_method_call_code_from_names(block, 'value', ['PROC', 'VALUE']);
 };
 
 Blockly.JavaScript['sc3_Proc0Stm'] = function(block) {
@@ -80,62 +114,47 @@ Blockly.JavaScript['sc3_Proc1Stm'] = function(block) {
 Blockly.JavaScript['sc3_TimesRepeat'] = function(block) {
     var count_value = Blockly.JavaScript.valueToCode(block, 'COUNT', Blockly.JavaScript.ORDER_ATOMIC) || '0';
     var proc_code = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '{}';
-    return count_value + '.timesRepeat( ' + proc_code + ');';
+    if(blk_output_format === '.stc') {
+        return count_value + '.timesRepeat( ' + proc_code + ');';
+    } else if(blk_output_format === '.js') {
+        return 'timesRepeat( ' + count_value + ', ' + proc_code + ');';
+    } else {
+        return console.error('sc3_TimesRepeat', blk_output_format);
+    }
 };
 
 Blockly.JavaScript['sc3_ArrayFromTo'] = function(block) {
-    var from_value = Blockly.JavaScript.valueToCode(block, 'FROM', Blockly.JavaScript.ORDER_ATOMIC) || '1';
-    var to_value = Blockly.JavaScript.valueToCode(block, 'TO', Blockly.JavaScript.ORDER_ATOMIC) || '9';
-    return blk_method_call_code('to', [from_value, to_value]);
+    return blk_method_call_code_from_names(block,'to', ['FROM', 'TO']);
 };
 
 Blockly.JavaScript['sc3_ArrayFill'] = function(block) {
-    var count_value = Blockly.JavaScript.valueToCode(block, 'COUNT', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    var proc_value = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '{}';
-    return blk_method_call_code('dup', [proc_value, count_value]);
+    return blk_method_call_code_from_names(block, 'dup', ['PROC', 'COUNT']);
 };
 
 Blockly.JavaScript['sc3_ArrayCollect'] = function(block) {
-    var array_value = Blockly.JavaScript.valueToCode(block, 'ARRAY', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    var proc_value = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '{}';
-    return blk_method_call_code('collect', [array_value, proc_value]);
+    return blk_method_call_code_from_names(block, 'collect', ['ARRAY', 'PROC']);
 };
 
 Blockly.JavaScript['sc3_ArrayProc1'] = function(block) {
-    var op_value = block.getFieldValue('OP');
-    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '[]';
-    return blk_method_call_code(op_value, [in_value]);
+    return blk_method_call_code_from_names(block, block.getFieldValue('OP'), ['IN']);
 };
 
 Blockly.JavaScript['sc3_ArrayProc2'] = function(block) {
-    var op_value = block.getFieldValue('OP');
-    var lhs_value = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC) || '[]';
-    var rhs_value = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC) || 'nil';
-    return blk_method_call_code(op_value, [lhs_value, rhs_value]);
+    return blk_method_call_code_from_names(block, block.getFieldValue('OP'), ['LHS', 'RHS']);
 };
 
 Blockly.JavaScript['sc3_UnaryOp'] = function(block) {
-    var op_value = block.getFieldValue('OP');
-    var in_value = Blockly.JavaScript.valueToCode(block, 'IN', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    return blk_method_call_code(op_value, [in_value]);
+    return blk_method_call_code_from_names(block, block.getFieldValue('OP'), ['IN']);
 };
 
 Blockly.JavaScript['sc3_BinaryOp'] = function(block) {
-    var op_value = block.getFieldValue('OP');
-    var lhs_value = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    var rhs_value = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    return [lhs_value + ' ' + op_value + ' ' + rhs_value, Blockly.JavaScript.ORDER_NONE];
+    return blk_method_call_code_from_names(block, block.getFieldValue('OP'), ['LHS', 'RHS']);
 };
 
 Blockly.JavaScript['sc3_KeywordBinaryOp'] = function(block) {
-    var op_value = block.getFieldValue('OP');
-    var lhs_value = Blockly.JavaScript.valueToCode(block, 'LHS', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    var rhs_value = Blockly.JavaScript.valueToCode(block, 'RHS', Blockly.JavaScript.ORDER_ATOMIC) || '0';
-    return blk_method_call_code(op_value, [lhs_value, rhs_value]);
+    return blk_method_call_code_from_names(block, block.getFieldValue('OP'), ['LHS', 'RHS']);
 };
 
 Blockly.JavaScript['sc3_EventParam'] = function(block) {
-    var param_value = block.getFieldValue('PARAM');
-    var event_value = Blockly.JavaScript.valueToCode(block, 'EVENT', Blockly.JavaScript.ORDER_ATOMIC) || '';
-    return blk_method_call_code(param_value, [event_value]);
+    return blk_method_call_code_from_names(block, block.getFieldValue('PARAM'), ['EVENT']);
 };
