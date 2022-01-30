@@ -260,9 +260,9 @@ function blk_load_and_process_md(fileName, processFunc) {
 
 // .stc files can have a .md notes segment.
 function blk_md_notes_from_stc(stcText) {
-    var lines = string_lines(stcText);
-    var from_marker = array_drop_while(lines, str => !string_is_prefix_of('//---- notes.md', str));
-    return array_unlines(array_tail(from_marker));
+    var lines = stcText.split('\n');
+    var from_marker = lines.dropWhile(str => !'//---- notes.md'.isPrefixOf(str));
+    return from_marker.tail().unlines();
 }
 
 // Load .stc from fileName, extract .md notes, convert to .html and pass to processFunc.
@@ -333,22 +333,6 @@ function blk_set_layout(configName) {
 function blk_layout_menu_init() {
     var select = document.getElementById('blkLayoutMenu');
     select.addEventListener('change', e => blk_set_layout(e.target.value));
-}
-
-function blk_append_mul_add(block, codeStr) {
-    var mulStr = Blockly.JavaScript.valueToCode(block, 'MUL', Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
-    var addStr = Blockly.JavaScript.valueToCode(block, 'ADD', Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
-    var reqMul = Number.parseFloat(mulStr) != 1;
-    var reqAdd = Number.parseFloat(addStr) != 0;
-    if(reqMul && reqAdd) {
-        return 'MulAdd(' + codeStr + ', ' + mulStr + ', ' + addStr + ')';
-    } else if(reqMul) {
-        return '(' + codeStr + ' * ' + mulStr + ')';
-    } else if(reqAdd) {
-        return '(' + codeStr + ' + ' + addStr + ')';
-    } else {
-        return codeStr;
-    }
 }
 
 function select_add_option(elemId, value, text) {

@@ -1,59 +1,58 @@
 'use strict';
 
-// String -> [String]
-function string_lines(string) {
-    return string.split('\n');
+// String
+
+// string -> [string]
+String.prototype.lines = function () {
+    return this.split('\n');
 }
 
-// [String] -> String
-function array_unlines(array) {
-    return array.join('\n');
+// string -> string -> bool
+String.prototype.isPrefixOf = function (aString) {
+    return aString.slice(0, this.length) === this;
 }
 
-// String -> String -> Bool
-function string_is_prefix_of(prefix, string) {
-    return string.slice(0, prefix.length) === prefix;
+// Array
+
+// [string] -> string
+Array.prototype.unlines = function () {
+    return this.join('\n');
 }
 
-// [t] -> (t -> Bool) -> [t] ; array_take_while([1, 2, 3, 4], x => x < 3) == [1, 2]
-function array_take_while(array, predicate) {
-    var [x, ...xs] = array;
-    if (array.length > 0 && predicate(x)) {
-        return [x, ...array_take_while(xs, predicate)];
+// [t] -> (t -> bool) -> [t]
+// [1, 2, 3, 4].takeWhile(x => x < 3) //=> [1, 2]
+Array.prototype.takeWhile = function(predicate) {
+    var [x, ...xs] = this;
+    if (this.length > 0 && predicate(x)) {
+        return [x, ...xs.takeWhile(predicate)];
     } else {
         return [];
     }
 }
 
-// [t] -> (t -> Bool) -> [t] ; array_drop_while([1, 2, 3, 4], x => x < 3) == [3, 4]
-function array_drop_while(array, predicate) {
-    var [x, ...xs] = array;
-    if (array.length > 0 && predicate(x)) {
-        return array_drop_while(xs, predicate);
+// [t] -> (t -> bool) -> [t]
+// [1, 2, 3, 4].dropWhile(x => x < 3) //=> [3, 4]
+Array.prototype.dropWhile = function(predicate) {
+    var [x, ...xs] = this;
+    if (this.length > 0 && predicate(x)) {
+        return xs.dropWhile(predicate);
     } else {
-        return array;
+        return this;
     }
 }
 
-// [t] -> [t] ; array_tail([1, 2, 3, 4]) // => [2, 3, 4]
-function array_tail(array) {
-    return array.slice(1, array.size);
+// [t] -> [t]
+// [1, 2, 3, 4].tail() // => [2, 3, 4]
+Array.prototype.tail = function() {
+    return this.slice(1, this.size);
 }
 
 // [t] -> t
-function array_head(array) {
-    return array[0];
+Array.prototype.head = function() {
+    return this[0];
 }
 
-// array_at([1, 2, 3, 4], 3) == 4
-function array_at(array, index) {
-    return array[index];
-}
-
-Array.prototype.takeWhile = function(predicate) {
-    return array_take_while(this, predicate);
-}
-
-Array.prototype.dropWhile = function(predicate) {
-    return array_drop_while(this, predicate);
+// [1, 2, 3, 4].at(3) == 4
+Array.prototype.at = function(index) {
+    return this[index];
 }
