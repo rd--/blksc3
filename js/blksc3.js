@@ -108,30 +108,22 @@ function blk_send_stc(cmd) {
 
 // Initialise .xml file selector.
 function blk_xml_input_init () {
-    var xmlInput = document.getElementById('xmlInputFile');
-    var xmlSelect = document.getElementById('xmlInputFileSelect');
-    xmlSelect.addEventListener('click', e => xmlInput.click(), false);
+    connect_button_to_input('xmlInputFileSelect', 'xmlInputFile');
 }
 
 // Initialise .json file selector.
 function blk_json_input_init () {
-    var jsonInput = document.getElementById('jsonInputFile');
-    var jsonSelect = document.getElementById('jsonInputFileSelect');
-    jsonSelect.addEventListener('click', e => jsonInput.click(), false);
+    connect_button_to_input('jsonInputFileSelect', 'jsonInputFile');
 }
 
 // Read and load named .xml file.
 function blk_read_xml(xmlFile) {
-    var reader = new FileReader();
-    reader.addEventListener('load', () => blk_load_xml(reader.result), false);
-    reader.readAsText(xmlFile);
+    read_text_file_and_then(xmlFile, text => blk_load_xml(text));
 }
 
 // Read and load named .json file.
 function blk_read_json(jsonFile) {
-    var reader = new FileReader();
-    reader.addEventListener('load', () => blk_load_json(reader.result), false);
-    reader.readAsText(jsonFile);
+    read_text_file_and_then(jsonFile, text => blk_load_json(text));
 }
 
 // Read selected .xml file.
@@ -154,26 +146,14 @@ function blk_read_input_json() {
 function blk_write_output_xml() {
 }
 
-// Append timestamp to URL to defeat cache
-function blk_append_timestamp(url) {
-    var ext = ((/\?/).test(url) ? '&' : '?') + (new Date()).getTime();
-    return url + ext;
-}
-
 // Read and load .xml format program from URL.
 function blk_fetch_xml(xmlUrl, autoPlay) {
-    var request = new XMLHttpRequest();
-    request.addEventListener('load', () => blk_load_xml(request.response, autoPlay));
-    request.open('GET', blk_append_timestamp(xmlUrl))
-    request.send();
+    fetch_url_and_then(url_append_timestamp(xmlUrl), 'text', xmlText => blk_load_xml(xmlText, autoPlay));
 }
 
 // Read and load .json format program from URL.
 function blk_fetch_json(jsonUrl, autoPlay) {
-    var request = new JSONHttpRequest();
-    request.addEventListener('load', () => blk_load_json(request.response, autoPlay));
-    request.open('GET', blk_append_timestamp(jsonUrl))
-    request.send();
+    fetch_url_and_then(url_append_timestamp(xmlUrl), 'json', jsonData => blk_load_json(jsonData, autoPlay));
 }
 
 // Send SC3.reset to websocket.
@@ -192,7 +172,7 @@ function blk_load_help_graph(graphDir, graphName, fileType) {
         blk_sc3_reset();
     }
     blk_fetch_xml(graphUrl, auto_play);
-    blk_load_and_process_notes(graphStc, blk_set_inner_html_of('blkNotes'));
+    blk_load_notes_and_then(graphStc, blk_set_inner_html_of('blkNotes'));
 }
 
 // Intialise menuId to run blk_load_help_graph.
@@ -208,41 +188,11 @@ function blk_init() {
     blk_menu_init('blkGuideMenu', 'guide', '.xml');
     blk_local_storage_menu_init();
     blk_xml_input_init();
-    blk_load_and_process_utf8('html/program-menu.html', blk_set_inner_html_of('blkProgramsMenu'));
-    blk_load_and_process_utf8('html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
-    blk_load_and_process_utf8('html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
+    load_utf8_and_then('html/program-menu.html', blk_set_inner_html_of('blkProgramsMenu'));
+    load_utf8_and_then('html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
+    load_utf8_and_then('html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
     blk_layout_menu_init();
     blk_websocket_init('localhost', 9160);
-}
-
-// Fetch fileName and apply processFunc to the object read (stored as JSON).
-function blk_load_and_process_json(fileName, processFunc) {
-    fetch(fileName, { cache: 'no-cache' })
-        .then(response => response.json())
-        .then(obj => processFunc(obj));
-}
-
-// Throw error if response status is not .ok
-function blk_handle_fetch_error(response) {
-    if (!response.ok) {
-        throw Error(response.statusText);
-    }
-    return response;
-}
-
-// Log error and return default value
-function blk_log_error_and_return(from, reason, defaultValue) {
-    console.debug(from, ': ', reason);
-    return defaultValue;
-}
-
-// Fetch fileName and apply processFunc to the text read (stored as UTF-8).
-function blk_load_and_process_utf8(fileName, processFunc) {
-    fetch(fileName, { cache: 'no-cache' })
-        .then(response => blk_handle_fetch_error(response))
-        .then(response => response.text())
-        .then(text => processFunc(text))
-        .catch(reason => processFunc(blk_log_error_and_return('utf8', reason, '')));
 }
 
 // Convert .md text to .html
@@ -254,8 +204,8 @@ function blk_markdown_to_html(mdText) {
 }
 
 // Load .md from fileName, convert to .html and pass to processFunc.
-function blk_load_and_process_md(fileName, processFunc) {
-    blk_load_and_process_utf8(fileName, mdText => processFunc(blk_markdown_to_html(mdText)));
+function blk_load_md_and_then(fileName, processFunc) {
+    load_utf8_and_then(fileName, mdText => processFunc(blk_markdown_to_html(mdText)));
 }
 
 // .stc files can have a .md notes segment.
@@ -266,8 +216,8 @@ function blk_md_notes_from_stc(stcText) {
 }
 
 // Load .stc from fileName, extract .md notes, convert to .html and pass to processFunc.
-function blk_load_and_process_notes(fileName, processFunc) {
-    blk_load_and_process_utf8(fileName, stcText => processFunc(blk_markdown_to_html(blk_md_notes_from_stc(stcText))));
+function blk_load_notes_and_then(fileName, processFunc) {
+    load_utf8_and_then(fileName, stcText => processFunc(blk_markdown_to_html(blk_md_notes_from_stc(stcText))));
 }
 
 // Send SC3.ccSet to websocket.
@@ -335,22 +285,6 @@ function blk_layout_menu_init() {
     select.addEventListener('change', e => blk_set_layout(e.target.value));
 }
 
-function select_add_option(elemId, value, text) {
-    var select = document.getElementById(elemId);
-    var option = document.createElement('option');
-    option.value = value;
-    option.text = text;
-    select.add(option, null);
-}
-
-function select_clear_from(elemId, startIndex) {
-    var select = document.getElementById(elemId);
-    var k = select.length;
-    for(let i = startIndex; i < k; i++) {
-        select.remove(startIndex);
-    }
-}
-
 function blk_local_storage_menu_add_entry(programName) {
     select_add_option('blkUserMenu', programName, programName);
 }
@@ -362,15 +296,8 @@ function blk_local_storage_menu_clear() {
 function blk_local_storage_menu_init() {
     var k = localStorage.length;
     var userMenu = document.getElementById('blkUserMenu');
-    blkUserMenu.addEventListener('change', e => e.target.value ? blk_local_storage_load(e.target.value) : null);
-    for(let i = 0; i < k; i++) {
-        var menuOption = document.createElement("option");
-        var entry = localStorage.key(i);
-        menuOption.value = entry;
-        menuOption.text = entry;
-        userMenu.add(menuOption, null);
-        console.log('blk_local_storage_init_menu', entry);
-    }
+    userMenu.addEventListener('change', e => e.target.value ? blk_local_storage_load(e.target.value) : null);
+    select_add_local_storage_keys_as_options(userMenu);
 }
 
 function blk_local_storage_save_to() {

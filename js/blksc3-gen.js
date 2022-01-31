@@ -113,7 +113,7 @@ function blk_method_codegen(block, name, argNameArray) {
     } else if(blk_output_format === '.js') {
         switch(argArray.length) {
         case 1: return [name + '(' + argArray[0] + ')', Blockly.JavaScript.ORDER_MEMBER];
-        case 2: return [stc_binary_selector_to_js(name) + '(' + argArray[0] + ', ' + argArray[1] + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
+        case 2: return [stc_binary_selector_from_operator(name) + '(' + argArray[0] + ', ' + argArray[1] + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
         }
     } else {
         return console.error('blk_method_call_code', blk_output_format, name, argArray);

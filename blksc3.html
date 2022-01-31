@@ -13,8 +13,11 @@
     <script src="local/blockly/msg/js/en.js"></script>
     <script src="local/blockly/blocks_compressed.js"></script>
     -->
-    <script src="js/blksc3-common.js"></script>
-    <script src="js/blksc3-lang.js"></script>
+    <script src="lib/jssc3/js/sc3-array.js"></script>
+    <script src="lib/jssc3/js/sc3-dom.js"></script>
+    <script src="lib/jssc3/js/sc3-stc.js"></script>
+    <script src="lib/jssc3/js/sc3-string.js"></script>
+    <script src="lib/jssc3/js/sc3-ui.js"></script>
     <script src="js/blksc3-gen.js"></script>
     <script src="js/blksc3-gen-ugen.js"></script>
     <script src="js/blksc3.js"></script>
@@ -28,9 +31,9 @@
       Blockly.HSV_VALUE = 0.95;
       Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
       Blockly.Msg['LISTS_CREATE_WITH_INPUT_WITH'] = '⟦⟧';
-      blk_load_and_process_json('json/blksc3.json', Blockly.defineBlocksWithJsonArray);
-      blk_load_and_process_json('json/blksc3-ugen.json', Blockly.defineBlocksWithJsonArray);
-      blk_load_and_process_utf8('xml/blksc3.xml', blk_inject_with_xml_toolbox);
+      load_json_and_then('json/blksc3.json', Blockly.defineBlocksWithJsonArray);
+      load_json_and_then('json/blksc3-ugen.json', Blockly.defineBlocksWithJsonArray);
+      load_utf8_and_then('xml/blksc3.xml', blk_inject_with_xml_toolbox);
       window.onload = blk_init;
     </script>
   </head>
