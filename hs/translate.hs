@@ -553,8 +553,7 @@ main = do
       mk_menu fn typ dat = writeFile (dir ++ fn ++ "-menu.html") (unlines (blk_in_autogen typ dat))
   mk_menu "help" "Help" (zipWith blk_help_option blk_help blk_help)
   mk_menu "guide" "Guide" (zipWith blk_help_option (map (filename_rewriter id) blk_guide) blk_guide)
-  mk_menu "program" "Programs" (concatMap (\(au, gr) -> map (blk_au_graph_option au) gr) blk_graphs)
-
+  mk_menu "program" "Program" (concatMap (\(au, gr) -> map (blk_au_graph_option au) gr) blk_graphs)
 
 {-
 

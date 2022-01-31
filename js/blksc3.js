@@ -5,6 +5,7 @@ var blk_xml;
 var blk_workspace;
 var blk_websocket;
 var blk_config;
+var blk_user_programs;
 
 // Configure and inject Blockly given XML format toolbox definition.
 function blk_inject_with_xml_toolbox(xml_toolbox) {
@@ -183,12 +184,12 @@ function blk_menu_init(menuId, graphDir, fileType) {
 
 // Initialisation function, to be called on document load.
 function blk_init() {
-    blk_menu_init('blkProgramsMenu', 'graph', '.xml');
+    blk_menu_init('blkProgramMenu', 'graph', '.xml');
     blk_menu_init('blkHelpMenu', 'block', '.xml');
     blk_menu_init('blkGuideMenu', 'guide', '.xml');
-    blk_local_storage_menu_init();
+    blk_user_program_menu_init();
     blk_xml_input_init();
-    load_utf8_and_then('html/program-menu.html', blk_set_inner_html_of('blkProgramsMenu'));
+    load_utf8_and_then('html/program-menu.html', blk_set_inner_html_of('blkProgramMenu'));
     load_utf8_and_then('html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
     load_utf8_and_then('html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
     blk_layout_menu_init();
@@ -285,42 +286,36 @@ function blk_layout_menu_init() {
     select.addEventListener('change', e => blk_set_layout(e.target.value));
 }
 
-function blk_local_storage_menu_add_entry(programName) {
-    select_add_option('blkUserMenu', programName, programName);
+function blk_user_program_menu_init() {
+    var stored = localStorage.getItem('blksc3UserPrograms');
+    blk_user_programs = stored ? JSON.parse(stored) : {};
+    select_on_change('blkUserMenu', blk_user_program_load);
+    select_add_keys_as_options('blkUserMenu', Object.keys(blk_user_programs));
 }
 
-function blk_local_storage_menu_clear() {
-    select_clear_from('blkUserMenu', 1);
-}
-
-function blk_local_storage_menu_init() {
-    var k = localStorage.length;
-    var userMenu = document.getElementById('blkUserMenu');
-    userMenu.addEventListener('change', e => e.target.value ? blk_local_storage_load(e.target.value) : null);
-    select_add_local_storage_keys_as_options(userMenu);
-}
-
-function blk_local_storage_save_to() {
+function blk_user_program_save_to() {
     var timeStamp = (new Date()).toISOString();
     var programName = window.prompt('Set program name', timeStamp);
     if(programName) {
-        localStorage.setItem(programName, blk_get_xml());
-        blk_local_storage_menu_add_entry(programName);
+        blk_user_programs[programName] = blk_get_xml();
+        localStorage.setItem('blksc3UserPrograms', JSON.stringify(blk_user_programs));
+        select_add_option('blkUserMenu', programName, programName);
     }
 }
 
-function blk_local_storage_load(programName, autoPlay) {
-    var xmlText = localStorage.getItem(programName);
+function blk_user_program_load(programName) {
+    var xmlText = blk_user_programs[programName];
     var xml = Blockly.Xml.textToDom(xmlText);
-    console.log('local', programName);
+    var autoPlay = false;
+    console.log('user', programName);
     blk_workspace.clear();
     Blockly.Xml.domToWorkspace(xml, blk_workspace);
     blk_on_load(autoPlay);
 }
 
-function blk_local_storage_clear() {
+function blk_user_program_clear() {
     if (window.confirm("Clear user program storage?")) {
-        blk_local_storage_menu_clear();
-        localStorage.clear();
+        select_clear_from('blkUserMenu', 1);
+        localStorage.removeItem('blksc3UserPrograms');
     }
 }
