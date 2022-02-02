@@ -182,8 +182,19 @@ function blk_menu_init(menuId, graphDir, fileType) {
     blk_graph.addEventListener('change', e => e.target.value ? blk_load_help_graph(graphDir, e.target.value, fileType) : null);
 }
 
+function blk_pre() {
+    Blockly.HSV_SATURATION = 0.20;
+    Blockly.HSV_VALUE = 0.95;
+    Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
+    Blockly.Msg['LISTS_CREATE_WITH_INPUT_WITH'] = '⟦⟧';
+    load_json_and_then('json/blksc3.json', Blockly.defineBlocksWithJsonArray);
+    load_json_and_then('json/blksc3-ugen.json', Blockly.defineBlocksWithJsonArray);
+    load_utf8_and_then('xml/blksc3.xml', blk_inject_with_xml_toolbox);
+}
+
 // Initialisation function, to be called on document load.
-function blk_init() {
+function blk_init(outputFormat) {
+    blk_output_format = outputFormat;
     blk_menu_init('blkProgramMenu', 'graph', '.xml');
     blk_menu_init('blkHelpMenu', 'block', '.xml');
     blk_menu_init('blkGuideMenu', 'guide', '.xml');
@@ -212,8 +223,8 @@ function blk_load_md_and_then(fileName, processFunc) {
 // .stc files can have a .md notes segment.
 function blk_md_notes_from_stc(stcText) {
     var lines = stcText.split('\n');
-    var from_marker = lines.dropWhile(str => !'//---- notes.md'.isPrefixOf(str));
-    return from_marker.tail().unlines();
+    var from_marker = arrayDropWhile(lines, str => !stringIsPrefixOf('//---- notes.md', str));
+    return arrayUnlines(arrayTail(from_marker));
 }
 
 // Load .stc from fileName, extract .md notes, convert to .html and pass to processFunc.

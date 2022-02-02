@@ -6,7 +6,7 @@ var blk_output_format = '.stc';
 // Comment code generator.  Comments should not contain newlines, if they do only the first line is written.
 Blockly.JavaScript['sc3_Comment'] = function(block) {
     var commentText = block.getFieldValue('COMMENT');
-    return '// ' + commentText.lines().at(0) + '\n';
+    return '// ' + stringLines(commentText).at(0) + '\n';
 };
 
 // Play code generator.  Output is 'CODE' input.
