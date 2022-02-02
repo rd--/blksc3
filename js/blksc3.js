@@ -10,6 +10,7 @@ var blk_user_programs;
 // Configure and inject Blockly given XML format toolbox definition.
 function blk_inject_with_xml_toolbox(xml_toolbox) {
     blk_config = {
+        media: 'media/blockly/',
         toolbox: xml_toolbox,
         rtl: false,
         move: {scrollbars: {horizontal: false, vertical: false},
