@@ -11,6 +11,7 @@ var blk_user_programs;
 function blk_inject_with_xml_toolbox(xml_toolbox) {
     blk_config = {
         media: 'media/blockly/',
+        sounds: false,
         toolbox: xml_toolbox,
         rtl: false,
         move: {scrollbars: {horizontal: false, vertical: false},
