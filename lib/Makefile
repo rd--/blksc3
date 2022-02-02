@@ -13,6 +13,9 @@ clone-commonmarkjs:
 fetch-commonmarkjs:
 	(cd commonmark.js ; git pull)
 
+fetch-commonmarkjs-dist:
+	(cd commonmark.js ; mkdir -p dist ; cd dist ; rm -f commonmark.js ; wget https://unpkg.com/commonmark/dist/commonmark.js)
+
 clone-jssc3:
 	git clone https://gitlab.com/rd--/jssc3
 
@@ -28,4 +31,4 @@ fetch-oscjs:
 
 clone-all: clone-blockly clone-commonmarkjs clone-jssc3 clone-oscjs
 
-fetch-all: fetch-blockly fetch-commonmarkjs fetch-jssc3 fetch-oscjs
+fetch-all: fetch-blockly fetch-commonmarkjs fetch-jssc3 fetch-oscjs fetch-commonmarkjs-dist
