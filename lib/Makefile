@@ -19,6 +19,7 @@ clone-jssc3:
 fetch-jssc3:
 	(cd jssc3 ; git pull)
 
+# however, osc.js is a dependency of jssc3, so blksc3 uses lib/jssc3/lib/osc.js/
 clone-oscjs:
 	git clone https://github.com/colinbdclark/osc.js/
 
