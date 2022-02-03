@@ -206,7 +206,11 @@ function blk_init(outputFormat) {
     load_utf8_and_then('html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
     load_utf8_and_then('html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
     blk_layout_menu_init();
-    blk_websocket_init('localhost', 9160);
+    if(outputFormat === '.stc') {
+        blk_websocket_init('localhost', 9160);
+    } else {
+        sc3_mouse_init();
+    }
 }
 
 // Convert .md text to .html
