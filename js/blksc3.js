@@ -178,11 +178,13 @@ function blk_load_help_graph(graphDir, graphName, fileType) {
     blk_load_notes_and_then(graphStc, blk_set_inner_html_of('blkNotes'));
 }
 
+/*
 // Intialise menuId to run blk_load_help_graph.
-function blk_menu_init(menuId, graphDir, fileType) {
+function blk_menu_init(menuId, graphDir, fileType, loadProc) {
     var blk_graph = document.getElementById(menuId);
-    blk_graph.addEventListener('change', e => e.target.value ? blk_load_help_graph(graphDir, e.target.value, fileType) : null);
+    blk_graph.addEventListener('change', e => e.target.value ? loadProc(graphDir, e.target.value, fileType) : null);
 }
+*/
 
 function blk_pre() {
     Blockly.HSV_SATURATION = 0.20;
@@ -197,19 +199,11 @@ function blk_pre() {
 // Initialisation function, to be called on document load.
 function blk_init(outputFormat) {
     blk_output_format = outputFormat;
-    blk_menu_init('blkProgramMenu', 'graph', '.xml');
-    blk_menu_init('blkHelpMenu', 'block', '.xml');
-    blk_menu_init('blkGuideMenu', 'guide', '.xml');
-    blk_user_program_menu_init();
     blk_xml_input_init();
-    load_utf8_and_then('html/program-menu.html', blk_set_inner_html_of('blkProgramMenu'));
-    load_utf8_and_then('html/help-menu.html', blk_set_inner_html_of('blkHelpMenu'));
-    load_utf8_and_then('html/guide-menu.html', blk_set_inner_html_of('blkGuideMenu'));
     blk_layout_menu_init();
+    sc3_ui_init(true, true, true, '.xml', 'blksc3UserPrograms/xml', blk_load_help_graph);
     if(outputFormat === '.stc') {
         blk_websocket_init('localhost', 9160);
-    } else {
-        sc3_mouse_init();
     }
 }
 
@@ -303,11 +297,23 @@ function blk_layout_menu_init() {
     select.addEventListener('change', e => blk_set_layout(e.target.value));
 }
 
+var editor_get_data = blk_get_xml;
+
+
+function editor_set_data(programData) {
+    var xml = Blockly.Xml.textToDom(programData);
+    var autoPlay = false;
+    blk_workspace.clear();
+    Blockly.Xml.domToWorkspace(xml, blk_workspace);
+    blk_on_load(autoPlay);
+}
+
+/*
 function blk_user_program_menu_init() {
     var stored = localStorage.getItem('blksc3UserPrograms');
     blk_user_programs = stored ? JSON.parse(stored) : {};
-    select_on_change('blkUserMenu', blk_user_program_load);
-    select_add_keys_as_options('blkUserMenu', Object.keys(blk_user_programs));
+    select_on_change('userMenu', blk_user_program_load);
+    select_add_keys_as_options('userMenu', Object.keys(blk_user_programs));
 }
 
 function blk_user_program_save_to() {
@@ -316,7 +322,7 @@ function blk_user_program_save_to() {
     if(programName) {
         blk_user_programs[programName] = blk_get_xml();
         localStorage.setItem('blksc3UserPrograms', JSON.stringify(blk_user_programs));
-        select_add_option('blkUserMenu', programName, programName);
+        select_add_option('userMenu', programName, programName);
     }
 }
 
@@ -332,7 +338,8 @@ function blk_user_program_load(programName) {
 
 function blk_user_program_clear() {
     if (window.confirm("Clear user program storage?")) {
-        select_clear_from('blkUserMenu', 1);
+        select_clear_from('userMenu', 1);
         localStorage.removeItem('blksc3UserPrograms');
     }
 }
+*/
