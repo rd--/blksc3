@@ -22,11 +22,17 @@
     <script src="lib/jssc3/js/sc3-ui.js"></script>
     <script src="js/blksc3-gen.js"></script>
     <script src="js/blksc3-gen-ugen.js"></script>
+    <script src="js/blksc3-controllers.js"></script>
+    <script src="js/blksc3-layout.js"></script>
+    <script src="js/blksc3-websocket.js"></script>
     <script src="js/blksc3.js"></script>
     <!-- <script src="js/blksc3-stc.js"></script> -->
     <script>
-      blk_pre()
-      window.onload = function() { blk_init('.stc') };
+blk_pre()
+window.onload = function() {
+    blk_init('.stc');
+    blk_websocket_init('localhost', 9160);
+};
     </script>
   </head>
   <body>

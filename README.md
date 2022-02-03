@@ -6,6 +6,8 @@ A [Block](https://developers.google.com/blockly) editor for the
 
 [![](http://rohandrape.net/sw/blksc3/png/whyblksc3.png)](http://rohandrape.net/sw/blksc3/png/whyblksc3.png)
 
+Online editor: [blksc3.rohandrape.net](http://blksc3.rohandrape.net/)
+
 Tested with:
 
 [Chromium](https://www.chromium.org/) 90.0.4430.212,

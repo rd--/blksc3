@@ -443,7 +443,7 @@ blk_graphs =
      ,"Tw 528187147543511041"])
   ,("PJ"
    ,["Forest Sounds"])
-  ,("RD", ["Cricket", "Klnk", "LF Pulses", "Oscillator Cluster", "Three Cpsw"])
+  ,("RD", ["Oscillator Cluster"])
   ,("TM", ["Drummer","Tw 463992770596577280"])
   ,("TW"
    ,["Tw 01", "Tw 02", "Tw 03"])
@@ -472,11 +472,12 @@ blk_help =
   ,"Cc.1"
   ,"CombC.1", "CombC.2"
   ,"Comment.1"
-  ,"Decay2.1"
+  ,"Decay2.1","Decay2.2"
   ,"DegreeToKey.1"
   ,"ExpRand.1"
   ,"FBSineC.1"
   ,"Formant.1"
+  ,"Formlet.1"
   ,"FreqShift.1"
   ,"Gendy1.1"
   ,"Impulse.1", "Impulse.2", "Impulse.3"
@@ -496,7 +497,9 @@ blk_help =
   ,"PMOsc.1", "PMOsc.2", "PMOsc.3"
   ,"Pulse.1"
   ,"PulseCount.1"
+  ,"Ringz.1"
   ,"RingzBank.1"
+  ,"Saw.1"
   ,"Seq.1", "Seq.2"
   ,"SinOsc.1", "SinOsc.2", "SinOsc.3"
   ,"Stepper.1", "Stepper.2"
@@ -540,7 +543,7 @@ gen_xml :: IO ()
 gen_xml = do
   let rw nm fn = putStrLn nm >> stc_file_to_xml_file (fn ++ ".stc")
       rw_graph nm = rw nm nm
-      rw_help nm = rw nm ("../block/" ++ nm)
+      rw_help nm = rw nm ("../ugen/" ++ nm)
       rw_guide nm = rw nm ("../guide/" ++ filename_rewriter id nm)
   mapM_ rw_graph blk_graphs_names
   mapM_ rw_help blk_help
