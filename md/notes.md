@@ -1,3 +1,10 @@
+Wasm requires Pointer{WXY}, does not include sc3-plugins or sc3-rdu, and has eventX for x and so on.
+Other errors are:
+
+- f0-tw-1467507942664646661
+- f0-tw-1479212835192332289
+- tw-tw-01
+
 The _math_ operator blocks should only hold _UGen_ operators.
 
 _splay2_ should be written as a block constructor, not a method.
