@@ -103,11 +103,11 @@ function blk_pre() {
 }
 
 // Initialisation function, to be called on document load.
-function blk_init(outputFormat) {
+function blk_init(outputFormat, initMouse) {
     blk_output_format = outputFormat;
     blk_xml_input_init();
     blk_layout_menu_init();
-    sc3_ui_init(true, true, true, '.xml', 'blksc3UserPrograms/xml', blk_load_help_graph);
+    sc3_ui_init(true, true, true, '.xml', 'blksc3UserPrograms/xml', blk_load_help_graph, initMouse);
 }
 
 // Convert .md text to .html
