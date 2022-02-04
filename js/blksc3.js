@@ -137,6 +137,8 @@ function blk_load_notes_and_then(fileName, processFunc) {
 
 var editor_get_data = blk_get_xml;
 
+var editor_get_notation = blk_get_stc_code;
+
 function editor_set_data(programData) {
     var xml = Blockly.Xml.textToDom(programData);
     var autoPlay = false;
