@@ -62,6 +62,7 @@
       </div>
       <div id="blkCmd">
         <input type="file" id="xmlInputFile" accept=".xml" onchange="blk_read_input_xml()" style="display:none">
+        <input type="file" id="userProgramArchiveFile" accept=".json" onchange="user_program_read_archive()" style="display:none">
         <button id="xmlInputFileSelect" title="Select and load .xml file to workspace (l)" accesskey="l"><u>L</u>oad</button>
         <button title="Copy workspace xml to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(blk_get_xml())"><u>C</u>opy</button>
         <!--
@@ -85,6 +86,7 @@
         <option value='setBlockSize'>Block Size</option>
         <option value='userBackup'>Backup</option>
         <option value='userRestore'>Restore</option>
+        <option value='userPurge'>Purge</option>
       </select>
         <select id="blkLayoutMenu" title="System layouts (y)" accesskey="y">
           <option value=''>--Display--</option>

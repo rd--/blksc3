@@ -4,7 +4,6 @@ var blk_json;
 var blk_xml;
 var blk_workspace;
 var blk_config;
-var blk_user_programs;
 var blk_output_format;
 var blk_layouts;
 
@@ -61,16 +60,11 @@ function blk_xml_input_init () {
     connect_button_to_input('xmlInputFileSelect', 'xmlInputFile');
 }
 
-// Read and load named .xml file.
-function blk_read_xml(xmlFile) {
-    read_text_file_and_then(xmlFile, text => blk_load_xml(text));
-}
-
 // Read selected .xml file.
 function blk_read_input_xml() {
-    var file = document.getElementById('xmlInputFile').files[0];
-    if (file) {
-        blk_read_xml(file);
+    var xmlFile = document.getElementById('xmlInputFile').files[0];
+    if (xmlFile) {
+        read_text_file_and_then(xmlFile, text => blk_load_xml(text));
     }
 }
 
