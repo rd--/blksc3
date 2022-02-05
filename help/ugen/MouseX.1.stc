@@ -18,5 +18,9 @@ In this program ☟𝑥 controls the ν (_frequency_) input of one ∿ (_SinOsc_
 
 The // (_LinLin_), /ノ (_LinExp_) and ⎎ (_Lag_) blocks at ☟𝑦 perform the same function as the ⌊, ⌈, 𝑓 and ⎎ inputs at ☟𝑥.
 
-**Note:** When _blksc3_ is communicating with the _Wasm_ version of _scsynth_ the Mouse controls are implemented in terms of the _Pointer_ pseudo unit generators.
-The mouse area is the blksc3 page, not the screen as a whole, and the update rate is likely slower.
+**Note:**
+When _blksc3_ is communicating with the web assembly form of scsynth the mouse controls are implemented in terms of the _Pointer_ pseudo unit-generators.
+In this case the mouse area is restricted to the blksc3 page, not the screen as a whole, and the update rate is likely slower.
+The rate is a function of the audio block size set when the synthesiser is started, the default value is _2048_.
+There is a _Block Size_ entry  in the ☰ menu to set this value.
+

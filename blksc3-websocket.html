@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -20,6 +20,7 @@
     <script src="lib/jssc3/js/sc3-stc.js"></script>
     <script src="lib/jssc3/js/sc3-string.js"></script>
     <script src="lib/jssc3/js/sc3-ui.js"></script>
+    <script src="lib/jssc3/js/sc3-websocket.js"></script>
     <script src="js/blksc3-gen.js"></script>
     <script src="js/blksc3-gen-ugen.js"></script>
     <script src="js/blksc3-controllers.js"></script>
@@ -31,7 +32,7 @@
 blk_pre()
 window.onload = function() {
     blk_init('.stc', false);
-    blk_websocket_init('localhost', 9160);
+    sc3_websocket_init('localhost', 9160);
 };
     </script>
   </head>
