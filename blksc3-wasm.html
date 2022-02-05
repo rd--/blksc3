@@ -6,10 +6,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/blksc3.css" />
     <link rel="icon" type="image/png" href="https://rohandrape.net/data/png/rd.512.png" />
-    <!--
-    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
-    <script src="https://unpkg.com/commonmark@0.30.0/dist/commonmark.js"></script>
-    -->
     <script src="lib/blockly/blockly_compressed.js"></script>
     <script src="lib/blockly/javascript_compressed.js"></script>
     <script src="lib/blockly/msg/js/en.js"></script>
@@ -39,20 +35,16 @@
     <script src="js/blksc3-layout.js"></script>
     <script src="js/blksc3-wasm.js"></script>
     <script src="js/blksc3.js"></script>
-    <!-- <script src="js/blksc3-stc.js"></script> -->
     <script>
-      blk_pre()
-      window.onload = function() { blk_init('.js', true) };
+blk_pre()
+window.onload = function() {
+    blk_init('.js', true);
+};
     </script>
   </head>
   <body>
     <!-- <p>Block SuperCollider</p> -->
     <div id="blocklyContainer"></div>
-    <!--
-        Access keys:
-        Chrome: d is "go to address box" (cannot be draw), e & f are "chrome menu" (cannot be erase or fit)
-        Firefox: f,e,v,s,b,t and h are menus (cannot be erase or fit), ␣ (space key) interacts poorly menus (cannot be play)
-    -->
     <div id="blkEdit">
       <div id="blkMenu">
         <select id="programMenu" title="Program (p)" accesskey="p"></select>

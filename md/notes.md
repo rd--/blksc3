@@ -39,3 +39,7 @@ Guide:
 - Array inputs.
   Compatibility with systems that distinguish between signal functions and array functions.
   Rule for deciding which inputs are array inputs.
+
+- Access keys.
+  Chrome: d is "go to address box" (cannot be draw), e & f are "chrome menu" (cannot be erase or fit)
+  Firefox: f,e,v,s,b,t and h are menus (cannot be erase or fit), ␣ (space key) interacts poorly menus (cannot be play)

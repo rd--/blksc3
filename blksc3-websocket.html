@@ -6,19 +6,19 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/blksc3.css" />
     <link rel="icon" type="image/png" href="https://rohandrape.net/data/png/rd.512.png" />
-    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
-    <script src="https://unpkg.com/commonmark@0.30.0/dist/commonmark.js"></script>
-    <!--
     <script src="lib/blockly/blockly_compressed.js"></script>
     <script src="lib/blockly/javascript_compressed.js"></script>
     <script src="lib/blockly/msg/js/en.js"></script>
     <script src="lib/blockly/blocks_compressed.js"></script>
     <script src="lib/commonmark.js/dist/commonmark.js"></script>
-    -->
     <script src="lib/jssc3/js/sc3-array.js"></script>
     <script src="lib/jssc3/js/sc3-dom.js"></script>
+    <script src="lib/jssc3/js/sc3-number.js"></script>
+    <script src="lib/jssc3/js/sc3-null.js"></script>
+    <script src="lib/jssc3/js/sc3-object.js"></script>
     <script src="lib/jssc3/js/sc3-stc.js"></script>
     <script src="lib/jssc3/js/sc3-string.js"></script>
+    <script src="lib/jssc3/js/sc3-u8.js"></script>
     <script src="lib/jssc3/js/sc3-ui.js"></script>
     <script src="lib/jssc3/js/sc3-websocket.js"></script>
     <script src="js/blksc3-gen.js"></script>
@@ -27,7 +27,6 @@
     <script src="js/blksc3-layout.js"></script>
     <script src="js/blksc3-websocket.js"></script>
     <script src="js/blksc3.js"></script>
-    <!-- <script src="js/blksc3-stc.js"></script> -->
     <script>
 blk_pre()
 window.onload = function() {
@@ -39,17 +38,12 @@ window.onload = function() {
   <body>
     <!-- <p>Block SuperCollider</p> -->
     <div id="blocklyContainer"></div>
-    <!--
-        Access keys:
-        Chrome: d is "go to address box" (cannot be draw), e & f are "chrome menu" (cannot be erase or fit)
-        Firefox: f,e,v,s,b,t and h are menus (cannot be erase or fit), ␣ (space key) interacts poorly menus (cannot be play)
-    -->
     <div id="blkEdit">
       <div id="blkMenu">
-        <select id="blkProgramMenu" title="Program (p)" accesskey="p"></select>
-        <select id="blkHelpMenu" title="Help (h)" accesskey="h"></select>
-        <select id="blkGuideMenu" title="Guide (g)" accesskey="g"></select>
-        <select id="blkUserMenu" title="User (u)" accesskey="u"><option value=''>--User--</option></select>
+        <select id="programMenu" title="Program (p)" accesskey="p"></select>
+        <select id="helpMenu" title="Help (h)" accesskey="h"></select>
+        <select id="guideMenu" title="Guide (g)" accesskey="g"></select>
+        <select id="userMenu" title="User (u)" accesskey="u"><option value=''>--User--</option></select>
       </div>
       <div id="blkCmd">
         <input type="file" id="xmlInputFile" accept=".xml" onchange="blk_read_input_xml()" style="display:none">
