@@ -1,24 +1,11 @@
-blksc3
-------
+// References
+var f = LinExp(LFNoise2([1, 3]), -1, 1, [10, 15], [400, 700]);
+var s = Blip(f, 1000) * 0.1;
+var x = MouseX(0.01, 0.2, 1, 0.2);
+var y = MouseY([700, 1300], [2000, 100], 1, 0.2);
+Formlet(s, y, 0.005, x)
 
-A [Block](https://developers.google.com/blockly) editor for the
-[SuperCollider](https://www.audiosynth.com/) synthesiser.
-
-[![](http://rohandrape.net/sw/blksc3/png/whyblksc3.png)](http://rohandrape.net/sw/blksc3/png/whyblksc3.png)
-
-Online editor: [blksc3.rohandrape.net](http://blksc3.rohandrape.net/)
-
-Tested with:
-
-[Chromium](https://www.chromium.org/) 90.0.4430.212,
-[Chrome](https://www.google.com/chrome/) 97.0.4692.71,
-[Firefox](https://www.mozilla.org/firefox/) 91.4.0 & 96.0.1,
-[Edge](https://www.microsoft.com/edge) 97.0.1072.62
-[Safari](https://apple.com/safari/) 15.2,
-[SuperCollider](https://www.audiosynth.com/) 3.11.2,
-[Blockly](https://developers.google.com/blockly) 7.20211209.1
-[Commonmark.js](https://github.com/commonmark/commonmark.js/) 0.30.0
-
+//---- notes.md
 References:
 
 Alan Kay.
@@ -61,12 +48,3 @@ John Steinmetz.
 2000.
 In M. Guzdial (ed.), _Squeak : Open Personal Computing for Multimedia_.
 [PDF](http://coweb.cc.gatech.edu:8888/squeakbook/uploads/steinmetz.pdf)
-
-© [rohan drape](http://rohandrape.net/), 2021-2022, [gpl](http://gnu.org/copyleft/)
-
-* * *
-
-[HTML](https://rohandrape.net/sw/blksc3/blksc3.html)
-[VIDEO](https://rohandrape.net/?t=blksc3&e=md/video.md)
-[CLI](https://rohandrape.net/?t=blksc3&e=md/blksct3.md)
-[BLOCKLY](https://developers.google.com/blockly)

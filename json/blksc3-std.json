@@ -1,0 +1,107 @@
+[
+    {
+        "type": "sc3_Proc0",
+        "message0": "λ %1 ← %2",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "RETURN"}
+        ],
+        "output": "Proc0",
+        "colour": 180,
+        "tooltip": "Proc(return): Zero argument procedure"
+    }
+    ,
+    {
+        "type": "sc3_Proc1",
+        "message0": "λ %1 ⍵ %2 ← %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "VAR"},
+            {"type": "input_value", "name": "RETURN"}
+        ],
+        "output": "Proc1",
+        "colour": 180,
+        "tooltip": "Proc(var, return): One argument procedure setting arg to var"
+    }
+    ,
+    {
+        "type": "sc3_Proc0Stm",
+        "message0": "λ %1 … %2 ← %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_statement", "name": "STATEMENTS"},
+            {"type": "input_value", "name": "RETURN"}
+        ],
+        "output": "Proc0",
+        "colour": 180,
+        "tooltip": "Proc(statements, return): Zero argument procedure, with statements"
+    }
+    ,
+    {
+        "type": "sc3_Proc1Stm",
+        "message0": "λ %1 ⍵ %2 … %3 ← %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "VAR"},
+            {"type": "input_statement", "name": "STATEMENTS"},
+            {"type": "input_value", "name": "RETURN"}
+        ],
+        "output": "Proc1",
+        "colour": 180,
+        "tooltip": "Proc(var, statements, return): One argument procedure, with statements"
+    }
+    ,
+    {
+        "type": "sc3_OverlapTexture",
+        "message0": "ᨏ %1 𝑓 %2 ⌒ %3 ⤢ %4 # %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "PROC", "check": "Proc1"},
+            {"type": "input_value", "name": "SUSTAINTIME", "check": "Number"},
+            {"type": "input_value", "name": "TRANSITIONTIME", "check": "Number"},
+            {"type": "input_value", "name": "OVERLAP", "check": "Number"}
+        ],
+        "output": "UGen",
+        "colour": 180,
+        "tooltip": "OverlapTexture(proc, sustainTime, transitionTime, overlap): Overlap add texture"
+    }
+    ,
+    {
+        "type": "sc3_ArrayFill",
+        "message0": "! %1 𝑓 %2 # %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "PROC", "check": "Proc0"},
+            {"type": "input_value", "name": "COUNT", "check": ["Number", "UGen"]}
+        ],
+        "output": "Array",
+        "colour": 260,
+        "tooltip": "ArrayFill(proc, count): Array of count places, evaulating proc to generate a value for each place"
+    }
+    ,
+    {
+        "type": "sc3_Voicer",
+        "message0": "Voicer %1 # %2 𝑓 %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "COUNT", "check": "Number"},
+            {"type": "input_value", "name": "PROC", "check": "Proc1"}
+        ],
+        "output": "UGen",
+        "colour": 180,
+        "tooltip": "Voicer(count, proc): Array of results of evaluating proc count times, each time receiving an event as argument"
+    }
+    ,
+    {
+        "type": "sc3_VoiceWriter",
+        "message0": "VoiceWriter %1 # %2 𝑓 %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "COUNT", "check": "Number"},
+            {"type": "input_value", "name": "PROC", "check": "Proc1"}
+        ],
+        "output": "UGen",
+        "colour": 180,
+        "tooltip": "VoicerWriter(count, proc)"
+    }
+]

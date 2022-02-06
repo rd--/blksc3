@@ -494,7 +494,7 @@ blk_help =
   ,"Pan2.1"
   ,"Play.1"
   ,"Pluck.1"
-  ,"PMOsc.1", "PMOsc.2", "PMOsc.3"
+  ,"PMOsc.1", "PMOsc.2", "PMOsc.3", "PMOsc.4"
   ,"Pulse.1"
   ,"PulseCount.1"
   ,"Ringz.1"
@@ -537,6 +537,7 @@ blk_guide =
   ,"2.x Code Generation, SuperCollider"
   ,"2.x Code Generation, Smalltalk, Scheme"
   ,"2.x Code Generation, Macros"
+  ,"3.x References"
   ]
 
 gen_xml :: IO ()

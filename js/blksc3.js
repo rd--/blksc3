@@ -98,6 +98,7 @@ function blk_pre() {
     Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
     Blockly.Msg['LISTS_CREATE_WITH_INPUT_WITH'] = '⟦⟧';
     load_json_and_then('json/blksc3.json', Blockly.defineBlocksWithJsonArray);
+    load_json_and_then('json/blksc3-std.json', Blockly.defineBlocksWithJsonArray);
     load_json_and_then('json/blksc3-ugen.json', Blockly.defineBlocksWithJsonArray);
     load_utf8_and_then('xml/blksc3.xml', blk_inject_with_xml_toolbox);
 }
