@@ -9,6 +9,8 @@ var m = { IRand(0, 12) }.dup(k) + 48;
 [m, m.reverse].collect({ arg x; mk.value(x.midiCps) }).sum
 
 //---- notes.md
+## Operators
+
 _Operator_ blocks have a menu to select the required operator.
 Operator blocks are either unary or binary, accepting one or two input values respectively.
 Each operator block implements a family of operators, collected by type.
@@ -22,9 +24,4 @@ Thus both ⇛ (_collect_) and ++ (_append_), which are instances of the same blo
 
 In this program 24 sine oscillators at 12 frequencies are arranged across the stereo field in symmetrical pairs,
 each oscillator has a distinct amplitude modulator.
-The program has instances of all four basic operators:
-
-1. Σ (_sum_) & ᴙ (_reverse_)
-2. ⇛ (_collect_)
-3. ♩→ν (_midiCps_) & _tanh_
-4. \+ (_add_)
+The program has instances of all four basic operators: 1. Σ (_sum_) & ᴙ (_reverse_), 2. ⇛ (_collect_), 3. ♩→ν (_midiCps_) & _tanh_ and 4. + (_add_)

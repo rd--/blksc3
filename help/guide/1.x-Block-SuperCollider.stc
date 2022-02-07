@@ -6,5 +6,24 @@ OverlapTexture({
 }, 1, 2, 7)
 
 //---- notes.md
-A [Block](https://developers.google.com/blockly) editor for the
-[SuperCollider](https://www.audiosynth.com/) synthesiser.
+## Block SuperCollider
+
+_Block SuperCollider_ (blksc3) is
+a [block](https://developers.google.com/blockly) editor for the
+[SuperCollider](https://www.audiosynth.com/) (Sc) synthesiser.
+
+Block editors are a family of visual programming systems that use interlocking graphical blocks to represent the elements of a program.
+
+For instance there are blocks to represent variable assignment and reference,
+procedure definition and application,
+and logical and mathematical operators.
+
+_blksc3_ also has blocks for the standard components of a synthesiser:
+oscillators, noise generators, filters, envelopes, panners, signal analysers and control signal generators &etc.
+
+To make sound _blksc3_ sends messages to the Sc synthesiser, which is started by pressing the ⏻ (_Boot_) button.
+The synthesiser status is shown the in adjacent box (the _status area_), which is initially empty.
+Once the synthesiser is running the status area will show the number of sounding _unit generators_.
+
+To listen to a program press the _Play_ button, to stop listening press _Reset_.
+This program generates a simple texture by summing together overlapping instances of an enveloped phase modulation oscillator with randomly generated parameters.
