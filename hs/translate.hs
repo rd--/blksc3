@@ -447,7 +447,7 @@ blk_graphs =
   ,("TM", ["Drummer","Tw 463992770596577280"])
   ,("TW"
    ,["Tw 01", "Tw 02", "Tw 03"])
-  ,("ZS", ["Toshiya"])
+  ,("ZS", ["Phase Distortion", "Toshiya"])
   ]
 
 blk_graphs_names :: [String]
