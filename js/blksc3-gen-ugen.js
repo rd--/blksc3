@@ -225,6 +225,9 @@ Blockly.JavaScript['sc3_MouseX'] = function(block) {
 Blockly.JavaScript['sc3_MouseY'] = function(block) {
   return blk_ugen_codegen(block, 'MouseY', ['MINVAL', 'MAXVAL', 'WARP', 'LAG'], true);
 }
+Blockly.JavaScript['sc3_NRand'] = function(block) {
+  return blk_ugen_codegen(block, 'NRand', ['LO', 'HI', 'N'], true);
+}
 Blockly.JavaScript['sc3_Normalizer'] = function(block) {
   return blk_ugen_codegen(block, 'Normalizer', ['IN', 'LEVEL', 'DUR'], true);
 }
@@ -353,6 +356,9 @@ Blockly.JavaScript['sc3_ZeroCrossing'] = function(block) {
 }
 Blockly.JavaScript['sc3_GreyholeRaw'] = function(block) {
   return blk_ugen_codegen(block, 'GreyholeRaw', ['IN1', 'IN2', 'DAMPING', 'DELAYTIME', 'DIFFUSION', 'FEEDBACK', 'MODDEPTH', 'MODFREQ', 'SIZE'], true);
+}
+Blockly.JavaScript['sc3_MoogLadder'] = function(block) {
+  return blk_ugen_codegen(block, 'MoogLadder', ['IN', 'FFREQ', 'RES'], true);
 }
 Blockly.JavaScript['sc3_TScramble'] = function(block) {
   return blk_ugen_codegen(block, 'TScramble', ['TRIGGER', 'INPUTS'], true);

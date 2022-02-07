@@ -1268,6 +1268,23 @@
     }
     ,
     {
+        "type": "sc3_NRand",
+        "message0": "NRand %1 ⌊ %2 ⌉ %3 n %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "N", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "NRand(lo, hi, n): Sum of uniform distributions.",
+        "helpUrl": "https://doc.sccode.org/Classes/NRand.html"
+    }
+    ,
+    {
         "type": "sc3_Normalizer",
         "message0": "Normalizer %1 ∙ %2 × %3 ⏲ %4 × %5 + %6",
         "args0": [
@@ -1995,6 +2012,23 @@
         "colour": 150,
         "tooltip": "GreyholeRaw(in1, in2, damping, delaytime, diffusion, feedback, moddepth, modfreq, size): algorithmic delay",
         "helpUrl": "https://doc.sccode.org/Classes/GreyholeRaw.html"
+    }
+    ,
+    {
+        "type": "sc3_MoogLadder",
+        "message0": "MoogLadder %1 ∙ %2 ffreq %3 res %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FFREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RES", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "MoogLadder(in, ffreq, res): Moog Filter Emulation",
+        "helpUrl": "https://doc.sccode.org/Classes/MoogLadder.html"
     }
     ,
     {

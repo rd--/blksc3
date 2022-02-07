@@ -7,6 +7,12 @@ var blk_config;
 var blk_output_format;
 var blk_layouts;
 
+function blk_display_scrollbars(showScrollbars) {
+    var displayValue = showScrollbars ? '' : 'none';
+    blk_workspace.scrollbar.vScroll.svgGroup_.style.display = displayValue;
+    blk_workspace.scrollbar.hScroll.svgGroup_.style.display = displayValue;
+}
+
 // Configure and inject Blockly given XML format toolbox definition.
 function blk_inject_with_xml_toolbox(xml_toolbox) {
     blk_config = {
@@ -14,18 +20,24 @@ function blk_inject_with_xml_toolbox(xml_toolbox) {
         sounds: false,
         toolbox: xml_toolbox,
         rtl: false,
-        move: {scrollbars: {horizontal: false, vertical: false},
-               drag: true,
-               wheel: false},
-        zoom: {controls: true,
-               wheel: true,
-               startScale: 1.0,
-               maxScale: 3,
-               minScale: 0.3,
-               scaleSpeed: 1.2,
-               pinch: true},
-        trashcan: false}
+        move: {
+            scrollbars: {horizontal: true, vertical: true},
+            drag: true,
+            wheel: false
+        },
+        zoom: {
+            controls: true,
+            wheel: true,
+            startScale: 1.0,
+            maxScale: 3,
+            minScale: 0.3,
+            scaleSpeed: 1.2,
+            pinch: true
+        },
+        trashcan: false
+    }
     blk_workspace = Blockly.inject('blocklyContainer', blk_config);
+    blk_display_scrollbars(false);
 };
 
 // Get workspace as .stc code.
