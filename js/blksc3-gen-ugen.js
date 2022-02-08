@@ -234,6 +234,9 @@ Blockly.JavaScript['sc3_Normalizer'] = function(block) {
 Blockly.JavaScript['sc3_OnePole'] = function(block) {
   return blk_ugen_codegen(block, 'OnePole', ['IN', 'COEF'], true);
 }
+Blockly.JavaScript['sc3_Osc'] = function(block) {
+  return blk_ugen_codegen(block, 'Osc', ['BUFNUM', 'FREQ', 'PHASE'], true);
+}
 Blockly.JavaScript['sc3_Out'] = function(block) {
   return blk_ugen_codegen(block, 'Out', ['BUS', 'CHANNELSARRAY'], false);
 }

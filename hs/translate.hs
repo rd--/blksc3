@@ -488,6 +488,7 @@ blk_help =
   ,"LFNoise1.1", "LFNoise1.2"
   ,"LFSaw.1", "LFSaw.2"
   ,"Ln.1"
+  ,"LocalBuf.1"
   ,"LocalIn.1"
   ,"LocalOut.1"
   ,"MouseX.1"

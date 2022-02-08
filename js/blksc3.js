@@ -7,10 +7,16 @@ var blk_config;
 var blk_output_format;
 var blk_layouts;
 
+// c.f. https://github.com/google/blockly/issues/3921 and https://groups.google.com/g/blockly/c/GC5TsBUVVbE/
 function blk_display_scrollbars(showScrollbars) {
     var displayValue = showScrollbars ? '' : 'none';
     blk_workspace.scrollbar.vScroll.svgGroup_.style.display = displayValue;
     blk_workspace.scrollbar.hScroll.svgGroup_.style.display = displayValue;
+}
+
+function blk_toggle_scrollbars() {
+    var currentState = blk_workspace.scrollbar.vScroll.svgGroup_.style.display;
+    blk_display_scrollbars(currentState === 'none');
 }
 
 // Configure and inject Blockly given XML format toolbox definition.
