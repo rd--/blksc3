@@ -366,6 +366,12 @@ Blockly.JavaScript['sc3_GreyholeRaw'] = function(block) {
 Blockly.JavaScript['sc3_MoogLadder'] = function(block) {
   return blk_ugen_codegen(block, 'MoogLadder', ['IN', 'FFREQ', 'RES'], true);
 }
+Blockly.JavaScript['sc3_RBezier'] = function(block) {
+  return blk_ugen_codegen(block, 'RBezier', ['HALTAFTER', 'DX', 'FREQ', 'PHASE', 'PARAM'], true);
+}
+Blockly.JavaScript['sc3_RDX7'] = function(block) {
+  return blk_ugen_codegen(block, 'RDX7', ['BUFNUM', 'ON', 'OFF', 'DATA', 'VC', 'MNN', 'VEL', 'PW', 'MW', 'BC', 'FC'], true);
+}
 Blockly.JavaScript['sc3_TScramble'] = function(block) {
   return blk_ugen_codegen(block, 'TScramble', ['TRIGGER', 'INPUTS'], true);
 }

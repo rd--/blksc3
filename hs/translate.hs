@@ -501,6 +501,7 @@ blk_help =
   ,"PMOsc.1", "PMOsc.2", "PMOsc.3", "PMOsc.4"
   ,"Pulse.1"
   ,"PulseCount.1"
+  ,"RDX7.1"
   ,"Ringz.1"
   ,"RingzBank.1"
   ,"Saw.1"
