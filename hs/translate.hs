@@ -442,6 +442,7 @@ blk_graphs =
      ,"Tw 01","Tw 04","Tw 18"
      ,"Tw 40","Tw 41"
      ,"Tw 528187147543511041"])
+  ,("OR", ["Gong"])
   ,("PJ"
    ,["Forest Sounds"])
   ,("RD", ["Oscillator Cluster"])
