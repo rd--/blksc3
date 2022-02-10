@@ -1,5 +1,11 @@
 'use strict';
 
+/*
+        <input type="file" id="jsonInputFile" accept=".json" onchange="blk_read_input_json()" style="display:none">
+        <button id="jsonInputFileSelect" title="Select local .json file and load into workspace">Load Json</button>
+        <button title="Copy workspace Json to clipboard" onclick="navigator.clipboard.writeText(blk_get_json())">Copy Json</button>
+*/
+
 // Get .json serialization of workspace.
 function blk_get_json() {
     var obj = Blockly.serialization.workspaces.save(blk_workspace);

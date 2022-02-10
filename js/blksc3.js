@@ -5,7 +5,6 @@ var blk_xml;
 var blk_workspace;
 var blk_config;
 var blk_output_format;
-var blk_layouts;
 
 // c.f. https://github.com/google/blockly/issues/3921 and https://groups.google.com/g/blockly/c/GC5TsBUVVbE/
 function blk_display_scrollbars(showScrollbars) {
@@ -122,11 +121,14 @@ function blk_pre() {
 }
 
 // Initialisation function, to be called on document load.
-function blk_init(outputFormat, initMouse) {
+function blk_init(outputFormat, initMouse, withUiCtl) {
     blk_output_format = outputFormat;
     blk_xml_input_init();
     blk_layout_menu_init();
     sc3_ui_init(true, true, true, '.xml', 'blksc3UserPrograms/xml', blk_load_help_graph, initMouse);
+    if(withUiCtl) {
+        load_utf8_and_then('html/ui-ctl.html', set_inner_html_of('uiCtlContainer'));
+    }
 }
 
 // Convert .md text to .html

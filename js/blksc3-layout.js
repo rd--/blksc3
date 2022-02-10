@@ -1,5 +1,7 @@
 'use strict';
 
+var blk_layouts;
+
 // Set properties given layout configuration name.
 function blk_set_layout(configName) {
     if(configName) {
