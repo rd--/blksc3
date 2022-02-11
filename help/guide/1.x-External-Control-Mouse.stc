@@ -1,0 +1,15 @@
+//---- notes.md
+## External Control, Mouse
+
+SuperCollider includes three unit generators to read the mouse state as a control signal, _MouseX_, _MouseY_ and _MouseButton_.
+
+These unit generators do not work in the web assembly variant of the SuperCollider synthesiser.
+Instead the mouse controls are implemented in terms of _Pointer_ pseudo unit-generators.
+
+The Pointer input area is restricted to the _blksc3_ page, not the screen as a whole, and the update rate is slower than in the ordinary case.
+
+The Pointer update rate is a function of the audio block size set when the synthesiser is started.
+The default value is _2048_ and there is a _Block Size_ entry  in the ☰ menu to set this value.
+
+Smaller block sizes result in better latency for external controls, including the mouse.
+However the synthesiser is more susceptible to interruption from other tasks.
