@@ -91,7 +91,7 @@ ws_osc_to_udp_osc opt@(ws_host, ws_port, _, _) = Ws.runServer ws_host ws_port (w
 
 blk_gen :: IO ()
 blk_gen = do
-  let lst = sort (concat (map (\(_,_,u) -> u) Blockly.blk_dict))
+  let lst = sort (concat (map (\(_,_,u) -> u) Blockly.blk_dict_elem))
       u_seq = filter (\u -> Db.ugen_name u `elem` lst) Db.ugen_db
       p_seq = filter (\p -> Db.pseudo_ugen_name p `elem` lst) Db.pseudo_ugen_db
       dir = "/home/rohan/sw/blksc3/"
@@ -99,7 +99,7 @@ blk_gen = do
       gen_json = "[\n" ++ (intercalate "    ,\n" (map Blockly.u_blk_dfn u_seq ++ map Blockly.p_blk_dfn p_seq)) ++ "]"
   writeFile (dir ++ "js/blksc3-gen-ugen.js") gen_js
   writeFile (dir ++ "json/blksc3-ugen.json") gen_json
-  putStrLn $ unlines $ map Blockly.blk_tool_set Blockly.blk_dict
+  putStrLn $ unlines $ map Blockly.blk_tool_cat Blockly.blk_dict
 
 -- * Main
 
