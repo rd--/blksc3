@@ -71,7 +71,7 @@
     ,
     {
         "type": "sc3_BBandPass",
-        "message0": "BBandPass %1 ∙ %2 ν %3 ↕ %4 × %5 + %6",
+        "message0": "B◫ %1 ∙ %2 ν %3 ↕ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -105,7 +105,7 @@
     ,
     {
         "type": "sc3_BLowPass",
-        "message0": "BLowPass %1 ∙ %2 ν %3 ¹⁄𝑄 %4 × %5 + %6",
+        "message0": "B⬔ %1 ∙ %2 ν %3 ¹⁄𝑄 %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -139,7 +139,7 @@
     ,
     {
         "type": "sc3_BPZ2",
-        "message0": "BPZ2 %1 ∙ %2 × %3 + %4",
+        "message0": "◫𝑧₂ %1 ∙ %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -230,6 +230,25 @@
         "colour": 60,
         "tooltip": "BufFrames(bufnum): Current number of frames allocated in the buffer.",
         "helpUrl": "https://doc.sccode.org/Classes/BufFrames.html"
+    }
+    ,
+    {
+        "type": "sc3_BufRd",
+        "message0": "BufRd %1 # %2 ⛁ %3 ϕ %4 ↻ %5 interpolation %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "LOOP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INTERPOLATION", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "BufRd(numChan, bufnum, phase, loop, interpolation): Buffer reading oscillator.",
+        "helpUrl": "https://doc.sccode.org/Classes/BufRd.html"
     }
     ,
     {
@@ -777,7 +796,7 @@
     ,
     {
         "type": "sc3_LFDNoise1",
-        "message0": "LFDNoise1 %1 ν %2 × %3 + %4",
+        "message0": "␊D⍰₁ %1 ν %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -792,7 +811,7 @@
     ,
     {
         "type": "sc3_LFDNoise3",
-        "message0": "LFDNoise3 %1 ν %2 × %3 + %4",
+        "message0": "␊D⍰₃ %1 ν %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1284,7 +1303,7 @@
     ,
     {
         "type": "sc3_NRand",
-        "message0": "NRand %1 ⌊ %2 ⌉ %3 n %4 × %5 + %6",
+        "message0": "𝑁⚁ %1 ⌊ %2 ⌉ %3 n %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -1787,7 +1806,7 @@
     ,
     {
         "type": "sc3_Stepper",
-        "message0": "Stepper %1 ⤴ %2 ↻ %3 min %4 max %5 step %6 resetval %7 × %8 + %9",
+        "message0": "Stepper %1 ⤴ %2 ↻ %3 ⌈ %4 ⌊ %5 step %6 ↻ %7 × %8 + %9",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -2010,7 +2029,7 @@
     ,
     {
         "type": "sc3_ZeroCrossing",
-        "message0": "ZeroCrossing %1 ∙ %2 × %3 + %4",
+        "message0": "⌀ %1 ∙ %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -2109,7 +2128,7 @@
     ,
     {
         "type": "sc3_DustRange",
-        "message0": "DustRange %1 iotMin %2 iotMax %3 × %4 + %5",
+        "message0": "⢅↔ %1 iotMin %2 iotMax %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IOTMIN", "check": ["Number", "Array", "UGen", "Boolean"]},

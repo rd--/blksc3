@@ -507,7 +507,7 @@ blk_help =
   ,"Saw.1"
   ,"Seq.1", "Seq.2"
   ,"SinOsc.1", "SinOsc.2", "SinOsc.3"
-  ,"Stepper.1", "Stepper.2"
+  ,"Stepper.1", "Stepper.2", "Stepper.3"
   ,"Sw.1", "Sw.2"
   ,"TChoose.1", "TChoose.2"
   ,"TRand.1", "TRand.2"

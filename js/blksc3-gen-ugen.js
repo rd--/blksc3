@@ -42,6 +42,9 @@ Blockly.JavaScript['sc3_BrownNoise'] = function(block) {
 Blockly.JavaScript['sc3_BufFrames'] = function(block) {
   return blk_ugen_codegen(block, 'BufFrames', ['BUFNUM'], true);
 }
+Blockly.JavaScript['sc3_BufRd'] = function(block) {
+  return blk_ugen_codegen(block, 'BufRd', ['NUMCHANNELS', 'BUFNUM', 'PHASE', 'LOOP', 'INTERPOLATION'], true);
+}
 Blockly.JavaScript['sc3_Clip'] = function(block) {
   return blk_ugen_codegen(block, 'Clip', ['IN', 'LO', 'HI'], true);
 }
