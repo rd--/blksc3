@@ -56,20 +56,18 @@ function blk_get_xml() {
     return Blockly.Xml.domToPrettyText(xml);
 }
 
-// Setup workspace on loading a new program.  Reset to unit scale, center blocks and optionally play graph.
-function blk_on_load(autoPlay) {
+// Setup workspace on loading a new program.  Reset to unit scale and center blocks.
+function blk_on_load() {
     blk_workspace.setScale(1);
     blk_workspace.scrollCenter();
-    if(autoPlay) {
-        blk_send_stc('play');
-    }
 }
 
-// Load program from .xml definition.
-function blk_load_xml(xml_text, autoPlay) {
-    var xml = Blockly.Xml.textToDom(xml_text);
+// Load program from .xml definition, clears any existing blocks.
+function blk_load_xml(xmlText) {
+    var xml = Blockly.Xml.textToDom(xmlText);
+    blk_workspace.clear();
     Blockly.Xml.domToWorkspace(xml, blk_workspace);
-    blk_on_load(autoPlay);
+    blk_on_load();
 }
 
 // Initialise .xml file selector.
@@ -97,15 +95,10 @@ function blk_fetch_xml(xmlUrl, autoPlay) {
 
 // Clear workspace, construct URL from arguments, fetch and load graph.
 function blk_load_help_graph(graphDir, graphName, fileType) {
-    var auto_play = false;
     var graphUrl = 'help/' + graphDir + '/' + graphName + fileType;
     var graphStc = 'help/' + graphDir + '/' + graphName + '.stc';
     console.log(graphName);
-    blk_workspace.clear();
-    if(auto_play) {
-        blk_sc3_reset();
-    }
-    blk_fetch_xml(graphUrl, auto_play);
+    blk_fetch_xml(graphUrl, false);
     blk_load_notes_and_then(graphStc, set_inner_html_of('blkNotes'));
 }
 
@@ -160,10 +153,5 @@ var editor_get_data = blk_get_xml;
 
 var editor_get_js_notation = blk_get_stc_code;
 
-function editor_set_data(programData) {
-    var xml = Blockly.Xml.textToDom(programData);
-    var autoPlay = false;
-    blk_workspace.clear();
-    Blockly.Xml.domToWorkspace(xml, blk_workspace);
-    blk_on_load(autoPlay);
-}
+var editor_set_data = blk_load_xml;
+

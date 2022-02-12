@@ -12,3 +12,6 @@ Initially both languages are generated using the Blockly.JavaScript generator.
 
 Names are equal except in the case of binary operators,
 where .stc has infix operator names such as _+_ .js has functions names such as _add_.
+
+Operations that have variants for Websocket and Wasm forms should have equal names.
+Play, Reset.

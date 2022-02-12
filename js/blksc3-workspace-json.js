@@ -13,10 +13,10 @@ function blk_get_json() {
 }
 
 // Load program from .json definition.
-function blk_load_json(json_text, autoPlay) {
+function blk_load_json(json_text) {
     var obj = JSON.parse(json_text);
     Blockly.serialization.workspaces.load(obj, blk_workspace);
-    blk_on_load(autoPlay);
+    blk_on_load();
 }
 
 // Initialise .json file selector.
@@ -38,6 +38,6 @@ function blk_read_input_json() {
 }
 
 // Read and load .json format program from URL.
-function blk_fetch_json(jsonUrl, autoPlay) {
-    fetch_url_and_then(url_append_timestamp(xmlUrl), 'json', jsonData => blk_load_json(jsonData, autoPlay));
+function blk_fetch_json(jsonUrl) {
+    fetch_url_and_then(url_append_timestamp(xmlUrl), 'json', jsonData => blk_load_json(jsonData));
 }
