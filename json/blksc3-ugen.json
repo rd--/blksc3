@@ -779,6 +779,21 @@
     }
     ,
     {
+        "type": "sc3_LFClipNoise",
+        "message0": "LFClipNoise %1 ν %2 × %3 + %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "LFClipNoise(freq): Clipped noise",
+        "helpUrl": "https://doc.sccode.org/Classes/LFClipNoise.html"
+    }
+    ,
+    {
         "type": "sc3_LFCub",
         "message0": "LFCub %1 ν %2 ϕ %3 × %4 + %5",
         "args0": [
@@ -2043,6 +2058,29 @@
     }
     ,
     {
+        "type": "sc3_DWGPluckedStiff",
+        "message0": "DWGPluckedStiff %1 ν %2 × %3 ⎇ %4 ⌖ %5 c1 %6 c3 %7 inp %8 release %9 fB %10 × %11 + %12",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "AMP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "GATE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "POS", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "C1", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "C3", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "INP", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "RELEASE", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FB", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "DWGPluckedStiff(freq, amp, gate, pos, c1, c3, inp, release, fB): Plucked physical model.",
+        "helpUrl": "https://doc.sccode.org/Classes/DWGPluckedStiff.html"
+    }
+    ,
+    {
         "type": "sc3_GreyholeRaw",
         "message0": "GreyholeRaw %1 ∙₁ %2 ∙₂ %3 ⊗ %4 ⎵ %5 diffusion %6 ↻ %7 moddepth %8 ν𝑚 %9 size %10 × %11 + %12",
         "args0": [
@@ -2083,8 +2121,8 @@
     }
     ,
     {
-        "type": "sc3_RBezier",
-        "message0": "RBezier %1 haltAfter %2 dx %3 ν %4 ϕ %5 param %6 × %7 + %8",
+        "type": "sc3_Bezier",
+        "message0": "Bezier %1 haltAfter %2 dx %3 ν %4 ϕ %5 param %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "HALTAFTER", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -2097,13 +2135,13 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "RBezier(haltAfter, dx, freq, phase, param): (Undocumented class)",
-        "helpUrl": "https://doc.sccode.org/Classes/RBezier.html"
+        "tooltip": "Bezier(haltAfter, dx, freq, phase, param): (Undocumented class)",
+        "helpUrl": "https://doc.sccode.org/Classes/Bezier.html"
     }
     ,
     {
-        "type": "sc3_RDX7",
-        "message0": "RDX7 %1 ⛁ %2 on %3 off %4 data %5 vc %6 mnn %7 vel %8 pw %9 mw %10 bc %11 fc %12 × %13 + %14",
+        "type": "sc3_DX7",
+        "message0": "DX7 %1 ⛁ %2 on %3 off %4 data %5 vc %6 mnn %7 vel %8 pw %9 mw %10 bc %11 fc %12 × %13 + %14",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean"]},
@@ -2122,8 +2160,8 @@
         ],
         "output": "UGen",
         "colour": 210,
-        "tooltip": "RDX7(bufnum, on, off, data, vc, mnn, vel, pw, mw, bc, fc): (Undocumented class)",
-        "helpUrl": "https://doc.sccode.org/Classes/RDX7.html"
+        "tooltip": "DX7(bufnum, on, off, data, vc, mnn, vel, pw, mw, bc, fc): (Undocumented class)",
+        "helpUrl": "https://doc.sccode.org/Classes/DX7.html"
     }
     ,
     {

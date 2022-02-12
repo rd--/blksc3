@@ -135,6 +135,9 @@ Blockly.JavaScript['sc3_Impulse'] = function(block) {
 Blockly.JavaScript['sc3_KeyState'] = function(block) {
   return blk_ugen_codegen(block, 'KeyState', ['KEYCODE', 'MINVAL', 'MAXVAL', 'LAG'], true);
 }
+Blockly.JavaScript['sc3_LFClipNoise'] = function(block) {
+  return blk_ugen_codegen(block, 'LFClipNoise', ['FREQ'], true);
+}
 Blockly.JavaScript['sc3_LFCub'] = function(block) {
   return blk_ugen_codegen(block, 'LFCub', ['FREQ', 'IPHASE'], true);
 }
@@ -363,17 +366,20 @@ Blockly.JavaScript['sc3_XFade2'] = function(block) {
 Blockly.JavaScript['sc3_ZeroCrossing'] = function(block) {
   return blk_ugen_codegen(block, 'ZeroCrossing', ['IN'], true);
 }
+Blockly.JavaScript['sc3_DWGPluckedStiff'] = function(block) {
+  return blk_ugen_codegen(block, 'DWGPluckedStiff', ['FREQ', 'AMP', 'GATE', 'POS', 'C1', 'C3', 'INP', 'RELEASE', 'FB'], true);
+}
 Blockly.JavaScript['sc3_GreyholeRaw'] = function(block) {
   return blk_ugen_codegen(block, 'GreyholeRaw', ['IN1', 'IN2', 'DAMPING', 'DELAYTIME', 'DIFFUSION', 'FEEDBACK', 'MODDEPTH', 'MODFREQ', 'SIZE'], true);
 }
 Blockly.JavaScript['sc3_MoogLadder'] = function(block) {
   return blk_ugen_codegen(block, 'MoogLadder', ['IN', 'FFREQ', 'RES'], true);
 }
-Blockly.JavaScript['sc3_RBezier'] = function(block) {
-  return blk_ugen_codegen(block, 'RBezier', ['HALTAFTER', 'DX', 'FREQ', 'PHASE', 'PARAM'], true);
+Blockly.JavaScript['sc3_Bezier'] = function(block) {
+  return blk_ugen_codegen(block, 'Bezier', ['HALTAFTER', 'DX', 'FREQ', 'PHASE', 'PARAM'], true);
 }
-Blockly.JavaScript['sc3_RDX7'] = function(block) {
-  return blk_ugen_codegen(block, 'RDX7', ['BUFNUM', 'ON', 'OFF', 'DATA', 'VC', 'MNN', 'VEL', 'PW', 'MW', 'BC', 'FC'], true);
+Blockly.JavaScript['sc3_DX7'] = function(block) {
+  return blk_ugen_codegen(block, 'DX7', ['BUFNUM', 'ON', 'OFF', 'DATA', 'VC', 'MNN', 'VEL', 'PW', 'MW', 'BC', 'FC'], true);
 }
 Blockly.JavaScript['sc3_DustRange'] = function(block) {
   return blk_ugen_codegen(block, 'DustRange', ['IOTMIN', 'IOTMAX'], true);
