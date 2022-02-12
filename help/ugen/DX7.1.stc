@@ -1,4 +1,4 @@
-// rdx7 ; data at local buffer
+// dx7 ; data at local buffer
 var voiceData = [
     [25, 21, 98, 38, 99,  0, 99,  0, 36, 17, 87,  2,  1, 0, 0, 0, 59,  0,  1, 1, 8],
     [66, 69, 60, 35,  0,  0, 98,  0,  0,  0,  4,  0,  0, 0, 0, 1, 90,  0,  1, 0, 8],
@@ -11,12 +11,12 @@ var voiceData = [
 var voiceFunc = {
     var tr = Dust(1 / 32).kr;
     var buf = voiceData.concatenation.asLocalBuf;
-    var dx7 = RDX7(buf, tr, 0, 0, 0, TRand(48, 72, tr), TRand(0.1, 0.6, tr), 0, 0, 0, 0);
+    var dx7 = DX7(buf, tr, 0, 0, 0, TRand(48, 72, tr), TRand(0.1, 0.6, tr), 0, 0, 0, 0);
     Pan2(dx7, TRand(-1, 1, tr), 1)
 };
 voiceFunc.dup(32).sum * 0.25
 
 //---- notes.md
-_RDX7_ requires _sc3-rdu_.
+_DX7_ requires _sc3-rdu_.
 
 A SuperCollider form of the Raph Levien / Pascal Gauthier implementation of the Yamaha DX7 architecture.
