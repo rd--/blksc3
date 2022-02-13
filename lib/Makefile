@@ -17,6 +17,9 @@ clone-commonmarkjs:
 fetch-commonmarkjs:
 	(cd commonmark.js ; git pull)
 
+build-commonmarkjs:
+	(cd commonmark.js ; npm install)
+
 fetch-commonmarkjs-dist:
 	(cd commonmark.js ; mkdir -p dist ; cd dist ; rm -f commonmark.js ; wget https://unpkg.com/commonmark/dist/commonmark.js)
 
