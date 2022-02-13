@@ -21,7 +21,7 @@ function blk_toggle_scrollbars() {
 // Configure and inject Blockly given XML format toolbox definition.
 function blk_inject_with_xml_toolbox(xml_toolbox) {
     blk_config = {
-        media: 'media/blockly/',
+        media: 'lib/blockly/media/',
         sounds: false,
         toolbox: xml_toolbox,
         rtl: false,
