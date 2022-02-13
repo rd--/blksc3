@@ -1,6 +1,10 @@
 all:
 	echo "blksc3/lib"
 
+clone-all: clone-blockly clone-commonmarkjs clone-jssc3
+
+fetch-all: fetch-blockly fetch-commonmarkjs fetch-jssc3 fetch-commonmarkjs-dist
+
 clone-blockly:
 	git clone https://github.com/google/blockly
 
@@ -22,13 +26,10 @@ clone-jssc3:
 fetch-jssc3:
 	(cd jssc3 ; git pull)
 
-# however, osc.js is a dependency of jssc3, so blksc3 uses lib/jssc3/lib/osc.js/
+# osc.js is a dependency of jssc3, so blksc3 uses lib/jssc3/lib/osc.js/ and a local osc.js isn't required
+
 clone-oscjs:
 	git clone https://github.com/colinbdclark/osc.js/
 
 fetch-oscjs:
 	(cd osc.js ; git pull)
-
-clone-all: clone-blockly clone-commonmarkjs clone-jssc3 clone-oscjs
-
-fetch-all: fetch-blockly fetch-commonmarkjs fetch-jssc3 fetch-oscjs fetch-commonmarkjs-dist
