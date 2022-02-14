@@ -6,7 +6,11 @@ A [Block](https://developers.google.com/blockly) editor for the
 
 [![](http://rohandrape.net/sw/blksc3/png/whyblksc3.png)](http://rohandrape.net/sw/blksc3/png/whyblksc3.png)
 
-Online editor: [blksc3.rohandrape.net](http://blksc3.rohandrape.net/)
+Online editor:
+[blksc3.rohandrape.net](http://blksc3.rohandrape.net/)
+
+Requires:
+[jssc3](http://rohandrape.net/?t=jssc3)
 
 Tested with:
 
@@ -62,11 +66,11 @@ John Steinmetz.
 In M. Guzdial (ed.), _Squeak : Open Personal Computing for Multimedia_.
 [PDF](http://coweb.cc.gatech.edu:8888/squeakbook/uploads/steinmetz.pdf)
 
-© [rohan drape](http://rohandrape.net/), 2021-2022, [gpl](http://gnu.org/copyleft/)
+© [Rohan Drape](http://rohandrape.net/), 2021-2022, [Gpl](http://gnu.org/copyleft/)
 
 * * *
 
-[HTML](https://blksc3.rohandrape.net)
-[VIDEO](https://rohandrape.net/?t=blksc3&e=md/video.md)
-[CLI](https://rohandrape.net/?t=blksc3&e=md/blksct3.md)
-[BLOCKLY](https://developers.google.com/blockly)
+[Html](https://blksc3.rohandrape.net)
+[Video](https://rohandrape.net/?t=blksc3&e=md/video.md)
+[Cli](https://rohandrape.net/?t=blksc3&e=md/blksct3.md)
+[Blockly](https://developers.google.com/blockly)
