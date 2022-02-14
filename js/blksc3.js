@@ -99,7 +99,7 @@ function blk_load_help_graph(graphDir, graphName, fileType) {
     var graphStc = 'help/' + graphDir + '/' + graphName + '.stc';
     console.log(graphName);
     blk_fetch_xml(graphUrl, false);
-    blk_load_notes_and_then(graphStc, set_inner_html_of('blkNotes'));
+    blk_load_notes_and_then(graphStc, setter_for_inner_html_of('blkNotes'));
 }
 
 function blk_pre() {
@@ -114,13 +114,13 @@ function blk_pre() {
 }
 
 // Initialisation function, to be called on document load.
-function blk_init(outputFormat, initMouse, withUiCtl) {
+function blk_init(outputFormat, initMouse, blockSize, withUiCtl) {
     blk_output_format = outputFormat;
     blk_xml_input_init();
     blk_layout_menu_init();
-    sc3_ui_init(true, true, true, '.xml', 'blksc3UserPrograms/xml', blk_load_help_graph, initMouse);
+    sc3_ui_init(true, true, true, '.xml', 'blksc3UserPrograms/xml', blk_load_help_graph, initMouse, blockSize);
     if(withUiCtl) {
-        load_utf8_and_then('html/ui-ctl.html', set_inner_html_of('uiCtlContainer'));
+        load_utf8_and_then('html/ui-ctl.html', setter_for_inner_html_of('uiCtlContainer'));
     }
 }
 
@@ -151,10 +151,8 @@ function blk_load_notes_and_then(fileName, processFunc) {
 
 var editor_get_data = blk_get_xml;
 
-var editor_get_js_notation = blk_get_stc_code;
-
 var editor_set_data = blk_load_xml;
 
 function editor_get_js_notation_and_then(proc) {
-    return proc(editor_get_js_notation());
+    return proc(blk_get_stc_code());
 }

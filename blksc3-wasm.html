@@ -14,6 +14,9 @@
     <script src="lib/jssc3/lib/osc.js/dist/osc-browser.js"></script>
     <script src="lib/jssc3/js/sc3-array.js"></script>
     <script src="lib/jssc3/js/sc3-dom.js"></script>
+    <script src="lib/jssc3/js/sc3-error.js"></script>
+    <script src="lib/jssc3/js/sc3-io.js"></script>
+    <script src="lib/jssc3/js/sc3-localstorage.js"></script>
     <script src="lib/jssc3/js/sc3-number.js"></script>
     <script src="lib/jssc3/js/sc3-null.js"></script>
     <script src="lib/jssc3/js/sc3-object.js"></script>
@@ -39,7 +42,8 @@
     <script>
 blk_pre();
 window.onload = function() {
-    blk_init('.js', true, false);
+    blk_init('.js', true, 4096, false);
+    sc3_wasm_init();
 };
     </script>
   </head>
