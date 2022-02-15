@@ -61,17 +61,15 @@ block_xml_for nm p d =
   let l = concatMap named_value_xml (zip p d)
   in printf "<block type='sc3_%s' inline='true'>%s</block>" nm l
 
-{- | Some names are handled specially.
-
-1. OverlapTexture -> OverlapTexture
-2. Voicer -> Voicer
-3. VoiceWriter -> VoiceWriter
+{- | Some names are handled specially: OverlapTexture, SoundFileBufferCache, Voicer, VoiceWriter
 -}
 implicit_send_xml :: String -> [String] -> String
 implicit_send_xml nm l =
   case (nm, l) of
     ("OverlapTexture", [_, _, _, _]) ->
       block_xml_for "OverlapTexture" ["PROC","SUSTAINTIME","TRANSITIONTIME","OVERLAP"] l
+    ("SoundFileBufferCache", [_, _]) ->
+      block_xml_for "SoundFileBufferCache" ["SOUNDFILEID", "NUMBEROFCHANNELS"] l
     ("Voicer", [_, _]) ->
       block_xml_for "Voicer" ["COUNT","PROC"] l
     ("VoiceWriter", [_, _]) ->
@@ -472,6 +470,7 @@ blk_help =
   ,"ArrayFill.1"
   ,"Balance2.1", "Balance2.2"
   ,"Blip.1", "Blip.2"
+  ,"BufRd.1"
   ,"Cc.1"
   ,"CombC.1", "CombC.2"
   ,"Comment.1"

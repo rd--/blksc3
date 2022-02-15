@@ -33,12 +33,16 @@ function blk_implicit_method_codegen(block, name, argNameArray) {
     return [name + '(' + argArray.join(', ') + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
 }
 
+Blockly.JavaScript['sc3_MulAdd'] = function(block) {
+    return blk_implicit_method_codegen(block, 'MulAdd', ['IN', 'MUL', 'ADD']);
+};
+
 Blockly.JavaScript['sc3_OverlapTexture'] = function(block) {
     return blk_implicit_method_codegen(block, 'OverlapTexture', ['PROC', 'SUSTAINTIME', 'TRANSITIONTIME', 'OVERLAP']);
 };
 
-Blockly.JavaScript['sc3_MulAdd'] = function(block) {
-    return blk_implicit_method_codegen(block, 'MulAdd', ['IN', 'MUL', 'ADD']);
+Blockly.JavaScript['sc3_SoundFileBufferCache'] = function(block) {
+    return blk_implicit_method_codegen(block, 'SoundFileBufferCache', ['SOUNDFILEID', 'NUMBEROFCHANNELS']);
 };
 
 Blockly.JavaScript['sc3_Voicer'] = function(block) {

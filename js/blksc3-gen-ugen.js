@@ -39,8 +39,14 @@ Blockly.JavaScript['sc3_Blip'] = function(block) {
 Blockly.JavaScript['sc3_BrownNoise'] = function(block) {
   return blk_ugen_codegen(block, 'BrownNoise', [], true);
 }
+Blockly.JavaScript['sc3_BufDur'] = function(block) {
+  return blk_ugen_codegen(block, 'BufDur', ['BUFNUM'], true);
+}
 Blockly.JavaScript['sc3_BufFrames'] = function(block) {
   return blk_ugen_codegen(block, 'BufFrames', ['BUFNUM'], true);
+}
+Blockly.JavaScript['sc3_BufRateScale'] = function(block) {
+  return blk_ugen_codegen(block, 'BufRateScale', ['BUFNUM'], true);
 }
 Blockly.JavaScript['sc3_BufRd'] = function(block) {
   return blk_ugen_codegen(block, 'BufRd', ['NUMCHANNELS', 'BUFNUM', 'PHASE', 'LOOP', 'INTERPOLATION'], true);
