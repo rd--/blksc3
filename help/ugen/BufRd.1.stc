@@ -1,10 +1,33 @@
 // BufRd ; phasor as phase input
 var nc = 2;
-var buf = SoundFileBufferCache("harp-a4.flac", nc);
+var buf = SoundFileBufferCache("harp-a4", nc);
 {
-    var tr = Impulse(2 ** Rand(1, 3) / BufDur(buf), 0).kr;
+    var tr = 2 / Impulse(2 ** Rand(1, 3) / BufDur(buf), 0).kr;
     var mnn = TIRand(-2, 0, tr) * 12 + TChoose(tr, [0, 2.1, 4.9, 7, 9.2]);
     var rt = mnn.midiRatio * BufRateScale(buf);
     var ph = Phasor(tr, rt, 0, BufFrames(buf), 0);
     BufRd(nc, buf, ph, 0, 2)
 }.dup(5).sum * 0.25
+
+//---- notes.md
+_SoundFileBufferCache_ returns a _Buffer_ object.
+Buffers are arrays of floating point values with an associated channel count, frame count, and sample rate.
+The buffer returned by SoundFileBufferCache will hold the data stored in the named sound file.
+
+SoundFileBufferCache requires a _number of channels_ argument, and this must match the number of channels stored in the named file.
+
+The file name is either a key for an entry in the _sound file dictionary_ or a
+[Url](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL).
+In this program _harp-a4_ is a key in the default dictionary.
+It resolves to the Url
+
+>  <https://rohandrape.net/pub/jssc3/flac/harp-a4.flac>
+
+The first time a file is requested the system will take an arbitrary amount of time to allocate and fill the buffer.
+Subsequent requests for the same file return the cached buffer.
+
+The behaviour of the program before the buffer is ready depends upon the behaviour of the unit generators accessing the buffer.
+
+The _Cache_ command _evaluates_ the program,
+and therefore starts the process of fetching the sound file and preparing the buffer,
+but does not _Play_ the program.
