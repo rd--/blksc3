@@ -41,8 +41,8 @@ Blockly.JavaScript['sc3_OverlapTexture'] = function(block) {
     return blk_implicit_method_codegen(block, 'OverlapTexture', ['PROC', 'SUSTAINTIME', 'TRANSITIONTIME', 'OVERLAP']);
 };
 
-Blockly.JavaScript['sc3_SoundFileBufferCache'] = function(block) {
-    return blk_implicit_method_codegen(block, 'SoundFileBufferCache', ['SOUNDFILEID', 'NUMBEROFCHANNELS']);
+Blockly.JavaScript['sc3_SoundFileBuffer'] = function(block) {
+    return blk_implicit_method_codegen(block, 'SoundFileBuffer', ['SOUNDFILEID', 'NUMBEROFCHANNELS']);
 };
 
 Blockly.JavaScript['sc3_Voicer'] = function(block) {
