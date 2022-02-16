@@ -4,13 +4,13 @@ blksc3
 A [Block](https://developers.google.com/blockly) editor for the
 [SuperCollider](https://www.audiosynth.com/) synthesiser.
 
-[![](http://rohandrape.net/sw/blksc3/png/whyblksc3.png)](http://rohandrape.net/sw/blksc3/png/whyblksc3.png)
+[![](https://rohandrape.net/sw/blksc3/png/whyblksc3.png)](https://rohandrape.net/sw/blksc3/png/whyblksc3.png)
 
 Online editor:
-[blksc3.rohandrape.net](http://blksc3.rohandrape.net/)
+[blksc3.rohandrape.net](https://blksc3.rohandrape.net/)
 
 Requires:
-[jssc3](http://rohandrape.net/?t=jssc3)
+[jssc3](https://rohandrape.net/?t=jssc3)
 
 Tested with:
 
