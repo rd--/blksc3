@@ -390,6 +390,21 @@ Blockly.JavaScript['sc3_DX7'] = function(block) {
 Blockly.JavaScript['sc3_DustRange'] = function(block) {
   return blk_ugen_codegen(block, 'DustRange', ['IOTMIN', 'IOTMAX'], true);
 }
+Blockly.JavaScript['sc3_Freezer'] = function(block) {
+  return blk_ugen_codegen(block, 'Freezer', ['BUFNUM', 'LEFT', 'RIGHT', 'GAIN', 'INCREMENT', 'INCREMENTOFFSET', 'INCREMENTRANDOM', 'RIGHTRANDOM', 'SYNCPHASETRIGGER', 'RANDOMIZEPHASETRIGGER', 'NUMBEROFLOOPS'], true);
+}
+Blockly.JavaScript['sc3_SvfBp'] = function(block) {
+  return blk_ugen_codegen(block, 'SvfBp', ['IN', 'FREQ', 'Q'], true);
+}
+Blockly.JavaScript['sc3_SvfHp'] = function(block) {
+  return blk_ugen_codegen(block, 'SvfHp', ['IN', 'FREQ', 'Q'], true);
+}
+Blockly.JavaScript['sc3_SvfLp'] = function(block) {
+  return blk_ugen_codegen(block, 'SvfLp', ['IN', 'FREQ', 'Q'], true);
+}
+Blockly.JavaScript['sc3_ShufflerB'] = function(block) {
+  return blk_ugen_codegen(block, 'ShufflerB', ['BUFNUM', 'READLOCATIONMINIMA', 'READLOCATIONMAXIMA', 'READINCREMENTMINIMA', 'READINCREMENTMAXIMA', 'DURATIONMINIMA', 'DURATIONMAXIMA', 'ENVELOPEAMPLITUDEMINIMA', 'ENVELOPEAMPLITUDEMAXIMA', 'ENVELOPESHAPEMINIMA', 'ENVELOPESHAPEMAXIMA', 'ENVELOPESKEWMINIMA', 'ENVELOPESKEWMAXIMA', 'STEREOLOCATIONMINIMA', 'STEREOLOCATIONMAXIMA', 'INTEROFFSETTIMEMINIMA', 'INTEROFFSETTIMEMAXIMA', 'FTABLEREADLOCATIONINCREMENT', 'READINCREMENTQUANTA', 'INTEROFFSETTIMEQUANTA'], true);
+}
 Blockly.JavaScript['sc3_TScramble'] = function(block) {
   return blk_ugen_codegen(block, 'TScramble', ['TRIGGER', 'INPUTS'], true);
 }

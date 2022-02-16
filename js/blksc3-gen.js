@@ -56,6 +56,8 @@ Blockly.JavaScript['sc3_VoiceWriter'] = function(block) {
 // Procedure code generator.
 function blk_proc_codegen(block, numArg, hasStm) {
     var var_value = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC) || 'x';
+    var var1_value = Blockly.JavaScript.valueToCode(block, 'VAR1', Blockly.JavaScript.ORDER_ATOMIC) || 'x';
+    var var2_value = Blockly.JavaScript.valueToCode(block, 'VAR2', Blockly.JavaScript.ORDER_ATOMIC) || 'y';
     var stm_code = Blockly.JavaScript.statementToCode(block, 'STATEMENTS') || '';
     var ret_value = Blockly.JavaScript.valueToCode(block, 'RETURN', Blockly.JavaScript.ORDER_ATOMIC) || '0';
     var ofc = Blockly.JavaScript.ORDER_FUNCTION_CALL;
@@ -68,16 +70,22 @@ function blk_proc_codegen(block, numArg, hasStm) {
             return ['{ ' + stm_code + ret_value + ' }', ofc];
         } else if(numArg === 1 && hasStm === true) {
             return ['{ arg ' + var_value + '_; ' + var_value + ' = ' + var_value + '_; ' + stm_code + ret_value + ' }', ofc];
+        } else {
+            return console.error('blk_proc_codegen:stc', hasArg, hasStm);
         }
     } else if(blk_output_format === '.js') {
         if(numArg === 0 && hasStm === false) {
             return ['function() { return ' + ret_value + '; }', ofc];
         } else if(numArg === 1 && hasStm === false) {
             return ['function(' + var_value + '_) { var ' + var_value + ' = ' + var_value + '_; return ' + ret_value + '; }', ofc];
+        } else if(numArg === 2 && hasStm === false) {
+            return ['function(' + var1_value + '_, ' + var2_value + '_) { var ' + var1_value + ' = ' + var1_value + '_, ' + var2_value + ' = ' + var2_value + '_; return ' + ret_value + '; }', ofc];
         } else if(numArg === 0 && hasStm === true) {
             return ['function() { ' + stm_code + 'return ' + ret_value + '; }', ofc];
         } else if(numArg === 1 && hasStm === true) {
             return ['function(' + var_value + '_) { var ' + var_value + ' = ' + var_value + '_; ' + stm_code + 'return ' + ret_value + '; }', ofc];
+        } else {
+            return console.error('blk_proc_codegen:js', hasArg, hasStm);
         }
     } else {
         return console.error('blk_proc_codegen', blk_output_format, hasArg, hasStm);
@@ -100,6 +108,14 @@ Blockly.JavaScript['sc3_Proc1Stm'] = function(block) {
     return blk_proc_codegen(block, 1, true);
 };
 
+Blockly.JavaScript['sc3_Proc2'] = function(block) {
+    return blk_proc_codegen(block, 2, false);
+};
+
+Blockly.JavaScript['sc3_Proc2Stm'] = function(block) {
+    return blk_proc_codegen(block, 2, true);
+};
+
 // Method call code generator
 function blk_method_codegen(block, name, argNameArray) {
     var nilValue = blk_output_format === '.stc' ? 'nil' : 'null';
@@ -110,11 +126,14 @@ function blk_method_codegen(block, name, argNameArray) {
         case 2: return stc_is_binary_selector(name) ?
                 [argArray[0] + ' ' + name + ' ' + argArray[1], Blockly.JavaScript.ORDER_NONE] :
                 [argArray[0] + '.' + name + '(' + argArray[1] + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
+        default: console.error('blk_method_codegen:stc');
         }
     } else if(blk_output_format === '.js') {
         switch(argArray.length) {
         case 1: return [name + '(' + argArray[0] + ')', Blockly.JavaScript.ORDER_MEMBER];
         case 2: return [stc_binary_selector_from_operator(name) + '(' + argArray[0] + ', ' + argArray[1] + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
+        case 3: return [name + '(' + argArray[0] + ', ' + argArray[1] + ', ' + argArray[2] + ')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
+        default: console.error('blk_method_codegen:js');
         }
     } else {
         return console.error('blk_method_call_code', blk_output_format, name, argArray);
@@ -127,6 +146,10 @@ Blockly.JavaScript['sc3_Value0'] = function(block) {
 
 Blockly.JavaScript['sc3_Value1'] = function(block) {
     return blk_method_codegen(block, 'value', ['PROC', 'VALUE']);
+};
+
+Blockly.JavaScript['sc3_Value2'] = function(block) {
+    return blk_method_codegen(block, 'value', ['PROC', 'VALUE1', 'VALUE2']);
 };
 
 Blockly.JavaScript['sc3_ArrayFromTo'] = function(block) {

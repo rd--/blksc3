@@ -62,6 +62,8 @@ block_xml_for nm p d =
   in printf "<block type='sc3_%s' inline='true'>%s</block>" nm l
 
 {- | Some names are handled specially: OverlapTexture, SoundFileBuffer, Voicer, VoiceWriter
+
+> implicit_send_xml "SinOsc" ["440", "0"]
 -}
 implicit_send_xml :: String -> [String] -> String
 implicit_send_xml nm l =
@@ -167,6 +169,15 @@ keybinop_xml msg lhs rhs  =
          "<block type='sc3_%s' inline='true'><field name='OP'>%s</field><value name='LHS'>%s</value><value name='RHS'>%s</value></block>"
          ty (init msg) lhs rhs
 
+keyternaryop_xml :: String -> String -> String -> String -> String
+keyternaryop_xml msg p1 p2 p3  =
+  case msg of
+    "value:value:" ->
+      printf
+      "<block type='sc3_Value2' inline='true'><value name='PROC'>%s</value><value name='VALUE1'>%s</value><value name='VALUE2'>%s</value></block>"
+      p1 p2 p3
+    _ -> error "keyternaryop_xml?"
+
 var_decl :: [String] -> String
 var_decl v =
   if null v
@@ -222,20 +233,24 @@ proc_xml a _v e =
     ([], (s, r)) ->
       printf
       "<block type='sc3_Proc0Stm'><value name='STATEMENTS'>%s</value><value name='RETURN'>%s</value></block>"
-      (assign_seq_xml s)
-      (expr_xml r)
+      (assign_seq_xml s) (expr_xml r)
     ([a1], ([], r)) ->
       printf
       "<block type='sc3_Proc1' inline='true'><value name='VAR'>%s</value><value name='RETURN'>%s</value></block>"
-      (var_get a1)
-      (expr_xml r)
+      (var_get a1) (expr_xml r)
     ([a1], (s, r)) ->
       printf
       "<block type='sc3_Proc1Stm'><value name='VAR'>%s</value><value name='STATEMENTS'>%s</value><value name='RETURN'>%s</value></block>"
-      (var_get a1)
-      (assign_seq_xml s)
-      (expr_xml r)
-    _ -> error (show ("proc_xml: not 0 or 1 argument", a, e))
+      (var_get a1) (assign_seq_xml s) (expr_xml r)
+    ([a1, a2], ([], r)) ->
+      printf
+      "<block type='sc3_Proc2' inline='true'><value name='VAR1'>%s</value><value name='VAR2'>%s</value><value name='RETURN'>%s</value></block>"
+      (var_get a1) (var_get a2)  (expr_xml r)
+    ([a1, a2], (s, r)) ->
+      printf
+      "<block type='sc3_Proc2Stm'><value name='VAR1'>%s</value><value name='VAR2'>%s</value><value name='STATEMENTS'>%s</value><value name='RETURN'>%s</value></block>"
+      (var_get a1) (var_get a2) (assign_seq_xml s) (expr_xml r)
+    _ -> error (show ("proc_xml: not 0, 1 or 2 argument", a, e))
 
 comment_xml :: St.Comment -> String
 comment_xml c =
@@ -254,6 +269,7 @@ expr_xml e =
     Send r (Message (St.UnarySelector m) []) -> (if is_event_param m then event_param_xml else uop_xml) m (expr_xml r) -- 60.midicps
     Send lhs (Message (St.BinarySelector m) [rhs]) -> binop_xml m (expr_xml lhs) (expr_xml rhs) -- 1 + 2
     Send lhs (Message (St.KeywordSelector m) [rhs]) -> keybinop_xml m (expr_xml lhs) (expr_xml rhs) -- 1.max(2)
+    Send p1 (Message (St.KeywordSelector m) [p2, p3]) -> keyternaryop_xml m (expr_xml p1) (expr_xml p2) (expr_xml p3) -- 1.max(2)
     Lambda _ a (St.Temporaries v) e_seq -> proc_xml a v e_seq
     Init c _ s -> maybe "" comment_xml c ++ expr_seq_xml s
     _ -> error ("expr_xml: " ++ show e)
@@ -482,6 +498,7 @@ blk_help =
   ,"FBSineC.1"
   ,"Formant.1"
   ,"Formlet.1"
+  ,"Freezer.1"
   ,"FreqShift.1"
   ,"Gendy1.1"
   ,"Impulse.1", "Impulse.2", "Impulse.3"
