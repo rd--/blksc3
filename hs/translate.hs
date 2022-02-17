@@ -486,7 +486,7 @@ blk_help =
   ,"ArrayFill.1"
   ,"Balance2.1", "Balance2.2"
   ,"Blip.1", "Blip.2"
-  ,"BufRd.1"
+  ,"BufRd.1", "BufRd.2"
   ,"Cc.1"
   ,"CombC.1", "CombC.2"
   ,"Comment.1"
