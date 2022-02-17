@@ -90,6 +90,9 @@ Blockly.JavaScript['sc3_ExpRand'] = function(block) {
 Blockly.JavaScript['sc3_FBSineC'] = function(block) {
   return blk_ugen_codegen(block, 'FBSineC', ['FREQ', 'IM', 'FB', 'A', 'C', 'XI', 'YI'], true);
 }
+Blockly.JavaScript['sc3_FBSineL'] = function(block) {
+  return blk_ugen_codegen(block, 'FBSineL', ['FREQ', 'IM', 'FB', 'A', 'C', 'XI', 'YI'], true);
+}
 Blockly.JavaScript['sc3_Fold'] = function(block) {
   return blk_ugen_codegen(block, 'Fold', ['IN', 'LO', 'HI'], true);
 }
@@ -131,6 +134,12 @@ Blockly.JavaScript['sc3_HPZ1'] = function(block) {
 }
 Blockly.JavaScript['sc3_Hasher'] = function(block) {
   return blk_ugen_codegen(block, 'Hasher', ['IN'], true);
+}
+Blockly.JavaScript['sc3_HenonC'] = function(block) {
+  return blk_ugen_codegen(block, 'HenonC', ['FREQ', 'A', 'B', 'X0', 'X1'], true);
+}
+Blockly.JavaScript['sc3_HenonL'] = function(block) {
+  return blk_ugen_codegen(block, 'HenonL', ['FREQ', 'A', 'B', 'X0', 'X1'], true);
 }
 Blockly.JavaScript['sc3_IRand'] = function(block) {
   return blk_ugen_codegen(block, 'IRand', ['LO', 'HI'], true);
@@ -284,6 +293,9 @@ Blockly.JavaScript['sc3_PulseDivider'] = function(block) {
 }
 Blockly.JavaScript['sc3_QuadC'] = function(block) {
   return blk_ugen_codegen(block, 'QuadC', ['FREQ', 'A', 'B', 'C', 'XI'], true);
+}
+Blockly.JavaScript['sc3_QuadL'] = function(block) {
+  return blk_ugen_codegen(block, 'QuadL', ['FREQ', 'A', 'B', 'C', 'XI'], true);
 }
 Blockly.JavaScript['sc3_RHPF'] = function(block) {
   return blk_ugen_codegen(block, 'RHPF', ['IN', 'FREQ', 'RQ'], true);

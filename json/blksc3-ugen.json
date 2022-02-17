@@ -501,6 +501,27 @@
     }
     ,
     {
+        "type": "sc3_FBSineL",
+        "message0": "FBSineL %1 ν %2 im %3 fb %4 a %5 c %6 xi %7 yi %8 × %9 + %10",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "IM", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "FB", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "A", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "C", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "XI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "YI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "FBSineL(freq, im, fb, a, c, xi, yi): Feedback sine with chaotic phase indexing",
+        "helpUrl": "https://doc.sccode.org/Classes/FBSineL.html"
+    }
+    ,
+    {
         "type": "sc3_Fold",
         "message0": "Fold %1 ∙ %2 ⌊ %3 ⌉ %4 × %5 + %6",
         "args0": [
@@ -756,6 +777,44 @@
         "colour": 60,
         "tooltip": "Hasher(in): Scrambled value with a hash function.",
         "helpUrl": "https://doc.sccode.org/Classes/Hasher.html"
+    }
+    ,
+    {
+        "type": "sc3_HenonC",
+        "message0": "HenonC %1 ν %2 a %3 b %4 x0 %5 x1 %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "A", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "B", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "X0", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "X1", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "HenonC(freq, a, b, x0, x1): Henon map chaotic generator",
+        "helpUrl": "https://doc.sccode.org/Classes/HenonC.html"
+    }
+    ,
+    {
+        "type": "sc3_HenonL",
+        "message0": "HenonL %1 ν %2 a %3 b %4 x0 %5 x1 %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "A", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "B", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "X0", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "X1", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "HenonL(freq, a, b, x0, x1): Henon map chaotic generator",
+        "helpUrl": "https://doc.sccode.org/Classes/HenonL.html"
     }
     ,
     {
@@ -1607,6 +1666,25 @@
         "colour": 210,
         "tooltip": "QuadC(freq, a, b, c, xi): General quadratic map chaotic generator",
         "helpUrl": "https://doc.sccode.org/Classes/QuadC.html"
+    }
+    ,
+    {
+        "type": "sc3_QuadL",
+        "message0": "QuadL %1 ν %2 a %3 b %4 c %5 xi %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "A", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "B", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "C", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "XI", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "QuadL(freq, a, b, c, xi): General quadratic map chaotic generator",
+        "helpUrl": "https://doc.sccode.org/Classes/QuadL.html"
     }
     ,
     {
