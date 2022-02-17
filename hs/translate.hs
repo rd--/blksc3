@@ -525,6 +525,7 @@ blk_help =
   ,"RingzBank.1"
   ,"Saw.1"
   ,"Seq.1", "Seq.2"
+  ,"ShufflerB.1"
   ,"SinOsc.1", "SinOsc.2", "SinOsc.3"
   ,"Stepper.1", "Stepper.2", "Stepper.3"
   ,"Sw.1", "Sw.2"
