@@ -1,9 +1,8 @@
 // TGrains
-var nc = 1;
-var buf = SoundFileBuffer("crotale-d6", nc);
+var sf = SfAcquire("crotale-d6", 1, [1]);
 var trRate = MouseY(2, 120, 1, 0.2);
 var tr = Impulse(trRate, 0);
 var rate = 1.2 ** (WhiteNoise() * 3).roundTo(1);
-var centerPos = MouseX(0, BufDur(buf), 0, 0.2);
+var centerPos = MouseX(0, SfDur(sf), 0, 0.2);
 var dur = 1.2 / trRate;
-TGrains(2, tr, buf, rate, centerPos, dur, WhiteNoise() *0.6, 0.1, 4)
+TGrains(2, tr, sf, rate, centerPos, dur, WhiteNoise() *0.6, 0.75, 4)
