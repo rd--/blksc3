@@ -1,20 +1,19 @@
-// BufRd ; phasor as phase input
-var nc = 2;
-var buf = SoundFileBuffer("harp-a4", nc);
+// SfRead ; phasor as phase input
+var sf = SfAcquire("harp-a4", 2, [1, 2]);
 {
-    var tr = Impulse(2 ** Rand(1, 3) / BufDur(buf) * 4, 0).kr;
+    var tr = Impulse(2 ** Rand(1, 3) / (SfDur(sf) * 4), 0).kr;
     var mnn = TIRand(-2, 0, tr) * 12 + TChoose(tr, [0, 2.1, 4.9, 7, 9.2]);
-    var rt = mnn.midiRatio * BufRateScale(buf);
-    var ph = Phasor(tr, rt, 0, BufFrames(buf), 0);
-    BufRd(nc, buf, ph, 0, 2)
+    var rt = mnn.midiRatio * SfRateScale(sf);
+    var ph = Phasor(tr, rt, 0, SfFrames(sf), 0);
+    SfRead(sf, ph, 0, 2)
 }.dup(8).sum * 0.1
 
 //---- notes.md
-_SoundFileBuffer_ returns a _Buffer_ object.
+_SfAcquire_ returns an array of _buffer_ objects.
 Buffers are arrays of floating point values with an associated channel count, frame count, and sample rate.
-The buffer returned by SoundFileBuffer will hold the data stored in the named sound file.
+The buffer array returned by SfAcquire will hold the data stored in the named sound file.
 
-SoundFileBuffer requires a _number of channels_ argument, and this must match the number of channels stored in the named file.
+SfAcquire requires a _number of channels_ argument, and this must match the number of channels stored in the named file.
 
 The file name is either a key for an entry in the _sound file dictionary_ or a
 [Url](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL).

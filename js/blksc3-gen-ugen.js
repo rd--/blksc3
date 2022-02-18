@@ -480,6 +480,24 @@ Blockly.JavaScript['sc3_Seq'] = function(block) {
 Blockly.JavaScript['sc3_Ser'] = function(block) {
   return blk_ugen_codegen(block, 'Ser', ['LENGTH', 'START', 'STEP'], true);
 }
+Blockly.JavaScript['sc3_SfAcquire'] = function(block) {
+  return blk_ugen_codegen(block, 'SfAcquire', ['URLORKEY', 'NUMBEROFCHANNELS', 'CHANNELINDICES'], true);
+}
+Blockly.JavaScript['sc3_SfDur'] = function(block) {
+  return blk_ugen_codegen(block, 'SfDur', ['SFBUFFERARRAY'], true);
+}
+Blockly.JavaScript['sc3_SfFrames'] = function(block) {
+  return blk_ugen_codegen(block, 'SfFrames', ['SFBUFFERARRAY'], true);
+}
+Blockly.JavaScript['sc3_SfRateScale'] = function(block) {
+  return blk_ugen_codegen(block, 'SfRateScale', ['SFBUFFERARRAY'], true);
+}
+Blockly.JavaScript['sc3_SfRead'] = function(block) {
+  return blk_ugen_codegen(block, 'SfRead', ['SFBUFFERARRAY', 'PHASE', 'LOOP', 'INTERPOLATION'], true);
+}
+Blockly.JavaScript['sc3_SfSampleRate'] = function(block) {
+  return blk_ugen_codegen(block, 'SfSampleRate', ['SFBUFFERARRAY'], true);
+}
 Blockly.JavaScript['sc3_Shuf'] = function(block) {
   return blk_ugen_codegen(block, 'Shuf', ['REPEATS', 'ARRAY'], true);
 }
