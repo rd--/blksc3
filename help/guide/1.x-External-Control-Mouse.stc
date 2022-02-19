@@ -1,3 +1,13 @@
+// External Control, Mouse
+var x = MouseX(20, 22000, 0, #[0.005, 0.025]);
+var y = MouseY(20, 22000, 0, #[0.005, 0.075]);
+var nd = {
+  var a = SinOsc(x + LFNoise0(#[5, 9]), 0);
+  var b = SinOsc(y, 0);
+  a * b
+};
+nd.dup(3).sum * 0.15
+
 //---- notes.md
 ## External Control, Mouse
 
@@ -14,3 +24,5 @@ The default value is _2048_ and there is a _Block Size_ entry  in the ☰ menu t
 
 Smaller block sizes result in better latency for external controls, including the mouse.
 However the synthesiser is more susceptible to interruption from other tasks, including _blksc3_'s own editing operations.
+
+In this program three slightly detuned ring modulation oscillator pairs have frequency inputs connected to the mouse location.

@@ -429,6 +429,9 @@ Blockly.JavaScript['sc3_ShufflerB'] = function(block) {
 Blockly.JavaScript['sc3_TScramble'] = function(block) {
   return blk_ugen_codegen(block, 'TScramble', ['TRIGGER', 'INPUTS'], true);
 }
+Blockly.JavaScript['sc3_VOSIM'] = function(block) {
+  return blk_ugen_codegen(block, 'VOSIM', ['TRIG', 'FREQ', 'NCYCLES', 'DECAY'], true);
+}
 Blockly.JavaScript['sc3_ADSR'] = function(block) {
   return blk_ugen_codegen(block, 'ADSR', ['GATE', 'ATTACKTIME', 'DECAYTIME', 'SUSTAINLEVEL', 'RELEASETIME', 'CURVES'], true);
 }

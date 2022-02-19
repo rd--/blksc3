@@ -537,6 +537,7 @@ blk_help =
   ,"VarSaw.1"
   ,"VoiceWriter.1"
   ,"Voicer.1", "Voicer.2", "Voicer.3"
+  ,"VOSIM.1", "VOSIM.2"
   ,"XFade2.1"
   ,"XLn.1"]
 
