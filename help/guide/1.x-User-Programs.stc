@@ -1,3 +1,13 @@
+// User Programs
+var b = BufAlloc(1, 2048);
+var x = MouseX(100, 12000, 0, 0.1);
+var y = MouseY(0.01, 0.15, 0, 0.1);
+var t = Impulse((LFNoise0([3, 3.25]) * 16) + 18, 0);
+var e = Decay2(t, 0.01, TRand(0.005, y, t));
+var o = BPF(WhiteNoise() * e, TRand(10, x, t), TRand(0, 1, t));
+var p = PV_RandComb(FFT(b, o, 0.5, 0, 1, 0), TExpRand(0.15, 1, t), t);
+(o * 0.05) + IFFT(p, 0, 0)
+
 //---- notes.md
 ## User Progams
 
@@ -6,4 +16,6 @@ Programs can also be stored in the _local storage_ area of the web browser using
 This prompts for a name to be associated with the text, suggesting the current date and time as a default.
 The _User_ menu will list all of the stored user programs, and these can be recalled by selecting them.
 
-Note that in this simple system recalling a saved text _replaces_ the existing text, which is deleted and cannot be recovered.
+Note that in this simple system recalling a saved program _replaces_ the existing program, which is deleted and cannot be recovered.
+
+This program make a simple clattering sound by bandpass filtering white noise and then processing it in the frequency domain to randomly delete frequency regions.

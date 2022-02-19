@@ -522,6 +522,26 @@
     }
     ,
     {
+        "type": "sc3_FFT",
+        "message0": "FFT %1 ⛁ %2 ∙ %3 hop %4 wintype %5 active %6 winsize %7 × %8 + %9",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "BUFFER", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "HOP", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "WINTYPE", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ACTIVE", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "WINSIZE", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "FFT(buffer, in, hop, wintype, active, winsize): Fast Fourier Transform",
+        "helpUrl": "https://doc.sccode.org/Classes/FFT.html"
+    }
+    ,
+    {
         "type": "sc3_Fold",
         "message0": "Fold %1 ∙ %2 ⌊ %3 ⌉ %4 × %5 + %6",
         "args0": [
@@ -815,6 +835,23 @@
         "colour": 210,
         "tooltip": "HenonL(freq, a, b, x0, x1): Henon map chaotic generator",
         "helpUrl": "https://doc.sccode.org/Classes/HenonL.html"
+    }
+    ,
+    {
+        "type": "sc3_IFFT",
+        "message0": "IFFT %1 ⛁ %2 wintype %3 winsize %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "BUFFER", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "WINTYPE", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "WINSIZE", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "IFFT(buffer, wintype, winsize): Inverse Fast Fourier Transform",
+        "helpUrl": "https://doc.sccode.org/Classes/IFFT.html"
     }
     ,
     {
@@ -1484,6 +1521,23 @@
         "colour": 60,
         "tooltip": "Out(bus, channelsArray): Write a signal to a bus.",
         "helpUrl": "https://doc.sccode.org/Classes/Out.html"
+    }
+    ,
+    {
+        "type": "sc3_PV_RandComb",
+        "message0": "㎴⚁ᚊ %1 ⛁ %2 wipe %3 ⤴ %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "BUFFER", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "WIPE", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "PV_RandComb(buffer, wipe, trig): Pass random bins.",
+        "helpUrl": "https://doc.sccode.org/Classes/PV_RandComb.html"
     }
     ,
     {

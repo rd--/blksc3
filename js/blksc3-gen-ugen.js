@@ -93,6 +93,9 @@ Blockly.JavaScript['sc3_FBSineC'] = function(block) {
 Blockly.JavaScript['sc3_FBSineL'] = function(block) {
   return blk_ugen_codegen(block, 'FBSineL', ['FREQ', 'IM', 'FB', 'A', 'C', 'XI', 'YI'], true);
 }
+Blockly.JavaScript['sc3_FFT'] = function(block) {
+  return blk_ugen_codegen(block, 'FFT', ['BUFFER', 'IN', 'HOP', 'WINTYPE', 'ACTIVE', 'WINSIZE'], true);
+}
 Blockly.JavaScript['sc3_Fold'] = function(block) {
   return blk_ugen_codegen(block, 'Fold', ['IN', 'LO', 'HI'], true);
 }
@@ -140,6 +143,9 @@ Blockly.JavaScript['sc3_HenonC'] = function(block) {
 }
 Blockly.JavaScript['sc3_HenonL'] = function(block) {
   return blk_ugen_codegen(block, 'HenonL', ['FREQ', 'A', 'B', 'X0', 'X1'], true);
+}
+Blockly.JavaScript['sc3_IFFT'] = function(block) {
+  return blk_ugen_codegen(block, 'IFFT', ['BUFFER', 'WINTYPE', 'WINSIZE'], true);
 }
 Blockly.JavaScript['sc3_IRand'] = function(block) {
   return blk_ugen_codegen(block, 'IRand', ['LO', 'HI'], true);
@@ -263,6 +269,9 @@ Blockly.JavaScript['sc3_Osc'] = function(block) {
 }
 Blockly.JavaScript['sc3_Out'] = function(block) {
   return blk_ugen_codegen(block, 'Out', ['BUS', 'CHANNELSARRAY'], false);
+}
+Blockly.JavaScript['sc3_PV_RandComb'] = function(block) {
+  return blk_ugen_codegen(block, 'PV_RandComb', ['BUFFER', 'WIPE', 'TRIG'], true);
 }
 Blockly.JavaScript['sc3_Pan2'] = function(block) {
   return blk_ugen_codegen(block, 'Pan2', ['IN', 'POS', 'LEVEL'], true);
