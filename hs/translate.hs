@@ -322,7 +322,8 @@ blk_graphs =
   ,("DST", ["1-5fc"])
   ,("ES",
     ["Tw 435684664200540161"
-    ,"Tw 570012853274615808"])
+    -- ,"Tw 570012853274615808" -- GreyholeRaw
+    ])
   ,("F0",
      ["Pkt 00", "Pkt 07"
      ,"Pkt 26", "Pkt 28"
@@ -358,8 +359,8 @@ blk_graphs =
      ,"Tw 1453520892374441986"
      ,"Tw 1454150378241548296"
      ,"Tw 1464534258173849611"
-     ,"Tw 1467507942664646661"
-     ,"Tw 1479212835192332289"
+     -- ,"Tw 1467507942664646661" -- FBSineC
+     -- ,"Tw 1479212835192332289" -- QuadC
      ])
   ,("JAR", ["1-4Qx", "rk_20120422"])
   ,("JH", ["4157"])
@@ -494,7 +495,7 @@ blk_help =
   ,"Decay2.1","Decay2.2"
   ,"DegreeToKey.1"
   ,"ExpRand.1"
-  ,"FBSineC.1"
+  -- ,"FBSineC.1"
   ,"Formant.1"
   ,"Formlet.1"
   ,"Freezer.1"
@@ -519,7 +520,7 @@ blk_help =
   ,"Pluck.1", "Pluck.2"
   ,"Pulse.1"
   ,"PulseCount.1"
-  ,"QuadC.1"
+  -- ,"QuadC.1"
   ,"Ringz.1"
   ,"RingzBank.1"
   ,"Saw.1"
