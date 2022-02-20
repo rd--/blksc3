@@ -77,10 +77,7 @@ function blk_xml_input_init () {
 
 // Read selected .xml file.
 function blk_read_input_xml() {
-    var xmlFile = document.getElementById('xmlInputFile').files[0];
-    if (xmlFile) {
-        read_text_file_and_then(xmlFile, text => blk_load_xml(text));
-    }
+    read_text_file_from_file_input_and_then('xmlInputFile', 0, blk_load_xml);
 }
 
 // Write selected .xml file.

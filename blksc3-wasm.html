@@ -70,15 +70,15 @@ window.onload = function() {
       <div id="blkCmd">
         <input type="file" id="xmlInputFile" accept=".xml" onchange="blk_read_input_xml()" style="display:none">
         <input type="file" id="userProgramArchiveFile" accept=".json" onchange="user_program_read_archive()" style="display:none">
-        <button id="xmlInputFileSelect" title="Select and load .xml file to workspace (l)" accesskey="l"><u>L</u>oad</button>
-        <button title="Copy workspace xml to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(blk_get_xml())"><u>C</u>opy</button>
+        <button id="xmlInputFileSelect" title="Select and load .xml file to workspace (l)" accesskey="l">Load</button>
+        <button title="Copy workspace xml to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(blk_get_xml())">Copy</button>
         <button title="Cleanup workspace (o)" accesskey="o" onclick="blk_workspace.cleanUp()">Cleanup</button>
-        <button title="Center drawing in workspace" onclick="blk_workspace.scrollCenter()">Center</button>
+        <!-- <button title="Center drawing in workspace" onclick="blk_workspace.scrollCenter()">Center</button> -->
         <button title="Fit drawing to workspace (=)" accesskey="=" onclick="blk_workspace.zoomToFit()">Fit</button>
         <button title="Print" onclick="prettyPrintSyndef()">Print</button>
-        <button title="Evaluate workspace program but do not play (/)" accesskey="/" onclick="blk_wasm_play({cacheOnly: true})">Cache</button>
-        <button title="Send current workspace stc (,)" accesskey="," onclick="blk_wasm_play({})">Play</button>
-        <button title="Send reset command (.)" accesskey="." onclick="blk_wasm_reset()">Reset</button>
+        <button title="Evaluate workspace program but do not play (/)" accesskey="/" onclick="playJsProgram({cacheOnly: true})">Cache</button>
+        <button title="Send current workspace stc (,)" accesskey="," onclick="playJsProgram({})">Play</button>
+        <button title="Send reset command (.)" accesskey="." onclick="reset()">Reset</button>
         <button title="Delete all blocks from workspace (k)" accesskey="k" onclick="blk_workspace.clear()">Clear</button>
         <button title="Save document to local storage (s)" accesskey="s" onclick="user_program_save_to()">Save</button>
         <select id="actionsMenu" title="Actions">
