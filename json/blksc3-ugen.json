@@ -1327,6 +1327,25 @@
     }
     ,
     {
+        "type": "sc3_Linen",
+        "message0": "Linen %1 ⎇ %2 ↗ %3 susLevel %4 ⇲ %5 ⌫ %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "GATE", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ATTACKTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "SUSLEVEL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "RELEASETIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "DONEACTION", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Linen(gate, attackTime, susLevel, releaseTime, doneAction): Simple linear envelope generator.",
+        "helpUrl": "https://doc.sccode.org/Classes/Linen.html"
+    }
+    ,
+    {
         "type": "sc3_LocalIn",
         "message0": "LocalIn %1 # %2 ⎕ %3 × %4 + %5",
         "args0": [
@@ -1555,6 +1574,26 @@
         "colour": 300,
         "tooltip": "Pan2(in, pos, level): Two channel equal power pan.",
         "helpUrl": "https://doc.sccode.org/Classes/Pan2.html"
+    }
+    ,
+    {
+        "type": "sc3_PanAz",
+        "message0": "PanAz %1 # %2 ∙ %3 ⌖ %4 × %5 ↔ %6 orientation %7 × %8 + %9",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "NUMCHANNELS", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "POS", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "LEVEL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "WIDTH", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ORIENTATION", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "PanAz(numChan, in, pos, level, width, orientation): Azimuth panner",
+        "helpUrl": "https://doc.sccode.org/Classes/PanAz.html"
     }
     ,
     {
@@ -2869,6 +2908,25 @@
         "colour": 60,
         "tooltip": "SoundFile frame count",
         "helpUrl": "https://doc.sccode.org/Classes/SfFrames.html"
+    }
+    ,
+    {
+        "type": "sc3_SfPlay",
+        "message0": "SfPlay %1 ⟦⛁⟧ %2 rate %3 ⤴ %4 startPos %5 ↻ %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "SFBUFFERARRAY", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "RATE", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "TRIGGER", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "STARTPOS", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "LOOP", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Sound file player",
+        "helpUrl": "https://doc.sccode.org/Classes/SfPlay.html"
     }
     ,
     {

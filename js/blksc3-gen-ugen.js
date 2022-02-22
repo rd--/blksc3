@@ -234,6 +234,9 @@ Blockly.JavaScript['sc3_LinRand'] = function(block) {
 Blockly.JavaScript['sc3_LinXFade2'] = function(block) {
   return blk_ugen_codegen(block, 'LinXFade2', ['INA', 'INB', 'PAN'], true);
 }
+Blockly.JavaScript['sc3_Linen'] = function(block) {
+  return blk_ugen_codegen(block, 'Linen', ['GATE', 'ATTACKTIME', 'SUSLEVEL', 'RELEASETIME', 'DONEACTION'], true);
+}
 Blockly.JavaScript['sc3_LocalIn'] = function(block) {
   return blk_ugen_codegen(block, 'LocalIn', ['NUMCHANNELS', 'DEFAULT'], true);
 }
@@ -275,6 +278,9 @@ Blockly.JavaScript['sc3_PV_RandComb'] = function(block) {
 }
 Blockly.JavaScript['sc3_Pan2'] = function(block) {
   return blk_ugen_codegen(block, 'Pan2', ['IN', 'POS', 'LEVEL'], true);
+}
+Blockly.JavaScript['sc3_PanAz'] = function(block) {
+  return blk_ugen_codegen(block, 'PanAz', ['NUMCHANNELS', 'IN', 'POS', 'LEVEL', 'WIDTH', 'ORIENTATION'], true);
 }
 Blockly.JavaScript['sc3_Phasor'] = function(block) {
   return blk_ugen_codegen(block, 'Phasor', ['TRIG', 'RATE', 'START', 'END', 'RESETPOS'], true);
@@ -500,6 +506,9 @@ Blockly.JavaScript['sc3_SfDur'] = function(block) {
 }
 Blockly.JavaScript['sc3_SfFrames'] = function(block) {
   return blk_ugen_codegen(block, 'SfFrames', ['SFBUFFERARRAY'], true);
+}
+Blockly.JavaScript['sc3_SfPlay'] = function(block) {
+  return blk_ugen_codegen(block, 'SfPlay', ['SFBUFFERARRAY', 'RATE', 'TRIGGER', 'STARTPOS', 'LOOP'], true);
 }
 Blockly.JavaScript['sc3_SfRateScale'] = function(block) {
   return blk_ugen_codegen(block, 'SfRateScale', ['SFBUFFERARRAY'], true);
