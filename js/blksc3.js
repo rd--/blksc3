@@ -43,6 +43,7 @@ function blk_inject_with_xml_toolbox(xml_toolbox) {
     }
     blk_workspace = Blockly.inject('blocklyContainer', blk_config);
     blk_display_scrollbars(false);
+    // console.log('blk_inject_with_xml_toolbox: injected');
 };
 
 // Get workspace as .stc code.
@@ -86,8 +87,8 @@ function blk_write_output_xml() {
 }
 
 // Read and load .xml format program from URL.
-function blk_fetch_xml(xmlUrl, autoPlay) {
-    fetch_url_and_then(url_append_timestamp(xmlUrl), 'text', xmlText => blk_load_xml(xmlText, autoPlay));
+function blk_fetch_xml(xmlUrl) {
+    fetch_url_and_then(url_append_timestamp(xmlUrl), 'text', xmlText => blk_load_xml(xmlText));
 }
 
 // Clear workspace, construct URL from arguments, fetch and load graph.
@@ -111,13 +112,17 @@ function blk_pre() {
 }
 
 // Initialisation function, to be called on document load.
-function blk_init(outputFormat, initMouse, blockSize, withUiCtl) {
+function blk_init(outputFormat, initMouse, blockSize, withUiCtl, fileParamKey, defaultFileName) {
+    var fileName = url_get_param(fileParamKey) || defaultFileName;
     blk_output_format = outputFormat;
     blk_xml_input_init();
     blk_layout_menu_init();
     sc3_ui_init(true, true, true, false, '.xml', 'blksc3UserPrograms/xml', blk_load_help_graph, initMouse, blockSize);
     if(withUiCtl) {
         load_utf8_and_then('html/ui-ctl.html', setter_for_inner_html_of('uiCtlContainer'));
+    }
+    if(fileName) {
+        blk_fetch_xml(fileName);
     }
 }
 

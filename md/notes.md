@@ -1,3 +1,10 @@
+# Url
+
+An initial file can be loaded by setting the Url parameter _e_,
+i.e. _blksc3-wasm.html?e=help/graph/jmcc-why-supercollider.xml_.
+
+# Notes
+
 Wasm requires Pointer{WXY}, does not include sc3-plugins or sc3-rdu, and has eventX for x and so on.
 Other errors are:
 
