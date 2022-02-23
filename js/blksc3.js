@@ -19,32 +19,35 @@ function blk_toggle_scrollbars() {
 }
 
 // Configure and inject Blockly given XML format toolbox definition.
-function blk_inject_with_xml_toolbox(xml_toolbox) {
-    blk_config = {
-        media: 'lib/blockly/media/',
-        sounds: false,
-        toolbox: xml_toolbox,
-        rtl: false,
-        move: {
-            scrollbars: {horizontal: true, vertical: true},
-            drag: true,
-            wheel: false
-        },
-        zoom: {
-            controls: true,
-            wheel: true,
-            startScale: 1.0,
-            maxScale: 3,
-            minScale: 0.3,
-            scaleSpeed: 1.2,
-            pinch: true
-        },
-        trashcan: false
-    }
-    blk_workspace = Blockly.inject('blocklyContainer', blk_config);
-    blk_display_scrollbars(false);
-    // console.log('blk_inject_with_xml_toolbox: injected');
-};
+function blk_inject_with_xml_toolbox(onCompletion) {
+    return function (xml_toolbox) {
+        blk_config = {
+            media: 'lib/blockly/media/',
+            sounds: false,
+            toolbox: xml_toolbox,
+            rtl: false,
+            move: {
+                scrollbars: {horizontal: true, vertical: true},
+                drag: true,
+                wheel: false
+            },
+            zoom: {
+                controls: true,
+                wheel: true,
+                startScale: 1.0,
+                maxScale: 3,
+                minScale: 0.3,
+                scaleSpeed: 1.2,
+                pinch: true
+            },
+            trashcan: false
+        }
+        blk_workspace = Blockly.inject('blocklyContainer', blk_config);
+        blk_display_scrollbars(false);
+        // console.log('blk_inject_with_xml_toolbox: injection completed');
+        onCompletion();
+    };
+}
 
 // Get workspace as .stc code.
 function blk_get_stc_code() {
@@ -100,7 +103,7 @@ function blk_load_help_graph(graphDir, graphName, fileType) {
     blk_load_notes_and_then(graphStc, setter_for_inner_html_of('blkNotes'));
 }
 
-function blk_pre() {
+function blk_pre(onCompletion) {
     Blockly.HSV_SATURATION = 0.20;
     Blockly.HSV_VALUE = 0.95;
     Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
@@ -108,21 +111,23 @@ function blk_pre() {
     load_json_and_then('json/blksc3.json', Blockly.defineBlocksWithJsonArray);
     load_json_and_then('json/blksc3-std.json', Blockly.defineBlocksWithJsonArray);
     load_json_and_then('json/blksc3-ugen.json', Blockly.defineBlocksWithJsonArray);
-    load_utf8_and_then('xml/blksc3.xml', blk_inject_with_xml_toolbox);
+    load_utf8_and_then('xml/blksc3.xml', blk_inject_with_xml_toolbox(onCompletion));
 }
 
 // Initialisation function, to be called on document load.
 function blk_init(outputFormat, initMouse, blockSize, withUiCtl, fileParamKey, defaultFileName) {
     var fileName = url_get_param(fileParamKey) || defaultFileName;
     blk_output_format = outputFormat;
+    blk_pre(function () {
+        if(fileName) {
+            blk_fetch_xml(fileName);
+        }
+    });
     blk_xml_input_init();
     blk_layout_menu_init();
     sc3_ui_init(true, true, true, false, '.xml', 'blksc3UserPrograms/xml', blk_load_help_graph, initMouse, blockSize);
     if(withUiCtl) {
         load_utf8_and_then('html/ui-ctl.html', setter_for_inner_html_of('uiCtlContainer'));
-    }
-    if(fileName) {
-        blk_fetch_xml(fileName);
     }
 }
 
