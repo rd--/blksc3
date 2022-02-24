@@ -16,7 +16,7 @@ Tested with:
 
 [Chromium](https://www.chromium.org/) 90.0.4430.212,
 [Chrome](https://www.google.com/chrome/) 98.0.4758.102,
-[Firefox](https://www.mozilla.org/firefox/) 91.4.0 & 97.0,
+[Firefox](https://www.mozilla.org/firefox/) 91.5.0 & 97.0,
 [Edge](https://www.microsoft.com/edge) 97.0.1072.62,
 [Safari](https://apple.com/safari/) 15.3,
 [SuperCollider](https://www.audiosynth.com/) 3.11.2,
