@@ -526,7 +526,7 @@ blk_help =
   ,"Pulse.1"
   ,"PulseCount.1"
   -- ,"QuadC.1"
-  ,"Ringz.1"
+  ,"Ringz.1","Ringz.2"
   ,"RingzBank.1"
   ,"Saw.1"
   ,"Seq.1", "Seq.2"
