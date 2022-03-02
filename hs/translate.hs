@@ -421,6 +421,7 @@ blk_graphs =
      ,"Random Sine Waves"
      ,"Repeating Harmonic Klank"
      ,"Repeating Inharmonic Klank"
+     ,"Reso Pulse"
      ,"Resonant Dust"
      ,"Reverberated Sine Percussion"
      ,"Sample and Hold Liquidities"
