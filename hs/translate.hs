@@ -520,6 +520,7 @@ blk_help =
   ,"LocalOut.1"
   ,"MouseX.1"
   ,"OverlapTexture.1"
+  ,"Pitch.1"
   ,"PMOsc.1", "PMOsc.2", "PMOsc.3", "PMOsc.4"
   ,"Pan2.1"
   ,"Play.1"
