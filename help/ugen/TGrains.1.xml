@@ -13,36 +13,41 @@
       <block type="variables_set" id="KaM%fvkE5@?DAb-bn^U+">
         <field name="VAR" id="53@1EJUg0~oqXrXIt)Y8">sf</field>
         <value name="VALUE">
-          <block type="sc3_SfAcquire" id="6LnbAHcKoQf$d%xs+weQ" inline="true">
-            <value name="URLORKEY">
-              <block type="text" id="VbFz~5ft}kZ/bA4:(`5;">
-                <field name="TEXT">crotale-d6</field>
-              </block>
-            </value>
-            <value name="NUMBEROFCHANNELS">
-              <block type="math_number" id="-}f/3dhcMA`jT0)?@NCS">
-                <field name="NUM">1</field>
-              </block>
-            </value>
-            <value name="CHANNELINDICES">
-              <block type="lists_create_with" id="A@V4r.1pR9u{3CGwbtA4" inline="true">
-                <mutation items="1"></mutation>
-                <value name="ADD0">
-                  <block type="math_number" id="LdY@NpSgAD1v[)SrW@ic">
+          <block type="sc3_ArrayProc1" id="3c|q,-x+bIbdxx(/]p]u">
+            <field name="OP">first</field>
+            <value name="IN">
+              <block type="sc3_SfAcquire" id="6LnbAHcKoQf$d%xs+weQ" inline="true">
+                <value name="URLORKEY">
+                  <block type="text" id="VbFz~5ft}kZ/bA4:(`5;">
+                    <field name="TEXT">crotale-d6</field>
+                  </block>
+                </value>
+                <value name="NUMBEROFCHANNELS">
+                  <block type="math_number" id="-}f/3dhcMA`jT0)?@NCS">
                     <field name="NUM">1</field>
                   </block>
                 </value>
+                <value name="CHANNELINDICES">
+                  <block type="lists_create_with" id="A@V4r.1pR9u{3CGwbtA4" inline="true">
+                    <mutation items="1"></mutation>
+                    <value name="ADD0">
+                      <block type="math_number" id="LdY@NpSgAD1v[)SrW@ic">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="MUL">
+                  <shadow type="math_number" id="b@jzr{[#V`qMj+eYk7X2">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="ADD">
+                  <shadow type="math_number" id="`s$(8Lj#]n;L$h4RJ{UO">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
               </block>
-            </value>
-            <value name="MUL">
-              <shadow type="math_number" id="b@jzr{[#V`qMj+eYk7X2">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-            <value name="ADD">
-              <shadow type="math_number" id="`s$(8Lj#]n;L$h4RJ{UO">
-                <field name="NUM">0</field>
-              </shadow>
             </value>
           </block>
         </value>

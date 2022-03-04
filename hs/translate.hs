@@ -537,7 +537,7 @@ blk_help =
   ,"Stepper.1", "Stepper.2", "Stepper.3"
   ,"Sw.1", "Sw.2"
   ,"TChoose.1", "TChoose.2"
-  ,"TGrains.1"
+  ,"TGrains.1","TGrains.2"
   ,"TIRand.1"
   ,"TRand.1", "TRand.2"
   ,"TScramble.1","TScramble.2"
