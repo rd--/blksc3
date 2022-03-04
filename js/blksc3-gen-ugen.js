@@ -153,6 +153,9 @@ Blockly.JavaScript['sc3_IRand'] = function(block) {
 Blockly.JavaScript['sc3_Impulse'] = function(block) {
   return blk_ugen_codegen(block, 'Impulse', ['FREQ', 'PHASE'], true);
 }
+Blockly.JavaScript['sc3_Index'] = function(block) {
+  return blk_ugen_codegen(block, 'Index', ['BUFNUM', 'IN'], true);
+}
 Blockly.JavaScript['sc3_K2A'] = function(block) {
   return blk_ugen_codegen(block, 'K2A', ['IN'], true);
 }

@@ -538,6 +538,7 @@ blk_help =
   ,"Sw.1", "Sw.2"
   ,"TChoose.1", "TChoose.2"
   ,"TGrains.1"
+  ,"TIRand.1"
   ,"TRand.1", "TRand.2"
   ,"TScramble.1","TScramble.2"
   ,"VarSaw.1"
