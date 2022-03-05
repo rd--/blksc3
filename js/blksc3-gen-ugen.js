@@ -477,6 +477,18 @@ Blockly.JavaScript['sc3_DmdOn'] = function(block) {
 Blockly.JavaScript['sc3_InFb'] = function(block) {
   return blk_ugen_codegen(block, 'InFb', ['NUMCHANNELS', 'BUS'], true);
 }
+Blockly.JavaScript['sc3_KeyDown'] = function(block) {
+  return blk_ugen_codegen(block, 'KeyDown', ['VOICENUMBER'], true);
+}
+Blockly.JavaScript['sc3_KeyPitch'] = function(block) {
+  return blk_ugen_codegen(block, 'KeyPitch', ['VOICENUMBER'], true);
+}
+Blockly.JavaScript['sc3_KeyVelocity'] = function(block) {
+  return blk_ugen_codegen(block, 'KeyVelocity', ['VOICENUMBER'], true);
+}
+Blockly.JavaScript['sc3_KeyTimbre'] = function(block) {
+  return blk_ugen_codegen(block, 'KeyTimbre', ['VOICENUMBER'], true);
+}
 Blockly.JavaScript['sc3_LinLin'] = function(block) {
   return blk_ugen_codegen(block, 'LinLin', ['IN', 'SRCLO', 'SRCHI', 'DSTLO', 'DSTHI'], true);
 }

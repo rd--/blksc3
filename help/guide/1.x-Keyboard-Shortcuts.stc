@@ -1,5 +1,8 @@
 // Keyboard Shortcuts (Keybindings, Access Keys)
-SinOsc(110, 0) * KeyState(38, 0, 0.1, 0.2)
+1.to(16).collect({
+    arg k;
+    SinOsc(KeyPitch(k).unitCps, 0) * KeyDown(k)
+}).splay2
 
 //---- notes.md
 ## Keyboard Shortcuts
@@ -15,18 +18,17 @@ The table below lists the assigned keys, in alphabetical order, and the actions 
 - . → _Reset_ (≡ _full stop key_)
 - = → _Fit_ (≡ _equal sign key_)
 - _c_ → _Copy_
-- _g_ → _Guide Programs_
-- _h_ → _Help Programs_
+- _g_ → _Guide Menu_
+- _h_ → _Help Menu_
 - _i_ → _Draw_
 - _k_ → _Clear_
 - _l_ → _Load_
 - _o_ → _Cleanup_
-- _p_ → _Graph Programs_
-- _s_ → _Layout_
+- _p_ → _Programs Menu_
+- _s_ → _Layout Menu_
 - _w_ → _Websocket_
 
 Some keys aren't used because they don't work in some contexts,
 ␣ (_space_) for _Play_, _d_ for _Draw_.
 
-This program plays a 110 _hz_ sine tone whenever they key having the _keycode_ 38 is held down.
-On some systems this is the _a_ key.
+This program reads midi key state values to control 16 sine oscillators.

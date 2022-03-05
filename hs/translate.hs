@@ -573,6 +573,7 @@ blk_guide =
   ,"2.1 Multiply and Add"
   ,"2.x Authors, Initials"
   ,"2.x Code Generation, SuperCollider"
+  ,"2.x Code Generation, Javascript"
   ,"2.x Code Generation, Smalltalk, Scheme"
   ,"2.x Code Generation, Macros"
   ,"3.x References"
