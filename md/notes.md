@@ -26,7 +26,7 @@ _fromAssocArray_ and _->_ belong at _Event_, not _Math_.
 
 _kr_ should not exist.
 
-Guide:
+# Guide:
 
 - Notes, .stc.
   That notes are not stored in blocks.
@@ -50,3 +50,22 @@ Guide:
 - Access keys.
   Chrome: d is "go to address box" (cannot be draw), e & f are "chrome menu" (cannot be erase or fit)
   Firefox: f,e,v,s,b,t and h are menus (cannot be erase or fit), ␣ (space key) interacts poorly menus (cannot be play)
+
+# Remainder
+
+- events in browser
+- midi keyboard input in browser
+- sound file reader block (SfAcquire)
+- search in toolbox
+- nicer group structure
+- guide for local storage
+- guide for block size
+- guide for mouse/pointer event
+- guide for event in browser
+- preferences pane
+- guide for comments
+- guide for play
+- multiple fragments
+- remaining unicode
+- help for collect
+- cc & sw for brower

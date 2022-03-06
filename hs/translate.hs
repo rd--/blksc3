@@ -445,6 +445,7 @@ blk_graphs =
      ,"What Was I Thinking?"
      ,"Why SuperCollider?"
      ,"Wind Metals", "Wind Metals (Variables)"
+     ,"Wuxia"
      ,"Zizle"
      ])
   ,("JR", ["A Bath", "Deepsea", "(Stereo) Half Life", "Sturmian Sequencer I", "Sturmian Sequencer II", "Sturmian Sequencer III"])
