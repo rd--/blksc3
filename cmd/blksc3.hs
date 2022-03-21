@@ -13,7 +13,7 @@ import qualified Data.ByteString {- bytestring -}
 import qualified Data.ByteString.Char8 as Char8 {- bytestring -}
 import qualified Network.WebSockets as Ws {- websockets -}
 
-import qualified Sound.OSC as Osc {- hosc -}
+import qualified Sound.Osc as Osc {- hosc -}
 
 import qualified Sound.SC3.UGen.DB as Db {- hsc3-db -}
 import qualified Sound.SC3.UGen.DB.Bindings.Blockly as Blockly {- hsc3-db -}
@@ -31,8 +31,8 @@ type StcToOscOpt = (String, Int, String, Int, String)
 
 send_osc :: StcToOscOpt -> String -> IO ()
 send_osc (_, _, osc_host, osc_port, osc_addr) txt = do
-  let msg = Osc.message osc_addr [Osc.ASCII_String (Osc.ascii txt)]
-  Osc.withTransport (Osc.openUDP osc_host osc_port) (Osc.sendMessage msg)
+  let msg = Osc.message osc_addr [Osc.AsciiString (Osc.ascii txt)]
+  Osc.withTransport (Osc.openUdp osc_host osc_port) (Osc.sendMessage msg)
 
 -- | Translate incoming Websocket .stc text to Osc message.
 ws_to_sclang :: StcToOscOpt -> Ws.ServerApp
@@ -70,7 +70,7 @@ stc_to_st (ws_host, ws_port) = Ws.runServer ws_host ws_port ws_to_st
 type WsToUdpOpt = (String, Int, String, Int)
 
 send_udp :: String -> Int -> Data.ByteString.ByteString -> IO ()
-send_udp h p dat = Osc.with_udp (Osc.openUDP h p) (\fd -> Osc.udp_send_data fd dat)
+send_udp h p dat = Osc.with_udp (Osc.openUdp h p) (\fd -> Osc.udp_send_data fd dat)
 
 -- | Send incoming Websocket Osc out over Udp.
 ws_osc_to_udp_osc_app :: WsToUdpOpt -> Ws.ServerApp
