@@ -213,7 +213,7 @@ array_xml l =
   (length l) (concat (zipWith array_elem_xml [0..] l))
 
 -- | If the last expression is an assignment (ie. if the rhs is null), return the variable getter.
-expr_group_assignments :: [Expr t] -> ([Expr t], Expr t)
+expr_group_assignments :: [Expr] -> ([Expr], Expr)
 expr_group_assignments e =
   case span exprIsAssignment e of
     (a, []) -> (a, Identifier (fromMaybe (error "expr_group_assignments: id?") (assignmentIdentifier (last a))))
@@ -223,7 +223,7 @@ expr_group_assignments e =
 {- | Xml for Proc (Lambda).
      If the last expression is an assignment return the variable assigned to.
 -}
-proc_xml :: [String] -> [String] -> [Expr t] -> String
+proc_xml :: [String] -> [String] -> [Expr] -> String
 proc_xml a _v e =
   case (a, expr_group_assignments e) of
     ([], ([], r)) ->
@@ -258,7 +258,7 @@ comment_xml c =
   then ""
   else printf "<block type='sc3_Comment'><field name='COMMENT'>%s</field></block>" (if last c == '\n' then init c else c)
 
-expr_xml :: Expr t -> String
+expr_xml :: Expr -> String
 expr_xml e =
   case e of
     Array l -> array_xml (map expr_xml l)
@@ -274,10 +274,10 @@ expr_xml e =
     Init c _ s -> maybe "" comment_xml c ++ expr_seq_xml s
     _ -> error ("expr_xml: " ++ show e)
 
-expr_seq_xml :: [Expr t] -> String
+expr_seq_xml :: [Expr] -> String
 expr_seq_xml = concatMap expr_xml
 
-assign_seq_xml :: [Expr t] -> String
+assign_seq_xml :: [Expr] -> String
 assign_seq_xml e_seq =
   case e_seq of
     [Assignment p q] -> var_set p (expr_xml q)
@@ -360,8 +360,9 @@ blk_graphs =
      ,"Tw 1453520892374441986"
      ,"Tw 1454150378241548296"
      ,"Tw 1464534258173849611"
-     -- ,"Tw 1467507942664646661" -- FBSineC
-     -- ,"Tw 1479212835192332289" -- QuadC
+     -- ,"Tw 1467507942664646661" -- ChaosUGens.cpp/FBSineC
+     -- ,"Tw 1479212835192332289" -- ChaosUGens.cpp/QuadC
+     -- ,"Tw 1509888510525857792" -- ChaosUGens.cpp/LorenzN
      ])
   ,("JAR", ["1-4Qx", "rk_20120422"])
   ,("JH", ["4157"])

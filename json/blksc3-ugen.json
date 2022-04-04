@@ -335,6 +335,24 @@
     }
     ,
     {
+        "type": "sc3_CombN",
+        "message0": "CombN %1 ∙ %2 ⌈⎵ %3 ⎵ %4 ↘ %5 × %6 + %7",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "DECAYTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "CombN(in, maxdelaytime, delaytime, decaytime): Comb delay line with no interpolation.",
+        "helpUrl": "https://doc.sccode.org/Classes/CombN.html"
+    }
+    ,
+    {
         "type": "sc3_Crackle",
         "message0": "Crackle %1 𝛼 %2 × %3 + %4",
         "args0": [
@@ -431,6 +449,23 @@
         "colour": 150,
         "tooltip": "DelayL(in, maxdelaytime, delaytime): Simple delay line with linear interpolation.",
         "helpUrl": "https://doc.sccode.org/Classes/DelayL.html"
+    }
+    ,
+    {
+        "type": "sc3_DelayN",
+        "message0": "DelayN %1 ∙ %2 ⌈⎵ %3 ⎵ %4 × %5 + %6",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MAXDELAYTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "DELAYTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "DelayN(in, maxdelaytime, delaytime): Simple delay line with no interpolation.",
+        "helpUrl": "https://doc.sccode.org/Classes/DelayN.html"
     }
     ,
     {
@@ -1403,6 +1438,28 @@
         "colour": 60,
         "tooltip": "LocalOut(channelsArray): Write to buses local to a synth.",
         "helpUrl": "https://doc.sccode.org/Classes/LocalOut.html"
+    }
+    ,
+    {
+        "type": "sc3_LorenzL",
+        "message0": "LorenzL %1 ν %2 s %3 r %4 b %5 h %6 xi %7 yi %8 zi %9 × %10 + %11",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "S", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "R", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "B", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "H", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "XI", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "YI", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ZI", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "LorenzL(freq, s, r, b, h, xi, yi, zi): Lorenz chaotic generator",
+        "helpUrl": "https://doc.sccode.org/Classes/LorenzL.html"
     }
     ,
     {
