@@ -130,7 +130,7 @@ function blk_init(outputFormat, initMouse, blockSize, withUiCtl, fileParamKey, d
     });
     blk_xml_input_init();
     blk_layout_menu_init();
-    sc3_ui_init(true, true, true, false, '.xml', 'blksc3UserPrograms/xml', blk_load_help_graph, initMouse, blockSize);
+    sc3_ui_init('', true, true, true, false, '.xml', 'blksc3UserPrograms/xml', blk_load_help_graph, initMouse, blockSize);
     if(withUiCtl) {
         load_utf8_and_then('html/ui-ctl.html', setter_for_inner_html_of('uiCtlContainer'));
     }
