@@ -165,6 +165,10 @@ var editor_get_data = blk_get_xml;
 
 var editor_set_data = blk_load_xml;
 
+function editor_get_selected_text() {
+    return '';
+}
+
 function editor_get_js_notation_and_then(proc) {
     return proc(blk_get_stc_code());
 }
