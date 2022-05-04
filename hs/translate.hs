@@ -363,6 +363,7 @@ blk_graphs =
      -- ,"Tw 1467507942664646661" -- ChaosUGens.cpp/FBSineC
      -- ,"Tw 1479212835192332289" -- ChaosUGens.cpp/QuadC
      -- ,"Tw 1509888510525857792" -- ChaosUGens.cpp/LorenzN
+     ,"Tw 1519791409921941507"
      ])
   ,("JAR", ["1-4Qx", "rk_20120422"])
   ,("JH", ["4157"])
