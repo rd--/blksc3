@@ -11,12 +11,12 @@ import Data.List {- base -}
 import Data.Maybe {- base -}
 import Text.Printf {- base -}
 
-import qualified Sound.SC3.UGen.DB as Db {- hsc3-db -}
-import qualified Sound.SC3.UGen.DB.Pseudo as Db {- hsc3-db -}
-import qualified Sound.SC3.UGen.DB.Record as Db {- hsc3-db -}
+import qualified Sound.Sc3.Ugen.Db as Db {- hsc3-db -}
+import qualified Sound.Sc3.Ugen.Db.Pseudo as Db {- hsc3-db -}
+import qualified Sound.Sc3.Ugen.Db.Record as Db {- hsc3-db -}
 
 import qualified Language.Smalltalk.Ansi as St {- stsc3 -}
-import           Language.Smalltalk.Ansi.Expr {- stsc3 -}
+import Language.Smalltalk.Ansi.Expr {- stsc3 -}
 import qualified Language.Smalltalk.SuperCollider.Translate as Sc {- stsc3 -}
 
 lit_float_xml :: String -> Double -> String
@@ -270,7 +270,7 @@ expr_xml e =
     Send lhs (Message (St.BinarySelector m) [rhs]) -> binop_xml m (expr_xml lhs) (expr_xml rhs) -- 1 + 2
     Send lhs (Message (St.KeywordSelector m) [rhs]) -> keybinop_xml m (expr_xml lhs) (expr_xml rhs) -- 1.max(2)
     Send p1 (Message (St.KeywordSelector m) [p2, p3]) -> keyternaryop_xml m (expr_xml p1) (expr_xml p2) (expr_xml p3) -- 1.max(2)
-    Lambda _ a (St.Temporaries v) e_seq -> proc_xml a v e_seq
+    Lambda _ a v (e_seq, Nothing) -> proc_xml a v e_seq
     Init c _ s -> maybe "" comment_xml c ++ expr_seq_xml s
     _ -> error ("expr_xml: " ++ show e)
 
