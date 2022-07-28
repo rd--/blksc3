@@ -161,6 +161,17 @@ function blk_load_notes_and_then(fileName, processFunc) {
     load_utf8_and_then(fileName, stcText => processFunc(blk_markdown_to_html(blk_md_notes_from_stc(stcText))));
 }
 
+function blk_fullscreen() {
+	const element = document.documentElement;
+	if (!document.fullscreenElement) {
+		element.requestFullscreen();
+	} else {
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		}
+	}
+}
+
 var editor_get_data = blk_get_xml;
 
 var editor_set_data = blk_load_xml;

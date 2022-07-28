@@ -12,7 +12,7 @@ Other errors are:
 - f0-tw-1479212835192332289
 - tw-tw-01
 
-The _math_ operator blocks should only hold _UGen_ operators.
+The _math_ operator blocks should only hold _Ugen_ operators.
 
 _splay2_ should be written as a block constructor, not a method.
 
@@ -49,7 +49,7 @@ _kr_ should not exist.
 
 - Access keys.
   Chrome: d is "go to address box" (cannot be draw), e & f are "chrome menu" (cannot be erase or fit)
-  Firefox: f,e,v,s,b,t and h are menus (cannot be erase or fit), ␣ (space key) interacts poorly menus (cannot be play)
+  Firefox: f,e,v,s,b,t and h are menus (cannot be erase or fit), ␣ (space key) interacts poorly with menus (cannot be play)
 
 # Remainder
 
@@ -68,4 +68,5 @@ _kr_ should not exist.
 - multiple fragments
 - remaining unicode
 - help for collect
-- cc & sw for brower
+- cc & sw for broswer
+- fullscreen has x as accesskey, but it's really for phone/tablet so not required
