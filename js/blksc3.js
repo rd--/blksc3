@@ -163,8 +163,9 @@ function blk_load_notes_and_then(fileName, processFunc) {
 
 function blk_fullscreen() {
 	const element = document.documentElement;
+	const options = { navigationUI: "hide" };
 	if (!document.fullscreenElement) {
-		element.requestFullscreen();
+		element.requestFullscreen(options);
 	} else {
 		if (document.exitFullscreen) {
 			document.exitFullscreen();
