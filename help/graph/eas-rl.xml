@@ -1,0 +1,208 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="Wyou}s[Ias/SuJD[kdIE">delayTimes</variable>
+    <variable id="Gg?b,7sB3s@[yCZgylXx">src</variable>
+    <variable id="Mx.qCuN3m|6`RPr#Zk(K">delay</variable>
+    <variable id="@(NuT:YUrY8Q{vs7r2m:">pan</variable>
+  </variables>
+  <block type="sc3_Comment" id="h7R?-[_c@sv/Mhu,dT1%" x="0" y="0">
+    <field name="COMMENT">eas ; rl ; warning=feedback-network</field>
+    <next>
+      <block type="variables_set" id="O0;EQqi}AC/*!Vpnokv~">
+        <field name="VAR" id="Wyou}s[Ias/SuJD[kdIE">delayTimes</field>
+        <value name="VALUE">
+          <block type="lists_create_with" id="Ld-|YYQ-Mr@navnueC3$" inline="true">
+            <mutation items="3"></mutation>
+            <value name="ADD0">
+              <block type="math_number" id="Ldid/El(zmNMRDJdO;:;">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="math_number" id="Y{(rj@uVrDQM?@[}dyH*">
+                <field name="NUM">20</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="math_number" id="KLHoC^XspD9nc(e^A:-Y">
+                <field name="NUM">32</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="|yR_@{,T4]hiVhv?[$]-">
+            <field name="VAR" id="Gg?b,7sB3s@[yCZgylXx">src</field>
+            <value name="VALUE">
+              <block type="sc3_ArrayProc1" id=")%kaKCs:!K]{wrS(P^,p">
+                <field name="OP">sum</field>
+                <value name="IN">
+                  <block type="sc3_AudioIn" id="=09/]Ht,)auNfuNX@,+R" inline="true">
+                    <value name="CHANNELARRAY">
+                      <block type="lists_create_with" id="U]kOQ`MX)6)4w7j[mF3{" inline="true">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="math_number" id="EK8dABt}Sd|9IFW{lbdb">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="math_number" id=".?Lu8Ty[+m.R/LI^a]W9">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="MUL">
+                      <shadow type="math_number" id="D3@fi4u.E@S,-16Fw)pz">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="lists_create_with" id="DR:!|S/n(GTyRp00M=|x" inline="true">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="math_number" id=";?qZPusq/)VIE[t[wgou">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="math_number" id="@]!4))5$1?y9vA;qM{y7">
+                            <field name="NUM">0.75</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ADD">
+                      <shadow type="math_number" id="pDV_oSmD2;S2xy;+s+hq">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="y!L/w5s(2pq,A)vd%5lQ">
+                <field name="VAR" id="Mx.qCuN3m|6`RPr#Zk(K">delay</field>
+                <value name="VALUE">
+                  <block type="sc3_DelayN" id="2,tM^O|4wT%dngL)x;JN" inline="true">
+                    <value name="IN">
+                      <block type="variables_get" id="O8bS#kZMPGa!(x=2Yw3_">
+                        <field name="VAR" id="Gg?b,7sB3s@[yCZgylXx">src</field>
+                      </block>
+                    </value>
+                    <value name="MAXDELAYTIME">
+                      <block type="variables_get" id="|`,FZ9#[eN!N_5{gp.Qd">
+                        <field name="VAR" id="Wyou}s[Ias/SuJD[kdIE">delayTimes</field>
+                      </block>
+                    </value>
+                    <value name="DELAYTIME">
+                      <block type="variables_get" id="z.7yyvCDhv3vpqxi1biP">
+                        <field name="VAR" id="Wyou}s[Ias/SuJD[kdIE">delayTimes</field>
+                      </block>
+                    </value>
+                    <value name="MUL">
+                      <shadow type="math_number" id="L]ri[MDi,4pb$}@`X$6)">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <value name="ADD">
+                      <shadow type="math_number" id="A{$s2fys22MQMn=~]}TY">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="~|Yu?7ww)*%T!EpE_rE|">
+                    <field name="VAR" id="@(NuT:YUrY8Q{vs7r2m:">pan</field>
+                    <value name="VALUE">
+                      <block type="sc3_ArrayProc1" id="s=4Ea:V,SVO.lMLjRhrM">
+                        <field name="OP">sum</field>
+                        <value name="IN">
+                          <block type="sc3_Pan2" id="!hhhA@177~d%A6|*iYO5" inline="true">
+                            <value name="IN">
+                              <block type="variables_get" id="X_H/p)R,?CANtmBz=E:O">
+                                <field name="VAR" id="Mx.qCuN3m|6`RPr#Zk(K">delay</field>
+                              </block>
+                            </value>
+                            <value name="POS">
+                              <block type="lists_create_with" id="(*O|Bt[IGQ1Mm0)bgWTj" inline="true">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                  <block type="math_number" id="y/OO`:aj?!t*@E;l(byH">
+                                    <field name="NUM">-1</field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="math_number" id="!@Q3bnGqV.YsBDL^TUAU">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="math_number" id="COHFb_w5Pt(4:X}o`A;o">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="LEVEL">
+                              <block type="math_number" id="9fT2khb:G8|0=!MgK@|q">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="MUL">
+                              <shadow type="math_number" id="[oqQt)6Ivplmy**PGspR">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="_VHV5=U)I|QG_]|m)qzy">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="sc3_Play" id="nKl#no8HMv;iM-WltHqz">
+                        <value name="CODE">
+                          <block type="sc3_MulAdd" id="Cd%(Z!DsSiUgEqe?+m^M" inline="true">
+                            <value name="IN">
+                              <shadow type="math_number" id="ij]%he{RKq{4ha8inr;r">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="variables_get" id="/AR`g;bF9;*_/fG/,RHm">
+                                <field name="VAR" id="Gg?b,7sB3s@[yCZgylXx">src</field>
+                              </block>
+                            </value>
+                            <value name="MUL">
+                              <shadow type="math_number" id=")(KaMLog[4/+hmH)cTM}">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="math_number" id="F~jq9m0[C%LVML.Pr3:Y">
+                                <field name="NUM">0.5</field>
+                              </block>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="X/y~[]|!aZZHyceJD+_@">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="variables_get" id="#wYGrLymxD$7)#s%Q.C~">
+                                <field name="VAR" id="@(NuT:YUrY8Q{vs7r2m:">pan</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

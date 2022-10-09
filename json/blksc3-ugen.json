@@ -453,7 +453,7 @@
     ,
     {
         "type": "sc3_DelayN",
-        "message0": "DelayN %1 ∙ %2 ⌈⎵ %3 ⎵ %4 × %5 + %6",
+        "message0": "⎵𝑁 %1 ∙ %2 ⌈⎵ %3 ⎵ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
@@ -1744,7 +1744,7 @@
     ,
     {
         "type": "sc3_PitchShift",
-        "message0": "↕𝅘𝅥𝅮 %1 ∙ %2 #⌓ %3 ÷𝅘𝅥𝅮 %4 ⢅𝅘𝅥𝅮 %5 ⢅⏲ %6 × %7 + %8",
+        "message0": "𝅘𝅥𝅮↕ %1 ∙ %2 windowSize %3 pitchRatio %4 pitchDispersion %5 timeDispersion %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
@@ -2347,6 +2347,25 @@
     }
     ,
     {
+        "type": "sc3_Bezier",
+        "message0": "Bezier %1 haltAfter %2 dx %3 ν %4 ϕ %5 param %6 × %7 + %8",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "HALTAFTER", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "DX", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "PARAM", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Bezier(haltAfter, dx, freq, phase, param): (Undocumented class)",
+        "helpUrl": "https://doc.sccode.org/Classes/Bezier.html"
+    }
+    ,
+    {
         "type": "sc3_DWGPluckedStiff",
         "message0": "DWGPluckedStiff %1 ν %2 × %3 ⎇ %4 ⌖ %5 c1 %6 c3 %7 inp %8 release %9 fB %10 × %11 + %12",
         "args0": [
@@ -2367,6 +2386,72 @@
         "colour": 210,
         "tooltip": "DWGPluckedStiff(freq, amp, gate, pos, c1, c3, inp, release, fB): Plucked physical model.",
         "helpUrl": "https://doc.sccode.org/Classes/DWGPluckedStiff.html"
+    }
+    ,
+    {
+        "type": "sc3_DustRange",
+        "message0": "⢅↔ %1 iotMin %2 iotMax %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IOTMIN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "IOTMAX", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "DustRange(iotMin, iotMax): (Undocumented class)",
+        "helpUrl": "https://doc.sccode.org/Classes/DustRange.html"
+    }
+    ,
+    {
+        "type": "sc3_Dx7",
+        "message0": "Dx7 %1 ⛁ %2 on %3 off %4 data %5 vc %6 mnn %7 vel %8 pw %9 mw %10 bc %11 fc %12 × %13 + %14",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ON", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "OFF", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "DATA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "VC", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MNN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "VEL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "PW", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MW", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "BC", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "FC", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 210,
+        "tooltip": "Dx7(bufnum, on, off, data, vc, mnn, vel, pw, mw, bc, fc): (Undocumented class)",
+        "helpUrl": "https://doc.sccode.org/Classes/Dx7.html"
+    }
+    ,
+    {
+        "type": "sc3_Freezer",
+        "message0": "Freezer %1 ⛁ %2 𝐿 %3 𝑅 %4 gain %5 increment %6 incrementOffset %7 incrementRandom %8 rightRandom %9 syncPhaseTrigger %10 randomizePhaseTrigger %11 numberOfLoops %12 × %13 + %14",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "LEFT", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "RIGHT", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "GAIN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "INCREMENT", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "INCREMENTOFFSET", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "INCREMENTRANDOM", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "RIGHTRANDOM", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "SYNCPHASETRIGGER", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "RANDOMIZEPHASETRIGGER", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "NUMBEROFLOOPS", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 60,
+        "tooltip": "Freezer(bufnum, left, right, gain, increment, incrementOffset, incrementRandom, rightRandom, syncPhaseTrigger, randomizePhaseTrigger, numberOfLoops): (Undocumented class)",
+        "helpUrl": "https://doc.sccode.org/Classes/Freezer.html"
     }
     ,
     {
@@ -2410,88 +2495,37 @@
     }
     ,
     {
-        "type": "sc3_Bezier",
-        "message0": "Bezier %1 haltAfter %2 dx %3 ν %4 ϕ %5 param %6 × %7 + %8",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "HALTAFTER", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "DX", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "FREQ", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "PHASE", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "PARAM", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
-        ],
-        "output": "UGen",
-        "colour": 210,
-        "tooltip": "Bezier(haltAfter, dx, freq, phase, param): (Undocumented class)",
-        "helpUrl": "https://doc.sccode.org/Classes/Bezier.html"
-    }
-    ,
-    {
-        "type": "sc3_DX7",
-        "message0": "DX7 %1 ⛁ %2 on %3 off %4 data %5 vc %6 mnn %7 vel %8 pw %9 mw %10 bc %11 fc %12 × %13 + %14",
+        "type": "sc3_ShufflerB",
+        "message0": "ShufflerB %1 ⛁ %2 readLocationMinima %3 readLocationMaxima %4 readIncrementMinima %5 readIncrementMaxima %6 durationMinima %7 durationMaxima %8 envelopeAmplitudeMinima %9 envelopeAmplitudeMaxima %10 envelopeShapeMinima %11 envelopeShapeMaxima %12 envelopeSkewMinima %13 envelopeSkewMaxima %14 stereoLocationMinima %15 stereoLocationMaxima %16 interOffsetTimeMinima %17 interOffsetTimeMaxima %18 ftableReadLocationIncrement %19 readIncrementQuanta %20 interOffsetTimeQuanta %21 × %22 + %23",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ON", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "OFF", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "DATA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "VC", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MNN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "VEL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "PW", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MW", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "BC", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "FC", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
-        ],
-        "output": "UGen",
-        "colour": 210,
-        "tooltip": "DX7(bufnum, on, off, data, vc, mnn, vel, pw, mw, bc, fc): (Undocumented class)",
-        "helpUrl": "https://doc.sccode.org/Classes/DX7.html"
-    }
-    ,
-    {
-        "type": "sc3_DustRange",
-        "message0": "⢅↔ %1 iotMin %2 iotMax %3 × %4 + %5",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "IOTMIN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "IOTMAX", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
-        ],
-        "output": "UGen",
-        "colour": 210,
-        "tooltip": "DustRange(iotMin, iotMax): (Undocumented class)",
-        "helpUrl": "https://doc.sccode.org/Classes/DustRange.html"
-    }
-    ,
-    {
-        "type": "sc3_Freezer",
-        "message0": "Freezer %1 ⛁ %2 𝐿 %3 𝑅 %4 gain %5 increment %6 incrementOffset %7 incrementRandom %8 rightRandom %9 syncPhaseTrigger %10 randomizePhaseTrigger %11 numberOfLoops %12 × %13 + %14",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "LEFT", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "RIGHT", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "GAIN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "INCREMENT", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "INCREMENTOFFSET", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "INCREMENTRANDOM", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "RIGHTRANDOM", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "SYNCPHASETRIGGER", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "RANDOMIZEPHASETRIGGER", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "NUMBEROFLOOPS", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "READLOCATIONMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "READLOCATIONMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "READINCREMENTMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "READINCREMENTMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "DURATIONMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "DURATIONMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ENVELOPEAMPLITUDEMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ENVELOPEAMPLITUDEMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ENVELOPESHAPEMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ENVELOPESHAPEMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ENVELOPESKEWMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ENVELOPESKEWMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "STEREOLOCATIONMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "STEREOLOCATIONMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "INTEROFFSETTIMEMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "INTEROFFSETTIMEMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "FTABLEREADLOCATIONINCREMENT", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "READINCREMENTQUANTA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "INTEROFFSETTIMEQUANTA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
             {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
             {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 60,
-        "tooltip": "Freezer(bufnum, left, right, gain, increment, incrementOffset, incrementRandom, rightRandom, syncPhaseTrigger, randomizePhaseTrigger, numberOfLoops): (Undocumented class)",
-        "helpUrl": "https://doc.sccode.org/Classes/Freezer.html"
+        "tooltip": "ShufflerB(bufnum, readLocationMinima, readLocationMaxima, readIncrementMinima, readIncrementMaxima, durationMinima, durationMaxima, envelopeAmplitudeMinima, envelopeAmplitudeMaxima, envelopeShapeMinima, envelopeShapeMaxima, envelopeSkewMinima, envelopeSkewMaxima, stereoLocationMinima, stereoLocationMaxima, interOffsetTimeMinima, interOffsetTimeMaxima, ftableReadLocationIncrement, readIncrementQuanta, interOffsetTimeQuanta): (Undocumented class)",
+        "helpUrl": "https://doc.sccode.org/Classes/ShufflerB.html"
     }
     ,
     {
@@ -2543,40 +2577,6 @@
         "colour": 150,
         "tooltip": "SvfLp(in, freq, q): (Undocumented class)",
         "helpUrl": "https://doc.sccode.org/Classes/SvfLp.html"
-    }
-    ,
-    {
-        "type": "sc3_ShufflerB",
-        "message0": "ShufflerB %1 ⛁ %2 readLocationMinima %3 readLocationMaxima %4 readIncrementMinima %5 readIncrementMaxima %6 durationMinima %7 durationMaxima %8 envelopeAmplitudeMinima %9 envelopeAmplitudeMaxima %10 envelopeShapeMinima %11 envelopeShapeMaxima %12 envelopeSkewMinima %13 envelopeSkewMaxima %14 stereoLocationMinima %15 stereoLocationMaxima %16 interOffsetTimeMinima %17 interOffsetTimeMaxima %18 ftableReadLocationIncrement %19 readIncrementQuanta %20 interOffsetTimeQuanta %21 × %22 + %23",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "BUFNUM", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "READLOCATIONMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "READLOCATIONMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "READINCREMENTMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "READINCREMENTMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "DURATIONMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "DURATIONMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ENVELOPEAMPLITUDEMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ENVELOPEAMPLITUDEMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ENVELOPESHAPEMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ENVELOPESHAPEMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ENVELOPESKEWMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ENVELOPESKEWMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "STEREOLOCATIONMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "STEREOLOCATIONMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "INTEROFFSETTIMEMINIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "INTEROFFSETTIMEMAXIMA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "FTABLEREADLOCATIONINCREMENT", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "READINCREMENTQUANTA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "INTEROFFSETTIMEQUANTA", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
-        ],
-        "output": "UGen",
-        "colour": 60,
-        "tooltip": "ShufflerB(bufnum, readLocationMinima, readLocationMaxima, readIncrementMinima, readIncrementMaxima, durationMinima, durationMaxima, envelopeAmplitudeMinima, envelopeAmplitudeMaxima, envelopeShapeMinima, envelopeShapeMaxima, envelopeSkewMinima, envelopeSkewMaxima, stereoLocationMinima, stereoLocationMaxima, interOffsetTimeMinima, interOffsetTimeMaxima, ftableReadLocationIncrement, readIncrementQuanta, interOffsetTimeQuanta): (Undocumented class)",
-        "helpUrl": "https://doc.sccode.org/Classes/ShufflerB.html"
     }
     ,
     {
@@ -2653,7 +2653,7 @@
     ,
     {
         "type": "sc3_AudioIn",
-        "message0": "AudioIn %1 channelArray %2 × %3 + %4",
+        "message0": "∙ %1 ⟦∙⟧ %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "CHANNELARRAY", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
@@ -2743,7 +2743,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Demand results from demand rate UGens at intervals",
+        "tooltip": "Demand results from demand rate Ugens at intervals",
         "helpUrl": "https://doc.sccode.org/Classes/DmdFor.html"
     }
     ,
@@ -2760,7 +2760,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Demand results as trigger from demand rate UGens at intervals",
+        "tooltip": "Demand results as trigger from demand rate Ugens at intervals",
         "helpUrl": "https://doc.sccode.org/Classes/TDmdFor.html"
     }
     ,
@@ -2777,7 +2777,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Demand results from demand rate UGens on trigger",
+        "tooltip": "Demand results from demand rate Ugens on trigger",
         "helpUrl": "https://doc.sccode.org/Classes/DmdOn.html"
     }
     ,
@@ -3007,7 +3007,7 @@
         ],
         "output": "UGen",
         "colour": 30,
-        "tooltip": "Demand rate arithmetic series UGen",
+        "tooltip": "Demand rate arithmetic series Ugen",
         "helpUrl": "https://doc.sccode.org/Classes/Ser.html"
     }
     ,

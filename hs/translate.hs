@@ -320,6 +320,7 @@ blk_graphs =
   ,("DMC", ["PM Crotale"])
   ,("DS", ["Tw 19", "Tw 22"])
   ,("DST", ["1-5fc"])
+  ,("EAS", ["rl"])
   ,("ES",
     ["Tw 435684664200540161"
     -- ,"Tw 570012853274615808" -- GreyholeRaw
@@ -335,8 +336,8 @@ blk_graphs =
      ,"Tw 0061"
      ,"Tw 0084"
      ,"Tw 0134", "Tw 0134 (Var)", "Tw 0164", "Tw 0165"
-     ,"Tw 0220", "Tw 0225"
-     ,"Tw 0340", "Tw 0350"
+     ,"Tw 0220", "Tw 0225", "Tw 0283"
+     ,"Tw 0317", "Tw 0340", "Tw 0350"
      ,"Tw 0454598285861617665"
      ,"Tw 0456384156159574016"
      ,"Tw 0839296011982024704"
@@ -501,7 +502,7 @@ blk_help =
   ,"CombC.1", "CombC.2"
   ,"Comment.1"
   ,"DWGPluckedStiff.1"
-  ,"DX7.1"
+  ,"Dx7.1"
   ,"Decay2.1","Decay2.2"
   ,"DegreeToKey.1"
   ,"ExpRand.1"

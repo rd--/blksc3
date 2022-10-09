@@ -414,8 +414,20 @@ Blockly.JavaScript['sc3_XFade2'] = function(block) {
 Blockly.JavaScript['sc3_ZeroCrossing'] = function(block) {
   return blk_ugen_codegen(block, 'ZeroCrossing', ['IN'], true);
 }
+Blockly.JavaScript['sc3_Bezier'] = function(block) {
+  return blk_ugen_codegen(block, 'Bezier', ['HALTAFTER', 'DX', 'FREQ', 'PHASE', 'PARAM'], true);
+}
 Blockly.JavaScript['sc3_DWGPluckedStiff'] = function(block) {
   return blk_ugen_codegen(block, 'DWGPluckedStiff', ['FREQ', 'AMP', 'GATE', 'POS', 'C1', 'C3', 'INP', 'RELEASE', 'FB'], true);
+}
+Blockly.JavaScript['sc3_DustRange'] = function(block) {
+  return blk_ugen_codegen(block, 'DustRange', ['IOTMIN', 'IOTMAX'], true);
+}
+Blockly.JavaScript['sc3_Dx7'] = function(block) {
+  return blk_ugen_codegen(block, 'Dx7', ['BUFNUM', 'ON', 'OFF', 'DATA', 'VC', 'MNN', 'VEL', 'PW', 'MW', 'BC', 'FC'], true);
+}
+Blockly.JavaScript['sc3_Freezer'] = function(block) {
+  return blk_ugen_codegen(block, 'Freezer', ['BUFNUM', 'LEFT', 'RIGHT', 'GAIN', 'INCREMENT', 'INCREMENTOFFSET', 'INCREMENTRANDOM', 'RIGHTRANDOM', 'SYNCPHASETRIGGER', 'RANDOMIZEPHASETRIGGER', 'NUMBEROFLOOPS'], true);
 }
 Blockly.JavaScript['sc3_GreyholeRaw'] = function(block) {
   return blk_ugen_codegen(block, 'GreyholeRaw', ['IN1', 'IN2', 'DAMPING', 'DELAYTIME', 'DIFFUSION', 'FEEDBACK', 'MODDEPTH', 'MODFREQ', 'SIZE'], true);
@@ -423,17 +435,8 @@ Blockly.JavaScript['sc3_GreyholeRaw'] = function(block) {
 Blockly.JavaScript['sc3_MoogLadder'] = function(block) {
   return blk_ugen_codegen(block, 'MoogLadder', ['IN', 'FFREQ', 'RES'], true);
 }
-Blockly.JavaScript['sc3_Bezier'] = function(block) {
-  return blk_ugen_codegen(block, 'Bezier', ['HALTAFTER', 'DX', 'FREQ', 'PHASE', 'PARAM'], true);
-}
-Blockly.JavaScript['sc3_DX7'] = function(block) {
-  return blk_ugen_codegen(block, 'DX7', ['BUFNUM', 'ON', 'OFF', 'DATA', 'VC', 'MNN', 'VEL', 'PW', 'MW', 'BC', 'FC'], true);
-}
-Blockly.JavaScript['sc3_DustRange'] = function(block) {
-  return blk_ugen_codegen(block, 'DustRange', ['IOTMIN', 'IOTMAX'], true);
-}
-Blockly.JavaScript['sc3_Freezer'] = function(block) {
-  return blk_ugen_codegen(block, 'Freezer', ['BUFNUM', 'LEFT', 'RIGHT', 'GAIN', 'INCREMENT', 'INCREMENTOFFSET', 'INCREMENTRANDOM', 'RIGHTRANDOM', 'SYNCPHASETRIGGER', 'RANDOMIZEPHASETRIGGER', 'NUMBEROFLOOPS'], true);
+Blockly.JavaScript['sc3_ShufflerB'] = function(block) {
+  return blk_ugen_codegen(block, 'ShufflerB', ['BUFNUM', 'READLOCATIONMINIMA', 'READLOCATIONMAXIMA', 'READINCREMENTMINIMA', 'READINCREMENTMAXIMA', 'DURATIONMINIMA', 'DURATIONMAXIMA', 'ENVELOPEAMPLITUDEMINIMA', 'ENVELOPEAMPLITUDEMAXIMA', 'ENVELOPESHAPEMINIMA', 'ENVELOPESHAPEMAXIMA', 'ENVELOPESKEWMINIMA', 'ENVELOPESKEWMAXIMA', 'STEREOLOCATIONMINIMA', 'STEREOLOCATIONMAXIMA', 'INTEROFFSETTIMEMINIMA', 'INTEROFFSETTIMEMAXIMA', 'FTABLEREADLOCATIONINCREMENT', 'READINCREMENTQUANTA', 'INTEROFFSETTIMEQUANTA'], true);
 }
 Blockly.JavaScript['sc3_SvfBp'] = function(block) {
   return blk_ugen_codegen(block, 'SvfBp', ['IN', 'FREQ', 'Q'], true);
@@ -443,9 +446,6 @@ Blockly.JavaScript['sc3_SvfHp'] = function(block) {
 }
 Blockly.JavaScript['sc3_SvfLp'] = function(block) {
   return blk_ugen_codegen(block, 'SvfLp', ['IN', 'FREQ', 'Q'], true);
-}
-Blockly.JavaScript['sc3_ShufflerB'] = function(block) {
-  return blk_ugen_codegen(block, 'ShufflerB', ['BUFNUM', 'READLOCATIONMINIMA', 'READLOCATIONMAXIMA', 'READINCREMENTMINIMA', 'READINCREMENTMAXIMA', 'DURATIONMINIMA', 'DURATIONMAXIMA', 'ENVELOPEAMPLITUDEMINIMA', 'ENVELOPEAMPLITUDEMAXIMA', 'ENVELOPESHAPEMINIMA', 'ENVELOPESHAPEMAXIMA', 'ENVELOPESKEWMINIMA', 'ENVELOPESKEWMAXIMA', 'STEREOLOCATIONMINIMA', 'STEREOLOCATIONMAXIMA', 'INTEROFFSETTIMEMINIMA', 'INTEROFFSETTIMEMAXIMA', 'FTABLEREADLOCATIONINCREMENT', 'READINCREMENTQUANTA', 'INTEROFFSETTIMEQUANTA'], true);
 }
 Blockly.JavaScript['sc3_TScramble'] = function(block) {
   return blk_ugen_codegen(block, 'TScramble', ['TRIGGER', 'INPUTS'], true);

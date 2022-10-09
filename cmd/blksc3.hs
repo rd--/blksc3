@@ -15,10 +15,10 @@ import qualified Network.WebSockets as Ws {- websockets -}
 
 import qualified Sound.Osc as Osc {- hosc -}
 
-import qualified Sound.SC3.UGen.DB as Db {- hsc3-db -}
-import qualified Sound.SC3.UGen.DB.Bindings.Blockly as Blockly {- hsc3-db -}
-import qualified Sound.SC3.UGen.DB.Pseudo as Db {- hsc3-db -}
-import qualified Sound.SC3.UGen.DB.Record as Db {- hsc3-db -}
+import qualified Sound.Sc3.Ugen.Db as Db {- hsc3-db -}
+import qualified Sound.Sc3.Ugen.Db.Bindings.Blockly as Blockly {- hsc3-db -}
+import qualified Sound.Sc3.Ugen.Db.Pseudo as Db {- hsc3-db -}
+import qualified Sound.Sc3.Ugen.Db.Record as Db {- hsc3-db -}
 
 import qualified Language.Smalltalk.SuperCollider.Translate as Sc {- stsc3 -}
 

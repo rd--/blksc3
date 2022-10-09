@@ -11,12 +11,12 @@ var voiceData = [
 var voiceFunc = {
     var tr = Dust(1 / 32).kr;
     var buf = voiceData.concatenation.asLocalBuf;
-    var dx7 = DX7(buf, tr, 0, 0, 0, TRand(48, 72, tr), TRand(0.1, 0.6, tr), 0, 0, 0, 0);
+    var dx7 = Dx7(buf, tr, 0, 0, 0, TRand(48, 72, tr), TRand(0.1, 0.6, tr), 0, 0, 0, 0);
     Pan2(dx7, TRand(-1, 1, tr), 1)
 };
 voiceFunc.dup(32).sum * 0.25
 
 //---- notes.md
-_DX7_ requires _sc3-rdu_.
+_Dx7_ requires _sc3-rdu_.
 
-A SuperCollider form of the Raph Levien / Pascal Gauthier implementation of the Yamaha DX7 architecture.
+A SuperCollider form of the Raph Levien / Pascal Gauthier implementation of the Yamaha Dx7 architecture.
