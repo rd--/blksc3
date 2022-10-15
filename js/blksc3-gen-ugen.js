@@ -453,11 +453,11 @@ Blockly.JavaScript['sc3_TScramble'] = function(block) {
 Blockly.JavaScript['sc3_VOSIM'] = function(block) {
   return blk_ugen_codegen(block, 'VOSIM', ['TRIG', 'FREQ', 'NCYCLES', 'DECAY'], true);
 }
-Blockly.JavaScript['sc3_ADSR'] = function(block) {
-  return blk_ugen_codegen(block, 'ADSR', ['GATE', 'ATTACKTIME', 'DECAYTIME', 'SUSTAINLEVEL', 'RELEASETIME', 'CURVES'], true);
+Blockly.JavaScript['sc3_Adsr'] = function(block) {
+  return blk_ugen_codegen(block, 'Adsr', ['GATE', 'ATTACKTIME', 'DECAYTIME', 'SUSTAINLEVEL', 'RELEASETIME', 'CURVES'], true);
 }
-Blockly.JavaScript['sc3_ASR'] = function(block) {
-  return blk_ugen_codegen(block, 'ASR', ['GATE', 'ATTACKTIME', 'RELEASETIME', 'CURVES'], true);
+Blockly.JavaScript['sc3_Asr'] = function(block) {
+  return blk_ugen_codegen(block, 'Asr', ['GATE', 'ATTACKTIME', 'RELEASETIME', 'CURVES'], true);
 }
 Blockly.JavaScript['sc3_AudioIn'] = function(block) {
   return blk_ugen_codegen(block, 'AudioIn', ['CHANNELARRAY'], true);

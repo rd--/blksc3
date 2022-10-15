@@ -493,8 +493,8 @@ blk_in_autogen typ lst =
 
 blk_help :: [String]
 blk_help =
-  ["ADSR.1", "ADSR.2"
-  ,"ASR.1", "ASR.2"
+  ["Adsr.1", "Adsr.2"
+  ,"Asr.1", "Asr.2"
   ,"ArrayFill.1"
   ,"Balance2.1", "Balance2.2"
   ,"Blip.1", "Blip.2"
