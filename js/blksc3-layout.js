@@ -1,14 +1,12 @@
-'use strict';
-
-var blk_layouts;
+import * as sc from '../lib/jssc3/js/jssc3.js'
 
 // Set properties given layout configuration name.
-function blk_set_layout(configName) {
+export function blk_set_layout(blk, configName) {
     if(configName) {
         var w = document.getElementById('blocklyContainer');
         var c = document.getElementById('blkCtl');
         var n = document.getElementById('blkNotes');
-        var o = blk_layouts[configName];
+        var o = blk.layouts[configName];
         w.style.height = o.workspaceHeight;
         w.style.width = o.workspaceWidth;
         c.style.left = o.ctlLeft;
@@ -20,10 +18,10 @@ function blk_set_layout(configName) {
 }
 
 // Set event listener for layout menu.
-function blk_layout_menu_init() {
+export function blk_layout_menu_init(blk) {
     var select = document.getElementById('blkLayoutMenu');
     select.addEventListener('change', e => blk_set_layout(e.target.value));
-    load_json_and_then('json/blksc3-layouts.json', obj => blk_layouts = obj);
+    sc.load_json_and_then('json/blksc3-layouts.json', obj => blk.layouts = obj);
 }
 
 /*

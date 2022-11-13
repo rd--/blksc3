@@ -1,13 +1,15 @@
-'use strict';
-
-function blk_cc_value(ccIndex) {
+export function blk_cc_value(ccIndex) {
     var ccElem = document.getElementById('cc' + ccIndex);
-    var ccValue = ccElem.value;
-    console.debug('cc: ', ccIndex, ccValue);
-    return ccValue;
+	if(ccElem) {
+		var ccValue = ccElem.value;
+		console.debug('cc: ', ccIndex, ccValue);
+		return ccValue;
+	} else {
+		return '0';
+	}
 }
 
-function blk_sw_maintained_value(swIndex) {
+export function blk_sw_maintained_value(swIndex) {
     var swElem = document.getElementById('swC' + swIndex);
     var swValue = swElem.checked ? 1 : 0;
     console.debug('sw/checkbox: ', swIndex, swValue);

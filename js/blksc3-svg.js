@@ -1,7 +1,5 @@
-'use strict';
-
 // Get .svg format drawing of workspace.
-function blk_get_svg() {
-    var svg = blk_workspace.getParentSvg(); // getCanvas() getParentSvg()
+function blk_get_svg(blk) {
+    var svg = blk.workspace.getParentSvg(); // getCanvas() getParentSvg()
     return svg.outerHTML;
 }

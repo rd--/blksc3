@@ -12,19 +12,15 @@
     <script src="lib/blockly/blocks_compressed.js"></script>
     <script src="lib/commonmark.js/dist/commonmark.js"></script>
     <script src="lib/jssc3/lib/osc.js/dist/osc-browser.js"></script>
-    <script src="lib/jssc3/js/jssc3-base.js"></script>
-    <script src="lib/jssc3/js/sc3-pointer-rebind.js"></script>
-    <script src="lib/jssc3/js/sc3-wasm.js"></script>
-    <script src="lib/jssc3/js/sc3-wasm-module.js"></script>
-    <script src="js/blksc3-gen.js"></script>
-    <script src="js/blksc3-gen-ugen.js"></script>
-    <script src="js/blksc3-controllers.js"></script>
-    <script src="js/blksc3-layout.js"></script>
-    <script src="js/blksc3.js"></script>
-    <script>
+    <script type="module">
+import * as sc from './lib/jssc3/js/jssc3.js'
+import * as blk from './js/blksc3.js'
+globalThis.sc = sc;
+globalThis.blk = blk;
 window.onload = function() {
-    blk_init('.js', true, 4096, 48, false, 'e', null, false);
-    sc3_wasm_init();
+    sc.sc3_wasm_init(sc.setStatusDisplay);
+    blk.blk_init(Blockly, '.js', true, 4096, 48, false, 'e', null, false);
+    sc.notation.format = '.js';
 };
     </script>
   </head>
@@ -38,19 +34,19 @@ window.onload = function() {
         <select id="userMenu" title="User (u)" accesskey="u"><option value=''>--User--</option></select>
       </div>
       <div id="blkCmd">
-        <input type="file" id="xmlInputFile" accept=".xml" onchange="blk_read_input_xml()" style="display:none">
-        <input type="file" id="userProgramArchiveFile" accept=".json" onchange="user_program_read_archive()" style="display:none">
+        <input type="file" id="xmlInputFile" accept=".xml" onchange="blk.blk_read_input_xml()" style="display:none">
+        <input type="file" id="userProgramArchiveFile" accept=".json" onchange="sc.user_program_read_archive()" style="display:none">
         <button id="xmlInputFileSelect" title="Select and load .xml file to workspace (l)" accesskey="l">Load</button>
-        <button title="Copy workspace xml to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(blk_get_xml())">Copy</button>
-        <button title="Cleanup workspace (o)" accesskey="o" onclick="blk_workspace.cleanUp()">Cleanup</button>
-        <!-- <button title="Center drawing in workspace" onclick="blk_workspace.scrollCenter()">Center</button> -->
-        <button title="Fit drawing to workspace (=)" accesskey="=" onclick="blk_workspace.zoomToFit()">Fit</button>
-        <button title="Print" onclick="prettyPrintSyndef()">Print</button>
-        <button title="Evaluate workspace program (/)" accesskey="/" onclick="evalJsProgram()">Eval</button>
-        <button title="Play workspace program (,)" accesskey="," onclick="playJsProgram()">Play</button>
-        <button title="Send reset command (.)" accesskey="." onclick="reset()">Reset</button>
-        <button title="Delete all blocks from workspace (k)" accesskey="k" onclick="blk_workspace.clear()">Clear</button>
-        <button title="Save document to local storage (s)" accesskey="s" onclick="ui_save_program()">Save</button>
+        <button title="Copy workspace xml to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(blk.blk_get_xml())">Copy</button>
+        <button title="Cleanup workspace (o)" accesskey="o" onclick="blk.blk.workspace.cleanUp()">Cleanup</button>
+        <!-- <button title="Center drawing in workspace" onclick="blk.blk.workspace.scrollCenter()">Center</button> -->
+        <button title="Fit drawing to workspace (=)" accesskey="=" onclick="blk.blk.workspace.zoomToFit()">Fit</button>
+        <button title="Print" onclick="sc.prettyPrintSyndef()">Print</button>
+        <button title="Evaluate workspace program (/)" accesskey="/" onclick="sc.evalJsProgram(globalScsynth)">Eval</button>
+        <button title="Play workspace program (,)" accesskey="," onclick="sc.playJsProgramWasm(globalScsynth)">Play</button>
+        <button title="Send reset command (.)" accesskey="." onclick="sc.resetScsynthWasm(globalScsynth)">Reset</button>
+        <button title="Delete all blocks from workspace (k)" accesskey="k" onclick="blk.blk.workspace.clear()">Clear</button>
+        <button title="Save document to local storage (s)" accesskey="s" onclick="sc.ui_save_program()">Save</button>
         <select id="actionsMenu" title="Actions">
           <option value=''>&#x2630;</option>
           <option value='setBlockSize'>Block Size</option>
@@ -67,7 +63,7 @@ window.onload = function() {
           <option value='1680×1050'>1680×1050</option>
           <option value='1920×1080'>1920×1080</option>
         </select>
-        <button title="Boot" accesskey="b" onclick="ui_boot_scsynth()">⏻ (Boot)</button>
+        <button title="Boot" accesskey="b" onclick="sc.bootScsynthWasm(globalScsynth)">⏻ (Boot)</button>
         ⓘ <span id="statusText">&nbsp;</span>
         <button title="Fullscreen" accesskey="x" onclick="blk_fullscreen()">⇱</button>
       </div>
