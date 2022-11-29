@@ -18,8 +18,8 @@ export const blk = {
 // c.f. https://github.com/google/blockly/issues/3921 and https://groups.google.com/g/blockly/c/GC5TsBUVVbE/
 function blk_display_scrollbars(showScrollbars) {
     var displayValue = showScrollbars ? '' : 'none';
-    blk.workspace.scrollbar.vScroll.svgGroup_.style.display = displayValue;
-    blk.workspace.scrollbar.hScroll.svgGroup_.style.display = displayValue;
+    blk.workspace.scrollbar.vScroll.svgHandle.style.display = displayValue;
+    blk.workspace.scrollbar.hScroll.svgHandle.style.display = displayValue;
 }
 
 function blk_toggle_scrollbars() {
@@ -31,7 +31,7 @@ function blk_toggle_scrollbars() {
 function blk_inject_with_xml_toolbox(onCompletion) {
     return function (xml_toolbox) {
         blk.config = {
-            media: 'lib/blockly/media/',
+            media: 'lib/blockly-9.1.0/media/',
             sounds: false,
             toolbox: xml_toolbox,
             rtl: false,

@@ -6,10 +6,10 @@
     <link rel="icon" type="image/png" href="lib/jssc3/png/os.512.png" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/blksc3.css" />
-    <script src="lib/blockly/blockly_compressed.js"></script>
-    <script src="lib/blockly/javascript_compressed.js"></script>
-    <script src="lib/blockly/msg/js/en.js"></script>
-    <script src="lib/blockly/blocks_compressed.js"></script>
+    <script src="lib/blockly-9.1.0/blockly_compressed.js"></script>
+    <script src="lib/blockly-9.1.0/javascript_compressed.js"></script>
+    <script src="lib/blockly-9.1.0/msg/en.js"></script>
+    <script src="lib/blockly-9.1.0/blocks_compressed.js"></script>
     <script src="lib/commonmark.js/dist/commonmark.js"></script>
     <script src="lib/jssc3/lib/osc.js/dist/osc-browser.js"></script>
     <script type="module">
@@ -42,9 +42,9 @@ window.onload = function() {
         <!-- <button title="Center drawing in workspace" onclick="blk.blk.workspace.scrollCenter()">Center</button> -->
         <button title="Fit drawing to workspace (=)" accesskey="=" onclick="blk.blk.workspace.zoomToFit()">Fit</button>
         <button title="Print" onclick="sc.prettyPrintSyndef()">Print</button>
-        <button title="Evaluate workspace program (/)" accesskey="/" onclick="sc.evalJsProgram(globalScsynth)">Eval</button>
-        <button title="Play workspace program (,)" accesskey="," onclick="sc.playJsProgramWasm(globalScsynth)">Play</button>
-        <button title="Send reset command (.)" accesskey="." onclick="sc.resetScsynthWasm(globalScsynth)">Reset</button>
+        <button title="Evaluate workspace program (/)" accesskey="/" onclick="sc.evalJsProgram()">Eval</button>
+        <button title="Play workspace program (,)" accesskey="," onclick="sc.playJsProgram(globalScsynth, 1)">Play</button>
+        <button title="Send reset command (.)" accesskey="." onclick="sc.resetScsynth(globalScsynth)">Reset</button>
         <button title="Delete all blocks from workspace (k)" accesskey="k" onclick="blk.blk.workspace.clear()">Clear</button>
         <button title="Save document to local storage (s)" accesskey="s" onclick="sc.ui_save_program()">Save</button>
         <select id="actionsMenu" title="Actions">
@@ -63,7 +63,7 @@ window.onload = function() {
           <option value='1680×1050'>1680×1050</option>
           <option value='1920×1080'>1920×1080</option>
         </select>
-        <button title="Boot" accesskey="b" onclick="sc.bootScsynthWasm(globalScsynth)">⏻ (Boot)</button>
+        <button title="Boot" accesskey="b" onclick="globalScsynth.boot()">⏻ (Boot)</button>
         ⓘ <span id="statusText">&nbsp;</span>
         <button title="Fullscreen" accesskey="x" onclick="blk_fullscreen()">⇱</button>
       </div>

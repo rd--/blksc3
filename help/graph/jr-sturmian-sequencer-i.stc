@@ -12,6 +12,6 @@ var strFunc = {
     var dt = 2 ** i.negated * 10;
     var trig = TDmdFor(dt, 0, Seq(1, str));
     var freq = ExpRand(200, i + 1 / 7 * 10100);
-    Ringz(trig, freq * [1, 1.2, 1.5], ExpRand(2 ** i.negated * 0.1, 1.101)).sum.distort
+    Ringz(trig, freq * [1, 1.2, 1.5], ExpRand(2 ** i.negated * 0.1, 1.101)).sum.Distort
 };
 0.to(6).collect(strFunc).splay * 0.3

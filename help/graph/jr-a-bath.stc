@@ -6,7 +6,7 @@ var u1 = SelectX(LinLin(LFDNoise1(4), -1, 1, 0, sources.size), sources) * 0.1;
 var u2 = u1 + DelayC(u1, 0.1, [0.001, 0.0012]) * 0.1;
 var u3 = { RLPF(u2, { Rand(100.0, 340) * aside }.dup(4), 0.2).sum }.dup;
 var u4 = CombC(u3.reverse, 0.05, 0.05, 0.3) * 0.3 * LFNoise2(0.2).max(0) + u3;
-SelectX(above.lag(0.4), [u2, u4]) * 2
+SelectX(above.Lag(0.4), [u2, u4]) * 2
 
 //---- notes.md
 Mouse control.

@@ -14,6 +14,6 @@ var strFunc = {
     var trig = TDmdFor(dt, 0, Seq(1, str));
     var freq = TExpRand(200, (n - i) / n * 10100, trig);
     var trigFlt = BPF(trig, LFNoise2(0.1) * 0.02 + 1 * freq, 0.2);
-    Ringz(trigFlt, freq * [1, 1.1, 1.2], ExpRand(2 ** i.negated * 0.1, 0.5)).sum.distort
+    Ringz(trigFlt, freq * [1, 1.1, 1.2], ExpRand(2 ** i.negated * 0.1, 0.5)).sum.Distort
 };
 0.to(n - 1).collect(strFunc).splay * 0.3

@@ -5,7 +5,7 @@ var root = Rand(12, 48);
 var z = OverlapTexture({
     arg tr;
     Pan2(
-        (Resonz(PinkNoise() * 20, (DegreeToKey(mode, TRand(0, 20, tr), 12) + root).midiCps, 0.002) * 4).distort,
+        (Resonz(PinkNoise() * 20, (DegreeToKey(mode, TRand(0, 20, tr), 12) + root).midiCps, 0.002) * 4).Distort,
         TRand(-1, 1, tr),
         0.2);
 }, 10, 0.1, n);

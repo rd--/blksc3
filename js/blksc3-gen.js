@@ -218,9 +218,9 @@ function blk_append_mul_add(blk, block, codeStr) {
     if(reqMul && reqAdd) {
         return (blk.output_format == '.stc' ? '' : 'sc.') + 'MulAdd(' + codeStr + ', ' + mulStr + ', ' + addStr + ')';
     } else if(reqMul) {
-        return blk.output_format == '.stc' ? ('(' + codeStr + ' * ' + mulStr + ')') : ('sc.mul(' + codeStr + ', ' + mulStr + ')');
+        return blk.output_format == '.stc' ? ('(' + codeStr + ' * ' + mulStr + ')') : ('sc.Mul(' + codeStr + ', ' + mulStr + ')');
     } else if(reqAdd) {
-        return blk.output_format == '.stc' ? ('(' + codeStr + ' + ' + addStr + ')') : ('sc.add(' + codeStr + ', ' + addStr + ')');
+        return blk.output_format == '.stc' ? ('(' + codeStr + ' + ' + addStr + ')') : ('sc.Add(' + codeStr + ', ' + addStr + ')');
     } else {
         return codeStr;
     }

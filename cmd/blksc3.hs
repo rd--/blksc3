@@ -19,6 +19,7 @@ import qualified Sound.Sc3.Ugen.Db as Db {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Bindings.Blockly as Blockly {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Pseudo as Db {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Record as Db {- hsc3-db -}
+import qualified Sound.Sc3.Ugen.Db.Rename as Rename {- hsc3-db -}
 
 import qualified Language.Smalltalk.SuperCollider.Translate as Sc {- stsc3 -}
 
@@ -92,10 +93,11 @@ ws_osc_to_udp_osc opt@(ws_host, ws_port, _, _) = Ws.runServer ws_host ws_port (w
 blk_gen :: IO ()
 blk_gen = do
   let lst = sort (concat (map (\(_,_,u) -> u) Blockly.blk_dict_elem))
-      u_seq = filter (\u -> Db.ugen_name u `elem` lst) Db.ugen_db
+      u_seq = filter (\u -> Rename.sc3_ugen_rename (Db.ugen_name u) `elem` lst) Db.ugen_db
       p_seq = filter (\p -> Db.pseudo_ugen_name p `elem` lst) Db.pseudo_ugen_db
       dir = "/home/rohan/sw/blksc3/"
-      gen_js = unlines ("'use strict';\n" : map Blockly.u_blk_gen u_seq ++ map Blockly.p_blk_gen p_seq)
+      pre = "import { blk_ugen_codegen } from './blksc3-gen.js'\n\nexport function blksc3_init_codegen_ugen(blk) {\n";
+      gen_js = unlines (pre : map Blockly.u_blk_gen u_seq ++ map Blockly.p_blk_gen p_seq)
       gen_json = "[\n" ++ (intercalate "    ,\n" (map Blockly.u_blk_dfn u_seq ++ map Blockly.p_blk_dfn p_seq)) ++ "]"
   writeFile (dir ++ "js/blksc3-gen-ugen.js") gen_js
   writeFile (dir ++ "json/blksc3-ugen.json") gen_json

@@ -21,7 +21,7 @@ snd = snd + [
     RingzBank({ PinkNoise() * 0.007 }.dup(2), [hz, hz * 2 + 23, hz * 4 + 53, hz * 8 + 23], [1, 1, 1, 1], [1, 1, 1, 1])].product;
 snd = LPF(snd, 10000);
 snd = HPF(snd.tanh, 20);
-snd * -10.dbAmp
+snd * -10.DbAmp
 
 //---- notes.md
 _MoogLadder_ requires _sc3-plugins_.

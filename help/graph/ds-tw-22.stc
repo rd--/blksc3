@@ -6,4 +6,4 @@ var n = [
     [75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309]
 ];
 var a = DmdFor(0.1, 0, Seq(inf, Wrap(n.concatenation, 20, 55).midiCps));
-HPF(LeakDC(Splay2(LFCub([-1, a, a / 3, -2], 0)), 0.995) * 9, 440).clip2(1) / 9
+HPF(LeakDC(Splay2(LFCub([-1, a, a / 3, -2], 0)), 0.995) * 9, 440).Clip2(1) / 9
