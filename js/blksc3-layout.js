@@ -1,4 +1,4 @@
-import * as sc from '../lib/jssc3/js/jssc3.js'
+import * as sc from '../lib/jssc3/dist/jssc3.js'
 
 // Set properties given layout configuration name.
 export function blk_set_layout(blk, configName) {

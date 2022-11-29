@@ -1,4 +1,4 @@
-import { consoleDebug, throwError } from '../lib/jssc3/js/jssc3.js'
+import { consoleDebug, throwError } from '../lib/jssc3/dist/jssc3.js'
 
 export function blksc3_init_codegen(blk) {
 

@@ -1,4 +1,4 @@
-import * as sc from '../lib/jssc3/js/jssc3.js'
+import * as sc from '../lib/jssc3/dist/jssc3.js'
 
 import { blksc3_init_codegen } from './blksc3-gen.js'
 import { blksc3_init_codegen_ugen } from './blksc3-gen-ugen.js'
