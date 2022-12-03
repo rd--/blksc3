@@ -2,6 +2,7 @@ import * as sc from '../lib/jssc3/dist/jssc3.js'
 
 import { blksc3_init_codegen } from './blksc3-gen.js'
 import { blksc3_init_codegen_ugen } from './blksc3-gen-ugen.js'
+import { graph_menu_init } from './blksc3-graph.js'
 import { blk_layout_menu_init } from './blksc3-layout.js'
 
 export const blk = {
@@ -142,6 +143,12 @@ export function blk_init(Blockly, outputFormat, initWasm, hardwareBufferSize, bl
         }
     });
     blk_xml_input_init();
+	graph_menu_init('programMenu', 'graph', '.xml', blk_load_help_graph);
+	sc.load_utf8_and_then('html/program-menu.html', sc.setter_for_inner_html_of('programMenu'));
+	graph_menu_init('helpMenu', 'ugen', '.xml', blk_load_help_graph);
+	sc.load_utf8_and_then('html/help-menu.html', sc.setter_for_inner_html_of('helpMenu'));
+	graph_menu_init('guideMenu', 'guide', '.xml', blk_load_help_graph)
+	sc.load_utf8_and_then('html/guide-menu.html', sc.setter_for_inner_html_of('guideMenu'));
 /*
     blk_layout_menu_init(blk);
     ui_init(globalScsynth, {

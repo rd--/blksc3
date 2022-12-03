@@ -15,6 +15,8 @@ import qualified Sound.Sc3.Ugen.Db as Db {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Pseudo as Db {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Record as Db {- hsc3-db -}
 
+import qualified Sound.Sc3.Graphs.Db as Graphs {- hsc3-db -}
+
 import qualified Language.Smalltalk.Ansi as St {- stsc3 -}
 import Language.Smalltalk.Ansi.Expr {- stsc3 -}
 import qualified Language.Smalltalk.SuperCollider.Translate as Sc {- stsc3 -}
@@ -300,186 +302,21 @@ stc_file_to_xml_file fn = do
   txt <- readFile (dir ++ fn)
   writeFile (dir ++ fn ++ ".xml") (in_xml (expr_xml (Sc.stcToExpr (extract_stc_graph txt))))
 
-filename_rewriter :: (Char -> Char) -> String -> String
-filename_rewriter caseFunc =
-  map caseFunc .
-  map (\c -> if c == ' ' then '-' else c) .
-  mapMaybe (\c -> if c `elem` "()?," then Nothing else Just c)
-
-blk_au_graph_filename :: String -> String -> String
-blk_au_graph_filename au nm = printf "%s-%s" (map toLower au) (filename_rewriter toLower nm)
-
 blk_au_graph_option :: String -> String -> String
 blk_au_graph_option au nm =
-  printf "<option value='%s'>%s - %s</option>" (blk_au_graph_filename au nm) au nm
+  printf "<option value='%s'>%s - %s</option>" (Graphs.au_title_filename au nm) au nm
 
-blk_graphs :: [(String, [String])]
-blk_graphs =
-  [("AN", ["Tw 99846300173991936"])
-  ,("CR", ["Lucier"])
-  ,("DMC", ["PM Crotale"])
-  ,("DS", ["Tw 19", "Tw 22"])
-  ,("DST", ["1-5fc"])
-  ,("EAS", ["rl"])
-  ,("ES",
-    ["Tw 435684664200540161"
-    -- ,"Tw 570012853274615808" -- GreyholeRaw
-    ])
-  ,("F0",
-     ["20020817"
-     ,"Pkt 00", "Pkt 07"
-     ,"Pkt 26", "Pkt 28"
-     ,"Tw 0026"
-     ,"Tw 0030", "Tw 0033"
-     ,"Tw 0041", "Tw 0045"
-     ,"Tw 0051", "Tw 0059"
-     ,"Tw 0061"
-     ,"Tw 0084"
-     ,"Tw 0134", "Tw 0134 (Var)", "Tw 0164", "Tw 0165"
-     ,"Tw 0220", "Tw 0225", "Tw 0283"
-     ,"Tw 0317", "Tw 0340", "Tw 0350"
-     ,"Tw 0454598285861617665"
-     ,"Tw 0456384156159574016"
-     ,"Tw 0839296011982024704"
-     ,"Tw 1084601286488674304"
-     ,"Tw 1115745664523218944"
-     ,"Tw 1125557217086857216"
-     ,"Tw 1138498427241861122"
-     ,"Tw 1197185125819277312"
-     ,"Tw 1246461901669838848"
-     ,"Tw 1254441448327479299"
-     ,"Tw 1254441448327479299 (Edit)"
-     ,"Tw 1319946903711338496"
-     ,"Tw 1343283697840226307"
-     ,"Tw 1374139774269857798"
-     ,"Tw 1374517800048291847"
-     ,"Tw 1395040511795372038"
-     ,"Tw 1395519538008141835"
-     ,"Tw 1395878538297892865"
-     ,"Tw 1452318302768963589"
-     ,"Tw 1452599226882535431"
-     ,"Tw 1452954849885163525"
-     ,"Tw 1453520892374441986"
-     ,"Tw 1454150378241548296"
-     ,"Tw 1464534258173849611"
-     -- ,"Tw 1467507942664646661" -- ChaosUGens.cpp/FBSineC
-     -- ,"Tw 1479212835192332289" -- ChaosUGens.cpp/QuadC
-     -- ,"Tw 1509888510525857792" -- ChaosUGens.cpp/LorenzN
-     ,"Tw 1519791409921941507"
-     ])
-  ,("JAR", ["1-4Qx", "rk_20120422"])
-  ,("JH", ["4157"])
-  ,("JL", ["1 9", "1 Z", "Bitwise", "Dark Sea Horns", "Rain, Thunder"])
-  ,("JMcC",
-     ["Aleatoric Quartet"
-     ,"Alien Froggies"
-     ,"Alien Meadow"
-     ,"Analogue Daze"
-     ,"Analog Bubbles", "Analog Bubbles (Mouse)", "Analog Bubbles (Var)"
-     ,"Babbling Brook"
-     ,"Bach Prelude"
-     ,"Berlin, 1977"
-     ,"Bidirectional Strummable Guitar"
-     ,"Birdies"
-     ,"Blips 001"
-     ,"Bounce"
-     ,"Bouncing Objects"
-     ,"Bowed String", "Bowed String (Texture)"
-     ,"Choip Choip Choip"
-     ,"Cf String"
-     ,"Clipped Inharmonic Warbulence"
-     ,"Clustered Sines"
-     ,"Contamination Zone"
-     ,"Coolant", "Coolant (Texture)"
-     ,"Cymbalism Accellerando"
-     ,"Data Space"
-     ,"Deep Trip", "Deep Trip (Texture)"
-     ,"Demanding Studies"
-     ,"Drag to keyboard"
-     ,"Fast Lfos with Slow Beats"
-     ,"Hard-Sync Sawtooth with Lfo"
-     ,"Harmonic Cloud"
-     ,"Harmonic Swimming"
-     ,"Harmonic Tumbling"
-     ,"Harmonic Zither"
-     ,"Hell Is Busy"
-     ,"Impulse Sequencer"
-     ,"Inharmonic Warbulence"
-     ,"Landon Rose"
-     ,"Lfo Modulation"
-     ,"Modal Space", "Modal Space (Partial)"
-     ,"Moto Rev"
-     ,"Narrow Band Filtered Crackle Noise", "Narrow Band Filtered Crackle Noise (Texture)"
-     ,"Noise Burst Sweep"
-     ,"Noise Modulated Sines"
-     ,"Ostinoodles"
-     ,"Pentatonic Pipes"
-     ,"Phase Modulation with Slow Beats"
-     ,"Plucked Strings"
-     ,"Police State"
-     ,"Pond Life", "Pond Life (Texture)"
-     ,"Pulse Harmonic Warbulence"
-     ,"Pulsing Bottles"
-     ,"Random Panning Sines"
-     ,"Random Pulsations"
-     ,"Random Sine Waves"
-     ,"Repeating Harmonic Klank"
-     ,"Repeating Inharmonic Klank"
-     ,"Reso Pulse"
-     ,"Resonant Dust"
-     ,"Reverberated Sine Percussion"
-     ,"Sample and Hold Liquidities"
-     ,"Saucer Base"
-     ,"Sawed Cymbals"
-     ,"Scratchy"
-     ,"Sidereal Time"
-     ,"Spe"
-     ,"Sprinkler", "Sprinkler (Mouse)"
-     ,"Strummable Metals"
-     ,"Strummable Silk"
-     ,"Sweepy Noise"
-     ,"Swept Resonant Noise"
-     ,"Synthetic Piano"
-     ,"Tank"
-     ,"Tarmac"
-     ,"Theremin"
-     ,"Tremulate", "Tremulate (Event)"
-     ,"Trinkets"
-     ,"Uplink" ,"Uplink (Texture)"
-     ,"What Was I Thinking?"
-     ,"Why SuperCollider?"
-     ,"Wind Metals", "Wind Metals (Variables)"
-     ,"Wuxia"
-     ,"Zizle"
-     ])
-  ,("JR", ["A Bath", "Deepsea", "(Stereo) Half Life", "Sturmian Sequencer I", "Sturmian Sequencer II", "Sturmian Sequencer III"])
-  ,("KL", ["Vibraphone"])
-  ,("LJP"
-   , ["OL 01", "OL 02", "OL 03", "OL 04", "OL 05", "OL 06", "OL 06(a)", "OL 06(b)", "OL 07(a)", "OL 07(b)", "OL 07(c)", "OL 07(d)", "OL 07(e)", "OL 08", "OL 09"
-     ,"OL 10" ,"OL 11", "OL 12(a)", "OL 12(b)",  "OL 12(c)", "OL 12(d)", "OL 12(e)", "OL 13(a)", "OL 13(b)", "OL 13(c)", "OL 13(d)", "OL 13(e)"
-     ,"OL 14(a)", "OL 14(e)", "OL 15", "OL 16(a)", "OL 16(d)"
-     ,"One Line"])
-  ,("MM", ["Tw 11"])
-  ,("NC", ["SC Tutorial"])
-  ,("NH", ["Phase Vocoder"])
-  ,("NV"
-    ,["Tw 2013-12-04", "Tw 2013-12-04 (TimesRepeat)"
-     ,"TW 2014-06-03"
-     ,"Tw 01","Tw 04","Tw 18"
-     ,"Tw 40","Tw 41"
-     ,"Tw 528187147543511041"])
-  ,("OR", ["Gong"])
-  ,("PJ"
-   ,["Forest Sounds"])
-  ,("RD", ["Oscillator Cluster"])
-  ,("TM", ["Drummer","Tw 463992770596577280"])
-  ,("TW"
-   ,["Tw 01", "Tw 02", "Tw 03"])
-  ,("ZS", ["Phase Distortion", "Toshiya"])
+-- Files that don't work in Wasm Sc3.
+blk_not_working_in_wasm :: [String]
+blk_not_working_in_wasm =
+  ["es-tw-570012853274615808" -- GreyholeRaw
+  ,"f0-tw-1467507942664646661" -- ChaosUGens.cpp/FBSineC
+  ,"f0-tw-1479212835192332289" -- ChaosUGens.cpp/QuadC
+  ,"f0-tw-1509888510525857792" -- ChaosUGens.cpp/LorenzN
   ]
 
 blk_graphs_names :: [String]
-blk_graphs_names = concatMap (\(au, gr) -> map (blk_au_graph_filename au) gr) blk_graphs
+blk_graphs_names = Graphs.db_file_names Graphs.hsc3_graph_db
 
 blk_help_option :: String -> String -> String
 blk_help_option = printf "<option value='%s'>%s</option>"
@@ -589,7 +426,7 @@ gen_xml = do
   let rw nm fn = putStrLn nm >> stc_file_to_xml_file (fn ++ ".stc")
       rw_graph nm = rw nm nm
       rw_help nm = rw nm ("../ugen/" ++ nm)
-      rw_guide nm = rw nm ("../guide/" ++ filename_rewriter id nm)
+      rw_guide nm = rw nm ("../guide/" ++ Graphs.filename_rewriter id nm)
   mapM_ rw_graph blk_graphs_names
   mapM_ rw_help blk_help
   mapM_ rw_guide blk_guide
@@ -600,8 +437,8 @@ main = do
   let dir = "/home/rohan/sw/blksc3/html/"
       mk_menu fn typ dat = writeFile (dir ++ fn ++ "-menu.html") (unlines (blk_in_autogen typ dat))
   mk_menu "help" "Help" (zipWith blk_help_option blk_help blk_help)
-  mk_menu "guide" "Guide" (zipWith blk_help_option (map (filename_rewriter id) blk_guide) blk_guide)
-  mk_menu "program" "Program" (concatMap (\(au, gr) -> map (blk_au_graph_option au) gr) blk_graphs)
+  mk_menu "guide" "Guide" (zipWith blk_help_option (map (Graphs.filename_rewriter id) blk_guide) blk_guide)
+  mk_menu "program" "Program" (concatMap (\(au, gr) -> map (blk_au_graph_option au) gr) Graphs.hsc3_graph_db)
 
 {-
 
