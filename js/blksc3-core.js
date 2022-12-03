@@ -59,14 +59,14 @@ function blk_inject_with_xml_toolbox(onCompletion) {
 }
 
 // Get workspace as .stc code.
-function blk_get_stc_code() {
+export function blk_get_stc_code() {
     const text = blk.Blockly.JavaScript.workspaceToCode(blk.workspace);
 	console.log('blk_get_stc_code', text);
 	return text;
 }
 
 // Get .xml serialization of workspace.  (The .xml format is no longer being worked on.)
-function blk_get_xml() {
+export function blk_get_xml() {
     var xml = blk.Blockly.Xml.workspaceToDom(blk.workspace);
     return blk.Blockly.Xml.domToPrettyText(xml);
 }
@@ -91,7 +91,7 @@ function blk_xml_input_init () {
 }
 
 // Read selected .xml file.
-function blk_read_input_xml() {
+export function blk_read_input_xml() {
     sc.read_text_file_from_file_input_and_then('xmlInputFile', 0, blk_load_xml);
 }
 
@@ -142,8 +142,9 @@ export function blk_init(Blockly, outputFormat, initWasm, hardwareBufferSize, bl
         }
     });
     blk_xml_input_init();
+/*
     blk_layout_menu_init(blk);
-    sc.sc3_ui_init(globalScsynth, {
+    ui_init(globalScsynth, {
 		subDir: '',
 		hasProgramMenu: true,
 		hasHelpMenu: true,
@@ -156,12 +157,10 @@ export function blk_init(Blockly, outputFormat, initWasm, hardwareBufferSize, bl
 		hardwareBufferSize: hardwareBufferSize,
 		blockSize: blockSize
 	});
+*/
     if(withUiCtl) {
         sc.load_utf8_and_then('html/ui-ctl.html', sc.setter_for_inner_html_of('uiCtlContainer'));
     }
-	sc.editor.get_data = blk_get_xml;
-	sc.editor.set_data = blk_load_xml;
-	sc.editor.get_selected_text = blk_get_stc_code;
 }
 
 // Convert .md text to .html
@@ -199,8 +198,4 @@ function blk_fullscreen() {
 			document.exitFullscreen();
 		}
 	}
-}
-
-function editor_get_js_notation_and_then(proc) {
-    return proc(blk_get_stc_code(blk.Blockly));
 }

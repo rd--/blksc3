@@ -1,18 +1,26 @@
-body {
-  margin: 1em 1em;
-  background-color: #fffacd;
+:root {
+	--font-family: 'Computer Modern Concrete', 'Computer Modern Serif', 'C059', 'Palatino', 'Garamond', 'Bookman', 'Georgia', 'Didot', 'Times New Roman', serif !important;
+	--toolbox-colour: #f0fff0;
+	--paper-colour: #fffacd;
+	--text-colour: #424242;
+	--workspace-colour: #fddde6;
 }
 
-.blocklyText, .blocklyTreeLabel {
-  fill: #666 !important;
+body {
+  margin: 1em 1em;
+  background-color: var(--paper-colour);
 }
 
 body, code, button, select, span, .blocklyText, .blocklyTreeLabel {
-  font-family: 'Computer Modern Concrete', 'Computer Modern Serif', 'C059', 'Palatino', 'Garamond', 'Bookman', 'Georgia', 'Didot', 'Times New Roman', serif !important;
+  font-family: var(--font-family);
+}
+
+.blocklyText, .blocklyTreeLabel {
+  fill: var(--text-colour) !important;
 }
 
 .blocklyToolboxDiv {
-  background-color: #f0fff0;
+  background-color: var(--toolbox-colour);
 }
 
 .blocklyTreeIcon {
@@ -20,7 +28,7 @@ body, code, button, select, span, .blocklyText, .blocklyTreeLabel {
 }
 
 .blocklySvg {
-  background-color: #fddde6;
+  background-color: var(--workspace-colour);
 }
 
 div#blocklyContainer {
@@ -53,7 +61,7 @@ div#blkNotes {
 }
 
 div#blkNotes a {
-  color: grey;
+  color: var(--text-colour);
 }
 
 div#blkNotes p {
@@ -65,8 +73,12 @@ div#blkUi {
 }
 
 button, select {
-  background-color: #FFFACD;
+  background-color: var(--paper-colour);
   border: 1px dotted;
+}
+
+button:focus, select:focus {
+    outline: 1px solid #999;
 }
 
 input[type='range'] {
