@@ -32,13 +32,17 @@ window.onload = function() {
 				<select id="programMenu" title="Program (p)" accesskey="p"></select>
 				<select id="helpMenu" title="Help (h)" accesskey="h"></select>
 				<select id="guideMenu" title="Guide (g)" accesskey="g"></select>
-<!--
 				<select id="userMenu" title="User (u)" accesskey="u"><option value=''>--User--</option></select>
--->
+				<select id="actionsMenu" title="Actions">
+					<option value=''>&#x2630;</option>
+					<option value='userBackup'>Backup</option>
+					<option value='userRestore'>Restore</option>
+					<option value='userPurge'>Purge</option>
+				</select>
 			</div>
 			<div id="blkCmd">
 				<input type="file" id="xmlInputFile" accept=".xml" onchange="blk.blk_read_input_xml()" style="display:none">
-				<input type="file" id="userProgramArchiveFile" accept=".json" onchange="blk.user_program_read_archive()" style="display:none">
+				<input type="file" id="userProgramArchiveFile" accept=".json" onchange="sc.user_program_read_archive('userProgramArchiveFile', 'userMenu')" style="display:none">
 				<button id="xmlInputFileSelect" title="Select and load .xml file to workspace (l)" accesskey="l">Load</button>
 				<button title="Copy workspace xml to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(blk.blk_get_xml())">Copy</button>
 				<button title="Cleanup workspace (o)" accesskey="o" onclick="blk.blk.workspace.cleanUp()">Cleanup</button>
@@ -49,16 +53,8 @@ window.onload = function() {
 				<button title="Play workspace program (,)" accesskey="," onclick="playUgen(eval(blk.blk_get_stc_code()))">Play</button>
 				<button title="Send reset command (.)" accesskey="." onclick="sc.resetScsynth(globalScsynth)">Reset</button>
 				<button title="Delete all blocks from workspace (k)" accesskey="k" onclick="blk.blk.workspace.clear()">Clear</button>
+				<button title="Save document to local storage (s)" accesskey="s" onclick="sc.user_program_save_to('userMenu', blk.blk_get_xml(), false)">Save</button>
 <!--
-				<button title="Save document to local storage (s)" accesskey="s" onclick="blk.ui_save_program()">Save</button>
-				<select id="actionsMenu" title="Actions">
-					<option value=''>&#x2630;</option>
-					<option value='setBlockSize'>Block Size</option>
-					<option value='setNumInputs'># Inputs</option>
-					<option value='userBackup'>Backup</option>
-					<option value='userRestore'>Restore</option>
-					<option value='userPurge'>Purge</option>
-				</select>
 				<select id="blkLayoutMenu" title="System layouts (y)" accesskey="y">
 					<option value=''>--Display--</option>
 					<option value='%×%'>%×%</option>

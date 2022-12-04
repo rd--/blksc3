@@ -149,22 +149,12 @@ export function blk_init(Blockly, outputFormat, initWasm, hardwareBufferSize, bl
 	sc.load_utf8_and_then('html/help-menu.html', sc.setter_for_inner_html_of('helpMenu'));
 	graph_menu_init('guideMenu', 'guide', '.xml', blk_load_help_graph)
 	sc.load_utf8_and_then('html/guide-menu.html', sc.setter_for_inner_html_of('guideMenu'));
-/*
-    blk_layout_menu_init(blk);
-    ui_init(globalScsynth, {
-		subDir: '',
-		hasProgramMenu: true,
-		hasHelpMenu: true,
-		hasGuideMenu: true,
-		hasEssayMenu: false,
-		fileExt: '.xml',
-		storageKey: 'blksc3UserPrograms/xml',
-		loadProc: blk_load_help_graph,
-		initWasm: initWasm,
-		hardwareBufferSize: hardwareBufferSize,
-		blockSize: blockSize
+	sc.userPrograms.storage_key = 'blksc3UserPrograms/xml';
+	sc.user_program_menu_init('userMenu', blk_load_xml);
+	sc.select_on_change('actionsMenu', function(menuElement, entryName) {
+		sc.user_action_do(entryName, 'userMenu', 'userProgramArchiveFile');
+		menuElement.selectedIndex = 0;
 	});
-*/
     if(withUiCtl) {
         sc.load_utf8_and_then('html/ui-ctl.html', sc.setter_for_inner_html_of('uiCtlContainer'));
     }
