@@ -1,6 +1,6 @@
-import { blk_ugen_codegen } from './blksc3-gen.js'
+import { blk_ugen_codegen } from './gen.js'
 
-export function blksc3_init_codegen_ugen(blk) {
+export function init_codegen_ugen(blk) {
 
 Blockly.JavaScript['sc3_AllpassC'] = function(block) {
   return blk_ugen_codegen(blk, block, 'AllpassC', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);

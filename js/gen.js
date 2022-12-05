@@ -1,6 +1,6 @@
 import { consoleDebug, throwError } from '../lib/jssc3/dist/jssc3.js'
 
-export function blksc3_init_codegen(blk) {
+export function init_codegen(blk) {
 
 	const Blockly = blk.Blockly;
 
@@ -16,100 +16,99 @@ export function blksc3_init_codegen(blk) {
 	};
 
 	Blockly.JavaScript['sc3_Constant'] = function(block) {
-		return [blksc3_const(block.getFieldValue('CONST')), Blockly.JavaScript.ORDER_FUNCTION_CALL];
+		return [const_codegen(block.getFieldValue('CONST')), Blockly.JavaScript.ORDER_FUNCTION_CALL];
 	};
 
 	Blockly.JavaScript['sc3_MulAdd'] = function(block) {
-		return blk_implicit_method_codegen(blk, block, 'MulAdd', ['IN', 'MUL', 'ADD']);
+		return implicit_method_codegen(blk, block, 'MulAdd', ['IN', 'MUL', 'ADD']);
 	};
 
 	Blockly.JavaScript['sc3_OverlapTexture'] = function(block) {
-		return blk_implicit_method_codegen(blk, block, 'OverlapTexture', ['PROC', 'SUSTAINTIME', 'TRANSITIONTIME', 'OVERLAP']);
+		return implicit_method_codegen(blk, block, 'OverlapTexture', ['PROC', 'SUSTAINTIME', 'TRANSITIONTIME', 'OVERLAP']);
 	};
 
 	Blockly.JavaScript['sc3_SoundFileBuffer'] = function(block) {
-		return blk_implicit_method_codegen(blk, block, 'SoundFileBuffer', ['SOUNDFILEID', 'NUMBEROFCHANNELS']);
+		return implicit_method_codegen(blk, block, 'SoundFileBuffer', ['SOUNDFILEID', 'NUMBEROFCHANNELS']);
 	};
 
 	Blockly.JavaScript['sc3_Voicer'] = function(block) {
-		return blk_implicit_method_codegen(blk, block, 'Voicer', ['COUNT', 'PROC']);
+		return implicit_method_codegen(blk, block, 'Voicer', ['COUNT', 'PROC']);
 	};
 
 	Blockly.JavaScript['sc3_VoiceWriter'] = function(block) {
-		return blk_implicit_method_codegen(blk, block, 'VoiceWriter', ['COUNT', 'PROC']);
+		return implicit_method_codegen(blk, block, 'VoiceWriter', ['COUNT', 'PROC']);
 	};
 
-
 	Blockly.JavaScript['sc3_Proc0'] = function(block) {
-		return blk_proc_codegen(blk, block, 0, false);
+		return proc_codegen(blk, block, 0, false);
 	};
 
 	Blockly.JavaScript['sc3_Proc0Stm'] = function(block) {
-		return blk_proc_codegen(blk, block, 0, true);
+		return proc_codegen(blk, block, 0, true);
 	};
 
 	Blockly.JavaScript['sc3_Proc1'] = function(block) {
-		return blk_proc_codegen(blk, block, 1, false);
+		return proc_codegen(blk, block, 1, false);
 	};
 
 	Blockly.JavaScript['sc3_Proc1Stm'] = function(block) {
-		return blk_proc_codegen(blk, block, 1, true);
+		return proc_codegen(blk, block, 1, true);
 	};
 
 	Blockly.JavaScript['sc3_Proc2'] = function(block) {
-		return blk_proc_codegen(blk, block, 2, false);
+		return proc_codegen(blk, block, 2, false);
 	};
 
 	Blockly.JavaScript['sc3_Proc2Stm'] = function(block) {
-		return blk_proc_codegen(blk, block, 2, true);
+		return proc_codegen(blk, block, 2, true);
 	};
 
 	Blockly.JavaScript['sc3_Value0'] = function(block) {
-		return blk_method_codegen(blk, block, 'value', ['PROC']);
+		return method_codegen(blk, block, 'value', ['PROC']);
 	};
 
 	Blockly.JavaScript['sc3_Value1'] = function(block) {
-		return blk_method_codegen(blk, block, 'value', ['PROC', 'VALUE']);
+		return method_codegen(blk, block, 'value', ['PROC', 'VALUE']);
 	};
 
 	Blockly.JavaScript['sc3_Value2'] = function(block) {
-		return blk_method_codegen(blk, block, 'value', ['PROC', 'VALUE1', 'VALUE2']);
+		return method_codegen(blk, block, 'value', ['PROC', 'VALUE1', 'VALUE2']);
 	};
 
 	Blockly.JavaScript['sc3_ArrayFromTo'] = function(block) {
-		return blk_method_codegen(blk, block,'to', ['FROM', 'TO']);
+		return method_codegen(blk, block,'to', ['FROM', 'TO']);
 	};
 
 	Blockly.JavaScript['sc3_ArrayFill'] = function(block) {
-		return blk_method_codegen(blk, block, 'dup', ['PROC', 'COUNT']);
+		return method_codegen(blk, block, 'dup', ['PROC', 'COUNT']);
 	};
 
 	Blockly.JavaScript['sc3_ArrayCollect'] = function(block) {
-		return blk_method_codegen(blk, block, 'collect', ['ARRAY', 'PROC']);
+		return method_codegen(blk, block, 'collect', ['ARRAY', 'PROC']);
 	};
 
 	Blockly.JavaScript['sc3_ArrayProc1'] = function(block) {
-		return blk_method_codegen(blk, block, block.getFieldValue('OP'), ['IN']);
+		return method_codegen(blk, block, block.getFieldValue('OP'), ['IN']);
 	};
 
 	Blockly.JavaScript['sc3_ArrayProc2'] = function(block) {
-		return blk_method_codegen(blk, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
+		return method_codegen(blk, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
 	};
 
 	Blockly.JavaScript['sc3_UnaryOp'] = function(block) {
-		return blk_method_codegen(blk, block, block.getFieldValue('OP'), ['IN']);
+		return method_codegen(blk, block, block.getFieldValue('OP'), ['IN']);
 	};
 
 	Blockly.JavaScript['sc3_BinaryOp'] = function(block) {
-		return blk_method_codegen(blk, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
+		return method_codegen(blk, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
 	};
 
 	Blockly.JavaScript['sc3_KeywordBinaryOp'] = function(block) {
-		return blk_method_codegen(blk, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
+		return method_codegen(blk, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
 	};
 
 	Blockly.JavaScript['sc3_EventParam'] = function(block) {
-		return blk_method_codegen(blk, block, block.getFieldValue('PARAM'), ['EVENT']);
+		return method_codegen(blk, block, block.getFieldValue('PARAM'), ['EVENT']);
 	};
 
 	/// Statement (i.e. not expression)
@@ -128,26 +127,26 @@ export function blksc3_init_codegen(blk) {
 }
 
 // Named constants.
-function blksc3_const(c) {
+function const_codegen(c) {
     switch(c) {
     case 'e': return '2.718281828459045';
     case 'inf': return '2147483647'; // maxBound Int32 (sclang knows this value)
     case 'pi': return '3.141592653589793';
     case 'twoPi': return '6.283185307179586';
-    default: throw 'blksc3_const';
+    default: throw 'const_codegen';
     }
 };
 
 // Implicit method code generator.
-function blk_implicit_method_codegen(blk, block, name, argNameArray) {
-	consoleDebug(`blk_implicit_method_codegen: ${name}, ${argNameArray.length}`);
+function implicit_method_codegen(blk, block, name, argNameArray) {
+	consoleDebug(`implicit_method_codegen: ${name}, ${argNameArray.length}`);
     var nilValue = blk.output_format === '.stc' ? 'nil' : 'null';
     var argArray = argNameArray.map(item => blk.Blockly.JavaScript.valueToCode(block, item, blk.Blockly.JavaScript.ORDER_ATOMIC) || nilValue);
     return ['sc.' + name + '(' + argArray.join(', ') + ')', blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
 }
 
 // Procedure code generator.
-function blk_proc_codegen(blk, block, numArg, hasStm) {
+function proc_codegen(blk, block, numArg, hasStm) {
     var var_value = blk.Blockly.JavaScript.valueToCode(block, 'VAR', blk.Blockly.JavaScript.ORDER_ATOMIC) || 'x';
     var var1_value = blk.Blockly.JavaScript.valueToCode(block, 'VAR1', blk.Blockly.JavaScript.ORDER_ATOMIC) || 'x';
     var var2_value = blk.Blockly.JavaScript.valueToCode(block, 'VAR2', blk.Blockly.JavaScript.ORDER_ATOMIC) || 'y';
@@ -164,7 +163,7 @@ function blk_proc_codegen(blk, block, numArg, hasStm) {
         } else if(numArg === 1 && hasStm === true) {
             return ['{ arg ' + var_value + '_; ' + var_value + ' = ' + var_value + '_; ' + stm_code + ret_value + ' }', ofc];
         } else {
-            return throwError(`blk_proc_codegen:stc: ${hasArg} ${hasStm}`);
+            return throwError(`proc_codegen:stc: ${hasArg} ${hasStm}`);
         }
     } else if(blk.output_format === '.js') {
         if(numArg === 0 && hasStm === false) {
@@ -178,15 +177,15 @@ function blk_proc_codegen(blk, block, numArg, hasStm) {
         } else if(numArg === 1 && hasStm === true) {
             return ['function(' + var_value + '_) { var ' + var_value + ' = ' + var_value + '_; ' + stm_code + 'return ' + ret_value + '; }', ofc];
         } else {
-            return throwError(`blk_proc_codegen, js: ${hasArg} ${hasStm}`);
+            return throwError(`proc_codegen, js: ${hasArg} ${hasStm}`);
         }
     } else {
-        return throwError(`blk_proc_codegen: ${blk.output_format}, ${hasArg}, ${hasStm}`);
+        return throwError(`proc_codegen: ${blk.output_format}, ${hasArg}, ${hasStm}`);
     }
 }
 
 // Method call code generator
-function blk_method_codegen(blk, block, name, argNameArray) {
+function method_codegen(blk, block, name, argNameArray) {
     var nilValue = blk.output_format === '.stc' ? 'nil' : 'null';
     var argArray = argNameArray.map(item => blk.Blockly.JavaScript.valueToCode(block, item, blk.Blockly.JavaScript.ORDER_ATOMIC) || nilValue);
     if(blk.output_format === '.stc') {
@@ -195,22 +194,22 @@ function blk_method_codegen(blk, block, name, argNameArray) {
         case 2: return sc.stc_is_binary_selector(name) ?
                 [argArray[0] + ' ' + name + ' ' + argArray[1], blk.Blockly.JavaScript.ORDER_NONE] :
                 [argArray[0] + '.' + name + '(' + argArray[1] + ')', blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
-        default: throwError('blk_method_codegen: stc');
+        default: throwError('method_codegen: stc');
         }
     } else if(blk.output_format === '.js') {
         switch(argArray.length) {
         case 1: return ['sc.' + name + '(' + argArray[0] + ')', blk.Blockly.JavaScript.ORDER_MEMBER];
         case 2: return ['sc.' + sc.stc_binary_selector_from_operator(name) + '(' + argArray[0] + ', ' + argArray[1] + ')', blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
         case 3: return ['sc.' + name + '(' + argArray[0] + ', ' + argArray[1] + ', ' + argArray[2] + ')', blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
-        default: throwError('blk_method_codegen: js');
+        default: throwError('method_codegen: js');
         }
     } else {
-        return throwError(`blk_method_call_code: ${blk.output_format}, ${name}, ${argArray.length}`);
+        return throwError(`method_codegen: ${blk.output_format}, ${name}, ${argArray.length}`);
     }
 }
 
 // Lookup MUL and ADD inputs at block and rewrite codeStr as required.
-function blk_append_mul_add(blk, block, codeStr) {
+function append_mul_add(blk, block, codeStr) {
     var mulStr = blk.Blockly.JavaScript.valueToCode(block, 'MUL', blk.Blockly.JavaScript.ORDER_ATOMIC) || '1.0';
     var addStr = blk.Blockly.JavaScript.valueToCode(block, 'ADD', blk.Blockly.JavaScript.ORDER_ATOMIC) || '0.0';
     var reqMul = Number.parseFloat(mulStr) != 1;
@@ -228,7 +227,7 @@ function blk_append_mul_add(blk, block, codeStr) {
 
 export function blk_ugen_codegen(blk, block, name, argNameArray, hasOutputs) {
 	consoleDebug(`blk_ugen_codegen: ${name}, ${argNameArray.length}, ${hasOutputs}`);
-    var ugenCode = blk_implicit_method_codegen(blk, block, name, argNameArray);
-    var answer = hasOutputs ? [blk_append_mul_add(blk, block, ugenCode[0]), blk.Blockly.JavaScript.ORDER_FUNCTION_CALL] : ugenCode;
+    var ugenCode = implicit_method_codegen(blk, block, name, argNameArray);
+    var answer = hasOutputs ? [append_mul_add(blk, block, ugenCode[0]), blk.Blockly.JavaScript.ORDER_FUNCTION_CALL] : ugenCode;
 	return answer;
 }

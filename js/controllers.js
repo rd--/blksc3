@@ -1,4 +1,4 @@
-export function blk_cc_value(ccIndex) {
+export function cc_value(ccIndex) {
     var ccElem = document.getElementById('cc' + ccIndex);
 	if(ccElem) {
 		var ccValue = ccElem.value;
@@ -9,7 +9,7 @@ export function blk_cc_value(ccIndex) {
 	}
 }
 
-export function blk_sw_maintained_value(swIndex) {
+export function sw_maintained_value(swIndex) {
     var swElem = document.getElementById('swC' + swIndex);
     var swValue = swElem.checked ? 1 : 0;
     console.debug('sw/checkbox: ', swIndex, swValue);
