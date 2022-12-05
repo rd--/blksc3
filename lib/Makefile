@@ -1,6 +1,9 @@
 all:
 	echo "blksc3/lib"
 
+copy-dist:
+	cp scsynth-wasm-builds/jssc3/dist/jssc3.js jssc3/dist/jssc3.js
+
 download-blockly-9.1.0:
 	wget https://github.com/google/blockly/releases/download/blockly-v9.1.0/blockly-9.1.0.tgz
 	tar xf blockly-9.1.0.tgz && mv package blockly-9.1.0
