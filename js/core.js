@@ -144,7 +144,7 @@ export function init(Blockly, outputFormat, initWasm, hardwareBufferSize, blockS
     });
     xml_input_init();
 	graph_menu_init('programMenu', 'graph', '.xml', load_help_graph);
-	sc.load_utf8_and_then('html/program-menu.html', sc.setter_for_inner_html_of('programMenu'));
+	sc.load_json_and_then('json/program-menu.json', json => sc.select_add_keys_as_options('programMenu', json.programMenu));
 	graph_menu_init('helpMenu', 'ugen', '.xml', load_help_graph);
 	sc.load_json_and_then('json/help-menu.json', json => sc.select_add_keys_as_options('helpMenu', json.helpMenu));
 	graph_menu_init('guideMenu', 'guide', '.xml', load_help_graph)
@@ -155,6 +155,7 @@ export function init(Blockly, outputFormat, initWasm, hardwareBufferSize, blockS
 		sc.user_action_do(entryName, 'userMenu', 'userProgramArchiveFile');
 		menuElement.selectedIndex = 0;
 	});
+	layout_menu_init(blk);
     if(withUiCtl) {
         sc.load_utf8_and_then('html/ui-ctl.html', sc.setter_for_inner_html_of('uiCtlContainer'));
     }

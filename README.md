@@ -4,7 +4,7 @@ blksc3
 A [Block](https://developers.google.com/blockly) editor for the
 [SuperCollider](https://www.audiosynth.com/) synthesiser.
 
-[![](https://rohandrape.net/sw/blksc3/png/whyblksc3.png)](https://rohandrape.net/sw/blksc3/png/whyblksc3.png)
+![](https://rohandrape.net/sw/blksc3/png/why-block-supercollider.png)
 
 Online editor:
 [blksc3.rohandrape.net](https://blksc3.rohandrape.net/)

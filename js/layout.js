@@ -2,6 +2,7 @@ import * as sc from '../lib/jssc3/dist/jssc3.js'
 
 // Set properties given layout configuration name.
 export function set_layout(blk, configName) {
+	console.log(`set_layout: ${configName}`);
     if(configName) {
         var w = document.getElementById('blocklyContainer');
         var c = document.getElementById('blkCtl');
@@ -20,7 +21,7 @@ export function set_layout(blk, configName) {
 // Set event listener for layout menu.
 export function layout_menu_init(blk) {
     var select = document.getElementById('blkLayoutMenu');
-    select.addEventListener('change', e => set_layout(e.target.value));
+    select.addEventListener('change', e => set_layout(blk, e.target.value));
     sc.load_json_and_then('json/blksc3-layouts.json', obj => blk.layouts = obj);
 }
 
