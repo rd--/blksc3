@@ -1,5 +1,6 @@
 import * as sc from '../lib/jssc3/dist/jssc3.js'
 
+// The fileType argument exists because the .xml code is frozen and at some point this will likely need to allow .json
 export function graph_load_and_then(graphDir, graphName, fileType, recvProc) {
 	const graphFileName = `help/${graphDir}/${graphName}${resolve_file_type(fileType)}`;
 	const graphUrl = sc.url_append_timestamp(graphFileName);

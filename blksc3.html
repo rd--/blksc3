@@ -17,11 +17,10 @@ import * as sc from './lib/jssc3/dist/jssc3.js'
 import * as blk from './js/blksc3.js'
 globalThis.sc = sc;
 globalThis.blk = blk;
-globalThis.playUgen = (ugenGraph) => sc.scsynthEnsure(globalScsynth, () => sc.playUgen(globalScsynth, ugenGraph, 1));
 window.onload = function() {
 	sc.sc3_wasm_init(sc.setter_for_inner_html_of('statusText'));
 	sc.sc3_mouse_init(globalScsynth);
-	blk.init(Blockly, '.js', true, 4096, 48, false, 'e', null, false);
+	blk.init(Blockly, '.js', false, false);
 };
 		</script>
 	</head>
@@ -41,19 +40,19 @@ window.onload = function() {
 				</select>
 			</div>
 			<div id="blkCmd">
-				<input type="file" id="xmlInputFile" accept=".xml" onchange="blk.read_input_xml()" style="display:none">
+				<input type="file" id="xmlInputFile" accept=".xml" onchange="blk.read_input_xml('xmlInputFile', blk.blk)" style="display:none">
 				<input type="file" id="userProgramArchiveFile" accept=".json" onchange="sc.user_program_read_archive('userProgramArchiveFile', 'userMenu')" style="display:none">
 				<button id="xmlInputFileSelect" title="Select and load .xml file to workspace (l)" accesskey="l">Load</button>
-				<button title="Copy workspace xml to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(blk.get_xml())">Copy</button>
+				<button title="Copy workspace xml to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(blk.workspaceXml())">Copy</button>
 				<button title="Cleanup workspace (o)" accesskey="o" onclick="blk.blk.workspace.cleanUp()">Cleanup</button>
 				<!-- <button title="Center drawing in workspace" onclick="blk.blk.workspace.scrollCenter()">Center</button> -->
 				<button title="Fit drawing to workspace (=)" accesskey="=" onclick="blk.blk.workspace.zoomToFit()">Fit</button>
-				<button title="Print" onclick="sc.prettyPrintSyndefOf(eval(blk.get_stc_code()))">Print</button>
-				<button title="Evaluate workspace program (/)" accesskey="/" onclick="eval(blk.get_stc_code())">Eval</button>
-				<button title="Play workspace program (,)" accesskey="," onclick="playUgen(eval(blk.get_stc_code()))">Play</button>
+				<button title="Print" onclick="blk.workspacePrint()">Print</button>
+				<button title="Evaluate workspace program (/)" accesskey="/" onclick="blk.workspaceEval()">Eval</button>
+				<button title="Play workspace program (,)" accesskey="," onclick="blk.workspacePlay()">Play</button>
 				<button title="Send reset command (.)" accesskey="." onclick="sc.resetScsynth(globalScsynth)">Reset</button>
 				<button title="Delete all blocks from workspace (k)" accesskey="k" onclick="blk.blk.workspace.clear()">Clear</button>
-				<button title="Save document to local storage (s)" accesskey="s" onclick="sc.user_program_save_to('userMenu', blk.get_xml(), false)">Save</button>
+				<button title="Save document to local storage (s)" accesskey="s" onclick="sc.user_program_save_to('userMenu', blk.workspaceXml(), false)">Save</button>
 				<select id="blkLayoutMenu" title="System layouts (y)" accesskey="y">
 					<option value=''>--Display--</option>
 					<option value='%×%'>%×%</option>
@@ -67,9 +66,7 @@ window.onload = function() {
 				ⓘ
 -->
 				<span id="statusText">...</span>
-<!--
 				<button title="Fullscreen" accesskey="x" onclick="blk.fullscreen()">⇱</button>
--->
 			</div>
 		</div>
 
@@ -80,7 +77,7 @@ window.onload = function() {
 					<h2>Block SuperCollider</h2>
 					<p><em>blksc3</em> is a visual editor for SuperCollider.</p>
 					<p>There is a <em>Guide</em>, the menu is below the workspace.</p>
-					<p>If the <em>status area</em> (ⓘ) says <em>Loading...</em> please wait.</p>
+					<p>If the <em>status area</em> says <em>Loading...</em> please wait.</p>
 				</div>
 			</details>
 <!--

@@ -8,3 +8,4 @@ install:
 
 clean:
 	rm -f *.hi *.o blksc3
+	rm -Rf dist
