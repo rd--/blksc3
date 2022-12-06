@@ -24,7 +24,7 @@ export function fetch_xml(blk, xmlUrl) {
     sc.fetch_url_and_then(sc.url_append_timestamp(xmlUrl), 'text', xmlText => load_xml(blk, xmlText));
 }
 
-// If the Url has a file= parameter, load the named .xml file.
+// If the Url has fileParamKey, load the named .xml file.
 export function maybe_load_xml_from_url_param(blk, fileParamKey) {
 	const fileName = sc.url_get_param(fileParamKey)
 	if(fileName) {

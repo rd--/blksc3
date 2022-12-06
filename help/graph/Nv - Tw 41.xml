@@ -209,27 +209,37 @@
         <next>
           <block type="sc3_Play" id=".~)OJUl$l8xX4;3JR`](">
             <value name="CODE">
-              <block type="sc3_UnaryOp" id="D)jeDzl8/h.d=ixgjerP">
-                <field name="OP">Splay2</field>
+              <block type="sc3_ArrayProc1" id="YdMLso(%mP0/IMke.B/,">
+                <field name="OP">sum</field>
                 <value name="IN">
-                  <block type="sc3_ArrayCollect" id="C%RD}H2c9vGLNio#o:G6" inline="true">
-                    <value name="ARRAY">
-                      <block type="sc3_ArrayFromTo" id="g@fIq%S*/.F;ds|PSxtF" inline="true">
-                        <value name="FROM">
-                          <block type="math_number" id="jOPaQ2S,]5OXE?}^en!2">
-                            <field name="NUM">1</field>
+                  <block type="sc3_ArrayProc1" id="$/vyPlHuW}l8*KC^KPo9">
+                    <field name="OP">transpose</field>
+                    <value name="IN">
+                      <block type="sc3_UnaryOp" id="D)jeDzl8/h.d=ixgjerP">
+                        <field name="OP">Splay2</field>
+                        <value name="IN">
+                          <block type="sc3_ArrayCollect" id="C%RD}H2c9vGLNio#o:G6" inline="true">
+                            <value name="ARRAY">
+                              <block type="sc3_ArrayFromTo" id="g@fIq%S*/.F;ds|PSxtF" inline="true">
+                                <value name="FROM">
+                                  <block type="math_number" id="jOPaQ2S,]5OXE?}^en!2">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <value name="TO">
+                                  <block type="math_number" id="D~5$3}J4NS.Op2`yarV_">
+                                    <field name="NUM">15</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="PROC">
+                              <block type="variables_get" id="cSd,rwIT])tRW=whK6Xc">
+                                <field name="VAR" id="q)1Z*V!]FT6SU-s6d,mi">n</field>
+                              </block>
+                            </value>
                           </block>
                         </value>
-                        <value name="TO">
-                          <block type="math_number" id="D~5$3}J4NS.Op2`yarV_">
-                            <field name="NUM">15</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <value name="PROC">
-                      <block type="variables_get" id="cSd,rwIT])tRW=whK6Xc">
-                        <field name="VAR" id="q)1Z*V!]FT6SU-s6d,mi">n</field>
                       </block>
                     </value>
                   </block>

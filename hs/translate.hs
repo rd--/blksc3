@@ -15,8 +15,6 @@ import qualified Sound.Sc3.Ugen.Db as Db {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Pseudo as Db {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Record as Db {- hsc3-db -}
 
-import qualified Sound.Sc3.Graphs.Db as Graphs {- hsc3-db -}
-
 import qualified Language.Smalltalk.Ansi as St {- stsc3 -}
 import Language.Smalltalk.Ansi.Expr {- stsc3 -}
 import qualified Language.Smalltalk.SuperCollider.Translate as Sc {- stsc3 -}
@@ -296,149 +294,14 @@ extract_stc_graph = unlines . takeWhile (not . isPrefixOf "//----") . lines
 stc_to_xml :: String -> String
 stc_to_xml = in_xml . expr_xml . Sc.stcToExpr
 
+{-
+stc_file_to_xml_file "graph/F0 - Tw 1395040511795372038.stc"
+-}
 stc_file_to_xml_file :: FilePath -> IO ()
 stc_file_to_xml_file fn = do
-  let dir = "/home/rohan/sw/blksc3/help/graph/"
+  let dir = "/home/rohan/sw/blksc3/help/"
   txt <- readFile (dir ++ fn)
   writeFile (dir ++ fn ++ ".xml") (in_xml (expr_xml (Sc.stcToExpr (extract_stc_graph txt))))
-
-blk_au_graph_option :: String -> String -> String
-blk_au_graph_option au nm =
-  printf "<option value='%s'>%s - %s</option>" (Graphs.au_title_filename au nm) au nm
-
--- Files that don't work in Wasm Sc3.
-blk_not_working_in_wasm :: [String]
-blk_not_working_in_wasm =
-  ["es-tw-570012853274615808" -- GreyholeRaw
-  ,"f0-tw-1467507942664646661" -- ChaosUGens.cpp/FBSineC
-  ,"f0-tw-1479212835192332289" -- ChaosUGens.cpp/QuadC
-  ,"f0-tw-1509888510525857792" -- ChaosUGens.cpp/LorenzN
-  ]
-
-blk_graphs_names :: [String]
-blk_graphs_names = Graphs.db_file_names Graphs.hsc3_graph_db
-
-blk_help_option :: String -> String -> String
-blk_help_option = printf "<option value='%s'>%s</option>"
-
-blk_in_autogen :: String -> [String] -> [String]
-blk_in_autogen typ lst =
-  concat [["<!-- AUTOGEN -->"
-          ,"<option value=''>--" ++ typ ++ "--</option>"]
-         ,lst
-         ,["<!-- END AUTOGEN -->"]]
-
-blk_help :: [String]
-blk_help =
-  ["Adsr.1", "Adsr.2"
-  ,"Asr.1", "Asr.2"
-  ,"ArrayFill.1"
-  ,"Balance2.1", "Balance2.2"
-  ,"Blip.1", "Blip.2"
-  ,"Cc.1"
-  ,"CombC.1", "CombC.2"
-  ,"Comment.1"
-  ,"DwgPluckedStiff.1"
-  ,"Dx7.1"
-  ,"Decay2.1","Decay2.2"
-  ,"DegreeToKey.1"
-  ,"ExpRand.1"
-  -- ,"FbSineC.1"
-  ,"Formant.1"
-  ,"Formlet.1"
-  ,"Freezer.1"
-  ,"FreqShift.1"
-  ,"Gendy1.1"
-  ,"HenonC.1"
-  ,"Impulse.1", "Impulse.2", "Impulse.3"
-  ,"LfNoise0.1"
-  ,"LfNoise1.1", "LfNoise1.2"
-  ,"LfSaw.1", "LfSaw.2"
-  ,"Lag.1"
-  ,"Latch.1", "Latch.2"
-  ,"Ln.1"
-  ,"LocalBuf.1"
-  ,"LocalIn.1"
-  ,"LocalOut.1"
-  ,"MouseX.1"
-  ,"OverlapTexture.1"
-  ,"Pitch.1"
-  ,"PmOsc.1", "PmOsc.2", "PmOsc.3", "PmOsc.4"
-  ,"Pan2.1"
-  ,"Play.1"
-  ,"Pluck.1", "Pluck.2"
-  ,"Pulse.1"
-  ,"PulseCount.1"
-  -- ,"QuadC.1"
-  ,"Ringz.1","Ringz.2"
-  ,"RingzBank.1"
-  ,"Saw.1"
-  ,"Seq.1", "Seq.2"
-  ,"SfRead.1", "SfRead.2"
-  ,"ShufflerB.1"
-  ,"SinOsc.1", "SinOsc.2", "SinOsc.3"
-  ,"Stepper.1", "Stepper.2", "Stepper.3"
-  ,"Sw.1", "Sw.2"
-  ,"TChoose.1", "TChoose.2"
-  ,"TGrains.1","TGrains.2"
-  ,"TiRand.1"
-  ,"TRand.1", "TRand.2"
-  ,"TScramble.1","TScramble.2"
-  ,"VarSaw.1"
-  ,"VoiceWriter.1"
-  ,"Voicer.1", "Voicer.2", "Voicer.3"
-  ,"Vosim.1", "Vosim.2"
-  ,"XFade2.1"
-  ,"XLn.1"]
-
-blk_guide :: [String]
-blk_guide =
-  ["1.x Block SuperCollider"
-  ,"1.1 Workspace, Synthesiser"
-  ,"1.x Toolbox"
-  ,"1.2 Guide, Help, Graphs"
-  ,"1.x Load, Copy, Translate"
-  ,"1.x User Programs"
-  ,"1.3 Comment, SinOsc, Play"
-  ,"1.4 Arrays, Variables, Binary Operators"
-  ,"1.x Operators"
-  ,"1.x Array Inputs, Array Expansion"
-  ,"1.x Lambda, Duplicate"
-  ,"1.x Overlap Texture"
-  ,"1.5 Noise Generators, Filters, Control Signals"
-  ,"1.x External Control, Mouse"
-  ,"1.x External Control, Cc, Sw"
-  ,"1.x External Control, Events"
-  ,"1.x Block Names, Parameters, Messages"
-  ,"1.x Names, Symbols, Unicode"
-  ,"1.x Keyboard Shortcuts"
-  ,"2.1 Multiply and Add"
-  ,"2.x Authors, Initials"
-  ,"2.x Code Generation, SuperCollider"
-  ,"2.x Code Generation, Javascript"
-  ,"2.x Code Generation, Smalltalk, Scheme"
-  ,"2.x Code Generation, Macros"
-  ,"3.x References"
-  ]
-
-gen_xml :: IO ()
-gen_xml = do
-  let rw nm fn = putStrLn nm >> stc_file_to_xml_file (fn ++ ".stc")
-      rw_graph nm = rw nm nm
-      rw_help nm = rw nm ("../ugen/" ++ nm)
-      rw_guide nm = rw nm ("../guide/" ++ Graphs.filename_rewriter id nm)
-  mapM_ rw_graph blk_graphs_names
-  mapM_ rw_help blk_help
-  mapM_ rw_guide blk_guide
-
-main :: IO ()
-main = do
-  gen_xml
-  let dir = "/home/rohan/sw/blksc3/html/"
-      mk_menu fn typ dat = writeFile (dir ++ fn ++ "-menu.html") (unlines (blk_in_autogen typ dat))
-  mk_menu "help" "Help" (zipWith blk_help_option blk_help blk_help)
-  mk_menu "guide" "Guide" (zipWith blk_help_option (map (Graphs.filename_rewriter id) blk_guide) blk_guide)
-  mk_menu "program" "Program" (concatMap (\(au, gr) -> map (blk_au_graph_option au) gr) Graphs.hsc3_graph_db)
 
 {-
 

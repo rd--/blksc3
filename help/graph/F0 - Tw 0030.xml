@@ -187,69 +187,79 @@
                 <next>
                   <block type="sc3_Play" id="$O}y}j@Urwlel{P6W|,d">
                     <value name="CODE">
-                      <block type="sc3_GVerb" id="bBkX*8zm7!(Ttbhjr}`h" inline="true">
+                      <block type="sc3_ArrayProc1" id=",+Tt1LXmX6Miqx0eJ:Qw">
+                        <field name="OP">sum</field>
                         <value name="IN">
-                          <block type="variables_get" id="]BKiMe^:{r7_s=`F8[Fs">
-                            <field name="VAR" id="2~NQ)8{;*_|M}|Jkg0,t">o</field>
+                          <block type="sc3_ArrayProc1" id="smG)NgKR;lE$$irV?lrQ">
+                            <field name="OP">transpose</field>
+                            <value name="IN">
+                              <block type="sc3_GVerb" id="bBkX*8zm7!(Ttbhjr}`h" inline="true">
+                                <value name="IN">
+                                  <block type="variables_get" id="]BKiMe^:{r7_s=`F8[Fs">
+                                    <field name="VAR" id="2~NQ)8{;*_|M}|Jkg0,t">o</field>
+                                  </block>
+                                </value>
+                                <value name="ROOMSIZE">
+                                  <block type="math_number" id="x^6*xIP_*OjObh2@P53o">
+                                    <field name="NUM">80</field>
+                                  </block>
+                                </value>
+                                <value name="REVTIME">
+                                  <block type="math_number" id="od(B_e$IL4CFdtUUIw}3">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                                <value name="DAMPING">
+                                  <block type="math_number" id="^oQ@S}z9_gq4#+bnP0V*">
+                                    <field name="NUM">0.5</field>
+                                  </block>
+                                </value>
+                                <value name="INPUTBW">
+                                  <block type="math_number" id="e2-`sjXy+q#+d8eF!z!V">
+                                    <field name="NUM">0.5</field>
+                                  </block>
+                                </value>
+                                <value name="SPREAD">
+                                  <block type="math_number" id="[^a}bQc[Vqo9=bxT9d7J">
+                                    <field name="NUM">15</field>
+                                  </block>
+                                </value>
+                                <value name="DRYLEVEL">
+                                  <block type="math_number" id="b}%1?)Ul;u:0=Fq.zt()">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <value name="EARLYREFLEVEL">
+                                  <block type="math_number" id="#iXxi@NtoJ/$9@vu2?f/">
+                                    <field name="NUM">0.7</field>
+                                  </block>
+                                </value>
+                                <value name="TAILLEVEL">
+                                  <block type="math_number" id="[jHR}XjeQf;MERG-^p[}">
+                                    <field name="NUM">0.5</field>
+                                  </block>
+                                </value>
+                                <value name="MAXROOMSIZE">
+                                  <block type="math_number" id="a|9`=8Vz6?tT~;2ZA#LX">
+                                    <field name="NUM">300</field>
+                                  </block>
+                                </value>
+                                <value name="MUL">
+                                  <shadow type="math_number" id="rYqDIWW!TP.c,Sf!^v]t">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="math_number" id="Zw(+0ljvCAoDl(*o63M1">
+                                    <field name="NUM">0.1</field>
+                                  </block>
+                                </value>
+                                <value name="ADD">
+                                  <shadow type="math_number" id="+ON(1WdIA5{w{alsVxc9">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
                           </block>
-                        </value>
-                        <value name="ROOMSIZE">
-                          <block type="math_number" id="x^6*xIP_*OjObh2@P53o">
-                            <field name="NUM">80</field>
-                          </block>
-                        </value>
-                        <value name="REVTIME">
-                          <block type="math_number" id="od(B_e$IL4CFdtUUIw}3">
-                            <field name="NUM">3</field>
-                          </block>
-                        </value>
-                        <value name="DAMPING">
-                          <block type="math_number" id="^oQ@S}z9_gq4#+bnP0V*">
-                            <field name="NUM">0.5</field>
-                          </block>
-                        </value>
-                        <value name="INPUTBW">
-                          <block type="math_number" id="e2-`sjXy+q#+d8eF!z!V">
-                            <field name="NUM">0.5</field>
-                          </block>
-                        </value>
-                        <value name="SPREAD">
-                          <block type="math_number" id="[^a}bQc[Vqo9=bxT9d7J">
-                            <field name="NUM">15</field>
-                          </block>
-                        </value>
-                        <value name="DRYLEVEL">
-                          <block type="math_number" id="b}%1?)Ul;u:0=Fq.zt()">
-                            <field name="NUM">1</field>
-                          </block>
-                        </value>
-                        <value name="EARLYREFLEVEL">
-                          <block type="math_number" id="#iXxi@NtoJ/$9@vu2?f/">
-                            <field name="NUM">0.7</field>
-                          </block>
-                        </value>
-                        <value name="TAILLEVEL">
-                          <block type="math_number" id="[jHR}XjeQf;MERG-^p[}">
-                            <field name="NUM">0.5</field>
-                          </block>
-                        </value>
-                        <value name="MAXROOMSIZE">
-                          <block type="math_number" id="a|9`=8Vz6?tT~;2ZA#LX">
-                            <field name="NUM">300</field>
-                          </block>
-                        </value>
-                        <value name="MUL">
-                          <shadow type="math_number" id="rYqDIWW!TP.c,Sf!^v]t">
-                            <field name="NUM">1</field>
-                          </shadow>
-                          <block type="math_number" id="Zw(+0ljvCAoDl(*o63M1">
-                            <field name="NUM">0.1</field>
-                          </block>
-                        </value>
-                        <value name="ADD">
-                          <shadow type="math_number" id="+ON(1WdIA5{w{alsVxc9">
-                            <field name="NUM">0</field>
-                          </shadow>
                         </value>
                       </block>
                     </value>
