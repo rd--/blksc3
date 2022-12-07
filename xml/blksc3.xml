@@ -134,20 +134,20 @@
       </value>
     </block>
     <block type='sc3_EventParam'>
-      <field name='PARAM'>x</field>
+      <field name='PARAM'>eventX</field>
       <value name='EVENT'><block type='variables_get'><field name='VAR'>e</field></block></value>
     </block>
     <block type='sc3_BinaryOp' inline='true'>
       <field name='OP'>*</field>
       <value name='LHS'>
         <block type='sc3_EventParam'>
-          <field name='PARAM'>w</field>
+          <field name='PARAM'>eventW</field>
           <value name='EVENT'><block type='variables_get'><field name='VAR'>e</field></block></value>
         </block>
       </value>
       <value name='RHS'>
         <block type='sc3_EventParam'>
-          <field name='PARAM'>z</field>
+          <field name='PARAM'>eventZ</field>
           <value name='EVENT'> <block type='variables_get'><field name='VAR'>e</field></block>
           </value>
         </block>
@@ -157,18 +157,18 @@
       <field name='OP'>unitCps</field>
       <value name='IN'>
         <block type='sc3_EventParam'>
-          <field name='PARAM'>p</field>
+          <field name='PARAM'>eventP</field>
           <value name='EVENT'><block type='variables_get'><field name='VAR'>e</field></block></value>
         </block>
       </value>
     </block>
     <block type='sc3_UnaryOp'>
-      <field name='OP'>midicps</field>
+      <field name='OP'>midiCps</field>
       <value name='IN'>
         <block type='sc3_MulAdd' inline='true'>
           <value name='IN'>
             <block type='sc3_EventParam'>
-              <field name='PARAM'>x</field>
+              <field name='PARAM'>eventX</field>
               <value name='EVENT'><block type='variables_get'><field name='VAR'>e</field></block></value>
             </block>
           </value>
@@ -180,7 +180,7 @@
     <block type='sc3_MulAdd' inline='true'>
       <value name='IN'>
         <block type='sc3_EventParam'>
-          <field name='PARAM'>o</field>
+          <field name='PARAM'>eventO</field>
           <value name='EVENT'><block type='variables_get'><field name='VAR'>e</field></block></value>
         </block>
       </value>
