@@ -11,4 +11,9 @@ push-all:
 	r.github-push.sh blksc3
 
 remote-update:
-	ssh rd@rohandrape.net "(cd rohandrape.net/pub/blksc3 ; git pull ; (cd lib/jssc3 ; git pull) ; (cd lib/scsynth-wasm-builds ; git pull) ; (cd lib ; make copy-dist))"
+	ssh rd@rohandrape.net "(cd rohandrape.net/pub/blksc3 ; git pull ; make remote-setup"
+
+remote-setup:
+	(cd lib/jssc3 ; git pull)
+	(cd lib/scsynth-wasm-builds ; git pull)
+	(cd lib ; make copy-dist)
