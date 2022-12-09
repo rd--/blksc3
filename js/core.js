@@ -2,7 +2,7 @@ import * as sc from '../lib/jssc3/dist/jssc3.js'
 
 import { init_codegen } from './gen.js'
 import { init_codegen_ugen } from './gen-ugen.js'
-import { graph_menu_init } from './graph.js'
+import { graph_menu_init } from './graph-menu.js'
 import { layout_menu_init } from './layout.js'
 import { load_notes_and_then } from './notes.js'
 import { display_scrollbars } from './scrollbars.js'

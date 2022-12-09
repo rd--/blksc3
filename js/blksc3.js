@@ -1,6 +1,5 @@
 export * from './controllers.js'
 export * from './core.js'
-export * from './fullscreen.js'
 export * from './gen.js'
 export * from './gen-ugen.js'
 export * from './layout.js'
