@@ -35,7 +35,10 @@ function blk_read_input_json(blk) {
     }
 }
 
-// Read and load .json format program from URL.
+// Load .json format program from Url.
 function blk_fetch_json(blk, jsonUrl) {
-    fetch_url_and_then(url_append_timestamp(xmlUrl), 'json', jsonData => blk_load_json(blk, jsonData));
+    read_json_file_and_then(
+		url_append_timestamp(xmlUrl),
+		jsonData => blk_load_json(blk, jsonData)
+	);
 }

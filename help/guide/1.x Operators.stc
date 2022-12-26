@@ -1,14 +1,13 @@
-// Operators
+;; Operators
 var k = 12;
-var mk = {
-    arg f;
-    var a = { LFNoise2(0.25) * 0.05 }.dup(k);
-    Splay2(SinOsc(f, 0).tanh * a)
+var mk = { :f |
+    var a = { LfNoise2(0.25) * 0.05 }.dup(k);
+    Splay2(SinOsc(f, 0).Tanh * a)
 };
 var m = { IRand(0, 12) }.dup(k) + 48;
-[m, m.reverse].collect({ arg x; mk.value(x.midiCps) }).sum
+[m, m.reverse].collect({ :x | mk.value(x.MidiCps) }).sum
 
-//---- notes.md
+;; ---- notes.md
 ## Operators
 
 _Operator_ blocks have a menu to select the required operator.
@@ -24,4 +23,4 @@ Thus both ⇛ (_collect_) and ++ (_append_), which are instances of the same blo
 
 In this program 24 sine oscillators at 12 frequencies are arranged across the stereo field in symmetrical pairs,
 each oscillator has a distinct amplitude modulator.
-The program has instances of all four basic operators: 1. Σ (_sum_) & ᴙ (_reverse_), 2. ⇛ (_collect_), 3. ♩→ν (_midiCps_) & _tanh_ and 4. + (_add_)
+The program has instances of all four basic operators: 1. Σ (_sum_) & ᴙ (_reverse_), 2. ⇛ (_collect_), 3. ♩→ν (_MidiCps_) & _Tanh_ and 4. + (_Add_)

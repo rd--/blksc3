@@ -1,13 +1,15 @@
-// Authors, Initials
+;; Authors, Initials
 var n = [3,2,1,2, 3,3,3, 2,2,2, 3,5,5].append([3,2,1,2, 3,3,3,3, 2,2,3,2, 1]);
 var d = [1,1,1,1, 1,1,2, 1,1,2, 1,1,2].append([1,1,1,1, 1,1,1,1, 1,1,1,1, 4]);
 var t = TDmdFor(Seq(inf, d) / 4, 0, 1);
-var p = { arg i; [0, 2, 4, 5, 7].nth(i) };
+var p = { :i |
+	[0, 2, 4, 5, 7].nth(i)
+};
 var m = 60 + n.collect(p);
-var f = DmdOn(t, 0, Seq(inf, m)).midiCps;
-Pan2(SinOsc(f, 0).tanh, 0, Decay2(t, 0.05, 0.2) * 0.1)
+var f = DmdOn(t, 0, Seq(inf, m)).MidiCps;
+Pan2(SinOsc(f, 0).Tanh, 0, Decay2(t, 0.05, 0.2) * 0.1)
 
-//---- notes.md
+;; ---- notes.md
 ## Authors, Initials
 
 The authors of the graphs in the _Graph Programs_ menu are indicated by initials.

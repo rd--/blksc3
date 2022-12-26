@@ -1,7 +1,7 @@
-// https://schollz.com/blog/phasedistortion/ (zs)
+;; https://schollz.com/blog/phasedistortion/ (zs)
 Voicer(16, {
     arg e;
-    var freq = (e.x * 36 + 48).midiCps;
+    var freq = (e.x * 36 + 48).MidiCps;
     var amp = e.z;
     var freqBase = freq;
     var freqRes = LinLin(SinOsc(Rand(0, 0.2), 0), -1, 1, freqBase / 2, freqBase * 2);
