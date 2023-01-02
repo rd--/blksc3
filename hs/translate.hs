@@ -14,6 +14,7 @@ import Text.Printf {- base -}
 import qualified Sound.Sc3.Ugen.Db as Db {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Pseudo as Db {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Record as Db {- hsc3-db -}
+import qualified Sound.Sc3.Ugen.Db.Rename as Db {- hsc3-db -}
 
 import qualified Language.Smalltalk.Ansi as St {- stsc3 -}
 import Language.Smalltalk.Ansi.Expr {- stsc3 -}
@@ -50,8 +51,9 @@ ugen_param nm =
                  Nothing -> error ("ugen_param: " ++ nm)
 
 ugen_xml :: String -> [String] -> String
-ugen_xml nm l =
-  let (p, o) = ugen_param nm
+ugen_xml stcNm l =
+  let nm = Db.sc3_ugen_initial_name stcNm
+      (p, o) = ugen_param nm
       i = p ++ (if o then ["mul","add"] else [])
       l' = l ++ (if o then [lit_int_xml "shadow" 1, lit_int_xml "shadow" 0] else [])
   in printf "<block type='sc3_%s' inline='true'>%s</block>" nm (concatMap named_value_xml (zip i l'))
@@ -295,7 +297,7 @@ stc_to_xml :: String -> String
 stc_to_xml = in_xml . expr_xml . Sc.stcToExpr
 
 {-
-stc_file_to_xml_file "graph/F0 - Tw 1395040511795372038.stc"
+stc_file_to_xml_file "graph/F0 - Tw 0297.stc"
 -}
 stc_file_to_xml_file :: FilePath -> IO ()
 stc_file_to_xml_file fn = do
