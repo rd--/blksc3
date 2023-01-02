@@ -1,12 +1,14 @@
-// User Programs
-var b = BufAlloc(1, 2048);
-var x = MouseX(100, 12000, 0, 0.1);
-var y = MouseY(0.01, 0.15, 0, 0.1);
-var t = Impulse((LFNoise0([3, 3.25]) * 16) + 18, 0);
-var e = Decay2(t, 0.01, TRand(0.005, y, t));
-var o = BPF(WhiteNoise() * e, TRand(10, x, t), TRand(0, 1, t));
-var p = PV_RandComb(FFT(b, o, 0.5, 0, 1, 0), TExpRand(0.15, 1, t), t);
-(o * 0.05) + IFFT(p, 0, 0)
+;; User Programs
+OverlapTexture({ :tr |
+	{
+		Vosim(
+			Impulse(110 + TRand(-1, 1, tr), 0),
+			TExpRand(110, 880, tr),
+			TChoose(tr, [3, 5, 7]),
+			TChoose(tr, [0.77, 0.88, 0.99])
+		)
+	} ! 2
+}, 3, 5, 3) * 0.1
 
 ;; ---- notes.md
 ## User Progams
@@ -20,4 +22,4 @@ The _User_ menu lists all of the stored user programs, and these can be recalled
 
 Note that in this simple system recalling a saved program _replaces_ the existing program, which is deleted and cannot be recovered.
 
-This program make a simple clattering sound by bandpass filtering white noise and then processing it in the frequency domain to randomly delete frequency regions.
+This program makes a simple texture of overlapping ⋐ (_Vosim_) signals.

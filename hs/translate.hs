@@ -291,13 +291,15 @@ in_xml x = concat ["<xml>",x,"</xml>"]
 
 -- | .stc files may have .md notes sections, discard these.
 extract_stc_graph :: String -> String
-extract_stc_graph = unlines . takeWhile (not . isPrefixOf "//----") . lines
+extract_stc_graph = unlines . takeWhile (not . isPrefixOf ";; ----") . lines
 
 stc_to_xml :: String -> String
 stc_to_xml = in_xml . expr_xml . Sc.stcToExpr
 
 {-
 stc_file_to_xml_file "graph/F0 - Tw 0297.stc"
+stc_file_to_xml_file "guide/1.x User Programs.stc"
+stc_file_to_xml_file "ugen/Vosim.3.stc"
 -}
 stc_file_to_xml_file :: FilePath -> IO ()
 stc_file_to_xml_file fn = do
