@@ -1,14 +1,14 @@
-// SfRead ; phasor as phase input
+;; SfRead ; phasor as phase input
 var sf = SfAcquire("harp-a4", 2, [1, 2]);
 {
     var tr = Impulse(2 ** Rand(1, 3) / (SfDur(sf) * 4), 0).kr;
-    var mnn = TIRand(-2, 0, tr) * 12 + TChoose(tr, [0, 2.1, 4.9, 7, 9.2]);
-    var rt = mnn.midiRatio * SfRateScale(sf);
+    var mnn = TiRand(-2, 0, tr) * 12 + TChoose(tr, [0, 2.1, 4.9, 7, 9.2]);
+    var rt = mnn.MidiRatio * SfRateScale(sf);
     var ph = Phasor(tr, rt, 0, SfFrames(sf), 0);
     SfRead(sf, ph, 0, 2)
 }.dup(8).sum * 0.1
 
-//---- notes.md
+;; ---- notes.md
 _SfAcquire_ returns an array of _buffer_ objects.
 Buffers are arrays of floating point values with an associated channel count, frame count, and sample rate.
 The buffer array returned by SfAcquire will hold the data stored in the named sound file.

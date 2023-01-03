@@ -1,8 +1,8 @@
 ;; External Control, Mouse
-var x = MouseX(20, 22000, 0, #[0.005, 0.025]);
-var y = MouseY(20, 22000, 0, #[0.005, 0.075]);
+var x = MouseX(20, 22000, 0, [0.005, 0.025]);
+var y = MouseY(20, 22000, 0, [0.005, 0.075]);
 var nd = {
-  var a = SinOsc(x + LFNoise0(#[5, 9]), 0);
+  var a = SinOsc(x + LfNoise0([5, 9]), 0);
   var b = SinOsc(y, 0);
   a * b
 };
