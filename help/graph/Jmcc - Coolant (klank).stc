@@ -1,2 +1,12 @@
-// coolant (jmcc)
-{ RingzBank(OnePole(BrownNoise() * 0.002, 0.95), { Rand(40, 2040) }.dup(10), [1], [0.1]) }.dup
+;; coolant (jmcc)
+{
+	RingzBank(
+		OnePole(BrownNoise() * 0.002, 0.95),
+		{ Rand(40, 2040) } ! 10,
+		[1],
+		[0.1]
+	)
+}.dup(2)
+
+;; ---- notes.md
+Resonator bank only, no texture.

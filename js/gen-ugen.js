@@ -92,6 +92,9 @@ Blockly.JavaScript['sc3_Dust'] = function(block) {
 Blockly.JavaScript['sc3_Dust2'] = function(block) {
   return blk_ugen_codegen(blk, block, 'Dust2', ['DENSITY'], true);
 };
+Blockly.JavaScript['sc3_EqPan2'] = function(block) {
+  return blk_ugen_codegen(blk, block, 'EqPan2', ['IN', 'POS'], true);
+};
 Blockly.JavaScript['sc3_ExpRand'] = function(block) {
   return blk_ugen_codegen(blk, block, 'ExpRand', ['LO', 'HI'], true);
 };

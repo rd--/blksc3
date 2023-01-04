@@ -53,6 +53,9 @@ _kr_ should not exist.
 
 # Remainder
 
+- unicode/ugen: Fold, Formant
+- unicode/op: clump, softClip
+- overlaptexture: muladd
 - events in browser
 - midi keyboard input in browser
 - sound file reader block (SfAcquire)
