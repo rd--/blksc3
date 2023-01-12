@@ -1,4 +1,4 @@
-import { consoleDebug, throwError } from '../lib/jssc3/dist/jssc3.js'
+import { throwError } from '../lib/jssc3/dist/jssc3.js'
 
 export function init_codegen(blk) {
 
@@ -6,8 +6,12 @@ export function init_codegen(blk) {
 
 	// Comment code generator.  Comments should not contain newlines, if they do only the first line is written.
 	Blockly.JavaScript['sc3_Comment'] = function(block) {
-		var commentText = block.getFieldValue('COMMENT');
-		return '// ' + sc.stringLines(commentText)[0] + '\n';
+		var commentText = sc.stringLines(block.getFieldValue('COMMENT'))[0];
+		if(blk.output_format === '.stc') {
+			return `(* ${commentText} *)\n`;
+		} else {
+			return `/* ${commentText} */\n`;
+		}
 	};
 
 	// Play code generator.  Output is 'CODE' input.
@@ -116,9 +120,9 @@ export function init_codegen(blk) {
 		var count_value = Blockly.JavaScript.valueToCode(block, 'COUNT', Blockly.JavaScript.ORDER_ATOMIC) || '0';
 		var proc_code = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '{}';
 		if(blk.output_format === '.stc') {
-			return count_value + '.timesRepeat( ' + proc_code + ');';
+			return `${count_value}.timesRepeat(${proc_code});`;
 		} else if(blk.output_format === '.js') {
-			return 'sc.timesRepeat( ' + count_value + ', ' + proc_code + ');';
+			return `sc.timesRepeat(${count_value}, ${proc_code});`;
 		} else {
 			return throwError(`sc3_TimesRepeat: ${blk.output_format}`);
 		}
@@ -139,10 +143,11 @@ function const_codegen(c) {
 
 // Implicit method code generator.
 function implicit_method_codegen(blk, block, name, argNameArray) {
-	consoleDebug(`implicit_method_codegen: ${name}, ${argNameArray.length}`);
+	// console.debug(`implicit_method_codegen: ${name}, ${argNameArray.length}`);
     var nilValue = blk.output_format === '.stc' ? 'nil' : 'null';
+    var qName = blk.output_format === '.stc' ? name : `sc.${name}`;
     var argArray = argNameArray.map(item => blk.Blockly.JavaScript.valueToCode(block, item, blk.Blockly.JavaScript.ORDER_ATOMIC) || nilValue);
-    return ['sc.' + name + '(' + argArray.join(', ') + ')', blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
+    return [`${qName}(${argArray.join(', ')})`, blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
 }
 
 // Procedure code generator.
@@ -155,29 +160,29 @@ function proc_codegen(blk, block, numArg, hasStm) {
     var ofc = blk.Blockly.JavaScript.ORDER_FUNCTION_CALL;
     if(blk.output_format === '.stc') {
         if(numArg === 0 && hasStm === false) {
-            return ['{ ' + ret_value + ' }', ofc];
+            return [`{${ret_value}}`, ofc];
         } else if(numArg === 1 && hasStm === false) {
-            return ['{ arg ' + var_value + '_; ' + var_value + ' = ' + var_value + '_; ' + ret_value + ' }', ofc];
+            return [`{ arg ${var_value}_; ${var_value} = ${var_value}_; ${ret_value} }`, ofc];
         } else if(numArg === 0 && hasStm === true) {
-            return ['{ ' + stm_code + ret_value + ' }', ofc];
+            return [`{ ${stm_code} ${ret_value} }`, ofc];
         } else if(numArg === 1 && hasStm === true) {
-            return ['{ arg ' + var_value + '_; ' + var_value + ' = ' + var_value + '_; ' + stm_code + ret_value + ' }', ofc];
+            return [`{ arg ${var_value}_; ${var_value} = ${var_value}_; ${stm_code} ${ret_value} }`, ofc];
         } else {
-            return throwError(`proc_codegen:stc: ${hasArg} ${hasStm}`);
+            return throwError(`proc_codegen: stc: ${hasArg} ${hasStm}`);
         }
     } else if(blk.output_format === '.js') {
         if(numArg === 0 && hasStm === false) {
-            return ['function() { return ' + ret_value + '; }', ofc];
+            return [`function() { return ${ret_value}; }`, ofc];
         } else if(numArg === 1 && hasStm === false) {
-            return ['function(' + var_value + '_) { var ' + var_value + ' = ' + var_value + '_; return ' + ret_value + '; }', ofc];
+            return [`function(${var_value}_) { var ${var_value} = ${var_value}_; return ${ret_value}; }`, ofc];
         } else if(numArg === 2 && hasStm === false) {
-            return ['function(' + var1_value + '_, ' + var2_value + '_) { var ' + var1_value + ' = ' + var1_value + '_, ' + var2_value + ' = ' + var2_value + '_; return ' + ret_value + '; }', ofc];
+            return [`function(${var1_value}_, ${var2_value}_) { var ${var1_value} = ${var1_value}_, ${var2_value} = ${var2_value}_; return ${ret_value}; }`, ofc];
         } else if(numArg === 0 && hasStm === true) {
-            return ['function() { ' + stm_code + 'return ' + ret_value + '; }', ofc];
+            return [`function() { ${stm_code} return ${ret_value}; }`, ofc];
         } else if(numArg === 1 && hasStm === true) {
-            return ['function(' + var_value + '_) { var ' + var_value + ' = ' + var_value + '_; ' + stm_code + 'return ' + ret_value + '; }', ofc];
+            return [`function(${var_value}_) { var ${var_value} = ${var_value}_; ${stm_code} return ${ret_value}; }`, ofc];
         } else {
-            return throwError(`proc_codegen, js: ${hasArg} ${hasStm}`);
+            return throwError(`proc_codegen: js: ${hasArg} ${hasStm}`);
         }
     } else {
         return throwError(`proc_codegen: ${blk.output_format}, ${hasArg}, ${hasStm}`);
@@ -190,17 +195,18 @@ function method_codegen(blk, block, name, argNameArray) {
     var argArray = argNameArray.map(item => blk.Blockly.JavaScript.valueToCode(block, item, blk.Blockly.JavaScript.ORDER_ATOMIC) || nilValue);
     if(blk.output_format === '.stc') {
         switch(argArray.length) {
-        case 1: return [argArray[0] + '.' + name, blk.Blockly.JavaScript.ORDER_MEMBER];
+        case 1: return [`${argArray[0]}.${name}`, blk.Blockly.JavaScript.ORDER_MEMBER];
         case 2: return sc.stc_is_binary_selector(name) ?
-                [argArray[0] + ' ' + name + ' ' + argArray[1], blk.Blockly.JavaScript.ORDER_NONE] :
-                [argArray[0] + '.' + name + '(' + argArray[1] + ')', blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
+                [`${argArray[0]} ${name} ${argArray[1]}`, blk.Blockly.JavaScript.ORDER_NONE] :
+                [`${argArray[0]}.${name}(${argArray[1]})`, blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
+        case 3: return [`${argArray[0]}.${name}(${argArray[1]}, ${argArray[2]})`, blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
         default: throwError('method_codegen: stc');
         }
     } else if(blk.output_format === '.js') {
         switch(argArray.length) {
-        case 1: return ['sc.' + name + '(' + argArray[0] + ')', blk.Blockly.JavaScript.ORDER_MEMBER];
-        case 2: return ['sc.' + sc.stc_binary_selector_from_operator(name) + '(' + argArray[0] + ', ' + argArray[1] + ')', blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
-        case 3: return ['sc.' + name + '(' + argArray[0] + ', ' + argArray[1] + ', ' + argArray[2] + ')', blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
+        case 1: return [`sc.${name}(${argArray[0]})`, blk.Blockly.JavaScript.ORDER_MEMBER];
+        case 2: return [`sc.${sc.stc_binary_selector_from_operator(name)}(${argArray[0]}, ${argArray[1]})`, blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
+        case 3: return [`sc.${name}(${argArray[0]}, ${argArray[1]}, ${argArray[2]})`, blk.Blockly.JavaScript.ORDER_FUNCTION_CALL];
         default: throwError('method_codegen: js');
         }
     } else {
@@ -215,18 +221,19 @@ function append_mul_add(blk, block, codeStr) {
     var reqMul = Number.parseFloat(mulStr) != 1;
     var reqAdd = Number.parseFloat(addStr) != 0;
     if(reqMul && reqAdd) {
-        return (blk.output_format == '.stc' ? '' : 'sc.') + 'MulAdd(' + codeStr + ', ' + mulStr + ', ' + addStr + ')';
+        var qName = blk.output_format == '.stc' ? 'MulAdd' : 'sc.MulAdd';
+		return `${qName}(${codeStr}, ${mulStr}, ${addStr})`;
     } else if(reqMul) {
-        return blk.output_format == '.stc' ? ('(' + codeStr + ' * ' + mulStr + ')') : ('sc.Mul(' + codeStr + ', ' + mulStr + ')');
+        return blk.output_format == '.stc' ? `(${codeStr} * ${mulStr})` : `sc.Mul(${codeStr}, ${mulStr})`;
     } else if(reqAdd) {
-        return blk.output_format == '.stc' ? ('(' + codeStr + ' + ' + addStr + ')') : ('sc.Add(' + codeStr + ', ' + addStr + ')');
+        return blk.output_format == '.stc' ? `(${codeStr} + ${mulStr})` : `sc.Add(${codeStr}, ${mulStr})`;
     } else {
         return codeStr;
     }
 }
 
 export function blk_ugen_codegen(blk, block, name, argNameArray, hasOutputs) {
-	consoleDebug(`blk_ugen_codegen: ${name}, ${argNameArray.length}, ${hasOutputs}`);
+	// console.debug(`blk_ugen_codegen: ${name}, ${argNameArray.length}, ${hasOutputs}`);
     var ugenCode = implicit_method_codegen(blk, block, name, argNameArray);
     var answer = hasOutputs ? [append_mul_add(blk, block, ugenCode[0]), blk.Blockly.JavaScript.ORDER_FUNCTION_CALL] : ugenCode;
 	return answer;

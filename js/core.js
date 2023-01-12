@@ -36,7 +36,7 @@ function inject_with_xml_toolbox(blk, onCompletion) {
 		}
 		blk.workspace = blk.Blockly.inject('blocklyContainer', blk.config);
 		display_scrollbars(blk, false);
-		// console.log('inject_with_xml_toolbox: injection completed');
+		// console.debug('inject_with_xml_toolbox: injection completed');
 		onCompletion(blk);
 	};
 }
@@ -44,7 +44,7 @@ function inject_with_xml_toolbox(blk, onCompletion) {
 // Get workspace as .js code.
 export function get_js_code(blk) {
 	const text = blk.Blockly.JavaScript.workspaceToCode(blk.workspace);
-	console.log('get_js_code', text);
+	// console.debug('get_js_code', text);
 	return text;
 }
 
@@ -60,8 +60,8 @@ function pre(blk, onCompletion) {
 }
 
 function load_help_graph(blk, graphPath) {
-	xml.fetch_xml(blk, graphPath + '.xml', false);
-	load_notes_and_then(graphPath + '.stc', sc.setter_for_inner_html_of('blkNotes'));
+	xml.fetch_xml(blk, `${graphPath}.xml`, false);
+	load_notes_and_then(`${graphPath}.stc`, sc.setter_for_inner_html_of('blkNotes'));
 	if(blk.track_history) {
 		sc.window_url_set_param('e', graphUrl);
 	}
@@ -83,6 +83,8 @@ export function init(Blockly, outputFormat, withUiCtl, trackHistory) {
 	sc.load_json_and_then('json/help-menu.json', json => sc.select_add_keys_as_options('helpMenu', json.helpMenu));
 	graph_menu_init('guideMenu', 'guide', (path) => load_help_graph(blk, path))
 	sc.load_json_and_then('json/guide-menu.json', json => sc.select_add_keys_as_options('guideMenu', json.guideMenu));
+	graph_menu_init('smallProgramsMenu', 'graph', (path) => load_help_graph(blk, path));
+	sc.load_json_and_then('json/small-programs-menu.json', json => sc.select_add_keys_as_options('smallProgramsMenu', json.smallProgramsMenu));
 	sc.userPrograms.storage_key = 'blksc3UserPrograms/xml';
 	sc.user_program_menu_init('userMenu', (xmlText) => xml.load_xml(blk, xmlText));
 	sc.select_on_change('actionsMenu', function(menuElement, entryName) {

@@ -2,7 +2,7 @@
 function markdown_to_html(mdText) {
     var mdReader = new commonmark.Parser();
     var htmlWriter = new commonmark.HtmlRenderer();
-    console.debug('markdown_to_html', mdText);
+    // console.debug('markdown_to_html', mdText);
     return htmlWriter.render(mdReader.parse(mdText));
 }
 

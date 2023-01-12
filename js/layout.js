@@ -2,7 +2,7 @@ import * as sc from '../lib/jssc3/dist/jssc3.js'
 
 // Set properties given layout configuration name.
 export function set_layout(blk, configName) {
-	console.log(`set_layout: ${configName}`);
+	// console.debug(`set_layout: ${configName}`);
     if(configName) {
         var w = document.getElementById('blocklyContainer');
         var c = document.getElementById('blkCtl');
