@@ -8,7 +8,7 @@ import { load_notes_and_then } from './notes.js'
 import { display_scrollbars } from './scrollbars.js'
 import * as xml from './xml.js'
 
-// blk = { Blockly, json, xml, workspace, config, output_format, track_history, layouts };
+// blk = { Blockly, json, xml, workspace, config, use_sl, track_history, layouts };
 
 // Configure and inject Blockly given Xml format toolbox definition.
 function inject_with_xml_toolbox(blk, onCompletion) {
@@ -41,10 +41,10 @@ function inject_with_xml_toolbox(blk, onCompletion) {
 	};
 }
 
-// Get workspace as .js code.
-export function get_js_code(blk) {
+// Get workspace as code.
+export function get_code(blk) {
 	const text = blk.Blockly.JavaScript.workspaceToCode(blk.workspace);
-	// console.debug('get_js_code', text);
+	// console.debug('get_code', text);
 	return text;
 }
 
@@ -68,12 +68,12 @@ function load_help_graph(blk, graphPath) {
 }
 
 // Initialisation function, to be called on document load.
-export function init(Blockly, outputFormat, withUiCtl, trackHistory) {
+export function init(Blockly, useSl, withUiCtl, trackHistory) {
 	const blk = {};
 	blk.Blockly = Blockly;
 	init_codegen(blk);
 	init_codegen_ugen(blk);
-	blk.output_format = outputFormat;
+	blk.use_sl = useSl;
 	blk.track_history = trackHistory;
 	pre(blk, (blk) => xml.maybe_load_xml_from_url_param(blk, 'e'));
 	sc.connect_button_to_input('xmlInputFileSelect', 'xmlInputFile'); // Initialise .xml file selector
@@ -96,10 +96,6 @@ export function init(Blockly, outputFormat, withUiCtl, trackHistory) {
 		sc.load_utf8_and_then('html/ui-ctl.html', sc.setter_for_inner_html_of('uiCtlContainer'));
 	}
 	return blk;
-}
-
-export function workspacePlay() {
-	sc.scsynthEnsure(globalScsynth, () => sc.playUgen(globalScsynth, eval(get_js_code(blk)), 1));
 }
 
 // Get .xml serialization of workspace.  (The .xml format is no longer being worked on.)
