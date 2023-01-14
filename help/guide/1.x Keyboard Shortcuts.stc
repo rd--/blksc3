@@ -1,8 +1,5 @@
-// Keyboard Shortcuts (Keybindings, Access Keys)
-1.to(16).collect({
-    arg k;
-    SinOsc(KeyPitch(k).unitCps, 0) * KeyDown(k)
-}).Splay2
+;; Keyboard Shortcuts (Keybindings, Access Keys)
+{ Rhpf(OnePole(BrownNoise(), 0.99), Lpf(BrownNoise(), 14) * 400 + 500, 0.03) * 0.06 } ! 2
 
 ;; ---- notes.md
 ## Keyboard Shortcuts
@@ -31,4 +28,5 @@ The table below lists the assigned keys, in alphabetical order, and the actions 
 Some keys aren't used because they don't work in some contexts,
 ␣ (_space_) for _Play_, _d_ for _Draw_.
 
-This program reads midi key state values to control 16 sine oscillators.
+This program passes noise signals through resonant filters,
+where the frequency of the filter is modulated by filtered noise.

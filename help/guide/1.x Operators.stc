@@ -1,10 +1,10 @@
 ;; Operators
 var k = 12;
 var mk = { :f |
-    var a = { LfNoise2(0.25) * 0.05 }.dup(k);
+    var a = { LfNoise2(0.25) * 0.05 } ! k;
     Splay2(SinOsc(f, 0).Tanh * a)
 };
-var m = { IRand(0, 12) }.dup(k) + 48;
+var m = { IRand(0, 12) } ! k + 48;
 [m, m.reverse].collect({ :x | mk.value(x.MidiCps) }).sum
 
 ;; ---- notes.md
