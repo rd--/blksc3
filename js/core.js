@@ -1,4 +1,5 @@
 import * as sc from '../lib/jssc3/dist/jssc3.js'
+import * as sl from '../lib/spl/dist/sl.js'
 
 import { init_codegen } from './gen.js'
 import { init_codegen_ugen } from './gen-ugen.js'
@@ -8,7 +9,7 @@ import { load_notes_and_then } from './notes.js'
 import { display_scrollbars } from './scrollbars.js'
 import * as xml from './xml.js'
 
-// blk = { Blockly, json, xml, workspace, config, use_sl, track_history, layouts };
+// blk = { Blockly, json, xml, workspace, config, track_history, layouts };
 
 // Configure and inject Blockly given Xml format toolbox definition.
 function inject_with_xml_toolbox(blk, onCompletion) {
@@ -41,11 +42,31 @@ function inject_with_xml_toolbox(blk, onCompletion) {
 	};
 }
 
-// Get workspace as code.
-export function get_code(blk) {
-	const text = blk.Blockly.JavaScript.workspaceToCode(blk.workspace);
-	// console.debug('get_code', text);
-	return text;
+function get_code_sl(blk) {
+	const slText = blk.Blockly.JavaScript.workspaceToCode(blk.workspace);
+	// console.debug('get_code_sl', slText);
+	return slText;
+}
+
+function get_code_js(blk) {
+	const slText = get_code_sl(rec);
+	const jsText = sl.rewriteString(slText);
+	// console.debug(`get_code_js: ${jsText}`);
+	return jsText;
+}
+
+export function eval_code(blk) {
+	return eval(get_code_js(blk));
+}
+
+export function play_code(blk) {
+	return sc.scsynthEnsure(globalScsynth, function() {
+		return sc.playUgen(globalScsynth, eval_code(rec), 1);
+	});
+}
+
+export function print_code(blk) {
+	return sc.prettyPrintSyndefOf(blk.eval_code(blk));
 }
 
 function pre(blk, onCompletion) {
@@ -68,12 +89,11 @@ function load_help_graph(blk, graphPath) {
 }
 
 // Initialisation function, to be called on document load.
-export function init(Blockly, useSl, withUiCtl, trackHistory) {
+export function init(Blockly, withUiCtl, trackHistory) {
 	const blk = {};
 	blk.Blockly = Blockly;
 	init_codegen(blk);
 	init_codegen_ugen(blk);
-	blk.use_sl = useSl;
 	blk.track_history = trackHistory;
 	pre(blk, (blk) => xml.maybe_load_xml_from_url_param(blk, 'e'));
 	sc.connect_button_to_input('xmlInputFileSelect', 'xmlInputFile'); // Initialise .xml file selector
