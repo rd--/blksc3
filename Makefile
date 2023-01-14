@@ -15,5 +15,6 @@ remote-update:
 
 remote-setup:
 	(cd lib/jssc3 ; git pull)
+	(cd lib/spl ; git pull)
 	(cd lib/scsynth-wasm-builds ; git pull)
 	(cd lib ; make copy-dist)
