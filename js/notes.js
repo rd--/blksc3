@@ -1,6 +1,6 @@
 // Convert .md text to .html
 function markdown_to_html(mdText) {
-    var mdReader = new commonmark.Parser();
+    var mdReader = new commonmark.Parser({smart: true});
     var htmlWriter = new commonmark.HtmlRenderer();
     // console.debug('markdown_to_html', mdText);
     return htmlWriter.render(mdReader.parse(mdText));

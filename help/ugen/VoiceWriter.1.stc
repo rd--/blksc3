@@ -1,12 +1,11 @@
-// VoiceWriter ; write w and p fields of first 8 voices
-VoiceWriter(8, {
-    arg e;
+;; VoiceWriter ; write w and p fields of first 8 voices
+VoiceWriter(8, { :e |
     var w = Trig(Impulse(Rand(0.15, 0.85), Rand(0, 1)), 0.25);
     var p = Latch(LinLin(SinOsc(Rand(0.25, 1.5), 0), -1, 1, 0.15, 0.95), tr);
     e.fromAssocArray(['w' -> w, 'p' -> p])
 });
 
-//---- notes.md
+;; ---- notes.md
 _VoiceWriter_ is the inverse of _Voicer_.
 It allows event data to be written using synthesis graphs.
 For each voice a function is called with an _Event_ object as argument.
