@@ -5,7 +5,7 @@
     <variable id="4wZQ0_xba{H[|U~dy?7X">rf</variable>
     <variable id="BN{=q2-lLadYg62CH@_R">c</variable>
   </variables>
-  <block type="sc3_Comment" id="n(KV5pfKB,,y!_U55uXg" x="-90" y="155">
+  <block type="sc3_Comment" id="n(KV5pfKB,,y!_U55uXg" x="0" y="0">
     <field name="COMMENT">narrow band filtered crackle noise (jmcc) #2</field>
     <next>
       <block type="variables_set" id="`+@(r43+vnc]QPm*gA~O">
@@ -149,7 +149,7 @@
                     <next>
                       <block type="sc3_Play" id="QJ!%D-]l;k^}5Z{?p/*|">
                         <value name="CODE">
-                          <block type="sc3_Pan2" id="=T+S0G3|aOUJ2S@Q]?jn" inline="true">
+                          <block type="sc3_EqPan2" id="=T+S0G3|aOUJ2S@Q]?jn" inline="false">
                             <value name="IN">
                               <block type="sc3_Resonz" id="o4jF$G:k?kTK:73y!KZi" inline="true">
                                 <value name="IN">
@@ -203,14 +203,9 @@
                                 </value>
                               </block>
                             </value>
-                            <value name="LEVEL">
-                              <block type="math_number" id="Ru`jgO]u+F^;lS|!L~.N">
-                                <field name="NUM">0.15</field>
-                              </block>
-                            </value>
                             <value name="MUL">
                               <shadow type="math_number" id="2W0yX0;y4SMA!19AzxMA">
-                                <field name="NUM">1</field>
+                                <field name="NUM">0.15</field>
                               </shadow>
                             </value>
                             <value name="ADD">

@@ -1,35 +1,34 @@
-// lucier (cr) ; http://www.listarc.bham.ac.uk/lists/sc-users/msg47539.html
+;; lucier (cr) ; http://www.listarc.bham.ac.uk/lists/sc-users/msg47539.html
 var bus = 20;
-OverlapTexture({
-    arg tr;
+OverlapTexture({ :tr |
     var freq = TRand(56, 64, tr);
-    var string_delay = 1 / freq;
-    var pk1_pos = 0.1;
-    var src_pos = 0.3;
-    var pk2_pos = 0.9;
-    var max_delay = 1;
-    var mk_delay = { arg p; var i = p.first; var r = p.second; LPZ1(DelayC(i, max_delay, r * string_delay)) };
-    var mk_allpass = { arg p; var i = p.first; var r = p.second; var dt = p.third; LPZ1(AllpassC(i, max_delay, r * string_delay, dt)) };
+    var stringDelay = 1 / freq;
+    var pk1Pos = 0.1;
+    var srcPos = 0.3;
+    var pk2Pos = 0.9;
+    var maxDelay = 1;
+    var mkDelay = { :p | var i = p.first; var r = p.second; Lpz1(DelayC(i, maxDelay, r * stringDelay)) };
+    var mkAllpass = { :p | var i = p.first; var r = p.second; var dt = p.third; Lpz1(AllpassC(i, maxDelay, r * stringDelay, dt)) };
     var drv = InFb(1, bus);
-    var pk1_R = mk_delay.value([drv, src_pos - pk1_pos]);
-    var pk1_L = mk_allpass.value([pk1_R * -1, pk1_pos * 2,  TRand(0.001, 0.11, tr)]);
-    var pk2_L = mk_delay.value([pk1_L, pk2_pos - pk1_pos]) * 0.99;
-    var stringL = mk_delay.value([pk2_L, 1 - pk2_pos]);
-    var pk2_R = mk_allpass.value([stringL * -1, 1 - pk2_pos, 2 + TRand(0.001, 0.11, tr)]) * 0.99;
-    var stringR = mk_delay.value([pk2_R, pk2_pos - src_pos]);
+    var pk1R = mkDelay.value([drv, srcPos - pk1Pos]);
+    var pk1L = mkAllpass.value([pk1R * -1, pk1Pos * 2,  TRand(0.001, 0.11, tr)]);
+    var pk2L = mkDelay.value([pk1L, pk2Pos - pk1Pos]) * 0.99;
+    var stringL = mkDelay.value([pk2L, 1 - pk2Pos]);
+    var pk2R = mkAllpass.value([stringL * -1, 1 - pk2Pos, 2 + TRand(0.001, 0.11, tr)]) * 0.99;
+    var stringR = mkDelay.value([pk2R, pk2Pos - srcPos]);
     var source = {
         var s = SinOsc(220, 0) * 0.01;
         var a = Amplitude(drv, 0.01, 0.01) * 11;
         var p = Pulse(60 + a, 0.5) * 0.1;
-        var f = RLPF(s + p, 320, 0.05);
-        var e = 1 - Amplitude(drv, 0.01, 0.01).min(1);
+        var f = Rlpf(s + p, 320, 0.05);
+        var e = 1 - Amplitude(drv, 0.01, 0.01).Min(1);
         Normalizer(f, 0.7, 0.01) * e
     }.value;
-    var l_out = ReplaceOut(bus, source * 0.2 + stringR);
-    var outL = pk1_L + pk1_R;
-    var outR = pk2_L + pk2_R;
-    bus = bus + 1;
-    [outL, outR].mrg(l_out).mrg(drv)
+    var lOut = ReplaceOut(bus, source * 0.2 + stringR);
+    var outL = pk1L + pk1R;
+    var outR = pk2L + pk2R;
+    bus := bus + 1;
+    [outL, outR].mrg(lOut).mrg(drv)
 }, 1, 5, 3) * 0.25
 
 ;; ---- notes.md

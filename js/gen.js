@@ -87,7 +87,8 @@ export function init_codegen(blk) {
 	};
 
 	Blockly.JavaScript['sc3_ArrayFromTo'] = function(block) {
-		return method_codegen(blk, block,'to', ['FROM', 'TO']);
+		const [code, order] = method_codegen(blk, block,'to', ['FROM', 'TO']);
+		return [`asArray(${code})`, order];
 	};
 
 	Blockly.JavaScript['sc3_ArrayFill'] = function(block) {
