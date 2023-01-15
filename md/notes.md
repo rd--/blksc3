@@ -5,7 +5,7 @@ i.e. _blksc3-wasm.html?e=help/graph/jmcc-why-supercollider.xml_.
 
 # Notes
 
-Wasm requires Pointer{WXY}, does not include sc3-plugins or sc3-rdu, and has eventX for x and so on.
+Wasm requires Pointer{WXY}, does not include sc3-plugins or sc3-rdu.
 Other errors are:
 
 - f0-tw-1467507942664646661
