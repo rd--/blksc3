@@ -1,6 +1,6 @@
 {-
 
-Translator for simple .stc graphs to Blockly .xml notation.
+Translator for simple .stc/.spl graphs to Blockly .xml notation.
 The .xml notation is old, there's a newer .json notation.
 
 -}
@@ -20,9 +20,11 @@ import qualified Language.Smalltalk.Ansi as St {- stsc3 -}
 import Language.Smalltalk.Ansi.Expr {- stsc3 -}
 import qualified Language.Smalltalk.SuperCollider.Translate as Sc {- stsc3 -}
 
+-- > lit_float_xml "shadow" 220
 lit_float_xml :: String -> Double -> String
 lit_float_xml ty n = printf "<%s type='math_number'><field name='NUM'>%f</field></%s>" ty n ty
 
+-- > lit_int_xml "shadow" 220
 lit_int_xml :: String -> Integer -> String
 lit_int_xml ty n = printf "<%s type='math_number'><field name='NUM'>%d</field></%s>" ty n ty
 
@@ -50,6 +52,7 @@ ugen_param nm =
                  Just (_,p,o,_,_)  -> (p, o)
                  Nothing -> error ("ugen_param: " ++ nm)
 
+-- > ugen_xml "SinOsc" [lit_int_xml "shadow" 110,lit_float_xml "shadow" 0.5]
 ugen_xml :: String -> [String] -> String
 ugen_xml stcNm l =
   let nm = Db.sc3_ugen_initial_name stcNm
@@ -63,7 +66,7 @@ block_xml_for nm p d =
   let l = concatMap named_value_xml (zip p d)
   in printf "<block type='sc3_%s' inline='true'>%s</block>" nm l
 
-{- | Some names are handled specially: OverlapTexture, SoundFileBuffer, Voicer, VoiceWriter
+{- | Some names are handled specially: {Overlap|XFade}Texture, SoundFileBuffer, Voicer, VoiceWriter
 
 > implicit_send_xml "SinOsc" ["440", "0"]
 -}
@@ -72,6 +75,8 @@ implicit_send_xml nm l =
   case (nm, l) of
     ("OverlapTexture", [_, _, _, _]) ->
       block_xml_for "OverlapTexture" ["PROC","SUSTAINTIME","TRANSITIONTIME","OVERLAP"] l
+    ("XFadeTexture", [_, _, _]) ->
+      block_xml_for "XFadeTexture" ["PROC","SUSTAINTIME","TRANSITIONTIME"] l
     ("SoundFileBuffer", [_, _]) ->
       block_xml_for "SoundFileBuffer" ["SOUNDFILEID", "NUMBEROFCHANNELS"] l
     ("Voicer", [_, _]) ->
@@ -101,6 +106,8 @@ array_proc_1 = ["asLocalBuf","choose","concatenation","first","mean","reverse","
 2. value -> sc3_Value0
 3. splay2 -> sc3_Splay2
 4. array operators -> sc3_ArrayProc1
+
+> uop_xml "MidiCps" (lit_int_xml "shadow" 60)
 -}
 uop_xml :: String -> String -> String
 uop_xml o e =
@@ -125,11 +132,13 @@ uop_xml o e =
 
 -- | Operator and method names that belong to Array not UGen
 array_proc_2 :: [String]
-array_proc_2 = ["++","collect","nth"]
+array_proc_2 = ["++","collect","at"]
 
 {- | Some operators are handled specially.
 
 1. array operators -> ArrayProc2
+
+> binop_xml "+" (lit_int_xml "shadow" 60) (lit_float_xml "shadow" 0.75)
 -}
 binop_xml :: String -> String -> String -> String
 binop_xml o lhs rhs =
@@ -180,12 +189,14 @@ keyternaryop_xml msg p1 p2 p3  =
       p1 p2 p3
     _ -> error "keyternaryop_xml?"
 
+-- > var_decl ["x","o"]
 var_decl :: [String] -> String
 var_decl v =
   if null v
   then ""
   else printf "<variables>%s</variables>" (concatMap (\x -> concat ["<variable>",x,"</variable>"]) v)
 
+-- > var_set "z" (lit_float_xml "shadow" 0.75)
 var_set :: String -> String -> String
 var_set =
   printf
@@ -208,6 +219,7 @@ var_get x =
 array_elem_xml :: Int -> String -> String
 array_elem_xml k x = printf "<value name='ADD%d'>%s</value>" k x
 
+-- > array_xml [lit_int_xml "shadow" 1,lit_float_xml "shadow" 2.3,lit_int_xml "shadow" 4]
 array_xml :: [String] -> String
 array_xml l =
   printf
@@ -268,10 +280,10 @@ expr_xml e =
     Identifier x -> var_get x
     Literal l -> lit_xml "block" l
     Send (Identifier u) (Message (St.KeywordSelector "apply:") [Array l]) -> implicit_send_xml u (map expr_xml l) -- Saw(440)
-    Send r (Message (St.UnarySelector m) []) -> (if is_event_param m then event_param_xml else uop_xml) m (expr_xml r) -- 60.midicps
+    Send r (Message (St.UnarySelector m) []) -> (if is_event_param m then event_param_xml else uop_xml) m (expr_xml r) -- 60.MidiCps
     Send lhs (Message (St.BinarySelector m) [rhs]) -> binop_xml m (expr_xml lhs) (expr_xml rhs) -- 1 + 2
-    Send lhs (Message (St.KeywordSelector m) [rhs]) -> keybinop_xml m (expr_xml lhs) (expr_xml rhs) -- 1.max(2)
-    Send p1 (Message (St.KeywordSelector m) [p2, p3]) -> keyternaryop_xml m (expr_xml p1) (expr_xml p2) (expr_xml p3) -- 1.max(2)
+    Send lhs (Message (St.KeywordSelector m) [rhs]) -> keybinop_xml m (expr_xml lhs) (expr_xml rhs) -- 1.Max(2)
+    Send p1 (Message (St.KeywordSelector m) [p2, p3]) -> keyternaryop_xml m (expr_xml p1) (expr_xml p2) (expr_xml p3) -- 1.Max(2)
     Lambda _ a v (e_seq, Nothing) -> proc_xml a v e_seq
     Init c _ s -> maybe "" comment_xml c ++ expr_seq_xml s
     _ -> error ("expr_xml: " ++ show e)
@@ -309,24 +321,15 @@ stc_file_to_xml_file fn = do
 
 {-
 
-> lit_float_xml "shadow" 220
-> lit_int_xml "shadow" 220
-> ugen_xml "SinOsc" [lit_int_xml "shadow" 110,lit_float_xml "shadow" 0.5]
-> uop_xml "midicps" (lit_int_xml "shadow" 60)
-> binop_xml "+" (lit_int_xml "shadow" 60) (lit_float_xml "shadow" 0.75)
-> var_decl ["x","o"]
-> var_set "z" (lit_float_xml "shadow" 0.75)
-> array_xml [lit_int_xml "shadow" 1,lit_float_xml "shadow" 2.3,lit_int_xml "shadow" 4]
-
 rw = stc_to_xml
 rw "5.abs"
 rw "SinOsc(440, 0)"
 rw "SinOsc(440, 0).abs"
 rw "{ Rand(0, 1) }"
-rw "{ arg tr; TRand(0, 1, tr) }"
+rw "{ :tr | TRand(0, 1, tr) }"
 rw "{ Rand(0, 1) }.dup"
 rw "{ Rand(0, 1) }.dup(5)"
 rw "1.to(9)"
-rw "[1, 2, 3].collect({ arg i; i * i })"
+rw "[1, 2, 3].collect({ :i | i * i })"
 
 -}
