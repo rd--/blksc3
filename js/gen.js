@@ -34,6 +34,10 @@ export function init_codegen(blk) {
 		return implicit_method_codegen(blk, block, 'OverlapTexture', ['PROC', 'SUSTAINTIME', 'TRANSITIONTIME', 'OVERLAP']);
 	};
 
+	Blockly.JavaScript['sc3_XFadeTexture'] = function(block) {
+		return implicit_method_codegen(blk, block, 'XFadeTexture', ['PROC', 'SUSTAINTIME', 'TRANSITIONTIME']);
+	};
+
 	Blockly.JavaScript['sc3_SoundFileBuffer'] = function(block) {
 		return implicit_method_codegen(blk, block, 'SoundFileBuffer', ['SOUNDFILEID', 'NUMBEROFCHANNELS']);
 	};

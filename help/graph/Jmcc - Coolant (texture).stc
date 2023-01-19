@@ -1,10 +1,10 @@
 ;; coolant (jmcc)
 var o = OnePole(BrownNoise() * 0.002, 0.95);
-OverlapTexture({ :tr |
+XFadeTexture({ :tr |
 	{
-		Ringz(o, TRand(40, 2040, tr), 1) * 0.2
-	}.dup(10).Splay2
-}, 6, 6, 3)
+		Ringz(o, TRand(0, 2000, tr) + 40, 1)
+	} !^ 10
+}, 4, 4, 2)
 
 ;; ---- notes.md
 Coolant texture, individual resonator (_Ringz_) blocks.
@@ -37,8 +37,7 @@ A ⤴⚁ block is a triggered random number generator.
 ⌉ the maximum bound, and
 ⤴ the trigger.
 
-A ᨏ block generates an overlapping texture.
+A ᨏ block generates an overlapping texture by cross-fading two copies of a sound.
 𝑓 is the function to be triggered for each component of the texture,
-⌒ is the sustain time,
-⤢ is the transition time, and
-\# is the number of components.
+⌒ is the sustain time, and
+⤢ is the transition time.
