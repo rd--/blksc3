@@ -476,8 +476,8 @@ Blockly.JavaScript['sc3_BufRec'] = function(block) {
 Blockly.JavaScript['sc3_Cc'] = function(block) {
   return blk_ugen_codegen(blk, block, 'Cc', ['INDEX'], true);
 };
-Blockly.JavaScript['sc3_Choose'] = function(block) {
-  return blk_ugen_codegen(blk, block, 'Choose', ['REPEATS', 'ARRAY'], true);
+Blockly.JavaScript['sc3_Lrand'] = function(block) {
+  return blk_ugen_codegen(blk, block, 'Lrand', ['REPEATS', 'ARRAY'], true);
 };
 Blockly.JavaScript['sc3_DmdFor'] = function(block) {
   return blk_ugen_codegen(blk, block, 'DmdFor', ['DUR', 'RESET', 'LEVEL'], true);
@@ -524,11 +524,11 @@ Blockly.JavaScript['sc3_Select2'] = function(block) {
 Blockly.JavaScript['sc3_SelectX'] = function(block) {
   return blk_ugen_codegen(blk, block, 'SelectX', ['WHICH', 'ARRAY'], true);
 };
-Blockly.JavaScript['sc3_Seq'] = function(block) {
-  return blk_ugen_codegen(blk, block, 'Seq', ['REPEATS', 'ARRAY'], true);
+Blockly.JavaScript['sc3_Lseq'] = function(block) {
+  return blk_ugen_codegen(blk, block, 'Lseq', ['REPEATS', 'ARRAY'], true);
 };
-Blockly.JavaScript['sc3_Ser'] = function(block) {
-  return blk_ugen_codegen(blk, block, 'Ser', ['LENGTH', 'START', 'STEP'], true);
+Blockly.JavaScript['sc3_Lseries'] = function(block) {
+  return blk_ugen_codegen(blk, block, 'Lseries', ['LENGTH', 'START', 'STEP'], true);
 };
 Blockly.JavaScript['sc3_SfAcquire'] = function(block) {
   return blk_ugen_codegen(blk, block, 'SfAcquire', ['URLORKEY', 'NUMBEROFCHANNELS', 'CHANNELINDICES'], true);
@@ -551,8 +551,8 @@ Blockly.JavaScript['sc3_SfRead'] = function(block) {
 Blockly.JavaScript['sc3_SfSampleRate'] = function(block) {
   return blk_ugen_codegen(blk, block, 'SfSampleRate', ['SFBUFFERARRAY'], true);
 };
-Blockly.JavaScript['sc3_Shuf'] = function(block) {
-  return blk_ugen_codegen(blk, block, 'Shuf', ['REPEATS', 'ARRAY'], true);
+Blockly.JavaScript['sc3_Lshuf'] = function(block) {
+  return blk_ugen_codegen(blk, block, 'Lshuf', ['REPEATS', 'ARRAY'], true);
 };
 Blockly.JavaScript['sc3_SinOscBank'] = function(block) {
   return blk_ugen_codegen(blk, block, 'SinOscBank', ['FREQ', 'AMP', 'PHASE'], true);
