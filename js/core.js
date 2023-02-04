@@ -82,7 +82,7 @@ function pre(blk, onCompletion) {
 
 function load_help_graph(blk, graphPath) {
 	xml.fetch_xml(blk, `${graphPath}.xml`, false);
-	load_notes_and_then(`${graphPath}.stc`, sc.setter_for_inner_html_of('blkNotes'));
+	load_notes_and_then(`${graphPath}.sl`, sc.setter_for_inner_html_of('blkNotes'));
 	if(blk.track_history) {
 		sc.window_url_set_param('e', graphUrl);
 	}

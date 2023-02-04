@@ -1,8 +1,8 @@
 ;; DwgPluckedStiff.1
 var t = TDmdFor(Seq(inf, [1,1,2,1,1,1,2,3,1,1,1,1,2,3,4] * 0.175), 0, 1);
 var freq = [
-	DmdOn(t, 0, Seq(inf, [60,62,63,58,48,55])),
-	DmdOn(t, 0, Seq(inf, [63,60,48,62,55,58]))
+	Demand(t, 0, Seq(inf, [60,62,63,58,48,55])),
+	Demand(t, 0, Seq(inf, [63,60,48,62,55,58]))
 ].MidiCps;
 var amp = TRand(0.05, 0.65, t); (* pulse amplitude (0  - 1, def = 0.5) *)
 var gate = 1; (* synth release *)

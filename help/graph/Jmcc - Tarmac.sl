@@ -12,7 +12,7 @@ var a = [
 OverlapTexture({
     arg tr;
     var t = Impulse(8, 0);
-    var i = DmdOn(t, 0, Seq(inf, TScramble(tr, TChoose(tr, a)))) * t;
+    var i = Demand(t, 0, Seq(inf, TScramble(tr, TChoose(tr, a)))) * t;
     var d = TRand(0.05, 0.5, tr);
     var z = PinkNoise() * (LfNoise1(TRand(0, 3, tr),) * 0.0008 + 0.0022);
     var s = { Ringz(z, TRand(50, 4000, tr), TRand(0.2, 12, tr)) }.dup(4).sum.max(0) * TChoose(tr, [-1, 1]);

@@ -7,7 +7,7 @@ var z = OverlapTexture({
     var sequence = DegreeToKey(major, TScramble(tr, [0, 1, 2, 3] + offset), 12) + root;
     var f = TxLine(TExpRand(4.0, 24.0, tr), TExpRand(4.0, 24.0, tr), 12, tr);
     var trig = Impulse(f, 0);
-    var freq = DmdOn(trig, 0, Seq(inf, sequence.midiCps));
+    var freq = Demand(trig, 0, Seq(inf, sequence.midiCps));
     var sig = LfTri(freq.kr, 0) * Decay2(trig, 0.004, 0.3).kr * 0.1;
     Pan2(sig, TRand(-1, 1, tr), 1)
 }, 6, 3, 6);

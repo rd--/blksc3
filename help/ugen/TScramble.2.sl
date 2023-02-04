@@ -9,7 +9,7 @@ var t2 = Impulse(5, 0);
 var m = TChoose(
 	t1,
 	a.collect { :x |
-		DmdOn(t2, 0, Seq(inf, TScramble(t1, x)))
+		Demand(t2, 0, Seq(inf, TScramble(t1, x)))
 	}
 );
 var c = SinOsc(1200, 0) * Decay(t1, 1) * 0.1;

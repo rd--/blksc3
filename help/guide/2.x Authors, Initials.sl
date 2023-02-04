@@ -4,7 +4,7 @@ var d = [1,1,1,1, 1,1,2, 1,1,2, 1,1,2] ++ [1,1,1,1, 1,1,1,1, 1,1,1,1, 4];
 var m = [0, 2, 4, 5, 7];
 var t = TDmdFor(Seq(inf, d) / 4, 0, 1);
 var m = 60 + n.collect { :i | m[i] };
-var f = DmdOn(t, 0, Seq(inf, m)).MidiCps;
+var f = Demand(t, 0, Seq(inf, m)).MidiCps;
 Pan2(SinOsc(f, 0).Tanh, 0, Decay2(t, 0.05, 0.2) * 0.1)
 
 ;; ---- notes.md

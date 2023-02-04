@@ -311,7 +311,7 @@ stc_to_xml = in_xml . expr_xml . Sc.stcToExpr
 {-
 stc_file_to_xml_file "graph/F0 - Tw 0297.stc"
 stc_file_to_xml_file "guide/1.x User Programs.stc"
-stc_file_to_xml_file "ugen/TChoose.2.stc"
+stc_file_to_xml_file "ugen/Sequencer.1.sl"
 -}
 stc_file_to_xml_file :: FilePath -> IO ()
 stc_file_to_xml_file fn = do

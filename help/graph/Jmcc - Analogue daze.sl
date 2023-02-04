@@ -8,7 +8,7 @@ var f = {
     var fltrate = param.nth(4);
     var tr = Impulse(clockRate, 0);
     var patternCps = (pattern + (12 * octave)).midiCps;
-    var sq = DmdOn(tr, 0, Seq(inf, patternCps));
+    var sq = Demand(tr, 0, Seq(inf, patternCps));
     var pwm = SinOsc(pwmrate, Rand(0, 2 * pi)) * 0.4 + 0.5;
     var cf = SinOsc(fltrate, Rand(0, 2 * pi)) * 1400 + 2000;
     RLPF(LFPulse(Lag(sq, 0.05), 0, pwm) * 0.1, cf, 1 / 15);

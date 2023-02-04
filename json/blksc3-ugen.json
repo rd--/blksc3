@@ -2059,6 +2059,38 @@
         "tooltip": "Select(which, array): Select output from an array of inputs.",
         "helpUrl": "https://doc.sccode.org/Classes/Select.html"
     }
+	,
+    {
+        "type": "sc3_Sequencer",
+        "message0": "⠿ %1 ⟦⟧ %2 ⤴ %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "Sequencer(array, trig): Clocked values.",
+        "helpUrl": "https://doc.sccode.org/Classes/Sequencer.html"
+    }
+	,
+    {
+        "type": "sc3_ImpulseSequencer",
+        "message0": "⊥⠿ %1 ⟦⟧ %2 ⤴ %3 × %4 + %5",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "ARRAY", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 30,
+        "tooltip": "ImpulseSequencer(array, trig): Clocked impulses.",
+        "helpUrl": "https://doc.sccode.org/Classes/ImpulseSequencer.html"
+    }
     ,
     {
         "type": "sc3_SinOsc",
@@ -2731,8 +2763,8 @@
     }
     ,
     {
-        "type": "sc3_Lrand",
-        "message0": "𝐿⚁ %1 # %2 ⟦⟧ %3 × %4 + %5",
+        "type": "sc3_Drand",
+        "message0": "𝐷⚁ %1 # %2 ⟦⟧ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
@@ -2748,7 +2780,7 @@
     ,
     {
         "type": "sc3_DmdFor",
-        "message0": "𝐿⏲ %1 ⏲ %2 ↻ %3 × %4 × %5 + %6",
+        "message0": "𝐷⏲ %1 ⏲ %2 ↻ %3 × %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
@@ -2760,12 +2792,12 @@
         "output": "UGen",
         "colour": 30,
         "tooltip": "Demand results from demand rate Ugens at intervals",
-        "helpUrl": "https://doc.sccode.org/Classes/DmdFor.html"
+        "helpUrl": "https://doc.sccode.org/Classes/Duty.html"
     }
     ,
     {
         "type": "sc3_TDmdFor",
-        "message0": "⤴𝐿⏲ %1 ⏲ %2 ↻ %3 × %4 × %5 + %6",
+        "message0": "⤴𝐷⏲ %1 ⏲ %2 ↻ %3 × %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "DUR", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
@@ -2777,12 +2809,12 @@
         "output": "UGen",
         "colour": 30,
         "tooltip": "Demand results as trigger from demand rate Ugens at intervals",
-        "helpUrl": "https://doc.sccode.org/Classes/TDmdFor.html"
+        "helpUrl": "https://doc.sccode.org/Classes/TDuty.html"
     }
     ,
     {
-        "type": "sc3_DmdOn",
-        "message0": "𝐿⤴ %1 ⤴ %2 ↻ %3 ∙ %4 × %5 + %6",
+        "type": "sc3_Demand",
+        "message0": "𝐷⤴ %1 ⤴ %2 ↻ %3 ∙ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
@@ -2794,7 +2826,7 @@
         "output": "UGen",
         "colour": 30,
         "tooltip": "Demand results from demand rate Ugens on trigger",
-        "helpUrl": "https://doc.sccode.org/Classes/DmdOn.html"
+        "helpUrl": "https://doc.sccode.org/Classes/Demand.html"
     }
     ,
     {
@@ -2995,8 +3027,8 @@
     }
     ,
     {
-        "type": "sc3_Lseq",
-        "message0": "𝐿⋯ %1 # %2 ⟦⟧ %3 × %4 + %5",
+        "type": "sc3_Dseq",
+        "message0": "𝐷⋯ %1 # %2 ⟦⟧ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
@@ -3011,8 +3043,8 @@
     }
     ,
     {
-        "type": "sc3_Lseries",
-        "message0": "Lseries %1 length %2 ⟜ %3 ⦧ %4 × %5 + %6",
+        "type": "sc3_Dseries",
+        "message0": "Dseries %1 length %2 ⟜ %3 ⦧ %4 × %5 + %6",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LENGTH", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
@@ -3142,8 +3174,8 @@
     }
     ,
     {
-        "type": "sc3_Lshuf",
-        "message0": "Lshuf %1 # %2 ⟦⟧ %3 × %4 + %5",
+        "type": "sc3_Dshuf",
+        "message0": "𝐷shuf %1 # %2 ⟦⟧ %3 × %4 + %5",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "REPEATS", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
