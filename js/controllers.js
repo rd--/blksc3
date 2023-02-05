@@ -1,5 +1,5 @@
 export function cc_value(ccIndex) {
-    var ccElem = document.getElementById(`cc${ccIndex}`);
+	var ccElem = document.getElementById(`cc${ccIndex}`);
 	if(ccElem) {
 		var ccValue = ccElem.value;
 		// console.debug('cc: ', ccIndex, ccValue);
@@ -10,8 +10,8 @@ export function cc_value(ccIndex) {
 }
 
 export function sw_maintained_value(swIndex) {
-    var swElem = document.getElementById(`swC${swIndex}`);
-    var swValue = swElem.checked ? 1 : 0;
-    // console.debug('sw/checkbox: ', swIndex, swValue);
-    return swValue;
+	var swElem = document.getElementById(`swC${swIndex}`);
+	var swValue = swElem.checked ? 1 : 0;
+	// console.debug('sw/checkbox: ', swIndex, swValue);
+	return swValue;
 }
