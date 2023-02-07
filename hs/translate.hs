@@ -187,7 +187,7 @@ keyternaryop_xml msg p1 p2 p3  =
       printf
       "<block type='sc3_Value2' inline='true'><value name='PROC'>%s</value><value name='VALUE1'>%s</value><value name='VALUE2'>%s</value></block>"
       p1 p2 p3
-    _ -> error "keyternaryop_xml?"
+    _ -> error ("keyternaryop_xml: " ++ show [msg, p1, p2, p3])
 
 -- > var_decl ["x","o"]
 var_decl :: [String] -> String
@@ -309,8 +309,8 @@ stc_to_xml :: String -> String
 stc_to_xml = in_xml . expr_xml . Sc.stcToExpr
 
 {-
-stc_file_to_xml_file "graph/F0 - Tw 0297.stc"
-stc_file_to_xml_file "guide/1.x User Programs.stc"
+stc_file_to_xml_file "graph/F0 - Tw 1367808902457397250.sl"
+stc_file_to_xml_file "guide/1.x User Programs.sl"
 stc_file_to_xml_file "ugen/Sequencer.1.sl"
 -}
 stc_file_to_xml_file :: FilePath -> IO ()

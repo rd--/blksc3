@@ -412,6 +412,9 @@ Blockly.JavaScript['sc3_ToggleFF'] = function(block) {
 Blockly.JavaScript['sc3_Trig'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'Trig', ['IN', 'DUR'], true);
 };
+Blockly.JavaScript['sc3_VarLag'] = function(block) {
+	return blk_ugen_codegen(blk, block, 'VarLag', ['IN', 'TIME', 'CURVATURE'], true);
+};
 Blockly.JavaScript['sc3_VarSaw'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'VarSaw', ['FREQ', 'IPHASE', 'WIDTH'], true);
 };
