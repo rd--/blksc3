@@ -21,10 +21,11 @@ globalThis.sl = sl;
 globalThis.blk = blk;
 sl.addLoadUrlMethods();
 window.onload = function() {
-	sc.sc3_wasm_init(sc.setter_for_inner_html_of('statusText'));
+	sc.sc3_wasm_init();
+	sc.scSynthInitStatusTextListener(globalScSynth, '---');
 	sc.sc3_mouse_init(globalScSynth);
 	sl.assignGlobals();
-	sl.loadUrlArrayInSequence('lib/spl/sl', ['kernel.sl', 'std.sl', 'sc.sl']);
+	sl.loadUrlArrayInSequence('lib/spl/sl', ['std.sl', 'sc.sl']);
 	globalThis.rec = blk.init(Blockly, false, false);
 };
 		</script>
