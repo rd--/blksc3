@@ -8,7 +8,7 @@ function on_load(blk) {
 
 // Load program from .xml definition, clears any existing blocks.
 function load_xml(blk, xmlText) {
-	var xml = blk.Blockly.Xml.textToDom(xmlText);
+	var xml = blk.Blockly.utils.xml.textToDom(xmlText);
 	blk.workspace.clear();
 	blk.Blockly.Xml.domToWorkspace(xml, blk.workspace);
 	on_load(blk);
