@@ -5,126 +5,126 @@ export function init_codegen(blk) {
 	const Blockly = blk.Blockly;
 
 	// Modified for .sl
-	Blockly.JavaScript['variables_set'] = function(block) {
+	Blockly.JavaScript.forBlock['variables_set'] = function(block) {
 		const argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
 		const varName = Blockly.JavaScript.nameDB_.getName(block.getFieldValue('VAR'), 'VARIABLE');
 		return `${varName} := ${argument0};\n`;
 	};
 
 	// Comment code generator.  Comments should not contain newlines, if they do only the first line is written.
-	Blockly.JavaScript['sc3_Comment'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Comment'] = function(block) {
 		const commentText = sc.stringLines(block.getFieldValue('COMMENT'))[0];
 		return `(* ${commentText} *)\n`;
 	};
 
 	// Play code generator.  Output is 'CODE' input.
-	Blockly.JavaScript['sc3_Play'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Play'] = function(block) {
 		return Blockly.JavaScript.valueToCode(block, 'CODE', Blockly.JavaScript.ORDER_ATOMIC) || '0';
 	};
 
-	Blockly.JavaScript['sc3_Constant'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Constant'] = function(block) {
 		return [const_codegen(block.getFieldValue('CONST')), Blockly.JavaScript.ORDER_FUNCTION_CALL];
 	};
 
-	Blockly.JavaScript['sc3_MulAdd'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_MulAdd'] = function(block) {
 		return implicit_method_codegen(blk, block, 'MulAdd', ['IN', 'MUL', 'ADD']);
 	};
 
-	Blockly.JavaScript['sc3_OverlapTexture'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_OverlapTexture'] = function(block) {
 		return implicit_method_codegen(blk, block, 'OverlapTexture', ['PROC', 'SUSTAINTIME', 'TRANSITIONTIME', 'OVERLAP']);
 	};
 
-	Blockly.JavaScript['sc3_XFadeTexture'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_XFadeTexture'] = function(block) {
 		return implicit_method_codegen(blk, block, 'XFadeTexture', ['PROC', 'SUSTAINTIME', 'TRANSITIONTIME']);
 	};
 
-	Blockly.JavaScript['sc3_SoundFileBuffer'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_SoundFileBuffer'] = function(block) {
 		return implicit_method_codegen(blk, block, 'SoundFileBuffer', ['SOUNDFILEID', 'NUMBEROFCHANNELS']);
 	};
 
-	Blockly.JavaScript['sc3_Voicer'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Voicer'] = function(block) {
 		return implicit_method_codegen(blk, block, 'Voicer', ['COUNT', 'PROC']);
 	};
 
-	Blockly.JavaScript['sc3_VoiceWriter'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_VoiceWriter'] = function(block) {
 		return implicit_method_codegen(blk, block, 'VoiceWriter', ['COUNT', 'PROC']);
 	};
 
-	Blockly.JavaScript['sc3_Proc0'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Proc0'] = function(block) {
 		return proc_codegen(blk, block, 0, false);
 	};
 
-	Blockly.JavaScript['sc3_Proc0Stm'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Proc0Stm'] = function(block) {
 		return proc_codegen(blk, block, 0, true);
 	};
 
-	Blockly.JavaScript['sc3_Proc1'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Proc1'] = function(block) {
 		return proc_codegen(blk, block, 1, false);
 	};
 
-	Blockly.JavaScript['sc3_Proc1Stm'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Proc1Stm'] = function(block) {
 		return proc_codegen(blk, block, 1, true);
 	};
 
-	Blockly.JavaScript['sc3_Proc2'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Proc2'] = function(block) {
 		return proc_codegen(blk, block, 2, false);
 	};
 
-	Blockly.JavaScript['sc3_Proc2Stm'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Proc2Stm'] = function(block) {
 		return proc_codegen(blk, block, 2, true);
 	};
 
-	Blockly.JavaScript['sc3_Value0'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Value0'] = function(block) {
 		return method_codegen(blk, block, 'value', ['PROC']);
 	};
 
-	Blockly.JavaScript['sc3_Value1'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Value1'] = function(block) {
 		return method_codegen(blk, block, 'value', ['PROC', 'VALUE']);
 	};
 
-	Blockly.JavaScript['sc3_Value2'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Value2'] = function(block) {
 		return method_codegen(blk, block, 'value', ['PROC', 'VALUE1', 'VALUE2']);
 	};
 
-	Blockly.JavaScript['sc3_ArrayFromTo'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_ArrayFromTo'] = function(block) {
 		const [code, order] = method_codegen(blk, block,'to', ['FROM', 'TO']);
 		return [`asArray(${code})`, order];
 	};
 
-	Blockly.JavaScript['sc3_ArrayFill'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_ArrayFill'] = function(block) {
 		return method_codegen(blk, block, 'dup', ['PROC', 'COUNT']);
 	};
 
-	Blockly.JavaScript['sc3_ArrayCollect'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_ArrayCollect'] = function(block) {
 		return method_codegen(blk, block, 'collect', ['ARRAY', 'PROC']);
 	};
 
-	Blockly.JavaScript['sc3_ArrayProc1'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_ArrayProc1'] = function(block) {
 		return method_codegen(blk, block, block.getFieldValue('OP'), ['IN']);
 	};
 
-	Blockly.JavaScript['sc3_ArrayProc2'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_ArrayProc2'] = function(block) {
 		return method_codegen(blk, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
 	};
 
-	Blockly.JavaScript['sc3_UnaryOp'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_UnaryOp'] = function(block) {
 		return method_codegen(blk, block, block.getFieldValue('OP'), ['IN']);
 	};
 
-	Blockly.JavaScript['sc3_BinaryOp'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_BinaryOp'] = function(block) {
 		return method_codegen(blk, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
 	};
 
-	Blockly.JavaScript['sc3_KeywordBinaryOp'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_KeywordBinaryOp'] = function(block) {
 		return method_codegen(blk, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
 	};
 
-	Blockly.JavaScript['sc3_EventParam'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_EventParam'] = function(block) {
 		return method_codegen(blk, block, block.getFieldValue('PARAM'), ['EVENT']);
 	};
 
 	/// Statement (i.e. not expression)
-	Blockly.JavaScript['sc3_TimesRepeat'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_TimesRepeat'] = function(block) {
 		const count_value = Blockly.JavaScript.valueToCode(block, 'COUNT', Blockly.JavaScript.ORDER_ATOMIC) || '0';
 		const proc_code = Blockly.JavaScript.valueToCode(block, 'PROC', Blockly.JavaScript.ORDER_ATOMIC) || '{}';
 		return `${count_value}.timesRepeat(${proc_code});`;

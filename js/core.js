@@ -61,7 +61,7 @@ export function eval_code(blk) {
 
 export function play_code(blk) {
 	return sc.scSynthEnsure(globalScSynth, function() {
-		return sc.playUgen(globalScSynth, eval_code(rec), 1);
+		return sc.playUgenAt(globalScSynth, eval_code(rec), 1);
 	});
 }
 
