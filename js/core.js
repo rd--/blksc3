@@ -70,8 +70,8 @@ export function print_code(blk) {
 }
 
 function pre(blk, onCompletion) {
-	blk.Blockly.HSV_SATURATION = 0.20;
-	blk.Blockly.HSV_VALUE = 0.95;
+	blk.Blockly.utils.colour.setHsvSaturation(0.20);
+	blk.Blockly.utils.colour.setHsvValue(0.95);
 	blk.Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
 	blk.Blockly.Msg['LISTS_CREATE_WITH_INPUT_WITH'] = '⟦⟧';
 	sc.load_json_and_then('json/blksc3.json', blk.Blockly.defineBlocksWithJsonArray);
