@@ -21,7 +21,7 @@ export function read_input_xml(inputId, blk) {
 
 // Read and load .xml format program from URL.
 export function fetch_xml(blk, xmlUrl) {
-	sc.load_utf8_and_then(
+	sc.fetch_utf8_then(
 		sc.url_append_timestamp(xmlUrl),
 		xmlText => load_xml(blk, xmlText)
 	);

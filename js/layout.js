@@ -22,7 +22,7 @@ export function set_layout(blk, configName) {
 export function layout_menu_init(blk) {
     var select = document.getElementById('blkLayoutMenu');
     select.addEventListener('change', e => set_layout(blk, e.target.value));
-    sc.load_json_and_then('json/blksc3-layouts.json', obj => blk.layouts = obj);
+    sc.fetch_json_then('json/blksc3-layouts.json', obj => blk.layouts = obj);
 }
 
 /*

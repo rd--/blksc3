@@ -24,7 +24,7 @@ function blk_json_input_init () {
 
 // Read and load named .json file.
 function blk_read_json(blk, jsonFile) {
-	read_text_file_and_then(jsonFile, text => blk_load_json(blk, text));
+	read_text_file_then(jsonFile, text => blk_load_json(blk, text));
 }
 
 // Read selected .json file.
@@ -37,7 +37,7 @@ function blk_read_input_json(blk) {
 
 // Load .json format program from Url.
 function blk_fetch_json(blk, jsonUrl) {
-	read_json_file_and_then(
+	read_json_file_then(
 		url_append_timestamp(xmlUrl),
 		jsonData => blk_load_json(blk, jsonData)
 	);

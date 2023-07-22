@@ -25,7 +25,8 @@ window.onload = function() {
 	sc.scSynthInitStatusTextListener(globalScSynth, '---');
 	sc.sc3_mouse_init(globalScSynth);
 	sl.assignGlobals();
-	sl.loadUrlArrayInSequence('lib/spl/sl', ['std.sl', 'sc.sl']);
+	sl.setLoadPath('lib/spl/sl');
+	sl.loadUrlArrayInSequence(['std.sl', 'sc.sl']);
 	globalThis.rec = blk.init(Blockly, false, false);
 };
 		</script>
