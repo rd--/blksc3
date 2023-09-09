@@ -15,7 +15,7 @@ import * as xml from './xml.js'
 function inject_with_xml_toolbox(blk, onCompletion) {
 	return function (xml_toolbox) {
 		blk.config = {
-			media: 'lib/blockly-9.3.3/media/',
+			media: 'lib/blockly-10.0.0/media/',
 			sounds: false,
 			toolbox: xml_toolbox,
 			rtl: false,
