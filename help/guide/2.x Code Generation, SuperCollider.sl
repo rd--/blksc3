@@ -1,11 +1,11 @@
-;; Code Generation, SuperCollider
+(* Code Generation, SuperCollider *)
 var a = SinOsc(1,0).abs * 0.1;
 SinOsc(440, 0) * a
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 ## Code Generation, SuperCollider
 
-Blocks can print themselves using _.stc_ notation.
+Blocks can print themselves using _.sl/.stc_ notation.
 This notation is a close relative of the SuperCollider language notation (_.sc_).
 
 The three block fragment assigned to the variable _a_ (×, |, ∿) prints as:

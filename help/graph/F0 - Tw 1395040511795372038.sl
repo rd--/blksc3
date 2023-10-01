@@ -1,4 +1,4 @@
-;; f0 ; https://twitter.com/redFrik/status/1395040511795372038
+(* f0 ; https://twitter.com/redFrik/status/1395040511795372038 *)
 var b = [2, 6, 3, 1];
 var c = 500;
 var f = DmdFor(b, SinOscFb(b / 9, 0), Seq(inf, (SinOscFb(b / 24, 0).rounded + 0.to(9) * 7 + 29.17).midiCps));

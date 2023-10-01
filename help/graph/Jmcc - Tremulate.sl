@@ -1,4 +1,4 @@
-// tremulate (jmcc) ;  graph rewrite
+(* tremulate (jmcc) ;  graph rewrite *)
 var voiceFunc = {
     arg tr;
     Pan2(

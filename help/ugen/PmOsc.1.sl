@@ -1,4 +1,4 @@
-;; PmOsc ; ping pong ; https://github.com/cianoc/supercollider_fragments
+(* PmOsc ; ping pong ; https://github.com/cianoc/supercollider_fragments *)
 var rate = 5;
 var trig = Impulse(5, 0);
 var freq = TRand([36, 60], [72, 86], trig).MidiCps;

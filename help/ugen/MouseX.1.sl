@@ -1,11 +1,11 @@
-;; Mouse control ; jmcc #3
+(* Mouse control ; jmcc #3 *)
 var x = MouseX(200, 2000, 1, 0.2);
 var y = MouseY(0, 1, 0, 0);
 var f = [x, Lag(LinExp(y, 0, 1, 200, 2000), 0.2)];
 var a = Lag(LinLin(y, 0, 1, -90, -36), 0.2).DbAmp;
 SinOsc(f, 0) * a
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 ☟𝑥 (_MouseX_) reads  the _x_ axis location of the mouse on the screen.
 ☟𝑥 is located in the _Control_ category of the toolbox.
 

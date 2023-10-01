@@ -1,4 +1,4 @@
-;; HenonC ; as a frequency control
+(* HenonC ; as a frequency control *)
 var x = MouseX(1, 1.4, 0, 0.1);
 var y = MouseY(0, 0.3, 0, 0.1);
 var f0 = 40;

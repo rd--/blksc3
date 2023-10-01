@@ -1,4 +1,4 @@
-;; noise modulated sines (jmcc) #6 ; graph rewrite
+(* noise modulated sines (jmcc) #6 ; graph rewrite *)
 var z = OverlapTexture({
     arg tr;
     var f = TRand(60, 100, tr).midiCps;
@@ -6,5 +6,5 @@ var z = OverlapTexture({
 }, 4, 4, 4);
 CombC(z, 0.3, 0.3, 4) + z.reverse
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 Graph rewrite.

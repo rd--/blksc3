@@ -1,4 +1,4 @@
-// https://twitter.com/redFrik/status/1197185125819277312
+(* https://twitter.com/redFrik/status/1197185125819277312 *)
 var f = [2, 2.2];
 var e = f / 22;
 var g = 2 << 2;

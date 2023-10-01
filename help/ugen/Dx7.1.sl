@@ -1,4 +1,4 @@
-;; Dx7 ; data at local buffer
+(* Dx7 ; data at local buffer *)
 var voiceData = [
     [25, 21, 98, 38, 99,  0, 99,  0, 36, 17, 87,  2,  1, 0, 0, 0, 59,  0,  1, 1, 8],
     [66, 69, 60, 35,  0,  0, 98,  0,  0,  0,  4,  0,  0, 0, 0, 1, 90,  0,  1, 0, 8],
@@ -16,7 +16,7 @@ var voiceFunc = {
 };
 voiceFunc.dup(32).sum * 0.25
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 _Dx7_ requires _sc3-rdu_.
 
 A SuperCollider form of the Raph Levien / Pascal Gauthier implementation of the Yamaha Dx7 architecture.

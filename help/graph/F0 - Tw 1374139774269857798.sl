@@ -1,4 +1,4 @@
-;; https://twitter.com/redFrik/status/1374139774269857798 ; f0
+(* https://twitter.com/redFrik/status/1374139774269857798 ; f0 *)
 var b = [1, 0.5, 1.25];
 var c = SinOscFb(3, 0) > 0;
 var x = SinOscFb(SinOscFb(1 / 64, 0) < 0 * 9 + 50, SinOscFb(1 / 8, 0) + 1 / 2) * Hpf(c, 4) * 5;

@@ -1,4 +1,4 @@
-// https://twitter.com/redFrik/status/1115745664523218944
+(* https://twitter.com/redFrik/status/1115745664523218944 *)
 var b = #[1, 2, 6, 3] + (SinOsc(0.0345, 0) < 0);
 var c = 2 ** SinOsc(b, 0);
 var j = MulAdd(SinOsc(1 / b, 0), b / 3, b * (SinOsc(0.0234, 0) < 0 + 1)).rounded;

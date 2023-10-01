@@ -1,4 +1,4 @@
-;; https://www.listarc.cal.bham.ac.uk/lists/sc-users-2002/msg00534.html ; f0
+(* https://www.listarc.cal.bham.ac.uk/lists/sc-users-2002/msg00534.html ; f0 *)
 {
     var b = SfAcquire("floating_1", 1, 1);
     var a = (LFNoise1(1.6) * 10000).RoundTo((LFNoise0(0.1) * 6400).abs).kr; (* k-rate noise is linearly interpolated to audio rate phase *)

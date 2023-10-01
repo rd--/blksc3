@@ -1,4 +1,4 @@
-// drummer (tm)
+(* drummer (tm) *)
 var tempo = 4;
 var n = WhiteNoise();
 var tr1 = Impulse(tempo, 0);

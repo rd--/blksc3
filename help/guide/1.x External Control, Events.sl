@@ -1,9 +1,9 @@
-;; External Control, Events
+(* External Control, Events *)
 FreeVerb(Voicer(16, { :e |
 	Blip(e.p.UnitCps, e.y * 9) * e.w * e.z
 }).Splay2, Lag(Cc(1), 0.2), Lag(Cc(2), 0.2), 0.5)
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 ## External Control, Events
 
 _Voicer_ reads _#_ event streams,

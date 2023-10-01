@@ -1,4 +1,4 @@
-;; https://recarteblog.wordpress.com/2021/05/05/gongfm_sc/ ; or ; edit
+(* https://recarteblog.wordpress.com/2021/05/05/gongfm_sc/ ; or ; edit *)
 var dur = 7;
 var tr = Impulse(1 / dur, 0);
 var ratio1 = TRand(0.49, 1.11, tr);

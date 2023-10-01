@@ -1,4 +1,4 @@
-;; Stepper.3 (JMcC)
+(* Stepper.3 (JMcC) *)
 var b = [43, 55, 72, 70, 55, 58, 41, 67, 41, 60, 55, 39, 58, 55, 43, 51].asLocalBuf;
 var rate = MouseX(1, 3, 1, 0.2);
 var clock = Impulse(rate, 0);
@@ -24,5 +24,5 @@ lfo := SinOsc(0.2, [0, 0.5 * pi]) * 0.0024 + 0.0025;
 };
 OnePole(out, 0.9) * 0.5
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 Mouse control

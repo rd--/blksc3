@@ -1,4 +1,4 @@
-;; spe (jmcc)
+(* spe (jmcc) *)
 var t = Impulse(9, 0);
 var s = [00, 03, 02, 07, 08, 32, 16, 18, 00, 12, 24, 32];
 var f = (Demand(t, 0, Seq(inf, s)) + 32).midiCps;

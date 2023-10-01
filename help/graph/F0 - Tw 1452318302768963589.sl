@@ -1,4 +1,4 @@
-// <https://twitter.com/redFrik/status/1452318302768963589> ; f0
+(* <https://twitter.com/redFrik/status/1452318302768963589> ; f0 *)
 var b = 2 * pi * [4, 3, 1, 2, 5] / 5;
 var m = 2 ** SinOsc(1 / 50, b) * 99;
 var c = m.roundTo(50);

@@ -1,4 +1,4 @@
-;; Impulse ; synchronised impulses ; https://github.com/cianoc/supercollider_fragments
+(* Impulse ; synchronised impulses ; https://github.com/cianoc/supercollider_fragments *)
 var sync = 5;
 var freq = [1, 3, 5, 7, 9, 11, 13];
 var numer = [3, 7, 5, 2, 9, 6, 1];

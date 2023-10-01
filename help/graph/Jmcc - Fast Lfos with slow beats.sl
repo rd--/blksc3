@@ -1,4 +1,4 @@
-// fast lfos with slow beats (jmcc)
+(* fast lfos with slow beats (jmcc) *)
 OverlapTexture({
     arg tr;
     var a0 = TRand(40, 240, tr);

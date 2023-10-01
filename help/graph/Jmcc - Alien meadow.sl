@@ -1,4 +1,4 @@
-;; alien meadow (jmcc) #6
+(* alien meadow (jmcc) #6 *)
 OverlapTexture({ :tr |
     var z = TRand(0, 5000, tr);
     var f = SinOsc(TRand(0, 20, tr), 0) * (0.1 * z) + z;

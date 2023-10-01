@@ -1,4 +1,4 @@
-;; RingzBank ; use of dust with rising sounds ; https://github.com/cianoc/supercollider_fragments
+(* RingzBank ; use of dust with rising sounds ; https://github.com/cianoc/supercollider_fragments *)
 var f = {
 	Pan2(
 		RingzBank(

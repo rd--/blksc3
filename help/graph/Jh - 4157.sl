@@ -1,4 +1,4 @@
-// jh ; https://scsynth.org/t/auditory-illusion-with-exponentially-spaced-frequencies/4157 ; rd (edit)
+(* jh ; https://scsynth.org/t/auditory-illusion-with-exponentially-spaced-frequencies/4157 ; rd (edit) *)
 var t = Impulse(0.1, 0);
 var sinosc = {
     arg freq;

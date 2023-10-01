@@ -119,6 +119,10 @@ export function init_codegen(blk) {
 		return method_codegen(blk, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
 	};
 
+	Blockly.JavaScript.forBlock['sc3_Event'] = function(block) {
+		return method_codegen(blk, block, 'ContinuousEvent', ['FROM']);
+	};
+
 	Blockly.JavaScript.forBlock['sc3_EventParam'] = function(block) {
 		return method_codegen(blk, block, block.getFieldValue('PARAM'), ['EVENT']);
 	};

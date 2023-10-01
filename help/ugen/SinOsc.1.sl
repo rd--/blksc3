@@ -1,3 +1,3 @@
-;; SinOsc ; random sine waves ; https://github.com/cianoc/supercollider_fragments
+(* SinOsc ; random sine waves ; https://github.com/cianoc/supercollider_fragments *)
 var f = { Pan2(SinOsc(SinOsc(1 / 10, Rand(0, 6)) * 200 + 600, 0), Rand(0, 1), 0.05) };
 Splay2(f ! 15).sum

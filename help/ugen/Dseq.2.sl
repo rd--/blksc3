@@ -1,4 +1,4 @@
-;; Seq
+(* Seq *)
 var m = { :f |
     var tr = Impulse(f, 0);
     var sq = Seq(inf, [60, 63, 67, 69]);

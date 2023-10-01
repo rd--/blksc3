@@ -4,102 +4,110 @@
 	--paper-colour: #fffacd;
 	--text-colour: #424242;
 	--workspace-colour: #fddde6;
+	--fragment-colour: #98ece8;
 }
 
 body {
-  margin: 1em 1em;
-  background-color: var(--paper-colour);
+	margin: 1em 1em;
+	background-color: var(--paper-colour);
 }
 
 body, code, button, select, span, .blocklyText, .blocklyTreeLabel {
-  font-family: var(--font-family);
+	font-family: var(--font-family);
+}
+
+pre {
+	font-family: var(--font-family);
+	background-color: var(--fragment-colour);
+	tab-size: 4;
+	padding: 1em 2em
 }
 
 .blocklyText, .blocklyTreeLabel {
-  fill: var(--text-colour) !important;
+	fill: var(--text-colour) !important;
 }
 
 .blocklyToolboxDiv {
-  background-color: var(--toolbox-colour);
+	background-color: var(--toolbox-colour);
 }
 
 .blocklyTreeIcon {
-    filter: opacity(25%); /* the icon is an image, soften it */
+	filter: opacity(25%); /* the icon is an image, soften it */
 }
 
 .blocklySvg {
-  background-color: var(--workspace-colour);
+	background-color: var(--workspace-colour);
 }
 
 div#blocklyContainer {
-    padding-top: 5px;
-    height: 87.5vh;
-    width: 77.5vw;
+	padding-top: 5px;
+	height: 87.5vh;
+	width: 77.5vw;
 }
 
 div#blkEdit {
-  margin-top: 1em;
+	margin-top: 1em;
 }
 
 div#blkMenu {
-  margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 div#blkCtl {
-  position: absolute;
-  top: 0px;
-  left: 78.75vw;
-  width: 20vw;
+	position: absolute;
+	top: 0px;
+	left: 78.75vw;
+	width: 20vw;
 }
 
 div#blkNotes {
-  width: 100%;
-  font-size: 11pt;
-  height: 87.5vh;
-  border: 1px dotted;
-  overflow-y: auto;
+	width: 100%;
+	font-size: 11pt;
+	height: 87.5vh;
+	border: 1px dotted;
+	overflow-y: auto;
 }
 
 div#blkNotes a {
-  color: var(--text-colour);
+	color: var(--text-colour);
 }
 
 div#blkNotes p {
-  margin: 0.85em 0.15em;
+	margin: 0.85em 0.15em;
 }
 
 div#blkUi {
-  margin-left: 1em;
+	margin-left: 1em;
 }
 
 button, select {
-  background-color: var(--paper-colour);
-  border: 1px dotted;
+	background-color: var(--paper-colour);
+	border: 1px dotted;
 }
 
 button:focus, select:focus {
-    outline: 1px solid #999;
+	outline: 1px solid #999;
 }
 
 input[type='range'] {
-  width: 100%;
+	width: 100%;
 }
 
 input[type='checkbox'] {
 }
 
 details#blkSwB > div > button {
-    padding: 0.75em;
+	padding: 0.75em;
 }
 
 h1, h2 {
-  font-size: 1em;
+	font-size: 1em;
 }
 
 #statusText {
-    display: inline-block;
-    border: 1px dotted #ccc;
-    width: 75px;
+	display: inline-block;
+	border: 1px dotted #ccc;
+	width: 75px;
 }
 
 #guideMenu {

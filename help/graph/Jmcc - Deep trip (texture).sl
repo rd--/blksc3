@@ -1,4 +1,4 @@
-// deep trip (jmcc) #9 ; graph rewrite
+(* deep trip (jmcc) #9 ; graph rewrite *)
 OverlapTexture({
     arg tr;
     var f = (LFNoise1(TRand(0, 0.3, tr)) * 60 + 70).midiCps;

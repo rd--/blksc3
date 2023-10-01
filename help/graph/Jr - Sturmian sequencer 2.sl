@@ -1,4 +1,4 @@
-// sturmian sequencer ii (jrhb)
+(* sturmian sequencer ii (jrhb) *)
 var rules = [[0, 1], [0]];
 var rewrite = {
     arg m;

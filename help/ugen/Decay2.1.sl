@@ -1,4 +1,4 @@
-;; Decay2 ; random impulses ; https://github.com/cianoc/supercollider_fragments
+(* Decay2 ; random impulses ; https://github.com/cianoc/supercollider_fragments *)
 var f = {
     Pan2(
         SinOsc(ExpRand(100, 3000) * (LfNoise1(1 / 6) * 0.4 + 1), 0),
@@ -8,7 +8,7 @@ var f = {
 };
 f.dup(15).sum * 0.1
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 ↘₂ (_Decay2_) is two ↘ (_Decay_) blocks arranged as:
 
 > _Decay(in, decay) - Decay(in, attack)_

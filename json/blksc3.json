@@ -96,7 +96,7 @@
         "type": "sc3_ArrayProc1",
         "message0": "%1 %2",
         "args0": [
-            {"type": "field_dropdown", "name": "OP", "options": [["→⛁","asLocalBuf"],  ["⚂","atRandom"], ["++","concatenation"], ["1º","first"], ["mean", "mean"], ["ᴙ","reversed"], ["2º","second"], ["size","size"], ["Σ","sum"], ["3º","third"], ["ᵀ","transpose"]]},
+            {"type": "field_dropdown", "name": "OP", "options": [["→⛁","asLocalBuf"],  ["⚂","atRandom"], ["++","concatenation"], ["1º","first"], ["mean", "mean"], ["∏","product"], ["ᴙ","reversed"], ["2º","second"], ["size","size"], ["Σ","sum"], ["3º","third"], ["Record", "Record"], ["ᵀ","transpose"]]},
             {"type": "input_value", "name": "IN", "check": ["Array", "UGen"]}
         ],
         "output": null,
@@ -133,7 +133,7 @@
         "type": "sc3_UnaryOp",
         "message0": "%1 %2",
         "args0": [
-            {"type": "field_dropdown", "name": "OP", "options": [["|", "Abs"], ["⌈", "Ceil"], ["clearBuf", "BufClear"], ["ν→♩", "CpsMidi"], ["cubed","Cubed"], ["㏈→×","DbAmp"], ["distort","Distort"], ["𝑒ⁿ","Exp"], ["⌊", "Floor"], ["kr","kr"], ["log","Log"], ["♩→ν", "MidiCps"], ["midiRatio", "MidiRatio"], ["-","Neg"], ["∏","product"], ["rand2","Rand2"], ["¹⁄","Recip"], ["⌊⌉","rounded"], ["∿","Sin"], ["soft⊏","SoftClip"], ["◠₂", "Splay2"], ["√","Sqrt"], ["tanh","Tanh"], ["₀¹→ν", "UnitCps"]]},
+            {"type": "field_dropdown", "name": "OP", "options": [["|", "Abs"], ["⌈", "Ceil"], ["clearBuf", "BufClear"], ["ν→♩", "CpsMidi"], ["cubed","Cubed"], ["㏈→×","DbAmp"], ["distort","Distort"], ["𝑒ⁿ","Exp"], ["⌊", "Floor"], ["kr","kr"], ["log","Log"], ["♩→ν", "MidiCps"], ["midiRatio", "MidiRatio"], ["-","Neg"], ["rand2","Rand2"], ["¹⁄","Recip"], ["⌊⌉","rounded"], ["∿","Sin"], ["soft⊏","SoftClip"], ["◠₂", "Splay2"], ["√","Sqrt"], ["tanh","Tanh"], ["₀¹→ν", "UnitCps"]]},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]}
         ],
         "output": "UGen",
@@ -172,7 +172,7 @@
         "type": "sc3_KeywordBinaryOp",
         "message0": "%2 %1 %3",
         "args0": [
-            {"type": "field_dropdown", "name": "OP", "options": [["Am⊏", "AmClip"], ["&", "BitAnd"], ["|", "BitOr"], ["»","ShiftRight"], ["⊏","Clip2"], ["clump", "clump"], ["fromAssocArray","fromAssocArray"], ["⏥", "Lag"], ["⏥⏥", "Lag2"], ["⏥⏥⏥", "Lag3"], ["⌊", "Min"], ["⌈","Max"], ["⅄","mrg"], ["⌊⌉","RoundTo"], ["Trunc","Trunc"]]},
+            {"type": "field_dropdown", "name": "OP", "options": [["Am⊏", "AmClip"], ["&", "BitAnd"], ["|", "BitOr"], ["»","ShiftRight"], ["⊏","Clip2"], ["clump", "clump"], ["⏥", "Lag"], ["⏥⏥", "Lag2"], ["⏥⏥⏥", "Lag3"], ["⌊", "Min"], ["⌈","Max"], ["⅄","mrg"], ["⌊⌉","RoundTo"], ["Trunc","Trunc"]]},
             {"type": "input_value", "name": "LHS", "check": ["Number", "Array", "UGen"]},
             {"type": "input_value", "name": "RHS", "check": ["Number", "Array", "UGen"]}
         ],
@@ -182,10 +182,20 @@
     }
     ,
     {
+        "type": "sc3_Event",
+        "message0": "𝔼 %1",
+        "args0": [
+            {"type": "input_value", "name": "FROM"}
+        ],
+        "output": null,
+        "colour": 60,
+        "tooltip": "Event(from): Construct voice event"
+    },
+    {
         "type": "sc3_EventParam",
         "message0": "𝔼 %1 %2",
         "args0": [
-            {"type": "field_dropdown", "name": "PARAM", "options": [["#", "v"], ["𝑤","w"], ["𝑥","x"], ["𝑦", "y"], ["𝑧","z"], ["𝑜","o"], ["𝑟𝑥","rx"], ["𝑟𝑦", "ry"], ["𝑝", "p"], ["𝑝𝑥", "px"]]},
+            {"type": "field_dropdown", "name": "PARAM", "options": [["#", "v"], ["𝑤","w"], ["𝑥","x"], ["𝑦", "y"], ["𝑧","z"], ["𝘪","i"], ["𝘫","j"], ["𝘬", "k"], ["𝑝", "p"]]},
             {"type": "input_value", "name": "EVENT"}
         ],
         "output": "UGen",

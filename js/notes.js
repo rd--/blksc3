@@ -14,7 +14,7 @@ function fetch_md_then(fileName, processFunc) {
 // .stc files can have a .md notes segment.
 function md_notes_from_stc(stcText) {
 	var lines = stcText.split('\n');
-	var from_marker = sc.arrayDropWhile(lines, str => !sc.stringIsPrefixOf(';; ---- notes.md', str));
+	var from_marker = sc.arrayDropWhile(lines, str => !sc.stringIsPrefixOf('(* ---- notes.md', str));
 	return sc.arrayUnlines(sc.arrayTail(from_marker));
 }
 

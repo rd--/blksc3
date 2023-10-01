@@ -1,4 +1,4 @@
-// rain thunder (jl) ; http://sccode.org/1-e
+(* rain thunder (jl) ; http://sccode.org/1-e *)
 var n0 = PinkNoise() * (0.08 + (LFNoise1(0.3) * 0.02));
 var d0 = LPF(Dust2(LinLin(LFNoise1(0.2), -1, 1, 40, 50)), 7000);
 var e0 = Ln(0, 1, 10);

@@ -1,4 +1,4 @@
-// alien froggies (jmcc) #1
+(* alien froggies (jmcc) #1 *)
 OverlapTexture({
     arg tr;
     var rate = 11;

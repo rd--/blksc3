@@ -1,4 +1,4 @@
-;; Overlap Texture
+(* Overlap Texture *)
 var f = { :tr |
     EqPan2(
         SinOsc(80 + TRand(0, 2000, tr), 0),
@@ -7,7 +7,7 @@ var f = { :tr |
 };
 OverlapTexture(f, 2, 8, 12) * 0.05
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 ## Overlap Texture
 
 ᨏ (_OverlapTexture_) is a graph combinator, a form of _higher order function_.

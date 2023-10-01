@@ -1,4 +1,4 @@
-// https://twitter.com/redFrik/status/1464534258173849611 ; f0
+(* https://twitter.com/redFrik/status/1464534258173849611 ; f0 *)
 var b = [ 11, 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 var n = GrayNoise() * SinOsc(1 / b / 99, 0).max(0);
 var f = 62.5 * b;

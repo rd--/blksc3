@@ -1,4 +1,4 @@
-;; Pluck ; https://scsynth.org/t/what-kind-of-synthesis-is-this/4318/17 (nh)
+(* Pluck ; https://scsynth.org/t/what-kind-of-synthesis-is-this/4318/17 (nh) *)
 var freq = LfNoise2(1);
 var trig = Impulse(LinExp(freq, -1, 1, 1, 100), 0);
 var freqs = (60.5 + [0, 2, 4, 5, 7, 9, 10]).MidiCps;

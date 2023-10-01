@@ -1,4 +1,4 @@
-// https://twitter.com/redFrik/status/1125557217086857216
+(* https://twitter.com/redFrik/status/1125557217086857216 *)
 var scl = [0, 2.94, 4.98, 7.02, 9.96];
 var b = -7.to(6) + 0.7 * 2 / 666;
 var m = DegreeToKey(scl.asLocalBuf, LFTri(b, b) * LFTri(b, 0) * 9 + 9 % 32, 12) + 24;

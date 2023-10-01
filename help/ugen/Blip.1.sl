@@ -1,9 +1,9 @@
-;; Blip ; Voicer
-Splay2(Voicer(16, { :e |
+(* Blip ; Voicer *)
+Voicer(16) { :e |
     Blip(e.p.UnitCps, e.y * 9) * e.w * e.z
-}))
+}.Splay2
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 # Blip -- band limited impulse oscillator
 
 _Blip(freq, numharm)_

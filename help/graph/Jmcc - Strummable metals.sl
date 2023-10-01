@@ -1,4 +1,4 @@
-;; strummable metals ; use mouse to strum strings ; jmcc
+(* strummable metals ; use mouse to strum strings ; jmcc *)
 var x = MouseX(0, 1, 0, 0.2);
 var strFunc = {
     arg i;
@@ -9,5 +9,5 @@ var strFunc = {
 };
 LeakDc(Lpf(1.to(8).collect(strFunc).sum, 12000), 0.995)
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 Mouse control.

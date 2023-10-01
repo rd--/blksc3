@@ -1,10 +1,12 @@
-;; Vosim
+(* Vosim *)
 Splay2(Vosim(Impulse(110 + [-1, 0, 1], 0), MouseX([110, 220, 440], 880, 1, 0.2), [3, 5, 7], [0.77, 0.88, 0.99])) * MouseY(0.01, 1, 1, 0.2)
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
+# Vosim
+
 Vosim pulse generator.
 
-Starts a Vosim pulses when a transition from non-positive to positive occurs at the _trigger_ input.
+Starts a Vosim pulse when a transition from non-positive to positive occurs at the _trigger_ input.
 
 A pulse is a squared sinewave at the indicated _frequency_.
 

@@ -1,16 +1,16 @@
-;; Arrays, Variables, Binary Operators
+(* Arrays, Variables, Binary Operators *)
 var o = SinOsc(440, 0);
 var a = [o, o];
 a * 0.1
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 ## Arrays, Variables, Binary Operators
 
 ≔ is the _variable assignment_ block.
 It is used to give a name to a part of a program.
 ≔ is located in the _Var_ category of the toolbox
 which also contains the _Create variable_ instruction used to declare variables,
-and the _variable referencex_ block used to read the value of a variable.
+and the _variable reference_ block used to read the value of a variable.
 
 The ≔ and variable reference blocks each have a _menu_ field that lists the declared variables,
 and allows for variables to be _renamed_ and _deleted_.

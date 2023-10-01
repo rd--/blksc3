@@ -26,7 +26,13 @@ window.onload = function() {
 	sc.sc3_mouse_init(globalScSynth);
 	sl.assignGlobals();
 	sl.setLoadPath('lib/spl/sl');
-	sl.loadPackageSequence([['Meta', ['core.sl', 'std.sl', 'sc.sl']]]);
+	sl.loadUrl('*Load*', 'Meta/PackageIndex.sl').then(function() {
+		sl.primitiveLoadPackageSequence([
+			'Kernel',
+			'StandardLibrary',
+			'SuperColliderLibrary'
+		]);
+	});
 	globalThis.rec = blk.init(Blockly, false, false);
 };
 		</script>

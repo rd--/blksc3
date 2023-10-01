@@ -1,4 +1,4 @@
-// pulse harmonic warbulence (jmcc) #12
+(* pulse harmonic warbulence (jmcc) #12 *)
 var z = OverlapTexture({
     arg tr;
     var f = TRand(24, 96, tr).midiCps;

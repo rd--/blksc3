@@ -1,4 +1,4 @@
-;; LfNoise0 ; pretty ; nice, but inessential ; https://github.com/cianoc/supercollider_fragments ; Rand
+(* LfNoise0 ; pretty ; nice, but inessential ; https://github.com/cianoc/supercollider_fragments ; Rand *)
 var f = { :i |
     Pan2(
         SinOsc(SinOsc(MouseX(Rand(0.1, 5), Rand(3, 20), 0, 0.2), 0) * MouseY(10, 50, 0, 0.2) + Rand(200, 5000), 0),

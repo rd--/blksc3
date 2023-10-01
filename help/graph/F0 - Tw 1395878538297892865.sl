@@ -1,4 +1,4 @@
-// f0 ; https://twitter.com/redFrik/status/1395878538297892865
+(* f0 ; https://twitter.com/redFrik/status/1395878538297892865 *)
 var t = Impulse(5, 0);
 var g = #[3, 2];
 var e = LagUD(t, 0.001, SinOscFB(g / 99, 0) + 1.08);

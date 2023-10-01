@@ -1,4 +1,4 @@
-// oscillator cluster (rd)
+(* oscillator cluster (rd) *)
 {
     var np = 12;
     var tr = Dust(0.075);

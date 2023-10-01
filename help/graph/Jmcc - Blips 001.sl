@@ -1,4 +1,4 @@
-// blips 001 (jmcc) #SC3d1.5 ; graph rewrite
+(* blips 001 (jmcc) #SC3d1.5 ; graph rewrite *)
 var z = OverlapTexture({
     arg tr;
     var blips = {

@@ -1,4 +1,4 @@
-;; Decay2 ; texture
+(* Decay2 ; texture *)
 OverlapTexture({
     arg tr;
     var e = Decay2(Impulse({ TRand(10, 13, tr) }.dup, 0), TRand(0.001, 0.01, tr), TRand(0.005, 0.02, tr));
@@ -7,7 +7,7 @@ OverlapTexture({
     SinOsc(r4, 0) * f * 0.15
 }, 2, 4, 2)
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 # Decay2 -- exponential decay
 
 _Decay2(in, attackTime, decayTime)_

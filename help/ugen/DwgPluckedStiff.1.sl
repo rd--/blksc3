@@ -1,4 +1,4 @@
-;; DwgPluckedStiff.1
+(* DwgPluckedStiff.1 *)
 var t = TDmdFor(Seq(inf, [1,1,2,1,1,1,2,3,1,1,1,1,2,3,4] * 0.175), 0, 1);
 var freq = [
 	Demand(t, 0, Seq(inf, [60,62,63,58,48,55])),

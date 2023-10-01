@@ -1,4 +1,4 @@
-// wind metals (jmcc) ; graph rewrite
+(* wind metals (jmcc) ; graph rewrite *)
 var n = 6;
 OverlapTexture({
     arg tr;

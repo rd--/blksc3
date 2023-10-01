@@ -1,4 +1,4 @@
-;; tw 02 (tw) tim walters
+(* tw 02 (tw) tim walters *)
 var nd = { :k |
 	var x = { :p |
 		var f = p.at(1);
@@ -16,5 +16,5 @@ var nd = { :k |
 };
 1.to(8).collect(nd).sum / 4
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 [swiki](https://swiki.hfbk-hamburg.de/MusicTechnology/899)

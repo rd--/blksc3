@@ -1,4 +1,4 @@
-;; jmcc - ostinoodles
+(* jmcc - ostinoodles *)
 var z = OverlapTexture({
     arg tr;
     var root = 81 + TRand(-6, 6, tr);
@@ -14,5 +14,5 @@ var z = OverlapTexture({
 6.timesRepeat({ z = AllpassN(z, 0.040, { Rand(0, 0.040) }.dup, 16) });
 z
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 _TScramble_ requires _sc3-rdu_.

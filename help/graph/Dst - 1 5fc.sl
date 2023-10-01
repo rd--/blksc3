@@ -1,4 +1,4 @@
-;; https://sccode.org/1-5fc (dst)
+(* https://sccode.org/1-5fc (dst) *)
 Voicer(16, { :e |
 	var tr = Trig(e.w, e.y * 0.002 + 0.001);
 	var buf = [0, 7, 15.93, 5, 9.7, 12, 17.5, 13.1].asLocalBuf;

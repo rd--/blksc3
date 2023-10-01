@@ -1,4 +1,4 @@
-;; bowed string (jmcc)
+(* bowed string (jmcc) *)
 var root = 5;
 var scale = [0, 2, 4, 5, 7, 9, 11] + root;
 var oct = [24, 36, 48, 60, 72, 84];
@@ -10,5 +10,5 @@ var x = { BrownNoise() }.dup * 0.007 * (LfNoise1(ExpRand(0.125, 0.5)) * 0.6 + 0.
 var k = RingzBank(x, freq, amp, { Rand(1, 3) }.dup(12));
 (k * 0.1).SoftClip
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 The _freq_ and _amp_ values are calculated directly (using ⇛ and !) rather than using _series_ and _geom_ methods.

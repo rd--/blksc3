@@ -1,4 +1,4 @@
-;; TChoose ; sequences of different lengths
+(* TChoose ; sequences of different lengths *)
 var a = [[1, 2, 3], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5, 6, 7]];
 var t1 = Impulse(1 / 5, 0);
 var t2 = Impulse(5, 0);

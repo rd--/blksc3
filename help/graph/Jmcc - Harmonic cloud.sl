@@ -1,4 +1,4 @@
-;; https://soundcloud.com/soundaspureform/harmonic-cloud-1 jmcc ; roughguess
+(* https://soundcloud.com/soundaspureform/harmonic-cloud-1 jmcc ; roughguess *)
 OverlapTexture({
     arg tr;
     var vc = {

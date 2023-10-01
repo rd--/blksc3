@@ -1,4 +1,4 @@
-// pkt 07 (f0) - https://fredrikolofsson.com/f0blog/pact-februari/
+(* pkt 07 (f0) - https://fredrikolofsson.com/f0blog/pact-februari/ *)
 GVerb(
  LeakDC(
   SinOsc(

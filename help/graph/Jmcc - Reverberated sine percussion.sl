@@ -1,4 +1,4 @@
-// reverberated sine percussion (jmcc) #3
+(* reverberated sine percussion (jmcc) #3 *)
 var d = 5;
 var s = { Resonz(Dust(2 / d) * 50, 200 + Rand(0, 3000), 0.003) }.dup(d).sum;
 var z = DelayC(s, 0.048, 0.048);

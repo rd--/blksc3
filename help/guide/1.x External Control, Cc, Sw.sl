@@ -1,9 +1,9 @@
-;; External Control, Cc, Sw
+(* External Control, Cc, Sw *)
 var f = Lag(Cc(1), 0.2) * 110 + 110;
 var a = Lag(Cc(2), 0.2) * 0.1;
 SinOsc(f, 0) * a
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 ## External Control, Cc, Sw
 
 Many music synthesisers, including _SuperCollider_, have two distinct operating rates, audio rate and control rate,

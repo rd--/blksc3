@@ -1,4 +1,4 @@
-;; LfSaw
+(* LfSaw *)
 OverlapTexture({ :tr |
 	Splay2({
 		var f = TChoose(tr, (48 .. 72).MidiCps);

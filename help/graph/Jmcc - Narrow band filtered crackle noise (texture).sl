@@ -1,4 +1,4 @@
-// narrow band filtered crackle noise (jmcc) #2
+(* narrow band filtered crackle noise (jmcc) #2 *)
 OverlapTexture({
     arg tr;
     var rf1 = TRand(0, 2000, tr) + 80;

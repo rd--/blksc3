@@ -1,4 +1,4 @@
-;; Load, Copy, Translate
+(* Load, Copy, Translate *)
 var dur = 7;
 OverlapTexture({ :tr |
     var cf = TRand(0, 2000, tr);
@@ -12,7 +12,7 @@ OverlapTexture({ :tr |
     EqPan2 (snd, lc) * 0.05
 }, 1, 3, 4)
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 ## Load, Copy, Translate
 
 Programs are stored as _.xml_ files.
@@ -20,24 +20,24 @@ _Load_ prompts to select an _.xml_ file and loads it into the workspace.
 _Copy_ copies the _.xml_ text describing the current workspace state to the clipboard,
 from where it can be pasted into an editor and saved as an _.xml_ file.
 
-_blksc3_ also includes a translator from _.stc_ notation to the _.xml_ block notation.
+_blksc3_ also includes a translator from _.sl/.stc_ notation to the _.xml_ block notation.
 
-This program was translated from the _.stc_ program:
+This program was translated from the _.sl_ program:
 
-~~~~
-  var dur = 7;
-  OverlapTexture({ :tr |
-    var cf = TRand(0, 2000, tr);
-    var mf = TRand(0, 800, tr);
-    var pme = TRand(0, 12, tr);
-    var l1 = TRand(-1, 1, tr);
-    var l2 = TRand(-1, 1, tr);
-    var lc = TLine(l1, l2, dur, tr);
-    var pm = TLine(0, pme, dur, tr);
-    var snd = PmOsc(cf, mf, pm, 0);
-    EqPan2 (snd, lc) * 0.05
-  }, 1, 3, 4)
-~~~~
+```
+var dur = 7;
+{ :tr |
+	var cf = TRand(0, 2000, tr);
+	var mf = TRand(0, 800, tr);
+	var pme = TRand(0, 12, tr);
+	var l1 = TRand(-1, 1, tr);
+	var l2 = TRand(-1, 1, tr);
+	var lc = TLine(l1, l2, dur, tr);
+	var pm = TLine(0, pme, dur, tr);
+	var snd = PmOsc(cf, mf, pm, 0);
+	EqPan2(snd, lc) * 0.05
+}.OverlapTexture(1, 3, 4)
+```
 
 The program generates a simple texture of four phase modulation oscillator pairs,
 with random inputs and a linear modulation index sweep.

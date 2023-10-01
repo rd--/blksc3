@@ -1,4 +1,4 @@
-;; harmonic tumbling (jmcc) #1
+(* harmonic tumbling (jmcc) #1 *)
 var t = TxLine([10, 11], 0.1, 60, 1);
 var o = {
     arg h;

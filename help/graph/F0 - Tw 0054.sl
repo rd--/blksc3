@@ -1,4 +1,4 @@
-// https://fredrikolofsson.com/f0blog/more-sc-twitter/
+(* https://fredrikolofsson.com/f0blog/more-sc-twitter/ *)
 var sy = Saw(#[3, 4]) * 32 + 64;
 var sq = Seq(99, #[2, 2, 2, 2, 2, 2, 4, 3]) * (4 ** 0.to(4));
 var sw = Saw(#[4, 3]) * 99 + Demand(Impulse(1, 0), 0, sq).transpose;

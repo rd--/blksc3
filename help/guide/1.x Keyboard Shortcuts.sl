@@ -1,10 +1,10 @@
-;; Keyboard Shortcuts (Keybindings, Access Keys)
+(* Keyboard Shortcuts (Keybindings, Access Keys) *)
 { Rhpf(OnePole(BrownNoise(), 0.99), Lpf(BrownNoise(), 14) * 400 + 500, 0.03) * 0.06 } ! 2
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 ## Keyboard Shortcuts
 
-_Keyboard shortcuts_ perform actions that would otherwise require a mouse.
+_Keyboard shortcuts_ (also called _keybindings_ or _access keys_) perform actions that would otherwise require a mouse.
 The _prefix_ keys are
 [system specific](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey).
 On MacOS try _'Control+Option'_, else try _'Alt'_ or _'Alt+Shift'_.

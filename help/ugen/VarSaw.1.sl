@@ -1,4 +1,4 @@
-;; VarSaw ; per-note width modulation
+(* VarSaw ; per-note width modulation *)
 var d = LinLin(LfNoise2(0.1), -1, 1, 0.05, 0.5);
 var t = Impulse(1 / d, 0);
 var w0 = TRand(0, 0.35, t);

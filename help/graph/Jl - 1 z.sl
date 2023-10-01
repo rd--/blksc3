@@ -1,4 +1,4 @@
-// http://sccode.org/1-Z (jl) ; edits (rd)
+(* http://sccode.org/1-Z (jl) ; edits (rd) *)
 var t = 0.0025;
 var a = Lag(Trig(Impulse(8, 0), t * 2), 0.1);
 var b = Crackle(Lag(LFSaw(3, 0).abs, 0.1) * 1.8);

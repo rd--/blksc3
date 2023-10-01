@@ -1,4 +1,4 @@
-;; coolant (jmcc)
+(* coolant (jmcc) *)
 var o = OnePole(BrownNoise() * 0.002, 0.95);
 OverlapTexture({ :tr |
 	{
@@ -6,5 +6,5 @@ OverlapTexture({ :tr |
 	}.dup(10).Splay2
 }, 6, 6, 3)
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 This is a similar graph to the _(texture)_ graph, but drawn differently.

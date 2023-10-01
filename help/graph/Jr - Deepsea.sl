@@ -1,4 +1,4 @@
-// deepsea (jr)
+(* deepsea (jr) *)
 var amp = 0.1;
 var variation = 0.9;
 var tr = Dust(0.25);

@@ -1,4 +1,4 @@
-;; Gendy1 ; texture
+(* Gendy1 ; texture *)
 var f = {
 	Pan2(
 		SinOsc(

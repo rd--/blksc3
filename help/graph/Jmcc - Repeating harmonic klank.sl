@@ -1,4 +1,4 @@
-;; repeating harmonic klank (jmcc)
+(* repeating harmonic klank (jmcc) *)
 var p = 8;
 var f = [400, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1500, 1600];
 OverlapTexture({ :tr |

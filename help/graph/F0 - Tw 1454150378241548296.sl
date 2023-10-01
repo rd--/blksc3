@@ -1,4 +1,4 @@
-;; https://twitter.com/redFrik/status/1454150378241548296 ; f0
+(* https://twitter.com/redFrik/status/1454150378241548296 ; f0 *)
 var x = 0.001;
 var b = [1, 2, 3, 4, 5, 6, 7, 8] / 8;
 var z = [

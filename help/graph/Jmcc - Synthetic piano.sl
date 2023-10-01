@@ -1,4 +1,4 @@
-;; synthetic piano (jmcc) #3;
+(* synthetic piano (jmcc) #3; *)
 var p = {
     var n = Rand(36, 90);
     var e = Decay2(Impulse(Rand(0.1, 0.5), Rand(0, 1)) * 0.1, 0.008, 0.04);

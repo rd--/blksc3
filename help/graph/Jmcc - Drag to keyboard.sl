@@ -1,4 +1,4 @@
-// dragtokeyboard (jmcc) ; graph rewrite ; http://www.iamas.ac.jp/~aka/dspss2004/materials/
+(* dragtokeyboard (jmcc) ; graph rewrite ; http://www.iamas.ac.jp/~aka/dspss2004/materials/ *)
 OverlapTexture({
     arg tr;
     var in = LFSaw([21000, 21001], 0) * (LFPulse(TExpRand(0.1, 1, tr), 0, 0.3) * 0.2 + 0.02);

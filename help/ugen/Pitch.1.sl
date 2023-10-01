@@ -1,4 +1,4 @@
-;; Pitch
+(* Pitch *)
 var input = AudioIn([1, 2]).sum;
 var freq = Pitch(input, 440, 60, 4000, 100, 16, 7, 0.02, 0.5, 1, 0).nth(1);
 var s = VarSaw(freq * [0.5, 1, 2], 0, LfNoise1(0.3) * 0.1 + 0.1) * 0.1;
@@ -7,7 +7,7 @@ var s = VarSaw(freq * [0.5, 1, 2], 0, LfNoise1(0.3) * 0.1 + 0.1) * 0.1;
 });
 s
 
-;; ---- notes.md
+(* ---- notes.md ---- *)
 # Pitch
 
 Autocorrelation pitch follower

@@ -1,4 +1,4 @@
-// random panning sines (jmcc) #4
+(* random panning sines (jmcc) #4 *)
 var n = 8;
 var f = {
     arg tr;
