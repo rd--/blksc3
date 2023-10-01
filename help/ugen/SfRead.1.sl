@@ -9,6 +9,8 @@ var sf = SfAcquire("harp-a4", 2, [1, 2]);
 }.dup(8).sum * 0.1
 
 (* ---- notes.md ---- *)
+# SfRead
+
 _SfAcquire_ returns an array of _buffer_ objects.
 Buffers are arrays of floating point values with an associated channel count, frame count, and sample rate.
 The buffer array returned by SfAcquire will hold the data stored in the named sound file.

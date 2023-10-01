@@ -2,6 +2,8 @@
 SinOsc(Latch(LfSaw(MouseX(0.1, 22, 0, 0.2), 0) * 500 + 600, Impulse([10, 11], 0)), 0) * 0.1
 
 (* ---- notes.md ---- *)
+# Latch
+
 In this program ☟𝑥 (_MouseX_) controls the frequency of an ␊◿ (_LFSaw_) oscillator.
 
 As in the the _Latch.1_ program, this signal is sampled at regular intervals as the ν (_frequency_) input to a ∿ (_SinOsc_).

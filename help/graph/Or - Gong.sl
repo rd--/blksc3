@@ -15,4 +15,4 @@ var op3 = SinOsc([67, 70, 74].MidiCps * ratio3, 0) * [67, 70, 74].MidiCps * rati
 var op2 = SinOsc([67, 70, 74].MidiCps * ratio2 + op3, 0) * [67, 70, 74].MidiCps * ratio2 * index2 * env2;
 var op1 = SinOsc([67, 70, 74].MidiCps * ratio1 + op2, 0);
 var sig = Splay2(op1 * env1 * amp);
-Balance2(sig.first, sig.second, pan, 1);
+EqBalance2(sig.first, sig.second, pan);

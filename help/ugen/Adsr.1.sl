@@ -6,6 +6,8 @@ var a = Adsr(gt, TRand(0.01, 0.2, tr), TRand(0.3, 0.6, tr), TRand(0.4, 0.6, tr),
 o * a * 0.1
 
 (* ---- notes.md ---- *)
+# Adsr
+
 _Adsr_ is an attack-decay-sustain-release envelope generator.
 
 The ⎇ (_gate_) input begins the envelope on a rising zero crossing and holds it open until a falling zero crossing.

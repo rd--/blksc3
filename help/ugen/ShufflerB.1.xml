@@ -3,7 +3,7 @@
     <variable id="MQxS4Iq3ww5d=[TgT2c-">nc</variable>
     <variable id="85k^xrpE2?|n5id3;-Wb">buf</variable>
   </variables>
-  <block type="sc3_Comment" id="ZvG%QVM%k~N2YjWp3PJv" x="0" y="0">
+  <block type="sc3_Comment" id="ZvG%QVM%k~N2YjWp3PJv" x="-337" y="-284">
     <field name="COMMENT">ShufflerB</field>
     <next>
       <block type="variables_set" id="j|4D%0-H~iEn1Cpd,;V(">
@@ -17,16 +17,48 @@
           <block type="variables_set" id="h*b^1Nh:``58HCuPRmss">
             <field name="VAR" id="85k^xrpE2?|n5id3;-Wb">buf</field>
             <value name="VALUE">
-              <block type="sc3_SoundFileBuffer" id="CNyVTSN;?!a60$@)bMpO" inline="true">
-                <value name="SOUNDFILEID">
+              <block type="sc3_SfAcquire" id="twZQA0mfXBl+b9pTWe9N" inline="true">
+                <value name="URLORKEY">
+                  <shadow type="math_number" id="91U9K+:6S!LvY-Y#=ce{">
+                    <field name="NUM">0</field>
+                  </shadow>
                   <block type="text" id="q_+nA44|jke6kLK-X8?j">
                     <field name="TEXT">crotale-d6</field>
                   </block>
                 </value>
                 <value name="NUMBEROFCHANNELS">
+                  <shadow type="math_number" id="1IM]2#pgEDeubP5^g#Ft">
+                    <field name="NUM">0</field>
+                  </shadow>
                   <block type="variables_get" id="]`E}=z11lk1=g}RTklac">
                     <field name="VAR" id="MQxS4Iq3ww5d=[TgT2c-">nc</field>
                   </block>
+                </value>
+                <value name="CHANNELINDICES">
+                  <shadow type="math_number" id="JS#Iw|Y??1i;$5Fo*.mY">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="lists_create_with" id="QC0oLg1`i2rH+s%x;P)K" inline="true">
+                    <mutation items="1"></mutation>
+                    <value name="ADD0">
+                      <shadow type="math_number" id="Xp~H%A*;Tmi7;)Q6ovQ0">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="math_number" id="48K`K#7[hzy(PiGy=;6:">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="MUL">
+                  <shadow type="math_number" id="%|;Z]NLVz!KE1zK_xZ#9">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="ADD">
+                  <shadow type="math_number" id="k$Wfu_;l;PNK{K#XaL#:">
+                    <field name="NUM">0</field>
+                  </shadow>
                 </value>
               </block>
             </value>

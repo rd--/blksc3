@@ -6,6 +6,8 @@ var f = {
 f.dup(harmonics).sum / (2 * harmonics)
 
 (* ---- notes.md ---- *)
-_ExpRand_ generates a single random value in an exponential distributions in the indicated range.
+# ExpRand
+
+_ExpRand_ generates a single random value in an exponential distribution in the indicated range.
 
 Here it is used to generate a frequency input for a sine wave oscillator.

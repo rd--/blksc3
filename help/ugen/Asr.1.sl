@@ -6,6 +6,8 @@ var a = Asr(gt, TRand(0.01, 0.2, tr), TRand(0.2, 2, tr), -4);
 o * a * 0.1
 
 (* ---- notes.md ---- *)
+# Asr
+
 ⏢ (_Asr_) is an attack-sustain-release envelope generator.
 
 The ⎇ (_gate_) input begins the envelope on a rising zero crossing and holds it open until a falling zero crossing.

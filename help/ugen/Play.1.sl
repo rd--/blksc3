@@ -2,6 +2,8 @@
 SinOsc([220, 220.5], 0) * -30.DbAmp
 
 (* ---- notes.md ---- *)
+# Play
+
 The ▷ (_Play_) block indicates that the signal it receives should be sent to the speakers.
 
 <!-- ▷ is a form of comment, it is not required. -->

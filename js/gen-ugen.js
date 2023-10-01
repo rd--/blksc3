@@ -34,8 +34,8 @@ Blockly.JavaScript.forBlock['sc3_BPZ2'] = function(block) {
 Blockly.JavaScript.forBlock['sc3_BRF'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'Brf', ['IN', 'FREQ', 'RQ'], true);
 };
-Blockly.JavaScript.forBlock['sc3_Balance2'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'Balance2', ['LEFT', 'RIGHT', 'POS', 'LEVEL'], true);
+Blockly.JavaScript.forBlock['sc3_EqBalance2'] = function(block) {
+	return blk_ugen_codegen(blk, block, 'EqBalance2', ['LEFT', 'RIGHT', 'POS'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Blip'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'Blip', ['FREQ', 'NUMHARM'], true);

@@ -9,6 +9,8 @@ var f = {
 f.dup(15).sum * 0.1
 
 (* ---- notes.md ---- *)
+# Decay2
+
 ↘₂ (_Decay2_) is two ↘ (_Decay_) blocks arranged as:
 
 > _Decay(in, decay) - Decay(in, attack)_

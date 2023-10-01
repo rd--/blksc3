@@ -96,7 +96,11 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	init_codegen(blk);
 	init_codegen_ugen(blk);
 	blk.track_history = trackHistory;
-	pre(blk, (blk) => xml.maybe_load_xml_from_url_param(blk, 'e'));
+	pre(blk, function(blk) {
+		console.log('addChangeListener', blk, blk.workspace);
+		blk.workspace.addChangeListener(onWorkspaceChange(blk));
+		xml.maybe_load_xml_from_url_param(blk, 'e');
+	});
 	sc.connect_button_to_input('xmlInputFileSelect', 'xmlInputFile'); // Initialise .xml file selector
 	graph_menu_init('programMenu', 'graph', (path) => load_help_graph(blk, path));
 	sc.fetch_json_then('json/program-menu.json', json => sc.select_add_keys_as_options('programMenu', json.programMenu));
@@ -117,6 +121,16 @@ export function init(Blockly, withUiCtl, trackHistory) {
 		sc.fetch_utf8_then('html/ui-ctl.html', sc.setter_for_inner_html_of('uiCtlContainer'));
 	}
 	return blk;
+}
+
+function onWorkspaceChange(blk) {
+	return function(event) {
+		console.log('onWorkspaceChange', event.type, event.element, event.oldValue, event.newValue, event);
+		const aBlock = blk.workspace.getBlockById(event.blockId);
+		if(aBlock) {
+			console.log('onWorkspaceChange>block', aBlock.type, aBlock);
+		}
+	};
 }
 
 // Get .xml serialization of workspace.  (The .xml format is no longer being worked on.)

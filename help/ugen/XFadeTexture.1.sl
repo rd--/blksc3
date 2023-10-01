@@ -16,5 +16,5 @@ The programs are enveloped, so the transition between states happens when the pr
 
 This program overlaps two copies of a graph of seven sine tones.
 Each envelope has a sustain time of three seconds and a transition time of five seconds.
-This makes each voice sixteen seconds long, and the time between voice entries eight seconds..
+This makes each voice sixteen seconds long, and the time between voice entries eight seconds.
 Each voice randomly adjusts frequency and amplitude when the voice is reset.

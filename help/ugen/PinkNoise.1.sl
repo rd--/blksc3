@@ -5,6 +5,8 @@
 ]
 
 (* ---- notes.md ---- *)
+# PinkNoise
+
 Quiet ⍰𝒑 (_PinkNoise_) in the left channel
 
 ☟𝑥 (_MouseX_) control of gain of ⍰𝒘 (_WhiteNoise_) in the right channel for comparison.

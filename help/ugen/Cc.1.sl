@@ -2,6 +2,8 @@
 Pan2(Blip(Lag(Cc(1), 0.1) * 110 + 110, Lag(Cc(2), 0.2) * 9 + 1) * Lag(Cc(3), 0.3) * 0.1, Lag(Cc(4), 0.4) * 2 - 1, 1)
 
 (* ---- notes.md ---- *)
+# Cc
+
 _Cc_ reads input from external continuous controllers.
 
 Continuous controllers are implicitly in the range _(0, 1)_,
@@ -9,7 +11,7 @@ in the same sense that audio signals are implicity in the range _(-1, 1)_.
 
 _Cc_ is used to read input signals from dials, rotary encoders, faders, and similar input devices.
 
-Since there are very many different kinds control interfaces _Cc_ simply identifies each control using an integer.
+Since there are very many different kinds of control interfaces _Cc_ simply identifies each control using an integer.
 
 _Cc(1)_ is the first control, _Cc(2)_ the second, and so on.
 
@@ -19,4 +21,4 @@ _Cc(2)_ controls the number of harmonics,
 _Cc(3)_ controls amplitude and
 _Cc(4)_ controls stereo location.
 
-_blksc3_ has a _Cc_ section that provides simple _UI_ sliders to send the appropriate control messages to the synthesiser.
+_blksc3_ has a _Cc_ section that provides simple _Ui_ sliders to send the appropriate control messages to the synthesiser.
