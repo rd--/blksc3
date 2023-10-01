@@ -6,7 +6,7 @@ SinOsc(SinOsc(1 / [7, 9], 0) * [55, 57] + 110, 0) * SinOsc(1 / [5, 7], 0) * 0.1
 
 _Blocks_ and _parameters_ all have _names_,
 which are used as identifiers when programs are stored in _.xml_ files,
-and when they are sent to the synthesiser as _.stc_ expressions.
+and when they are sent to the synthesiser as _.sl/.stc_ expressions.
 
 Blocks also define a _message_, which is used to construct the text displayed in the block drawing.
 

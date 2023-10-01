@@ -8,12 +8,13 @@ Resonz(
 (* ---- notes.md ---- *)
 ## Noise Generators, Filters, Control Signals
 
-⍰𝒘 (_WhiteNoise_) is a noise generator with uniform spectral density.  It is located in the _Noise_ category of the toolbox.
+⍰𝒘 (_WhiteNoise_) is a noise generator with uniform spectral density.
+It is located in the _Generator→Noise_ category of the toolbox.
 
-⋏ (_Resonz_) is a resonant filter, it is located in the _Reson_ category.
+⋏ (_Resonz_) is a resonant filter, it is located in the _Processor→Reson_ category.
 
 ☟𝑥 and ☟𝑦 (_MouseX_ and _MouseY_) are control signal generators, reading the _x_ and _y_ axis locations of the mouse on the screen.
-They are located in the _Control_ category.
+They are located in the _Io->Ctl_ category.
 
 ⍰𝒘 is a signal generator and has the same colour as other signal generators such as _SinOsc_.
 ⋏ is a signal processor, it processes an input signal, and is coloured differently.

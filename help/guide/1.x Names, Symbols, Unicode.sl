@@ -6,7 +6,7 @@ Impulse(SinOsc(1, 0).Max(0), 0) * 0.1
 
 Requiring blocks to have both _proper names_ and a _message template_ allows blocks to be translated into different languages.
 
-It also allows blocks to be displayed using symbolic notations that would not be allowed as identifiers in _.stc_.
+It also allows blocks to be displayed using symbolic notations that would not be allowed as identifiers in _.sl/.stc_.
 
 “ is the message indicating a _Comment_ block, ▷ a _Play_ block, ∿ a _SinOsc_ block and ⊥ an _Impulse_ block.
 
