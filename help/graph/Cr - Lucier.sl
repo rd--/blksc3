@@ -28,7 +28,7 @@ OverlapTexture({ :tr |
     var outL = pk1L + pk1R;
     var outR = pk2L + pk2R;
     bus := bus + 1;
-    [outL, outR].mrg(lOut).mrg(drv)
+    [outL, outR] <! lOut <! drv
 }, 1, 5, 3) * 0.25
 
 (* ---- notes.md ---- *)

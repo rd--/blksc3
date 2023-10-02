@@ -92,7 +92,7 @@ export function init_codegen(blk) {
 	};
 
 	Blockly.JavaScript.forBlock['sc3_ArrayFill'] = function(block) {
-		return method_codegen(blk, block, 'dup', ['PROC', 'COUNT']);
+		return method_codegen(blk, block, 'duplicate', ['PROC', 'COUNT']);
 	};
 
 	Blockly.JavaScript.forBlock['sc3_ArrayCollect'] = function(block) {

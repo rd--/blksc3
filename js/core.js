@@ -67,7 +67,7 @@ export function play_code(blk) {
 }
 
 export function print_code(blk) {
-	return sc.prettyPrintSyndefOf(blk.eval_code(blk));
+	return sc.prettyPrintSyndefOf(eval_code(blk));
 }
 
 function pre(blk, onCompletion) {
