@@ -515,13 +515,11 @@
 	,
     {
         "type": "sc3_ExpRand",
-        "message0": "𝑋⚁ %1 ⌊ %2 ⌉ %3 × %4 + %5",
+        "message0": "𝑋⚁ %1 ⌊ %2 ⌉ %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -906,13 +904,11 @@
     ,
     {
         "type": "sc3_IRand",
-        "message0": "𝐼⚁ %1 ⌊ %2 ⌉ %3 × %4 + %5",
+        "message0": "𝐼⚁ %1 ⌊ %2 ⌉ %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -975,9 +971,7 @@
             {"type": "input_value", "name": "KEYCODE", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
             {"type": "input_value", "name": "MINVAL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
             {"type": "input_value", "name": "MAXVAL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "LAG", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "LAG", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -1208,13 +1202,11 @@
     ,
     {
         "type": "sc3_Lag",
-        "message0": "⎎ %1 ∙ %2 ⏲ %3 × %4 + %5",
+        "message0": "⎎ %1 ∙ %2 ⏲ %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "LAGTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "LAGTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1224,13 +1216,11 @@
     ,
     {
         "type": "sc3_Lag2",
-        "message0": "⎎₂ %1 ∙ %2 ⏲ %3 × %4 + %5",
+        "message0": "⎎₂ %1 ∙ %2 ⏲ %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "LAGTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "LAGTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1240,13 +1230,11 @@
     ,
     {
         "type": "sc3_Lag3",
-        "message0": "⎎₃ %1 ∙ %2 ⏲ %3 × %4 + %5",
+        "message0": "⎎₃ %1 ∙ %2 ⏲ %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "LAGTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "LAGTIME", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 150,
@@ -1255,37 +1243,33 @@
     }
     ,
     {
-        "type": "sc3_Lag3UD",
-        "message0": "⎎₃↕ %1 ∙ %2 ⏲↑ %3 ⏲↓ %4 × %5 + %6",
+        "type": "sc3_LagUD",
+        "message0": "⎎↕ %1 ∙ %2 ⏲↑ %3 ⏲↓ %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
             {"type": "input_value", "name": "LAGTIMEU", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "LAGTIMED", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "LAGTIMED", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 150,
+        "tooltip": "LagUD(in, lagTimeU, lagTimeD): Lag",
+        "helpUrl": "https://doc.sccode.org/Classes/LagUD.html"
+    }
+    ,
+    {
+        "type": "sc3_Lag3UD",
+        "message0": "⎎₃↕ %1 ∙ %2 ⏲↑ %3 ⏲↓ %4",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "LAGTIMEU", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
+            {"type": "input_value", "name": "LAGTIMED", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 150,
         "tooltip": "Lag3UD(in, lagTimeU, lagTimeD): Exponential lag",
         "helpUrl": "https://doc.sccode.org/Classes/Lag3UD.html"
-    }
-    ,
-    {
-        "type": "sc3_LagUD",
-        "message0": "⎎↕ %1 ∙ %2 ⏲↑ %3 ⏲↓ %4 × %5 + %6",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "LAGTIMEU", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "LAGTIMED", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
-        ],
-        "output": "UGen",
-        "colour": 150,
-        "tooltip": "LagUD(in, lagTimeU, lagTimeD): Exponential lag",
-        "helpUrl": "https://doc.sccode.org/Classes/LagUD.html"
     }
     ,
     {
@@ -1375,14 +1359,12 @@
     ,
     {
         "type": "sc3_LinRand",
-        "message0": "𝐿⚁ %1 ⌊ %2 ⌉ %3 ⌊⌈ %4 × %5 + %6",
+        "message0": "𝐿⚁ %1 ⌊ %2 ⌉ %3 ⌊⌈ %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
             {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MINMAX", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "MINMAX", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -1566,14 +1548,12 @@
     ,
     {
         "type": "sc3_NRand",
-        "message0": "𝑁⚁ %1 ⌊ %2 ⌉ %3 n %4 × %5 + %6",
+        "message0": "𝑁⚁ %1 ⌊ %2 ⌉ %3 n %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
             {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "N", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "N", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -1919,13 +1899,11 @@
     ,
     {
         "type": "sc3_Rand",
-        "message0": "⚁ %1 ⌊ %2 ⌉ %3 × %4 + %5",
+        "message0": "⚁ %1 ⌊ %2 ⌉ %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 60,
@@ -2209,14 +2187,12 @@
     ,
     {
         "type": "sc3_TExpRand",
-        "message0": "⤴𝑋⚁ %1 ⌊ %2 ⌉ %3 ⤴ %4 × %5 + %6",
+        "message0": "⤴𝑋⚁ %1 ⌊ %2 ⌉ %3 ⤴ %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
             {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -2249,14 +2225,12 @@
     ,
     {
         "type": "sc3_TIRand",
-        "message0": "⤴𝐼⚁ %1 ⌊ %2 ⌉ %3 ⤴ %4 × %5 + %6",
+        "message0": "⤴𝐼⚁ %1 ⌊ %2 ⌉ %3 ⤴ %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
             {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 30,
@@ -2266,14 +2240,12 @@
     ,
     {
         "type": "sc3_TRand",
-        "message0": "⤴⚁ %1 ⌊ %2 ⌉ %3 ⤴ %4 × %5 + %6",
+        "message0": "⤴⚁ %1 ⌊ %2 ⌉ %3 ⤴ %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "LO", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
             {"type": "input_value", "name": "HI", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+            {"type": "input_value", "name": "TRIG", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
         ],
         "output": "UGen",
         "colour": 30,

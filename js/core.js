@@ -9,15 +9,23 @@ import { load_notes_and_then } from './notes.js'
 import { display_scrollbars } from './scrollbars.js'
 import * as xml from './xml.js'
 
-// blk = { Blockly, json, xml, workspace, config, track_history, layouts };
+export class Blk {
+	constructor(Blockly, trackHistory) {
+		this.Blockly = Blockly;
+		this.trackHistory = trackHistory; // boolean
+		this.config = null;
+		this.workspace = null;
+		this.layouts = null;
+	}
+}
 
 // Configure and inject Blockly given Xml format toolbox definition.
 function inject_with_xml_toolbox(blk, onCompletion) {
-	return function (xml_toolbox) {
+	return function (xmlToolbox) {
 		blk.config = {
 			media: 'lib/blockly-10.1.3/media/',
 			sounds: false,
-			toolbox: xml_toolbox,
+			toolbox: xmlToolbox,
 			rtl: false,
 			move: {
 				scrollbars: {horizontal: true, vertical: true},
@@ -60,9 +68,24 @@ export function eval_code(blk) {
 	return eval(get_code_js(blk));
 }
 
+function addWorkspaceEnv(input) {
+	const gate = sc.NamedControl("workspaceGate", 1);
+	const attackTime = sc.NamedControl("workspaceAttackTime", 0.01);
+	const releaseTime = sc.NamedControl("workspaceReleaseTime", 0.1);
+	const envelope = sc.Asr(gate, attackTime, releaseTime, 'sin');
+	return sc.Mul(input, envelope);
+}
+
 export function play_code(blk) {
 	return sc.scSynthEnsure(globalScSynth, function() {
-		return sc.playUgenAt(globalScSynth, eval_code(rec), 1);
+		return sc.playUgenAt(globalScSynth, addWorkspaceEnv(eval_code(rec)), -1, 1, []);
+	});
+}
+
+export function replace_code(blk) {
+	return sc.scSynthEnsure(globalScSynth, function() {
+		globalScSynth.sendOsc(sc.n_set(-1, [["workspaceReleaseTime", 3], ["workspaceGate", 0]]));
+		return sc.playUgenAt(globalScSynth, addWorkspaceEnv(eval_code(rec)), -1, 1, [["workspaceAttackTime", 3], ["workspaceReleaseTime", 3]]);
 	});
 }
 
@@ -84,34 +107,31 @@ function pre(blk, onCompletion) {
 function load_help_graph(blk, graphPath) {
 	xml.fetch_xml(blk, `${graphPath}.xml`, false);
 	load_notes_and_then(`${graphPath}.sl`, sc.setter_for_inner_html_of('blkNotes'));
-	if(blk.track_history) {
+	if(blk.trackHistory) {
 		sc.window_url_set_param('e', graphUrl);
 	}
 }
 
 // Initialisation function, to be called on document load.
 export function init(Blockly, withUiCtl, trackHistory) {
-	const blk = {};
-	blk.Blockly = Blockly;
+	const blk = new Blk(Blockly, trackHistory);
 	init_codegen(blk);
 	init_codegen_ugen(blk);
-	blk.track_history = trackHistory;
 	pre(blk, function(blk) {
-		console.log('addChangeListener', blk, blk.workspace);
 		blk.workspace.addChangeListener(onWorkspaceChange(blk));
 		xml.maybe_load_xml_from_url_param(blk, 'e');
 	});
 	sc.connect_button_to_input('xmlInputFileSelect', 'xmlInputFile'); // Initialise .xml file selector
-	graph_menu_init('programMenu', 'graph', (path) => load_help_graph(blk, path));
+	graph_menu_init('programMenu', 'graph', path => load_help_graph(blk, path));
 	sc.fetch_json_then('json/program-menu.json', json => sc.select_add_keys_as_options('programMenu', json.programMenu));
-	graph_menu_init('helpMenu', 'ugen', (path) => load_help_graph(blk, path));
+	graph_menu_init('helpMenu', 'ugen', path => load_help_graph(blk, path));
 	sc.fetch_json_then('json/help-menu.json', json => sc.select_add_keys_as_options('helpMenu', json.helpMenu));
-	graph_menu_init('guideMenu', 'guide', (path) => load_help_graph(blk, path))
+	graph_menu_init('guideMenu', 'guide', path => load_help_graph(blk, path))
 	sc.fetch_json_then('json/guide-menu.json', json => sc.select_add_keys_as_options('guideMenu', json.guideMenu));
-	graph_menu_init('smallProgramsMenu', 'graph', (path) => load_help_graph(blk, path));
+	graph_menu_init('smallProgramsMenu', 'graph', path => load_help_graph(blk, path));
 	sc.fetch_json_then('json/small-programs-menu.json', json => sc.select_add_keys_as_options('smallProgramsMenu', json.smallProgramsMenu));
 	sc.userPrograms.storage_key = 'blksc3UserPrograms/xml';
-	sc.user_program_menu_init('userMenu', (xmlText) => xml.load_xml(blk, xmlText));
+	sc.user_program_menu_init('userMenu', xmlText => xml.load_xml(blk, xmlText));
 	sc.select_on_change('actionsMenu', function(menuElement, entryName) {
 		sc.user_action_do(entryName, 'userMenu', 'userProgramArchiveFile');
 		menuElement.selectedIndex = 0;
@@ -125,12 +145,15 @@ export function init(Blockly, withUiCtl, trackHistory) {
 
 function onWorkspaceChange(blk) {
 	return function(event) {
-		console.log('onWorkspaceChange', event.type, event.element, event.oldValue, event.newValue, event);
-		const aBlock = blk.workspace.getBlockById(event.blockId);
-		if(aBlock) {
-			console.log('onWorkspaceChange>block', aBlock.type, aBlock);
+		if(event.type == Blockly.Events.BLOCK_CHANGE && event.element == 'field') {
+			const aBlock = blk.workspace.getBlockById(event.blockId);
+			if(aBlock) {
+				if(aBlock.type == 'sc3_ControlField') {
+					globalScSynth.sendOsc(sc.n_set1(-1, aBlock.id, aBlock.getFieldValue('VALUE')));
+				}
+			}
 		}
-	};
+	}
 }
 
 // Get .xml serialization of workspace.  (The .xml format is no longer being worked on.)

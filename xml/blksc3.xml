@@ -11,7 +11,7 @@
     <block type='sc3_Constant'><field name='CONST'>e</field></block>
     <block type='sc3_Constant'><field name='CONST'>inf</field></block>
     <block type='sc3_UnaryOp'>
-      <field name='OP'>dbAmp</field>
+      <field name='OP'>DbAmp</field>
       <value name='IN'><shadow type='math_number'><field name='NUM'>-24</field></shadow></value>
     </block>
     <block type='logic_boolean'><field name='BOOL'>TRUE</field></block>
@@ -20,8 +20,10 @@
   <category name='Var' colour='330' custom='VARIABLE'>
   </category>
   <category name='Math' colour='230'>
+    <block type='sc3_ControlField'><field name='VALUE'>0</field></block>
+    <block type='sc3_ControlField'><field name='VALUE'>1</field></block>
     <block type='sc3_UnaryOp'>
-      <field name='OP'>abs</field>
+      <field name='OP'>Abs</field>
       <value name='IN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
     <block type='sc3_BinaryOp' inline='true'>
@@ -35,7 +37,7 @@
       <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
     </block>
     <block type='sc3_KeywordBinaryOp' inline='true'>
-      <field name='OP'>min</field>
+      <field name='OP'>Min</field>
       <value name='LHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
       <value name='RHS'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
@@ -45,7 +47,7 @@
     <block type='sc3_ArrayProc1'><field name='OP'>sum</field><value name='IN'></value></block>
     <block type='sc3_ArrayProc1'>
         <field name='OP'>sum</field>
-        <value name='IN'><block type='sc3_ArrayProc1'><field name='OP'>transpose</field><value name='IN'></value></block></value>
+        <value name='IN'><block type='sc3_ArrayProc1'><field name='OP'>transposed</field><value name='IN'></value></block></value>
     </block>
     <block type='sc3_ArrayProc2' inline='true'><field name='OP'>append</field><value name='LHS'></value><value name='RHS'></value></block>
     <block type='sc3_ArrayProc2' inline='true'><field name='OP'>collect</field><value name='LHS'></value><value name='RHS'></value></block>
@@ -1646,6 +1648,9 @@
       <value name='INDEX'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='MUL'><shadow type='math_number'><field name='NUM'>1.0</field></shadow></value>
       <value name='ADD'><shadow type='math_number'><field name='NUM'>0.0</field></shadow></value>
+    </block>
+    <block type='sc3_ControlField'>
+      <field name='VALUE'>0</field>
     </block>
   </category>
   <category name='Kbd' colour='60'>

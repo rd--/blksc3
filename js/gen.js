@@ -26,6 +26,10 @@ export function init_codegen(blk) {
 		return [const_codegen(block.getFieldValue('CONST')), Blockly.JavaScript.ORDER_FUNCTION_CALL];
 	};
 
+	Blockly.JavaScript.forBlock['sc3_ControlField'] = function(block) {
+		return [`NamedControl('${block.id}', ${block.getFieldValue('VALUE')})`, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+	};
+
 	Blockly.JavaScript.forBlock['sc3_MulAdd'] = function(block) {
 		return implicit_method_codegen(blk, block, 'MulAdd', ['IN', 'MUL', 'ADD']);
 	};
@@ -207,9 +211,9 @@ function append_mul_add(blk, block, codeStr) {
 	}
 }
 
-export function blk_ugen_codegen(blk, block, name, argNameArray, hasOutputs) {
-	// console.debug(`blk_ugen_codegen: ${name}, ${argNameArray.length}, ${hasOutputs}`);
+export function blk_ugen_codegen(blk, block, name, argNameArray, hasMulAdd) {
+	// console.debug(`blk_ugen_codegen: ${name}, ${argNameArray.length}, ${hasMulAdd}`);
 	const ugenCode = implicit_method_codegen(blk, block, name, argNameArray);
-	const answer = hasOutputs ? [append_mul_add(blk, block, ugenCode[0]), blk.Blockly.JavaScript.ORDER_FUNCTION_CALL] : ugenCode;
+	const answer = hasMulAdd ? [append_mul_add(blk, block, ugenCode[0]), blk.Blockly.JavaScript.ORDER_FUNCTION_CALL] : ugenCode;
 	return answer;
 }
