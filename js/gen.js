@@ -50,6 +50,10 @@ export function init_codegen(blk) {
 		return implicit_method_codegen(blk, block, 'Voicer', ['COUNT', 'PROC']);
 	};
 
+	Blockly.JavaScript.forBlock['sc3_LocalVoicer'] = function(block) {
+		return implicit_method_codegen(blk, block, 'Voicer', ['RECORD', 'PROC']);
+	};
+
 	Blockly.JavaScript.forBlock['sc3_VoiceWriter'] = function(block) {
 		return implicit_method_codegen(blk, block, 'VoiceWriter', ['COUNT', 'PROC']);
 	};

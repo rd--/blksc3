@@ -99,7 +99,7 @@ function pre(blk, onCompletion) {
 	blk.Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
 	blk.Blockly.Msg['LISTS_CREATE_WITH_INPUT_WITH'] = '⟦⟧';
 	sc.fetch_json_then('json/blksc3.json', blk.Blockly.defineBlocksWithJsonArray);
-	sc.fetch_json_then('json/blksc3-std.json', blk.Blockly.defineBlocksWithJsonArray);
+	sc.fetch_json_then('json/blksc3-std.json', blk.Blockly.defineBlocksWithJsonArray); // not -compact
 	sc.fetch_json_then('json/blksc3-ugen.json', blk.Blockly.defineBlocksWithJsonArray);
 	sc.fetch_utf8_then('xml/blksc3.xml', inject_with_xml_toolbox(blk, onCompletion));
 }

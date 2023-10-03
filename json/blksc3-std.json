@@ -137,7 +137,7 @@
     ,
     {
         "type": "sc3_Voicer",
-        "message0": "Voicer %1 # %2 𝑓 %3",
+        "message0": "𝓥 %1 # %2 𝑓 %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "COUNT", "check": "Number"},
@@ -149,8 +149,21 @@
     }
     ,
     {
+        "type": "sc3_LocalVoicer",
+        "message0": "𝓥 %1 𝑹 %2 𝑓 %3",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "RECORD"},
+            {"type": "input_value", "name": "PROC", "check": "Proc1"}
+        ],
+        "output": "UGen",
+        "colour": 180,
+        "tooltip": "Voicer(map, proc): Array of results of evaluating proc at the channel expanded event record"
+    }
+    ,
+    {
         "type": "sc3_VoiceWriter",
-        "message0": "VoiceWriter %1 # %2 𝑓 %3",
+        "message0": "𝓥𝓌 %1 # %2 𝑓 %3",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "COUNT", "check": "Number"},

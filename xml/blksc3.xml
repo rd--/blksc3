@@ -145,6 +145,15 @@
         </block>
       </value>
     </block>
+    <block type='sc3_LocalVoicer'>
+      <value name='RECORD'></value>
+      <value name='PROC'>
+        <block type='sc3_Proc1'>
+          <value name='VAR'><block type='variables_get'><field name='VAR'>e</field></block></value>
+          <value name='RETURN'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+        </block>
+      </value>
+    </block>
     <block type='sc3_Event'>
       <value name=FROM><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
     </block>
@@ -169,7 +178,7 @@
       </value>
     </block>
     <block type='sc3_UnaryOp'>
-      <field name='OP'>unitCps</field>
+      <field name='OP'>UnitCps</field>
       <value name='IN'>
         <block type='sc3_EventParam'>
           <field name='PARAM'>p</field>
@@ -178,7 +187,7 @@
       </value>
     </block>
     <block type='sc3_UnaryOp'>
-      <field name='OP'>midiCps</field>
+      <field name='OP'>MidiCps</field>
       <value name='IN'>
         <block type='sc3_MulAdd' inline='true'>
           <value name='IN'>
@@ -195,7 +204,7 @@
     <block type='sc3_MulAdd' inline='true'>
       <value name='IN'>
         <block type='sc3_EventParam'>
-          <field name='PARAM'>o</field>
+          <field name='PARAM'>i</field>
           <value name='EVENT'><block type='variables_get'><field name='VAR'>e</field></block></value>
         </block>
       </value>
