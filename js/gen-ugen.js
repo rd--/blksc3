@@ -98,7 +98,7 @@ Blockly.JavaScript.forBlock['sc3_EqPan2'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'EqPan2', ['IN', 'POS'], true);
 };
 Blockly.JavaScript.forBlock['sc3_ExpRand'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'ExpRand', ['LO', 'HI'], false);
+	return blk_ugen_codegen(blk, block, 'ExpRand', ['LO', 'HI'], true);
 };
 Blockly.JavaScript.forBlock['sc3_FBSineC'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'FbSineC', ['FREQ', 'IM', 'FB', 'A', 'C', 'XI', 'YI'], true);
@@ -161,7 +161,7 @@ Blockly.JavaScript.forBlock['sc3_IFFT'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'Ifft', ['BUFFER', 'WINTYPE', 'WINSIZE'], true);
 };
 Blockly.JavaScript.forBlock['sc3_IRand'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'IRand', ['LO', 'HI'], false);
+	return blk_ugen_codegen(blk, block, 'IRand', ['LO', 'HI'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Impulse'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'Impulse', ['FREQ', 'PHASE'], true);
@@ -218,19 +218,19 @@ Blockly.JavaScript.forBlock['sc3_LPZ1'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'Lpz1', ['IN'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Lag'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'Lag', ['IN', 'LAGTIME'], false);
+	return blk_ugen_codegen(blk, block, 'Lag', ['IN', 'LAGTIME'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Lag2'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'Lag2', ['IN', 'LAGTIME'], false);
+	return blk_ugen_codegen(blk, block, 'Lag2', ['IN', 'LAGTIME'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Lag3'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'Lag3', ['IN', 'LAGTIME'], false);
+	return blk_ugen_codegen(blk, block, 'Lag3', ['IN', 'LAGTIME'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Lag3UD'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'Lag3Ud', ['IN', 'LAGTIMEU', 'LAGTIMED'], false);
+	return blk_ugen_codegen(blk, block, 'Lag3Ud', ['IN', 'LAGTIMEU', 'LAGTIMED'], true);
 };
 Blockly.JavaScript.forBlock['sc3_LagUD'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'LagUd', ['IN', 'LAGTIMEU', 'LAGTIMED'], false);
+	return blk_ugen_codegen(blk, block, 'LagUd', ['IN', 'LAGTIMEU', 'LAGTIMED'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Latch'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'Latch', ['IN', 'TRIG'], true);
@@ -248,7 +248,7 @@ Blockly.JavaScript.forBlock['sc3_LinPan2'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'LinPan2', ['IN', 'POS', 'LEVEL'], true);
 };
 Blockly.JavaScript.forBlock['sc3_LinRand'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'LinRand', ['LO', 'HI', 'MINMAX'], false);
+	return blk_ugen_codegen(blk, block, 'LinRand', ['LO', 'HI', 'MINMAX'], true);
 };
 Blockly.JavaScript.forBlock['sc3_LinXFade2'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'LinXFade2', ['INA', 'INB', 'PAN'], true);
@@ -281,7 +281,7 @@ Blockly.JavaScript.forBlock['sc3_MouseY'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'MouseY', ['MINVAL', 'MAXVAL', 'WARP', 'LAG'], true);
 };
 Blockly.JavaScript.forBlock['sc3_NRand'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'NRand', ['LO', 'HI', 'N'], false);
+	return blk_ugen_codegen(blk, block, 'NRand', ['LO', 'HI', 'N'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Normalizer'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'Normalizer', ['IN', 'LEVEL', 'DUR'], true);
@@ -341,7 +341,7 @@ Blockly.JavaScript.forBlock['sc3_RLPF'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'Rlpf', ['IN', 'FREQ', 'RQ'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Rand'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'Rand', ['LO', 'HI'], false);
+	return blk_ugen_codegen(blk, block, 'Rand', ['LO', 'HI'], true);
 };
 Blockly.JavaScript.forBlock['sc3_ReplaceOut'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'ReplaceOut', ['BUS', 'CHANNELSARRAY'], false);
@@ -395,16 +395,16 @@ Blockly.JavaScript.forBlock['sc3_SyncSaw'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'SyncSaw', ['SYNCFREQ', 'SAWFREQ'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TExpRand'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'TExpRand', ['LO', 'HI', 'TRIG'], false);
+	return blk_ugen_codegen(blk, block, 'TExpRand', ['LO', 'HI', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TGrains'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'TGrains', ['NUMCHANNELS', 'TRIGGER', 'BUFNUM', 'RATE', 'CENTERPOS', 'DUR', 'PAN', 'AMP', 'INTERP'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TIRand'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'TiRand', ['LO', 'HI', 'TRIG'], false);
+	return blk_ugen_codegen(blk, block, 'TiRand', ['LO', 'HI', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TRand'] = function(block) {
-	return blk_ugen_codegen(blk, block, 'TRand', ['LO', 'HI', 'TRIG'], false);
+	return blk_ugen_codegen(blk, block, 'TRand', ['LO', 'HI', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['sc3_ToggleFF'] = function(block) {
 	return blk_ugen_codegen(blk, block, 'ToggleFf', ['TRIG'], true);
