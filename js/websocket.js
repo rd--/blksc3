@@ -3,7 +3,7 @@ function blk_send_stc(cmd) {
 }
 
 function blk_sc3_reset() {
-    sc3_websocket_send('globalScsynth().reset');
+    sc3_websocket_send('globalScSynth.reset()');
 }
 
 function blk_cc_send(ccIndex) {

@@ -77,16 +77,12 @@ function addWorkspaceEnv(input) {
 }
 
 export function play_code(blk) {
-	return sc.scSynthEnsure(globalScSynth, function() {
-		return sc.playUgenAt(globalScSynth, addWorkspaceEnv(eval_code(rec)), -1, 1, []);
-	});
+	globalScSynth.playUgenAt(addWorkspaceEnv(eval_code(rec)), -1, 1, []);
 }
 
 export function replace_code(blk) {
-	return sc.scSynthEnsure(globalScSynth, function() {
-		globalScSynth.sendOsc(sc.n_set(-1, [["workspaceReleaseTime", 3], ["workspaceGate", 0]]));
-		return sc.playUgenAt(globalScSynth, addWorkspaceEnv(eval_code(rec)), -1, 1, [["workspaceAttackTime", 3], ["workspaceReleaseTime", 3]]);
-	});
+	globalScSynth.sendOsc(sc.n_set(-1, [["workspaceReleaseTime", 3], ["workspaceGate", 0]]));
+	globalScSynth.playUgenAt(addWorkspaceEnv(eval_code(rec)), -1, 1, [["workspaceAttackTime", 3], ["workspaceReleaseTime", 3]]);
 }
 
 export function print_code(blk) {
