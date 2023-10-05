@@ -6,7 +6,7 @@ Resonz(
 )
 
 (* ---- notes.md ---- *)
-## Noise Generators, Filters, Control Signals
+# Noise Generators, Filters, Control Signals
 
 ⍰𝒘 (_WhiteNoise_) is a noise generator with uniform spectral density.
 It is located in the _Generator→Noise_ category of the toolbox.

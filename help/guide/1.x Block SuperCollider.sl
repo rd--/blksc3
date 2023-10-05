@@ -5,7 +5,7 @@ OverlapTexture({ :tr |
 }, 1, 2, 7)
 
 (* ---- notes.md ---- *)
-## Block SuperCollider
+# Block SuperCollider
 
 _Block SuperCollider_ (blksc3) is
 a [block](https://developers.google.com/blockly) editor for the

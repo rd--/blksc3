@@ -6,7 +6,7 @@ var y = MouseY(0, k, 0, 0.2);
 SinOsc(Select([x, y], m).MidiCps, 0) * 0.1
 
 (* ---- notes.md ---- *)
-## Array Inputs, Array Expansion
+# Array Inputs, Array Expansion
 
 When a signal block receives an array as an input there are two distinct behaviors.
 

@@ -2,7 +2,7 @@
 Impulse(SinOsc(1, 0).Max(0), 0) * 0.1
 
 (* ---- notes.md ---- *)
-## Names, Symbols, Unicode
+# Names, Symbols, Unicode
 
 Requiring blocks to have both _proper names_ and a _message template_ allows blocks to be translated into different languages.
 

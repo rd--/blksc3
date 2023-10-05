@@ -2,7 +2,7 @@
 SinOsc(SinOsc(1 / [7, 9], 0) * [55, 57] + 110, 0) * SinOsc(1 / [5, 7], 0) * 0.1
 
 (* ---- notes.md ---- *)
-## Block Names, Parameters, Messages
+# Block Names, Parameters, Messages
 
 _Blocks_ and _parameters_ all have _names_,
 which are used as identifiers when programs are stored in _.xml_ files,

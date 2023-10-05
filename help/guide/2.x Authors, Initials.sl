@@ -8,7 +8,7 @@ var f = Demand(t, 0, Seq(inf, m)).MidiCps;
 Pan2(SinOsc(f, 0).Tanh, 0, Decay2(t, 0.05, 0.2) * 0.1)
 
 (* ---- notes.md ---- *)
-## Authors, Initials
+# Authors, Initials
 
 The authors of the graphs in the _Graph Programs_ menu are indicated by initials.
 

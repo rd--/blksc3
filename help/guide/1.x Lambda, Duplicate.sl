@@ -4,7 +4,7 @@ var a = { SinOsc(Rand(0.1, 0.5), 0) } ! 12;
 (SinOsc(f, 0) * a).Splay2 * 0.1
 
 (* ---- notes.md ---- *)
-## Lambda, Duplicate
+# Lambda, Duplicate
 
 λ (_Proc_) is the anonymous procedure block.
 It is located in the _Proc_ category of the toolbox.

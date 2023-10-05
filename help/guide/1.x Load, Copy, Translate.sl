@@ -13,7 +13,7 @@ OverlapTexture({ :tr |
 }, 1, 3, 4)
 
 (* ---- notes.md ---- *)
-## Load, Copy, Translate
+# Load, Copy, Translate
 
 Programs are stored as _.xml_ files.
 _Load_ prompts to select an _.xml_ file and loads it into the workspace.

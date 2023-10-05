@@ -8,7 +8,7 @@ var f = { :tr |
 OverlapTexture(f, 2, 8, 12) * 0.05
 
 (* ---- notes.md ---- *)
-## Overlap Texture
+# Overlap Texture
 
 ᨏ (_OverlapTexture_) is a graph combinator, a form of _higher order function_.
 ᨏ requires a one argument λ block as an input.

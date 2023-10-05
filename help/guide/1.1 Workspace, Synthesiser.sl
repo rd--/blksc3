@@ -2,7 +2,7 @@
 { PinkNoise() } ! 2 * 0.025
 
 (* ---- notes.md ---- *)
-## Workspace, Synthesiser
+# Workspace, Synthesiser
 
 The area containing the _block_ drawing is called the _workspace_.
 Blocks are connected together to form a _program_,

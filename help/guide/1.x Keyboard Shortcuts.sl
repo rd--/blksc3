@@ -2,7 +2,7 @@
 { Rhpf(OnePole(BrownNoise(), 0.99), Lpf(BrownNoise(), 14) * 400 + 500, 0.03) * 0.06 } ! 2
 
 (* ---- notes.md ---- *)
-## Keyboard Shortcuts
+# Keyboard Shortcuts
 
 _Keyboard shortcuts_ (also called _keybindings_ or _access keys_) perform actions that would otherwise require a mouse.
 The _prefix_ keys are

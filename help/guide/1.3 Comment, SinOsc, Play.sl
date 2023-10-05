@@ -2,7 +2,7 @@
 SinOsc(440, 0) * 0.1
 
 (* ---- notes.md ---- *)
-## Comment, SinOsc, Play
+# Comment, SinOsc, Play
 
 “ (_Comment_) and ⊳ (_Play_) are located in the _Meta_ category of the toolbox.
 “ and ⊳ are _statement blocks_, meaning they have _previous_ and _next_ connectors at their top and bottom edges.

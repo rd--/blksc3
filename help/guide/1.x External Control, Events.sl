@@ -4,7 +4,7 @@ FreeVerb(Voicer(16, { :e |
 }).Splay2, Lag(Cc(1), 0.2), Lag(Cc(2), 0.2), 0.5)
 
 (* ---- notes.md ---- *)
-## External Control, Events
+# External Control, Events
 
 _Voicer_ reads _#_ event streams,
 where an event is a set of continuous control parameters associated with a switch (_gate_) signal,

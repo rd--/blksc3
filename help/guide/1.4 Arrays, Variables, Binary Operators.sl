@@ -4,7 +4,7 @@ var a = [o, o];
 a * 0.1
 
 (* ---- notes.md ---- *)
-## Arrays, Variables, Binary Operators
+# Arrays, Variables, Binary Operators
 
 ≔ is the _variable assignment_ block.
 It is used to give a name to a part of a program.

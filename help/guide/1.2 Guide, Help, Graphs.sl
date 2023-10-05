@@ -2,7 +2,7 @@
 EqPan2(PinkNoise(), SinOsc(1 / 7, 0)) * (SinOsc(1 / 5, 3 / 2 * pi) * 0.5 + 1) * -32.DbAmp
 
 (* ---- notes.md ---- *)
-## Guide, Help, Graphs
+# Guide, Help, Graphs
 
 There are three collections of _programs_ that can be selected from menus below the workspace.
 When a program is selected the current workspace program is deleted, as if _Clear_ had been run.

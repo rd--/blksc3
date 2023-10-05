@@ -22,7 +22,7 @@ globalThis.blk = blk;
 sl.addLoadUrlMethods();
 window.onload = function() {
 	// sc.sc3_web_socket_init('ws:localhost:57110'); /* jssc3/cmd/ws-bridge.ts */
-	sc.sc3_wasm_init();
+	globalThis.globalScSynth = sc.ScSynthWasm();
 	sc.sc3_mouse_init(globalScSynth);
 	sc.scSynthInitStatusTextListener(globalScSynth, '---');
 	sl.assignGlobals();
@@ -46,12 +46,12 @@ window.onload = function() {
 				<select id="helpMenu" title="Help (h)" accesskey="h"></select>
 				<select id="guideMenu" title="Guide (g)" accesskey="g"></select>
 				<select id="smallProgramsMenu" title="Small Programs (a)" accesskey="a"></select>
-				<select id="userMenu" title="User (u)" accesskey="u"><option value=''>--User--</option></select>
+				<select id="userMenu" title="User (u)" accesskey="u"><option value="">--User--</option></select>
 				<select id="actionsMenu" title="Actions">
-					<option value=''>&#x2630;</option>
-					<option value='userBackup'>Backup</option>
-					<option value='userRestore'>Restore</option>
-					<option value='userPurge'>Purge</option>
+					<option value="">&#x2630;</option>
+					<option value="userBackup">Backup</option>
+					<option value="userRestore">Restore</option>
+					<option value="userPurge">Purge</option>
 				</select>
 			</div>
 			<div id="blkCmd">
@@ -70,12 +70,12 @@ window.onload = function() {
 				<button title="Delete all blocks from workspace (k)" accesskey="k" onclick="rec.workspace.clear()">Clear</button>
 				<button title="Save document to local storage (s)" accesskey="s" onclick="sc.user_program_save_to('userMenu', blk.workspaceXml(rec), false)">Save</button>
 				<select id="blkLayoutMenu" title="System layouts (y)" accesskey="y">
-					<option value=''>--Display--</option>
-					<option value='%×%'>%×%</option>
-					<option value='1366×768'>1366×768</option>
-					<option value='1440×900'>1440×900</option>
-					<option value='1680×1050'>1680×1050</option>
-					<option value='1920×1080'>1920×1080</option>
+					<option value="">--Display--</option>
+					<option value="%×%">%×%</option>
+					<option value="1366×768">1366×768</option>
+					<option value="1440×900">1440×900</option>
+					<option value="1680×1050">1680×1050</option>
+					<option value="1920×1080">1920×1080</option>
 				</select>
 				<button title="Begin" accesskey="b" onclick="globalScSynth.connect()">Begin</button>
 <!--
@@ -83,6 +83,7 @@ window.onload = function() {
 -->
 				<span id="statusText">...</span>
 				<button title="Fullscreen" accesskey="x" onclick="sc.fullscreen()">⇱</button>
+				<button title="External ScSynth" onclick="sc.scSynthUseWebSocket(globalScSynth, 'ws:localhost:57110')">𝓔</button>
 			</div>
 		</div>
 

@@ -2,7 +2,7 @@
 [PinkNoise() * [0.05, 0.05], SinOsc(LfNoise2([0.5, 0.5]) * 110 + 110, 0) * 0.1].sum
 
 (* ---- notes.md ---- *)
-## Multiply and Add
+# Multiply and Add
 
 All blocks with an _output connector_ have × (_multiplier_) and + (_adder_) inputs.
 These inputs, initialised to one and zero respectively, allow adjusting the scale and bias of blocks without introducing an extra block.

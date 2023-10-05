@@ -6,7 +6,7 @@ var x = { Ringz(Dust(0.1), Rand(1200, 2400), Rand(1, 3)) * Rand(0, 0.05) };
 ].sum
 
 (* ---- notes.md ---- *)
-## Code Generation, Macros
+# Code Generation, Macros
 
 There is a sense in which this simple program could be made simpler still.
 The 𝑓 input to the ! block is a no argument λ that is evaluated # times to generate an ⟦⟧ of # places.
