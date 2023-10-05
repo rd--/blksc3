@@ -23,8 +23,8 @@ sl.addLoadUrlMethods();
 window.onload = function() {
 	// sc.sc3_web_socket_init('ws:localhost:57110'); /* jssc3/cmd/ws-bridge.ts */
 	sc.sc3_wasm_init();
-	sc.scSynthInitStatusTextListener(globalScSynth, '---');
 	sc.sc3_mouse_init(globalScSynth);
+	sc.scSynthInitStatusTextListener(globalScSynth, '---');
 	sl.assignGlobals();
 	sl.setLoadPath('lib/spl/sl');
 	sl.loadUrl('*Load*', 'Meta/PackageIndex.sl').then(function() {
@@ -77,7 +77,7 @@ window.onload = function() {
 					<option value='1680×1050'>1680×1050</option>
 					<option value='1920×1080'>1920×1080</option>
 				</select>
-				<button title="Begin" accesskey="b" onclick="globalScSynth.boot()">Begin</button>
+				<button title="Begin" accesskey="b" onclick="globalScSynth.connect()">Begin</button>
 <!--
 				ⓘ
 -->
