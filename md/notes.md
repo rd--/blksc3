@@ -1,3 +1,14 @@
+# Sub-graphs
+
+A diagram can be a sub-graph.
+The ⊳ (Play) block indicates the "outlets" of the diagram.
+The system connects the inputs of ⊳ to the "audio outputs".
+There is no block to indicate the "inlets" of a diagram, which would require a "count" parameter.
+There ∙ block (AudioIn) reads from the "audio inputs".
+Diagrams could be written to use "inlet" and "outlet" blocks.
+In the case of "top-level" diagrams, the system would connect these to the "audio device".
+In the case of "sub-diagrams" these would be connected to the blocks that connect to the "sub-diagram" block.
+
 # Url
 
 An initial file can be loaded by setting the Url parameter _e_,

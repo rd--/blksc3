@@ -23,6 +23,7 @@ The drawing can be tidied using _Cleanup_,
 all blocks can be deleted using _Clear_.
 
 _Play_ sends the current program to SuperCollider to be played.
+_Replace_ cross-fades between the last program played and the current program.
 _Reset_ stops all of the sounding programs.
 
 This program consists of seven blocks.

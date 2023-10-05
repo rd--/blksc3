@@ -13,6 +13,7 @@ The table below lists the assigned keys, in alphabetical order, and the actions 
 
 - , → _Play_ (≡ _comma key_)
 - . → _Reset_ (≡ _full stop key_)
+- - → _Replace_ (≡ _minus key_)
 - = → _Fit_ (≡ _equal sign key_)
 - _c_ → _Copy_
 - _g_ → _Guide Menu_
