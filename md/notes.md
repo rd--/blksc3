@@ -1,3 +1,10 @@
+# Help
+
+Document:
+replace (envelopes),
+editable number (named control),
+external synthesiser (localhost, not Wasm).
+
 # Sub-graphs
 
 A diagram can be a sub-graph.

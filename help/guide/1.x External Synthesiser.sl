@@ -17,7 +17,7 @@ _BlkSc3_ cannot start an external synthesiser, the synthesiser must be started s
 
 At present the Sc synthesiser does not directly implement the
 [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) protocol
-and a _bridge_ must be used,
+and a bridge must be used,
 c.f. the _ws-bridge_ program at [jssc3](https://rohandrape.net/?t=jssc3).
 
 This program uses low frequency noise to modulate the frequency and

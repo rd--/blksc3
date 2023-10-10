@@ -1,4 +1,4 @@
-(* Voicer *)
+(* Voicer.1 *)
 Voicer(16) { :e |
     var freq = (e.x * [25, LfNoise2(0.25) * 0.25 + 25] + 48).MidiCps;
     EqPan2(Rlpf(Saw(freq), e.y + 0.75 * freq, e.y * 0.5).sum, e.i * 2 - 1) * e.w * e.z
