@@ -23,7 +23,7 @@ export class Blk {
 function inject_with_xml_toolbox(blk, onCompletion) {
 	return function (xmlToolbox) {
 		blk.config = {
-			media: 'lib/blockly-10.1.3/media/',
+			media: 'lib/blockly-10.2.2/media/',
 			sounds: false,
 			toolbox: xmlToolbox,
 			rtl: false,
