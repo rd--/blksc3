@@ -16,7 +16,7 @@ function load_xml(blk, xmlText) {
 
 // Read selected .xml file.
 export function read_input_xml(inputId, blk) {
-	sc.read_text_file_from_file_input_and_then(inputId, 0, (xmlText) => load_xml(blk, xmlText));
+	sc.read_text_file_from_file_input_then(inputId, 0, (xmlText) => load_xml(blk, xmlText));
 }
 
 // Read and load .xml format program from URL.
