@@ -12,3 +12,5 @@ PanAz(
 # PanAz
 
 Azimuth panner.
+
+The number of channels input (_#_) tells how many consecutive channels to pan across.
