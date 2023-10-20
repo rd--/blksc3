@@ -2,9 +2,9 @@
 { 0 } ! 8 ++ PanAz(
 	8,
 	PinkNoise(),
-	LfSaw(0.25, 0),
+	MouseX(0.1, 2, 0, 0.2),
 	0.1,
-	2,
+	3,
 	0.5
 )
 
@@ -12,3 +12,5 @@
 # PanAz
 
 Offset an _n_-channel panner by pre-pending an array of silent channels.
+
+The default values for _#_ here are both eight,
