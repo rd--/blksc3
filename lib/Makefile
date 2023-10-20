@@ -3,8 +3,8 @@ all:
 
 copy-dist:
 	mkdir -p jssc3/dist spl/dist
-	cp scsynth-wasm-builds/jssc3/dist/jssc3.js jssc3/dist/jssc3.js
-	cp scsynth-wasm-builds/spl/dist/sl.js spl/dist/sl.js
+	cp scsynth-wasm-builds/lib/jssc3/dist/jssc3.js jssc3/dist/jssc3.js
+	cp scsynth-wasm-builds/lib/spl/dist/sl.js spl/dist/sl.js
 
 download-blockly-9.1.0:
 	wget https://github.com/google/blockly/releases/download/blockly-v9.1.0/blockly-9.1.0.tgz
