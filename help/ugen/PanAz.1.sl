@@ -19,7 +19,7 @@ The input signal (_∙_) is the single channel sound to be panned.
 The position input (_⌖_) has a range of _0--2_,
 where _0_ is the first speaker, _1_ is the middle, and _2_ the last.
 Out of range values are wrapped around,
-a ramp from _-1--1_ will traverse the speakers clockise starting at the middle speaker,
+a line _-1--1_ will traverse the speakers clockise starting at the middle speaker,
 i.e. from _1--2_ and then from _0--1_.
 
 The level input (_×_) is a multiplier for the input signal.
