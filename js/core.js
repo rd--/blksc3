@@ -5,7 +5,7 @@ import { init_codegen } from './gen.js'
 import { init_codegen_ugen } from './gen-ugen.js'
 import { graph_menu_init } from './graph-menu.js'
 import { layout_menu_init } from './layout.js'
-import { load_notes_and_then } from './notes.js'
+import { load_notes } from './notes.js'
 import { display_scrollbars } from './scrollbars.js'
 import * as xml from './xml.js'
 
@@ -94,15 +94,20 @@ function pre(blk, onCompletion) {
 	blk.Blockly.utils.colour.setHsvValue(0.95);
 	blk.Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
 	blk.Blockly.Msg['LISTS_CREATE_WITH_INPUT_WITH'] = '⟦⟧';
-	sc.fetch_json_then('json/blksc3.json', blk.Blockly.defineBlocksWithJsonArray);
-	sc.fetch_json_then('json/blksc3-std.json', blk.Blockly.defineBlocksWithJsonArray); // not -compact
-	sc.fetch_json_then('json/blksc3-ugen.json', blk.Blockly.defineBlocksWithJsonArray);
-	sc.fetch_utf8_then('xml/blksc3.xml', inject_with_xml_toolbox(blk, onCompletion));
+	sc.fetch_json('json/blksc3.json', { cache: 'no-cache' })
+		.then(blk.Blockly.defineBlocksWithJsonArray);
+	sc.fetch_json('json/blksc3-std.json', { cache: 'no-cache' })
+		.then(blk.Blockly.defineBlocksWithJsonArray); // not -compact
+	sc.fetch_json('json/blksc3-ugen.json', { cache: 'no-cache' })
+		.then(blk.Blockly.defineBlocksWithJsonArray);
+	sc.fetch_utf8('xml/blksc3.xml', { cache: 'no-cache' })
+		.then(inject_with_xml_toolbox(blk, onCompletion));
 }
 
 function load_help_graph(blk, graphPath) {
 	xml.fetch_xml(blk, `${graphPath}.xml`, false);
-	load_notes_and_then(`${graphPath}.sl`, sc.setter_for_inner_html_of('blkNotes'));
+	load_notes(`${graphPath}.sl`)
+		.then(sc.setter_for_inner_html_of('blkNotes'));
 	if(blk.trackHistory) {
 		sc.window_url_set_param('e', graphUrl);
 	}
@@ -119,13 +124,17 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	});
 	sc.connect_button_to_input('xmlInputFileSelect', 'xmlInputFile'); // Initialise .xml file selector
 	graph_menu_init('programMenu', 'graph', path => load_help_graph(blk, path));
-	sc.fetch_json_then('json/program-menu.json', json => sc.select_add_keys_as_options('programMenu', json.programMenu));
+	sc.fetch_json('json/program-menu.json', { cache: 'no-cache' })
+		.then(json => sc.select_add_keys_as_options('programMenu', json.programMenu));
 	graph_menu_init('helpMenu', 'ugen', path => load_help_graph(blk, path));
-	sc.fetch_json_then('json/help-menu.json', json => sc.select_add_keys_as_options('helpMenu', json.helpMenu));
+	sc.fetch_json('json/help-menu.json', { cache: 'no-cache' })
+		.then(json => sc.select_add_keys_as_options('helpMenu', json.helpMenu));
 	graph_menu_init('guideMenu', 'guide', path => load_help_graph(blk, path))
-	sc.fetch_json_then('json/guide-menu.json', json => sc.select_add_keys_as_options('guideMenu', json.guideMenu));
+	sc.fetch_json('json/guide-menu.json', { cache: 'no-cache' })
+		.then(json => sc.select_add_keys_as_options('guideMenu', json.guideMenu));
 	graph_menu_init('smallProgramsMenu', 'graph', path => load_help_graph(blk, path));
-	sc.fetch_json_then('json/small-programs-menu.json', json => sc.select_add_keys_as_options('smallProgramsMenu', json.smallProgramsMenu));
+	sc.fetch_json('json/small-programs-menu.json', { cache: 'no-cache' })
+		.then(json => sc.select_add_keys_as_options('smallProgramsMenu', json.smallProgramsMenu));
 	sc.userPrograms.storage_key = 'blksc3UserPrograms/xml';
 	sc.user_program_menu_init('userMenu', xmlText => xml.load_xml(blk, xmlText));
 	sc.select_on_change('actionsMenu', function(menuElement, entryName) {
@@ -134,7 +143,8 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	});
 	layout_menu_init(blk);
 	if(withUiCtl) {
-		sc.fetch_utf8_then('html/ui-ctl.html', sc.setter_for_inner_html_of('uiCtlContainer'));
+		sc.fetch_utf8('html/ui-ctl.html', { cache: 'no-cache' })
+			.then(sc.setter_for_inner_html_of('uiCtlContainer'));
 	}
 	return blk;
 }

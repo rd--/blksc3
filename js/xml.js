@@ -16,15 +16,14 @@ function load_xml(blk, xmlText) {
 
 // Read selected .xml file.
 export function read_input_xml(inputId, blk) {
-	sc.read_text_file_from_file_input_then(inputId, 0, (xmlText) => load_xml(blk, xmlText));
+	const inputFile = sc.get_file_input_file(inputId, 0);
+	inputFile.text().then(xmlText => load_xml(blk, xmlText));
 }
 
 // Read and load .xml format program from URL.
 export function fetch_xml(blk, xmlUrl) {
-	sc.fetch_utf8_then(
-		sc.url_append_timestamp(xmlUrl),
-		xmlText => load_xml(blk, xmlText)
-	);
+	sc.fetch_utf8(sc.url_append_timestamp(xmlUrl), { cache: 'no-cache' })
+		.then(xmlText => load_xml(blk, xmlText));
 }
 
 // If the Url has fileParamKey, load the named .xml file.
