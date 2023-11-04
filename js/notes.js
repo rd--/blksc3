@@ -1,20 +1,20 @@
 // Convert .md text to .html
-function markdown_to_html(mdText) {
+function markdownToHtml(mdText) {
 	var mdReader = new commonmark.Parser({smart: true});
 	var htmlWriter = new commonmark.HtmlRenderer();
-	// console.debug('markdown_to_html', mdText);
+	// console.debug('markdownToHtml', mdText);
 	return htmlWriter.render(mdReader.parse(mdText));
 }
 
 // .stc files can have a .md notes segment.
-function md_notes_from_stc(stcText) {
+function mdNotesFromStc(stcText) {
 	var lines = stcText.split('\n');
-	var from_marker = sc.arrayDropWhile(lines, str => !sc.stringIsPrefixOf('(* ---- notes.md', str));
-	return sc.arrayUnlines(sc.arrayTail(from_marker));
+	var fromMarker = sc.arrayDropWhile(lines, str => !sc.stringIsPrefixOf('(* ---- notes.md', str));
+	return sc.arrayUnlines(sc.arrayTail(fromMarker));
 }
 
 // Load .stc from fileName, extract .md notes, convert to .html.
-export function load_notes(fileName) {
-	return sc.fetch_utf8(fileName, { cache: 'no-cache' })
-		.then(stcText => markdown_to_html(md_notes_from_stc(stcText)));
+export function loadNotes(fileName) {
+	return sc.fetchUtf8(fileName, { cache: 'no-cache' })
+		.then(stcText => markdownToHtml(mdNotesFromStc(stcText)));
 }

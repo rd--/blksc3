@@ -96,7 +96,7 @@ blk_gen = do
       u_seq = filter (\u -> Rename.sc3_ugen_rename (Db.ugen_name u) `elem` lst) Db.ugen_db
       p_seq = filter (\p -> Db.pseudo_ugen_name p `elem` lst) Db.pseudo_ugen_db
       dir = "/home/rohan/sw/blksc3/"
-      pre = "import { blk_ugen_codegen } from './blksc3-gen.js'\n\nexport function blksc3_init_codegen_ugen(blk) {\n";
+      pre = "import { blkUgenCodeGen } from './blksc3-gen.js'\n\nexport function blksc3_init_codegen_ugen(blk) {\n";
       gen_js = unlines (pre : map Blockly.u_blk_gen u_seq ++ map Blockly.p_blk_gen p_seq)
       gen_json = "[\n" ++ (intercalate "    ,\n" (map Blockly.u_blk_dfn u_seq ++ map Blockly.p_blk_dfn p_seq)) ++ "]"
   writeFile (dir ++ "js/blksc3-gen-ugen.js") gen_js
