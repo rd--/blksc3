@@ -1,4 +1,4 @@
-(* Lag ; https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html 3.4 *)
+(* Lag.1 *)
 Ringz(Saw(LinExp(Lag(LfNoise0(5), 0.1), -1, 1, 100, 2000)) * 0.2, 1000, 0.01) * 0.1
 
 (* ---- notes.md ---- *)
@@ -10,3 +10,5 @@ This is essentially the same as OnePole except that instead of supplying the coe
 
 - in: input signal
 - lagTime: 60 dB lag time in seconds.
+
+Courtesy <https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html> 3.4

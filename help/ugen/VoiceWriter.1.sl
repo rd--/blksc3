@@ -1,4 +1,4 @@
-(* VoiceWriter *)
+(* VoiceWriter.1.sl *)
 VoiceWriter(16) {
 	| tr = Impulse(Rand(0.15, 0.85), Rand(0, 1)); |
 	(

@@ -1,12 +1,12 @@
-(* FbSineC ; randomly modulate params *)
+(* FbSineC.1 *)
 FbSineC(
-    LfNoise2([1, 2]) * 1000 + 10000,
-    LfNoise2([1, 2]) * 32 + 33,
-    LfNoise2([1, 2]) * 0.5,
-    LfNoise2([1, 2]) * 0.05 + 1.05,
-    LfNoise2([1, 2]) * 0.3 + 0.3,
-    0.1,
-    0.1
+	LfNoise2([1 2]) * 1000 + 10000,
+	LfNoise2([1 2]) * 32 + 33,
+	LfNoise2([1 2]) * 0.5,
+	LfNoise2([1 2]) * 0.05 + 1.05,
+	LfNoise2([1 2]) * 0.3 + 0.3,
+	0.1,
+	0.1
 ) * 0.05
 
 (* ---- notes.md ---- *)
@@ -19,3 +19,4 @@ This uses a linear congruential function to drive the phase indexing of a sine w
 
 For _im_ of 1, _fb_ of 0, and _a_ of 1 a normal sinewave results.
 
+In this program the input parameters are randomly modulated.

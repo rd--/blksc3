@@ -1,4 +1,4 @@
-(* PanAz.2.help *)
+(* PanAz.2.sl *)
 { 0 } ! 8 ++ PanAz(
 	8,
 	PinkNoise(),

@@ -1,4 +1,4 @@
-(* PanAz.1.help *)
+(* PanAz.1.sl *)
 PanAz(
 	2,
 	PinkNoise(),

@@ -1,4 +1,4 @@
-(* PmOsc ; event control *)
+(* PmOsc.3 ; event control *)
 var s = Voicer(16, { :e |
     var cps = (e.x * 24 + 42).MidiCps;
     var cpsv = cps + (cps * SinOsc(e.y * 4 + 4, 0) * 0.02);

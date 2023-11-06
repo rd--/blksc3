@@ -1,4 +1,4 @@
-(* PulseCount ; count impulses with periodic reset *)
+(* PulseCount.1 *)
 SinOsc(PulseCount(Impulse(10, 0), Impulse(0.4, 0)) * 200, 0) * 0.05
 
 (* ---- notes.md ---- *)

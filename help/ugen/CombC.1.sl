@@ -1,4 +1,4 @@
-(* CombC ; event control *)
+(* CombC.1.sl ; event control *)
 var lfo = SinOsc(0.5, 0);
 var osc = Voicer(16) { :e |
 	SinOsc(e.p.UnitCps, 0) * lfo * e.w * e.z

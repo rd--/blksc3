@@ -1,10 +1,13 @@
 (* Decay2 ; texture *)
-OverlapTexture({
-    arg tr;
-    var e = Decay2(Impulse({ TRand(10, 13, tr) }.dup, 0), TRand(0.001, 0.01, tr), TRand(0.005, 0.02, tr));
-    var f = SinOsc({ TRand(10, 13, tr) }.dup, 0) * e * { TRand(4, 7, tr) }.dup;
-    var r4 = { TRand(2220, 2227, Impulse(0.7, 0)) }.dup;
-    SinOsc(r4, 0) * f * 0.15
+OverlapTexture({ :tr |
+	var e = Decay2(
+		Impulse({ TRand(10, 13, tr) } ! 2, 0),
+		TRand(0.001, 0.01, tr),
+		TRand(0.005, 0.02, tr)
+	);
+	var a = SinOsc({ TRand(10, 13, tr) } ! 2, 0) * e * ({ TRand(4, 7, tr) } ! 2);
+	var o = SinOsc({ TRand(2220, 2227, Impulse(0.7, 0)) } ! 2, 0);
+	o * a * 0.15
 }, 2, 4, 2)
 
 (* ---- notes.md ---- *)

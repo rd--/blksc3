@@ -1,5 +1,5 @@
-(* Gendy1 ; texture *)
-var f = {
+(* Gendy1.1 *)
+{
 	Pan2(
 		SinOsc(
 			Gendy1(
@@ -18,5 +18,10 @@ var f = {
 		),
 		Rand(-1, 1), 0.1
 	)
-};
-f !+ 10
+} !+ 10
+
+(* ---- notes.md ---- *)
+# Gendy1
+
+Random texture.
+

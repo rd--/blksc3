@@ -1,7 +1,7 @@
 (* Duplicate *)
-Splay2(
-	{ SinOsc(Rand(36, 72).MidiCps, 0) * Rand(0.05, 0.1) } ! 12
-)
+{
+	SinOsc(Rand(36, 72).MidiCps, 0) * Rand(0.05, 0.1)
+} !^ 12
 
 (* ---- notes.md ---- *)
 # !

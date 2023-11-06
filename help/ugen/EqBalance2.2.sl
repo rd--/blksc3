@@ -1,4 +1,4 @@
-(* EqBalance2 ; modulate position *)
+(* EqBalance2.2 *)
 var b = SinOsc(MouseX(0.25, 0.7, 0, 0.2), 0);
 {
 	EqBalance2(Saw(TRand(33, 55, b)), Pulse(TRand(33, 55, b), 0.5), b) * 0.05

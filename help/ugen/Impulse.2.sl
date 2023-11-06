@@ -1,4 +1,4 @@
-(* Impulse ; lovely bells ; https://github.com/cianoc/supercollider_fragments *)
+(* Impulse.2 *)
 var t = Impulse(1 / 3, 0);
 var m = { Rand(1, 3) } ! 2;
 var env = Decay2(t, 0.01 * m, 1 * m) / (1 .. 6);
@@ -13,3 +13,6 @@ Outputs non band limited single sample impulses.
 
 - freq: frequency in Hertz
 - phase: phase offset in cycles (0..1)
+
+Lovely bells,
+courtesy <https://github.com/cianoc/supercollider_fragments>

@@ -1,4 +1,4 @@
-(* KeyState *)
+(* KeyState.1 *)
 SinOsc(110, 0) * KeyState(38, 0, 0.1, 0.2)
 
 (* ---- notes.md ---- *)
