@@ -1,4 +1,4 @@
-(* TGrains *)
+(* TGrains.1 *)
 var sf = SfAcquire("crotale-d6", 1, [1]); (* crotale-d6 floating_1 then *)
 var trRate = MouseY(2, 120, 1, 0.2);
 var tr = Impulse(trRate, 0);
