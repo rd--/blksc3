@@ -1,5 +1,5 @@
 (* SfRead ; phasor as phase input *)
-var sf = SfAcquire("piano-c5", 2, [1, 2]);
+var sf = SfAcquireStereo('piano-c5');
 {
     var tr = Impulse(2 ^ Rand(1, 3) / SfDur(sf), 0).kr;
     var mnn = TiRand(-2, 0, tr) * 12 + TChoose(tr, [-3 0 2 5 7]);

@@ -1,5 +1,5 @@
 (* SfRead ; phasor as phase input *)
-var sf = SfAcquire("harp-a4", 2, [1, 2]);
+var sf = SfAcquireStereo('harp-a4');
 {
     var tr = Impulse(2 ^ Rand(1, 3) / (SfDur(sf) * 4), 0).kr;
     var mnn = TiRand(-2, 0, tr) * 12 + TChoose(tr, [0 2.1 4.9 7 9.2]);

@@ -17,395 +17,405 @@
           <block type="variables_set" id="h*b^1Nh:``58HCuPRmss">
             <field name="VAR" id="85k^xrpE2?|n5id3;-Wb">buf</field>
             <value name="VALUE">
-              <block type="sc3_SfAcquire" id="twZQA0mfXBl+b9pTWe9N" inline="true">
-                <value name="URLORKEY">
-                  <shadow type="math_number" id="91U9K+:6S!LvY-Y#=ce{">
-                    <field name="NUM">0</field>
-                  </shadow>
-                  <block type="text" id="q_+nA44|jke6kLK-X8?j">
-                    <field name="TEXT">crotale-d6</field>
-                  </block>
-                </value>
-                <value name="NUMBEROFCHANNELS">
-                  <shadow type="math_number" id="1IM]2#pgEDeubP5^g#Ft">
-                    <field name="NUM">0</field>
-                  </shadow>
-                  <block type="variables_get" id="]`E}=z11lk1=g}RTklac">
-                    <field name="VAR" id="MQxS4Iq3ww5d=[TgT2c-">nc</field>
-                  </block>
-                </value>
-                <value name="CHANNELINDICES">
-                  <shadow type="math_number" id="JS#Iw|Y??1i;$5Fo*.mY">
-                    <field name="NUM">0</field>
-                  </shadow>
-                  <block type="lists_create_with" id="QC0oLg1`i2rH+s%x;P)K" inline="true">
-                    <mutation items="1"></mutation>
-                    <value name="ADD0">
-                      <shadow type="math_number" id="Xp~H%A*;Tmi7;)Q6ovQ0">
+              <block type="sc3_ArrayProc1" id="C:Fl*:VXm0nSBrX2i?/3">
+                <field name="OP">first</field>
+                <value name="IN">
+                  <block type="sc3_SfAcquire" id="twZQA0mfXBl+b9pTWe9N" inline="true">
+                    <value name="URLORKEY">
+                      <shadow type="math_number" id="91U9K+:6S!LvY-Y#=ce{">
                         <field name="NUM">0</field>
                       </shadow>
-                      <block type="math_number" id="48K`K#7[hzy(PiGy=;6:">
-                        <field name="NUM">1</field>
+                      <block type="text" id="q_+nA44|jke6kLK-X8?j">
+                        <field name="TEXT">crotale-d6</field>
                       </block>
                     </value>
+                    <value name="NUMBEROFCHANNELS">
+                      <shadow type="math_number" id="1IM]2#pgEDeubP5^g#Ft">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="variables_get" id="]`E}=z11lk1=g}RTklac">
+                        <field name="VAR" id="MQxS4Iq3ww5d=[TgT2c-">nc</field>
+                      </block>
+                    </value>
+                    <value name="CHANNELINDICES">
+                      <shadow type="math_number" id="JS#Iw|Y??1i;$5Fo*.mY">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="lists_create_with" id="QC0oLg1`i2rH+s%x;P)K" inline="true">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                          <shadow type="math_number" id="Xp~H%A*;Tmi7;)Q6ovQ0">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="math_number" id="48K`K#7[hzy(PiGy=;6:">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="MUL">
+                      <shadow type="math_number" id="%|;Z]NLVz!KE1zK_xZ#9">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <value name="ADD">
+                      <shadow type="math_number" id="k$Wfu_;l;PNK{K#XaL#:">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
                   </block>
-                </value>
-                <value name="MUL">
-                  <shadow type="math_number" id="%|;Z]NLVz!KE1zK_xZ#9">
-                    <field name="NUM">1</field>
-                  </shadow>
-                </value>
-                <value name="ADD">
-                  <shadow type="math_number" id="k$Wfu_;l;PNK{K#XaL#:">
-                    <field name="NUM">0</field>
-                  </shadow>
                 </value>
               </block>
             </value>
             <next>
               <block type="sc3_Play" id="BYvfA;e+G1[i]Gccf59!">
                 <value name="CODE">
-                  <block type="lists_create_with" id="w$LN,RZ~S^9n%b],kQ8D" inline="false">
-                    <mutation items="3"></mutation>
-                    <value name="ADD0">
-                      <block type="sc3_ShufflerB" id="3Yg;|Pt.+-v,:jVt=z!3" inline="false">
-                        <value name="BUFNUM">
-                          <block type="variables_get" id="dKZiQ.Lr:A2Ci(s5n_2i">
-                            <field name="VAR" id="85k^xrpE2?|n5id3;-Wb">buf</field>
+                  <block type="sc3_ArrayProc1" id="HzpYPLz).y$f81)%SEv/">
+                    <field name="OP">sum</field>
+                    <value name="IN">
+                      <block type="lists_create_with" id="w$LN,RZ~S^9n%b],kQ8D" inline="false">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="sc3_ShufflerB" id="3Yg;|Pt.+-v,:jVt=z!3" inline="false">
+                            <value name="BUFNUM">
+                              <block type="variables_get" id="dKZiQ.Lr:A2Ci(s5n_2i">
+                                <field name="VAR" id="85k^xrpE2?|n5id3;-Wb">buf</field>
+                              </block>
+                            </value>
+                            <value name="READLOCATIONMINIMA">
+                              <block type="math_number" id="GpsSOn8sk?dd+;^A`zn1">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="READLOCATIONMAXIMA">
+                              <block type="math_number" id="^HIP]@DRHOI3U2u?3c8_">
+                                <field name="NUM">0.05</field>
+                              </block>
+                            </value>
+                            <value name="READINCREMENTMINIMA">
+                              <block type="math_number" id="b;kiX*M$Z|ypC/5|k]%M">
+                                <field name="NUM">0.95</field>
+                              </block>
+                            </value>
+                            <value name="READINCREMENTMAXIMA">
+                              <block type="math_number" id="~$!)n((LdOm,Peeh570F">
+                                <field name="NUM">1.05</field>
+                              </block>
+                            </value>
+                            <value name="DURATIONMINIMA">
+                              <block type="math_number" id="DFK_iA*j(j~#N!+9PsQ=">
+                                <field name="NUM">0.035</field>
+                              </block>
+                            </value>
+                            <value name="DURATIONMAXIMA">
+                              <block type="math_number" id="0bati]@kbIH{{xpkbdv2">
+                                <field name="NUM">0.05</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPEAMPLITUDEMINIMA">
+                              <block type="math_number" id="v:l@;{e*6K9^W@oe|rSd">
+                                <field name="NUM">0.1</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPEAMPLITUDEMAXIMA">
+                              <block type="math_number" id="!v:-jd;(Oc#=0KkA.GA|">
+                                <field name="NUM">0.2</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESHAPEMINIMA">
+                              <block type="math_number" id="[A1(3XoZl?GvqIJ0.jV)">
+                                <field name="NUM">0.4</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESHAPEMAXIMA">
+                              <block type="math_number" id="anh|t`ayDNIyoLWw=U:O">
+                                <field name="NUM">0.6</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESKEWMINIMA">
+                              <block type="math_number" id="00o!x5NN$?a0s_3U:Wzf">
+                                <field name="NUM">0.4</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESKEWMAXIMA">
+                              <block type="math_number" id="{Q=#[N581ZojM7`P1zNw">
+                                <field name="NUM">0.6</field>
+                              </block>
+                            </value>
+                            <value name="STEREOLOCATIONMINIMA">
+                              <block type="math_number" id="W[fT?`3Vbh$nua8TXg(y">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="STEREOLOCATIONMAXIMA">
+                              <block type="math_number" id="qaSEPJfvHa0dZDXTYNN}">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="INTEROFFSETTIMEMINIMA">
+                              <block type="math_number" id=";%gf24*DWjzm3UV$INyu">
+                                <field name="NUM">0.005</field>
+                              </block>
+                            </value>
+                            <value name="INTEROFFSETTIMEMAXIMA">
+                              <block type="math_number" id="5qll`BD@nMA/p,[sWV-H">
+                                <field name="NUM">0.01</field>
+                              </block>
+                            </value>
+                            <value name="FTABLEREADLOCATIONINCREMENT">
+                              <block type="math_number" id="V6{q|B6CclH@[;nfKab{">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="READINCREMENTQUANTA">
+                              <block type="math_number" id="_Ihk^k99TEU3A=8YwiSS">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="INTEROFFSETTIMEQUANTA">
+                              <block type="math_number" id="yG._C}4M){I})Y!)q8m!">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="MUL">
+                              <shadow type="math_number" id="iDnrzY_P~sd=cQLQdHyw">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="?0I]W*o}?.7CDBW3V?}o">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
                           </block>
                         </value>
-                        <value name="READLOCATIONMINIMA">
-                          <block type="math_number" id="GpsSOn8sk?dd+;^A`zn1">
-                            <field name="NUM">0</field>
+                        <value name="ADD1">
+                          <block type="sc3_ShufflerB" id="#IVL$z*9s09cdHehGOt*" inline="false">
+                            <value name="BUFNUM">
+                              <block type="variables_get" id="y0pm.)a7U$7:p-QQm]Gj">
+                                <field name="VAR" id="85k^xrpE2?|n5id3;-Wb">buf</field>
+                              </block>
+                            </value>
+                            <value name="READLOCATIONMINIMA">
+                              <block type="math_number" id="4M03RsAoMx?Wh5~Fm/!y">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="READLOCATIONMAXIMA">
+                              <block type="math_number" id="MEj(VMLA!F$cVd9ty.%d">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="READINCREMENTMINIMA">
+                              <block type="math_number" id="e@he;alC|S!^o++f|}9F">
+                                <field name="NUM">0.5</field>
+                              </block>
+                            </value>
+                            <value name="READINCREMENTMAXIMA">
+                              <block type="math_number" id="f#SK}/B4SECqe-`KloAH">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                            <value name="DURATIONMINIMA">
+                              <block type="math_number" id="@nNNWw9tYXx~px8u%I/x">
+                                <field name="NUM">0.025</field>
+                              </block>
+                            </value>
+                            <value name="DURATIONMAXIMA">
+                              <block type="math_number" id="TDAP)WGYrK~J.nh^%3Ko">
+                                <field name="NUM">0.075</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPEAMPLITUDEMINIMA">
+                              <block type="math_number" id="V/9Zj7zF6gziI}N~X$Nn">
+                                <field name="NUM">0.2</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPEAMPLITUDEMAXIMA">
+                              <block type="math_number" id="A-@/1SXiA18Cv:7:2_3D">
+                                <field name="NUM">0.6</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESHAPEMINIMA">
+                              <block type="math_number" id="3I$Uo9XY89wn[G0]W78(">
+                                <field name="NUM">0.1</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESHAPEMAXIMA">
+                              <block type="math_number" id=";HCivPC;oi906P_+oKg,">
+                                <field name="NUM">0.9</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESKEWMINIMA">
+                              <block type="math_number" id="vUFZ;f+i[3(5#6nk/W8L">
+                                <field name="NUM">0.1</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESKEWMAXIMA">
+                              <block type="math_number" id="[YK|NdGf1QdH4fiPo~#?">
+                                <field name="NUM">0.9</field>
+                              </block>
+                            </value>
+                            <value name="STEREOLOCATIONMINIMA">
+                              <block type="math_number" id="H4Pq6c;+QVFw8KuAw:,`">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="STEREOLOCATIONMAXIMA">
+                              <block type="math_number" id="!!_ZjQaI}O_y@wiU2#~d">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="INTEROFFSETTIMEMINIMA">
+                              <block type="math_number" id="!q)^0b4*MX8SPv.-yc{+">
+                                <field name="NUM">0.005</field>
+                              </block>
+                            </value>
+                            <value name="INTEROFFSETTIMEMAXIMA">
+                              <block type="math_number" id="J:2:Y7YSm0SNBjg_KNF;">
+                                <field name="NUM">0.05</field>
+                              </block>
+                            </value>
+                            <value name="FTABLEREADLOCATIONINCREMENT">
+                              <block type="math_number" id="UP]Wmw|V_o5Y-XQ_1AWw">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="READINCREMENTQUANTA">
+                              <block type="math_number" id="]cb$KM6;ips#~qb4X?@x">
+                                <field name="NUM">0.5</field>
+                              </block>
+                            </value>
+                            <value name="INTEROFFSETTIMEQUANTA">
+                              <block type="math_number" id="[xE1^!7nZr?v/Q;%?#|}">
+                                <field name="NUM">0.005</field>
+                              </block>
+                            </value>
+                            <value name="MUL">
+                              <shadow type="math_number" id="h_jCA*C6!:kBX[x?8Ny3">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="|Y*Ad(u)oa9lY9KOd7wo">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
                           </block>
                         </value>
-                        <value name="READLOCATIONMAXIMA">
-                          <block type="math_number" id="^HIP]@DRHOI3U2u?3c8_">
-                            <field name="NUM">0.05</field>
+                        <value name="ADD2">
+                          <block type="sc3_ShufflerB" id="iRW5hZ%]4wxYr023P|!u" inline="false">
+                            <value name="BUFNUM">
+                              <block type="variables_get" id="{1Zf9lByaYt!74!H@*w9">
+                                <field name="VAR" id="85k^xrpE2?|n5id3;-Wb">buf</field>
+                              </block>
+                            </value>
+                            <value name="READLOCATIONMINIMA">
+                              <block type="math_number" id="!(gvphT(sQ-]w_X{R,[i">
+                                <field name="NUM">0.4</field>
+                              </block>
+                            </value>
+                            <value name="READLOCATIONMAXIMA">
+                              <block type="math_number" id=",JA366DN$JX#Pc4e|oaQ">
+                                <field name="NUM">0.5</field>
+                              </block>
+                            </value>
+                            <value name="READINCREMENTMINIMA">
+                              <block type="math_number" id="O82P.ek9RDr6Lk[Mq@P;">
+                                <field name="NUM">0.5</field>
+                              </block>
+                            </value>
+                            <value name="READINCREMENTMAXIMA">
+                              <block type="math_number" id="*6h[ytf;pq`H*]p*egi]">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                            <value name="DURATIONMINIMA">
+                              <block type="math_number" id="6Ln.aa0JYbiCJ!=K.tdl">
+                                <field name="NUM">0.05</field>
+                              </block>
+                            </value>
+                            <value name="DURATIONMAXIMA">
+                              <block type="math_number" id="DzF^~C6%}ewD6o/TIRB%">
+                                <field name="NUM">0.15</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPEAMPLITUDEMINIMA">
+                              <block type="math_number" id=";jtlYb0/VxW]w{=YSW*}">
+                                <field name="NUM">0.2</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPEAMPLITUDEMAXIMA">
+                              <block type="math_number" id="QS~8R).]r1yH*,/H;i2]">
+                                <field name="NUM">0.5</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESHAPEMINIMA">
+                              <block type="math_number" id="u#s?XV;R7T.ooaZyW~b#">
+                                <field name="NUM">0.3</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESHAPEMAXIMA">
+                              <block type="math_number" id="MPLc;8IC~Lct1!MVOAxB">
+                                <field name="NUM">0.7</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESKEWMINIMA">
+                              <block type="math_number" id="Pz!eK^_P*8/6UtJq`9[!">
+                                <field name="NUM">0.3</field>
+                              </block>
+                            </value>
+                            <value name="ENVELOPESKEWMAXIMA">
+                              <block type="math_number" id="OJ-|uTjzCh]IrmO2/QMB">
+                                <field name="NUM">0.7</field>
+                              </block>
+                            </value>
+                            <value name="STEREOLOCATIONMINIMA">
+                              <block type="math_number" id="$O_-slrqRS3Tfaz9jLY$">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="STEREOLOCATIONMAXIMA">
+                              <block type="math_number" id="gf9Ic2yVKRZinR`YcOeb">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="INTEROFFSETTIMEMINIMA">
+                              <block type="math_number" id="vx)Ha$=]Ie!tjb^05cVK">
+                                <field name="NUM">0.05</field>
+                              </block>
+                            </value>
+                            <value name="INTEROFFSETTIMEMAXIMA">
+                              <block type="math_number" id="L}m[rEnyu5=f^Pvzm;q1">
+                                <field name="NUM">0.25</field>
+                              </block>
+                            </value>
+                            <value name="FTABLEREADLOCATIONINCREMENT">
+                              <block type="math_number" id="-B?!tw[Y!oA~*;tqN}?u">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="READINCREMENTQUANTA">
+                              <block type="math_number" id="PGx#IhxXz0wl:^Ecphpq">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="INTEROFFSETTIMEQUANTA">
+                              <block type="math_number" id="YEA+0,wxZ8NJ1f-cf9V5">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="MUL">
+                              <shadow type="math_number" id="(j#u;[}^E(^cKA_+cWbp">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <value name="ADD">
+                              <shadow type="math_number" id="NKTRG|/T2u6Vg,nOO][8">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
                           </block>
-                        </value>
-                        <value name="READINCREMENTMINIMA">
-                          <block type="math_number" id="b;kiX*M$Z|ypC/5|k]%M">
-                            <field name="NUM">0.95</field>
-                          </block>
-                        </value>
-                        <value name="READINCREMENTMAXIMA">
-                          <block type="math_number" id="~$!)n((LdOm,Peeh570F">
-                            <field name="NUM">1.05</field>
-                          </block>
-                        </value>
-                        <value name="DURATIONMINIMA">
-                          <block type="math_number" id="DFK_iA*j(j~#N!+9PsQ=">
-                            <field name="NUM">0.035</field>
-                          </block>
-                        </value>
-                        <value name="DURATIONMAXIMA">
-                          <block type="math_number" id="0bati]@kbIH{{xpkbdv2">
-                            <field name="NUM">0.05</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPEAMPLITUDEMINIMA">
-                          <block type="math_number" id="v:l@;{e*6K9^W@oe|rSd">
-                            <field name="NUM">0.1</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPEAMPLITUDEMAXIMA">
-                          <block type="math_number" id="!v:-jd;(Oc#=0KkA.GA|">
-                            <field name="NUM">0.2</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESHAPEMINIMA">
-                          <block type="math_number" id="[A1(3XoZl?GvqIJ0.jV)">
-                            <field name="NUM">0.4</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESHAPEMAXIMA">
-                          <block type="math_number" id="anh|t`ayDNIyoLWw=U:O">
-                            <field name="NUM">0.6</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESKEWMINIMA">
-                          <block type="math_number" id="00o!x5NN$?a0s_3U:Wzf">
-                            <field name="NUM">0.4</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESKEWMAXIMA">
-                          <block type="math_number" id="{Q=#[N581ZojM7`P1zNw">
-                            <field name="NUM">0.6</field>
-                          </block>
-                        </value>
-                        <value name="STEREOLOCATIONMINIMA">
-                          <block type="math_number" id="W[fT?`3Vbh$nua8TXg(y">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="STEREOLOCATIONMAXIMA">
-                          <block type="math_number" id="qaSEPJfvHa0dZDXTYNN}">
-                            <field name="NUM">1</field>
-                          </block>
-                        </value>
-                        <value name="INTEROFFSETTIMEMINIMA">
-                          <block type="math_number" id=";%gf24*DWjzm3UV$INyu">
-                            <field name="NUM">0.005</field>
-                          </block>
-                        </value>
-                        <value name="INTEROFFSETTIMEMAXIMA">
-                          <block type="math_number" id="5qll`BD@nMA/p,[sWV-H">
-                            <field name="NUM">0.01</field>
-                          </block>
-                        </value>
-                        <value name="FTABLEREADLOCATIONINCREMENT">
-                          <block type="math_number" id="V6{q|B6CclH@[;nfKab{">
-                            <field name="NUM">1</field>
-                          </block>
-                        </value>
-                        <value name="READINCREMENTQUANTA">
-                          <block type="math_number" id="_Ihk^k99TEU3A=8YwiSS">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="INTEROFFSETTIMEQUANTA">
-                          <block type="math_number" id="yG._C}4M){I})Y!)q8m!">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="MUL">
-                          <shadow type="math_number" id="iDnrzY_P~sd=cQLQdHyw">
-                            <field name="NUM">1</field>
-                          </shadow>
-                        </value>
-                        <value name="ADD">
-                          <shadow type="math_number" id="?0I]W*o}?.7CDBW3V?}o">
-                            <field name="NUM">0</field>
-                          </shadow>
-                        </value>
-                      </block>
-                    </value>
-                    <value name="ADD1">
-                      <block type="sc3_ShufflerB" id="#IVL$z*9s09cdHehGOt*" inline="false">
-                        <value name="BUFNUM">
-                          <block type="variables_get" id="y0pm.)a7U$7:p-QQm]Gj">
-                            <field name="VAR" id="85k^xrpE2?|n5id3;-Wb">buf</field>
-                          </block>
-                        </value>
-                        <value name="READLOCATIONMINIMA">
-                          <block type="math_number" id="4M03RsAoMx?Wh5~Fm/!y">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="READLOCATIONMAXIMA">
-                          <block type="math_number" id="MEj(VMLA!F$cVd9ty.%d">
-                            <field name="NUM">1</field>
-                          </block>
-                        </value>
-                        <value name="READINCREMENTMINIMA">
-                          <block type="math_number" id="e@he;alC|S!^o++f|}9F">
-                            <field name="NUM">0.5</field>
-                          </block>
-                        </value>
-                        <value name="READINCREMENTMAXIMA">
-                          <block type="math_number" id="f#SK}/B4SECqe-`KloAH">
-                            <field name="NUM">2</field>
-                          </block>
-                        </value>
-                        <value name="DURATIONMINIMA">
-                          <block type="math_number" id="@nNNWw9tYXx~px8u%I/x">
-                            <field name="NUM">0.025</field>
-                          </block>
-                        </value>
-                        <value name="DURATIONMAXIMA">
-                          <block type="math_number" id="TDAP)WGYrK~J.nh^%3Ko">
-                            <field name="NUM">0.075</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPEAMPLITUDEMINIMA">
-                          <block type="math_number" id="V/9Zj7zF6gziI}N~X$Nn">
-                            <field name="NUM">0.2</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPEAMPLITUDEMAXIMA">
-                          <block type="math_number" id="A-@/1SXiA18Cv:7:2_3D">
-                            <field name="NUM">0.6</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESHAPEMINIMA">
-                          <block type="math_number" id="3I$Uo9XY89wn[G0]W78(">
-                            <field name="NUM">0.1</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESHAPEMAXIMA">
-                          <block type="math_number" id=";HCivPC;oi906P_+oKg,">
-                            <field name="NUM">0.9</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESKEWMINIMA">
-                          <block type="math_number" id="vUFZ;f+i[3(5#6nk/W8L">
-                            <field name="NUM">0.1</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESKEWMAXIMA">
-                          <block type="math_number" id="[YK|NdGf1QdH4fiPo~#?">
-                            <field name="NUM">0.9</field>
-                          </block>
-                        </value>
-                        <value name="STEREOLOCATIONMINIMA">
-                          <block type="math_number" id="H4Pq6c;+QVFw8KuAw:,`">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="STEREOLOCATIONMAXIMA">
-                          <block type="math_number" id="!!_ZjQaI}O_y@wiU2#~d">
-                            <field name="NUM">1</field>
-                          </block>
-                        </value>
-                        <value name="INTEROFFSETTIMEMINIMA">
-                          <block type="math_number" id="!q)^0b4*MX8SPv.-yc{+">
-                            <field name="NUM">0.005</field>
-                          </block>
-                        </value>
-                        <value name="INTEROFFSETTIMEMAXIMA">
-                          <block type="math_number" id="J:2:Y7YSm0SNBjg_KNF;">
-                            <field name="NUM">0.05</field>
-                          </block>
-                        </value>
-                        <value name="FTABLEREADLOCATIONINCREMENT">
-                          <block type="math_number" id="UP]Wmw|V_o5Y-XQ_1AWw">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="READINCREMENTQUANTA">
-                          <block type="math_number" id="]cb$KM6;ips#~qb4X?@x">
-                            <field name="NUM">0.5</field>
-                          </block>
-                        </value>
-                        <value name="INTEROFFSETTIMEQUANTA">
-                          <block type="math_number" id="[xE1^!7nZr?v/Q;%?#|}">
-                            <field name="NUM">0.005</field>
-                          </block>
-                        </value>
-                        <value name="MUL">
-                          <shadow type="math_number" id="h_jCA*C6!:kBX[x?8Ny3">
-                            <field name="NUM">1</field>
-                          </shadow>
-                        </value>
-                        <value name="ADD">
-                          <shadow type="math_number" id="|Y*Ad(u)oa9lY9KOd7wo">
-                            <field name="NUM">0</field>
-                          </shadow>
-                        </value>
-                      </block>
-                    </value>
-                    <value name="ADD2">
-                      <block type="sc3_ShufflerB" id="iRW5hZ%]4wxYr023P|!u" inline="false">
-                        <value name="BUFNUM">
-                          <block type="variables_get" id="{1Zf9lByaYt!74!H@*w9">
-                            <field name="VAR" id="85k^xrpE2?|n5id3;-Wb">buf</field>
-                          </block>
-                        </value>
-                        <value name="READLOCATIONMINIMA">
-                          <block type="math_number" id="!(gvphT(sQ-]w_X{R,[i">
-                            <field name="NUM">0.4</field>
-                          </block>
-                        </value>
-                        <value name="READLOCATIONMAXIMA">
-                          <block type="math_number" id=",JA366DN$JX#Pc4e|oaQ">
-                            <field name="NUM">0.5</field>
-                          </block>
-                        </value>
-                        <value name="READINCREMENTMINIMA">
-                          <block type="math_number" id="O82P.ek9RDr6Lk[Mq@P;">
-                            <field name="NUM">0.5</field>
-                          </block>
-                        </value>
-                        <value name="READINCREMENTMAXIMA">
-                          <block type="math_number" id="*6h[ytf;pq`H*]p*egi]">
-                            <field name="NUM">2</field>
-                          </block>
-                        </value>
-                        <value name="DURATIONMINIMA">
-                          <block type="math_number" id="6Ln.aa0JYbiCJ!=K.tdl">
-                            <field name="NUM">0.05</field>
-                          </block>
-                        </value>
-                        <value name="DURATIONMAXIMA">
-                          <block type="math_number" id="DzF^~C6%}ewD6o/TIRB%">
-                            <field name="NUM">0.15</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPEAMPLITUDEMINIMA">
-                          <block type="math_number" id=";jtlYb0/VxW]w{=YSW*}">
-                            <field name="NUM">0.2</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPEAMPLITUDEMAXIMA">
-                          <block type="math_number" id="QS~8R).]r1yH*,/H;i2]">
-                            <field name="NUM">0.5</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESHAPEMINIMA">
-                          <block type="math_number" id="u#s?XV;R7T.ooaZyW~b#">
-                            <field name="NUM">0.3</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESHAPEMAXIMA">
-                          <block type="math_number" id="MPLc;8IC~Lct1!MVOAxB">
-                            <field name="NUM">0.7</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESKEWMINIMA">
-                          <block type="math_number" id="Pz!eK^_P*8/6UtJq`9[!">
-                            <field name="NUM">0.3</field>
-                          </block>
-                        </value>
-                        <value name="ENVELOPESKEWMAXIMA">
-                          <block type="math_number" id="OJ-|uTjzCh]IrmO2/QMB">
-                            <field name="NUM">0.7</field>
-                          </block>
-                        </value>
-                        <value name="STEREOLOCATIONMINIMA">
-                          <block type="math_number" id="$O_-slrqRS3Tfaz9jLY$">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="STEREOLOCATIONMAXIMA">
-                          <block type="math_number" id="gf9Ic2yVKRZinR`YcOeb">
-                            <field name="NUM">1</field>
-                          </block>
-                        </value>
-                        <value name="INTEROFFSETTIMEMINIMA">
-                          <block type="math_number" id="vx)Ha$=]Ie!tjb^05cVK">
-                            <field name="NUM">0.05</field>
-                          </block>
-                        </value>
-                        <value name="INTEROFFSETTIMEMAXIMA">
-                          <block type="math_number" id="L}m[rEnyu5=f^Pvzm;q1">
-                            <field name="NUM">0.25</field>
-                          </block>
-                        </value>
-                        <value name="FTABLEREADLOCATIONINCREMENT">
-                          <block type="math_number" id="-B?!tw[Y!oA~*;tqN}?u">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="READINCREMENTQUANTA">
-                          <block type="math_number" id="PGx#IhxXz0wl:^Ecphpq">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="INTEROFFSETTIMEQUANTA">
-                          <block type="math_number" id="YEA+0,wxZ8NJ1f-cf9V5">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="MUL">
-                          <shadow type="math_number" id="(j#u;[}^E(^cKA_+cWbp">
-                            <field name="NUM">1</field>
-                          </shadow>
-                        </value>
-                        <value name="ADD">
-                          <shadow type="math_number" id="NKTRG|/T2u6Vg,nOO][8">
-                            <field name="NUM">0</field>
-                          </shadow>
                         </value>
                       </block>
                     </value>
