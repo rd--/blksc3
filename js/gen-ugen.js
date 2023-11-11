@@ -395,16 +395,16 @@ Blockly.JavaScript.forBlock['sc3_SyncSaw'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'SyncSaw', ['SYNCFREQ', 'SAWFREQ'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TExpRand'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'TrExpRand', ['TRIG', 'LO', 'HI'], true);
+	return blkUgenCodeGen(blk, block, 'TExpRand', ['LO', 'HI', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TGrains'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'TGrains', ['NUMCHANNELS', 'TRIGGER', 'BUFNUM', 'RATE', 'CENTERPOS', 'DUR', 'PAN', 'AMP', 'INTERP'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TIRand'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'TrIRand', ['TRIG', 'LO', 'HI'], true);
+	return blkUgenCodeGen(blk, block, 'TiRand', ['LO', 'HI', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TRand'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'TrRand', ['TRIG', 'LO', 'HI'], true);
+	return blkUgenCodeGen(blk, block, 'TRand', ['LO', 'HI', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['sc3_ToggleFF'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'ToggleFf', ['TRIG'], true);
@@ -464,7 +464,7 @@ Blockly.JavaScript.forBlock['sc3_SvfLp'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'SvfLp', ['IN', 'FREQ', 'Q'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TScramble'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'TrScramble', ['TRIGGER', 'INPUTS'], true);
+	return blkUgenCodeGen(blk, block, 'TScramble', ['TRIGGER', 'INPUTS'], true);
 };
 Blockly.JavaScript.forBlock['sc3_VOSIM'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'Vosim', ['TRIG', 'FREQ', 'NCYCLES', 'DECAY'], true);
@@ -521,7 +521,7 @@ Blockly.JavaScript.forBlock['sc3_LinSeg'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'LinSeg', ['GATE', 'COORD'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Ln'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'Ln', ['START', 'END', 'DUR'], true);
+	return blkUgenCodeGen(blk, block, 'Line', ['START', 'END', 'DUR'], true);
 };
 Blockly.JavaScript.forBlock['sc3_PMOsc'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'PmOsc', ['CARFREQ', 'MODFREQ', 'PMINDEX', 'MODPHASE'], true);
@@ -578,16 +578,16 @@ Blockly.JavaScript.forBlock['sc3_Sw'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'Sw', ['INDEX'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TChoose'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'TrChoose', ['TRIG', 'ARRAY'], true);
+	return blkUgenCodeGen(blk, block, 'TChoose', ['TRIG', 'ARRAY'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TLine'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'TrLine', ['TRIG', 'START', 'END', 'DUR'], true);
+	return blkUgenCodeGen(blk, block, 'TLine', ['START', 'END', 'DUR', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['sc3_TxLine'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'TrXLine', ['TRIG', 'START', 'END', 'DUR'], true);
+	return blkUgenCodeGen(blk, block, 'TxLine', ['START', 'END', 'DUR', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['sc3_XLn'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'XLn', ['START', 'END', 'DUR'], true);
+	return blkUgenCodeGen(blk, block, 'XLine', ['START', 'END', 'DUR'], true);
 };
 
 }
