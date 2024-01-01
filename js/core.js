@@ -77,12 +77,12 @@ function addWorkspaceEnv(input) {
 }
 
 export function playCode(blk) {
-	globalScSynth.playUgenAt(addWorkspaceEnv(evalCode(rec)), -1, 1, []);
+	globalScSynth.playUgenAt(addWorkspaceEnv(evalCode(rec)), 0, -1, 1, []);
 }
 
 export function replaceCode(blk) {
 	globalScSynth.sendOsc(sc.n_set(-1, [["workspaceReleaseTime", 3], ["workspaceGate", 0]]));
-	globalScSynth.playUgenAt(addWorkspaceEnv(evalCode(rec)), -1, 1, [["workspaceAttackTime", 3], ["workspaceReleaseTime", 3]]);
+	globalScSynth.playUgenAt(addWorkspaceEnv(evalCode(rec)), 0, -1, 1, [["workspaceAttackTime", 3], ["workspaceReleaseTime", 3]]);
 }
 
 export function printCode(blk) {

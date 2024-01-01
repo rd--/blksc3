@@ -490,11 +490,11 @@ Blockly.JavaScript.forBlock['sc3_Cc'] = function(block) {
 Blockly.JavaScript.forBlock['sc3_Drand'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'Drand', ['REPEATS', 'ARRAY'], true);
 };
-Blockly.JavaScript.forBlock['sc3_DmdFor'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'DmdFor', ['DUR', 'RESET', 'LEVEL'], true);
+Blockly.JavaScript.forBlock['sc3_Duty'] = function(block) {
+	return blkUgenCodeGen(blk, block, 'Duty', ['DUR', 'RESET', 'LEVEL'], true);
 };
-Blockly.JavaScript.forBlock['sc3_TDmdFor'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'TDmdFor', ['DUR', 'RESET', 'LEVEL'], true);
+Blockly.JavaScript.forBlock['sc3_TDuty'] = function(block) {
+	return blkUgenCodeGen(blk, block, 'TDuty', ['DUR', 'RESET', 'LEVEL'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Demand'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'Demand', ['TRIG', 'RESET', 'DEMANDUGENS'], true);
