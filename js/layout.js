@@ -4,10 +4,10 @@ import * as sc from '../lib/jssc3/dist/jssc3.js'
 export function setLayout(blk, configName) {
 	// console.debug(`setLayout: ${configName}`);
     if(configName) {
-        var w = document.getElementById('blocklyContainer');
-        var c = document.getElementById('blkCtl');
-        var n = document.getElementById('blkNotes');
-        var o = blk.layouts[configName];
+        const w = document.getElementById('blocklyContainer');
+        const c = document.getElementById('blkCtl');
+        const n = document.getElementById('blkNotes');
+        const o = blk.layouts[configName];
         w.style.height = o.workspaceHeight;
         w.style.width = o.workspaceWidth;
         c.style.left = o.ctlLeft;
@@ -20,7 +20,7 @@ export function setLayout(blk, configName) {
 
 // Set event listener for layout menu.
 export function layoutMenuInit(blk) {
-    var select = document.getElementById('blkLayoutMenu');
+    const select = document.getElementById('blkLayoutMenu');
     select.addEventListener('change', e => setLayout(blk, e.target.value));
     sc.fetchJson('json/blksc3-layouts.json', { cache: 'no-cache' })
 		.then(obj => blk.layouts = obj);

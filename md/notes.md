@@ -1,3 +1,8 @@
+# Spl
+
+The Blockly Js printer prints "var p, q, r;" to declare temporaries.
+This is patched to print "|p q r|" for Spl.
+
 # Help
 
 Document:

@@ -1,7 +1,6 @@
-{-
+{- | Translator for simple .stc/.spl graphs to Blockly .xml notation.
 
-Translator for simple .stc/.spl graphs to Blockly .xml notation.
-The .xml notation is old, there's a newer .json notation.
+In addition to the initial .xml notation there is also a newer .json notation.
 
 -}
 
@@ -54,6 +53,11 @@ lit_xml ty l =
 named_value_xml :: (String, String) -> String
 named_value_xml (k,v) = printf "<value name='%s'>%s</value>" (map toUpper k) v
 
+{- | Ugen Param
+
+>>> ugen_param "SinOsc"
+(["freq","phase"],True)
+-}
 ugen_param :: String -> ([String], Bool)
 ugen_param nm =
   case Db.u_lookup_cs nm of
@@ -62,7 +66,16 @@ ugen_param nm =
                  Just (_,p,o,_,_)  -> (p, o)
                  Nothing -> error ("ugen_param: " ++ nm)
 
--- > putStr $ ugen_xml "SinOsc" [lit_int_xml "shadow" 110,lit_float_xml "shadow" 0.5]
+{- | Ugen Xml
+
+>>> putStr $ ugen_xml "SinOsc" [lit_int_xml "shadow" 110,lit_float_xml "shadow" 0.5]
+<block type='sc3_SinOsc' inline='true'>
+<value name='FREQ'><shadow type='math_number'><field name='NUM'>110</field></shadow></value>
+<value name='PHASE'><shadow type='math_number'><field name='NUM'>0.5</field></shadow></value>
+<value name='MUL'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
+<value name='ADD'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+</block>
+-}
 ugen_xml :: String -> [String] -> String
 ugen_xml stcNm l =
   let nm = Db.sc3_ugen_initial_name stcNm
@@ -172,7 +185,12 @@ array_proc_2 = ["++","collect","at"]
 
 1. array operators -> ArrayProc2
 
-> binop_xml "+" (lit_int_xml "shadow" 60) (lit_float_xml "shadow" 0.75)
+>>> putStr $ binop_xml "+" (lit_int_xml "shadow" 60) (lit_float_xml "shadow" 0.75)
+<block type='sc3_BinaryOp' inline='true'>
+<field name='OP'>+</field>
+<value name='LHS'><shadow type='math_number'><field name='NUM'>60</field></shadow></value>
+<value name='RHS'><shadow type='math_number'><field name='NUM'>0.75</field></shadow></value>
+</block>
 -}
 binop_xml :: String -> String -> String -> String
 binop_xml o lhs rhs =
@@ -226,14 +244,25 @@ keyternaryop_xml msg p1 p2 p3  =
       p1 p2 p3
     _ -> error ("keyternaryop_xml: " ++ show [msg, p1, p2, p3])
 
--- > var_decl ["x","o"]
+{- | Variable declaration
+
+>>> var_decl ["x","o"]
+"<variables><variable>x</variable><variable>o</variable></variables>"
+-}
 var_decl :: [String] -> String
 var_decl v =
   if null v
   then ""
   else printf "<variables>%s</variables>" (concatMap (\x -> concat ["<variable>",x,"</variable>"]) v)
 
--- > var_set "z" (lit_float_xml "shadow" 0.75)
+{- | Variable set
+
+>>> putStr $ var_set "z" (lit_float_xml "shadow" 0.75)
+<block type='variables_set'>
+<field name='VAR'>z</field>
+<value name='VALUE'><shadow type='math_number'><field name='NUM'>0.75</field></shadow></value>
+</block>
+-}
 var_set :: String -> String -> String
 var_set =
   printf
@@ -256,12 +285,21 @@ var_get x =
 array_elem_xml :: Int -> String -> String
 array_elem_xml k x = printf "<value name='ADD%d'>%s</value>" k x
 
--- > array_xml [lit_int_xml "shadow" 1,lit_float_xml "shadow" 2.3,lit_int_xml "shadow" 4]
+{- | Array Xml
+
+>>> putStr $ array_xml [lit_int_xml "shadow" 1,lit_float_xml "shadow" 2.3,lit_int_xml "shadow" 4]
+<block type='lists_create_with' inline='true'>
+<mutation items='3'></mutation>
+<value name='ADD0'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
+<value name='ADD1'><shadow type='math_number'><field name='NUM'>2.3</field></shadow></value>
+<value name='ADD2'><shadow type='math_number'><field name='NUM'>4</field></shadow></value>
+</block>
+-}
 array_xml :: [String] -> String
 array_xml l =
   printf
-  "<block type='lists_create_with' inline='true'>\n<mutation items='%d'></mutation>%s\n</block>"
-  (length l) (concat (zipWith array_elem_xml [0..] l))
+  "<block type='lists_create_with' inline='true'>\n<mutation items='%d'></mutation>\n%s</block>"
+  (length l) (unlines (zipWith array_elem_xml [0..] l))
 
 -- | If the last expression is an assignment (ie. if the rhs is null), return the variable getter.
 expr_group_assignments :: [Expr] -> ([Expr], Expr)
@@ -316,11 +354,11 @@ expr_xml e =
     Assignment p q -> var_set p (expr_xml q)
     Identifier x -> var_get x
     Literal l -> lit_xml "block" l
-    Send (Identifier u) (Message (St.KeywordSelector "apply:") [Array l]) -> implicit_send_xml u (map expr_xml l) -- Saw(440)
+    Send (Identifier u) (Message (St.KeywordSelector "apply:" 1) [Array l]) -> implicit_send_xml u (map expr_xml l) -- Saw(440)
     Send r (Message (St.UnarySelector m) []) -> (if is_event_param m then event_param_xml else uop_xml) m (expr_xml r) -- 60.MidiCps
     Send lhs (Message (St.BinarySelector m) [rhs]) -> binop_xml m (expr_xml lhs) (expr_xml rhs) -- 1 + 2
-    Send lhs (Message (St.KeywordSelector m) [rhs]) -> keybinop_xml m (expr_xml lhs) (expr_xml rhs) -- 1.Max(2)
-    Send p1 (Message (St.KeywordSelector m) [p2, p3]) -> keyternaryop_xml m (expr_xml p1) (expr_xml p2) (expr_xml p3) -- 1.Max(2)
+    Send lhs (Message (St.KeywordSelector m 1) [rhs]) -> keybinop_xml m (expr_xml lhs) (expr_xml rhs) -- 1.Max(2)
+    Send p1 (Message (St.KeywordSelector m 2) [p2, p3]) -> keyternaryop_xml m (expr_xml p1) (expr_xml p2) (expr_xml p3) -- 1.Max(2)
     Lambda _ a v (e_seq, Nothing) -> proc_xml a v e_seq
     Init c _ s -> maybe "" comment_xml c ++ expr_seq_xml s
     _ -> error ("expr_xml: " ++ show e)
@@ -336,37 +374,169 @@ assign_seq_xml e_seq =
     _ -> error ("assign_seq_xml: " ++ show e_seq)
 
 in_xml :: String -> String
-in_xml x = unlines ["<xml>",x,"</xml>"]
+in_xml x = unlines ["<xml>",x ++ "</xml>"]
 
 -- | .stc files may have .md notes sections, discard these.
 extract_stc_graph :: String -> String
 extract_stc_graph = unlines . takeWhile (not . isPrefixOf "(* ----") . lines
 
+
+{- | Stc to Xml
+
+>>> rw = putStr . stc_to_xml
+>>> rw "5.Abs"
+<xml>
+<block type='sc3_UnaryOp'>
+<field name='OP'>Abs</field>
+<value name='IN'><block type='math_number'><field name='NUM'>5</field></block></value>
+</block>
+</xml>
+
+>>> rw "SinOsc(440, 0)"
+<xml>
+<block type='sc3_SinOsc' inline='true'>
+<value name='FREQ'><block type='math_number'><field name='NUM'>440</field></block></value>
+<value name='PHASE'><block type='math_number'><field name='NUM'>0</field></block></value>
+<value name='MUL'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
+<value name='ADD'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+</block>
+</xml>
+
+>>> rw "SinOsc(440, 0).Abs"
+<xml>
+<block type='sc3_UnaryOp'>
+<field name='OP'>Abs</field>
+<value name='IN'><block type='sc3_SinOsc' inline='true'>
+<value name='FREQ'><block type='math_number'><field name='NUM'>440</field></block></value>
+<value name='PHASE'><block type='math_number'><field name='NUM'>0</field></block></value>
+<value name='MUL'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
+<value name='ADD'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+</block>
+</value>
+</block>
+</xml>
+
+>>> rw "{ Rand(0, 1) }"
+<xml>
+<block type='sc3_Proc0' inline='true'>
+<value name='RETURN'><block type='sc3_Rand' inline='true'>
+<value name='LO'><block type='math_number'><field name='NUM'>0</field></block></value>
+<value name='HI'><block type='math_number'><field name='NUM'>1</field></block></value>
+<value name='MUL'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
+<value name='ADD'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+</block>
+</value>
+</block></xml>
+
+>> rw "{ Rand(0, 1) }.dup"
+<xml>
+<block type='sc3_ArrayFill' inline='true'>
+<value name='PROC'><block type='sc3_Proc0' inline='true'>
+<value name='RETURN'><block type='sc3_Rand' inline='true'>
+<value name='LO'><block type='math_number'><field name='NUM'>0</field></block></value>
+<value name='HI'><block type='math_number'><field name='NUM'>1</field></block></value>
+<value name='MUL'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
+<value name='ADD'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+</block>
+</value>
+</block></value>
+<value name='COUNT'><block type='math_number'><field name='NUM'>2</field></block></value>
+</block>
+</xml>
+
+>>> rw "{ Rand(0, 1) }.dup(5)"
+<xml>
+<block type='sc3_ArrayFill' inline='true'>
+<value name='PROC'><block type='sc3_Proc0' inline='true'>
+<value name='RETURN'><block type='sc3_Rand' inline='true'>
+<value name='LO'><block type='math_number'><field name='NUM'>0</field></block></value>
+<value name='HI'><block type='math_number'><field name='NUM'>1</field></block></value>
+<value name='MUL'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
+<value name='ADD'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+</block>
+</value>
+</block></value>
+<value name='COUNT'><block type='math_number'><field name='NUM'>5</field></block></value>
+</block></xml>
+
+>>> rw "1.to(9)"
+<xml>
+<block type='sc3_ArrayFromTo' inline='true'>
+<value name='FROM'><block type='math_number'><field name='NUM'>1</field></block></value>
+<value name='TO'><block type='math_number'><field name='NUM'>9</field></block></value>
+</block></xml>
+
+-}
 stc_to_xml :: String -> String
 stc_to_xml = in_xml . expr_xml . Sc.stcToExpr
 
-{-
-stc_file_to_xml_file "graph/F0 - Tw 1367808902457397250.sl"
-stc_file_to_xml_file "guide/1.x User Programs.sl"
-stc_file_to_xml_file "ugen/PanAz.1.sl"
+{- | Spl to Xml
+
+>>> rw = putStr . spl_to_xml
+>>> rw "{ :tr | TRand(0, 1, tr) }"
+<xml>
+<block type='sc3_Proc1' inline='true'>
+<value name='VAR'><block type='variables_get'>
+<field name='VAR'>tr</field>
+</block></value>
+<value name='RETURN'><block type='sc3_TRand' inline='true'>
+<value name='LO'><block type='math_number'><field name='NUM'>0</field></block></value>
+<value name='HI'><block type='math_number'><field name='NUM'>1</field></block></value>
+<value name='TRIG'><block type='variables_get'>
+<field name='VAR'>tr</field>
+</block></value>
+<value name='MUL'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
+<value name='ADD'><shadow type='math_number'><field name='NUM'>0</field></shadow></value>
+</block>
+</value>
+</block></xml>
+
+>>> rw "[1, 2, 3].collect { :i | i * i }"
+<xml>
+<block type='sc3_ArrayProc2' inline='true'>
+<field name='OP'>collect</field>
+<value name='LHS'><block type='lists_create_with' inline='true'>
+<mutation items='3'></mutation>
+<value name='ADD0'><block type='math_number'><field name='NUM'>1</field></block></value>
+<value name='ADD1'><block type='math_number'><field name='NUM'>2</field></block></value>
+<value name='ADD2'><block type='math_number'><field name='NUM'>3</field></block></value>
+</block></value>
+<value name='RHS'><block type='sc3_Proc1' inline='true'>
+<value name='VAR'><block type='variables_get'>
+<field name='VAR'>i</field>
+</block></value>
+<value name='RETURN'><block type='sc3_BinaryOp' inline='true'>
+<field name='OP'>*</field>
+<value name='LHS'><block type='variables_get'>
+<field name='VAR'>i</field>
+</block></value>
+<value name='RHS'><block type='variables_get'>
+<field name='VAR'>i</field>
+</block></value>
+</block>
+</value>
+</block></value>
+</block></xml>
+
 -}
-stc_file_to_xml_file :: FilePath -> IO ()
-stc_file_to_xml_file fn = do
+spl_to_xml :: String -> String
+spl_to_xml = in_xml . expr_xml . Sc.splToExpr
+
+graph_file_to_xml_file :: (String -> Expr) -> FilePath -> IO ()
+graph_file_to_xml_file trs fn = do
   let dir = "/home/rohan/sw/blksc3/help/"
   txt <- readFile (dir ++ fn)
-  writeFile (dir ++ fn ++ ".xml") (in_xml (expr_xml (Sc.stcToExpr (extract_stc_graph txt))))
+  writeFile (dir ++ fn ++ ".xml") (in_xml (expr_xml (trs (extract_stc_graph txt))))
 
-{-
+{- | Stc file to Xml file -}
+stc_file_to_xml_file :: FilePath -> IO ()
+stc_file_to_xml_file = graph_file_to_xml_file Sc.stcToExpr
 
-rw = putStr . stc_to_xml
-rw "5.abs"
-rw "SinOsc(440, 0)"
-rw "SinOsc(440, 0).abs"
-rw "{ Rand(0, 1) }"
-rw "{ :tr | TRand(0, 1, tr) }"
-rw "{ Rand(0, 1) }.dup"
-rw "{ Rand(0, 1) }.dup(5)"
-rw "1.to(9)"
-rw "[1, 2, 3].collect { :i | i * i }"
+{- | Stc file to Xml file
 
+> spl_file_to_xml_file "graph/F0 - Tw 0339.sl"
+> spl_file_to_xml_file "guide/1.x User Programs.sl"
+> spl_file_to_xml_file "ugen/PanAz.1.sl"
 -}
+spl_file_to_xml_file :: FilePath -> IO ()
+spl_file_to_xml_file = graph_file_to_xml_file Sc.splToExpr

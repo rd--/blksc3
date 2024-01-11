@@ -18,3 +18,9 @@ remote-setup:
 	(cd lib/spl ; git pull)
 	(cd lib/scsynth-wasm-builds ; git pull)
 	(cd lib ; make copy-dist)
+
+indent:
+	fourmolu -i hs
+
+doctest:
+	doctest -Wno-x-partial -Wno-incomplete-uni-patterns hs/translate.hs

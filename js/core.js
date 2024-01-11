@@ -164,6 +164,6 @@ function onWorkspaceChange(blk) {
 
 // Get .xml serialization of workspace.  (The .xml format is no longer being worked on.)
 export function workspaceXml(blk) {
-	var xml = blk.Blockly.Xml.workspaceToDom(blk.workspace);
+	const xml = blk.Blockly.Xml.workspaceToDom(blk.workspace);
 	return blk.Blockly.Xml.domToPrettyText(xml);
 }
