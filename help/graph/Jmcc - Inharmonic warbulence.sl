@@ -1,4 +1,4 @@
-(* jmcc - inharmonic warbulence ; graph rewrite *)
+{- jmcc - inharmonic warbulence ; graph rewrite -}
 var z = OverlapTexture({
     arg tr;
     var f = TRand(24, 96, tr).midiCps;

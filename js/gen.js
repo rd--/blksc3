@@ -14,7 +14,7 @@ export function initCodeGen(blk) {
 	// Comment code generator.  Comments should not contain newlines, if they do only the first line is written.
 	Blockly.JavaScript.forBlock['sc3_Comment'] = function(block) {
 		const commentText = sc.stringLines(block.getFieldValue('COMMENT'))[0];
-		return `(* ${commentText} *)\n`;
+		return `{- ${commentText} -}\n`;
 	};
 
 	// Play code generator.  Output is 'CODE' input.
@@ -47,7 +47,7 @@ export function initCodeGen(blk) {
 	};
 
 	Blockly.JavaScript.forBlock['sc3_Voicer'] = function(block) {
-		return implicitMethodCodeGen(blk, block, 'Voicer', ['COUNT', 'PROC']);
+		return implicitMethodCodeGen(blk, block, 'Voicer', ['PART', 'COUNT', 'PROC']);
 	};
 
 	Blockly.JavaScript.forBlock['sc3_LocalVoicer'] = function(block) {
@@ -55,7 +55,7 @@ export function initCodeGen(blk) {
 	};
 
 	Blockly.JavaScript.forBlock['sc3_VoiceWriter'] = function(block) {
-		return implicitMethodCodeGen(blk, block, 'VoiceWriter', ['COUNT', 'PROC']);
+		return implicitMethodCodeGen(blk, block, 'VoiceWriter', ['PART', 'COUNT', 'PROC']);
 	};
 
 	Blockly.JavaScript.forBlock['sc3_Proc0'] = function(block) {
@@ -96,7 +96,7 @@ export function initCodeGen(blk) {
 
 	Blockly.JavaScript.forBlock['sc3_ArrayFromTo'] = function(block) {
 		const [code, order] = methodCodeGen(blk, block,'to', ['FROM', 'TO']);
-		return [`Array(${code})`, order];
+		return [`asArray(${code})`, order];
 	};
 
 	Blockly.JavaScript.forBlock['sc3_ArrayFill'] = function(block) {

@@ -1,4 +1,4 @@
-(* https://twitter.com/redFrik/status/454598285861617665 *)
+{- https://twitter.com/redFrik/status/454598285861617665 -}
 var b = 1.to(9).reverse;
 var c = LFTri(3 ** LFTri(1 / b, b / 9), 0);
 var d = LFTri(1 / b, 0) % 1 / 9 + 0.01;

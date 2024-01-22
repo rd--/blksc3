@@ -1,4 +1,4 @@
-(* https://twitter.com/redFrik/status/1138498427241861122 (f0) *)
+{- https://twitter.com/redFrik/status/1138498427241861122 (f0) -}
 var f = 9.sqrt;
 var b = [f, 9.999];
 var d = SinOscFB(b / 99, 0).max(0);

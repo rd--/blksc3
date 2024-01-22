@@ -1,4 +1,4 @@
-(* police state (jmcc) #2 *)
+{- police state (jmcc) #2 -}
 var node = {
   var f = SinOsc(Rand(0.02, 0.12), Rand(0, 2 * pi)) * Rand(0, 600) + 1000 + Rand(-300, 300);
   Pan2(SinOsc(f, 0) * LFNoise2(100 + Rand(-20, 20)) * 0.1, Rand(-1, 1), 1)

@@ -1,4 +1,4 @@
-(* https://twitter.com/redFrik/status/1509888510525857792 (f0) *)
+{- https://twitter.com/redFrik/status/1509888510525857792 (f0) -}
 var d = #[8000, 8008];
 var b = #[4, 2, 1, 8, 6];
 var l = { arg freq; LorenzL(freq, 10, 28, 2.667, 0.05, 0.1, 0, 0) };

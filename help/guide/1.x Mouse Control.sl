@@ -1,4 +1,4 @@
-(* External Control, Mouse *)
+{- External Control, Mouse -}
 var x = MouseX(20, 22000, 0, [0.005, 0.025]);
 var y = MouseY(20, 22000, 0, [0.005, 0.075]);
 var nd = {
@@ -8,7 +8,7 @@ var nd = {
 };
 nd.dup(3).sum * 0.15
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # External Control, Mouse
 
 SuperCollider includes three unit generators to read the mouse state as a control signal, _MouseX_, _MouseY_ and _MouseButton_.

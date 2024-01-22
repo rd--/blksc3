@@ -1,4 +1,4 @@
-(* External Synthesiser *)
+{- External Synthesiser -}
 Formlet(
 	Blip(SinOsc(5, 0) * 20 + 300, 1000) * 0.1,
 	LinExp(LfNoise2([0.5, 2.5]), -1, 1, [700, 1300], [2000, 100]),
@@ -6,7 +6,7 @@ Formlet(
 	LinExp(LfNoise2([3, 9]), -1, 1, 0.01, 0.2)
 )
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # External Synthesiser
 
 Ordinarily an internal copy of the SuperCollider synthesiser is used.

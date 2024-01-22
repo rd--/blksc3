@@ -1,4 +1,4 @@
-(* resonant dust (jmcc) #2 ; graph rewrite *)
+{- resonant dust (jmcc) #2 ; graph rewrite -}
 OverlapTexture({
     arg tr;
     var rf1 = TRand(0, 2000, tr) + 80;

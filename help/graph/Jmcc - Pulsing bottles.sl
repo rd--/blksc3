@@ -1,4 +1,4 @@
-(* pulsing bottles (jmcc) #2 *)
+{- pulsing bottles (jmcc) #2 -}
 var n = 6;
 var f = {
     var a = LFPulse(4 + Rand(0, 10),  0,  Rand(0, 0.7)) * 0.8 / n;

@@ -1,4 +1,4 @@
-(* https://twitter.com/headcube/status/408145586970324992 (nv) *)
+{- https://twitter.com/headcube/status/408145586970324992 (nv) -}
 var i, a, p, x, o;
 i = 1;
 s = 0;

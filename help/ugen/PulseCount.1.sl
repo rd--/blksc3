@@ -1,7 +1,7 @@
-(* PulseCount.1 *)
+{- PulseCount.1 -}
 SinOsc(PulseCount(Impulse(10, 0), Impulse(0.4, 0)) * 200, 0) * 0.05
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # PulseCount
 
 ⤴# (_PulseCount_) counts the number of transitions received at the ⤴ (_trigger_) input.

@@ -1,4 +1,4 @@
-(* SfRead ; phasor as phase input *)
+{- SfRead ; phasor as phase input -}
 var sf = SfAcquireStereo('piano-c5');
 {
     var tr = Impulse(2 ^ Rand(1, 3) / SfDur(sf), 0).kr;

@@ -1,4 +1,4 @@
-(* SinOsc.3.sl *)
+{- SinOsc.3.sl -}
 var speeds = (1 .. 11) / 20;
 var f0 = (MouseX(0, 36, 0, 0.2).RoundTo(7) + 24).MidiCps;
 var f = { :partial |
@@ -7,7 +7,7 @@ var f = { :partial |
 var harmonics = 16;
 (1 .. harmonics).collect(f).sum / harmonics * 0.5
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # SinOsc
 
 Multiple sine tones, courtesy <https://github.com/cianoc/supercollider_fragments>

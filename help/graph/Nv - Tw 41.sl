@@ -1,4 +1,4 @@
-(* https://swiki.hfbk-hamburg.de/MusicTechnology/899 (nv) [Line 41] *)
+{- https://swiki.hfbk-hamburg.de/MusicTechnology/899 (nv) [Line 41] -}
 var n = {
   arg i;
   BPF({ PinkNoise() }.dup,

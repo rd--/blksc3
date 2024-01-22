@@ -1,4 +1,4 @@
-(* Impulse.3 *)
+{- Impulse.3 -}
 var sync = 5;
 var freq = [1 3 5 7 9 11 13];
 var numer = [3 7 5 2 9 6 1];
@@ -7,7 +7,7 @@ var f = { :i |
 };
 Splay2([1 .. freq.size].collect(f)) * 0.1
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # Impulse
 
 Synchronised impulses,

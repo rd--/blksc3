@@ -1,4 +1,4 @@
-(* trinkets (jmcc) ; http://www.iamas.ac.jp/~aka/dspss2004/materials/ *)
+{- trinkets (jmcc) ; http://www.iamas.ac.jp/~aka/dspss2004/materials/ -}
 var amp = 0.2;
 var gate = 1;
 var nc = 2;

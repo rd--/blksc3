@@ -1,4 +1,4 @@
-(* harmonic swimming (jmcc) #1 *)
+{- harmonic swimming (jmcc) #1 -}
 var a = 0.02;
 var l = Ln(0, 0 - a, 60);
 var o = { :h |

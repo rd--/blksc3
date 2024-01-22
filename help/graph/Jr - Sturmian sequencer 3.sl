@@ -1,10 +1,10 @@
-(* sturmian sequencer iii (jrhb) *)
+{- sturmian sequencer iii (jrhb) -}
 var rules = [[0, 1], [0]];
 var rewrite = { :n |
 	var r = [0];
 	var u = n.timesRepeat({
 		r := r.collect({ :e | rules[e + 1] }).concatenation
-	});  (* u = for translator... *)
+	});  {- u = for translator... -}
 	r
 };
 var n = 9;
@@ -15,5 +15,5 @@ var strFunc = { :i |
 };
 0.to(n - 1).collect(strFunc:/1).Splay2 * 0.3
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 Mouse control.

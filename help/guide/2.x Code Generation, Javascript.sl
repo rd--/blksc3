@@ -1,8 +1,8 @@
-(* Code Generation, Javascript *)
+{- Code Generation, Javascript -}
 var a = SinOsc(1,0).abs * 0.1;
 SinOsc(440, 0) * a
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # Code Generation, Javascript
 
 Blocks can print themselves using _.js_ notation.

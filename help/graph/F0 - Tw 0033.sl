@@ -1,4 +1,4 @@
-(* tw 0033 (f0) - http://www.fredrikolofsson.com/f0blog/?q=node/537 *)
+{- tw 0033 (f0) - http://www.fredrikolofsson.com/f0blog/?q=node/537 -}
 var f = LFPar(1 / 14, 0).rounded * 20 + 80;
 var a = Pulse([1, 2, 3, 4], 0.35);
 var n = BrownNoise() * a;

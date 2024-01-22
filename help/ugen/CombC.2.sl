@@ -1,4 +1,4 @@
-(* CombC ; glissandi *)
+{- CombC ; glissandi -}
 var lwr = 48;
 var tr = { Dust(0.65) } ! 2;
 var fn = {
@@ -11,7 +11,7 @@ var fn = {
 };
 fn !+ 12 * 0.1
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # CombC -- comb filter
 
 _CombC(in, maxdelaytime, delaytime, decaytime)_

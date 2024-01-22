@@ -1,7 +1,7 @@
-(* “ (Comment) Block, ∿ (SinOsc) Block, ⊳ (Play) Block *)
+{- “ (Comment) Block, ∿ (SinOsc) Block, ⊳ (Play) Block -}
 SinOsc(440, 0) * 0.1
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # Comment, SinOsc, Play
 
 “ (_Comment_) and ⊳ (_Play_) are located in the _Meta_ category of the toolbox.

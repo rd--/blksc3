@@ -1,4 +1,4 @@
-(* Vosim.1.sl *)
+{- Vosim.1.sl -}
 o = Vosim(
 	Impulse(110 + [-1, 0, 1], 0),
 	MouseX([110, 220, 440], 880, 1, 0.2),
@@ -7,7 +7,7 @@ o = Vosim(
 );
 Splay2(o) * MouseY(0.01, 1, 1, 0.2)
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # Vosim
 
 Vosim pulse generator.

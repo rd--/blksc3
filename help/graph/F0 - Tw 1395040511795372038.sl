@@ -1,4 +1,4 @@
-(* f0 ; https://twitter.com/redFrik/status/1395040511795372038 *)
+{- f0 ; https://twitter.com/redFrik/status/1395040511795372038 -}
 var b = [2, 6, 3, 1];
 var c = 500;
 var f = Duty(b, SinOscFb(b / 9, 0), Dseq(inf, (SinOscFb(b / 24, 0).RoundTo(1) + 0.to(9) * 7 + 29.17).MidiCps));

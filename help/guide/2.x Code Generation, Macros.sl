@@ -1,11 +1,11 @@
-(* Code Generation, Macros *)
+{- Code Generation, Macros -}
 var x = { Ringz(Dust(0.1), Rand(1200, 2400), Rand(1, 3)) * Rand(0, 0.05) };
 [
 	{ SinOsc(Rand(110, 220), 0) * Rand(0, 0.05) } !^ 16,
 	x !^ 16
 ].sum
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # Code Generation, Macros
 
 There is a sense in which this simple program could be made simpler still.

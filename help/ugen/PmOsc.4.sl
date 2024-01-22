@@ -1,4 +1,4 @@
-(* PmOsc.4 *)
+{- PmOsc.4 -}
 OverlapTexture({ :tr |
 	var pm = TLine(0, TRand(0, 12, tr), TRand(1, 12, tr), tr);
 	LinPan2(
@@ -13,7 +13,7 @@ OverlapTexture({ :tr |
 	)
 }, 1, 2, 7)
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # PmOsc
 
 Overlap-add texture of PmOsc signals with randomly selected linear ramps.

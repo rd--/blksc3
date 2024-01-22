@@ -1,4 +1,4 @@
-(* https://twitter.com/thormagnusson/status/463992770596577280 (tm) *)
+{- https://twitter.com/thormagnusson/status/463992770596577280 (tm) -}
 var k = 9.to(28).choose;
 var f = {
     arg x;
@@ -7,7 +7,7 @@ var f = {
 };
 { 1.to(k).collect(f).sum }.dup
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 _f_ is applied (twice) to the integers between 1 and _k_.
 
 _k_ is chosen anew each time the program is evaluated.

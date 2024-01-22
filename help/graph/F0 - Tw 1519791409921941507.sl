@@ -1,4 +1,4 @@
-(* https://twitter.com/redFrik/status/1519791409921941507 ; f0 *)
+{- https://twitter.com/redFrik/status/1519791409921941507 ; f0 -}
 var f = { arg freq; SinOsc(freq, #[0, 5]) };
 var g = f.value(5);
 var i = f.value(0.1) / 8 + 0.5 * f.value(252) * g;

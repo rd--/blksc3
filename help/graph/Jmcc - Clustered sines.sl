@@ -1,4 +1,4 @@
-(* clustered sines ; jmcc #2 *)
+{- clustered sines ; jmcc #2 -}
 var n = 80;
 OverlapTexture({ :tr |
     var f1 = TRand(100, 1100, tr);
@@ -9,5 +9,5 @@ OverlapTexture({ :tr |
     { fn } ! 2 * 0.1 / n;
 }, 4, 4, 3)
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 Texture graph rewrite.

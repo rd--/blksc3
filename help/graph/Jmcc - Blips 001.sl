@@ -1,12 +1,15 @@
-(* blips 001 (jmcc) #SC3d1.5 ; graph rewrite *)
-var z = OverlapTexture({ :tr |
-    var blips = {
-        var f = TrXLine(tr, TrExpRand(tr, 0.25, 400), TrExpRand(tr, 0.25, 400), 4);
-        var nh = TrXLine(tr, TrExpRand(tr, 2, 100), TrExpRand(tr, 2, 100), 4);
+{- blips 001 (jmcc) #SC3d1.5 ; graph rewrite -}
+let z = OverlapTexture({ :tr |
+    let blips = {
+        let f = TxLine(TExpRand(0.25, 400, tr), TExpRand(0.25, 400, tr), 4, tr);
+        let nh = TxLine(TExpRand(2, 100, tr), TExpRand(2, 100, tr), 4, tr);
         Blip(f, nh)
     };
-    Pan2(blips.value * blips.value, TrLine(tr, TrRand(tr, -1, 1), TrRand(tr, -1, 1), 4), 0.1)
-}, 2, 1, 12);
+    EqPan2(
+	    blips() * blips(),
+	    TLine(TRand(-1, 1, tr), TRand(-1, 1, tr), 4, tr)
+    ) * 0.1
+}, 2, 1, 12).Mix;
 z := z.Distort;
 6.timesRepeat {
 	z := AllpassC(z, 0.05, { Rand(0, 0.05) } ! 2, 4)

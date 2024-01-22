@@ -1,4 +1,4 @@
-(* PanAz.1.sl *)
+{- PanAz.1.sl -}
 PanAz(
 	2,
 	PinkNoise(),
@@ -8,7 +8,7 @@ PanAz(
 	0.5
 )
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # PanAz - Azimuth panner
 
 The number of channels input (_#_) tells how many consecutive channels to pan across.

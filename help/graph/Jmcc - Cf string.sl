@@ -1,4 +1,4 @@
-(* cfstring1 (jmcc) ; graph rewrite ; http://www.iamas.ac.jp/~aka/dspss2004/materials/ *)
+{- cfstring1 (jmcc) ; graph rewrite ; http://www.iamas.ac.jp/~aka/dspss2004/materials/ -}
 var nc = 2;
 OverlapTexture({
     arg tr;

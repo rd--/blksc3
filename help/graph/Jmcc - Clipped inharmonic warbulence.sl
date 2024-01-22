@@ -1,4 +1,4 @@
-(* clipped inharmonic warbulence ; jmcc *)
+{- clipped inharmonic warbulence ; jmcc -}
 var z = OverlapTexture({ :tr |
     var r = LinExp(LfNoise1(1 / 16), -1, 1, 0.1, 20);
     var f = TRand(24, 96, tr).MidiCps;

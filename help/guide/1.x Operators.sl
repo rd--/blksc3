@@ -1,4 +1,4 @@
-(* Operators *)
+{- Operators -}
 var k = 12;
 var mk = { :f |
     var a = { LfNoise2(0.25) * 0.05 } ! k;
@@ -7,7 +7,7 @@ var mk = { :f |
 var m = { IRand(0, 12) } ! k + 48;
 [m, m.reverse].collect({ :x | mk.value(x.MidiCps) }).sum
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # Operators
 
 _Operator_ blocks have a menu to select the required operator.

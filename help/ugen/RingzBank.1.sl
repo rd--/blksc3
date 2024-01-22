@@ -1,4 +1,4 @@
-(* RingzBank.1 *)
+{- RingzBank.1 -}
 {
 	EqPan2(
 		RingzBank(
@@ -11,7 +11,7 @@
 	) * 0.1
 } !+ 20
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # RingzBank
 
 Use of Dust with rising sounds, courtesy <https://github.com/cianoc/supercollider_fragments>

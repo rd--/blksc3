@@ -1,4 +1,4 @@
-(* saucer base (jmcc) #6 ; graph rewrite *)
+{- saucer base (jmcc) #6 ; graph rewrite -}
 OverlapTexture({ :tr |
 	var b = TRand(0, 1000, tr);
 	var c = TRand(0, 5000, tr);

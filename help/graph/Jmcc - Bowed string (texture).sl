@@ -1,4 +1,4 @@
-(* bowed string (jmcc) *)
+{- bowed string (jmcc) -}
 OverlapTexture({
     arg tr;
     var root = 5;

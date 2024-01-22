@@ -1,4 +1,4 @@
-(* contamination zone ; jmcc #9 ; graph rewrite *)
+{- contamination zone ; jmcc #9 ; graph rewrite -}
 var z = OverlapTexture({
     arg tr;
     var f = TExpRand(800, 8000, tr);

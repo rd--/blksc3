@@ -1,4 +1,4 @@
-(* PanAz.2.sl *)
+{- PanAz.2.sl -}
 { 0 } ! 8 ++ PanAz(
 	8,
 	PinkNoise(),
@@ -8,7 +8,7 @@
 	0.5
 )
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # PanAz
 
 Offset an _n_-channel panner by pre-pending an array of silent channels.

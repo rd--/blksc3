@@ -378,7 +378,7 @@ in_xml x = unlines ["<xml>",x ++ "</xml>"]
 
 -- | .stc files may have .md notes sections, discard these.
 extract_stc_graph :: String -> String
-extract_stc_graph = unlines . takeWhile (not . isPrefixOf "(* ----") . lines
+extract_stc_graph = unlines . takeWhile (not . isPrefixOf "{- ----") . lines
 
 
 {- | Stc to Xml

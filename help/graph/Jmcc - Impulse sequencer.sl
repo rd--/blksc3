@@ -1,4 +1,4 @@
-(* impulse sequencer (jmcc) SC2 *)
+{- impulse sequencer (jmcc) SC2 -}
 var t = Impulse(8, 0);
 var isequ = { arg s; t * Demand(t, 0, Seq(inf, s)) };
 var c_sq = isequ.value(#[1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0]);

@@ -1,9 +1,9 @@
-(* Lambda, Duplicate *)
+{- Lambda, Duplicate -}
 var f = { Rand(110, 220) } ! 12;
 var a = { SinOsc(Rand(0.1, 0.5), 0) } ! 12;
 (SinOsc(f, 0) * a).Splay2 * 0.1
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # Lambda, Duplicate
 
 λ (_Proc_) is the anonymous procedure block.

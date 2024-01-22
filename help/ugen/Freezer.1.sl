@@ -1,4 +1,4 @@
-(* Freezer.1 *)
+{- Freezer.1 -}
 var sf = SfAcquireMono('crotale-d6');
 var n = { :i :j |
 	LinLin(LfNoise2(0.1), -1, 1, i, j)

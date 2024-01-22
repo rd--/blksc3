@@ -1,4 +1,4 @@
-(* Gendy1.1 *)
+{- Gendy1.1 -}
 {
 	Pan2(
 		SinOsc(
@@ -20,7 +20,7 @@
 	)
 } !+ 10
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # Gendy1
 
 Random texture.

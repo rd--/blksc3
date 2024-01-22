@@ -1,4 +1,4 @@
-(* XFade2.1.sl *)
+{- XFade2.1.sl -}
 EqPan2(
 	XFade2(
 		Saw(440),
@@ -9,7 +9,7 @@ EqPan2(
 	LfNoise2(0.25)
 )
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # XFade2
 
 Cross fade between two signals.

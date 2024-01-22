@@ -1,4 +1,4 @@
-(* coolant ; jmcc #2 *)
+{- coolant ; jmcc #2 -}
 var o = OnePole(BrownNoise() * 0.002, 0.95);
 XFadeTexture({ :tr |
 	{
@@ -6,7 +6,7 @@ XFadeTexture({ :tr |
 	} !^ 10
 }, 4, 4)
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 Coolant texture, individual resonator (_Ringz_) blocks.
 
 A ≔ block declares and initialises a variable.

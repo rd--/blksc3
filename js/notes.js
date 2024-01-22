@@ -9,7 +9,7 @@ function markdownToHtml(mdText) {
 // .stc files can have a .md notes segment.
 function mdNotesFromStc(stcText) {
 	var lines = stcText.split('\n');
-	var fromMarker = sc.arrayDropWhile(lines, str => !sc.stringIsPrefixOf('(* ---- notes.md', str));
+	var fromMarker = sc.arrayDropWhile(lines, str => !sc.stringIsPrefixOf('{- ---- notes.md', str));
 	return sc.arrayUnlines(sc.arrayTail(fromMarker));
 }
 

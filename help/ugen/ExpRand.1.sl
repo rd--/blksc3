@@ -1,11 +1,11 @@
-(* ExpRand.1 *)
+{- ExpRand.1 -}
 var harmonics = 16;
 var f = {
     Pan2(SinOsc(ExpRand(100, 2000), 0), Rand(-1, 1), SinOsc(1 / Rand(3, 6), 0) * Rand(0.1, 0.9))
 };
 f !+ harmonics / (2 * harmonics)
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # ExpRand
 
 _ExpRand_ generates a single random value in an exponential distribution in the indicated range.

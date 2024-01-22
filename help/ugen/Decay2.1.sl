@@ -1,4 +1,4 @@
-(* Decay2.1 *)
+{- Decay2.1 -}
 {
     Pan2(
         SinOsc(ExpRand(100, 3000) * (LfNoise1(1 / 6) * 0.4 + 1), 0),
@@ -7,7 +7,7 @@
     )
 } !+ 15 * 0.1
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # Decay2
 
 ↘₂ (_Decay2_) is two ↘ (_Decay_) blocks arranged as:

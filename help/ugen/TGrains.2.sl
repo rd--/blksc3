@@ -1,4 +1,4 @@
-(* TGrains.2 *)
+{- TGrains.2 -}
 var trate = MouseY(2, 200, 1, 0.2);
 var clk = Impulse(trate, 0);
 var sf = SfAcquireMono('floating_1');

@@ -1,4 +1,4 @@
-(* LfSaw.3 *)
+{- LfSaw.3 -}
 OverlapTexture({ :tr |
 	{
 		var f = TChoose(tr, (48 .. 72).MidiCps);
@@ -7,7 +7,7 @@ OverlapTexture({ :tr |
 	} !^ 10
 }, 2, 3, 4)
 
-(* ---- notes.md ---- *)
+{- ---- notes.md ---- -}
 # LfSaw
 
 Overlap-add texture of randomly modulate sawtooth oscillators.

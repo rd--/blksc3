@@ -178,35 +178,40 @@
         <next>
           <block type="sc3_Play" id="om8[#08-,I!N7rsd-bZ6">
             <value name="CODE">
-              <block type="sc3_BinaryOp" id="Ky=yeL)rZX:oYxD*=zN3" inline="true">
-                <field name="OP">*</field>
-                <value name="LHS">
-                  <block type="sc3_OverlapTexture" id="PPp!VEG1PCtb#H-r25;_" inline="true">
-                    <value name="PROC">
-                      <block type="variables_get" id="WFw|bGaC)7MePi0vNy4@">
-                        <field name="VAR" id="a@Q;Ccdu1I$I!qy6`O[%">f</field>
+              <block type="sc3_ArrayProc1" id="Do|iT^ligu8FZBidzBR=">
+                <field name="OP">sum</field>
+                <value name="IN">
+                  <block type="sc3_BinaryOp" id="Ky=yeL)rZX:oYxD*=zN3" inline="true">
+                    <field name="OP">*</field>
+                    <value name="LHS">
+                      <block type="sc3_OverlapTexture" id="PPp!VEG1PCtb#H-r25;_" inline="true">
+                        <value name="PROC">
+                          <block type="variables_get" id="WFw|bGaC)7MePi0vNy4@">
+                            <field name="VAR" id="a@Q;Ccdu1I$I!qy6`O[%">f</field>
+                          </block>
+                        </value>
+                        <value name="SUSTAINTIME">
+                          <block type="math_number" id="V4nY]8!)si6^1Zu3sne-">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                        <value name="TRANSITIONTIME">
+                          <block type="math_number" id="/}^9%nV%y4XtC3)M_(/b">
+                            <field name="NUM">8</field>
+                          </block>
+                        </value>
+                        <value name="OVERLAP">
+                          <block type="math_number" id="%[e!e6]%R42.yJP=+fCb">
+                            <field name="NUM">12</field>
+                          </block>
+                        </value>
                       </block>
                     </value>
-                    <value name="SUSTAINTIME">
-                      <block type="math_number" id="V4nY]8!)si6^1Zu3sne-">
-                        <field name="NUM">2</field>
+                    <value name="RHS">
+                      <block type="math_number" id="!_fSF*_M*%v(601--rop">
+                        <field name="NUM">0.05</field>
                       </block>
                     </value>
-                    <value name="TRANSITIONTIME">
-                      <block type="math_number" id="/}^9%nV%y4XtC3)M_(/b">
-                        <field name="NUM">8</field>
-                      </block>
-                    </value>
-                    <value name="OVERLAP">
-                      <block type="math_number" id="%[e!e6]%R42.yJP=+fCb">
-                        <field name="NUM">12</field>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <value name="RHS">
-                  <block type="math_number" id="!_fSF*_M*%v(601--rop">
-                    <field name="NUM">0.05</field>
                   </block>
                 </value>
               </block>
