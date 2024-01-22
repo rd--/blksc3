@@ -1,6 +1,6 @@
 {- Arrays, Variables, Binary Operators -}
-var o = SinOsc(440, 0);
-var a = [o, o];
+let o = SinOsc(440, 0);
+let a = [o o];
 a * 0.1
 
 {- ---- notes.md ---- -}

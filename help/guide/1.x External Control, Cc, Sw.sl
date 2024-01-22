@@ -1,6 +1,6 @@
 {- External Control, Cc, Sw -}
-var f = Lag(Cc(1), 0.2) * 110 + 110;
-var a = Lag(Cc(2), 0.2) * 0.1;
+let f = Lag(Cc(1), 0.2) * 110 + 110;
+let a = Lag(Cc(2), 0.2) * 0.1;
 SinOsc(f, 0) * a
 
 {- ---- notes.md ---- -}
