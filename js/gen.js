@@ -96,7 +96,7 @@ export function initCodeGen(blk) {
 
 	Blockly.JavaScript.forBlock['sc3_ArrayFromTo'] = function(block) {
 		const [code, order] = methodCodeGen(blk, block,'to', ['FROM', 'TO']);
-		return [`asArray(${code})`, order];
+		return [`asList(${code})`, order];
 	};
 
 	Blockly.JavaScript.forBlock['sc3_ArrayFill'] = function(block) {
