@@ -100,7 +100,7 @@ export function initCodeGen(blk) {
 	};
 
 	Blockly.JavaScript.forBlock['sc3_ArrayFill'] = function(block) {
-		return methodCodeGen(blk, block, 'duplicate', ['PROC', 'COUNT']);
+		return methodCodeGen(blk, block, 'duplicateInteger', ['PROC', 'COUNT']);
 	};
 
 	Blockly.JavaScript.forBlock['sc3_ArrayCollect'] = function(block) {
