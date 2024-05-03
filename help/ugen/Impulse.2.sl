@@ -15,4 +15,4 @@ Outputs non band limited single sample impulses.
 - phase: phase offset in cycles (0..1)
 
 Lovely bells,
-courtesy <https://github.com/cianoc/supercollider_fragments>
+courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

@@ -4,7 +4,7 @@
     <variable id="Glg?*/a~qWGr[:liMVC5">g</variable>
     <variable id="$|=c,Sd6b),u;7EGp[wo">w</variable>
   </variables>
-  <block type="sc3_Comment" id="_vyutick/@iW~wh^bjnI" x="-516" y="-241">
+  <block type="sc3_Comment" id="_vyutick/@iW~wh^bjnI" x="0" y="0">
     <field name="COMMENT">tw 0084 (f0) - http://sccode.org/1-4Qy</field>
     <next>
       <block type="variables_set" id="z(A^}rUJIn3-sbNeF62*">
@@ -239,9 +239,10 @@
                 <next>
                   <block type="sc3_Play" id="}dot,SypGn=@.yW7,Nr$">
                     <value name="CODE">
-                      <block type="sc3_Splay2" id="d~kqcF^Em)(]BTM0R49." inline="true">
-                        <value name="INARRAY">
-                          <shadow type="math_number" id="RiV4.8=Zrk~4n1l=MH!#">
+                      <block type="sc3_UnaryOp" id="43A%=wF[;gAbM*aO!_U%">
+                        <field name="OP">Splay</field>
+                        <value name="IN">
+                          <shadow type="math_number" id="$?}-OV%.9vM9BrHn|qx{">
                             <field name="NUM">0</field>
                           </shadow>
                           <block type="sc3_Formant" id=":}2P5?_h*c((d~]^pe-%" inline="true">
@@ -264,6 +265,19 @@
                               <shadow type="math_number" id="KN=yFbc!%8_if~EAA`1w">
                                 <field name="NUM">1</field>
                               </shadow>
+                              <block type="sc3_BinaryOp" id="3-{~Wr!mrJ[UdaA?}JeK" inline="true">
+                                <field name="OP">/</field>
+                                <value name="LHS">
+                                  <block type="math_number" id="VbV3}doT_TsSh;d/k+}5">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <value name="RHS">
+                                  <block type="math_number" id="6tfxc`$HXej/Ky:~IdAk">
+                                    <field name="NUM">9</field>
+                                  </block>
+                                </value>
+                              </block>
                             </value>
                             <value name="ADD">
                               <shadow type="math_number" id="G(cTIkb@3B8Jw!u0@4nV">
@@ -271,29 +285,6 @@
                               </shadow>
                             </value>
                           </block>
-                        </value>
-                        <value name="MUL">
-                          <shadow type="math_number" id=";@Gw|6aHxINv[YJXzUn4">
-                            <field name="NUM">1</field>
-                          </shadow>
-                          <block type="sc3_BinaryOp" id="3-{~Wr!mrJ[UdaA?}JeK" inline="true">
-                            <field name="OP">/</field>
-                            <value name="LHS">
-                              <block type="math_number" id="VbV3}doT_TsSh;d/k+}5">
-                                <field name="NUM">1</field>
-                              </block>
-                            </value>
-                            <value name="RHS">
-                              <block type="math_number" id="6tfxc`$HXej/Ky:~IdAk">
-                                <field name="NUM">9</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                        <value name="ADD">
-                          <shadow type="math_number" id="9s]Ei.Cs$(lNR@2wuh81">
-                            <field name="NUM">0</field>
-                          </shadow>
                         </value>
                       </block>
                     </value>

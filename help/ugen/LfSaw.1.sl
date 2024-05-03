@@ -13,4 +13,4 @@ A non-band-limited sawtooth oscillator. Output ranges from -1 to +1.
 - iphase: initial phase offset. For efficiency reasons this is a value ranging from 0 to 2.
 
 This program generates interesting rising sounds,
-courtesy <https://github.com/cianoc/supercollider_fragments>
+courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

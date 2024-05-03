@@ -20,7 +20,7 @@ Tested with:
 [Edge](https://www.microsoft.com/edge) 97.0.1072.62,
 [Safari](https://apple.com/safari/) 15.3,
 [SuperCollider](https://www.audiosynth.com/) 3.11.2,
-[Blockly](https://developers.google.com/blockly) 9.1.0 (9.3.3)
+[Blockly](https://developers.google.com/blockly) 10.4.3,
 [Commonmark.js](https://github.com/commonmark/commonmark.js/) 0.30.0
 
 References:
@@ -66,7 +66,7 @@ John Steinmetz.
 In M. Guzdial (ed.), _Squeak : Open Personal Computing for Multimedia_.
 [PDF](http://coweb.cc.gatech.edu:8888/squeakbook/uploads/steinmetz.pdf)
 
-© [Rohan Drape](http://rohandrape.net/), 2021-2023, [Gpl](http://gnu.org/copyleft/)
+© [Rohan Drape](http://rohandrape.net/), 2021-2024, [Gpl](http://gnu.org/copyleft/)
 
 * * *
 

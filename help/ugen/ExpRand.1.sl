@@ -13,4 +13,4 @@ _ExpRand_ generates a single random value in an exponential distribution in the 
 Here it is used to generate a frequency input for a sine wave oscillator.
 
 Shimmering harmonics,
-courtesy <https://github.com/cianoc/supercollider_fragments>
+courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

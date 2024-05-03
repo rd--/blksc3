@@ -17,4 +17,4 @@
 The ↗ (_attack_) and ↘ (_decay_) times are both in seconds.
 
 Random impulses,
-courtesy <https://github.com/cianoc/supercollider_fragments>
+courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

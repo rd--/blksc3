@@ -11,4 +11,4 @@ This is essentially the same as OnePole except that instead of supplying the coe
 - in: input signal
 - lagTime: 60 dB lag time in seconds.
 
-Courtesy <https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html> 3.4
+Courtesy [Nc](https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html) 3.4

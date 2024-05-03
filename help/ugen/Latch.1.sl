@@ -11,5 +11,5 @@ at 10 _hz_ in the left channel and 11 _hz_ in the right.
 
 The held value is scaled to lie in the range _(100, 500)_ and is supplied as the ν input to a second ∿.
 
-Courtesy <https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html>, 3.4
+Courtesy [Nc](https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html), 3.4
 

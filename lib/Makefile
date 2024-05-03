@@ -10,5 +10,5 @@ copy-dist:
 
 # fecth blockly release
 download-blockly:
-	wget https://github.com/google/blockly/releases/download/blockly-v10.3.1/blockly-10.3.1.tgz
-	tar xf blockly-10.3.1.tgz && mv package blockly-10.3.1
+	wget https://github.com/google/blockly/releases/download/blockly-v10.4.3/blockly-10.4.3.tgz
+	tar xf blockly-10.4.3.tgz && mv package blockly-10.4.3

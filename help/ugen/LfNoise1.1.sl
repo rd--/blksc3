@@ -13,4 +13,4 @@ Generates linearly interpolated random values at a rate given by the nearest int
 - freq: approximate rate at which to generate random values in Hertz
 
 Wandering sines,
-courtesy <https://github.com/cianoc/supercollider_fragments>
+courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

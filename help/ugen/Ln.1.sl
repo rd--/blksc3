@@ -7,4 +7,4 @@ Splay2(Resonz(src, XLn(10000, 10, 10), Ln(1, 0.05, 10))) * amp
 # Ln
 
 Am, Fm, Chorus,
-courtesy <https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html> 2.5
+courtesy [Nc](https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html) 2.5

@@ -9,5 +9,5 @@ PmOsc(freq, freq * ratio, 3 + env * 4, 0) * env * 0.25
 {- ---- notes.md ---- -}
 # PmOsc
 
-Ping pong, courtesy <https://github.com/cianoc/supercollider_fragments>
+Ping pong, courtesy [Coc](https://github.com/cianoc/supercollider_fragments)
 

@@ -1,3 +1,17 @@
+# Issues
+
+- Textures require Mix/Sum
+- Concise "create list with" text, also "set x to" as ":="
+- Sf - all noise?
+- An Tw 99846300173991936 (Crash? New rewrite rules for pseudo-ugens?)
+- F0 Tw 1319946903711338496
+- F0 20020817
+- F0 Pkt 00
+- F0 Tw 0164
+- LfSaw.3
+- TChoose.1
+- Sequencer.1
+
 # Spl
 
 The Blockly Js printer prints "var p, q, r;" to declare temporaries.

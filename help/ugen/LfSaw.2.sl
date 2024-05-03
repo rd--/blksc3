@@ -5,4 +5,4 @@ SinOsc(lfo, 0) * 0.1
 {- ---- notes.md ---- -}
 # LfSaw
 
-As an lfo, courtesy <https://github.com/cianoc/supercollider_fragments>
+As an lfo, courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

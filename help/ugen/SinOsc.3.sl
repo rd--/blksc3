@@ -10,6 +10,6 @@ var harmonics = 16;
 {- ---- notes.md ---- -}
 # SinOsc
 
-Multiple sine tones, courtesy <https://github.com/cianoc/supercollider_fragments>
+Multiple sine tones, courtesy [Coc](https://github.com/cianoc/supercollider_fragments)
 
 Mouse control.

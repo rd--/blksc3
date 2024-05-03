@@ -571,11 +571,14 @@ Blockly.JavaScript.forBlock['sc3_Dshuf'] = function(block) {
 Blockly.JavaScript.forBlock['sc3_SinOscBank'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'SinOscBank', ['FREQ', 'AMP', 'PHASE'], true);
 };
-Blockly.JavaScript.forBlock['sc3_Splay'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'Splay', ['INPUT', 'SPREAD', 'LEVEL', 'CENTER', 'LEVELCOMP'], true);
-};
 Blockly.JavaScript.forBlock['sc3_Splay2'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'Splay2', ['INARRAY'], true);
+	return blkUgenCodeGen(blk, block, 'Splay2', ['INPUT', 'SPREAD', 'LEVEL', 'CENTER', 'LEVELCOMP'], true);
+};
+Blockly.JavaScript.forBlock['sc3_Splay'] = function(block) {
+	return blkUgenCodeGen(blk, block, 'Splay', ['INARRAY'], true);
+};
+Blockly.JavaScript.forBlock['sc3_Mix'] = function(block) {
+	return blkUgenCodeGen(blk, block, 'Mix', ['INARRAY'], true);
 };
 Blockly.JavaScript.forBlock['sc3_Sw'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'Sw', ['INDEX'], true);

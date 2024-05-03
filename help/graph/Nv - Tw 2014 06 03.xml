@@ -5,7 +5,7 @@
     <variable id="`c#2F%}chC4b3Kr-k!3A">ix</variable>
     <variable id=")ZX,J)u{#XtaiK)^C|-a">f</variable>
   </variables>
-  <block type="sc3_Comment" id=";6c38m.z0y51u~Rh5.[w" x="70" y="109">
+  <block type="sc3_Comment" id=";6c38m.z0y51u~Rh5.[w" x="0" y="0">
     <field name="COMMENT">https://twitter.com/headcube/status/474064500564324352 (nv)</field>
     <next>
       <block type="variables_set" id="3/#`Dm`@ul|kl(+st}uq">
@@ -34,7 +34,7 @@
                                   <block type="sc3_LFPulse" id="b)L?b6fjyUaZ{Zm:ju3z" inline="false">
                                     <value name="FREQ">
                                       <block type="sc3_BinaryOp" id="p_YbvyFXs.p,kSD_c3-]" inline="true">
-                                        <field name="OP">**</field>
+                                        <field name="OP">^</field>
                                         <value name="LHS">
                                           <block type="math_number" id="8ncTrI#v3Z`[*Vu7IOfn">
                                             <field name="NUM">2</field>
@@ -297,31 +297,36 @@
             <next>
               <block type="sc3_Play" id="1TEV:^23;e0Dv^2a[WXo">
                 <value name="CODE">
-                  <block type="sc3_BinaryOp" id=",2Zf[yPBacuicW89_:@a" inline="true">
-                    <field name="OP">*</field>
-                    <value name="LHS">
-                      <block type="sc3_UnaryOp" id="VU$teX{^9^tOA)[0+)GL">
-                        <field name="OP">Splay2</field>
-                        <value name="IN">
-                          <block type="sc3_ArrayFill" id="Ra,m@WD2BP$s9#.}LP+[" inline="true">
-                            <value name="PROC">
-                              <block type="variables_get" id="OWr%_,{]]jN.PVOn*Zc-">
-                                <field name="VAR" id="vVlI5GYvR^Z/#/XD3Nd:">z</field>
-                              </block>
-                            </value>
-                            <value name="COUNT">
-                              <block type="math_number" id="a/vl{j+J$d6.Ws|/9`72">
-                                <field name="NUM">9</field>
-                              </block>
-                            </value>
+                  <block type="sc3_Splay" id="]Mw0~c]@aP5^tQmaLQ^P" inline="true">
+                    <value name="INARRAY">
+                      <shadow type="math_number" id="H#]{rsA9:afsf[9zU|#3">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="sc3_ArrayFill" id="Ra,m@WD2BP$s9#.}LP+[" inline="true">
+                        <value name="PROC">
+                          <block type="variables_get" id="OWr%_,{]]jN.PVOn*Zc-">
+                            <field name="VAR" id="vVlI5GYvR^Z/#/XD3Nd:">z</field>
+                          </block>
+                        </value>
+                        <value name="COUNT">
+                          <block type="math_number" id="a/vl{j+J$d6.Ws|/9`72">
+                            <field name="NUM">9</field>
                           </block>
                         </value>
                       </block>
                     </value>
-                    <value name="RHS">
+                    <value name="MUL">
+                      <shadow type="math_number" id="@|.NwA^Wl_%g{Bkj$@,6">
+                        <field name="NUM">1</field>
+                      </shadow>
                       <block type="math_number" id="5Z=4bhdS|W,:`pwe4+Se">
                         <field name="NUM">0.2</field>
                       </block>
+                    </value>
+                    <value name="ADD">
+                      <shadow type="math_number" id="Bo?:p,BYfZo;0j*hxF-:">
+                        <field name="NUM">0</field>
+                      </shadow>
                     </value>
                   </block>
                 </value>

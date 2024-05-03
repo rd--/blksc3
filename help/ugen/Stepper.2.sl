@@ -7,4 +7,4 @@ Saw(f) * 0.1
 {- ---- notes.md ---- -}
 # Stepper
 
-Courtesy <https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html> 3.4
+Courtesy [Nc](https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html) 3.4

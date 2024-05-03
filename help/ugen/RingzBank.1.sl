@@ -14,4 +14,4 @@
 {- ---- notes.md ---- -}
 # RingzBank
 
-Use of Dust with rising sounds, courtesy <https://github.com/cianoc/supercollider_fragments>
+Use of Dust with rising sounds, courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

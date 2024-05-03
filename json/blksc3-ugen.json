@@ -3240,8 +3240,8 @@
     }
     ,
     {
-        "type": "sc3_Splay",
-        "message0": "◠ %1 ∙ %2 ◠ %3 × %4 ⌽ %5 ×𝑐 %6 × %7 + %8",
+        "type": "sc3_Splay2",
+        "message0": "◠₂ %1 ∙ %2 ◠ %3 × %4 ⌽ %5 ×𝑐 %6 × %7 + %8",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "INPUT", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
@@ -3255,12 +3255,12 @@
         "output": "UGen",
         "colour": 300,
         "tooltip": "Pan an array of channels across the stereo field",
-        "helpUrl": "https://doc.sccode.org/Classes/Splay.html"
+        "helpUrl": "https://doc.sccode.org/Classes/Splay2.html"
     }
     ,
     {
-        "type": "sc3_Splay2",
-        "message0": "◠₂ %1 ⟦∙⟧ %2 × %3 + %4",
+        "type": "sc3_Splay",
+        "message0": "◠ %1 ⟦∙⟧ %2 × %3 + %4",
         "args0": [
             {"type": "input_dummy"},
             {"type": "input_value", "name": "INARRAY", "check": ["Number", "Array", "UGen", "Boolean", "String"]},
@@ -3271,6 +3271,19 @@
         "colour": 300,
         "tooltip": "Pan an array of channels across the stereo field",
         "helpUrl": "https://doc.sccode.org/Classes/Splay2.html"
+    }
+    ,
+    {
+        "type": "sc3_Mix",
+        "message0": "⊕ %1 ⟦∙⟧ %2",
+        "args0": [
+            {"type": "input_dummy"},
+            {"type": "input_value", "name": "INARRAY", "check": ["Number", "Array", "UGen", "Boolean", "String"]}
+        ],
+        "output": "UGen",
+        "colour": 300,
+        "tooltip": "Mix an array of channels according to system preferences",
+        "helpUrl": "https://doc.sccode.org/Classes/Mix.html"
     }
     ,
     {

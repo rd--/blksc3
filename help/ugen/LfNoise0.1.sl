@@ -12,4 +12,4 @@
 # LfNoise0
 
 Pretty, nice, but inessential,
-courtesy <https://github.com/cianoc/supercollider_fragments>
+courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

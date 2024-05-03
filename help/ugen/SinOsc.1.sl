@@ -8,4 +8,4 @@ Splay2(
 {- ---- notes.md ---- -}
 # SinOsc
 
-Random sine tones, courtesy <https://github.com/cianoc/supercollider_fragments>
+Random sine tones, courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

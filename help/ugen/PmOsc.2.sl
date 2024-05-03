@@ -6,4 +6,4 @@ PmOsc(f, f * [1.25, MouseX(1, 3, 0, 0.2)], e * [5, MouseY(3, 9, 0, 0.2)], 0) * e
 {- ---- notes.md ---- -}
 # PmOsc
 
-Envelope used also for the index, courtesy <https://github.com/cianoc/supercollider_fragments>
+Envelope used also for the index, courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

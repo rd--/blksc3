@@ -11,4 +11,4 @@ Splay2([1 .. freq.size].collect(f)) * 0.1
 # Impulse
 
 Synchronised impulses,
-courtesy <https://github.com/cianoc/supercollider_fragments>
+courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

@@ -6,4 +6,4 @@ SinOsc(lfo, 0) * 0.1
 # LfNoise1
 
 Angry birds,
-courtesy <https://github.com/cianoc/supercollider_fragments>
+courtesy [Coc](https://github.com/cianoc/supercollider_fragments)
