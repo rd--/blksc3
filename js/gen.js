@@ -164,24 +164,32 @@ function implicitMethodCodeGen(blk, block, name, argNameArray) {
 
 // Procedure code generator.
 function procCodeGen(blk, block, numArg, hasStm) {
-	const var_value = blk.Blockly.JavaScript.valueToCode(block, 'VAR', blk.Blockly.JavaScript.ORDER_ATOMIC) || 'x';
-	const var1_value = blk.Blockly.JavaScript.valueToCode(block, 'VAR1', blk.Blockly.JavaScript.ORDER_ATOMIC) || 'x';
-	const var2_value = blk.Blockly.JavaScript.valueToCode(block, 'VAR2', blk.Blockly.JavaScript.ORDER_ATOMIC) || 'y';
-	const stm_code = blk.Blockly.JavaScript.statementToCode(block, 'STATEMENTS') || '';
+	const var1_name = (numArg === 1) ? 'VAR' : 'VAR1';
+	const var1_value = (numArg >= 1) ? blk.Blockly.JavaScript.valueToCode(block, var1_name, blk.Blockly.JavaScript.ORDER_ATOMIC) : 'x';
+	const var2_value = (numArg >= 2) ? blk.Blockly.JavaScript.valueToCode(block, 'VAR2', blk.Blockly.JavaScript.ORDER_ATOMIC) : 'y';
+	const stm_code = hasStm ? blk.Blockly.JavaScript.statementToCode(block, 'STATEMENTS') : '';
 	const ret_value = blk.Blockly.JavaScript.valueToCode(block, 'RETURN', blk.Blockly.JavaScript.ORDER_ATOMIC) || '0';
 	const ofc = blk.Blockly.JavaScript.ORDER_FUNCTION_CALL;
-	if(numArg === 0 && hasStm === false) {
-		return [`{ ${ret_value} }`, ofc];
-	} else if(numArg === 1 && hasStm === false) {
-		return [`{ :arg1 | ${var_value} := arg1; ${ret_value} }`, ofc];
-	} else if(numArg === 2 && hasStm === false) {
-		return [`{ :arg1 :arg2 | ${var1_value} := arg1; ${var2_value} := arg2; ${ret_value} }`, ofc];
-	} else if(numArg === 0 && hasStm === true) {
-		return [`{ ${stm_code} ${ret_value} }`, ofc];
-	} else if(numArg === 1 && hasStm === true) {
-		return [`{ :arg1 | ${var_value} := arg1; ${stm_code} ${ret_value} }`, ofc];
+	if(numArg === 0) {
+			if(hasStm === false) {
+				return [`{ ${ret_value} }`, ofc];
+			} else {
+				return [`{ ${stm_code} ${ret_value} }`, ofc];
+			}
+	} else if(numArg === 1) {
+			if(hasStm === false) {
+				return [`{ :arg1 | ${var1_value} := arg1; ${ret_value} }`, ofc];
+			} else {
+				return [`{ :arg1 | ${var1_value} := arg1; ${stm_code} ${ret_value} }`, ofc];
+			}
+	} else if(numArg === 2) {
+			if(hasStm === false) {
+				return [`{ :arg1 :arg2 | ${var1_value} := arg1; ${var2_value} := arg2; ${ret_value} }`, ofc];
+			} else {
+				return throwError(`procCodeGen: sl: numArg=2 hasStm=true`);
+			}
 	} else {
-		return throwError(`procCodeGen: sl: ${hasArg} ${hasStm}`);
+		return throwError(`procCodeGen: sl: numArg=${numArg} hasStm=${hasStm}`);
 	}
 }
 
