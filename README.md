@@ -14,13 +14,13 @@ Requires:
 
 Tested with:
 
-[Chromium](https://www.chromium.org/) 103.0.5060.114,
+[Chromium](https://www.chromium.org/) 125.0.6422.141,
 [Chrome](https://www.google.com/chrome/) 98.0.4758.102,
 [Firefox](https://www.mozilla.org/firefox/) 91.11.0 & 97.0,
 [Edge](https://www.microsoft.com/edge) 97.0.1072.62,
 [Safari](https://apple.com/safari/) 15.3,
-[SuperCollider](https://www.audiosynth.com/) 3.11.2,
-[Blockly](https://developers.google.com/blockly) 10.4.3,
+[SuperCollider](https://www.audiosynth.com/) 3.13.0,
+[Blockly](https://developers.google.com/blockly) 11.1.1,
 [Commonmark.js](https://github.com/commonmark/commonmark.js/) 0.30.0
 
 References:
