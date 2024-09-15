@@ -1,4 +1,5 @@
 // AUTOGEN
+// deno-fmt-ignore-file
 
 import { blkUgenCodeGen } from './gen.js'
 

@@ -19,7 +19,7 @@ import qualified Sound.Sc3.Ugen.Db.Rename as Db {- hsc3-db -}
 
 import qualified Language.Smalltalk.Ansi as St {- stsc3 -}
 import Language.Smalltalk.Ansi.Expr {- stsc3 -}
-import qualified Language.Smalltalk.SuperCollider.Translate as Sc {- stsc3 -}
+import qualified Language.Smalltalk.Stc.Translate as Stc {- stsc3 -}
 
 {- | Literal float.
 
@@ -468,7 +468,7 @@ extract_stc_graph = unlines . takeWhile (not . isPrefixOf "{- ----") . lines
 
 -}
 stc_to_xml :: String -> String
-stc_to_xml = in_xml . expr_xml . Sc.stcToExpr
+stc_to_xml = in_xml . expr_xml . Stc.stcToExpr
 
 {- | Spl to Xml
 
@@ -520,7 +520,7 @@ stc_to_xml = in_xml . expr_xml . Sc.stcToExpr
 
 -}
 spl_to_xml :: String -> String
-spl_to_xml = in_xml . expr_xml . Sc.splToExpr
+spl_to_xml = in_xml . expr_xml . Stc.splToExpr
 
 graph_file_to_xml_file :: (String -> Expr) -> FilePath -> IO ()
 graph_file_to_xml_file trs fn = do
@@ -530,13 +530,13 @@ graph_file_to_xml_file trs fn = do
 
 {- | Stc file to Xml file -}
 stc_file_to_xml_file :: FilePath -> IO ()
-stc_file_to_xml_file = graph_file_to_xml_file Sc.stcToExpr
+stc_file_to_xml_file = graph_file_to_xml_file Stc.stcToExpr
 
 {- | Stc file to Xml file
 
-> spl_file_to_xml_file "graph/F0 - Tw 0339.sl"
+> spl_file_to_xml_file "graph/F0 - Tw 582277939653439489.sl"
 > spl_file_to_xml_file "guide/1.x User Programs.sl"
 > spl_file_to_xml_file "ugen/PanAz.1.sl"
 -}
 spl_file_to_xml_file :: FilePath -> IO ()
-spl_file_to_xml_file = graph_file_to_xml_file Sc.splToExpr
+spl_file_to_xml_file = graph_file_to_xml_file Stc.splToExpr

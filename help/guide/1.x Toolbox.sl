@@ -16,11 +16,13 @@ Categories are grouped into _families_, also indicated by colouring.
 
 This program contains blocks belonging to each of the five families of signal processing objects:
 
-1. ⊥ (_Impulse_) is in _Generator>Osc_ and ⍰𝒑 (_PinkNoise_) is in _Generator>Noise_
-2. ◩ (_HPF_) is in _Processor>Filter_
-3. ⤴― (_TLine_) is in _Trigger>Env_and ⤴⚁ (_TRand_) is in _Trigger>Rand_
-4. ↘₂ (_Decay2_) is in _Env>Flt_
-5. ⚁ (_Rand_) is in _Random>Gen_
+1. ⊥ (_Impulse_) is in _Generator>Osc_
+2. ⍰𝒑 (_PinkNoise_) is in _Generator>Noise_
+3. ◩ (_Hpf_) is in _Processor>Filter_
+4. ⤴― (_TLine_) is in _Trigger>Env_
+5. ⤴⚁ (_TRand_) is in _Trigger>Rand_
+6. ↘₂ (_Decay2_) is in _Env>Flt_
+7. ⚁ (_Rand_) is in _Random>Gen_
 
 In addition
 × and ÷ are in _Math_,
@@ -28,4 +30,4 @@ In addition
 ≔ is in _Var_,
 and “ and ▷ are in _Meta_.
 
-This program generates quiet pink noise processed by with four upward sweeping filters.
+This program generates quiet pink noise processed by four upward sweeping filters.

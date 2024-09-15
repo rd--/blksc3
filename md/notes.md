@@ -15,7 +15,7 @@
 # Spl
 
 The Blockly Js printer prints "var p, q, r;" to declare temporaries.
-This is patched to print "|p q r|" for Spl.
+Spl allows this form to support blksc3 but properly blksc3 should write "let p = nil;".
 
 # Help
 
@@ -65,9 +65,9 @@ _kr_ should not exist.
 
 # Guide:
 
-- Notes, .stc.
+- Notes, .sl.
   That notes are not stored in blocks.
-  That they specially formatted comments in .stc files.
+  That they specially formatted comments in .sl files.
 
 - Display, Layout.
   That the default layout rule is proportional to the size of the viewport.
@@ -78,7 +78,7 @@ _kr_ should not exist.
 - Javascript.
   That Javascript [does not allow operator overloading](https://github.com/tc39/proposal-operator-overloading).
   That the scheme form can equally be written as _Mul(Tanh(SinOsc(f, 0)), a)_,
-  or as _SinOsc(f, 0).tanh.mul(a)_.
+  or as _SinOsc(f, 0).Tanh.Mul(a)_.
 
 - Array inputs.
   Compatibility with systems that distinguish between signal functions and array functions.

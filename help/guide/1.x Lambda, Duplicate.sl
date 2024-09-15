@@ -1,13 +1,13 @@
 {- Lambda, Duplicate -}
-var f = { Rand(110, 220) } ! 12;
-var a = { SinOsc(Rand(0.1, 0.5), 0) } ! 12;
+let f = { Rand(110, 220) } ! 12;
+let a = { SinOsc(Rand(0.1, 0.5), 0) } ! 12;
 (SinOsc(f, 0) * a).Splay2 * 0.1
 
 {- ---- notes.md ---- -}
 # Lambda, Duplicate
 
 λ (_Proc_) is the anonymous procedure block.
-It is located in the _Proc_ category of the toolbox.
+It is located in the _Lambda_ category of the toolbox.
 λ is a _value block_, it has an _output connector_ to receive the ← (_return_) value.
 
 λ has a number of distinct shapes.

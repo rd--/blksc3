@@ -14,6 +14,7 @@ import qualified Data.ByteString.Char8 as Char8 {- bytestring -}
 import qualified Network.WebSockets as Ws {- websockets -}
 
 import qualified Sound.Osc as Osc {- hosc -}
+import qualified Sound.Osc.Transport.Fd.Udp as Osc.Udp {- hosc -}
 
 import qualified Sound.Sc3.Ugen.Db as Db {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Bindings.Blockly as Blockly {- hsc3-db -}
@@ -21,7 +22,7 @@ import qualified Sound.Sc3.Ugen.Db.Pseudo as Db {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Record as Db {- hsc3-db -}
 import qualified Sound.Sc3.Ugen.Db.Rename as Rename {- hsc3-db -}
 
-import qualified Language.Smalltalk.SuperCollider.Translate as Sc {- stsc3 -}
+import qualified Language.Smalltalk.Stc.Translate as Stc {- stsc3 -}
 
 import qualified Music.Theory.Opt as Opt {- hmt-base -}
 
@@ -33,7 +34,7 @@ type StcToOscOpt = (String, Int, String, Int, String)
 send_osc :: StcToOscOpt -> String -> IO ()
 send_osc (_, _, osc_host, osc_port, osc_addr) txt = do
   let msg = Osc.message osc_addr [Osc.AsciiString (Osc.ascii txt)]
-  Osc.withTransport (Osc.openUdp osc_host osc_port) (Osc.sendMessage msg)
+  Osc.withTransport (Osc.Udp.openUdp osc_host osc_port) (Osc.sendMessage msg)
 
 -- | Translate incoming Websocket .stc text to Osc message.
 ws_to_sclang :: StcToOscOpt -> Ws.ServerApp
@@ -57,7 +58,7 @@ ws_to_st rq = do
   let ws_recv c = do
         dat <- Ws.receiveData c
         let txt = Char8.unpack dat
-        putStrLn (Sc.stcToSt txt)
+        putStrLn (Stc.stcToSt txt)
         hFlush stdout
   c <- Ws.acceptRequest rq
   forever (ws_recv c)
@@ -71,7 +72,7 @@ stc_to_st (ws_host, ws_port) = Ws.runServer ws_host ws_port ws_to_st
 type WsToUdpOpt = (String, Int, String, Int)
 
 send_udp :: String -> Int -> Data.ByteString.ByteString -> IO ()
-send_udp h p dat = Osc.with_udp (Osc.openUdp h p) (\fd -> Osc.udp_send_data fd dat)
+send_udp h p dat = Osc.Udp.with_udp (Osc.Udp.openUdp h p) (\fd -> Osc.Udp.udp_send_data fd dat)
 
 -- | Send incoming Websocket Osc out over Udp.
 ws_osc_to_udp_osc_app :: WsToUdpOpt -> Ws.ServerApp

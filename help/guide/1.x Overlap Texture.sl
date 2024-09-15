@@ -1,10 +1,10 @@
 {- Overlap Texture -}
-OverlapTexture({ :tr |
+{ :tr |
     EqPan2(
         SinOsc(80 + TRand(0, 2000, tr), 0),
         LfNoise1(0.4 + TRand(0, 0.8, tr))
 	) * (LfNoise1(0.4 + TRand(0, 0.8, tr)) * 0.4 + 0.5)
-}, 2, 8, 12).Mix * 0.05
+}.OverlapTexture(2, 8, 12).Mix * 0.05
 
 {- ---- notes.md ---- -}
 # Overlap Texture
@@ -16,7 +16,7 @@ OverlapTexture({ :tr |
 Each copy forms one voice of an evolving texture.
 
 ᨏ applies a simple linear envelope to each voice.
-The envelope is defined by two parameters, ⤢ (_transition time_) and ⌒ (_sustain time_).
+The envelope is defined by two parameters, ⤢ (_transitionTime_) and ⌒ (_sustainTime_).
 The duration of the envelope is: 2 × ⤢ + ⌒.
 
 The envelopes of each voice are reset at equally spaced regular intervals.

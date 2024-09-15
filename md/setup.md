@@ -5,11 +5,14 @@ Requirements:
 - [SuperCollider](https://github.com/supercollider/supercollider) (Music Synthesiser)
 - Html browser:
   [Firefox](https://www.mozilla.org/firefox/)
-  or [Chromium](https://www.chromium.org/) or equivalent
+  or [Chromium](https://www.chromium.org/)
+  or [Safari](https://www.apple.com/safari/)
+  or equivalent
 - Http server:
   [Python](https://www.python.org/)
   or [Budo](https://www.npmjs.com/package/budo)
-  or [Lighttpd](https://www.lighttpd.net/) or equivalent
+  or [Lighttpd](https://www.lighttpd.net/)
+  or equivalent
 
 Requirements to connect to SuperCollider:
 
@@ -43,7 +46,7 @@ Recompile the class library to load the new libraries into the interpreter.
 
 To process incoming messages from `blksc3` start a listener with:
 
-    REvalListener.init;
+    EvalListener.init;
 
 Some of the programs included with blksc3 require the SuperCollider synthesiser allocate more resources than it does by default.
 To run these programs set the following server options before starting the server:
@@ -102,7 +105,7 @@ To install [budo](https://www.npmjs.com/package/budo) type:
 
 ## Caveats
 
-The blksc3 layout is fixed, however the default size is proprtional to the viewport and there is a menu to select layouts for various display sizes.
+The blksc3 layout is fixed, however the default size is proportional to the viewport and there is a menu to select layouts for various display sizes.
 
 ## Credits
 

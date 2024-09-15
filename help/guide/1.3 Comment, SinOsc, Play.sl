@@ -14,7 +14,7 @@ Comments have no effect, they are a note to the reader of the program.
 ⊳ indicates that its input should be sent to the synthesiser outputs.
 
 ∿ (_SinOsc_) is a sine wave oscillator.
-It is located in the _Osc_ category.
+It is located in the _Generator>Osc_ category.
 ∿ is a _value block_, meaning it has an _output value_ connector on it's left edge.
 In this program the output of ∿ is connected to the input of ⊳.
 

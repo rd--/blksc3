@@ -1,4 +1,4 @@
-import * as sc from '../lib/jssc3/dist/jssc3.js'
+import * as sc from '../lib/jssc3/dist/jssc3.js';
 
 // Setup workspace on loading a new program.  Reset to unit scale and center blocks.
 function onLoad(blk) {
@@ -17,19 +17,19 @@ function loadXml(blk, xmlText) {
 // Read selected .xml file.
 export function readInputXml(inputId, blk) {
 	const inputFile = sc.getFileInputFile(inputId, 0);
-	inputFile.text().then(xmlText => loadXml(blk, xmlText));
+	inputFile.text().then((xmlText) => loadXml(blk, xmlText));
 }
 
 // Read and load .xml format program from URL.
 export function fetchXml(blk, xmlUrl) {
 	sc.fetchUtf8(sc.urlAppendTimeStamp(xmlUrl), { cache: 'no-cache' })
-		.then(xmlText => loadXml(blk, xmlText));
+		.then((xmlText) => loadXml(blk, xmlText));
 }
 
 // If the Url has fileParamKey, load the named .xml file.
 export function maybeLoadXmlFromUrlParam(blk, fileParamKey) {
-	const fileName = sc.urlGetParam(fileParamKey)
-	if(fileName) {
+	const fileName = sc.urlGetParam(fileParamKey);
+	if (fileName) {
 		fetchXml(blk, fileName);
 	}
 }

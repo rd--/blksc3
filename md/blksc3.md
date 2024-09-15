@@ -33,3 +33,8 @@ $ blksc3 --host=localhost --port=9160 stc-to-st | gst -
 ...
 $
 ````
+
+# ws-osc-to-udp-osc
+
+Send incoming Websocket Osc messaged out over Udp.
+
