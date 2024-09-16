@@ -6,7 +6,7 @@ function markdownToHtml(mdText) {
 	return htmlWriter.render(mdReader.parse(mdText));
 }
 
-// .stc files can have a .md notes segment.
+// .sl files can have a .md notes segment.
 function mdNotesFromStc(stcText) {
 	const lines = stcText.split('\n');
 	const fromMarker = sc.arrayDropWhile(
@@ -16,7 +16,7 @@ function mdNotesFromStc(stcText) {
 	return sc.arrayUnlines(sc.arrayTail(fromMarker));
 }
 
-// Load .stc from fileName, extract .md notes, convert to .html.
+// Load .sl from fileName, extract .md notes, convert to .html.
 export function loadNotes(fileName) {
 	return sc.fetchUtf8(fileName, { cache: 'no-cache' })
 		.then((stcText) => markdownToHtml(mdNotesFromStc(stcText)));

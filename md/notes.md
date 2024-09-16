@@ -1,7 +1,5 @@
 # Issues
 
-- Textures require Mix/Sum
-- Concise "create list with" text, also "set x to" as ":="
 - Sf - all noise?
 - An Tw 99846300173991936 (Crash? New rewrite rules for pseudo-ugens?)
 - F0 Tw 1319946903711338496
@@ -12,10 +10,16 @@
 - TChoose.1
 - Sequencer.1
 
+# Clarify
+
+- Explain why textures require Mix/Sum
+- Document how concise "create list with" and "set x to" (as "[]" and ":=") are defined
+
 # Spl
 
 The Blockly Js printer prints "var p, q, r;" to declare temporaries.
-Spl allows this form to support blksc3 but properly blksc3 should write "let p = nil;".
+Spl allows this form particularly to support BlkSc3.
+Properly BlkSc3 should write "let p = nil; let q = nil; let r = nil;".
 
 # Help
 
@@ -38,7 +42,7 @@ In the case of "sub-diagrams" these would be connected to the blocks that connec
 # Url
 
 An initial file can be loaded by setting the Url parameter _e_,
-i.e. _blksc3-wasm.html?e=help/graph/jmcc-why-supercollider.xml_.
+i.e. _blksc3-wasm.html?e=help/graph/Jmcc - Why SuperCollider.xml_.
 
 # Notes
 
@@ -51,7 +55,7 @@ Other errors are:
 
 The _math_ operator blocks should only hold _Ugen_ operators.
 
-_splay2_ should be written as a block constructor, not a method.
+_Splay_ should be written as a block constructor, not a method.
 
 _clearBuf_ is an interesting case, it is a method because it constructs an _Mrg_ node.
 
@@ -103,10 +107,11 @@ _kr_ should not exist.
 - guide for mouse/pointer event
 - guide for event in browser
 - preferences pane
-- guide for comments
-- guide for play
+- *guide for comments
+- *guide for play
 - multiple fragments
 - remaining unicode
 - help for collect
 - cc & sw for broswer
 - fullscreen has x as accesskey, but it's really for phone/tablet so not required
+- why do guide help files have initial comment? (duplicated as title)

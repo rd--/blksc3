@@ -10,9 +10,10 @@ It also allows blocks to be displayed using symbolic notations that would not be
 
 “ is the message indicating a _Comment_ block, ▷ a _Play_ block, ∿ a _SinOsc_ block and ⊥ an _Impulse_ block.
 
-ν is symbol used in messages to indicate a _frequency_ parameter, ϕ a _phase_ parameter, × a _mul_ parameter and + an _add_ parameter.
+ν is the symbol used in messages to indicate a _frequency_ parameter, ϕ a _phase_ parameter, × a _multiply_ parameter and + an _add_ parameter.
 
-⌈ is the symbol used in messages to indicate the _max_ binary operator. (It also indicates the _ceiling_ unary operator).
+⌈ is the symbol used in messages to indicate the _Max_ binary operator.
+(It also indicates the _Ceiling_ unary operator).
 
 Symbolic names for common blocks and parameters make graphs drawings much more concise.
 These names do not ever need to be typed, only recognised.

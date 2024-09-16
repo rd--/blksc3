@@ -23,7 +23,7 @@ and print itself as:
 This form of ! would be a _macro_.
 The first ! block (containing ∿) would print exactly as it currently does, i.e.:
 
-> _{ SinOsc... }.duplicate(16)_
+> _{ SinOsc(..., 0) * ... } ! 16_
 
 A difficulty with macros is illustrated by the second ! block.
 Here we have given a name (_x_) to the λ block (containing ⋏ₜ),

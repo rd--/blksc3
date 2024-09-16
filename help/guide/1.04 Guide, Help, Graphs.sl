@@ -11,8 +11,7 @@ There is a _Guide_, of which this program is one section.
 The guide consists of very short programs, each with an explanatory text that appears in the _Notes_ area to the right of the workspace.
 
 There are _Help_ programs that illustrate individual blocks.
-Some blocks have multiple illustrations and the help programs have numerical suffixes to distinguish them,
-i.e. _SinOsc.1_ and _SinOsc.2_ &etc.
+Some blocks have multiple illustrations and the help programs have numerical suffixes to distinguish them, i.e. _SinOsc.1_ and _SinOsc.2_ &etc.
 
 There is a collection of _Graph_ programs translated from _SuperCollider_ programs by various authors.
 These are sometimes intricate and illustrate more complicated synthesis techniques and graph constructions.

@@ -17,8 +17,7 @@ let dur = 7;
 
 Programs are stored as _.xml_ files.
 _Load_ prompts to select an _.xml_ file and loads it into the workspace.
-_Copy_ copies the _.xml_ text describing the current workspace state to the clipboard,
-from where it can be pasted into an editor and saved as an _.xml_ file.
+_Copy_ copies the _.xml_ text describing the current workspace state to the clipboard, from where it can be pasted into an editor and saved as an _.xml_ file.
 
 _BlkSc3_ also includes a translator from _Spl_ (_.sl_) notation to the _.xml_ block notation.
 
@@ -39,5 +38,4 @@ OverlapTexture({ :tr |
 }, 1, 3, 4).Mix
 ```
 
-The program generates a simple texture of four phase modulation oscillator pairs,
-with random inputs and a linear modulation index sweep.
+The program generates a simple texture of four phase modulation oscillator pairs, with random inputs and a linear modulation index sweep.

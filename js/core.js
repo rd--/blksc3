@@ -114,7 +114,7 @@ function loadHelpGraph(blk, graphPath) {
 	loadNotes(`${graphPath}.sl`)
 		.then(sc.setterForInnerHtmlOf('blkNotes'));
 	if (blk.trackHistory) {
-		sc.windowUrlSetParam('e', graphUrl);
+		sc.windowUrlSetParam('e', graphPath);
 	}
 }
 
