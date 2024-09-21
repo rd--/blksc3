@@ -95,10 +95,19 @@ export function printCode(blk) {
 }
 
 function pre(blk, onCompletion) {
-	blk.Blockly.utils.colour.setHsvSaturation(0.20);
-	blk.Blockly.utils.colour.setHsvValue(0.95);
+	blk.Blockly.utils.colour.setHsvSaturation(0.20); /* 0.20 */
+	blk.Blockly.utils.colour.setHsvValue(0.95); /* 0.95 */
 	blk.Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
 	blk.Blockly.Msg['LISTS_CREATE_WITH_INPUT_WITH'] = '⟦⟧';
+	blk.Blockly.Msg['SC_ARRAY_HUE'] = '260';
+	blk.Blockly.Msg['SC_ENV_PAN_HUE'] = '300';
+	blk.Blockly.Msg['SC_GENERATOR_HUE'] = '210';
+	blk.Blockly.Msg['SC_IO_RAND_HUE'] = '60';
+	blk.Blockly.Msg['SC_LAMBDA_HUE'] = '180';
+	blk.Blockly.Msg['SC_MATH_HUE'] = '230';
+	blk.Blockly.Msg['SC_META_HUE'] = '300';
+	blk.Blockly.Msg['SC_PROCESSOR_HUE'] = '150';
+	blk.Blockly.Msg['SC_TRIGGER_HUE'] = '30';
 	sc.fetchJson('json/blksc3.json', { cache: 'no-cache' })
 		.then(blk.Blockly.defineBlocksWithJsonArray);
 	sc.fetchJson('json/blksc3-std.json', { cache: 'no-cache' })
