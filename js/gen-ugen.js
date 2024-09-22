@@ -578,9 +578,6 @@ Blockly.JavaScript.forBlock['sc3_Splay2'] = function(block) {
 Blockly.JavaScript.forBlock['sc3_Splay'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'Splay', ['INARRAY'], true);
 };
-Blockly.JavaScript.forBlock['sc3_Mix'] = function(block) {
-	return blkUgenCodeGen(blk, block, 'Mix', ['INARRAY'], true);
-};
 Blockly.JavaScript.forBlock['sc3_Sw'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'Sw', ['INDEX'], true);
 };

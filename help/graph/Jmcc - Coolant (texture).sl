@@ -1,10 +1,10 @@
 {- coolant ; jmcc #2 -}
-var o = OnePole(BrownNoise() * 0.002, 0.95);
-XFadeTexture({ :tr |
+let o = OnePole(BrownNoise() * 0.002, 0.95);
+{ :tr |
 	{
 		Ringz(o, TRand(0, 2000, tr) + 40, 1)
 	} !^ 10
-}, 4, 4)
+}.XFadeTexture(4, 4)
 
 {- ---- notes.md ---- -}
 Coolant texture, individual resonator (_Ringz_) blocks.
