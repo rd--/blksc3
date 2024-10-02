@@ -534,7 +534,7 @@ stc_file_to_xml_file = graph_file_to_xml_file Stc.stcToExpr
 
 {- | Stc file to Xml file
 
-> spl_file_to_xml_file "graph/F0 - Tw 582277939653439489.sl"
+> spl_file_to_xml_file "graph/F0 - Tw 1254441448327479299.sl"
 > spl_file_to_xml_file "guide/1.06 User Programs.sl"
 > spl_file_to_xml_file "ugen/PanAz.1.sl"
 -}
