@@ -100,10 +100,14 @@ function pre(blk, onCompletion) {
 	blk.Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
 	blk.Blockly.Msg['LISTS_CREATE_WITH_INPUT_WITH'] = '⟦⟧';
 	blk.Blockly.Msg['SC_ARRAY_HUE'] = '260';
-	blk.Blockly.Msg['SC_ENV_PAN_HUE'] = '300';
+	blk.Blockly.Msg['SC_ENV_HUE'] = '300';
+	blk.Blockly.Msg['SC_PAN_HUE'] = '300';
 	blk.Blockly.Msg['SC_GENERATOR_HUE'] = '210';
-	blk.Blockly.Msg['SC_IO_RAND_HUE'] = '60';
+	blk.Blockly.Msg['SC_IO_HUE'] = '60';
+	blk.Blockly.Msg['SC_RAND_HUE'] = '60';
 	blk.Blockly.Msg['SC_LAMBDA_HUE'] = '180';
+	blk.Blockly.Msg['SC_ITER_HUE'] = '180';
+	blk.Blockly.Msg['SC_EVENT_HUE'] = '180';
 	blk.Blockly.Msg['SC_MATH_HUE'] = '230';
 	blk.Blockly.Msg['SC_META_HUE'] = '300';
 	blk.Blockly.Msg['SC_PROCESSOR_HUE'] = '150';
