@@ -151,7 +151,7 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	load_block_definitions(blk, 'json/blksc3.json');
 	load_block_definitions(blk, 'json/blksc3-std.json');
 	load_block_definitions(blk, 'json/blksc3-ugen.json');
-	load_json_toolbox(blk, function (blk) {
+	load_xml_toolbox(blk, function (blk) {
 		blk.workspace.addChangeListener(onWorkspaceChange(blk));
 		json.maybeLoadJsonFromUrlParam(blk, 'e');
 	});
