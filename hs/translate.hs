@@ -1,6 +1,6 @@
 {- | Translator for simple .stc/.spl graphs to Blockly .xml notation.
 
-In addition to the initial .xml notation there is also a newer .json notation.
+In addition to the current .xml notation there is also a newer .json notation.
 
 -}
 
@@ -23,22 +23,41 @@ import qualified Language.Smalltalk.Stc.Translate as Stc {- stsc3 -}
 
 {- | Literal float.
 
->>> lit_float_xml "shadow" 220
-"<shadow type='math_number'><field name='NUM'>220.0</field></shadow>"
+>>> putStr $ lit_float_json "shadow" 220
+{"shadow": {"type": "math_number", "fields": {"NUM": 220.0}}}
 -}
+lit_float_json :: String -> Double -> String
+lit_float_json ty n = printf "{\"%s\": {\"type\": \"math_number\", \"fields\": {\"NUM\": %f}}}" ty n
+
 lit_float_xml :: String -> Double -> String
 lit_float_xml ty n = printf "<%s type='math_number'><field name='NUM'>%f</field></%s>" ty n ty
 
 {- | Literal integer.
 
->>> lit_int_xml "shadow" 220
-"<shadow type='math_number'><field name='NUM'>220</field></shadow>"
+>>> putStr $ lit_int_json "shadow" 220
+{"shadow": {"type": "math_number", "fields": {"NUM": 220}}}
 -}
+lit_int_json :: String -> Integer -> String
+lit_int_json ty n = printf "{\"%s\": {\"type\": \"math_number\", \"fields\": {\"NUM\": %d}}}" ty n
+
 lit_int_xml :: String -> Integer -> String
 lit_int_xml ty n = printf "<%s type='math_number'><field name='NUM'>%d</field></%s>" ty n ty
 
+lit_str_json :: String -> String -> String
+lit_str_json ty s = printf "{\"%s\": {\"type\": \"text\", \"fields\": {\"TEXT\": \"%s\"}}}" ty s
+
 lit_str_xml :: String -> String -> String
 lit_str_xml ty s = printf "<%s type='text'><field name='TEXT'>%s</field></%s>" ty s ty
+
+lit_json :: String -> St.Literal -> String
+lit_json ty l =
+  case l of
+  St.NumberLiteral (St.Float n) -> lit_float_json ty n
+  St.NumberLiteral (St.Int n) -> lit_int_json ty n
+  St.StringLiteral s -> lit_str_json ty s
+  St.SymbolLiteral s -> lit_str_json ty s
+  St.ArrayLiteral a -> array_json (map (lit_json ty . fromLeft (error "non-literal in literal array")) a)
+  _ -> error "lit_json"
 
 lit_xml :: String -> St.Literal -> String
 lit_xml ty l =
@@ -282,17 +301,31 @@ var_get x =
     _ -> printf "<block type='variables_get'>\n<field name='VAR'>%s</field>\n</block>" x
 
 -- | Zero-indexed.
+array_elem_json :: Int -> String -> String
+array_elem_json k x = printf "\"ADD%d\": %s" k x
+
 array_elem_xml :: Int -> String -> String
 array_elem_xml k x = printf "<value name='ADD%d'>%s</value>" k x
 
+{- | Array Json
+
+>>> putStr $ array_json [lit_int_json "shadow" 1,lit_float_json "shadow" 2.3,lit_int_json "shadow" 4]
+{"block": {"type": "lists_create_with", "inline": true, "extraState": {"itemCount": 3}, "inputs": {"ADD0": {"shadow": {"type": "math_number", "fields": {"NUM": 1}}},"ADD1": {"shadow": {"type": "math_number", "fields": {"NUM": 2.3}}},"ADD2": {"shadow": {"type": "math_number", "fields": {"NUM": 4}}}}}}
+-}
+array_json :: [String] -> String
+array_json l =
+  printf
+  "{\"block\": {\"type\": \"lists_create_with\", \"inline\": true, \"extraState\": {\"itemCount\": %d}, \"inputs\": {%s}}}"
+  (length l) (intercalate "," (zipWith array_elem_json [0..] l))
+
 {- | Array Xml
 
->>> putStr $ array_xml [lit_int_xml "shadow" 1,lit_float_xml "shadow" 2.3,lit_int_xml "shadow" 4]
+>>> putStr $ array_xml [lit_int_json "shadow" 1,lit_float_json "shadow" 2.3,lit_int_json "shadow" 4]
 <block type='lists_create_with' inline='true'>
 <mutation items='3'></mutation>
-<value name='ADD0'><shadow type='math_number'><field name='NUM'>1</field></shadow></value>
-<value name='ADD1'><shadow type='math_number'><field name='NUM'>2.3</field></shadow></value>
-<value name='ADD2'><shadow type='math_number'><field name='NUM'>4</field></shadow></value>
+<value name='ADD0'>{"shadow": {"type": "math_number", "fields": {"NUM": 1}}}</value>
+<value name='ADD1'>{"shadow": {"type": "math_number", "fields": {"NUM": 2.3}}}</value>
+<value name='ADD2'>{"shadow": {"type": "math_number", "fields": {"NUM": 4}}}</value>
 </block>
 -}
 array_xml :: [String] -> String

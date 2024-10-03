@@ -19,13 +19,13 @@ export class Blk {
 	}
 }
 
-// Configure and inject Blockly given Xml format toolbox definition.
-function injectWithXmlToolbox(blk, onCompletion) {
-	return function (xmlToolbox) {
+// Configure and inject Blockly given toolbox definition.
+function injectWithToolbox(blk, onCompletion) {
+	return function (toolbox) {
 		blk.config = {
 			media: 'lib/blockly-11.1.1/media/',
 			sounds: false,
-			toolbox: xmlToolbox,
+			toolbox: toolbox,
 			rtl: false,
 			move: {
 				scrollbars: { horizontal: true, vertical: true },
@@ -45,7 +45,7 @@ function injectWithXmlToolbox(blk, onCompletion) {
 		};
 		blk.workspace = blk.Blockly.inject('blocklyContainer', blk.config);
 		displayScrollbars(blk, false);
-		// console.debug('injectWithXmlToolbox: injection completed');
+		// console.debug('injectWithToolbox: injection completed');
 		onCompletion(blk);
 	};
 }
@@ -122,9 +122,14 @@ function load_block_definitions(blk, filename) {
 		.then(blk.Blockly.defineBlocksWithJsonArray);
 }
 
-function load_toolbox(blk, onCompletion) {
-	sc.fetchUtf8('xml/blksc3.xml', { cache: 'no-cache' })
-		.then(injectWithXmlToolbox(blk, onCompletion));
+function load_json_toolbox(blk, onCompletion) {
+	sc.fetchJson('xml/toolbox-exported.json', { cache: 'no-cache' })
+		.then(injectWithToolbox(blk, onCompletion));
+}
+
+function load_xml_toolbox(blk, onCompletion) {
+	sc.fetchUtf8('xml/toolbox.xml', { cache: 'no-cache' })
+		.then(injectWithToolbox(blk, onCompletion));
 }
 
 function loadHelpGraph(blk, graphPath) {
@@ -146,7 +151,7 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	load_block_definitions(blk, 'json/blksc3.json');
 	load_block_definitions(blk, 'json/blksc3-std.json');
 	load_block_definitions(blk, 'json/blksc3-ugen.json');
-	load_toolbox(blk, function (blk) {
+	load_json_toolbox(blk, function (blk) {
 		blk.workspace.addChangeListener(onWorkspaceChange(blk));
 		json.maybeLoadJsonFromUrlParam(blk, 'e');
 	});
