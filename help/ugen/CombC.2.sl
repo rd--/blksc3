@@ -11,9 +11,9 @@ let tr = { Dust(0.65) } ! 2;
 } !+ 12 * 0.1
 
 {- ---- notes.md ---- -}
-# CombC -- comb filter
+# CombC
 
-_CombC(in, maxdelaytime, delaytime, decaytime)_
+- _CombC(in, maxdelaytime, delaytime, decaytime)_
 
 Comb delay line. CombN uses no interpolation, CombL uses linear interpolation, CombC uses cubic interpolation.
 

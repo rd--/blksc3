@@ -1,8 +1,8 @@
 {- Asr -}
-var tr = Impulse([1, 0.75], 0);
-var gt = Trig(tr, TRand(0.1, 0.2, tr));
-var o = Blip(TRand(36, [48, 60], tr).MidiCps, TRand(1, 7, tr));
-var a = Asr(gt, TRand(0.01, 0.2, tr), TRand(0.2, 2, tr), -4);
+let tr = Impulse([1, 0.75], 0);
+let gt = Trig(tr, TRand(0.1, 0.2, tr));
+let o = Blip(TRand(36, [48, 60], tr).MidiCps, TRand(1, 7, tr));
+let a = Asr(gt, TRand(0.01, 0.2, tr), TRand(0.2, 2, tr), -4);
 o * a * 0.1
 
 {- ---- notes.md ---- -}

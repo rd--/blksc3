@@ -1,8 +1,8 @@
-{- stereo half-life (jrhb) -}
-var tHalf = 3.92;
-var nAtoms = 100000;
-var n = (nAtoms - PulseCount(LocalIn(2, 0), 0)).Max(0);
-var activity = Dust(n * 2.log / tHalf);
+{- Stereo half-life (Jrhb) -}
+let tHalf = 3.92;
+let nAtoms = 100000;
+let n = (nAtoms - PulseCount(LocalIn(2, 0), 0)).Max(0);
+let activity = Dust(n * 2.log / tHalf);
 activity <! LocalOut(activity) * 0.1
 
 {- ---- notes.md ---- -}

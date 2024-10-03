@@ -10,9 +10,9 @@ s
 {- ---- notes.md ---- -}
 # Pitch
 
-Autocorrelation pitch follower
+- _Pitch(in, initFreq, minFreq, maxFreq, execFreq, maxBinsPerOctave, median, ampThreshold, peakThreshold, downSample)_
 
-> _Pitch(in, initFreq, minFreq, maxFreq, execFreq, maxBinsPerOctave, median, ampThreshold, peakThreshold, downSample)_
+Autocorrelation pitch follower
 
 Returns two signals, _freq_ and _hasFreq_.
 

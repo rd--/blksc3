@@ -11,13 +11,15 @@ OverlapTexture({ :tr |
 }, 2, 4, 2)
 
 {- ---- notes.md ---- -}
-# Decay2 -- exponential decay
+# Decay2
 
-_Decay2(in, attackTime, decayTime)_
+- _Decay2(in, attackTime, decayTime)_
 
-_Decay_ has a very sharp attack and can produce clicks. _Decay2_ rounds off the attack by subtracting one Decay from another. _Decay2(in, attackTime, decayTime)_ is equivalent to _Decay(in, decayTime) - Decay(in, attackTime)_.
+Exponential decay.
 
 - in: input signal
 - attackTime: 60 dB attack time in seconds.
 - decayTime: 60 dB decay time in seconds.
+
+_Decay_ has a very sharp attack and can produce clicks. _Decay2_ rounds off the attack by subtracting one Decay from another. _Decay2(in, attackTime, decayTime)_ is equivalent to _Decay(in, decayTime) - Decay(in, attackTime)_.
 

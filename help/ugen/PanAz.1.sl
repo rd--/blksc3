@@ -9,8 +9,9 @@ PanAz(
 )
 
 {- ---- notes.md ---- -}
-# PanAz - Azimuth panner
+# PanAz
 
+Azimuth panner.
 The number of channels input (_#_) tells how many consecutive channels to pan across.
 This value determines the _shape_ of the signal graph and hence must be a constant value.
 

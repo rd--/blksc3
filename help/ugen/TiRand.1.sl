@@ -14,10 +14,9 @@ OverlapTexture({ :tr |
 {- ---- notes.md ---- -}
 # TiRand
 
+- _TiRand(lo, hi, trig)_
+
 Triggered integer random number generator.
-
-> _TiRand(lo, hi, trig)_
-
 Generates a random integer value in uniform distribution from lo to hi each time the trig signal changes from nonpositive to positive values
 
 This program generates random degree, octave and number of harmonics value for a seven voice overlapping texture.

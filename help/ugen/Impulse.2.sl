@@ -5,10 +5,11 @@ var env = Decay2(t, 0.01 * m, 1 * m) / (1 .. 6);
 Splay2(SinOsc([60, 64, 67, 71, 74, 78].MidiCps, 0) * env) * 0.1
 
 {- ---- notes.md ---- -}
-# Impulse -- impulse oscillator
+# Impulse
 
-_Impulse(freq, phase)_
+- _Impulse(freq, phase)_
 
+Impulse oscillator.
 Outputs non band limited single sample impulses.
 
 - freq: frequency in Hertz

@@ -1,4 +1,4 @@
-{- spectral harp ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #6 -}
+{- Spectral harp ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #6 -}
 let f0 = [9000, 7000, 6000, 5000, 4000];
 let f1 = [3, 2, 1, 0.75, 0.5];
 (1 .. f0.size).collect { :index |

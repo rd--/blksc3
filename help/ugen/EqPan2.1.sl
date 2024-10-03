@@ -5,6 +5,8 @@ EqPan2(
 )
 
 {- ---- notes.md ---- -}
-# EqPan2 -- equal power stereo panner
+# EqPan2
+
+Equal power stereo panner.
 
 A quiet C3 sine tone is mixed with pink noise and panned following a one hertz sine oscillator.

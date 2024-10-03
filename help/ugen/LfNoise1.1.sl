@@ -4,10 +4,11 @@ var d = CombC(o, 3.0, [1.35, 0.7], 6);
 Pan2(o, 0, 1) + d
 
 {- ---- notes.md ---- -}
-# LfNoise1 -- ramp noise
+# LfNoise1
 
-_LfNoise1(freq)_
+- _LfNoise1(freq)_
 
+Ramp noise.
 Generates linearly interpolated random values at a rate given by the nearest integer division of the sample rate by the freq argument.
 
 - freq: approximate rate at which to generate random values in Hertz

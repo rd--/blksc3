@@ -1,8 +1,8 @@
 {- Adsr.1 -}
-var tr = Impulse([0.75, 0.5], 0);
-var gt = Trig(tr, TRand(0.1, 0.2, tr));
-var o = Blip(TRand(36, [48, 72], tr).MidiCps, TRand(1, 7, tr));
-var a = Adsr(
+let tr = Impulse([0.75, 0.5], 0);
+let gt = Trig(tr, TRand(0.1, 0.2, tr));
+let o = Blip(TRand(36, [48, 72], tr).MidiCps, TRand(1, 7, tr));
+let a = Adsr(
 	gt,
 	TRand(0.01, 0.2, tr),
 	TRand(0.3, 0.6, tr),
