@@ -1,0 +1,190 @@
+{
+ "blocks": {
+  "languageVersion": 0,
+  "blocks": [
+   {
+    "type": "sc3_Comment",
+    "id": "{GF=2.(FUfs6)3EuGArx",
+    "x": 0,
+    "y": 0,
+    "fields": {
+     "COMMENT": "PulseCount ; count impulses with periodic reset"
+    },
+    "next": {
+     "block": {
+      "type": "sc3_Play",
+      "id": "N]*qy,mAF|_=CrDlpu:0",
+      "inputs": {
+       "CODE": {
+        "block": {
+         "type": "sc3_SinOsc",
+         "id": "%NbehG6bxaNYs6-F}=yt",
+         "inputs": {
+          "FREQ": {
+           "block": {
+            "type": "sc3_PulseCount",
+            "id": "@usK7;kuNB~yoqV{iM:+",
+            "inline": false,
+            "inputs": {
+             "TRIG": {
+              "block": {
+               "type": "sc3_Impulse",
+               "id": "J_Zo8$3(edI+Oc]t^~7=",
+               "inline": true,
+               "inputs": {
+                "FREQ": {
+                 "block": {
+                  "type": "math_number",
+                  "id": "/r(f5c3Ge`c{(kj.Saz|",
+                  "fields": {
+                   "NUM": 10
+                  }
+                 }
+                },
+                "PHASE": {
+                 "block": {
+                  "type": "math_number",
+                  "id": "q}zV-6oTOSUqa_Tt=m[8",
+                  "fields": {
+                   "NUM": 0
+                  }
+                 }
+                },
+                "MUL": {
+                 "shadow": {
+                  "type": "math_number",
+                  "id": "qg]KhOhr/5q;24(}4hb/",
+                  "fields": {
+                   "NUM": 1
+                  }
+                 }
+                },
+                "ADD": {
+                 "shadow": {
+                  "type": "math_number",
+                  "id": "cv],(6McY+$2r/q[/-)F",
+                  "fields": {
+                   "NUM": 0
+                  }
+                 }
+                }
+               }
+              }
+             },
+             "RESET": {
+              "block": {
+               "type": "sc3_Impulse",
+               "id": "=#)vxp:KR_2/C5,SH8lt",
+               "inline": true,
+               "inputs": {
+                "FREQ": {
+                 "block": {
+                  "type": "math_number",
+                  "id": "K$Uqr!rW@}qYo,IAHWcc",
+                  "fields": {
+                   "NUM": 0.4
+                  }
+                 }
+                },
+                "PHASE": {
+                 "block": {
+                  "type": "math_number",
+                  "id": "iYk~|vm9J0w$bnuE_q`2",
+                  "fields": {
+                   "NUM": 0
+                  }
+                 }
+                },
+                "MUL": {
+                 "shadow": {
+                  "type": "math_number",
+                  "id": "(%o|U^3^eN.tm#3PumM$",
+                  "fields": {
+                   "NUM": 1
+                  }
+                 }
+                },
+                "ADD": {
+                 "shadow": {
+                  "type": "math_number",
+                  "id": "HAI7{ieI|!%|LtsGZc6U",
+                  "fields": {
+                   "NUM": 0
+                  }
+                 }
+                }
+               }
+              }
+             },
+             "MUL": {
+              "shadow": {
+               "type": "math_number",
+               "id": "Xh?)*M=2jUFcybo+uk}g",
+               "fields": {
+                "NUM": 1
+               }
+              },
+              "block": {
+               "type": "math_number",
+               "id": "pCFejl2-V.ek:)##|0=7",
+               "fields": {
+                "NUM": 200
+               }
+              }
+             },
+             "ADD": {
+              "shadow": {
+               "type": "math_number",
+               "id": "N#Z-(wfv0,KPJ~ULzj-2",
+               "fields": {
+                "NUM": 0
+               }
+              }
+             }
+            }
+           }
+          },
+          "PHASE": {
+           "block": {
+            "type": "math_number",
+            "id": "s#]o/lLkAym%WFV2],.}",
+            "fields": {
+             "NUM": 0
+            }
+           }
+          },
+          "MUL": {
+           "shadow": {
+            "type": "math_number",
+            "id": "!!61!i#tOvDpE/ye9*C[",
+            "fields": {
+             "NUM": 1
+            }
+           },
+           "block": {
+            "type": "math_number",
+            "id": "PBSD=u(@4|=]G%9]9*{@",
+            "fields": {
+             "NUM": 0.05
+            }
+           }
+          },
+          "ADD": {
+           "shadow": {
+            "type": "math_number",
+            "id": "m9^4)Xus.e(H@t?G[dWX",
+            "fields": {
+             "NUM": 0
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  ]
+ }
+}

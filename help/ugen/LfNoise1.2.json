@@ -1,0 +1,168 @@
+{
+ "blocks": {
+  "languageVersion": 0,
+  "blocks": [
+   {
+    "type": "sc3_Comment",
+    "id": "#G?lm5uOWS[OS.y!csiK",
+    "x": 24,
+    "y": 72,
+    "fields": {
+     "COMMENT": "LFNoise1 ; angry birds ; https://github.com/cianoc/supercollider_fragments"
+    },
+    "next": {
+     "block": {
+      "type": "variables_set",
+      "id": "OBv]29ym_/KYz3mJeX_B",
+      "fields": {
+       "VAR": {
+        "id": "m@:*0Zm{rure%bM3gKb}"
+       }
+      },
+      "inputs": {
+       "VALUE": {
+        "block": {
+         "type": "sc3_LFNoise1",
+         "id": "W?Ud8ES:56`prW^s4]C$",
+         "inline": true,
+         "inputs": {
+          "FREQ": {
+           "block": {
+            "type": "lists_create_with",
+            "id": "Nr_8u$zl#`6!nu)mnFn!",
+            "inline": true,
+            "extraState": {
+             "itemCount": 2
+            },
+            "inputs": {
+             "ADD0": {
+              "block": {
+               "type": "math_number",
+               "id": "crQM8Ng,eUJRl!z=d}N?",
+               "fields": {
+                "NUM": 28
+               }
+              }
+             },
+             "ADD1": {
+              "block": {
+               "type": "math_number",
+               "id": "f|OtRNc#.W`c+b7q-M]V",
+               "fields": {
+                "NUM": 27
+               }
+              }
+             }
+            }
+           }
+          },
+          "MUL": {
+           "shadow": {
+            "type": "math_number",
+            "id": "!C/*XDefp[t+lS}twfA6",
+            "fields": {
+             "NUM": 1
+            }
+           },
+           "block": {
+            "type": "math_number",
+            "id": "prX]1Hn;2yL6nObT3a#%",
+            "fields": {
+             "NUM": 400
+            }
+           }
+          },
+          "ADD": {
+           "shadow": {
+            "type": "math_number",
+            "id": "1kP]nM=+g{noZl@[B=$X",
+            "fields": {
+             "NUM": 0
+            }
+           },
+           "block": {
+            "type": "math_number",
+            "id": "6OFMRTwr8x`%AxkB|oxU",
+            "fields": {
+             "NUM": 2000
+            }
+           }
+          }
+         }
+        }
+       }
+      },
+      "next": {
+       "block": {
+        "type": "sc3_Play",
+        "id": "aaM7KOMJfam|z.1@WVON",
+        "inputs": {
+         "CODE": {
+          "block": {
+           "type": "sc3_SinOsc",
+           "id": "d%`v_G9aZaA.hF32?e3,",
+           "inline": true,
+           "inputs": {
+            "FREQ": {
+             "block": {
+              "type": "variables_get",
+              "id": "dJL+/^iE.qcbc}i|S+Hc",
+              "fields": {
+               "VAR": {
+                "id": "m@:*0Zm{rure%bM3gKb}"
+               }
+              }
+             }
+            },
+            "PHASE": {
+             "block": {
+              "type": "math_number",
+              "id": "=YKLnBUH{c;T2j[}!];P",
+              "fields": {
+               "NUM": 0
+              }
+             }
+            },
+            "MUL": {
+             "shadow": {
+              "type": "math_number",
+              "id": "uFnvQZ!R)v9NLRbng.rL",
+              "fields": {
+               "NUM": 1
+              }
+             },
+             "block": {
+              "type": "math_number",
+              "id": "=VVW5*p/8:u$x36|uk8L",
+              "fields": {
+               "NUM": 0.1
+              }
+             }
+            },
+            "ADD": {
+             "shadow": {
+              "type": "math_number",
+              "id": "WJw5ar1O=%kJaGXz](OH",
+              "fields": {
+               "NUM": 0
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  ]
+ },
+ "variables": [
+  {
+   "name": "lfo",
+   "id": "m@:*0Zm{rure%bM3gKb}"
+  }
+ ]
+}

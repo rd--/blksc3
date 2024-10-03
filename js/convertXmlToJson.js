@@ -30,7 +30,7 @@ await defineBlocks(dir + 'json/blksc3.json');
 await defineBlocks(dir + 'json/blksc3-std.json');
 await defineBlocks(dir + 'json/blksc3-ugen.json');
 
-const subdir = dir + 'help/guide/';
+const subdir = dir + 'help/ugen/';
 
 for await (const entry of Deno.readDir(subdir)) {
 	let fileName = entry.name;

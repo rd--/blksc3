@@ -1,0 +1,108 @@
+{
+ "blocks": {
+  "languageVersion": 0,
+  "blocks": [
+   {
+    "type": "sc3_Comment",
+    "id": "~jVo_:,wC$8Cn4EDNpO/",
+    "x": 0,
+    "y": 0,
+    "fields": {
+     "COMMENT": "▷ (Play)"
+    },
+    "next": {
+     "block": {
+      "type": "sc3_Play",
+      "id": "t0UfD;XP`OMv+D,n`gq:",
+      "inputs": {
+       "CODE": {
+        "block": {
+         "type": "sc3_SinOsc",
+         "id": "Q293I*$#DJ|PSt_WnUT:",
+         "inline": false,
+         "inputs": {
+          "FREQ": {
+           "block": {
+            "type": "lists_create_with",
+            "id": "=-eF%c.fBMFhD!pL~?=F",
+            "inline": true,
+            "extraState": {
+             "itemCount": 2
+            },
+            "inputs": {
+             "ADD0": {
+              "block": {
+               "type": "math_number",
+               "id": "6YD}SJ=Xi:{.46gsfy%9",
+               "fields": {
+                "NUM": 220
+               }
+              }
+             },
+             "ADD1": {
+              "block": {
+               "type": "math_number",
+               "id": "t:=$_MTz!V^F%CFgDMbn",
+               "fields": {
+                "NUM": 220.5
+               }
+              }
+             }
+            }
+           }
+          },
+          "PHASE": {
+           "block": {
+            "type": "math_number",
+            "id": "`EkcdfylE(bTu_/-d7v%",
+            "fields": {
+             "NUM": 0
+            }
+           }
+          },
+          "MUL": {
+           "shadow": {
+            "type": "math_number",
+            "id": "?s6C=ZSkameLKhRSdKm8",
+            "fields": {
+             "NUM": 1
+            }
+           },
+           "block": {
+            "type": "sc3_UnaryOp",
+            "id": "2zofJRtc;(kd(Hj).#J|",
+            "fields": {
+             "OP": "DbAmp"
+            },
+            "inputs": {
+             "IN": {
+              "block": {
+               "type": "math_number",
+               "id": "l^3*O4pHAm0C$nBptyw7",
+               "fields": {
+                "NUM": -30
+               }
+              }
+             }
+            }
+           }
+          },
+          "ADD": {
+           "shadow": {
+            "type": "math_number",
+            "id": "`??ySG-d0kraqX*E:mVX",
+            "fields": {
+             "NUM": 0
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  ]
+ }
+}
