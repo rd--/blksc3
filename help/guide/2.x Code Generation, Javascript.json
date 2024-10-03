@@ -1,0 +1,174 @@
+{
+ "blocks": {
+  "languageVersion": 0,
+  "blocks": [
+   {
+    "type": "sc3_Comment",
+    "id": "Qq#cF}sylYWqjSx}2cTQ",
+    "x": 0,
+    "y": 0,
+    "fields": {
+     "COMMENT": "Code Generation, Javascript"
+    },
+    "next": {
+     "block": {
+      "type": "variables_set",
+      "id": "arEynhHQA;#}J)Mg}UN,",
+      "fields": {
+       "VAR": {
+        "id": "n=M7W20vmp5q{Kx0qvt?"
+       }
+      },
+      "inputs": {
+       "VALUE": {
+        "block": {
+         "type": "sc3_BinaryOp",
+         "id": ",O?!IMy3*7/b0}RC[Xd*",
+         "inline": true,
+         "fields": {
+          "OP": "*"
+         },
+         "inputs": {
+          "LHS": {
+           "block": {
+            "type": "sc3_UnaryOp",
+            "id": ")|3CHOqwHH@_Rj,vz}|,",
+            "fields": {
+             "OP": "Abs"
+            },
+            "inputs": {
+             "IN": {
+              "block": {
+               "type": "sc3_SinOsc",
+               "id": ":-?#1)=$-7?u^@@K7RLW",
+               "inline": true,
+               "inputs": {
+                "FREQ": {
+                 "block": {
+                  "type": "math_number",
+                  "id": "eFaf61gz53)PgLH_)%GK",
+                  "fields": {
+                   "NUM": 1
+                  }
+                 }
+                },
+                "PHASE": {
+                 "block": {
+                  "type": "math_number",
+                  "id": "c.Rfn:fFrT%lb@T@Vr6v",
+                  "fields": {
+                   "NUM": 0
+                  }
+                 }
+                },
+                "MUL": {
+                 "shadow": {
+                  "type": "math_number",
+                  "id": "kfPCPB@SXO}{{IX~(Y5(",
+                  "fields": {
+                   "NUM": 1
+                  }
+                 }
+                },
+                "ADD": {
+                 "shadow": {
+                  "type": "math_number",
+                  "id": "s=riSQt)Z/6C-tD85pwq",
+                  "fields": {
+                   "NUM": 0
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          },
+          "RHS": {
+           "block": {
+            "type": "math_number",
+            "id": "L,GzCsu%B}Pn]1Q#G/8H",
+            "fields": {
+             "NUM": 0.1
+            }
+           }
+          }
+         }
+        }
+       }
+      },
+      "next": {
+       "block": {
+        "type": "sc3_Play",
+        "id": "m4Nop.vb1@8Rm{wc1Vy6",
+        "inputs": {
+         "CODE": {
+          "block": {
+           "type": "sc3_SinOsc",
+           "id": "E@/T~J,8YXNL-6VO~A{z",
+           "inline": true,
+           "inputs": {
+            "FREQ": {
+             "block": {
+              "type": "math_number",
+              "id": ".mDnnop#PgmkYZ`!8Y%K",
+              "fields": {
+               "NUM": 440
+              }
+             }
+            },
+            "PHASE": {
+             "block": {
+              "type": "math_number",
+              "id": "L;4|rQw,~?:,;GeVFVhl",
+              "fields": {
+               "NUM": 0
+              }
+             }
+            },
+            "MUL": {
+             "shadow": {
+              "type": "math_number",
+              "id": "U-l|9ydv}oU!r[-7w(+1",
+              "fields": {
+               "NUM": 1
+              }
+             },
+             "block": {
+              "type": "variables_get",
+              "id": "oHVq]^vKt(y`P3}=ssRp",
+              "fields": {
+               "VAR": {
+                "id": "n=M7W20vmp5q{Kx0qvt?"
+               }
+              }
+             }
+            },
+            "ADD": {
+             "shadow": {
+              "type": "math_number",
+              "id": "/`jJ=k!`]x5niZU[zoBy",
+              "fields": {
+               "NUM": 0
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  ]
+ },
+ "variables": [
+  {
+   "name": "a",
+   "id": "n=M7W20vmp5q{Kx0qvt?"
+  }
+ ]
+}

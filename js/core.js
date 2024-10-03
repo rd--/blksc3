@@ -7,7 +7,7 @@ import { graphMenuInit } from './graph-menu.js';
 import { layoutMenuInit } from './layout.js';
 import { loadNotes } from './notes.js';
 import { displayScrollbars } from './scrollbars.js';
-import * as xml from './xml.js';
+import * as json from './json.js';
 
 export class Blk {
 	constructor(Blockly, trackHistory) {
@@ -94,11 +94,14 @@ export function printCode(blk) {
 	return sc.prettyPrintSyndefOf(evalCode(blk));
 }
 
-function pre(blk, onCompletion) {
-	blk.Blockly.utils.colour.setHsvSaturation(0.20); /* 0.20 */
-	blk.Blockly.utils.colour.setHsvValue(0.95); /* 0.95 */
+function set_block_messages(blk) {
 	blk.Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
 	blk.Blockly.Msg['LISTS_CREATE_WITH_INPUT_WITH'] = '⟦⟧';
+}
+
+function set_colours(blk) {
+	blk.Blockly.utils.colour.setHsvSaturation(0.20);
+	blk.Blockly.utils.colour.setHsvValue(0.95);
 	blk.Blockly.Msg['SC_ARRAY_HUE'] = '260';
 	blk.Blockly.Msg['SC_ENV_HUE'] = '300';
 	blk.Blockly.Msg['SC_PAN_HUE'] = '300';
@@ -112,18 +115,20 @@ function pre(blk, onCompletion) {
 	blk.Blockly.Msg['SC_META_HUE'] = '300';
 	blk.Blockly.Msg['SC_PROCESSOR_HUE'] = '150';
 	blk.Blockly.Msg['SC_TRIGGER_HUE'] = '30';
-	sc.fetchJson('json/blksc3.json', { cache: 'no-cache' })
+}
+
+function load_block_definitions(blk, filename) {
+	sc.fetchJson(filename, { cache: 'no-cache' })
 		.then(blk.Blockly.defineBlocksWithJsonArray);
-	sc.fetchJson('json/blksc3-std.json', { cache: 'no-cache' })
-		.then(blk.Blockly.defineBlocksWithJsonArray); // not -compact
-	sc.fetchJson('json/blksc3-ugen.json', { cache: 'no-cache' })
-		.then(blk.Blockly.defineBlocksWithJsonArray);
+}
+
+function load_toolbox(blk, onCompletion) {
 	sc.fetchUtf8('xml/blksc3.xml', { cache: 'no-cache' })
 		.then(injectWithXmlToolbox(blk, onCompletion));
 }
 
 function loadHelpGraph(blk, graphPath) {
-	xml.fetchXml(blk, `${graphPath}.xml`, false);
+	json.fetchJson(blk, `${graphPath}.json`, false);
 	loadNotes(`${graphPath}.sl`)
 		.then(sc.setterForInnerHtmlOf('blkNotes'));
 	if (blk.trackHistory) {
@@ -136,11 +141,16 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	const blk = new Blk(Blockly, trackHistory);
 	initCodeGen(blk);
 	initCodeGenUgen(blk);
-	pre(blk, function (blk) {
+	set_block_messages(blk);
+	set_colours(blk);
+	load_block_definitions(blk, 'json/blksc3.json');
+	load_block_definitions(blk, 'json/blksc3-std.json');
+	load_block_definitions(blk, 'json/blksc3-ugen.json');
+	load_toolbox(blk, function (blk) {
 		blk.workspace.addChangeListener(onWorkspaceChange(blk));
-		xml.maybeLoadXmlFromUrlParam(blk, 'e');
+		json.maybeLoadJsonFromUrlParam(blk, 'e');
 	});
-	sc.connectButtonToInput('xmlInputFileSelect', 'xmlInputFile'); // Initialise .xml file selector
+	sc.connectButtonToInput('jsonInputFileSelect', 'jsonInputFile'); // Initialise .json file selector
 	graphMenuInit('programMenu', 'graph', (path) => loadHelpGraph(blk, path));
 	sc.fetchJson('json/program-menu.json', { cache: 'no-cache' })
 		.then((json) => sc.selectAddKeysAsOptions('programMenu', json.programMenu));
@@ -159,8 +169,8 @@ export function init(Blockly, withUiCtl, trackHistory) {
 		.then((json) =>
 			sc.selectAddKeysAsOptions('smallProgramsMenu', json.smallProgramsMenu)
 		);
-	sc.userPrograms.storageKey = 'blksc3UserPrograms/xml';
-	sc.userProgramMenuInit('userMenu', (xmlText) => xml.loadXml(blk, xmlText));
+	sc.userPrograms.storageKey = 'blksc3UserPrograms/json';
+	sc.userProgramMenuInit('userMenu', (jsonText) => json.loadJson(blk, jsonText));
 	sc.selectOnChange('actionsMenu', function (menuElement, entryName) {
 		sc.userActionDo(entryName, 'userMenu', 'userProgramArchiveFile');
 		menuElement.selectedIndex = 0;
@@ -188,8 +198,9 @@ function onWorkspaceChange(blk) {
 	};
 }
 
-// Get .xml serialization of workspace.  (The .xml format is no longer being worked on.)
-export function workspaceXml(blk) {
-	const xml = blk.Blockly.Xml.workspaceToDom(blk.workspace);
-	return blk.Blockly.Xml.domToPrettyText(xml);
+// Get .json serialization of workspace.
+export function workspaceJson(blk) {
+	const jsonData = Blockly.serialization.workspaces.save(blk.workspace);
+	const jsonText = JSON.stringify(jsonData, null, ' ');
+	return jsonText;
 }

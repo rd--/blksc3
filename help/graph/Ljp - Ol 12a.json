@@ -1,0 +1,243 @@
+{
+ "blocks": {
+  "languageVersion": 0,
+  "blocks": [
+   {
+    "type": "sc3_Comment",
+    "id": "g7bTJR[0=ltdgBel)|UG",
+    "x": 0,
+    "y": 0,
+    "fields": {
+     "COMMENT": "Feedback racket ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #12a"
+    },
+    "next": {
+     "block": {
+      "type": "variables_set",
+      "id": "i;R1+9?71/Bfw,VT6{4T",
+      "fields": {
+       "VAR": {
+        "id": "pX)Xou4-E8X*9UWCe/GO"
+       }
+      },
+      "inputs": {
+       "VALUE": {
+        "block": {
+         "type": "sc3_Saw",
+         "id": ":)@RV,,+zcX/.@n/#Y{:",
+         "inline": true,
+         "inputs": {
+          "FREQ": {
+           "block": {
+            "type": "sc3_BinaryOp",
+            "id": ",hb:ei!=Xy#kFG~jVw*L",
+            "inline": true,
+            "fields": {
+             "OP": "+"
+            },
+            "inputs": {
+             "LHS": {
+              "block": {
+               "type": "math_number",
+               "id": "T%ysd%J_eTPyZMT%*|zy",
+               "fields": {
+                "NUM": 440
+               }
+              }
+             },
+             "RHS": {
+              "block": {
+               "type": "lists_create_with",
+               "id": "`pSR1raw8[aIQwh*=HxQ",
+               "inline": true,
+               "extraState": {
+                "itemCount": 2
+               },
+               "inputs": {
+                "ADD0": {
+                 "block": {
+                  "type": "math_number",
+                  "id": "^UP4^UDx:}L=-9j3chNZ",
+                  "fields": {
+                   "NUM": 0
+                  }
+                 }
+                },
+                "ADD1": {
+                 "block": {
+                  "type": "math_number",
+                  "id": "ZoQy!k$l.;c.R}aT8$-,",
+                  "fields": {
+                   "NUM": 0.2
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          },
+          "MUL": {
+           "shadow": {
+            "type": "math_number",
+            "id": "TF!BWqN-*Eqhj9Wmc[^T",
+            "fields": {
+             "NUM": 1
+            }
+           },
+           "block": {
+            "type": "math_number",
+            "id": "1.WUS`jich8=z~s,yj{^",
+            "fields": {
+             "NUM": 0.02
+            }
+           }
+          },
+          "ADD": {
+           "shadow": {
+            "type": "math_number",
+            "id": "`lS__y3%p?S!!bQBOzud",
+            "fields": {
+             "NUM": 0
+            }
+           }
+          }
+         }
+        }
+       }
+      },
+      "next": {
+       "block": {
+        "type": "sc3_Play",
+        "id": "n3ibgR[V.|X~!wMFf6oT",
+        "inputs": {
+         "CODE": {
+          "block": {
+           "type": "sc3_CombC",
+           "id": "s^jgOSVFfS;[0?dpND(h",
+           "inline": false,
+           "inputs": {
+            "IN": {
+             "block": {
+              "type": "variables_get",
+              "id": "s#n9pg{CvfSkL+WC5ZW+",
+              "fields": {
+               "VAR": {
+                "id": "pX)Xou4-E8X*9UWCe/GO"
+               }
+              }
+             }
+            },
+            "MAXDELAYTIME": {
+             "block": {
+              "type": "math_number",
+              "id": "^y$`sZvY$:o8.7d$wIys",
+              "fields": {
+               "NUM": 0.1
+              }
+             }
+            },
+            "DELAYTIME": {
+             "block": {
+              "type": "sc3_LFNoise0",
+              "id": "=aRs_~N{80damT0@j7QO",
+              "inline": true,
+              "inputs": {
+               "FREQ": {
+                "block": {
+                 "type": "math_number",
+                 "id": "mZApjIyDJwt8cn2(4r^Z",
+                 "fields": {
+                  "NUM": 10
+                 }
+                }
+               },
+               "MUL": {
+                "shadow": {
+                 "type": "math_number",
+                 "id": "RtKFig[o^EH0TtkwU#v:",
+                 "fields": {
+                  "NUM": 1
+                 }
+                },
+                "block": {
+                 "type": "math_number",
+                 "id": "sHQ!4?wH@ME*K:Y8[G;(",
+                 "fields": {
+                  "NUM": 0.08
+                 }
+                }
+               },
+               "ADD": {
+                "shadow": {
+                 "type": "math_number",
+                 "id": "ixF-FRbjKg(rK@W2jm7:",
+                 "fields": {
+                  "NUM": 0
+                 }
+                },
+                "block": {
+                 "type": "math_number",
+                 "id": "#wqRP{Xdn9Gc^5W^Qf?n",
+                 "fields": {
+                  "NUM": 0.08
+                 }
+                }
+               }
+              }
+             }
+            },
+            "DECAYTIME": {
+             "block": {
+              "type": "math_number",
+              "id": "jOA7KqTUhc{Sh(mAuK%x",
+              "fields": {
+               "NUM": -10000
+              }
+             }
+            },
+            "MUL": {
+             "shadow": {
+              "type": "math_number",
+              "id": "mErj/X_}rkG!0GO~4_1[",
+              "fields": {
+               "NUM": 1
+              }
+             }
+            },
+            "ADD": {
+             "shadow": {
+              "type": "math_number",
+              "id": "lV_,VEqOM~XJSH5;LZg[",
+              "fields": {
+               "NUM": 0
+              }
+             },
+             "block": {
+              "type": "variables_get",
+              "id": "Ry*q;!DYt~e=_)c3|/+f",
+              "fields": {
+               "VAR": {
+                "id": "pX)Xou4-E8X*9UWCe/GO"
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  ]
+ },
+ "variables": [
+  {
+   "name": "p",
+   "id": "pX)Xou4-E8X*9UWCe/GO"
+  }
+ ]
+}

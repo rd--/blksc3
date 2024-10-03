@@ -1,0 +1,800 @@
+{
+ "blocks": {
+  "languageVersion": 0,
+  "blocks": [
+   {
+    "type": "sc3_Comment",
+    "id": "assw@jeD*@0~ZkrVf{9`",
+    "x": 0,
+    "y": 0,
+    "fields": {
+     "COMMENT": "Wind metals (Jmcc) ; Graph rewrite"
+    },
+    "next": {
+     "block": {
+      "type": "variables_set",
+      "id": "z{/J1dBni}dvd{}~ON2m",
+      "fields": {
+       "VAR": {
+        "id": "0XpvLw^kZL-7Pl|z^:SD"
+       }
+      },
+      "inputs": {
+       "VALUE": {
+        "block": {
+         "type": "sc3_Proc1Stm",
+         "id": "/N{A}$oSFnZv9*8}16vj",
+         "inputs": {
+          "VAR": {
+           "block": {
+            "type": "variables_get",
+            "id": "zJr4!FC[y0f[bV;IQimx",
+            "fields": {
+             "VAR": {
+              "id": "JvNZttgnO;C%gAw2|*8U"
+             }
+            }
+           }
+          },
+          "STATEMENTS": {
+           "block": {
+            "type": "variables_set",
+            "id": "YxtqU%|DjZGUu3=-6Wa|",
+            "fields": {
+             "VAR": {
+              "id": "]cD;1E]Y!I;8]/?$_]F]"
+             }
+            },
+            "inputs": {
+             "VALUE": {
+              "block": {
+               "type": "math_number",
+               "id": "xewm8;,g-Mt8R!3S,~)O",
+               "fields": {
+                "NUM": 6
+               }
+              }
+             }
+            },
+            "next": {
+             "block": {
+              "type": "variables_set",
+              "id": "NT_#tRPUhey$}d|x|X*=",
+              "fields": {
+               "VAR": {
+                "id": "{6P_;wv8Rs$9E@[,$kEv"
+               }
+              },
+              "inputs": {
+               "VALUE": {
+                "block": {
+                 "type": "sc3_BinaryOp",
+                 "id": "J]3K[W4Omv*Cc.+uZC7h",
+                 "inline": false,
+                 "fields": {
+                  "OP": "*"
+                 },
+                 "inputs": {
+                  "LHS": {
+                   "block": {
+                    "type": "sc3_ArrayFill",
+                    "id": "^}d0qP7p?8Mf(zrFN2WB",
+                    "inline": true,
+                    "inputs": {
+                     "PROC": {
+                      "block": {
+                       "type": "sc3_Proc0",
+                       "id": "=UK@Q%GCyW7G~.]o/OVb",
+                       "inline": true,
+                       "inputs": {
+                        "RETURN": {
+                         "block": {
+                          "type": "sc3_BrownNoise",
+                          "id": "7Qp%RLo~0`},/~g(a+a0",
+                          "inline": true,
+                          "inputs": {
+                           "MUL": {
+                            "shadow": {
+                             "type": "math_number",
+                             "id": "73o,vE2l{Qp)#`x?G?IA",
+                             "fields": {
+                              "NUM": 1
+                             }
+                            },
+                            "block": {
+                             "type": "math_number",
+                             "id": "yKC]d%}X}sI3yFEB74{h",
+                             "fields": {
+                              "NUM": 0.007
+                             }
+                            }
+                           },
+                           "ADD": {
+                            "shadow": {
+                             "type": "math_number",
+                             "id": "mr1eGvN}QeRGf;`Z7SVt",
+                             "fields": {
+                              "NUM": 0
+                             }
+                            }
+                           }
+                          }
+                         }
+                        }
+                       }
+                      }
+                     },
+                     "COUNT": {
+                      "block": {
+                       "type": "math_number",
+                       "id": "+?RVGq)--WJ@`V!gpK4i",
+                       "fields": {
+                        "NUM": 2
+                       }
+                      }
+                     }
+                    }
+                   }
+                  },
+                  "RHS": {
+                   "block": {
+                    "type": "sc3_KeywordBinaryOp",
+                    "id": "TuQ[(o%QP!nwP$_]!@|^",
+                    "inline": true,
+                    "fields": {
+                     "OP": "Max"
+                    },
+                    "inputs": {
+                     "LHS": {
+                      "block": {
+                       "type": "sc3_LFNoise1",
+                       "id": "V4~g8l*3kbj1AY{i?IdE",
+                       "inline": true,
+                       "inputs": {
+                        "FREQ": {
+                         "block": {
+                          "type": "sc3_TExpRand",
+                          "id": "5B-+inN|:hE,QJf|1T2G",
+                          "inline": true,
+                          "inputs": {
+                           "LO": {
+                            "block": {
+                             "type": "math_number",
+                             "id": "}7l2bETg]p~I6eW:-X@`",
+                             "fields": {
+                              "NUM": 0.125
+                             }
+                            }
+                           },
+                           "HI": {
+                            "block": {
+                             "type": "math_number",
+                             "id": "drN(C/:+Z$7)5itXt,O+",
+                             "fields": {
+                              "NUM": 0.5
+                             }
+                            }
+                           },
+                           "TRIG": {
+                            "block": {
+                             "type": "variables_get",
+                             "id": "p9m|Wc6~X$2~w/u.Put}",
+                             "fields": {
+                              "VAR": {
+                               "id": "JvNZttgnO;C%gAw2|*8U"
+                              }
+                             }
+                            }
+                           },
+                           "MUL": {
+                            "shadow": {
+                             "type": "math_number",
+                             "id": "iDOfZG^dL_NA8:l{e@}5",
+                             "fields": {
+                              "NUM": 1
+                             }
+                            }
+                           },
+                           "ADD": {
+                            "shadow": {
+                             "type": "math_number",
+                             "id": "R[!%Q{YdLJxag*2aHqTU",
+                             "fields": {
+                              "NUM": 0
+                             }
+                            }
+                           }
+                          }
+                         }
+                        },
+                        "MUL": {
+                         "shadow": {
+                          "type": "math_number",
+                          "id": ")ARe7*2Gg)LFhmchpwr%",
+                          "fields": {
+                           "NUM": 1
+                          }
+                         },
+                         "block": {
+                          "type": "math_number",
+                          "id": "x(Fc^m-V%nN./gbKN.Zu",
+                          "fields": {
+                           "NUM": 0.75
+                          }
+                         }
+                        },
+                        "ADD": {
+                         "shadow": {
+                          "type": "math_number",
+                          "id": ")[7AqOR4MC9:X?j?tj~1",
+                          "fields": {
+                           "NUM": 0
+                          }
+                         },
+                         "block": {
+                          "type": "math_number",
+                          "id": "h:^?BddQNVL9D8*Rjq=1",
+                          "fields": {
+                           "NUM": 0.25
+                          }
+                         }
+                        }
+                       }
+                      }
+                     },
+                     "RHS": {
+                      "block": {
+                       "type": "math_number",
+                       "id": ",=U^;PG1H36STi+d$WIU",
+                       "fields": {
+                        "NUM": 0
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+               }
+              },
+              "next": {
+               "block": {
+                "type": "variables_set",
+                "id": "mBUPY$[JPRnmOAV7FqEf",
+                "fields": {
+                 "VAR": {
+                  "id": "_T5(W;hAl9}~+(kyQC,:"
+                 }
+                },
+                "inputs": {
+                 "VALUE": {
+                  "block": {
+                   "type": "sc3_ArrayFill",
+                   "id": "fPV*JZkjxe0iK[jQjl.d",
+                   "inline": false,
+                   "inputs": {
+                    "PROC": {
+                     "block": {
+                      "type": "sc3_Proc0",
+                      "id": "!a2}8eS+~fMcwo|13YEt",
+                      "inline": false,
+                      "inputs": {
+                       "RETURN": {
+                        "block": {
+                         "type": "sc3_BinaryOp",
+                         "id": "^XkG=/6EHpV]BL!,rkOH",
+                         "fields": {
+                          "OP": "+"
+                         },
+                         "inputs": {
+                          "LHS": {
+                           "block": {
+                            "type": "sc3_TRand",
+                            "id": "QaZBVQd;E(|=_x#,hF?8",
+                            "inline": true,
+                            "inputs": {
+                             "LO": {
+                              "block": {
+                               "type": "math_number",
+                               "id": "dj}G.U%P:a`O,y,kPpXD",
+                               "fields": {
+                                "NUM": 0
+                               }
+                              }
+                             },
+                             "HI": {
+                              "block": {
+                               "type": "sc3_TRand",
+                               "id": "s]I.OSM93wvIuk%Ly_oh",
+                               "inline": true,
+                               "inputs": {
+                                "LO": {
+                                 "block": {
+                                  "type": "math_number",
+                                  "id": "`r;Lh@aTDXGYZcu2@x_#",
+                                  "fields": {
+                                   "NUM": 500
+                                  }
+                                 }
+                                },
+                                "HI": {
+                                 "block": {
+                                  "type": "math_number",
+                                  "id": "X`A027.HDH{#yy0$fjdi",
+                                  "fields": {
+                                   "NUM": 8000
+                                  }
+                                 }
+                                },
+                                "TRIG": {
+                                 "block": {
+                                  "type": "variables_get",
+                                  "id": "/O0:0(dPKNou*Pi]/kbZ",
+                                  "fields": {
+                                   "VAR": {
+                                    "id": "JvNZttgnO;C%gAw2|*8U"
+                                   }
+                                  }
+                                 }
+                                },
+                                "MUL": {
+                                 "shadow": {
+                                  "type": "math_number",
+                                  "id": "h-b;O5,32MFcuUqZCPWt",
+                                  "fields": {
+                                   "NUM": 1
+                                  }
+                                 }
+                                },
+                                "ADD": {
+                                 "shadow": {
+                                  "type": "math_number",
+                                  "id": "f]^IlsLpmYQ9E2I=gD_J",
+                                  "fields": {
+                                   "NUM": 0
+                                  }
+                                 }
+                                }
+                               }
+                              }
+                             },
+                             "TRIG": {
+                              "block": {
+                               "type": "variables_get",
+                               "id": ")K@zKFfyTXcuJy}RI;XW",
+                               "fields": {
+                                "VAR": {
+                                 "id": "JvNZttgnO;C%gAw2|*8U"
+                                }
+                               }
+                              }
+                             },
+                             "MUL": {
+                              "shadow": {
+                               "type": "math_number",
+                               "id": "UO*3MtLd6h@j9tP!U4v[",
+                               "fields": {
+                                "NUM": 1
+                               }
+                              }
+                             },
+                             "ADD": {
+                              "shadow": {
+                               "type": "math_number",
+                               "id": "+P;IkGjh7EYVvZV})t,N",
+                               "fields": {
+                                "NUM": 0
+                               }
+                              }
+                             }
+                            }
+                           }
+                          },
+                          "RHS": {
+                           "block": {
+                            "type": "sc3_TExpRand",
+                            "id": ":hmxr2dM%i7d_3f-x[UC",
+                            "inline": true,
+                            "inputs": {
+                             "LO": {
+                              "block": {
+                               "type": "math_number",
+                               "id": "/wT43oOY%m-D-F)GgA(h",
+                               "fields": {
+                                "NUM": 60
+                               }
+                              }
+                             },
+                             "HI": {
+                              "block": {
+                               "type": "math_number",
+                               "id": "=J_#WFBdp-9UMs;(`30b",
+                               "fields": {
+                                "NUM": 4000
+                               }
+                              }
+                             },
+                             "TRIG": {
+                              "block": {
+                               "type": "variables_get",
+                               "id": "(]A9`sWKDiwI:SHxY*IM",
+                               "fields": {
+                                "VAR": {
+                                 "id": "JvNZttgnO;C%gAw2|*8U"
+                                }
+                               }
+                              }
+                             },
+                             "MUL": {
+                              "shadow": {
+                               "type": "math_number",
+                               "id": "HZ;z{$vd~]]eKt*eQ|*N",
+                               "fields": {
+                                "NUM": 1
+                               }
+                              }
+                             },
+                             "ADD": {
+                              "shadow": {
+                               "type": "math_number",
+                               "id": "Qg97a+wSaM3=WCpB0L0=",
+                               "fields": {
+                                "NUM": 0
+                               }
+                              }
+                             }
+                            }
+                           }
+                          }
+                         }
+                        }
+                       }
+                      }
+                     }
+                    },
+                    "COUNT": {
+                     "block": {
+                      "type": "variables_get",
+                      "id": "|@cy?DuyjvW{gS|.cs.g",
+                      "fields": {
+                       "VAR": {
+                        "id": "]cD;1E]Y!I;8]/?$_]F]"
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 }
+                },
+                "next": {
+                 "block": {
+                  "type": "variables_set",
+                  "id": "P3$04OnZt9e-w#f@5V`o",
+                  "fields": {
+                   "VAR": {
+                    "id": "28SM1N}U2516AbLhT!K+"
+                   }
+                  },
+                  "inputs": {
+                   "VALUE": {
+                    "block": {
+                     "type": "sc3_ArrayFill",
+                     "id": "c:!2,m^]-^hyjAStYKj?",
+                     "inline": true,
+                     "inputs": {
+                      "PROC": {
+                       "block": {
+                        "type": "sc3_Proc0",
+                        "id": "20UhzIf)3N1^AtNSc.s#",
+                        "inline": true,
+                        "inputs": {
+                         "RETURN": {
+                          "block": {
+                           "type": "sc3_TRand",
+                           "id": "DtD;%Zn8RQFaA85vn,s]",
+                           "inline": true,
+                           "inputs": {
+                            "LO": {
+                             "block": {
+                              "type": "math_number",
+                              "id": "WEh~5F6d!o?=do@1N`Gl",
+                              "fields": {
+                               "NUM": 0.1
+                              }
+                             }
+                            },
+                            "HI": {
+                             "block": {
+                              "type": "math_number",
+                              "id": "-7%Jd{}4)v=K;7P9tF##",
+                              "fields": {
+                               "NUM": 2
+                              }
+                             }
+                            },
+                            "TRIG": {
+                             "block": {
+                              "type": "variables_get",
+                              "id": "*GbrZf71m:wCr@%9q5N(",
+                              "fields": {
+                               "VAR": {
+                                "id": "JvNZttgnO;C%gAw2|*8U"
+                               }
+                              }
+                             }
+                            },
+                            "MUL": {
+                             "shadow": {
+                              "type": "math_number",
+                              "id": "0T:Tw_*h!{p6#NDTvv6n",
+                              "fields": {
+                               "NUM": 1
+                              }
+                             }
+                            },
+                            "ADD": {
+                             "shadow": {
+                              "type": "math_number",
+                              "id": "Ced!`3daHxm-cZ;^[L[E",
+                              "fields": {
+                               "NUM": 0
+                              }
+                             }
+                            }
+                           }
+                          }
+                         }
+                        }
+                       }
+                      },
+                      "COUNT": {
+                       "block": {
+                        "type": "variables_get",
+                        "id": "kIIC7M^9MRlIFmMklX`b",
+                        "fields": {
+                         "VAR": {
+                          "id": "]cD;1E]Y!I;8]/?$_]F]"
+                         }
+                        }
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          },
+          "RETURN": {
+           "block": {
+            "type": "sc3_UnaryOp",
+            "id": "ooQZo%UO)EI$ga!VLd9G",
+            "fields": {
+             "OP": "SoftClip"
+            },
+            "inputs": {
+             "IN": {
+              "block": {
+               "type": "sc3_RingzBank",
+               "id": "{a/uic)G=O_QTGL-P[Ib",
+               "inline": true,
+               "inputs": {
+                "INPUT": {
+                 "block": {
+                  "type": "variables_get",
+                  "id": "i^cI:qA1_-giO]+ZV%E{",
+                  "fields": {
+                   "VAR": {
+                    "id": "{6P_;wv8Rs$9E@[,$kEv"
+                   }
+                  }
+                 }
+                },
+                "FREQ": {
+                 "block": {
+                  "type": "variables_get",
+                  "id": "Lq1%kh2,(kqz`rmoj4EF",
+                  "fields": {
+                   "VAR": {
+                    "id": "_T5(W;hAl9}~+(kyQC,:"
+                   }
+                  }
+                 }
+                },
+                "AMP": {
+                 "block": {
+                  "type": "lists_create_with",
+                  "id": "My`fy12ByXgf6}fgY/]{",
+                  "extraState": {
+                   "itemCount": 1
+                  },
+                  "inputs": {
+                   "ADD0": {
+                    "block": {
+                     "type": "math_number",
+                     "id": "+{GAMO#HPu*%[).]3lfY",
+                     "fields": {
+                      "NUM": 1
+                     }
+                    }
+                   }
+                  }
+                 }
+                },
+                "TIME": {
+                 "block": {
+                  "type": "variables_get",
+                  "id": "`|%+f2PG6ZzVNt-$XkY7",
+                  "fields": {
+                   "VAR": {
+                    "id": "28SM1N}U2516AbLhT!K+"
+                   }
+                  }
+                 }
+                },
+                "MUL": {
+                 "shadow": {
+                  "type": "math_number",
+                  "id": "5[n!mWW9M]wdl3yE-*%6",
+                  "fields": {
+                   "NUM": 1
+                  }
+                 },
+                 "block": {
+                  "type": "math_number",
+                  "id": "Ny[DGs#3:]9CecM73Q^]",
+                  "fields": {
+                   "NUM": 0.1
+                  }
+                 }
+                },
+                "ADD": {
+                 "shadow": {
+                  "type": "math_number",
+                  "id": "^fAus0CTxF^36!yhEcI2",
+                  "fields": {
+                   "NUM": 0
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      },
+      "next": {
+       "block": {
+        "type": "sc3_Play",
+        "id": "ig}tBEHDGU4S4g{zTo{!",
+        "inputs": {
+         "CODE": {
+          "block": {
+           "type": "sc3_BinaryOp",
+           "id": "1-%%a9@1g)Oy9bPLJ3)1",
+           "inline": true,
+           "fields": {
+            "OP": "*"
+           },
+           "inputs": {
+            "LHS": {
+             "block": {
+              "type": "sc3_Mix",
+              "id": "lDfmZgO=Da]`NYXzOI?7",
+              "inline": true,
+              "inputs": {
+               "INARRAY": {
+                "shadow": {
+                 "type": "math_number",
+                 "id": "6.1qIj_K4*U;LE*a[_I%",
+                 "fields": {
+                  "NUM": 0
+                 }
+                },
+                "block": {
+                 "type": "sc3_OverlapTexture",
+                 "id": "85a@PFKY}=DrU%/q`5-p",
+                 "inline": true,
+                 "inputs": {
+                  "PROC": {
+                   "block": {
+                    "type": "variables_get",
+                    "id": "x^$^y^d|_V-b#Vqtf1LH",
+                    "fields": {
+                     "VAR": {
+                      "id": "0XpvLw^kZL-7Pl|z^:SD"
+                     }
+                    }
+                   }
+                  },
+                  "SUSTAINTIME": {
+                   "block": {
+                    "type": "math_number",
+                    "id": "V._2I;s=+Rp*SPPsO51d",
+                    "fields": {
+                     "NUM": 5
+                    }
+                   }
+                  },
+                  "TRANSITIONTIME": {
+                   "block": {
+                    "type": "math_number",
+                    "id": "$#*Gc(n:C~3nbk6OQa(H",
+                    "fields": {
+                     "NUM": 2
+                    }
+                   }
+                  },
+                  "OVERLAP": {
+                   "block": {
+                    "type": "math_number",
+                    "id": "|t5{}G-5qjlpE}=/Wq_Y",
+                    "fields": {
+                     "NUM": 12
+                    }
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            },
+            "RHS": {
+             "block": {
+              "type": "math_number",
+              "id": ":OlB/Sj%mUwa{+CZy{Ss",
+              "fields": {
+               "NUM": 0.1
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  ]
+ },
+ "variables": [
+  {
+   "name": "t",
+   "id": "0XpvLw^kZL-7Pl|z^:SD"
+  },
+  {
+   "name": "tr",
+   "id": "JvNZttgnO;C%gAw2|*8U"
+  },
+  {
+   "name": "n",
+   "id": "]cD;1E]Y!I;8]/?$_]F]"
+  },
+  {
+   "name": "exc",
+   "id": "{6P_;wv8Rs$9E@[,$kEv"
+  },
+  {
+   "name": "f",
+   "id": "_T5(W;hAl9}~+(kyQC,:"
+  },
+  {
+   "name": "dt",
+   "id": "28SM1N}U2516AbLhT!K+"
+  }
+ ]
+}
