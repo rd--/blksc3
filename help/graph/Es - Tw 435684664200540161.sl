@@ -1,9 +1,9 @@
-{- tw-435684664200540161 (es) -}
-var f = { :i |
-    var m = i % (LfNoise2(0.01) * 50 + 50) + (LfNoise2(0.1) * 10 + 40);
+{- Tw-435684664200540161 (Es) -}
+let f = { :i |
+    let m = i % (LfNoise2(0.01) * 50 + 50) + (LfNoise2(0.1) * 10 + 40);
     SinOsc(m.MidiCps, 0) * (LfNoise2(1) * 0.01 + 0.01)
 };
-1.to(99).collect(f).Splay2
+1.to(99).collect(f:/1).Splay2
 
 {- ---- notes.md ---- -}
 [status/435684664200540161](https://twitter.com/sluyterrific_sc/status/435684664200540161)

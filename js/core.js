@@ -146,6 +146,7 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	const blk = new Blk(Blockly, trackHistory);
 	initCodeGen(blk);
 	initCodeGenUgen(blk);
+	blk.Blockly.ContextMenuItems.registerCommentOptions();
 	set_block_messages(blk);
 	set_colours(blk);
 	load_block_definitions(blk, 'json/blksc3.json');

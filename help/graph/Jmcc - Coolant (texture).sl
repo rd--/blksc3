@@ -1,4 +1,4 @@
-{- coolant ; jmcc #2 -}
+{- Coolant ; Jmcc #2 -}
 let o = OnePole(BrownNoise() * 0.002, 0.95);
 { :tr |
 	{

@@ -1,5 +1,11 @@
 {- Keyboard Shortcuts (Keybindings, Access Keys) -}
-{ Rhpf(OnePole(BrownNoise(), 0.99), Lpf(BrownNoise(), 14) * 400 + 500, 0.03) * 0.06 } ! 2
+{
+	Rhpf(
+		OnePole(BrownNoise(), 0.99),
+		Lpf(BrownNoise(), 14) * 400 + 500,
+		0.03
+	) * 0.06
+} ! 2
 
 {- ---- notes.md ---- -}
 # Keyboard Shortcuts
