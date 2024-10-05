@@ -10,4 +10,5 @@ Functions are written _{ :x | x * x }_.
 
 Initially the implementation is using the Blockly.JavaScript generator.
 
-Operations that have variants for Websocket and Wasm forms should have equal names.
+Operations that have variants for Websocket and Wasm forms should have equal
+names.

@@ -16,7 +16,7 @@ Technical report, VPRI, 2005.
 John Maloney, Mitchel Resnick, Natalie Rusk, Brian Silverman, and Evelyn Eastmond.
 "The scratch programming language and environment."
 _ACM Trans. Comput. Educ._, 10(4):1--15, November 2010.
-[PDF](https://web.media.mit.edu/~jmaloney/papers/ScratchLangAndEnvironment.pdf)
+[DOI](https://doi.org/10.1145/1868358.1868363)
 
 James McCartney.
 "Supercollider: a new real time synthesis language".
@@ -41,7 +41,7 @@ PhD thesis, University of Colorado at Boulder, USA, 1993.
 Mitchel Resnick, John Maloney, Natalie Rusk, Evelyn Eastmond, Karen Brennan et. al.
 "Scratch: programming for all."
 _Commun. ACM_, 52(11):60--67, November 2009.
-[PDF](https://web.media.mit.edu/~mres/papers/Scratch-CACM-final.pdf)
+[DOI](https://doi.org/10.1145/1592761.1592779) 🔓
 
 John Steinmetz.
 "Computers and Squeak as Environments for Learning".

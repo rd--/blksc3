@@ -122,10 +122,12 @@ function load_block_definitions(blk, filename) {
 		.then(blk.Blockly.defineBlocksWithJsonArray);
 }
 
+/*
 function load_json_toolbox(blk, onCompletion) {
 	sc.fetchJson('xml/toolbox-exported.json', { cache: 'no-cache' })
 		.then(injectWithToolbox(blk, onCompletion));
 }
+*/
 
 function load_xml_toolbox(blk, onCompletion) {
 	sc.fetchUtf8('xml/toolbox.xml', { cache: 'no-cache' })
@@ -138,6 +140,14 @@ function loadHelpGraph(blk, graphPath) {
 		.then(sc.setterForInnerHtmlOf('blkNotes'));
 	if (blk.trackHistory) {
 		sc.windowUrlSetParam('e', graphPath);
+	}
+}
+
+// If the Url has fileParamKey, load the named .json/.sl files.
+function maybeLoadHelpFileFromUrlParam(blk, fileParamKey) {
+	const fileName = sc.urlGetParam(fileParamKey);
+	if (fileName) {
+		loadHelpGraph(blk, fileName);
 	}
 }
 
@@ -154,7 +164,7 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	load_block_definitions(blk, 'json/blksc3-ugen.json');
 	load_xml_toolbox(blk, function (blk) {
 		blk.workspace.addChangeListener(onWorkspaceChange(blk));
-		json.maybeLoadJsonFromUrlParam(blk, 'e');
+		maybeLoadHelpFileFromUrlParam(blk, 'e');
 	});
 	sc.connectButtonToInput('jsonInputFileSelect', 'jsonInputFile'); // Initialise .json file selector
 	graphMenuInit('programMenu', 'graph', (path) => loadHelpGraph(blk, path));
@@ -176,7 +186,10 @@ export function init(Blockly, withUiCtl, trackHistory) {
 			sc.selectAddKeysAsOptions('smallProgramsMenu', json.smallProgramsMenu)
 		);
 	sc.userPrograms.storageKey = 'blksc3UserPrograms/json';
-	sc.userProgramMenuInit('userMenu', (jsonText) => json.loadJson(blk, jsonText));
+	sc.userProgramMenuInit(
+		'userMenu',
+		(jsonText) => json.loadJson(blk, jsonText),
+	);
 	sc.selectOnChange('actionsMenu', function (menuElement, entryName) {
 		sc.userActionDo(entryName, 'userMenu', 'userProgramArchiveFile');
 		menuElement.selectedIndex = 0;

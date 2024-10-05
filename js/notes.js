@@ -1,4 +1,6 @@
-// Convert .md text to .html
+import * as sc from '../lib/jssc3/dist/jssc3.js';
+
+// Convert .md text to .html, requires commonmark.
 function markdownToHtml(mdText) {
 	const mdReader = new commonmark.Parser({ smart: true });
 	const htmlWriter = new commonmark.HtmlRenderer();
@@ -9,7 +11,9 @@ function markdownToHtml(mdText) {
 // .sl files can have a .md notes segment.
 function mdNotesFromSpl(splText) {
 	const lines = splText.split('\n');
-	const notesMarker = lines.findIndex(str => sc.stringIsPrefixOf('{- ---- notes.md', str));
+	const notesMarker = lines.findIndex((str) =>
+		sc.stringIsPrefixOf('{- ---- notes.md', str)
+	);
 	const hasMarker = notesMarker >= 0;
 	if (lines.length == 0) {
 		return 'No notes?';

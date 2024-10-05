@@ -44,7 +44,7 @@ export function initCodeGen(blk) {
 		];
 	};
 
-	Blockly.JavaScript.forBlock['sc3_Mix'] = function(block) {
+	Blockly.JavaScript.forBlock['sc3_Mix'] = function (block) {
 		return implicitMethodCodeGen(blk, block, 'Mix', ['INARRAY']);
 	};
 

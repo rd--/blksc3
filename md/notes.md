@@ -20,6 +20,7 @@
 The Blockly Js printer prints "var p, q, r;" to declare temporaries.
 Spl allows this form particularly to support BlkSc3.
 Properly BlkSc3 should write "let p = nil; let q = nil; let r = nil;".
+Note distinction between "var f; f := {...};" and "let f = {...};"
 
 # Help
 
@@ -42,7 +43,10 @@ In the case of "sub-diagrams" these would be connected to the blocks that connec
 # Url
 
 An initial file can be loaded by setting the Url parameter _e_,
-i.e. _blksc3-wasm.html?e=help/graph/Jmcc - Why SuperCollider.xml_.
+i.e. _blksc3-wasm.html?e=help/graph/Jmcc - Why SuperCollider_.
+
+This loads the .sl notes as well as the .json graph,
+i.e. _blksc3.html?e=help/guide/2.05%20Type%20Annotations_
 
 # Notes
 

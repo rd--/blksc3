@@ -6,7 +6,7 @@ deno run --allow-read --allow-write --allow-env convertXmlToJson.js
 
 */
 
-import * as Blockly from "npm:blockly@11.1.1";
+import * as Blockly from 'npm:blockly@11.1.1';
 
 async function readJson(fileName) {
 	const text = await Deno.readTextFile(fileName);
@@ -33,7 +33,7 @@ await defineBlocks(dir + 'json/blksc3-ugen.json');
 const subdir = dir + 'help/ugen/';
 
 for await (const entry of Deno.readDir(subdir)) {
-	let fileName = entry.name;
+	const fileName = entry.name;
 	if (fileName.endsWith('.xml')) {
 		const xmlPath = subdir + fileName;
 		const jsonPath = xmlPath + '.json';
