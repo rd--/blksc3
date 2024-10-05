@@ -71,6 +71,8 @@ _fromAssocArray_ and _->_ belong at _Event_, not _Math_.
 
 _kr_ should not exist.
 
+There is both ArrayCollect and ArrayProc2:collect
+
 # Guide:
 
 - Notes, .sl.

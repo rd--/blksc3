@@ -1,2 +1,2 @@
 clean:
-	rm -f */*.stc.xml
+	rm -f */*.sl.xml

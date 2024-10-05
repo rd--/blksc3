@@ -1,13 +1,14 @@
 {- Stepper.3 (JMcC) -}
-var b = [43 55 72 70 55 58 41 67 41 60 55 39 58 55 43 51].asLocalBuf;
-var rate = MouseX(1, 3, 1, 0.2);
-var clock = Impulse(rate, 0);
-var env = Decay2(clock, 0.002, 2.5);
-var index = Stepper(clock, 0, 0, 15, 1, 0);
-var freq = Lag2(BufRd(1, b, index, 1, 1).MidiCps, 0.1) + [0, 0.3];
-var ffreq = Lag2(freq, 0.1) + [0, 0.3];
-var rev = nil, lfo = nil;
-var out = LfPulse(freq * [1, 3 / 2, 2], 0, 0.3).sum;
+let b = [43 55 72 70 55 58 41 67 41 60 55 39 58 55 43 51].asLocalBuf;
+let rate = MouseX(1, 3, 1, 0.2);
+let clock = Impulse(rate, 0);
+let env = Decay2(clock, 0.002, 2.5);
+let index = Stepper(clock, 0, 0, 15, 1, 0);
+let freq = Lag2(BufRd(1, b, index, 1, 1).MidiCps, 0.1) + [0, 0.3];
+let ffreq = Lag2(freq, 0.1) + [0, 0.3];
+let rev = nil;
+let lfo = nil;
+let out = LfPulse(freq * [1, 3 / 2, 2], 0, 0.3).sum;
 out := Rlpf(out, ffreq, 0.3) * env;
 out := Rlpf(out, ffreq, 0.3) * env;
 out := out * 0.02;
@@ -27,4 +28,6 @@ OnePole(out, 0.9) * 0.5
 {- ---- notes.md ---- -}
 # Stepper
 
-Mouse control
+SC2 help file example (Jmcc).
+
+Mouse control.
