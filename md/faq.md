@@ -22,10 +22,30 @@ The comment text is not printed.
 An expression block (also called a function block or a value block) is a block that answers an output value (at an output connector) and accepts one or more inputs (at input fields).
 See also _Statement Block_.
 
+# External Inputs
+
+Blocks can be drawn with either _internal_ or _external_ inputs.
+There is a context menu item to select between the two drawing modes.
+
+<img src="sw/blksc3/png/SinOsc.external.png" width="81" height="114">
+
+Cf. Internal Inputs.
+
+# Guide
+
+There is an online [Guide](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/guide/--Guide--).
+The _Guide_ menu can be selected using the _g_ access key.
+
 # Inputs
 
 There are two kinds of inputs, _value_ inputs and _statement_ inputs.
 Value inputs accept expression blocks and statement inputs accept a stack of statement blocks.
+
+# Internal Inputs
+
+<img src="sw/blksc3/png/SinOsc.internal.png" width="250" height="48">
+
+Cf. External Inputs.
 
 # Left to right
 
@@ -33,6 +53,12 @@ Ordinarily the system is in left-to-right mode.
 In this case the block name is at the left,
 the inputs run from left to right,
 and the output connector is on the left edge.
+
+# Small Programs
+
+There is a list of [Small Programs](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/graph/--Small%20Programs--).
+These are programs that will draw within the workspace on a 1366×768 display.
+The _Small Programs_ menu can be selected using the _a_ access key.
 
 # Statement Blocks
 
@@ -52,6 +78,27 @@ The toolbox is the area to the left of the workspace.
 
 # Type Annotations
 
-<http://blksc3.rohandrape.net/?e=help/guide/2.05%20Type%20Annotations>
+Type annotations constrain how blocks can be connected together.
+There is a [Type Annotations](http://blksc3.rohandrape.net/?e=help/guide/2.05%20Type%20Annotations) section in the _Guide_.
+
+# Unicode
+
+Lisp editors will often display the typed text `lambda` using the glyph `λ`.
+
+We can extend this mechanism so that the text
+
+> `SinOsc(freq: 440, phase: 0, mul: 1, add: 0)`
+
+is displayed as
+
+> `∿(ν: 440, ϕ: 0, ×: 1, +: 0)`.
+
+<img src="sw/blksc3/png/SinOsc.internal.png" width="250" height="48">
+
+as
+
+<img src="sw/blksc3/png/SinOsc.internal.text.png" width="348" height="49">
+
+<!-- ![](sw/blksc3/png/SinOsc.internal.X.png) -->
 
 # Workspace

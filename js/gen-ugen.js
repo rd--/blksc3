@@ -524,7 +524,7 @@ Blockly.JavaScript.forBlock['sc3_LinLin'] = function(block) {
 Blockly.JavaScript.forBlock['sc3_LinSeg'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'LinSeg', ['GATE', 'COORD'], true);
 };
-Blockly.JavaScript.forBlock['sc3_Ln'] = function(block) {
+Blockly.JavaScript.forBlock['sc3_Line'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'Line', ['START', 'END', 'DUR'], true);
 };
 Blockly.JavaScript.forBlock['sc3_PMOsc'] = function(block) {
@@ -590,7 +590,7 @@ Blockly.JavaScript.forBlock['sc3_TLine'] = function(block) {
 Blockly.JavaScript.forBlock['sc3_TxLine'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'TxLine', ['START', 'END', 'DUR', 'TRIG'], true);
 };
-Blockly.JavaScript.forBlock['sc3_XLn'] = function(block) {
+Blockly.JavaScript.forBlock['sc3_XLine'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'XLine', ['START', 'END', 'DUR'], true);
 };
 

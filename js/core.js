@@ -24,11 +24,15 @@ function injectWithToolbox(blk, onCompletion) {
 	return function (toolbox) {
 		blk.config = {
 			media: 'lib/blockly-11.1.1/media/',
+			renderer: 'thrasos', // geras thrasos zelos
 			sounds: false,
 			toolbox: toolbox,
 			rtl: false,
 			move: {
-				scrollbars: { horizontal: true, vertical: true },
+				scrollbars: {
+					horizontal: true,
+					vertical: true
+				},
 				drag: true,
 				wheel: false,
 			},
@@ -115,6 +119,20 @@ function set_colours(blk) {
 	blk.Blockly.Msg['SC_META_HUE'] = '300';
 	blk.Blockly.Msg['SC_PROCESSOR_HUE'] = '150';
 	blk.Blockly.Msg['SC_TRIGGER_HUE'] = '30';
+
+	//blk.Blockly.Msg['SC_SINOSC'] = '∿ %1 ν %2 ϕ %3 × %4 + %5';
+	//blk.Blockly.Msg['SC_SINOSC'] = 'SinOsc %1 freq: %2 phase: %3 mul: %4 add: %5';
+}
+
+function load_block_messages(blk, filename) {
+	sc.fetchJson(filename, { cache: 'no-cache' })
+		.then(function(messages) {
+			for (const key in messages) {
+				const value = messages[key];
+				console.debug(`load_block_messages: ${key} = ${value}`);
+				blk.Blockly.Msg[key] = messages[key];
+			}
+		})
 }
 
 function load_block_definitions(blk, filename) {
@@ -159,6 +177,7 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	blk.Blockly.ContextMenuItems.registerCommentOptions();
 	set_block_messages(blk);
 	set_colours(blk);
+	load_block_messages(blk, 'json/messages-symbolic.json');
 	load_block_definitions(blk, 'json/blksc3.json');
 	load_block_definitions(blk, 'json/blksc3-ugen.json');
 	load_xml_toolbox(blk, function (blk) {
