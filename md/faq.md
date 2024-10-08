@@ -59,6 +59,14 @@ In this case the block name is at the left,
 the inputs run from left to right,
 and the output connector is on the left edge.
 
+# Naming Schema
+
+Selects between symbolic and text naming schemas.
+
+# Scalable Vector Graphics
+
+<!-- ![](sw/blksc3/svg/Why%20Block%20SuperCollider.svg) -->
+
 # Small Programs
 
 There is a list of [Small Programs](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/graph/--Small%20Programs--).
@@ -102,7 +110,11 @@ is displayed as
 
 as
 
-<img src="sw/blksc3/png/SinOsc.internal.text.png" width="348" height="49">
+<img src="sw/blksc3/png/SinOsc.internal.text.png" width="210" height="46">
+
+or
+
+<img src="sw/blksc3/png/SinOsc.internal.text.keywords.png" width="348" height="49">
 
 <!-- ![](sw/blksc3/png/SinOsc.internal.X.png) -->
 

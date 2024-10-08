@@ -54,6 +54,7 @@
 		"args0": [
 			{"type": "field_dropdown", "name": "OP", "options":
 			 [["%{BKY_SC_ASLOCALBUF}", "asLocalBuf"],
+			  ["%{BKY_SC_ASRECORD}", "asRecord"],
 			  ["%{BKY_SC_ATRANDOM}", "atRandom"],
 			  ["%{BKY_SC_CONCATENATION}", "concatenation"],
 			  ["%{BKY_SC_FIRST}", "first"],
@@ -64,7 +65,6 @@
 			  ["%{BKY_SC_SIZE}", "size"],
 			  ["%{BKY_SC_SUM}", "sum"],
 			  ["%{BKY_SC_THIRD}", "third"],
-			  ["%{BKY_SC_ASRECORD}", "asRecord"],
 			  ["%{BKY_SC_TRANSPOSED}", "transposed"]]},
 			{"type": "input_value", "name": "IN", "check": ["Array", "UGen"]}
 		],
@@ -79,8 +79,9 @@
 		"args0": [
 			{"type": "field_dropdown", "name": "OP", "options":
 			 [["%{BKY_SC_APPEND}", "++"],
-			  ["%{BKY_SC_COLLECT}", "collect"],
-			  ["%{BKY_SC_AT}", "at"]]},
+			  ["%{BKY_SC_AT}", "at"],
+			  ["%{BKY_SC_CLUMP}", "clump"],
+			  ["%{BKY_SC_COLLECT}", "collect"]]},
 			{"type": "input_value", "name": "LHS", "check": ["Array", "UGen"]},
 			{"type": "input_value", "name": "RHS"}
 		],
@@ -95,21 +96,33 @@
 		"args0": [
 			{"type": "field_dropdown", "name": "OP", "options":
 			 [["%{BKY_SC_ADD}", "+"],
-			  ["%{BKY_SC_SUB}", "-"],
-			  ["%{BKY_SC_MUL}", "*"],
-			  ["%{BKY_SC_FDIV}", "/"],
-			  ["%{BKY_SC_MOD}", "%"],
-			  ["%{BKY_SC_POW}", "^"],
-			  ["%{BKY_SC_LT}", "<"],
-			  ["%{BKY_SC_GT}", ">"],
-			  ["%{BKY_SC_LE}", "<="],
-			  ["%{BKY_SC_GE}", ">="],
+			  ["%{BKY_SC_AMCLIP}", "AmClip"],
+			  ["%{BKY_SC_BITAND}", "BitAnd"],
+			  ["%{BKY_SC_BITOR}", "BitOr"],
 			  ["%{BKY_SC_BITSHIFTLEFT}", "<<"],
-			  ["%{BKY_SC_BITSHIFTRIGHT}", ">>"]]},
+			  ["%{BKY_SC_BITSHIFTRIGHT}", ">>"],
+			  ["%{BKY_SC_CLIP2}", "Clip2"],
+			  ["%{BKY_SC_FDIV}", "/"],
+			  ["%{BKY_SC_GE}", ">="],
+			  ["%{BKY_SC_GT}", ">"],
+			  ["%{BKY_SC_LAG2}", "Lag2"],
+			  ["%{BKY_SC_LAG3}", "Lag3"],
+			  ["%{BKY_SC_LAG}", "Lag"],
+			  ["%{BKY_SC_LE}", "<="],
+			  ["%{BKY_SC_LT}", "<"],
+			  ["%{BKY_SC_MAX}", "Max"],
+			  ["%{BKY_SC_MIN}", "Min"],
+			  ["%{BKY_SC_MOD}", "%"],
+			  ["%{BKY_SC_MULTIPLEROOTGRAPH}", "<!"],
+			  ["%{BKY_SC_MUL}", "*"],
+			  ["%{BKY_SC_POW}", "^"],
+			  ["%{BKY_SC_ROUNDTO}", "RoundTo"],
+			  ["%{BKY_SC_SUB}", "-"],
+			  ["%{BKY_SC_TRUNC}", "Trunc"]]},
 			{"type": "input_value", "name": "LHS", "check": ["Number", "Array", "UGen"]},
 			{"type": "input_value", "name": "RHS", "check": ["Number", "Array", "UGen"]}
 		],
-		"output": "UGen",
+		"output": ["Number", "UGen"],
 		"colour": "%{BKY_SC_MATH_HUE}",
 		"tooltip": "BinaryOp(op, lhs, rhs): Binary operators"
 	}
@@ -167,32 +180,6 @@
 		"output": "UGen",
 		"colour": "%{BKY_SC_EVENT_HUE}",
 		"tooltip": "EventParam(param, event): Read voice event parameter"
-	}
-	,
-	{
-		"type": "sc3_KeywordBinaryOp",
-		"message0": "%{BKY_SC_KEYWORDBINARYOP}",
-		"args0": [
-			{"type": "field_dropdown", "name": "OP", "options":
-			 [["%{BKY_SC_AMCLIP}", "AmClip"],
-			  ["%{BKY_SC_BITAND}", "BitAnd"],
-			  ["%{BKY_SC_BITOR}", "BitOr"],
-			  ["%{BKY_SC_CLIP2}", "Clip2"],
-			  ["%{BKY_SC_CLUMP}", "clump"],
-			  ["%{BKY_SC_LAG}", "Lag"],
-			  ["%{BKY_SC_LAG2}", "Lag2"],
-			  ["%{BKY_SC_LAG3}", "Lag3"],
-			  ["%{BKY_SC_MIN}", "Min"],
-			  ["%{BKY_SC_MAX}", "Max"],
-			  ["%{BKY_SC_MultipleRootGraph}", "<!"],
-			  ["%{BKY_SC_ROUNDTO}", "RoundTo"],
-			  ["%{BKY_SC_TRUNC}", "Trunc"]]},
-			{"type": "input_value", "name": "LHS", "check": ["Number", "Array", "UGen"]},
-			{"type": "input_value", "name": "RHS", "check": ["Number", "Array", "UGen"]}
-		],
-		"output": "UGen",
-		"colour": "%{BKY_SC_MATH_HUE}",
-		"tooltip": "Keyword binary operators"
 	}
 	,
 	{
@@ -355,7 +342,6 @@
 			  ["%{BKY_SC_ROUNDED}", "rounded"],
 			  ["%{BKY_SC_SIN}", "Sin"],
 			  ["%{BKY_SC_SOFTCLIP}", "SoftClip"],
-			  ["%{BKY_SC_SPLAY}", "Splay"],
 			  ["%{BKY_SC_SQRT}", "Sqrt"],
 			  ["%{BKY_SC_TANH}", "Tanh"],
 			  ["%{BKY_SC_UNITCPS}", "UnitCps"]]},
@@ -424,10 +410,10 @@
 		"message0": "%{BKY_SC_CONSTANT}",
 		"args0": [
 			{"type": "field_dropdown", "name": "CONST", "options":
-			 [["π", "pi"],
-			  ["2×π", "twoPi"],
-			  ["𝑒", "e"],
-			  ["∞", "inf"]]}
+			 [["%{BKY_SC_PI}", "pi"],
+			  ["%{BKY_SC_TWOPI}", "twoPi"],
+			  ["%{BKY_SC_E}", "e"],
+			  ["%{BKY_SC_INFINITY}", "inf"]]}
 		],
 		"output": "Number",
 		"colour": "%{BKY_SC_MATH_HUE}",

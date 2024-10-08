@@ -75,10 +75,6 @@ export function initCodeGen(blk) {
 		return infixMethodCodeGen(blk, block, block.getFieldValue('PARAM'), ['EVENT']);
 	};
 
-	Blockly.JavaScript.forBlock['sc3_KeywordBinaryOp'] = function (block) {
-		return infixMethodCodeGen(blk, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
-	};
-
 	Blockly.JavaScript.forBlock['sc3_LocalVoicer'] = function (block) {
 		return prefixMethodCodeGen(blk, block, 'Voicer', ['RECORD', 'PROC']);
 	};
@@ -287,7 +283,7 @@ function procDefCodeGen(blk, block, numArg, hasStm) {
 
 // Infix method call code generator, i.e. "x.f(y)"
 function infixMethodCodeGen(blk, block, name, argNameArray) {
-	console.debug(`infixMethodCodeGen: ${name}, ${argNameArray.length}`);
+	// console.debug(`infixMethodCodeGen: ${name}, ${argNameArray.length}`);
 	const argArray = argNameArray.map((item) =>
 		blk.Blockly.JavaScript.valueToCode(
 			block,

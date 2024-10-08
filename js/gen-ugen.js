@@ -413,7 +413,7 @@ Blockly.JavaScript.forBlock['sc3_ToggleFF'] = function(block) {
 Blockly.JavaScript.forBlock['sc3_Trig'] = function(block) {
 	return blkUgenCodeGen(blk, block, 'Trig', ['IN', 'DUR'], true);
 };
-Blockly.JavaScript['sc3_TwoPole'] = function(block) {
+Blockly.JavaScript.forBlock['sc3_TwoPole'] = function(block) {
   return blkUgenCodeGen(blk, block, 'TwoPole', ['IN', 'FREQ', 'RADIUS'], true);
 };
 Blockly.JavaScript.forBlock['sc3_VarLag'] = function(block) {
