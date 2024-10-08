@@ -36,6 +36,11 @@ Cf. Internal Inputs.
 There is an online [Guide](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/guide/--Guide--).
 The _Guide_ menu can be selected using the _g_ access key.
 
+# Idioms
+
+An idiom is, as in Apl, a composite sequence of blocks that is often used.
+The Toolbox contains a number of idioms.
+
 # Inputs
 
 There are two kinds of inputs, _value_ inputs and _statement_ inputs.

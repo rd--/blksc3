@@ -10,7 +10,8 @@ Online editor:
 [blksc3.rohandrape.net](https://blksc3.rohandrape.net/)
 
 Requires:
-[jssc3](https://rohandrape.net/?t=jssc3)
+[jssc3](https://rohandrape.net/?t=jssc3),
+[spl](https://rohandrape.net/?t=spl)
 
 Tested with:
 

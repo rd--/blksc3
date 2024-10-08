@@ -16,6 +16,7 @@ export class Blk {
 		this.config = null;
 		this.workspace = null;
 		this.layouts = null;
+		this.naming = 'symbolic';
 	}
 }
 
@@ -99,8 +100,8 @@ export function printCode(blk) {
 }
 
 function set_block_messages(blk) {
-	blk.Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
-	blk.Blockly.Msg['LISTS_CREATE_WITH_INPUT_WITH'] = '⟦⟧';
+//	blk.Blockly.Msg['VARIABLES_SET'] = '%1 ≔ %2';
+//	blk.Blockly.Msg['LISTS_CREATE_WITH_INPUT_WITH'] = '⟦⟧';
 }
 
 function set_colours(blk) {
@@ -119,17 +120,14 @@ function set_colours(blk) {
 	blk.Blockly.Msg['SC_META_HUE'] = '300';
 	blk.Blockly.Msg['SC_PROCESSOR_HUE'] = '150';
 	blk.Blockly.Msg['SC_TRIGGER_HUE'] = '30';
-
-	//blk.Blockly.Msg['SC_SINOSC'] = '∿ %1 ν %2 ϕ %3 × %4 + %5';
-	//blk.Blockly.Msg['SC_SINOSC'] = 'SinOsc %1 freq: %2 phase: %3 mul: %4 add: %5';
 }
 
-function load_block_messages(blk, filename) {
+export function load_block_messages(blk, filename) {
 	sc.fetchJson(filename, { cache: 'no-cache' })
 		.then(function(messages) {
 			for (const key in messages) {
 				const value = messages[key];
-				console.debug(`load_block_messages: ${key} = ${value}`);
+				// console.debug(`load_block_messages: ${key} = ${value}`);
 				blk.Blockly.Msg[key] = messages[key];
 			}
 		})
@@ -169,6 +167,11 @@ function maybeLoadHelpFileFromUrlParam(blk, fileParamKey) {
 	}
 }
 
+export function next_naming_scheme(blk) {
+	blk.naming = (blk.naming == 'symbolic' ? 'textual' : 'symbolic');
+	load_block_messages(blk, `json/messages-${blk.naming}.json`);
+}
+
 // Initialisation function, to be called on document load.
 export function init(Blockly, withUiCtl, trackHistory) {
 	const blk = new Blk(Blockly, trackHistory);
@@ -177,7 +180,7 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	blk.Blockly.ContextMenuItems.registerCommentOptions();
 	set_block_messages(blk);
 	set_colours(blk);
-	load_block_messages(blk, 'json/messages-symbolic.json');
+	load_block_messages(blk, `json/messages-${blk.naming}.json`);
 	load_block_definitions(blk, 'json/blksc3.json');
 	load_block_definitions(blk, 'json/blksc3-ugen.json');
 	load_xml_toolbox(blk, function (blk) {
@@ -221,11 +224,15 @@ export function init(Blockly, withUiCtl, trackHistory) {
 }
 
 function onWorkspaceChange(blk) {
+	// console.debug('onWorkspaceChange');
 	return function (event) {
-		if (event.type == Blockly.Events.BLOCKCHANGE && event.element == 'field') {
+		// console.debug('onWorkspaceChange', event.type, event.element);
+		if (event.type == Blockly.Events.BLOCK_CHANGE && event.element == 'field') {
 			const aBlock = blk.workspace.getBlockById(event.blockId);
 			if (aBlock) {
-				if (aBlock.type == 'sc3ControlField') {
+				// console.debug('onWorkspaceChange', aBlock.type);
+				if (aBlock.type == 'sc3_ControlField') {
+					// console.debug('onWorkspaceChange', aBlock.getFieldValue('VALUE'));
 					globalScSynth.sendOsc(
 						sc.n_set1(-1, aBlock.id, aBlock.getFieldValue('VALUE')),
 					);

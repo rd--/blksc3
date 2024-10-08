@@ -1,424 +1,485 @@
 [
-    {
-        "type": "sc3_Association",
-        "message0": "%1 → %2",
-        "args0": [
-            {"type": "input_value", "name": "KEY"},
-            {"type": "input_value", "name": "VALUE"}
-        ],
-        "output": "Association",
-        "colour": "%{BKY_SC_EVENT_HUE}",
-        "tooltip": "key -> value: Answer an association of key with value"
-    }
-    ,
-    {
-        "type": "sc3_ArrayCollect",
-        "message0": "%1 ⇛ %2",
-        "args0": [
-            {"type": "input_value", "name": "ARRAY", "check": ["Array", "UGen"]},
-            {"type": "input_value", "name": "PROC", "check": "Proc1"}
-        ],
-        "output": "Array",
-        "colour": "%{BKY_SC_ARRAY_HUE}",
-        "tooltip": "array.collect(proc): Collect over array by evaluating proc once for each place"
-    }
-    ,
-    {
-        "type": "sc3_ArrayFill",
-        "message0": "! %1 𝑓 %2 # %3",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "PROC", "check": "Proc0"},
-            {"type": "input_value", "name": "COUNT", "check": "Number"}
-        ],
-        "output": "Array",
-        "colour": "%{BKY_SC_ARRAY_HUE}",
-        "tooltip": "proc ! count: Array of count places, evaulate proc to generate each place"
-    }
-    ,
-    {
-        "type": "sc3_ArrayFromTo",
-        "message0": "%1 … %2",
-        "args0": [
-            {"type": "input_value", "name": "FROM", "check": ["Number", "UGen"]},
-            {"type": "input_value", "name": "TO", "check": ["Number", "UGen"]}
-        ],
-        "output": "Array",
-        "colour": "%{BKY_SC_ARRAY_HUE}",
-        "tooltip": "[from .. to]: Array of consecutive numbers"
-    }
-    ,
-    {
-        "type": "sc3_ArrayProc1",
-        "message0": "%1 %2",
-        "args0": [
-            {"type": "field_dropdown", "name": "OP", "options":
-			 [["→⛁","asLocalBuf"], ["⚂","atRandom"], ["++","concatenation"], ["1º","first"],
-			  ["mean", "mean"], ["∏","product"], ["ᴙ","reversed"], ["2º","second"],
-			  ["size","size"], ["Σ","sum"], ["3º","third"], ["𝑹", "asRecord"], ["ᵀ","transposed"]]},
-            {"type": "input_value", "name": "IN", "check": ["Array", "UGen"]}
-        ],
-        "output": null,
-        "colour": "%{BKY_SC_ARRAY_HUE}",
-        "tooltip": "ArrayProc1(op, in): Array functions"
-    }
-    ,
-    {
-        "type": "sc3_ArrayProc2",
-        "message0": "%2 %1 %3",
-        "args0": [
-            {"type": "field_dropdown", "name": "OP", "options":
-			 [["++","++"], ["⇛","collect"], ["☞","at"]]},
-            {"type": "input_value", "name": "LHS", "check": ["Array", "UGen"]},
-            {"type": "input_value", "name": "RHS"}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_ARRAY_HUE}",
-        "tooltip": "ArrayProc2(op, lhs, rhs): Array binary functions"
-    }
-    ,
-    {
-        "type": "sc3_BinaryOp",
-        "message0": "%2 %1 %3",
-        "args0": [
-            {"type": "field_dropdown", "name": "OP", "options":
-			 [["+", "+"], ["-","-"], ["×", "*"], ["÷","/"], ["%","%"], ["𝑥ⁿ","^"],
-			  ["<","<"], [">",">"], ["≤","<="], ["≥",">="], ["<<","<<"]]},
-            {"type": "input_value", "name": "LHS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RHS", "check": ["Number", "Array", "UGen"]}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_MATH_HUE}",
-        "tooltip": "BinaryOp(op, lhs, rhs): Binary operators"
-    }
-    ,
-    {
-        "type": "sc3_Comment",
-        "message0": "“ %1",
-        "args0": [
-            {"type": "field_input", "name": "COMMENT", "text": ""}
-        ],
-        "previousStatement": null,
-        "nextStatement": null,
-        "colour": "%{BKY_SC_META_HUE}",
-        "tooltip": "Comment(text): Workspace comment"
-    }
-    ,
-    {
-        "type": "sc3_ControlField",
-        "message0": "𝒞 %1",
-        "args0": [
-            {"type": "field_number", "name": "VALUE"}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_IO_HUE}",
-        "tooltip": "ControlField(initialValue)"
-    }
+	{
+		"type": "sc3_Association",
+		"message0": "%{BKY_SC_ASSOCIATION}",
+		"args0": [
+			{"type": "input_value", "name": "KEY"},
+			{"type": "input_value", "name": "VALUE"}
+		],
+		"output": "Association",
+		"colour": "%{BKY_SC_EVENT_HUE}",
+		"tooltip": "key -> value: Answer an association of key with value"
+	}
 	,
-    {
-        "type": "sc3_Event",
-        "message0": "𝔼 %1",
-        "args0": [
-            {"type": "input_value", "name": "FROM"}
-        ],
-        "output": null,
-        "colour": "%{BKY_SC_EVENT_HUE}",
-        "tooltip": "Event(from): Construct voice event"
-    }
+	{
+		"type": "sc3_ArrayCollect",
+		"message0": "%{BKY_SC_ARRAYCOLLECT}",
+		"args0": [
+			{"type": "input_value", "name": "ARRAY", "check": ["Array", "UGen"]},
+			{"type": "input_value", "name": "PROC", "check": "Proc1"}
+		],
+		"output": "Array",
+		"colour": "%{BKY_SC_ARRAY_HUE}",
+		"tooltip": "array.collect(proc): Collect over array by evaluating proc once for each place"
+	}
 	,
-    {
-        "type": "sc3_EventParam",
-        "message0": "𝔼 %1 %2",
-        "args0": [
-            {"type": "field_dropdown", "name": "PARAM", "options":
-			 [["#", "v"], ["𝑤","w"], ["𝑥","x"], ["𝑦", "y"], ["𝑧","z"],
-			  ["𝘪","i"], ["𝘫","j"], ["𝘬", "k"], ["𝑝", "p"]]},
-            {"type": "input_value", "name": "EVENT"}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_EVENT_HUE}",
-        "tooltip": "EventParam(param, event): Read voice event parameter"
-    }
+	{
+		"type": "sc3_ArrayFill",
+		"message0": "%{BKY_SC_ARRAYFILL}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "PROC", "check": "Proc0"},
+			{"type": "input_value", "name": "COUNT", "check": "Number"}
+		],
+		"output": "Array",
+		"colour": "%{BKY_SC_ARRAY_HUE}",
+		"tooltip": "proc ! count: Array of count places, evaulate proc to generate each place"
+	}
 	,
-    {
-        "type": "sc3_KeywordBinaryOp",
-        "message0": "%2 %1 %3",
-        "args0": [
-            {"type": "field_dropdown", "name": "OP", "options":
-			 [["Am⊏", "AmClip"], ["&", "BitAnd"], ["|", "BitOr"], ["⊏","Clip2"], ["clump", "clump"],
-			  ["⏥", "Lag"], ["⏥⏥", "Lag2"], ["⏥⏥⏥", "Lag3"], ["⌊", "Min"], ["⌈","Max"],
-			  ["⅄","multipleRootGraph"], ["⌊⌉","RoundTo"], ["»","ShiftRight"], ["Trunc","Trunc"]]},
-            {"type": "input_value", "name": "LHS", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "RHS", "check": ["Number", "Array", "UGen"]}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_MATH_HUE}",
-        "tooltip": "Keyword binary operators"
-    }
-    ,
-    {
-        "type": "sc3_LocalVoicer",
-        "message0": "𝓥 %1 𝑹 %2 𝑓 %3",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "RECORD"},
-            {"type": "input_value", "name": "PROC", "check": "Proc1"}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_EVENT_HUE}",
-        "tooltip": "Voicer(map, proc): Array of results of evaluating proc at the channel expanded event record"
-    }
-    ,
-    {
-        "type": "sc3_MulAdd",
-        "message0": "%1 × %2 + %3",
-        "args0": [
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
-            {"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_MATH_HUE}",
-        "tooltip": "MulAdd(in, mul, add): Multiply and add, i.e. in * mul + add.",
-        "helpUrl": "https://doc.sccode.org/Classes/MulAdd.html"
-    }
-    ,
-    {
-        "type": "sc3_OverlapTexture",
-        "message0": "ᨏ %1 𝑓 %2 ⌒ %3 ⤢ %4 # %5",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "PROC", "check": "Proc1"},
-            {"type": "input_value", "name": "SUSTAINTIME", "check": "Number"},
-            {"type": "input_value", "name": "TRANSITIONTIME", "check": "Number"},
-            {"type": "input_value", "name": "OVERLAP", "check": "Number"}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_ITER_HUE}",
-        "tooltip": "OverlapTexture(proc, sustainTime, transitionTime, overlap): Overlap add texture"
-    }
-    ,
-    {
-        "type": "sc3_Proc0",
-        "message0": "λ %1 ← %2",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "RETURN"}
-        ],
-        "output": "Proc0",
-        "colour": "%{BKY_SC_LAMBDA_HUE}",
-        "tooltip": "Proc(return): Zero argument procedure"
-    }
-    ,
-    {
-        "type": "sc3_Proc0Stm",
-        "message0": "λ %1 ⦙ %2 ← %3",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_statement", "name": "STATEMENTS"},
-            {"type": "input_value", "name": "RETURN"}
-        ],
-        "output": "Proc0",
-        "colour": "%{BKY_SC_LAMBDA_HUE}",
-        "tooltip": "Proc(statements, return): Zero argument procedure, with statements"
-    }
-    ,
-    {
-        "type": "sc3_Proc1",
-        "message0": "λ %1 ⍵ %2 ← %3",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "VAR"},
-            {"type": "input_value", "name": "RETURN"}
-        ],
-        "output": "Proc1",
-        "colour": "%{BKY_SC_LAMBDA_HUE}",
-        "tooltip": "Proc(var, return): One argument procedure setting arg to var"
-    }
-    ,
-    {
-        "type": "sc3_Proc1Stm",
-        "message0": "λ %1 ⍵ %2 ⦙ %3 ← %4",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "VAR"},
-            {"type": "input_statement", "name": "STATEMENTS"},
-            {"type": "input_value", "name": "RETURN"}
-        ],
-        "output": "Proc1",
-        "colour": "%{BKY_SC_LAMBDA_HUE}",
-        "tooltip": "Proc(var, statements, return): One argument procedure, with statements"
-    }
-    ,
-    {
-        "type": "sc3_Proc2",
-        "message0": "λ %1 ⍺ %2 ⍵ %3 ← %4",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "VAR1"},
-            {"type": "input_value", "name": "VAR2"},
-            {"type": "input_value", "name": "RETURN"}
-        ],
-        "output": "Proc2",
-        "colour": "%{BKY_SC_LAMBDA_HUE}",
-        "tooltip": "Proc(var, var, return): Two argument procedure setting arg to var"
-    }
-    ,
-    {
-        "type": "sc3_Proc2Stm",
-        "message0": "λ %1 ⍺ %2 ⍵ %3 ⦙ %4 ← %5",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "VAR1"},
-            {"type": "input_value", "name": "VAR2"},
-            {"type": "input_statement", "name": "STATEMENTS"},
-            {"type": "input_value", "name": "RETURN"}
-        ],
-        "output": "Proc2",
-        "colour": "%{BKY_SC_LAMBDA_HUE}",
-        "tooltip": "Proc(var, var, statements, return): Two argument procedure, with statements"
-    }
-    ,
-    {
-        "type": "sc3_SoundFileBuffer",
-        "message0": "SoundFileBuffer %1 ⛁ %2 # %3",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "SOUNDFILEID", "check": "String"},
-            {"type": "input_value", "name": "NUMBEROFCHANNELS", "check": "Number"}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_IO_HUE}",
-        "tooltip": "SoundFileBuffer(soundFileId, numberOfChannels): Fetch buffer index from cache, allocate and load if required"
-    }
-    ,
-    {
-        "type": "sc3_UnaryOp",
-        "message0": "%1 %2",
-        "args0": [
-            {"type": "field_dropdown", "name": "OP", "options":
-			 [["|", "Abs"], ["⌈", "Ceiling"], ["⛁0", "BufClear"],
-			  ["ν→♩", "CpsMidi"], ["cubed","Cubed"], ["㏈→×","DbAmp"], ["distort","Distort"],
-			  ["𝑒ⁿ","Exp"], ["⌊", "Floor"], ["kr","kr"], ["log","Log"], ["♩→ν", "MidiCps"],
-			  ["midiRatio", "MidiRatio"], ["-","Neg"], ["rand2","Rand2"], ["¹⁄","Recip"],
-			  ["⌊⌉","rounded"], ["∿","Sin"], ["soft⊏","SoftClip"], ["◠", "Splay"], ["√","Sqrt"],
-			  ["tanh","Tanh"], ["₀¹→ν", "UnitCps"]]},
-            {"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_MATH_HUE}",
-        "tooltip": "UnaryOp(op, in): Unary operators"
-    }
-    ,
-    {
-        "type": "sc3_Voicer",
-        "message0": "𝓥 %1 P %2 # %3 𝑓 %4",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "PART", "check": "Number"},
-            {"type": "input_value", "name": "COUNT", "check": "Number"},
-            {"type": "input_value", "name": "PROC", "check": "Proc1"}
-        ],
-        "output": "Array",
-        "colour": "%{BKY_SC_EVENT_HUE}",
-        "tooltip": "Voicer(count, proc): Array of results of evaluating proc count times, each time receiving an event as argument"
-    }
-    ,
-    {
-        "type": "sc3_VoiceWriter",
-        "message0": "𝓥𝓌 %1 P %2 # %3 𝑓 %4",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "PART", "check": "Number"},
-            {"type": "input_value", "name": "COUNT", "check": "Number"},
-            {"type": "input_value", "name": "PROC", "check": "Proc0"}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_EVENT_HUE}",
-        "tooltip": "VoicerWriter(count, proc)"
-    }
+	{
+		"type": "sc3_ArrayFromTo",
+		"message0": "%{BKY_SC_ARRAYFROMTO}",
+		"args0": [
+			{"type": "input_value", "name": "FROM", "check": ["Number", "UGen"]},
+			{"type": "input_value", "name": "TO", "check": ["Number", "UGen"]}
+		],
+		"output": "Array",
+		"colour": "%{BKY_SC_ARRAY_HUE}",
+		"tooltip": "[from .. to]: Array of consecutive numbers"
+	}
 	,
-    {
-        "type": "sc3_XFadeTexture",
-        "message0": "ᨏ %1 𝑓 %2 ⌒ %3 ⤢ %4",
-        "args0": [
-            {"type": "input_dummy"},
-            {"type": "input_value", "name": "PROC", "check": "Proc1"},
-            {"type": "input_value", "name": "SUSTAINTIME", "check": "Number"},
-            {"type": "input_value", "name": "TRANSITIONTIME", "check": "Number"}
-        ],
-        "output": "UGen",
-        "colour": "%{BKY_SC_ITER_HUE}",
-        "tooltip": "XFadeTexture(proc, sustainTime, transitionTime): Crossfade and add texture"
-    }
+	{
+		"type": "sc3_ArrayProc1",
+		"message0": "%{BKY_SC_ARRAYPROC1}",
+		"args0": [
+			{"type": "field_dropdown", "name": "OP", "options":
+			 [["%{BKY_SC_ASLOCALBUF}", "asLocalBuf"],
+			  ["%{BKY_SC_ATRANDOM}", "atRandom"],
+			  ["%{BKY_SC_CONCATENATION}", "concatenation"],
+			  ["%{BKY_SC_FIRST}", "first"],
+			  ["%{BKY_SC_MEAN}", "mean"],
+			  ["%{BKY_SC_PRODUCT}", "product"],
+			  ["%{BKY_SC_REVERSED}", "reversed"],
+			  ["%{BKY_SC_SECOND}", "second"],
+			  ["%{BKY_SC_SIZE}", "size"],
+			  ["%{BKY_SC_SUM}", "sum"],
+			  ["%{BKY_SC_THIRD}", "third"],
+			  ["%{BKY_SC_ASRECORD}", "asRecord"],
+			  ["%{BKY_SC_TRANSPOSED}", "transposed"]]},
+			{"type": "input_value", "name": "IN", "check": ["Array", "UGen"]}
+		],
+		"output": null,
+		"colour": "%{BKY_SC_ARRAY_HUE}",
+		"tooltip": "ArrayProc1(op, in): Array functions"
+	}
 	,
-    {
-        "type": "sc3_Play",
-        "message0": "⊳ %1",
-        "args0": [
-            {"type": "input_value", "name": "CODE", "check": ["Array", "UGen"]}
-        ],
-        "previousStatement": null,
-        "colour": "%{BKY_SC_META_HUE}",
-        "tooltip": "Play(code): Play sound"
-    }
-    ,
-    {
-        "type": "sc3_Constant",
-        "message0": "%1",
-        "args0": [{"type": "field_dropdown", "name": "CONST", "options":
-				   [["π", "pi"], ["2×π", "twoPi"], ["𝑒", "e"], ["∞", "inf"]]}],
-        "output": "Number",
-        "colour": "%{BKY_SC_MATH_HUE}",
-        "tooltip": "Constant(n): Mathematical constants, such as π."
-    }
-    ,
-    {
-        "type": "sc3_Value0",
-        "message0": "⇐ 𝑓 %1",
-        "args0": [
-            {"type": "input_value", "name": "PROC", "check": ["Proc0"]}
-        ],
-        "output": null,
-        "colour": "%{BKY_SC_LAMBDA_HUE}",
-        "tooltip": "Value(proc): Evaluate zero argument procedure"
-    }
-    ,
-    {
-        "type": "sc3_Value1",
-        "message0": "⇐ 𝑓 %1 ∙ %2",
-        "args0": [
-            {"type": "input_value", "name": "PROC", "check": ["Proc1"]},
-            {"type": "input_value", "name": "VALUE"}
-        ],
-        "output": null,
-        "colour": "%{BKY_SC_LAMBDA_HUE}",
-        "tooltip": "Value(proc, value): Evaluate one argument procedure"
-    }
-    ,
-    {
-        "type": "sc3_Value2",
-        "message0": "⇐ 𝑓 %1 ∙ %2 ∙ %3",
-        "args0": [
-            {"type": "input_value", "name": "PROC", "check": ["Proc2"]},
-            {"type": "input_value", "name": "VALUE1"},
-            {"type": "input_value", "name": "VALUE2"}
-        ],
-        "output": null,
-        "colour": "%{BKY_SC_LAMBDA_HUE}",
-        "tooltip": "Value(proc, value): Evaluate one argument procedure"
-    }
-    ,
-    {
-        "type": "sc3_TimesRepeat",
-        "message0": "# %1 𝑓 %2",
-        "args0": [
-            {"type": "input_value", "name": "COUNT", "check": "Number"},
-            {"type": "input_value", "name": "PROC", "check": "Proc0"}
-        ],
-        "previousStatement": null,
-        "nextStatement": null,
-        "colour": "%{BKY_SC_LAMBDA_HUE}",
-        "tooltip": "TimesRepeat(count, proc): Repeat procedure indicated number of times"
-    }
+	{
+		"type": "sc3_ArrayProc2",
+		"message0": "%{BKY_SC_ARRAYPROC2}",
+		"args0": [
+			{"type": "field_dropdown", "name": "OP", "options":
+			 [["%{BKY_SC_APPEND}", "++"],
+			  ["%{BKY_SC_COLLECT}", "collect"],
+			  ["%{BKY_SC_AT}", "at"]]},
+			{"type": "input_value", "name": "LHS", "check": ["Array", "UGen"]},
+			{"type": "input_value", "name": "RHS"}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_ARRAY_HUE}",
+		"tooltip": "ArrayProc2(op, lhs, rhs): Array binary functions"
+	}
+	,
+	{
+		"type": "sc3_BinaryOp",
+		"message0": "%{BKY_SC_BINARYOP}",
+		"args0": [
+			{"type": "field_dropdown", "name": "OP", "options":
+			 [["%{BKY_SC_ADD}", "+"],
+			  ["%{BKY_SC_SUB}", "-"],
+			  ["%{BKY_SC_MUL}", "*"],
+			  ["%{BKY_SC_FDIV}", "/"],
+			  ["%{BKY_SC_MOD}", "%"],
+			  ["%{BKY_SC_POW}", "^"],
+			  ["%{BKY_SC_LT}", "<"],
+			  ["%{BKY_SC_GT}", ">"],
+			  ["%{BKY_SC_LE}", "<="],
+			  ["%{BKY_SC_GE}", ">="],
+			  ["%{BKY_SC_BITSHIFTLEFT}", "<<"],
+			  ["%{BKY_SC_BITSHIFTRIGHT}", ">>"]]},
+			{"type": "input_value", "name": "LHS", "check": ["Number", "Array", "UGen"]},
+			{"type": "input_value", "name": "RHS", "check": ["Number", "Array", "UGen"]}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_MATH_HUE}",
+		"tooltip": "BinaryOp(op, lhs, rhs): Binary operators"
+	}
+	,
+	{
+		"type": "sc3_Comment",
+		"message0": "%{BKY_SC_COMMENT}",
+		"args0": [
+			{"type": "field_input", "name": "COMMENT", "text": ""}
+		],
+		"previousStatement": null,
+		"nextStatement": null,
+		"colour": "%{BKY_SC_META_HUE}",
+		"tooltip": "Comment(text): Workspace comment"
+	}
+	,
+	{
+		"type": "sc3_ControlField",
+		"message0": "%{BKY_SC_CONTROLFIELD}",
+		"args0": [
+			{"type": "field_number", "name": "VALUE"}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_IO_HUE}",
+		"tooltip": "ControlField(initialValue)"
+	}
+	,
+	{
+		"type": "sc3_Event",
+		"message0": "%{BKY_SC_EVENT}",
+		"args0": [
+			{"type": "input_value", "name": "FROM"}
+		],
+		"output": null,
+		"colour": "%{BKY_SC_EVENT_HUE}",
+		"tooltip": "Event(from): Construct voice event"
+	}
+	,
+	{
+		"type": "sc3_EventParam",
+		"message0": "%{BKY_SC_EVENTPARAM}",
+		"args0": [
+			{"type": "field_dropdown", "name": "PARAM", "options":
+			 [["#", "v"],
+			  ["𝑤", "w"],
+			  ["𝑥", "x"],
+			  ["𝑦", "y"],
+			  ["𝑧", "z"],
+			  ["𝘪", "i"],
+			  ["𝘫", "j"],
+			  ["𝘬", "k"],
+			  ["𝑝", "p"]]},
+			{"type": "input_value", "name": "EVENT"}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_EVENT_HUE}",
+		"tooltip": "EventParam(param, event): Read voice event parameter"
+	}
+	,
+	{
+		"type": "sc3_KeywordBinaryOp",
+		"message0": "%{BKY_SC_KEYWORDBINARYOP}",
+		"args0": [
+			{"type": "field_dropdown", "name": "OP", "options":
+			 [["%{BKY_SC_AMCLIP}", "AmClip"],
+			  ["%{BKY_SC_BITAND}", "BitAnd"],
+			  ["%{BKY_SC_BITOR}", "BitOr"],
+			  ["%{BKY_SC_CLIP2}", "Clip2"],
+			  ["%{BKY_SC_CLUMP}", "clump"],
+			  ["%{BKY_SC_LAG}", "Lag"],
+			  ["%{BKY_SC_LAG2}", "Lag2"],
+			  ["%{BKY_SC_LAG3}", "Lag3"],
+			  ["%{BKY_SC_MIN}", "Min"],
+			  ["%{BKY_SC_MAX}", "Max"],
+			  ["%{BKY_SC_MultipleRootGraph}", "<!"],
+			  ["%{BKY_SC_ROUNDTO}", "RoundTo"],
+			  ["%{BKY_SC_TRUNC}", "Trunc"]]},
+			{"type": "input_value", "name": "LHS", "check": ["Number", "Array", "UGen"]},
+			{"type": "input_value", "name": "RHS", "check": ["Number", "Array", "UGen"]}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_MATH_HUE}",
+		"tooltip": "Keyword binary operators"
+	}
+	,
+	{
+		"type": "sc3_LocalVoicer",
+		"message0": "%{BKY_SC_LOCALVOICER}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "RECORD"},
+			{"type": "input_value", "name": "PROC", "check": "Proc1"}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_EVENT_HUE}",
+		"tooltip": "Voicer(map, proc): Array of results of evaluating proc at the channel expanded event record"
+	}
+	,
+	{
+		"type": "sc3_MulAdd",
+		"message0": "%{BKY_SC_MULADD}",
+		"args0": [
+			{"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]},
+			{"type": "input_value", "name": "MUL", "check": ["Number", "Array", "UGen"]},
+			{"type": "input_value", "name": "ADD", "check": ["Number", "Array", "UGen"]}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_MATH_HUE}",
+		"tooltip": "MulAdd(in, mul, add): Multiply and add, i.e. in * mul + add.",
+		"helpUrl": "https://doc.sccode.org/Classes/MulAdd.html"
+	}
+	,
+	{
+		"type": "sc3_OverlapTexture",
+		"message0": "%{BKY_SC_OVERLAPTEXTURE}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "PROC", "check": "Proc1"},
+			{"type": "input_value", "name": "SUSTAINTIME", "check": "Number"},
+			{"type": "input_value", "name": "TRANSITIONTIME", "check": "Number"},
+			{"type": "input_value", "name": "OVERLAP", "check": "Number"}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_ITER_HUE}",
+		"tooltip": "OverlapTexture(proc, sustainTime, transitionTime, overlap): Overlap add texture"
+	}
+	,
+	{
+		"type": "sc3_Proc0",
+		"message0": "%{BKY_SC_PROC0}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "RETURN"}
+		],
+		"output": "Proc0",
+		"colour": "%{BKY_SC_LAMBDA_HUE}",
+		"tooltip": "Proc(return): Zero argument procedure"
+	}
+	,
+	{
+		"type": "sc3_Proc0Stm",
+		"message0": "%{BKY_SC_PROC0STM}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_statement", "name": "STATEMENTS"},
+			{"type": "input_value", "name": "RETURN"}
+		],
+		"output": "Proc0",
+		"colour": "%{BKY_SC_LAMBDA_HUE}",
+		"tooltip": "Proc(statements, return): Zero argument procedure, with statements"
+	}
+	,
+	{
+		"type": "sc3_Proc1",
+		"message0": "%{BKY_SC_PROC1}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "VAR"},
+			{"type": "input_value", "name": "RETURN"}
+		],
+		"output": "Proc1",
+		"colour": "%{BKY_SC_LAMBDA_HUE}",
+		"tooltip": "Proc(var, return): One argument procedure setting arg to var"
+	}
+	,
+	{
+		"type": "sc3_Proc1Stm",
+		"message0": "%{BKY_SC_PROC1STM}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "VAR"},
+			{"type": "input_statement", "name": "STATEMENTS"},
+			{"type": "input_value", "name": "RETURN"}
+		],
+		"output": "Proc1",
+		"colour": "%{BKY_SC_LAMBDA_HUE}",
+		"tooltip": "Proc(var, statements, return): One argument procedure, with statements"
+	}
+	,
+	{
+		"type": "sc3_Proc2",
+		"message0": "%{BKY_SC_PROC2}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "VAR1"},
+			{"type": "input_value", "name": "VAR2"},
+			{"type": "input_value", "name": "RETURN"}
+		],
+		"output": "Proc2",
+		"colour": "%{BKY_SC_LAMBDA_HUE}",
+		"tooltip": "Proc(var, var, return): Two argument procedure setting arg to var"
+	}
+	,
+	{
+		"type": "sc3_Proc2Stm",
+		"message0": "%{BKY_SC_PROC2STM}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "VAR1"},
+			{"type": "input_value", "name": "VAR2"},
+			{"type": "input_statement", "name": "STATEMENTS"},
+			{"type": "input_value", "name": "RETURN"}
+		],
+		"output": "Proc2",
+		"colour": "%{BKY_SC_LAMBDA_HUE}",
+		"tooltip": "Proc(var, var, statements, return): Two argument procedure, with statements"
+	}
+	,
+	{
+		"type": "sc3_SoundFileBuffer",
+		"message0": "%{BKY_SC_SOUNDFILEBUFFER}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "SOUNDFILEID", "check": "String"},
+			{"type": "input_value", "name": "NUMBEROFCHANNELS", "check": "Number"}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_IO_HUE}",
+		"tooltip": "SoundFileBuffer(soundFileId, numberOfChannels): Fetch buffer index from cache, allocate and load if required"
+	}
+	,
+	{
+		"type": "sc3_UnaryOp",
+		"message0": "%{BKY_SC_UNARYOP}",
+		"args0": [
+			{"type": "field_dropdown", "name": "OP", "options":
+			 [["%{BKY_SC_ABS}", "Abs"],
+			  ["%{BKY_SC_CEILING}", "Ceiling"],
+			  ["%{BKY_SC_BUFCLEAR}", "BufClear"],
+			  ["%{BKY_SC_CPSMIDI}", "CpsMidi"],
+			  ["%{BKY_SC_CUBED}", "Cubed"],
+			  ["%{BKY_SC_DBAMP}", "DbAmp"],
+			  ["%{BKY_SC_DISTORT}", "Distort"],
+			  ["%{BKY_SC_EXP}", "Exp"],
+			  ["%{BKY_SC_FLOOR}", "Floor"],
+			  ["%{BKY_SC_KR}", "kr"],
+			  ["%{BKY_SC_LOG}", "Log"],
+			  ["%{BKY_SC_MIDICPS}", "MidiCps"],
+			  ["%{BKY_SC_MIDIRATIO}", "MidiRatio"],
+			  ["%{BKY_SC_NEG}", "Neg"],
+			  ["%{BKY_SC_RAND2}", "Rand2"],
+			  ["%{BKY_SC_RECIP}", "Recip"],
+			  ["%{BKY_SC_ROUNDED}", "rounded"],
+			  ["%{BKY_SC_SIN}", "Sin"],
+			  ["%{BKY_SC_SOFTCLIP}", "SoftClip"],
+			  ["%{BKY_SC_SPLAY}", "Splay"],
+			  ["%{BKY_SC_SQRT}", "Sqrt"],
+			  ["%{BKY_SC_TANH}", "Tanh"],
+			  ["%{BKY_SC_UNITCPS}", "UnitCps"]]},
+			{"type": "input_value", "name": "IN", "check": ["Number", "Array", "UGen"]}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_MATH_HUE}",
+		"tooltip": "UnaryOp(op, in): Unary operators"
+	}
+	,
+	{
+		"type": "sc3_Voicer",
+		"message0": "%{BKY_SC_VOICER}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "PART", "check": "Number"},
+			{"type": "input_value", "name": "COUNT", "check": "Number"},
+			{"type": "input_value", "name": "PROC", "check": "Proc1"}
+		],
+		"output": "Array",
+		"colour": "%{BKY_SC_EVENT_HUE}",
+		"tooltip": "Voicer(count, proc): Array of results of evaluating proc count times, each time receiving an event as argument"
+	}
+	,
+	{
+		"type": "sc3_VoiceWriter",
+		"message0": "%{BKY_SC_VOICEWRITER}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "PART", "check": "Number"},
+			{"type": "input_value", "name": "COUNT", "check": "Number"},
+			{"type": "input_value", "name": "PROC", "check": "Proc0"}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_EVENT_HUE}",
+		"tooltip": "VoicerWriter(count, proc)"
+	}
+	,
+	{
+		"type": "sc3_XFadeTexture",
+		"message0": "%{BKY_SC_XFADETEXTURE}",
+		"args0": [
+			{"type": "input_dummy"},
+			{"type": "input_value", "name": "PROC", "check": "Proc1"},
+			{"type": "input_value", "name": "SUSTAINTIME", "check": "Number"},
+			{"type": "input_value", "name": "TRANSITIONTIME", "check": "Number"}
+		],
+		"output": "UGen",
+		"colour": "%{BKY_SC_ITER_HUE}",
+		"tooltip": "XFadeTexture(proc, sustainTime, transitionTime): Crossfade and add texture"
+	}
+	,
+	{
+		"type": "sc3_Play",
+		"message0": "%{BKY_SC_PLAY}",
+		"args0": [
+			{"type": "input_value", "name": "CODE", "check": ["Array", "UGen"]}
+		],
+		"previousStatement": null,
+		"colour": "%{BKY_SC_META_HUE}",
+		"tooltip": "Play(code): Play sound"
+	}
+	,
+	{
+		"type": "sc3_Constant",
+		"message0": "%{BKY_SC_CONSTANT}",
+		"args0": [
+			{"type": "field_dropdown", "name": "CONST", "options":
+			 [["π", "pi"],
+			  ["2×π", "twoPi"],
+			  ["𝑒", "e"],
+			  ["∞", "inf"]]}
+		],
+		"output": "Number",
+		"colour": "%{BKY_SC_MATH_HUE}",
+		"tooltip": "Constant(n): Mathematical constants, such as π."
+	}
+	,
+	{
+		"type": "sc3_Value0",
+		"message0": "%{BKY_SC_VALUE0}",
+		"args0": [
+			{"type": "input_value", "name": "PROC", "check": ["Proc0"]}
+		],
+		"output": null,
+		"colour": "%{BKY_SC_LAMBDA_HUE}",
+		"tooltip": "Value(proc): Evaluate zero argument procedure"
+	}
+	,
+	{
+		"type": "sc3_Value1",
+		"message0": "%{BKY_SC_VALUE1}",
+		"args0": [
+			{"type": "input_value", "name": "PROC", "check": ["Proc1"]},
+			{"type": "input_value", "name": "VALUE"}
+		],
+		"output": null,
+		"colour": "%{BKY_SC_LAMBDA_HUE}",
+		"tooltip": "Value(proc, value): Evaluate one argument procedure"
+	}
+	,
+	{
+		"type": "sc3_Value2",
+		"message0": "%{BKY_SC_VALUE2}",
+		"args0": [
+			{"type": "input_value", "name": "PROC", "check": ["Proc2"]},
+			{"type": "input_value", "name": "VALUE1"},
+			{"type": "input_value", "name": "VALUE2"}
+		],
+		"output": null,
+		"colour": "%{BKY_SC_LAMBDA_HUE}",
+		"tooltip": "Value(proc, value): Evaluate one argument procedure"
+	}
+	,
+	{
+		"type": "sc3_TimesRepeat",
+		"message0": "%{BKY_SC_TIMESREPEAT}",
+		"args0": [
+			{"type": "input_value", "name": "COUNT", "check": "Number"},
+			{"type": "input_value", "name": "PROC", "check": "Proc0"}
+		],
+		"previousStatement": null,
+		"nextStatement": null,
+		"colour": "%{BKY_SC_LAMBDA_HUE}",
+		"tooltip": "TimesRepeat(count, proc): Repeat procedure indicated number of times"
+	}
 ]
