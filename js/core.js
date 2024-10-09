@@ -138,12 +138,10 @@ function load_block_definitions(blk, filename) {
 		.then(blk.Blockly.defineBlocksWithJsonArray);
 }
 
-/*
 function load_json_toolbox(blk, onCompletion) {
-	sc.fetchJson('xml/toolbox-exported.json', { cache: 'no-cache' })
+	sc.fetchJson('json/toolbox.json', { cache: 'no-cache' })
 		.then(injectWithToolbox(blk, onCompletion));
 }
-*/
 
 function load_xml_toolbox(blk, onCompletion) {
 	sc.fetchUtf8('xml/toolbox.xml', { cache: 'no-cache' })
