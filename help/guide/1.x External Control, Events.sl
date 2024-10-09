@@ -8,7 +8,7 @@ FreeVerb(Voicer(1, 16, { :e |
 
 _Voicer_ reads _#_ event streams,
 where an event is a set of continuous control parameters associated with a switch (_gate_) signal,
-and generates an ⟦⟧ (_Array_) of # places.
+and generates a ⟦⟧ (_List_) of # places.
 Each place in the ⟦⟧ is set by evaluating 𝑓 with a distinct 𝔼 (_Event_).
 
 In this program _Voicer_ constructs 16 parallel event processors.

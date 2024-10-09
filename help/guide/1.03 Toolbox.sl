@@ -26,7 +26,7 @@ This program contains blocks belonging to each of the five families of signal pr
 
 In addition
 × and ÷ are in _Math_,
-⟦⟧ is in _Array_,
+⟦⟧ is in _List_,
 ≔ is in _Var_,
 and “ and ▷ are in _Meta_.
 

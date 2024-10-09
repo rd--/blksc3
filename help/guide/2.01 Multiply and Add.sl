@@ -20,6 +20,6 @@ and that must therefore be written as
 
 > _{ PinkNoise() } ! 2 * 0.1_
 
-␊⍰₂ (_LFNoise2_), which has a _frequency_ (ν) input, can be duplicated by passing an array of equal values.
+␊⍰₂ (_LFNoise2_), which has a _frequency_ (ν) input, can be duplicated by passing a list of equal values.
 
 This program generates quiet correlated stereo pink noise mixed with two sine oscillators following distinct time varying frequencies.

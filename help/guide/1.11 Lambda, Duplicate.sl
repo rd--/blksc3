@@ -18,9 +18,9 @@ It may or may not allow a sequence of statements (…).
 A λ block may be _evaluated_ to run the program fragment it holds and to return its result.
 When evaluated, a λ block must be passed the appropriate number of arguments, one for each declared parameter.
 
-! (_ArrayFill_) is a graph combinator, a form of _higher order function_.
+! (_Duplicate_) is a graph combinator, a form of _higher order function_.
 ! requires a zero argument λ block (𝑓) and an integer (#) as inputs.
-! generates an ⟦⟧ (_Array_) of # places, and evaluates 𝑓 # times, once for each place, to set its values.
+! generates a ⟦⟧ (_List_) of # places, and evaluates 𝑓 # times, once for each place, to set its values.
 
 This program sums twelve sine oscillators,
 with random frequencies in _(110, 220)_ _hz_,

@@ -32,7 +32,7 @@ The macro form of ! would print this as:
 
 > _{ x } ! 16_
 
-which would make an array containing the same value (_x_) at each place.
+which would make a list containing the same value (_x_) at each place.
 _BlkSc3_ does not implement any _macro_ like blocks,
 instead requiring that λ blocks be provided in programs as required.
 

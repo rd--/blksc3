@@ -107,7 +107,7 @@ function set_block_messages(blk) {
 function set_colours(blk) {
 	blk.Blockly.utils.colour.setHsvSaturation(0.20);
 	blk.Blockly.utils.colour.setHsvValue(0.95);
-	blk.Blockly.Msg['SC_ARRAY_HUE'] = '260';
+	blk.Blockly.Msg['SC_LIST_HUE'] = '260';
 	blk.Blockly.Msg['SC_ENV_HUE'] = '300';
 	blk.Blockly.Msg['SC_PAN_HUE'] = '300';
 	blk.Blockly.Msg['SC_GENERATOR_HUE'] = '210';
@@ -120,6 +120,7 @@ function set_colours(blk) {
 	blk.Blockly.Msg['SC_META_HUE'] = '300';
 	blk.Blockly.Msg['SC_PROCESSOR_HUE'] = '150';
 	blk.Blockly.Msg['SC_TRIGGER_HUE'] = '30';
+	blk.Blockly.Msg['SC_VAR_HUE'] = '330';
 }
 
 export function load_block_messages(blk, filename) {
@@ -181,7 +182,7 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	load_block_messages(blk, `json/messages-${blk.naming}.json`);
 	load_block_definitions(blk, 'json/blksc3.json');
 	load_block_definitions(blk, 'json/blksc3-ugen.json');
-	load_xml_toolbox(blk, function (blk) {
+	load_json_toolbox(blk, function (blk) {
 		blk.workspace.addChangeListener(onWorkspaceChange(blk));
 		maybeLoadHelpFileFromUrlParam(blk, 'e');
 	});
