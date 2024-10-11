@@ -3,16 +3,16 @@ export function initCodeGen(blk) {
 
 	// Modified for .sl which uses := for "assignment" (and = for "is equal to")
 	Blockly.JavaScript.forBlock['variables_set'] = function (block) {
-		const argument0 = Blockly.JavaScript.valueToCode(
+		const name = Blockly.JavaScript.nameDB_.getName(
+			block.getFieldValue('VAR'),
+			'VARIABLE',
+		);
+		const value = Blockly.JavaScript.valueToCode(
 			block,
 			'VALUE',
 			Blockly.JavaScript.ORDER_ASSIGNMENT,
 		) || '0';
-		const varName = Blockly.JavaScript.nameDB_.getName(
-			block.getFieldValue('VAR'),
-			'VARIABLE',
-		);
-		return `${varName} := ${argument0};\n`;
+		return `${name} := ${value};\n`;
 	};
 
 	Blockly.JavaScript.forBlock['sc3_ArrayCollect'] = function (block) {
@@ -73,6 +73,20 @@ export function initCodeGen(blk) {
 
 	Blockly.JavaScript.forBlock['sc3_EventParam'] = function (block) {
 		return infixMethodCodeGen(blk, block, block.getFieldValue('PARAM'), ['EVENT']);
+	};
+
+	Blockly.JavaScript.forBlock['sc3_LetBinding'] = function (block) {
+		var name = blk.Blockly.JavaScript.valueToCode(
+			block,
+			'NAME',
+			blk.Blockly.JavaScript.ORDER_ATOMIC,
+		);
+		const value = Blockly.JavaScript.valueToCode(
+			block,
+			'VALUE',
+			Blockly.JavaScript.ORDER_ATOMIC,
+		) || '0';
+		return `let ${name} = ${value};\n`;
 	};
 
 	Blockly.JavaScript.forBlock['sc3_LocalVoicer'] = function (block) {

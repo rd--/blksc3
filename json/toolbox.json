@@ -12,6 +12,18 @@
 				{
 					"kind": "block",
 					"type": "sc3_Play"
+				},
+				{
+					"kind": "block",
+					"type": "sc3_Comment",
+					"fields": {
+						"COMMENT": ""
+					},
+					"next": {
+						"block": {
+							"type": "sc3_Play"
+						}
+					}
 				}
 			]
 		},
@@ -99,7 +111,9 @@
 			"kind": "category",
 			"name": "Var",
 			"colour": "%{BKY_SC_VAR_HUE}",
-			"custom": "VARIABLE"
+			"custom": "VARIABLE",
+			"contents": [
+			]
 		},
 		{
 			"kind": "category",
@@ -433,6 +447,23 @@
 					"kind": "block",
 					"type": "sc3_Value1",
 					"inline": true
+				},
+				{
+					"kind": "block",
+					"type": "sc3_LetBinding",
+					"inline": true,
+					"inputs": {
+						"NAME": {
+							"block": {
+								"type": "variables_get",
+								"fields": {
+									"VAR": {
+										"name": "x"
+									}
+								}
+							}
+						}
+					}
 				}
 			]
 		},

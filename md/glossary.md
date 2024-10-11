@@ -98,7 +98,8 @@ However it can also communicate with an external synthesiser by sending messages
 ## Function
 
 In mathematics, a function is a relation that uniquely associates members of one set with members of another set.
-In some contexts function may be used as a synonym for operator or procedure.
+In some contexts function may be used as a synonym for operator or procedure or subroutine.
+In some contexts function may be used to refer to a procedure that has no side effects.
 
 ## Function Notation
 
@@ -106,6 +107,11 @@ Function notation is a form of prefix notation where the operands are enclosed i
 The prefix expression `f p q` is written `f(p, q)` in function notation, `f` is the operator and `p` and `q` the operands.
 
 ## Help
+
+There is an online [Help](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/guide/--Help--) system.
+The _Help_ menu can be selected using the _h_ access key.
+The help programs illustrate individual blocks.
+Some blocks have multiple illustrations and the help programs have numerical suffixes to distinguish them.
 
 ## Guide
 
@@ -143,6 +149,10 @@ JavaScript (Wirfs-Brock 2020).
 The language is standardised in the document ECMA-262 and is maintained Ecma's Technical Committee 39.
 
 ## Lambda
+
+λ (_Lambda_) blocks answer procedure values,
+the define the expected arguments and the steps of execution or evaluation.
+The name is from the lambda calculus (Church 1941) and Lisp (McCarthy 1960).
 
 ## Left to right
 
@@ -201,6 +211,16 @@ The prefix expression `+ p q` is written `p + q` in infix notation, and `p q +` 
 
 The workspace can be saved as a Scalable Vector Graphics file.
 An image of the [Why SuperCollider?](sw/blksc3/svg/Why%20Block%20SuperCollider.svg) graph.
+
+## S-Expression
+
+S-expressions (McCarthy 1960) are a class of symbolic expressions.
+They are formed by using the three special characters `(.)`,
+and an infinite set of distinguishable atomic symbols.
+The atomic symbols are s-expressions, and if `p` and `q` are s-expressions, so is `(p . q)`.
+There are a two additional notations to simplify writing common idioms,
+`(p q r)` is an abbreviation of `(p . (q . (r . nil)))`,
+and `'p` is an abbreviation of `(quote p)`.
 
 ## Shadow block
 
@@ -282,7 +302,8 @@ The figure below shows the toolbox with the constants category selected.
 
 ## Type
 
-A type is a collection or grouping of values.
+A type is a category (or collection or grouping) of values,
+whose elements share common characteristics such as representation or available operations.
 
 ## Type Annotations
 
@@ -308,6 +329,10 @@ We can extend this mechanism so that the text
 is displayed as
 
 > `∿(ν: 440, ϕ: 0, ×: 1, +: 0)`
+
+## Uniform Resource Locator
+
+The address of a World Wide Web page, abbreviated as Url.
 
 ## Value Input
 
