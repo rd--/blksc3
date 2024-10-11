@@ -1,5 +1,16 @@
 # Glossary
 
+## Assignment
+
+The assignment block ≔ sets the value of a variable.
+The figure below shows the variable _i_ being incremented by one.
+
+![](sw/blksc3/png/Assignment.png)
+
+## Binary Operator
+
+A binary operator is an operator with two operands.
+
 ## Block & Parameter Names
 
 ## Block Comments
@@ -8,6 +19,10 @@ Block comments are texts attached to a block using the _Add comment_ context men
 The text is displayed in a box that can be moved and resized.
 Blocks that have comments attached have a question mark (?) button to show or hide the text.
 The comment text is printed, as a comment, when the block is evaluated.
+
+## Case Rule
+
+Identifiers are written in mixed case as `SinOsc`, `LfSaw`  and `Fft`.
 
 ## Categories
 
@@ -37,7 +52,7 @@ There are three kinds of comments:
 ## Context menus
 
 A context menu contains a list of actions related to an element in the workspace, or to the workspace itself.
-A context menu is shown on right mouse clicks and long presses.
+A context menu is shown on right mouse clicks and long pen presses.
 
 ## Copy & Paste
 
@@ -51,9 +66,16 @@ Deletion can be _undone_.
 
 ## Dropdown Menus
 
+Block fields with a ▼ indicator are menus.
+The figure below shows a constant block with the menu open.
+
+![](sw/blksc3/png/ConstantMenu.png)
+
 ## Duplicate
 
 A block can be _duplicated_ using the _Duplicate_ entry of the context menu.
+
+## Expression
 
 ## Expression Blocks
 
@@ -66,12 +88,22 @@ Blocks can be drawn with either _Internal Inputs_ or _External inputs_.
 There is a context menu item to select between the two drawing modes.
 The figure below shows the ∿ (_SinOsc_) block with external inputs.
 
-<img src="sw/blksc3/png/SinOsc.external.png" width="81" height="114">
+![](sw/blksc3/png/SinOsc.external.png)
 
 ## External Synthesiser
 
 Block SuperCollider ordinarily runs a copy of the SuperCollider synthesiser (`scsynth`) within the browser.
 However it can also communicate with an external synthesiser by sending messages over a socket.
+
+## Function
+
+In mathematics, a function is a relation that uniquely associates members of one set with members of another set.
+In some contexts function may be used as a synonym for operator or procedure.
+
+## Function Notation
+
+Function notation is a form of prefix notation where the operands are enclosed in parentheses and separated by commas.
+The prefix expression `f p q` is written `f(p, q)` in function notation, `f` is the operator and `p` and `q` the operands.
 
 ## Help
 
@@ -86,6 +118,11 @@ The Guide consists of a sequence of small example programs each with extensive n
 An idiom is, as in Apl, a composite sequence of blocks that is often used.
 The Toolbox contains a number of idioms.
 
+## Infix Notation
+
+Infix notation is a notation where the (binary) operator is written between the (two) operands.
+The infix expression `p + q` is written `+ p q` in prefix notation, and `p q +` in postfix notation.
+
 ## Input Kinds
 
 There are two kinds of inputs, _value_ inputs and _statement_ inputs.
@@ -98,9 +135,14 @@ Blocks can be drawn with either _Internal Inputs_ or _External inputs_.
 There is a context menu item to select between the two drawing modes.
 The figure below shows the ∿ (_SinOsc_) block with internal inputs.
 
-<img src="sw/blksc3/png/SinOsc.internal.png" width="250" height="48">
+![](sw/blksc3/png/SinOsc.internal.png)
 
-Cf. External Inputs.
+## JavaScript
+
+JavaScript (Wirfs-Brock 2020).
+The language is standardised in the document ECMA-262 and is maintained Ecma's Technical Committee 39.
+
+## Lambda
 
 ## Left to right
 
@@ -114,6 +156,47 @@ and the output connector is on the left edge.
 The 𝑁 control selects between symbolic and text naming schemas.
 Some equivalent names are ∿=_SinOsc_ and ≤=_LessThanOrEqualTo_.
 
+## Operand
+
+An operand, also called an argument or a parameter, is a value operated on by an operator.
+In the infix expression `p + q`, `p` and `q` are operands and `+` is the operator.
+
+## Operator
+
+An operator is the part of an expression that specifies the operation to be performed.
+In the expression `p + q`, `+` is the operator and `p` and `q` are operands.
+The number of operands required by an operator is the arity of the operator.
+In some contexts operator refers to specifically to verbs that are written infix.
+
+## Operator Menu
+
+Blocks may implement many different behaviours selected from an operator menu.
+The figure below shows the binary math operator block with the operator menu opened.
+
+![](sw/blksc3/png/OperatorMenu.png)
+
+## Patcher
+
+Patcher (Puckette 1988)
+Two of its descendents Max (Puckette 1991) and PureData (Puckette 1996) are still widely used.
+
+## Patchwork
+
+Patchwork (Laurson 1989)
+OpenMusic (Assayag 1996)
+
+## Postfix Notation
+
+Postfix notation, also called reverse Polish or reverse Łukasiewicz notation, is a notation where the operator follows the operands.
+The postfix expression `p q +` is written `p + q` in infix notation, and `+ p q` in prefix notation.
+
+## Prefix Notation
+
+Prefix notation, also called Polish or Łukasiewicz notation, is a notation where the operator precedes the operands.
+The prefix expression `+ p q` is written `p + q` in infix notation, and `p q +` in postfix notation.
+
+## Procedure
+
 ## Scalable Vector Graphics
 
 The workspace can be saved as a Scalable Vector Graphics file.
@@ -124,11 +207,15 @@ An image of the [Why SuperCollider?](sw/blksc3/svg/Why%20Block%20SuperCollider.s
 A shadow block is an editable but non-movable block connected to another block.
 Blocks can be placed on top of shadow blocks to overwrite them.
 
+## Simple Programming Language
+
 ## Small Programs
 
 There is a list of [Small Programs](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/graph/--Small%20Programs--).
 These are programs that will draw within the workspace on a 1366×768 display.
 The _Small Programs_ menu can be selected using the _a_ access key.
+
+## Statement
 
 ## Statement Blocks
 
@@ -136,7 +223,8 @@ A statement block is a block that does not answer a value,
 and therefore does not have an output connector.
 Instead statements may have a previous statement connector at the top (for instance ⊳),
 or a next statement connector at the bottom,
-or both (for instance “).
+or both (for instance “ and ≔).
+Statement blocks may also have input connectors at the right (for instance ⊳ and ≔).
 Statement blocks are connected together into statement stacks.
 See also _Expression Block_.
 
@@ -147,13 +235,13 @@ The figure below shows the no-argument λ (_Lambda_) block.
 The ⦙ (_Statements_) input is a statement input,
 the ← (_Return_) input is a value input.
 
-<img src="sw/blksc3/png/Lambda.zero.stm.png" width="67" height="77">
+![](sw/blksc3/png/Lambda.zero.stm.png)
 
 ## Symbolic Naming Schema
 
 The figure below shows the ∿ (_SinOsc_) block using the symbolic naming scheme.
 
-<img src="sw/blksc3/png/SinOsc.internal.png" width="250" height="48">
+![](sw/blksc3/png/SinOsc.internal.png)
 
 The symbols used are:
 
@@ -166,19 +254,19 @@ The symbols used are:
 The naming scheme also applies to menu fields.
 The figure below shows the ⊥ (_False_) block using the symbolic naming scheme.
 
-<img src="sw/blksc3/png/False.png" width="60" height="41">
+![](sw/blksc3/png/False.png)
 
 ## Text Naming Schema
 
 The figure below shows the ∿ (_SinOsc_) block using the text naming scheme.
 In this scheme the input names are elided.
 
-<img src="sw/blksc3/png/SinOsc.internal.text.png" width="210" height="46">
+![](sw/blksc3/png/SinOsc.internal.text.png)
 
 The naming scheme also applies to menu fields.
 The figure below shows the ⊥ (_False_) block using the text naming scheme.
 
-<img src="sw/blksc3/png/False.text.png" width="73" height="35">
+![](sw/blksc3/png/False.text.png)
 
 ## Toolbox
 
@@ -186,13 +274,24 @@ The area to the left of the workspace is called the _Toolbox_.
 The toolbox contains instances of all of the blocks the system knows about, organised into categories.
 Blocks are fetched by dragging them out of the toolbox and into the workspace.
 There is a [Toolbox](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/guide/1.03%20Toolbox) section in the _Guide_.
+The figure below shows the toolbox with the constants category selected.
+
+![](sw/blksc3/png/Toolbox.png)
 
 ## Translation
 
+## Type
+
+A type is a collection or grouping of values.
+
 ## Type Annotations
 
-Type annotations constrain how blocks can be connected together.
+Type annotations, also called connection checks, constrain how blocks can be connected together.
 There is a [Type Annotations](http://blksc3.rohandrape.net/?e=help/guide/2.05%20Type%20Annotations) section in the _Guide_.
+
+## Unary Operator
+
+A unary operator is an operator with one operand.
 
 ## Undo
 
@@ -217,12 +316,16 @@ The figure below shows the no-argument λ (_Lambda_) block.
 The ⦙ (_Statements_) input is a statement input,
 the ← (_Return_) input is a value input.
 
-<img src="sw/blksc3/png/Lambda.zero.stm.png" width="67" height="77">
+![](sw/blksc3/png/Lambda.zero.stm.png)
+
+## Variable
 
 ## Workspace
 
 The area containing the block drawing is called the _Workspace_.
 There is a [Workspace](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/guide/1.02%20Workspace,%20Synthesiser) section in the _Guide_.
+
+## Visual Programming Language
 
 ## Workspace Comments
 

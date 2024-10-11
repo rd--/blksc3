@@ -144,11 +144,6 @@ function load_json_toolbox(blk, onCompletion) {
 		.then(injectWithToolbox(blk, onCompletion));
 }
 
-function load_xml_toolbox(blk, onCompletion) {
-	sc.fetchUtf8('xml/toolbox.xml', { cache: 'no-cache' })
-		.then(injectWithToolbox(blk, onCompletion));
-}
-
 function loadHelpGraph(blk, graphPath) {
 	json.fetchJson(blk, `${graphPath}.json`, false);
 	loadNotes(`${graphPath}.sl`)

@@ -18,8 +18,8 @@ and allows for variables to be _renamed_ and _deleted_.
 ⟦⟧ is the _list_ constructor block, located in the _List_ category of the toolbox.
 ⟦⟧ has a _mutator_ (drawn as ⚙) that is used to change its shape by creating or deleting input connectors.
 
-This program assigns a ∿ block to the variable _o_, and an ⟦⟧ block to the variable _a_.
-_a_ consists of two references to the variable _o_, making a stereo signal from a mono source.
+This program assigns a ∿ block to the variable _o_, and an ⟦⟧ block to the variable _l_.
+_l_ consists of two references to the variable _o_, making a stereo signal from a mono source.
 
 The output of the program is a × (_Binary Operator_) block, located in the _Math_ category of the toolbox.
 The operator is selected from a menu.
