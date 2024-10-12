@@ -17,6 +17,7 @@ export class Blk {
 		this.workspace = null;
 		this.layouts = null;
 		this.naming = 'symbolic';
+		this.whichToolbox = 'complete';
 	}
 }
 
@@ -139,8 +140,8 @@ function load_block_definitions(blk, filename) {
 		.then(blk.Blockly.defineBlocksWithJsonArray);
 }
 
-function load_json_toolbox(blk, onCompletion) {
-	sc.fetchJson('json/small-toolbox.json', { cache: 'no-cache' })
+function load_json_toolbox(blk, fileName, onCompletion) {
+	sc.fetchJson(fileName, { cache: 'no-cache' })
 		.then(injectWithToolbox(blk, onCompletion));
 }
 
@@ -166,6 +167,12 @@ export function next_naming_scheme(blk) {
 	load_block_messages(blk, `json/messages-${blk.naming}.json`);
 }
 
+export function next_toolbox(blk) {
+	blk.whichToolbox = (blk.whichToolbox == 'complete' ? 'small' : 'complete');
+	sc.fetchJson(`json/${blk.whichToolbox}-toolbox.json`, { cache: 'no-cache' })
+		.then(tree => blk.workspace.updateToolbox(tree))
+}
+
 // Initialisation function, to be called on document load.
 export function init(Blockly, withUiCtl, trackHistory) {
 	const blk = new Blk(Blockly, trackHistory);
@@ -177,7 +184,7 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	load_block_messages(blk, `json/messages-${blk.naming}.json`);
 	load_block_definitions(blk, 'json/blksc3.json');
 	load_block_definitions(blk, 'json/blksc3-ugen.json');
-	load_json_toolbox(blk, function (blk) {
+	load_json_toolbox(blk, 'json/complete-toolbox.json', function (blk) {
 		blk.workspace.addChangeListener(onWorkspaceChange(blk));
 		maybeLoadHelpFileFromUrlParam(blk, 'e');
 	});

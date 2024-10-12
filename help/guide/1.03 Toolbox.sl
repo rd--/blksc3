@@ -6,8 +6,9 @@ Hpf(PinkNoise() * TRand(0.05, 0.15, tr) * Decay2(tr, 3, 27), TLine(300, [3, 9, 1
 # Toolbox
 
 The area at the left of the workspace is the _toolbox_.
-It contains instances of all of the blocks the system knows about,
+It contains instances of the blocks the system knows about,
 organised into _categories_.
+There are two toolboxes, a _complete_ and a _small_ toolbox, the 𝑇 button switches between them.
 Blocks are fetched by dragging them out of the toolbox and into the workspace.
 
 The blocks in each category are all drawn in the same colour,
@@ -16,13 +17,13 @@ Categories are grouped into _families_, also indicated by colouring.
 
 This program contains blocks belonging to each of the five families of signal processing objects:
 
-1. ⊥ (_Impulse_) is in _Generator>Osc_
-2. ⍰𝒑 (_PinkNoise_) is in _Generator>Noise_
-3. ◩ (_Hpf_) is in _Processor>Filter_
-4. ⤴― (_TLine_) is in _Trigger>Env_
-5. ⤴⚁ (_TRand_) is in _Trigger>Rand_
-6. ↘₂ (_Decay2_) is in _Env>Flt_
-7. ⚁ (_Rand_) is in _Random>Gen_
+1. ⊥ (_Impulse_) is in _Oscillator_
+2. ⍰𝒑 (_PinkNoise_) is in _Noise_
+3. ◩ (_Hpf_) is in _Filter_
+4. ⤴― & ⤴⚁ (_TLine_ & _TRand_) are in _Trigger_
+5. ↘₂ (_Decay2_) is in _Envelope_
+6. ⚁ (_Rand_) is in _Random_
+7. ◠ (_Splay_) is in _Pan_
 
 In addition
 × and ÷ are in _Math_,

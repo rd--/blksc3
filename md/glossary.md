@@ -26,7 +26,8 @@ Identifiers are written in mixed case as `SinOsc`, `LfSaw`  and `Fft`.
 
 ## Categories
 
-The blocks in the toolbox are organised into categories, some of which are further organised into sub-categories.
+The blocks in the toolbox are organised into categories, which may be further organised into sub-categories.
+Blocks in the same category are assigned the same colour.
 
 ## Collapsed Blocks
 
@@ -48,6 +49,11 @@ There are three kinds of comments:
 1. Comment Blocks
 2. Block Comments
 3. Workspace Comments
+
+## Complete Toolbox
+
+The complete toolbox includes only a complete set of the blocks the system knows about,
+organised into a system of categories and subcategories.
 
 ## Context menus
 
@@ -235,6 +241,14 @@ There is a list of [Small Programs](https://rohandrape.net/pub/blksc3/blksc3.htm
 These are programs that will draw within the workspace on a 1366×768 display.
 The _Small Programs_ menu can be selected using the _a_ access key.
 
+## Small Toolbox
+
+The small toolbox includes only a small set of the blocks the system knows about,
+and it is organised into a flat system of categories (there are no subcategories).
+It is designed so that all of the categories,
+and all of the blocks within each category,
+fit on a display of size 1366×768.
+
 ## Statement
 
 ## Statement Blocks
@@ -291,10 +305,12 @@ The figure below shows the ⊥ (_False_) block using the text naming scheme.
 ## Toolbox
 
 The area to the left of the workspace is called the _Toolbox_.
-The toolbox contains instances of all of the blocks the system knows about, organised into categories.
+The toolbox contains instances of the blocks the system knows about, organised into categories.
 Blocks are fetched by dragging them out of the toolbox and into the workspace.
+The system comes with two toolboxes, a _complete toolbox_ and a _small toolbox_,
+the 𝑇 button selects between them.
 There is a [Toolbox](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/guide/1.03%20Toolbox) section in the _Guide_.
-The figure below shows the toolbox with the constants category selected.
+The figure below shows the complete toolbox with the constants category selected.
 
 ![](sw/blksc3/png/Toolbox.png)
 
