@@ -33,7 +33,7 @@ window.onload = function() {
 			'SuperColliderLibrary'
 		]);
 	});
-	globalThis.rec = blk.init(Blockly, false, false);
+	globalThis.rec = new blk.Blk(Blockly, false, false);
 };
 		</script>
 	</head>
@@ -54,20 +54,20 @@ window.onload = function() {
 				</select>
 			</div>
 			<div id="blkCmd">
-				<input type="file" id="jsonInputFile" accept=".json" onchange="blk.readInputJson('jsonInputFile', rec)" style="display:none">
+				<input type="file" id="jsonInputFile" accept=".json" onchange="rec.readInputJson('jsonInputFile')" style="display:none">
 				<input type="file" id="userProgramArchiveFile" accept=".json" onchange="sc.userProgramReadArchive('userProgramArchiveFile', 'userMenu')" style="display:none">
 				<button id="jsonInputFileSelect" title="Select and load .json file to workspace (l)" accesskey="l">Load</button>
-				<button title="Copy workspace json to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(blk.workspaceJson(rec))">Copy</button>
+				<button title="Copy workspace json to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(rec.workspaceJson())">Copy</button>
 				<button title="Cleanup workspace (o)" accesskey="o" onclick="rec.workspace.cleanUp()">Cleanup</button>
 				<!-- <button title="Center drawing in workspace" onclick="rec.workspace.scrollCenter()">Center</button> -->
 				<button title="Fit drawing to workspace (=)" accesskey="=" onclick="rec.workspace.zoomToFit()">Fit</button>
-				<button title="Print" onclick="blk.printCode(rec)">Print</button>
-				<button title="Evaluate workspace program (/)" accesskey="/" onclick="blk.evalCode(rec)">Eval</button>
-				<button title="Play workspace program (,)" accesskey="," onclick="blk.playCode(rec)">Play</button>
+				<button title="Print" onclick="rec.printCode()">Print</button>
+				<button title="Evaluate workspace program (/)" accesskey="/" onclick="rec.evalCode()">Eval</button>
+				<button title="Play workspace program (,)" accesskey="," onclick="rec.playCode()">Play</button>
 				<button title="Send reset command (.)" accesskey="." onclick="globalScSynth.reset()">Reset</button>
-				<button title="Replace workspace program (-)" accesskey="-" onclick="blk.replaceCode(rec)">Replace</button>
+				<button title="Replace workspace program (-)" accesskey="-" onclick="rec.replaceCode()">Replace</button>
 				<button title="Delete all blocks from workspace (k)" accesskey="k" onclick="rec.workspace.clear()">Clear</button>
-				<button title="Save document to local storage (s)" accesskey="s" onclick="sc.userProgramSaveTo('userMenu', blk.workspaceJson(rec), false)">Save</button>
+				<button title="Save document to local storage (s)" accesskey="s" onclick="sc.userProgramSaveTo('userMenu', rec.workspaceJson(), false)">Save</button>
 				<select id="blkLayoutMenu" title="System layouts (y)" accesskey="y">
 					<option value="">--Display--</option>
 					<option value="%×%">%×%</option>
@@ -82,8 +82,8 @@ window.onload = function() {
 -->
 				<span id="statusText">...</span>
 				<button title="Fullscreen" accesskey="x" onclick="sc.fullscreen()">⇱</button>
-				<button title="Naming Schema" accesskey="n" onclick="blk.next_naming_scheme(rec)">𝑁</button>
-				<button title="Toolbox" accesskey="t" onclick="blk.next_toolbox(rec)">𝑇</button>
+				<button title="Naming Schema" accesskey="n" onclick="rec.nextNamingScheme()">𝑁</button>
+				<button title="Toolbox" accesskey="t" onclick="rec.nextToolbox()">𝑇</button>
 				<button title="External ScSynth" onclick="sc.scSynthUseWebSocket(globalScSynth, 'ws://localhost:58110')">𝓔</button>
 			</div>
 		</div>
