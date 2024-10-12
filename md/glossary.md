@@ -27,6 +27,10 @@ A block may have a single output, represented as a jigsaw connector on the left 
 Block outputs connect to value inputs.
 Blocks with an output are usually called expression or value blocks.
 
+## Browser
+
+WorldWideWeb (Berners-Lee 1992).
+
 ## Case Rule
 
 Identifiers are written in mixed case as `SinOsc`, `LfSaw` and `Fft`.

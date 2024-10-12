@@ -48,9 +48,9 @@ export class Blk {
 			this.maybeLoadHelpFileFromUrlParam('e');
 		});
 		sc.connectButtonToInput('jsonInputFileSelect', 'jsonInputFile'); // Initialise .json file selector
-		graphMenuInit('programMenu', 'graph', (path) => this.loadHelpGraph(path));
-		sc.fetchJson('json/ProgramMenu.json', { cache: 'no-cache' })
-			.then((json) => sc.selectAddKeysAsOptions('programMenu', json.programMenu));
+		graphMenuInit('programsMenu', 'graph', (path) => this.loadHelpGraph(path));
+		sc.fetchJson('json/ProgramsMenu.json', { cache: 'no-cache' })
+			.then((json) => sc.selectAddKeysAsOptions('programsMenu', json.programsMenu));
 		graphMenuInit('helpMenu', 'ugen', (path) => this.loadHelpGraph(path));
 		sc.fetchJson('json/HelpMenu.json', { cache: 'no-cache' })
 			.then((json) => sc.selectAddKeysAsOptions('helpMenu', json.helpMenu));
@@ -67,7 +67,7 @@ export class Blk {
 				sc.selectAddKeysAsOptions('smallProgramsMenu', json.smallProgramsMenu)
 			);
 		sc.userPrograms.storageKey = 'blksc3UserPrograms/json';
-		sc.userProgramMenuInit(
+		sc.userProgramsMenuInit(
 			'userMenu',
 			(jsonText) => this.loadJson(jsonText),
 		);

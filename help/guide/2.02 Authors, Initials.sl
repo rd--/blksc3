@@ -9,24 +9,24 @@ Pan2(SinOsc(f, 0).Tanh, 0, Decay2(t, 0.05, 0.2) * 0.1)
 {- ---- notes.md ---- -}
 # Authors, Initials
 
-The authors of the graphs in the _Graph Programs_ menu are indicated by initials.
+The authors of the graphs in the _Programs_ and _Small Programs_ menus are indicated by initials.
 
-- CR is Chandrasekhar Ramakrishnan
-- DS is Dan Stowell
-- ES is Eric Sluyter
+- Cr is Chandrasekhar Ramakrishnan
+- Ds is Dan Stowell
+- Es is Eric Sluyter
 - F0 is [Fredrik Olofsson](https://fredrikolofsson.com/)
-- JAR is Juan A. Romero
-- JH is James Harkins
-- JL is Jonatan Liljedahl
-- JMcC is [James McCartney](https://www.audiosynth.com/)
-- JR is Julian Rohrhuber
-- KL is Kevin Larke
-- LJP is [Lance J. Putnam](https://w2.mat.ucsb.edu/l.putnam/)
-- NC is Nick Collins
-- NV is Nathaniel Virgo
-- PJ is Paul Jones
-- TM is Thor Magnusson
-- TW is Tim Walters
-- ZS is Zack Scholl
+- Jar is Juan A. Romero
+- Jh is James Harkins
+- Jl is Jonatan Liljedahl
+- Jmcc is [James McCartney](https://www.audiosynth.com/)
+- Jr is Julian Rohrhuber
+- Kl is Kevin Larke
+- Ljp is [Lance J. Putnam](https://w2.mat.ucsb.edu/l.putnam/)
+- Nc is Nick Collins
+- Nv is Nathaniel Virgo
+- Pj is Paul Jones
+- Tm is Thor Magnusson
+- Tw is Tim Walters
+- Zs is Zack Scholl
 
 This program plays a simple nursery rhyme.
