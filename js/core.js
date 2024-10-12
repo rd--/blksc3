@@ -140,7 +140,7 @@ function load_block_definitions(blk, filename) {
 }
 
 function load_json_toolbox(blk, onCompletion) {
-	sc.fetchJson('json/toolbox.json', { cache: 'no-cache' })
+	sc.fetchJson('json/small-toolbox.json', { cache: 'no-cache' })
 		.then(injectWithToolbox(blk, onCompletion));
 }
 
