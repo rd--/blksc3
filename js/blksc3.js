@@ -32,6 +32,7 @@ export class Blk {
 		this.naming = 'Symbolic';
 		this.whichToolbox = 'Complete';
 		this.init(withUiCtl);
+		this.programOracle = [];
 	}
 
 	init(withUiCtl) {
@@ -43,23 +44,24 @@ export class Blk {
 		this.loadBlockMessages(`json/${this.naming}Messages.json`);
 		this.loadBlockDefinitions('json/BlockDefinitions.json');
 		this.loadBlockDefinitions('json/UgenBlockDefinitions.json');
+		this.loadProgramOracle('json/ProgramOracle.json');
 		this.loadJsonToolbox('json/CompleteToolbox.json', () => {
 			this.workspace.addChangeListener(this.onWorkspaceChange());
 			this.maybeLoadHelpFileFromUrlParam('e');
 		});
 		sc.connectButtonToInput('jsonInputFileSelect', 'jsonInputFile'); // Initialise .json file selector
-		graphMenuInit('programsMenu', 'graph', (path) => this.loadHelpGraph(path));
+		graphMenuInit('programsMenu', 'Program', (path) => this.loadHelpGraph(path));
 		sc.fetchJson('json/ProgramsMenu.json', { cache: 'no-cache' })
 			.then((json) => sc.selectAddKeysAsOptions('programsMenu', json.programsMenu));
-		graphMenuInit('helpMenu', 'ugen', (path) => this.loadHelpGraph(path));
+		graphMenuInit('helpMenu', 'Reference', (path) => this.loadHelpGraph(path));
 		sc.fetchJson('json/HelpMenu.json', { cache: 'no-cache' })
 			.then((json) => sc.selectAddKeysAsOptions('helpMenu', json.helpMenu));
-		graphMenuInit('guideMenu', 'guide', (path) => this.loadHelpGraph(path));
+		graphMenuInit('guideMenu', 'Guide', (path) => this.loadHelpGraph(path));
 		sc.fetchJson('json/GuideMenu.json', { cache: 'no-cache' })
 			.then((json) => sc.selectAddKeysAsOptions('guideMenu', json.guideMenu));
 		graphMenuInit(
 			'smallProgramsMenu',
-			'graph',
+			'Program',
 			(path) => this.loadHelpGraph(path)
 		);
 		sc.fetchJson('json/SmallProgramsMenu.json', { cache: 'no-cache' })
@@ -271,6 +273,23 @@ export class Blk {
 	loadBlockDefinitions(fileName) {
 		sc.fetchJson(fileName, { cache: 'no-cache' })
 			.then(this.Blockly.defineBlocksWithJsonArray);
+	}
+
+	loadProgramOracle(fileName) {
+		sc.fetchJson(fileName, { cache: 'no-cache' })
+			.then(array => this.programOracle = array);
+	}
+
+	runOracle() {
+		if (this.programOracle.length > 0) {
+			const which = sc.arrayChoose(this.programOracle);
+			const path = `help/Program/${which}`;
+			console.debug(`runOracle: ${path}`);
+			this.workspace.clear();
+			this.loadHelpGraph(path);
+		} else {
+			console.log('runOracle: Empty oracle?');
+		}
 	}
 
 	loadJsonToolbox(fileName, onCompletion) {

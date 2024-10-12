@@ -16,7 +16,7 @@ Block SuperCollider is a visual programming language specialised for writing pro
 
 ## Where are the initials in the help files explained?
 
-- <https://blksc3.rohandrape.net/?e=help/guide/2.02%20Authors%2C%20Initials>
+- <https://blksc3.rohandrape.net/?e=help/Guide/2.02%20Authors%2C%20Initials>
 
 ## How are the toolboxes defined?
 

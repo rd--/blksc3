@@ -269,6 +269,9 @@ Blockly.JavaScript.forBlock['sc3_LorenzL'] = function(block) {
 Blockly.JavaScript.forBlock['sc3_MantissaMask'] = function(block) {
 	return blkUgenCodeGen(Blockly, block, 'MantissaMask', ['IN', 'BITS'], true);
 };
+Blockly.JavaScript.forBlock['sc3_ModDif'] = function(block) {
+	return blkUgenCodeGen(Blockly, block, 'ModDif', ['X', 'Y', 'MOD'], true);
+};
 Blockly.JavaScript.forBlock['sc3_MoogFF'] = function(block) {
 	return blkUgenCodeGen(Blockly, block, 'MoogFf', ['IN', 'FREQ', 'GAIN', 'RESET'], true);
 };

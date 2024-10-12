@@ -121,14 +121,14 @@ The prefix expression `f p q` is written `f(p, q)` in function notation, `f` is 
 
 ## Help
 
-There is an online [Help](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/guide/--Help--) system.
+There is an online [Help](https://blksc3.rohandrape.net/?e=help/Reference/--Help--) system.
 The _Help_ menu can be selected using the _h_ access key.
 The help programs illustrate individual blocks.
 Some blocks have multiple illustrations and the help programs have numerical suffixes to distinguish them.
 
 ## Guide
 
-There is an online [Guide](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/guide/--Guide--).
+There is an online [Guide](https://blksc3.rohandrape.net/?e=help/Guide/--Guide--).
 The _Guide_ menu can be selected using the _g_ access key.
 The Guide consists of a sequence of small example programs each with extensive notes.
 
@@ -290,7 +290,7 @@ The _ν_ (_Frequency_) and ¹⁄𝑄 (_ReciprocalOfQ_) inputs are replaced by nu
 
 ## Small Programs
 
-There is a list of [Small Programs](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/graph/--Small%20Programs--).
+There is a list of [Small Programs](https://blksc3.rohandrape.net/?e=help/Program/--Small%20Programs--).
 These are programs that will draw within the workspace on a 1366×768 display.
 The _Small Programs_ menu can be selected using the _a_ access key.
 
@@ -371,7 +371,7 @@ The toolbox contains instances of the blocks the system knows about, organised i
 Blocks are fetched by dragging them out of the toolbox and into the workspace.
 The system comes with two toolboxes, a _complete toolbox_ and a _small toolbox_,
 the 𝑇 button selects between them.
-There is a [Toolbox](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/guide/1.03%20Toolbox) section in the _Guide_.
+There is a [Toolbox](https://blksc3.rohandrape.net/?e=help/Guide/1.03%20Toolbox) section in the _Guide_.
 The figure below shows the complete toolbox with the constants category selected.
 
 ![](sw/blksc3/png/Toolbox.png)
@@ -396,7 +396,7 @@ whose elements share common characteristics such as representation or available 
 ## Type Annotations
 
 Type annotations, also called connection checks, constrain how blocks can be connected together.
-There is a [Type Annotations](http://blksc3.rohandrape.net/?e=help/guide/2.05%20Type%20Annotations) section in the _Guide_.
+There is a [Type Annotations](http://blksc3.rohandrape.net/?e=help/Guide/2.05%20Type%20Annotations) section in the _Guide_.
 
 ## Unary Operator
 
@@ -441,7 +441,7 @@ which also contains the variable reference and assignment blocks.
 ## Workspace
 
 The area containing the block drawing is called the _Workspace_.
-There is a [Workspace](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/guide/1.02%20Workspace,%20Synthesiser) section in the _Guide_.
+There is a [Workspace](https://blksc3.rohandrape.net/?e=help/Guide/1.02%20Workspace,%20Synthesiser) section in the _Guide_.
 
 ## Visual Programming Language
 

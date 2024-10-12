@@ -24,13 +24,22 @@ async function loadXml(workspace, fileName) {
 	Blockly.Xml.domToWorkspace(xmlDom, workspace);
 }
 
+async function loadBlockMessages(fileName) {
+	const messages = await readJson(fileName);
+	for (const key in messages) {
+		const value = messages[key];
+		Blockly.Msg[key] = messages[key];
+	}
+}
+
 const dir = '/home/rohan/sw/blksc3/';
 const workspace = new Blockly.Workspace();
-await defineBlocks(dir + 'json/blksc3.json');
-await defineBlocks(dir + 'json/blksc3-std.json');
-await defineBlocks(dir + 'json/blksc3-ugen.json');
+await defineBlocks(dir + 'json/BlockDefinitions.json');
+await defineBlocks(dir + 'json/UgenBlockDefinitions.json');
+await loadBlockMessages(dir + 'json/SymbolicMessages.json');
+await loadBlockMessages(dir + 'json/ColourScheme.json');
 
-const subdir = dir + 'help/ugen/';
+const subdir = dir + 'help/tmp/';
 
 for await (const entry of Deno.readDir(subdir)) {
 	const fileName = entry.name;

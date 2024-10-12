@@ -1,4 +1,4 @@
-{- sturmian sequencer ii (jrhb) -}
+{- Sturmian Sequencer 2 (Jrhb) -}
 var rules = [[0, 1], [0]];
 var rewrite = { :m |
     var r = [0];

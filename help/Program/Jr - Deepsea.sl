@@ -1,4 +1,4 @@
-{- deepsea (jr) -}
+{- Deepsea (Jr) -}
 let amp = 0.1;
 let variation = 0.9;
 let tr = Dust(0.25);

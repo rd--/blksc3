@@ -56,6 +56,7 @@ window.onload = function() {
 			<div id="blkCmd">
 				<input type="file" id="jsonInputFile" accept=".json" onchange="rec.readInputJson('jsonInputFile')" style="display:none">
 				<input type="file" id="userProgramArchiveFile" accept=".json" onchange="sc.userProgramReadArchive('userProgramArchiveFile', 'userMenu')" style="display:none">
+				<button id="oracleButton" title="Oracle (r)" accesskey="r" onclick="rec.runOracle()">易</button>
 				<button id="jsonInputFileSelect" title="Select and load .json file to workspace (l)" accesskey="l">Load</button>
 				<button title="Copy workspace json to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(rec.workspaceJson())">Copy</button>
 				<button title="Cleanup workspace (o)" accesskey="o" onclick="rec.workspace.cleanUp()">Cleanup</button>

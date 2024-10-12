@@ -10,6 +10,8 @@ import Data.List {- base -}
 import Data.Maybe {- base -}
 import Text.Printf {- base -}
 
+import qualified Music.Theory.Json as Json {- hmt-base -}
+
 import qualified Music.Theory.String as String {- hmt-base -}
 
 import qualified Sound.Sc3.Ugen.Db as Db {- hsc3-db -}
@@ -21,35 +23,43 @@ import qualified Language.Smalltalk.Ansi as St {- stsc3 -}
 import Language.Smalltalk.Ansi.Expr {- stsc3 -}
 import qualified Language.Smalltalk.Stc.Translate as Stc {- stsc3 -}
 
+lit_ty_json :: String -> String -> String -> (t -> Json.Value) -> t -> Json.Value
+lit_ty_json blk_ty lit_ty field_ty enc n =
+  Json.object
+  [(blk_ty
+   ,Json.object
+     [("type", Json.string lit_ty)
+     ,("fields", Json.object [(field_ty, enc n)])])]
+
 {- | Literal float.
 
->>> putStr $ lit_float_json "shadow" 220
-{"shadow": {"type": "math_number", "fields": {"NUM": 220.0}}}
+>>> putStr $ Json.encode_value_str $ lit_float_json "shadow" 220
+{"shadow":{"fields":{"NUM":220},"type":"math_number"}}
 -}
-lit_float_json :: String -> Double -> String
-lit_float_json ty n = printf "{\"%s\": {\"type\": \"math_number\", \"fields\": {\"NUM\": %f}}}" ty n
+lit_float_json :: String -> Double -> Json.Value
+lit_float_json ty = lit_ty_json ty "math_number" "NUM" Json.double
 
 lit_float_xml :: String -> Double -> String
 lit_float_xml ty n = printf "<%s type='math_number'><field name='NUM'>%f</field></%s>" ty n ty
 
 {- | Literal integer.
 
->>> putStr $ lit_int_json "shadow" 220
-{"shadow": {"type": "math_number", "fields": {"NUM": 220}}}
+>>> putStr $ Json.encode_value_str $ lit_int_json "shadow" 220
+{"shadow":{"fields":{"NUM":220},"type":"math_number"}}
 -}
-lit_int_json :: String -> Integer -> String
-lit_int_json ty n = printf "{\"%s\": {\"type\": \"math_number\", \"fields\": {\"NUM\": %d}}}" ty n
+lit_int_json :: String -> Integer -> Json.Value
+lit_int_json ty = lit_ty_json ty "math_number" "NUM" Json.integer
 
 lit_int_xml :: String -> Integer -> String
 lit_int_xml ty n = printf "<%s type='math_number'><field name='NUM'>%d</field></%s>" ty n ty
 
-lit_str_json :: String -> String -> String
-lit_str_json ty s = printf "{\"%s\": {\"type\": \"text\", \"fields\": {\"TEXT\": \"%s\"}}}" ty s
+lit_str_json :: String -> String -> Json.Value
+lit_str_json ty = lit_ty_json ty "text" "TEXT" Json.string
 
 lit_str_xml :: String -> String -> String
 lit_str_xml ty s = printf "<%s type='text'><field name='TEXT'>%s</field></%s>" ty s ty
 
-lit_json :: String -> St.Literal -> String
+lit_json :: String -> St.Literal -> Json.Value
 lit_json ty l =
   case l of
   St.NumberLiteral (St.Float n) -> lit_float_json ty n
@@ -76,6 +86,8 @@ named_value_xml (k,v) = printf "<value name='%s'>%s</value>" (map toUpper k) v
 
 >>> ugen_param "SinOsc"
 (["freq","phase"],True)
+
+>>> ugen_param "ControlIn"
 -}
 ugen_param :: String -> ([String], Bool)
 ugen_param nm =
@@ -84,6 +96,22 @@ ugen_param nm =
     Nothing -> case Db.pseudo_ugen_db_lookup nm of
                  Just (_,p,o,_,_)  -> (p, o)
                  Nothing -> error ("ugen_param: " ++ nm)
+
+{- | Ugen Json
+
+>>> putStr $ Json.encode_value_str $ ugen_json "SinOsc" [lit_int_json "shadow" 110,lit_float_json "shadow" 0.5]
+{"inline":true,"inputs":{"add":{"shadow":{"fields":{"NUM":0},"type":"math_number"}},"freq":{"shadow":{"fields":{"NUM":110},"type":"math_number"}},"mul":{"shadow":{"fields":{"NUM":1},"type":"math_number"}},"phase":{"shadow":{"fields":{"NUM":0.5},"type":"math_number"}}},"type":"sc3_SinOsc"}
+-}
+ugen_json :: String -> [Json.Value] -> Json.Value
+ugen_json stcNm l =
+  let nm = Db.sc3_ugen_initial_name stcNm
+      (p, o) = ugen_param nm
+      i = p ++ (if o then ["mul","add"] else [])
+      l' = l ++ (if o then [lit_int_json "shadow" 1, lit_int_json "shadow" 0] else [])
+  in Json.object
+     [("type", Json.string ("sc3_" ++ nm))
+     ,("inline", Json.boolean True)
+     ,("inputs", Json.object (zip i l'))]
 
 {- | Ugen Xml
 
@@ -249,7 +277,7 @@ keybinop_xml msg lhs rhs  =
       "<block type='sc3_Value1' inline='true'>\n<value name='PROC'>%s</value>\n<value name='VALUE'>%s</value>\n</block>"
       lhs rhs
     _ ->
-      let ty = if (init msg) `elem` array_proc_2 then "ArrayProc2" else "KeywordBinaryOp"
+      let ty = if (init msg) `elem` array_proc_2 then "ArrayProc2" else "BinaryOp"
       in printf
          "<block type='sc3_%s' inline='true'>\n<field name='OP'>%s</field>\n<value name='LHS'>%s</value>\n<value name='RHS'>%s</value>\n</block>"
          ty (init msg) lhs rhs
@@ -301,26 +329,30 @@ var_get x =
     _ -> printf "<block type='variables_get'>\n<field name='VAR'>%s</field>\n</block>" x
 
 -- | Zero-indexed.
-array_elem_json :: Int -> String -> String
-array_elem_json k x = printf "\"ADD%d\": %s" k x
+array_elem_json :: Int -> Json.Value -> Json.Association
+array_elem_json k x = (printf "ADD%d" k, x)
 
 array_elem_xml :: Int -> String -> String
 array_elem_xml k x = printf "<value name='ADD%d'>%s</value>" k x
 
 {- | Array Json
 
->>> putStr $ array_json [lit_int_json "shadow" 1,lit_float_json "shadow" 2.3,lit_int_json "shadow" 4]
-{"block": {"type": "lists_create_with", "inline": true, "extraState": {"itemCount": 3}, "inputs": {"ADD0": {"shadow": {"type": "math_number", "fields": {"NUM": 1}}},"ADD1": {"shadow": {"type": "math_number", "fields": {"NUM": 2.3}}},"ADD2": {"shadow": {"type": "math_number", "fields": {"NUM": 4}}}}}}
+>>> putStr $ Json.encode_value_str $ array_json [lit_int_json "shadow" 1,lit_float_json "shadow" 2.3,lit_int_json "shadow" 4]
+{"block":{"extraState":{"itemCount":3},"inline":true,"inputs":{"ADD0":{"shadow":{"fields":{"NUM":1},"type":"math_number"}},"ADD1":{"shadow":{"fields":{"NUM":2.3},"type":"math_number"}},"ADD2":{"shadow":{"fields":{"NUM":4},"type":"math_number"}}},"type":"lists_create_with"}}
 -}
-array_json :: [String] -> String
+array_json :: [Json.Value] -> Json.Value
 array_json l =
-  printf
-  "{\"block\": {\"type\": \"lists_create_with\", \"inline\": true, \"extraState\": {\"itemCount\": %d}, \"inputs\": {%s}}}"
-  (length l) (intercalate "," (zipWith array_elem_json [0..] l))
+  Json.object
+  [("block"
+   ,Json.object
+    [("type", Json.string "lists_create_with")
+    ,("inline", Json.boolean True)
+    ,("extraState", Json.object [("itemCount", Json.int (length l))])
+    ,("inputs", Json.object (zipWith array_elem_json [0..] l))])]
 
 {- | Array Xml
 
->>> putStr $ array_xml [lit_int_json "shadow" 1,lit_float_json "shadow" 2.3,lit_int_json "shadow" 4]
+>>> putStr $ array_xml [lit_int_xml "shadow" 1,lit_float_xml "shadow" 2.3,lit_int_xml "shadow" 4]
 <block type='lists_create_with' inline='true'>
 <mutation items='3'></mutation>
 <value name='ADD0'>{"shadow": {"type": "math_number", "fields": {"NUM": 1}}}</value>
@@ -379,6 +411,15 @@ comment_xml c =
   if null c
   then ""
   else printf "<block type='sc3_Comment'>\n<field name='COMMENT'>%s</field>\n</block>" (if last c == '\n' then init c else c)
+
+comment_json :: St.Comment -> Maybe Json.Value
+comment_json c =
+  if null c
+  then Nothing
+  else Just (Json.object
+             [("type", Json.string "sc3_Comment")
+             ,("fields", Json.object
+                         [("COMMENT", Json.string (if last c == '\n' then init c else c))])])
 
 expr_xml :: Expr -> String
 expr_xml e =
@@ -567,9 +608,10 @@ stc_file_to_xml_file = graph_file_to_xml_file Stc.stcToExpr
 
 {- | Stc file to Xml file
 
-> spl_file_to_xml_file "graph/F0 - Tw 1254441448327479299.sl"
-> spl_file_to_xml_file "guide/1.06 User Programs.sl"
-> spl_file_to_xml_file "ugen/PanAz.1.sl"
+> spl_file_to_xml_file "tmp/Hy - Tw 1601331785409134592.sl"
+> spl_file_to_xml_file "tmp/Io - 6353.sl"
+> spl_file_to_xml_file "tmp/F0 - Tw 0301.sl"
+> spl_file_to_xml_file "tmp/Jrhb - Gcd.sl"
 -}
 spl_file_to_xml_file :: FilePath -> IO ()
 spl_file_to_xml_file = graph_file_to_xml_file Stc.splToExpr
