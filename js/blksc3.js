@@ -253,20 +253,8 @@ export class Blk {
 	setColours() {
 		this.Blockly.utils.colour.setHsvSaturation(0.20);
 		this.Blockly.utils.colour.setHsvValue(0.95);
-		this.Blockly.Msg['SC_LIST_HUE'] = '260';
-		this.Blockly.Msg['SC_ENV_HUE'] = '300';
-		this.Blockly.Msg['SC_PAN_HUE'] = '300';
-		this.Blockly.Msg['SC_GENERATOR_HUE'] = '210';
-		this.Blockly.Msg['SC_IO_HUE'] = '60';
-		this.Blockly.Msg['SC_RAND_HUE'] = '60';
-		this.Blockly.Msg['SC_LAMBDA_HUE'] = '180';
-		this.Blockly.Msg['SC_ITER_HUE'] = '180';
-		this.Blockly.Msg['SC_EVENT_HUE'] = '180';
-		this.Blockly.Msg['SC_MATH_HUE'] = '230';
-		this.Blockly.Msg['SC_META_HUE'] = '300';
-		this.Blockly.Msg['SC_PROCESSOR_HUE'] = '150';
-		this.Blockly.Msg['SC_TRIGGER_HUE'] = '30';
-		this.Blockly.Msg['SC_VAR_HUE'] = '330';
+		// https://developers.google.com/blockly/guides/create-custom-blocks/block-colour#colour_references
+		this.loadBlockMessages('json/ColourScheme.json');
 	}
 
 	loadBlockMessages(fileName) {
@@ -326,7 +314,7 @@ export class Blk {
 
 	onWorkspaceChange() {
 		// console.debug('onWorkspaceChange');
-		return function (event) {
+		return (event) => {
 			// console.debug('onWorkspaceChange', event.type, event.element);
 			if (event.type == Blockly.Events.BLOCK_CHANGE && event.element == 'field') {
 				const aBlock = this.workspace.getBlockById(event.blockId);

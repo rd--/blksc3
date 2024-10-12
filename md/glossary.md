@@ -10,19 +10,26 @@ The figure below shows the variable _i_ being incremented by one.
 ## Binary Operator
 
 A binary operator is an operator with two operands.
+In some contexts it particularly refers to an operator that is written using infix notation.
 
 ## Block & Parameter Names
 
 ## Block Comments
 
-Block comments are texts attached to a block using the _Add comment_ context menu entry.
+Block comments are texts attached to a block using the _Add comment_ context menu item.
 The text is displayed in a box that can be moved and resized.
 Blocks that have comments attached have a question mark (?) button to show or hide the text.
 The comment text is printed, as a comment, when the block is evaluated.
 
+## Block Outputs
+
+A block may have a single output, represented as a jigsaw connector on the left edge.
+Block outputs connect to value inputs.
+Blocks with an output are usually called expression or value blocks.
+
 ## Case Rule
 
-Identifiers are written in mixed case as `SinOsc`, `LfSaw`  and `Fft`.
+Identifiers are written in mixed case as `SinOsc`, `LfSaw` and `Fft`.
 
 ## Categories
 
@@ -31,8 +38,8 @@ Blocks in the same category are assigned the same colour.
 
 ## Collapsed Blocks
 
-A block can be _collapsed_ using the _Collapse Block_ entry of the context menu.
-A collapsed block can be _expanded_ using the _Expand Block_ entry of the context menu.
+A block can be _collapsed_ using the _Collapse Block_ item in the context menu.
+A collapsed block can be _expanded_ using the _Expand Block_ item in the context menu.
 
 ## Colours
 
@@ -52,7 +59,7 @@ There are three kinds of comments:
 
 ## Complete Toolbox
 
-The complete toolbox includes only a complete set of the blocks the system knows about,
+The complete toolbox includes a complete set of the blocks the system knows about,
 organised into a system of categories and subcategories.
 
 ## Context menus
@@ -66,20 +73,14 @@ A block can be copied by typing _Ctl-c_ and a copied block can be pasted by typi
 
 ## Deleting Blocks
 
-Blocks can be deleted using the _Delete_ entry in the context menu or by pressing the _Delete_ key.
+Blocks can be deleted using the _Delete_ item in the context menu,
+or by pressing the _Delete_ key.
 When a block is deleted all of its descendents are deleted along with it.
 Deletion can be _undone_.
 
-## Dropdown Menus
-
-Block fields with a ▼ indicator are menus.
-The figure below shows a constant block with the menu open.
-
-![](sw/blksc3/png/ConstantMenu.png)
-
 ## Duplicate
 
-A block can be _duplicated_ using the _Duplicate_ entry of the context menu.
+A block can be _duplicated_ using the _Duplicate_ item in the context menu.
 
 ## Expression
 
@@ -106,6 +107,8 @@ However it can also communicate with an external synthesiser by sending messages
 In mathematics, a function is a relation that uniquely associates members of one set with members of another set.
 In some contexts function may be used as a synonym for operator or procedure or subroutine.
 In some contexts function may be used to refer to a procedure that has no side effects.
+In some contexts function may be used to refer to a procedure that is written using function notation,
+and operator to refer to a procedure that is written using infix notation.
 
 ## Function Notation
 
@@ -156,8 +159,8 @@ The language is standardised in the document ECMA-262 and is maintained Ecma's T
 
 ## Lambda
 
-λ (_Lambda_) blocks answer procedure values,
-the define the expected arguments and the steps of execution or evaluation.
+λ (_Lambda_) blocks answer procedure values.
+They define the expected arguments and the steps of execution or evaluation for a procedure.
 The name is from the lambda calculus (Church 1941) and Lisp (McCarthy 1960).
 
 ## Left to right
@@ -167,10 +170,51 @@ In this case the block name is at the left,
 the inputs run from left to right,
 and the output connector is on the left edge.
 
+## Let Binding
+
+A let binding introduces a local variable and assigns it an initial value.
+Let bindings must be grouped together at the start of a statement stack.
+In the figure below a local variable _x_ is defined to have the value of the matematical constant _e_.
+
+![](sw/blksc3/png/LetBinding.png)
+
+## Lexical Scope
+
+Lexical scope is the part of a program text, or drawing, in which a binding of a name to a value applies.
+In the figure below `x` is bound to `1` and `y` is bound to `pi`.
+The `x` binding in the λ block is local, it does not interact with the outer `x` binding.
+
+![](sw/blksc3/png/LexicalScope.png)
+
+## Menu Field
+
+Block fields with a ▼ indicator are menus.
+The figure below shows a numeric constant block with the menu open.
+
+![](sw/blksc3/png/NumericConstant.png)
+
 ## Naming Schema
 
 The 𝑁 control selects between symbolic and text naming schemas.
 Some equivalent names are ∿=_SinOsc_ and ≤=_LessThanOrEqualTo_.
+
+## Number
+
+A number block is a block with a single editable text field in which one can write a number.
+The number may be an integer or a real number.
+Trying to type in a text that is not a number leaves the number unchanged.
+The number block is fetched from the _Constants_ category of the toolbox.
+The figure below shows the number twenty three divided by an approximation of π.
+
+![](sw/blksc3/png/Number.png)
+
+## Numeric Constant
+
+The numeric constant block is a block with a menu containg a number of predefined mathematical constants,
+such as π (_Pi_), 2×π (_TwoPi_), 𝑒 (_E_) and ∞ (_Infinity_).
+It is fetched from the _Constants_ category of the toolbox.
+
+![](sw/blksc3/png/NumericConstant.png)
 
 ## Operand
 
@@ -228,10 +272,15 @@ There are a two additional notations to simplify writing common idioms,
 `(p q r)` is an abbreviation of `(p . (q . (r . nil)))`,
 and `'p` is an abbreviation of `(quote p)`.
 
-## Shadow block
+## Shadow Block
 
 A shadow block is an editable but non-movable block connected to another block.
 Blocks can be placed on top of shadow blocks to overwrite them.
+In the figure below both input fields of the ⍰𝒑 (_PinkNoise_) block,
+and the × (_Multiply_) and + (_Add_) fields of the ⋏ (_Resonz_) block are shadow blocks.
+The _ν_ (_Frequency_) and ¹⁄𝑄 (_ReciprocalOfQ_) inputs are replaced by number blocks.
+
+![](sw/blksc3/png/ShadowBlock.png)
 
 ## Simple Programming Language
 
@@ -260,7 +309,16 @@ or a next statement connector at the bottom,
 or both (for instance “ and ≔).
 Statement blocks may also have input connectors at the right (for instance ⊳ and ≔).
 Statement blocks are connected together into statement stacks.
-See also _Expression Block_.
+In the figure below a ≔ (_Assignment_) block is connected to a ⊳ (_Play_) block.
+
+![](sw/blksc3/png/Statements.png)
+
+## Statement Connections
+
+Statement blocks are sequenced using _next statement_ and _previous statement_ connectors.
+These connectors are on the top and bottom edges of the block,
+so that block sequences stack vertically,
+and are read from top to bottom.
 
 ## Statement Input
 
@@ -314,6 +372,16 @@ The figure below shows the complete toolbox with the constants category selected
 
 ![](sw/blksc3/png/Toolbox.png)
 
+## Tooltip
+
+A tooltip offers help when the mouse hovers over a block.
+The figure below shows the ∿ (_SinOsc_) block with the tooltip displayed.
+The help text gives the text name of the block,
+the text names of the parameters,
+and a one sentence synopsis.
+
+![](sw/blksc3/png/Tooltip.png)
+
 ## Translation
 
 ## Type
@@ -352,7 +420,9 @@ The address of a World Wide Web page, abbreviated as Url.
 
 ## Value Input
 
-A value input accepts an expression block.
+A value input accepts an output connector of an expression block.
+When the input is internal it is drawn as a missing puzzle piece,
+when the input is external it is drawn as a puzzle piece connecter on the right edge.
 The figure below shows the no-argument λ (_Lambda_) block.
 The ⦙ (_Statements_) input is a statement input,
 the ← (_Return_) input is a value input.
@@ -360,6 +430,9 @@ the ← (_Return_) input is a value input.
 ![](sw/blksc3/png/Lambda.zero.stm.png)
 
 ## Variable
+
+Variables are created using the _Create Variable_ entry in the _Variable_ category of the toolbox,
+which also contains the variable reference and assignment blocks.
 
 ## Workspace
 
@@ -370,7 +443,7 @@ There is a [Workspace](https://rohandrape.net/pub/blksc3/blksc3.html?e=help/guid
 
 ## Workspace Comments
 
-_Workspace comments_ are texts that are attached to the workspace using the _Add comment_ context menu entry.
+_Workspace comments_ are texts that are attached to the workspace using the _Add comment_ item in the context menu.
 The text is displayed in a box that can be moved and resized, and has a header that allows the comment to be _collapsed_.
 The comment text is not printed.
 
