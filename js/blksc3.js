@@ -31,10 +31,14 @@ export class Blk {
 		this.layouts = null;
 		this.naming = 'Symbolic';
 		this.whichToolbox = 'Complete';
+		this.init(withUiCtl);
+	}
 
+	init(withUiCtl) {
 		initCodeGen(Blockly);
 		initCodeGenUgen(Blockly);
 		this.Blockly.ContextMenuItems.registerCommentOptions();
+		this.initWorkspaceContextMenu();
 		this.setColours();
 		this.loadBlockMessages(`json/${this.naming}Messages.json`);
 		this.loadBlockDefinitions('json/BlockDefinitions.json');
@@ -180,6 +184,23 @@ export class Blk {
 		this.displayScrollbars(false);
 		// console.debug('injectWithToolbox: injection completed');
 		onCompletion(this);
+	}
+
+	initWorkspaceContextMenu() {
+		const makeEntry = (name, handler) => {
+			let item = {
+				displayText: name,
+				id: 'sc_' + name,
+				weight: 100,
+				preconditionFn: (scope) => { return 'enabled'; },
+				callback: (scope) => { handler(); },
+				scopeType: this.Blockly.ContextMenuRegistry.ScopeType.WORKSPACE,
+			};
+			this.Blockly.ContextMenuRegistry.registry.register(item);
+		};
+		makeEntry('Play', () => { this.playCode() });
+		makeEntry('Replace', () => { this.replaceCode() });
+		makeEntry('Reset', () => { globalScSynth.reset() });
 	}
 
 	getCodeSl() {
