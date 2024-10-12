@@ -22,7 +22,7 @@ export function setLayout(blk, configName) {
 export function layoutMenuInit(blk) {
 	const select = document.getElementById('blkLayoutMenu');
 	select.addEventListener('change', (e) => setLayout(blk, e.target.value));
-	sc.fetchJson('json/blksc3-layouts.json', { cache: 'no-cache' })
+	sc.fetchJson('json/Layouts.json', { cache: 'no-cache' })
 		.then((obj) => blk.layouts = obj);
 }
 

@@ -11,3 +11,6 @@
 ## What is the toolbox?
 
 ## How are the toolboxes defined?
+
+- <https://gitlab.com/rd--/blksc3/-/blob/main/json/CompleteToolbox.json>
+- <https://gitlab.com/rd--/blksc3/-/blob/main/json/SmallToolbox.json>

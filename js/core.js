@@ -16,8 +16,8 @@ export class Blk {
 		this.config = null;
 		this.workspace = null;
 		this.layouts = null;
-		this.naming = 'symbolic';
-		this.whichToolbox = 'complete';
+		this.naming = 'Symbolic';
+		this.whichToolbox = 'Complete';
 	}
 }
 
@@ -163,13 +163,13 @@ function maybeLoadHelpFileFromUrlParam(blk, fileParamKey) {
 }
 
 export function next_naming_scheme(blk) {
-	blk.naming = (blk.naming == 'symbolic' ? 'textual' : 'symbolic');
-	load_block_messages(blk, `json/messages-${blk.naming}.json`);
+	blk.naming = (blk.naming == 'Symbolic' ? 'Text' : 'Symbolic');
+	load_block_messages(blk, `json/${blk.naming}Messages.json`);
 }
 
 export function next_toolbox(blk) {
-	blk.whichToolbox = (blk.whichToolbox == 'complete' ? 'small' : 'complete');
-	sc.fetchJson(`json/${blk.whichToolbox}-toolbox.json`, { cache: 'no-cache' })
+	blk.whichToolbox = (blk.whichToolbox == 'Complete' ? 'Small' : 'Complete');
+	sc.fetchJson(`json/${blk.whichToolbox}Toolbox.json`, { cache: 'no-cache' })
 		.then(tree => blk.workspace.updateToolbox(tree))
 }
 
@@ -181,29 +181,29 @@ export function init(Blockly, withUiCtl, trackHistory) {
 	blk.Blockly.ContextMenuItems.registerCommentOptions();
 	set_block_messages(blk);
 	set_colours(blk);
-	load_block_messages(blk, `json/messages-${blk.naming}.json`);
-	load_block_definitions(blk, 'json/blksc3.json');
-	load_block_definitions(blk, 'json/blksc3-ugen.json');
-	load_json_toolbox(blk, 'json/complete-toolbox.json', function (blk) {
+	load_block_messages(blk, `json/${blk.naming}Messages.json`);
+	load_block_definitions(blk, 'json/BlockDefinitions.json');
+	load_block_definitions(blk, 'json/UgenBlockDefinitions.json');
+	load_json_toolbox(blk, 'json/CompleteToolbox.json', function (blk) {
 		blk.workspace.addChangeListener(onWorkspaceChange(blk));
 		maybeLoadHelpFileFromUrlParam(blk, 'e');
 	});
 	sc.connectButtonToInput('jsonInputFileSelect', 'jsonInputFile'); // Initialise .json file selector
 	graphMenuInit('programMenu', 'graph', (path) => loadHelpGraph(blk, path));
-	sc.fetchJson('json/program-menu.json', { cache: 'no-cache' })
+	sc.fetchJson('json/ProgramMenu.json', { cache: 'no-cache' })
 		.then((json) => sc.selectAddKeysAsOptions('programMenu', json.programMenu));
 	graphMenuInit('helpMenu', 'ugen', (path) => loadHelpGraph(blk, path));
-	sc.fetchJson('json/help-menu.json', { cache: 'no-cache' })
+	sc.fetchJson('json/HelpMenu.json', { cache: 'no-cache' })
 		.then((json) => sc.selectAddKeysAsOptions('helpMenu', json.helpMenu));
 	graphMenuInit('guideMenu', 'guide', (path) => loadHelpGraph(blk, path));
-	sc.fetchJson('json/guide-menu.json', { cache: 'no-cache' })
+	sc.fetchJson('json/GuideMenu.json', { cache: 'no-cache' })
 		.then((json) => sc.selectAddKeysAsOptions('guideMenu', json.guideMenu));
 	graphMenuInit(
 		'smallProgramsMenu',
 		'graph',
 		(path) => loadHelpGraph(blk, path),
 	);
-	sc.fetchJson('json/small-programs-menu.json', { cache: 'no-cache' })
+	sc.fetchJson('json/SmallProgramsMenu.json', { cache: 'no-cache' })
 		.then((json) =>
 			sc.selectAddKeysAsOptions('smallProgramsMenu', json.smallProgramsMenu)
 		);
