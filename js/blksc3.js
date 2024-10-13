@@ -1,8 +1,8 @@
 import * as sc from '../lib/jssc3/dist/jssc3.js';
 import * as sl from '../lib/spl/dist/sl.js';
 
-import { initCodeGen } from './gen.js';
-import { initCodeGenUgen } from './gen-ugen.js';
+import { initCodeGen } from './CodeGenerator.js';
+import { initCodeGenUgen } from './UgenCodeGenerator.js';
 import { loadNotes } from './notes.js';
 
 function addWorkspaceEnv(input) {
@@ -22,7 +22,6 @@ function graphMenuInit(menuId, graphDir, loadProc) {
 }
 
 export class Blk {
-
 	constructor(Blockly, withUiCtl, trackHistory) {
 		this.Blockly = Blockly;
 		this.trackHistory = trackHistory; // boolean
@@ -50,9 +49,15 @@ export class Blk {
 			this.maybeLoadHelpFileFromUrlParam('e');
 		});
 		sc.connectButtonToInput('jsonInputFileSelect', 'jsonInputFile'); // Initialise .json file selector
-		graphMenuInit('programsMenu', 'Program', (path) => this.loadHelpGraph(path));
+		graphMenuInit(
+			'programsMenu',
+			'Program',
+			(path) => this.loadHelpGraph(path),
+		);
 		sc.fetchJson('json/ProgramsMenu.json', { cache: 'no-cache' })
-			.then((json) => sc.selectAddKeysAsOptions('programsMenu', json.programsMenu));
+			.then((json) =>
+				sc.selectAddKeysAsOptions('programsMenu', json.programsMenu)
+			);
 		graphMenuInit('helpMenu', 'Reference', (path) => this.loadHelpGraph(path));
 		sc.fetchJson('json/HelpMenu.json', { cache: 'no-cache' })
 			.then((json) => sc.selectAddKeysAsOptions('helpMenu', json.helpMenu));
@@ -62,7 +67,7 @@ export class Blk {
 		graphMenuInit(
 			'smallProgramsMenu',
 			'Program',
-			(path) => this.loadHelpGraph(path)
+			(path) => this.loadHelpGraph(path),
 		);
 		sc.fetchJson('json/SmallProgramsMenu.json', { cache: 'no-cache' })
 			.then((json) =>
@@ -94,7 +99,7 @@ export class Blk {
 			move: {
 				scrollbars: {
 					horizontal: true,
-					vertical: true
+					vertical: true,
 				},
 				drag: true,
 				wheel: false,
@@ -190,19 +195,29 @@ export class Blk {
 
 	initWorkspaceContextMenu() {
 		const makeEntry = (name, handler) => {
-			let item = {
+			const item = {
 				displayText: name,
 				id: 'sc_' + name,
 				weight: 100,
-				preconditionFn: (scope) => { return 'enabled'; },
-				callback: (scope) => { handler(); },
+				preconditionFn: (_scope) => {
+					return 'enabled';
+				},
+				callback: (_scope) => {
+					handler();
+				},
 				scopeType: this.Blockly.ContextMenuRegistry.ScopeType.WORKSPACE,
 			};
 			this.Blockly.ContextMenuRegistry.registry.register(item);
 		};
-		makeEntry('Play', () => { this.playCode() });
-		makeEntry('Replace', () => { this.replaceCode() });
-		makeEntry('Reset', () => { globalScSynth.reset() });
+		makeEntry('Play', () => {
+			this.playCode();
+		});
+		makeEntry('Replace', () => {
+			this.replaceCode();
+		});
+		makeEntry('Reset', () => {
+			globalScSynth.reset();
+		});
 	}
 
 	getCodeSl() {
@@ -243,9 +258,10 @@ export class Blk {
 				],
 				[
 					'workspaceReleaseTime',
-					3
-				]
-			]);
+					3,
+				],
+			],
+		);
 	}
 
 	printCode() {
@@ -265,7 +281,7 @@ export class Blk {
 				for (const key in messages) {
 					const value = messages[key];
 					// console.debug(`load_block_messages: ${key} = ${value}`);
-					this.Blockly.Msg[key] = messages[key];
+					this.Blockly.Msg[key] = value;
 				}
 			});
 	}
@@ -277,7 +293,7 @@ export class Blk {
 
 	loadProgramOracle(fileName) {
 		sc.fetchJson(fileName, { cache: 'no-cache' })
-			.then(array => this.programOracle = array);
+			.then((array) => this.programOracle = array);
 	}
 
 	runOracle() {
@@ -294,7 +310,7 @@ export class Blk {
 
 	loadJsonToolbox(fileName, onCompletion) {
 		sc.fetchJson(fileName, { cache: 'no-cache' })
-			.then(toolbox => this.injectWithToolbox(toolbox, onCompletion));
+			.then((toolbox) => this.injectWithToolbox(toolbox, onCompletion));
 	}
 
 	// Read and load .json format program from Url.
@@ -321,21 +337,23 @@ export class Blk {
 	}
 
 	nextNamingScheme() {
-		this.naming = (this.naming == 'Symbolic' ? 'Text' : 'Symbolic');
+		this.naming = this.naming == 'Symbolic' ? 'Text' : 'Symbolic';
 		this.loadBlockMessages(`json/${this.naming}Messages.json`);
 	}
 
 	nextToolbox() {
-		this.whichToolbox = (this.whichToolbox == 'Complete' ? 'Small' : 'Complete');
+		this.whichToolbox = this.whichToolbox == 'Complete' ? 'Small' : 'Complete';
 		sc.fetchJson(`json/${this.whichToolbox}Toolbox.json`, { cache: 'no-cache' })
-			.then(tree => this.workspace.updateToolbox(tree))
+			.then((tree) => this.workspace.updateToolbox(tree));
 	}
 
 	onWorkspaceChange() {
 		// console.debug('onWorkspaceChange');
 		return (event) => {
 			// console.debug('onWorkspaceChange', event.type, event.element);
-			if (event.type == Blockly.Events.BLOCK_CHANGE && event.element == 'field') {
+			if (
+				event.type == Blockly.Events.BLOCK_CHANGE && event.element == 'field'
+			) {
 				const aBlock = this.workspace.getBlockById(event.blockId);
 				if (aBlock) {
 					// console.debug('onWorkspaceChange', aBlock.type);
@@ -356,5 +374,4 @@ export class Blk {
 		const jsonText = JSON.stringify(jsonData, null, ' ');
 		return jsonText;
 	}
-
 }

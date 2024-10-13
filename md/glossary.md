@@ -40,6 +40,11 @@ Identifiers are written in mixed case as `SinOsc`, `LfSaw` and `Fft`.
 The blocks in the toolbox are organised into categories, which may be further organised into sub-categories.
 Blocks in the same category are assigned the same colour.
 
+## Code Generator
+
+To evaluate a block program it is first printed as a text program.
+This process is called code generation.
+
 ## Collapsed Blocks
 
 A block can be _collapsed_ using the _Collapse Block_ item in the context menu.
@@ -51,6 +56,7 @@ A collapsed block can be _expanded_ using the _Expand Block_ item in the context
 
 Comment blocks, written as a left double quote (“), are statement blocks located in the _Meta_ category.
 They have a single text field which is printed, as a comment, when the block is evaluated.
+The comment should not contain any newlines, if it does only the first line is written.
 By convention synthesiser programs begin with a comment block.
 
 ## Comments
@@ -65,6 +71,10 @@ There are three kinds of comments:
 
 The complete toolbox includes a complete set of the blocks the system knows about,
 organised into a system of categories and subcategories.
+
+## Console
+
+The console is a text area that can be printed to.
 
 ## Context menus
 
@@ -249,6 +259,12 @@ Two of its descendents Max (Puckette 1991) and PureData (Puckette 1996) are stil
 Patchwork (Laurson 1989)
 OpenMusic (Assayag 1996)
 
+## Play Block
+
+The ⊳ (_Play_) block is a statement block that indicates the end of the program.
+The input to the ⊳ block is the sound that is heard when the program is listened to.
+There should only be one ⊳ block in a program, and it should be the last block.
+
 ## Postfix Notation
 
 Postfix notation, also called reverse Polish or reverse Łukasiewicz notation, is a notation where the operator follows the operands.
@@ -259,7 +275,15 @@ The postfix expression `p q +` is written `p + q` in infix notation, and `+ p q`
 Prefix notation, also called Polish or Łukasiewicz notation, is a notation where the operator precedes the operands.
 The prefix expression `+ p q` is written `p + q` in infix notation, and `p q +` in postfix notation.
 
+## Print Program
+
+The _Print_ button prints the synthesis graph of the current program to the console.
+
 ## Procedure
+
+## Program Oracle
+
+The program oracle (易) selects at random from a subset of the list of programs in the program menu.
 
 ## Scalable Vector Graphics
 

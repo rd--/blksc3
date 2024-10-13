@@ -1,6 +1,6 @@
-export function initCodeGen(Blockly) {
+// Modifies builtin Js code generator, .sl uses := for "assignment"
 
-	// Modified for .sl which uses := for "assignment" (and = for "is equal to")
+export function initCodeGen(Blockly) {
 	Blockly.JavaScript.forBlock['variables_set'] = function (block) {
 		const name = Blockly.JavaScript.nameDB_.getName(
 			block.getFieldValue('VAR'),
@@ -13,69 +13,70 @@ export function initCodeGen(Blockly) {
 		) || '0';
 		return `${name} := ${value};\n`;
 	};
-
 	Blockly.JavaScript.forBlock['sc3_ArrayCollect'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'collect', ['ARRAY', 'PROC']);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_ArrayFill'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, 'duplicateInteger', ['PROC', 'COUNT']);
+		return infixMethodCodeGen(Blockly, block, 'duplicateInteger', [
+			'PROC',
+			'COUNT',
+		]);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_ArrayFromTo'] = function (block) {
-		const [code, order] = infixMethodCodeGen(Blockly, block, 'to', ['FROM', 'TO']);
+		const [code, order] = infixMethodCodeGen(Blockly, block, 'to', [
+			'FROM',
+			'TO',
+		]);
 		return [`asList(${code})`, order];
 	};
-
 	Blockly.JavaScript.forBlock['sc3_ArrayProc1'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), ['IN']);
+		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), [
+			'IN',
+		]);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_ArrayProc2'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
+		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), [
+			'LHS',
+			'RHS',
+		]);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Association'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'Association', ['KEY', 'VALUE']);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_BinaryOp'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), ['LHS', 'RHS']);
+		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), [
+			'LHS',
+			'RHS',
+		]);
 	};
-
-	// Comment code generator.
-	// Comments should not contain newlines, if they do only the first line is written.
 	Blockly.JavaScript.forBlock['sc3_Comment'] = function (block) {
 		const commentField = block.getFieldValue('COMMENT');
 		const commentString = sc.stringLines(commentField);
 		const commentText = commentString[0];
 		return `{- ${commentText} -}\n`;
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Constant'] = function (block) {
 		return [
-			constCodeGen(block.getFieldValue('CONST')),
+			mathConstantValue(block.getFieldValue('CONST')),
 			Blockly.JavaScript.ORDER_FUNCTION_CALL,
 		];
 	};
-
 	Blockly.JavaScript.forBlock['sc3_ControlField'] = function (block) {
 		return [
 			`NamedControl('${block.id}', ${block.getFieldValue('VALUE')})`,
 			Blockly.JavaScript.ORDER_FUNCTION_CALL,
 		];
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Event'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'ContinuousEvent', ['FROM']);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_EventParam'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, block.getFieldValue('PARAM'), ['EVENT']);
+		return infixMethodCodeGen(Blockly, block, block.getFieldValue('PARAM'), [
+			'EVENT',
+		]);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_LetBinding'] = function (block) {
-		var name = Blockly.JavaScript.valueToCode(
+		const name = Blockly.JavaScript.valueToCode(
 			block,
 			'NAME',
 			Blockly.JavaScript.ORDER_ATOMIC,
@@ -87,19 +88,15 @@ export function initCodeGen(Blockly) {
 		) || '0';
 		return `let ${name} = ${value};\n`;
 	};
-
 	Blockly.JavaScript.forBlock['sc3_LocalVoicer'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'Voicer', ['RECORD', 'PROC']);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Mix'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'Mix', ['INARRAY']);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_MulAdd'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'MulAdd', ['IN', 'MUL', 'ADD']);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_OverlapTexture'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'OverlapTexture', [
 			'PROC',
@@ -108,9 +105,6 @@ export function initCodeGen(Blockly) {
 			'OVERLAP',
 		]);
 	};
-
-	// Play code generator.
-	// Output is 'CODE' input.
 	Blockly.JavaScript.forBlock['sc3_Play'] = function (block) {
 		return Blockly.JavaScript.valueToCode(
 			block,
@@ -118,39 +112,30 @@ export function initCodeGen(Blockly) {
 			Blockly.JavaScript.ORDER_ATOMIC,
 		) || '0';
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Proc0'] = function (block) {
-		return procDefCodeGen(Blockly, block, 0, false);
+		return procedureDefinitionCodeGen(Blockly, block, 0, false);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Proc0Stm'] = function (block) {
-		return procDefCodeGen(Blockly, block, 0, true);
+		return procedureDefinitionCodeGen(Blockly, block, 0, true);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Proc1'] = function (block) {
-		return procDefCodeGen(Blockly, block, 1, false);
+		return procedureDefinitionCodeGen(Blockly, block, 1, false);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Proc1Stm'] = function (block) {
-		return procDefCodeGen(Blockly, block, 1, true);
+		return procedureDefinitionCodeGen(Blockly, block, 1, true);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Proc2'] = function (block) {
-		return procDefCodeGen(Blockly, block, 2, false);
+		return procedureDefinitionCodeGen(Blockly, block, 2, false);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Proc2Stm'] = function (block) {
-		return procDefCodeGen(Blockly, block, 2, true);
+		return procedureDefinitionCodeGen(Blockly, block, 2, true);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_SoundFileBuffer'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'SoundFileBuffer', [
 			'SOUNDFILEID',
 			'NUMBEROFCHANNELS',
 		]);
 	};
-
-	// Statement block (i.e. not expression block)
 	Blockly.JavaScript.forBlock['sc3_TimesRepeat'] = function (block) {
 		const count_value = Blockly.JavaScript.valueToCode(
 			block,
@@ -164,11 +149,11 @@ export function initCodeGen(Blockly) {
 		) || '{}';
 		return `${count_value}.timesRepeat(${proc_code});`;
 	};
-
 	Blockly.JavaScript.forBlock['sc3_UnaryOp'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), ['IN']);
+		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), [
+			'IN',
+		]);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Voicer'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'Voicer', [
 			'PART',
@@ -176,7 +161,6 @@ export function initCodeGen(Blockly) {
 			'PROC',
 		]);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_VoiceWriter'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'VoiceWriter', [
 			'PART',
@@ -184,19 +168,19 @@ export function initCodeGen(Blockly) {
 			'PROC',
 		]);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Value0'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'value', ['PROC']);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Value1'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'value', ['PROC', 'VALUE']);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_Value2'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, 'value', ['PROC', 'VALUE1', 'VALUE2']);
+		return infixMethodCodeGen(Blockly, block, 'value', [
+			'PROC',
+			'VALUE1',
+			'VALUE2',
+		]);
 	};
-
 	Blockly.JavaScript.forBlock['sc3_XFadeTexture'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'XFadeTexture', [
 			'PROC',
@@ -204,11 +188,9 @@ export function initCodeGen(Blockly) {
 			'TRANSITIONTIME',
 		]);
 	};
-
 }
 
-// Named mathematical constants code generator.
-function constCodeGen(c) {
+function mathConstantValue(c) {
 	switch (c) {
 		case 'e':
 			return '2.718281828459045';
@@ -219,11 +201,10 @@ function constCodeGen(c) {
 		case 'twoPi':
 			return '6.283185307179586';
 		default:
-			throw 'constCodeGen';
+			throw 'mathConstantValue';
 	}
 }
 
-// Prefix method code generator, i.e. "f(x, y)"
 function prefixMethodCodeGen(Blockly, block, name, argNameArray) {
 	// console.debug(`prefixMethodCodeGen: ${name}, ${argNameArray.length}`);
 	const argArray = argNameArray.map((item) =>
@@ -239,8 +220,7 @@ function prefixMethodCodeGen(Blockly, block, name, argNameArray) {
 	];
 }
 
-// Procedure definition code generator.
-function procDefCodeGen(Blockly, block, numArg, hasStm) {
+function procedureDefinitionCodeGen(Blockly, block, numArg, hasStm) {
 	const var1_name = (numArg === 1) ? 'VAR' : 'VAR1';
 	const var1_value = (numArg >= 1)
 		? Blockly.JavaScript.valueToCode(
@@ -287,14 +267,15 @@ function procDefCodeGen(Blockly, block, numArg, hasStm) {
 				ofc,
 			];
 		} else {
-			throw new Error(`procDefCodeGen: sl: numArg=2 hasStm=true`);
+			throw new Error(`procedureDefinitionCodeGen: sl: numArg=2 hasStm=true`);
 		}
 	} else {
-		throw new Error(`procDefCodeGen: sl: numArg=${numArg} hasStm=${hasStm}`);
+		throw new Error(
+			`procedureDefinitionCodeGen: sl: numArg=${numArg} hasStm=${hasStm}`,
+		);
 	}
 }
 
-// Infix method call code generator, i.e. "x.f(y)"
 function infixMethodCodeGen(Blockly, block, name, argNameArray) {
 	// console.debug(`infixMethodCodeGen: ${name}, ${argNameArray.length}`);
 	const argArray = argNameArray.map((item) =>
@@ -352,7 +333,7 @@ function appendMulAdd(Blockly, block, codeStr) {
 	}
 }
 
-export function blkUgenCodeGen(Blockly, block, name, argNameArray, hasOutputs) {
+export function ugenCodeGen(Blockly, block, name, argNameArray, hasOutputs) {
 	// console.debug(`blkUgenCodeGen: ${name}, ${argNameArray.length}, ${hasOutputs}`);
 	const ugenCode = prefixMethodCodeGen(Blockly, block, name, argNameArray);
 	const answer = hasOutputs

@@ -28,7 +28,7 @@ async function loadBlockMessages(fileName) {
 	const messages = await readJson(fileName);
 	for (const key in messages) {
 		const value = messages[key];
-		Blockly.Msg[key] = messages[key];
+		Blockly.Msg[key] = value;
 	}
 }
 
