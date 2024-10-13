@@ -68,6 +68,12 @@ Blockly.JavaScript.forBlock['sc3_CombL'] = function(block) {
 Blockly.JavaScript.forBlock['sc3_CombN'] = function(block) {
 	return blkUgenCodeGen(Blockly, block, 'CombN', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
 };
+Blockly.JavaScript.forBlock['sc3_ControlIn'] = function(block) {
+	return blkUgenCodeGen(Blockly, block, 'ControlIn', ['NUMCHANNELS', 'BUS'], true);
+};
+Blockly.JavaScript.forBlock['sc3_ControlOut'] = function(block) {
+	return blkUgenCodeGen(Blockly, block, 'ControlOut', ['BUS', 'CHANNELSLIST'], false);
+};
 Blockly.JavaScript.forBlock['sc3_Crackle'] = function(block) {
 	return blkUgenCodeGen(Blockly, block, 'Crackle', ['CHAOSPARAM'], true);
 };

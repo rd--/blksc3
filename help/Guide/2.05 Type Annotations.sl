@@ -25,3 +25,5 @@ Unit generator inputs may ordinarily be either other unit generators or lists,
 and in some cases numbers.
 
 If we try and move the λ block from the 𝑓 input of ! to the input of ⊳ it will bounce off.
+
+This program plays two quiet sine tones at random frequencies and amplitudes.

@@ -38,6 +38,10 @@ Block SuperCollider is a visual programming language specialised for writing pro
 
 - <https://gitlab.com/rd--/blksc3/-/blob/main/json/Layouts.json>
 
+## How is the program oracle defined?
+
+- <https://gitlab.com/rd--/blksc3/-/blob/main/json/ProgramOracle.json>
+
 ## How are the block messages defined?
 
 - <https://gitlab.com/rd--/blksc3/-/blob/main/json/SymbolicMessages.json>
