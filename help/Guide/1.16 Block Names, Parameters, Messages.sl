@@ -4,8 +4,8 @@ SinOsc(SinOsc(1 / [7, 9], 0) * [55, 57] + 110, 0) * SinOsc(1 / [5, 7], 0) * 0.1
 {- ---- notes.md ---- -}
 # Block Names, Parameters, Messages
 
-Both _blocks_ and _parameters_ each have a _name_.
-Names are used as identifiers when programs are stored in _.xml_ files and when programs are printed as _.sl/.stc_ expressions.
+Each _blocks_ and each _parameter_ of each block have a _name_.
+Names are used as identifiers when programs are stored in _.json_ files and when programs are printed as _.sl_ expressions.
 
 Blocks also define a _message_, which is used to construct the text displayed in the block drawing.
 

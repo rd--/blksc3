@@ -1,2 +1,2 @@
 clean:
-	rm -f */*.sl.xml
+	rm -f */*.sl.json */*.sl.xml

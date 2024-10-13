@@ -25,3 +25,5 @@ In this program the effect is to apply the block ⬜ (_AllpassC_) to the variabl
 with a randomly selected delay time,
 and to store the modified signal back into _x_,
 creating a cascade of _n_ ⬜ filters in series.
+
+Since the ← value is ignored the ← input is left empty.

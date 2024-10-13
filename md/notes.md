@@ -35,7 +35,7 @@ A diagram can be a sub-graph.
 The ⊳ (Play) block indicates the "outlets" of the diagram.
 The system connects the inputs of ⊳ to the "audio outputs".
 There is no block to indicate the "inlets" of a diagram, which would require a "count" parameter.
-There ∙ block (AudioIn) reads from the "audio inputs".
+The ∙ block (AudioIn) reads from the "audio inputs".
 Diagrams could be written to use "inlet" and "outlet" blocks.
 In the case of "top-level" diagrams, the system would connect these to the "audio device".
 In the case of "sub-diagrams" these would be connected to the blocks that connect to the "sub-diagram" block.
@@ -43,10 +43,10 @@ In the case of "sub-diagrams" these would be connected to the blocks that connec
 # Url
 
 An initial file can be loaded by setting the Url parameter _e_,
-i.e. _blksc3-wasm.html?e=help/graph/Jmcc - Why SuperCollider_.
+i.e. _blksc3.html?e=help/Program/Jmcc - Why SuperCollider_.
 
 This loads the .sl notes as well as the .json graph,
-i.e. _blksc3.html?e=help/guide/2.05%20Type%20Annotations_
+i.e. _blksc3.html?e=help/Guide/2.05%20Type%20Annotations_
 
 # Notes
 
@@ -69,7 +69,7 @@ There is an _ArrayCollect_ block, however it should be deleted in favour of _Arr
 
 _fromAssocArray_ and _->_ belong at _Event_, not _Math_.
 
-_kr_ should not exist.
+_kr_ should not exist?  But it is necessary.
 
 There is both ArrayCollect and ArrayProc2:collect
 

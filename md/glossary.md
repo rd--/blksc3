@@ -92,6 +92,16 @@ or by pressing the _Delete_ key.
 When a block is deleted all of its descendents are deleted along with it.
 Deletion can be _undone_.
 
+## Display
+
+The display menu selects the page layout rule.
+The rule sets the shape and size of the workspace and selects the font size for the notes area.
+The default rule is _%×%_, which allocates space as a proportion of the size of the viewport.
+In addition there is a set of fixed size layouts, such as _1366×768_, named by display dimensions.
+The fixed size layouts are useful for seeing how programs will appear on other displays,
+assuming that the browswer window occupies most of the display.
+The display menu can be selected using the _y_ access key.
+
 ## Duplicate
 
 A block can be _duplicated_ using the _Duplicate_ item in the context menu.
@@ -202,7 +212,7 @@ The `x` binding in the λ block is local, it does not interact with the outer `x
 
 ## Menu Field
 
-Block fields with a ▼ indicator are menus.
+Block fields with a ▼ indicator are menus, from which items may be selected.
 The figure below shows a numeric constant block with the menu open.
 
 ![](sw/blksc3/png/NumericConstant.png)
@@ -285,6 +295,12 @@ The _Print_ button prints the synthesis graph of the current program to the cons
 
 The program oracle (易) selects at random from a subset of the list of programs in the program menu.
 
+## Programs
+
+There is a list of illustrative SuperCollider [Programs](https://blksc3.rohandrape.net/?e=help/Program/--Programs--) that have been translated into block drawings.
+The programs are arranged by author initials and include references to the original sources.
+The _Programs_ menu can be selected using the _p_ access key.
+
 ## Scalable Vector Graphics
 
 The workspace can be saved as a Scalable Vector Graphics file.
@@ -312,10 +328,12 @@ The _ν_ (_Frequency_) and ¹⁄𝑄 (_ReciprocalOfQ_) inputs are replaced by nu
 
 ## Simple Programming Language
 
+Simple Programming Language, or Simple Language, is the language that Block SuperCollider programs are drawings of, and that the drawings are translated into when evaluated.
+
 ## Small Programs
 
 There is a list of [Small Programs](https://blksc3.rohandrape.net/?e=help/Program/--Small%20Programs--).
-These are programs that will draw within the workspace on a 1366×768 display.
+These are programs that can be drawn within the workspace on a _1366×768_ display.
 The _Small Programs_ menu can be selected using the _a_ access key.
 
 ## Small Toolbox
@@ -400,6 +418,12 @@ The figure below shows the complete toolbox with the constants category selected
 
 ![](sw/blksc3/png/Toolbox.png)
 
+## Toolbox Entries
+
+The items in the toolbox are orindarily instances of single blocks,
+however any block program may be placed in the toolbox,
+including small commonly used sub-programs, called idioms.
+
 ## Tooltip
 
 A tooltip offers help when the mouse hovers over a block.
@@ -410,7 +434,11 @@ and a one sentence synopsis.
 
 ![](sw/blksc3/png/Tooltip.png)
 
-## Translation
+## Translator
+
+Block SuperCollider includes a program called _translator_ that can translate some _Simple Programming Language_ text programs into block drawings.
+The translator is the mirror inverse of the code generator.
+However while all block drawings can generate text programs, not all text programs can be drawn.
 
 ## Type
 

@@ -15,11 +15,11 @@ let dur = 7;
 {- ---- notes.md ---- -}
 # Load, Copy, Translate
 
-Programs are stored as _.xml_ files.
-_Load_ prompts to select an _.xml_ file and loads it into the workspace.
-_Copy_ copies the _.xml_ text describing the current workspace state to the clipboard, from where it can be pasted into an editor and saved as an _.xml_ file.
+Programs are stored as _.json_ files.
+_Load_ prompts to select a _.json_ file and loads it into the workspace.
+_Copy_ copies the _.json_ text describing the current workspace state to the clipboard, from where it can be pasted into an editor and saved as an _.json_ file.
 
-_BlkSc3_ also includes a translator from _Spl_ (_.sl_) notation to the _.xml_ block notation.
+_BlkSc3_ also includes a translator from _Spl_ (_.sl_) notation to the _.json_ block notation.
 
 This program was translated from the _.sl_ program:
 
