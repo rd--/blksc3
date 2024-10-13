@@ -222,6 +222,12 @@ The figure below shows a numeric constant block with the menu open.
 The 𝑁 control selects between symbolic and text naming schemas.
 Some equivalent names are ∿=_SinOsc_ and ≤=_LessThanOrEqualTo_.
 
+## Notes
+
+Programs may include detailed notes.
+There is a notes text area to right of the workspace.
+
+
 ## Number
 
 A number block is a block with a single editable text field in which one can write a number.
@@ -258,6 +264,15 @@ Blocks may implement many different behaviours selected from an operator menu.
 The figure below shows the binary math operator block with the operator menu opened.
 
 ![](sw/blksc3/png/OperatorMenu.png)
+
+## Overlap Texture
+
+ᨏ (_OverlapTexture_) is a is a graph combinator, a form of higher order function.
+ᨏ requires a λ (_Lambda_) block at 𝑓 and makes an evolving texture of # (_Overlap_) voices.
+There is an [Overlap Texture](https://blksc3.rohandrape.net/?e=help/Guide/1.12%20Overlap%20Texture) section in the _Guide_.
+The figure below shows the toolbox entry for ᨏ, which includes a pre-composed λ block at 𝑓, and a _tr_ variable reference at ⍵.
+
+![](sw/blksc3/png/Texture.png)
 
 ## Patcher
 
@@ -420,13 +435,16 @@ The figure below shows the complete toolbox with the constants category selected
 
 ## Toolbox Entries
 
-The items in the toolbox are orindarily instances of single blocks,
+The items in the toolbox are ordinarily instances of single blocks,
 however any block program may be placed in the toolbox,
 including small commonly used sub-programs, called idioms.
+The figure below shows a pre-composed sequence of ᵀ (_Transposed_) and Σ (_Sum_) from the List category.
+
+![](sw/blksc3/png/Precomposed.png)
 
 ## Tooltip
 
-A tooltip offers help when the mouse hovers over a block.
+A tooltip is a small help window that is show when the mouse hovers over a block.
 The figure below shows the ∿ (_SinOsc_) block with the tooltip displayed.
 The help text gives the text name of the block,
 the text names of the parameters,

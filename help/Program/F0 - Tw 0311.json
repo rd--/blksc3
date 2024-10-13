@@ -394,146 +394,100 @@
           "inputs": {
            "CODE": {
             "block": {
-             "type": "sc3_BinaryOp",
-             "id": "7g$MzF5~#g?PS(XEQAhM",
+             "type": "sc3_AllpassC",
+             "id": "Q])7B9wkP]L}]I-#mVF=",
              "inline": false,
-             "fields": {
-              "OP": "/"
-             },
              "inputs": {
-              "LHS": {
+              "IN": {
                "block": {
-                "type": "sc3_AllpassC",
-                "id": "Q])7B9wkP]L}]I-#mVF=",
-                "inline": false,
+                "type": "variables_get",
+                "id": "jBo0ISj;~P7_GnO*eF@J",
+                "fields": {
+                 "VAR": {
+                  "id": "^giC3h;mglWiD,auDOI8"
+                 }
+                }
+               }
+              },
+              "MAXDELAYTIME": {
+               "block": {
+                "type": "math_number",
+                "id": "4_s=?zZ!da9v{H*X~NU@",
+                "fields": {
+                 "NUM": 2
+                }
+               }
+              },
+              "DELAYTIME": {
+               "block": {
+                "type": "sc3_SinOscFB",
+                "id": "T=F6@-SFMe]ij7hHkuE|",
+                "inline": true,
                 "inputs": {
-                 "IN": {
+                 "FREQ": {
                   "block": {
-                   "type": "variables_get",
-                   "id": "jBo0ISj;~P7_GnO*eF@J",
-                   "fields": {
-                    "VAR": {
-                     "id": "^giC3h;mglWiD,auDOI8"
-                    }
-                   }
-                  }
-                 },
-                 "MAXDELAYTIME": {
-                  "block": {
-                   "type": "math_number",
-                   "id": "4_s=?zZ!da9v{H*X~NU@",
-                   "fields": {
-                    "NUM": 2
-                   }
-                  }
-                 },
-                 "DELAYTIME": {
-                  "block": {
-                   "type": "sc3_SinOscFB",
-                   "id": "T=F6@-SFMe]ij7hHkuE|",
+                   "type": "sc3_BinaryOp",
+                   "id": "0_ET[Ox_/4tBl|Uqz_2n",
                    "inline": true,
+                   "fields": {
+                    "OP": "/"
+                   },
                    "inputs": {
-                    "FREQ": {
+                    "LHS": {
                      "block": {
-                      "type": "sc3_BinaryOp",
-                      "id": "0_ET[Ox_/4tBl|Uqz_2n",
+                      "type": "lists_create_with",
+                      "id": "djZ5{xENfL34:xyTHN?6",
                       "inline": true,
-                      "fields": {
-                       "OP": "/"
+                      "extraState": {
+                       "itemCount": 2
                       },
                       "inputs": {
-                       "LHS": {
+                       "ADD0": {
                         "block": {
-                         "type": "lists_create_with",
-                         "id": "djZ5{xENfL34:xyTHN?6",
-                         "inline": true,
-                         "extraState": {
-                          "itemCount": 2
-                         },
-                         "inputs": {
-                          "ADD0": {
-                           "block": {
-                            "type": "math_number",
-                            "id": "F/j/to(5m!@pF7;byDEH",
-                            "fields": {
-                             "NUM": 3
-                            }
-                           }
-                          },
-                          "ADD1": {
-                           "block": {
-                            "type": "math_number",
-                            "id": "O~IHYJfSq]D%F8c2E!zt",
-                            "fields": {
-                             "NUM": 2
-                            }
-                           }
-                          }
+                         "type": "math_number",
+                         "id": "F/j/to(5m!@pF7;byDEH",
+                         "fields": {
+                          "NUM": 3
                          }
                         }
                        },
-                       "RHS": {
+                       "ADD1": {
                         "block": {
                          "type": "math_number",
-                         "id": "3bQ8jGT(%PX)hI9hMyz+",
+                         "id": "O~IHYJfSq]D%F8c2E!zt",
                          "fields": {
-                          "NUM": 999
+                          "NUM": 2
                          }
                         }
                        }
                       }
                      }
                     },
-                    "FEEDBACK": {
+                    "RHS": {
                      "block": {
                       "type": "math_number",
-                      "id": "8-i]%Nbmu?yEtz,o~T$F",
+                      "id": "3bQ8jGT(%PX)hI9hMyz+",
                       "fields": {
-                       "NUM": 0
-                      }
-                     }
-                    },
-                    "MUL": {
-                     "shadow": {
-                      "type": "math_number",
-                      "id": "ueV_f)kE/ai7HQyHEA~t",
-                      "fields": {
-                       "NUM": 1
-                      }
-                     }
-                    },
-                    "ADD": {
-                     "shadow": {
-                      "type": "math_number",
-                      "id": "qIGbOBP,U2!vGnOH?!P)",
-                      "fields": {
-                       "NUM": 0
-                      }
-                     },
-                     "block": {
-                      "type": "math_number",
-                      "id": "mGxJPTLxU4Hyl#n72$(?",
-                      "fields": {
-                       "NUM": 1
+                       "NUM": 999
                       }
                      }
                     }
                    }
                   }
                  },
-                 "DECAYTIME": {
+                 "FEEDBACK": {
                   "block": {
                    "type": "math_number",
-                   "id": "xzZixRJ#H:{(/Z%I|QxO",
+                   "id": "8-i]%Nbmu?yEtz,o~T$F",
                    "fields": {
-                    "NUM": 4
+                    "NUM": 0
                    }
                   }
                  },
                  "MUL": {
                   "shadow": {
                    "type": "math_number",
-                   "id": "x`|.3kHdJ_$aMNNo_E2C",
+                   "id": "ueV_f)kE/ai7HQyHEA~t",
                    "fields": {
                     "NUM": 1
                    }
@@ -542,21 +496,53 @@
                  "ADD": {
                   "shadow": {
                    "type": "math_number",
-                   "id": "Mgm5-B0R*BJd__th%anm",
+                   "id": "qIGbOBP,U2!vGnOH?!P)",
                    "fields": {
                     "NUM": 0
+                   }
+                  },
+                  "block": {
+                   "type": "math_number",
+                   "id": "mGxJPTLxU4Hyl#n72$(?",
+                   "fields": {
+                    "NUM": 1
                    }
                   }
                  }
                 }
                }
               },
-              "RHS": {
+              "DECAYTIME": {
+               "block": {
+                "type": "math_number",
+                "id": "xzZixRJ#H:{(/Z%I|QxO",
+                "fields": {
+                 "NUM": 4
+                }
+               }
+              },
+              "MUL": {
+               "shadow": {
+                "type": "math_number",
+                "id": "x`|.3kHdJ_$aMNNo_E2C",
+                "fields": {
+                 "NUM": 1
+                }
+               },
                "block": {
                 "type": "math_number",
                 "id": "(=4S_lU80R8M-0VLas?e",
                 "fields": {
-                 "NUM": 2
+                 "NUM": 0.5
+                }
+               }
+              },
+              "ADD": {
+               "shadow": {
+                "type": "math_number",
+                "id": "Mgm5-B0R*BJd__th%anm",
+                "fields": {
+                 "NUM": 0
                 }
                }
               }

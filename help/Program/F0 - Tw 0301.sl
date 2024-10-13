@@ -3,7 +3,13 @@ let b = (0 .. 3).collect { :i |
 	Duty(
 		i + 1 / 9,
 		0,
-		ControlIn(1, i + 1 % 4) + Dseq(inf, [1, 1, 2, 3, 5, 8, 13, 21]) % 9
+		ControlIn(
+			1,
+			i + 1 % 4
+		) + Dseq(
+			inf,
+			[1, 1, 2, 3, 5, 8, 13, 21]
+		) % 9
 	).kr
 };
 CombN(
