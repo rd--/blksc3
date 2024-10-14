@@ -7,6 +7,9 @@ SinOsc([
 {- ---- notes.md ---- -}
 # Control Fields
 
-A _control field_ (𝒞) is a _named control_ with an implicit name assigned by the system.
+𝒞 (_ControlField_) is a _named control_ for which a unique name is assigned by the system.
+When the text field of 𝒞 is edited, the new value is sent to the synthesiser.
 
-When a control field is edited, the new value is sent to the synthesiser.
+𝒞 is both a part of the definition of the program and,
+while the program is running,
+an interactive controller for the synthesiser.

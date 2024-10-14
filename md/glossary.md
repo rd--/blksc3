@@ -95,6 +95,14 @@ The console is a text area that can be printed to.
 A context menu contains a list of actions related to an element in the workspace, or to the workspace itself.
 A context menu is shown on right mouse clicks and long pen presses.
 
+## Control Field
+
+𝒞 (_ControlField_) is a _named control_ for which a unique name is assigned by the system.
+There is a [Control Fields](http://blksc3.rohandrape.net/?e=help/Guide/1.15%20Control%20Fields) section in the _Guide_.
+The figure below shows a ∿ (_SinOsc_) block with 𝒞 inputs for both frequency and amplitude.
+
+![](sw/blksc3/png/ControlField.png)
+
 ## Copy & Paste
 
 A block can be copied by typing _Ctl-c_ and a copied block can be pasted by typing _Ctl-v_.
