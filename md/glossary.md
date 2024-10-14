@@ -7,10 +7,19 @@ The figure below shows the variable _i_ being incremented by one.
 
 ![](sw/blksc3/png/Assignment.png)
 
+## Atom
+
+An atom is an indivisible value,
+a number or a boolean is an atom,
+a list or a dictionary is not.
+A string may or may not be an atom,
+in Simple Language it is.
+
 ## Binary Operator
 
-A binary operator is an operator with two operands.
-In some contexts it particularly refers to an operator that is written using infix notation.
+A binary operator is an operator with two operands,
+or a procedure of two arguments.
+In some contexts it particularly refers to a procedure that is written using infix notation.
 
 ## Block & Parameter Names
 
@@ -71,6 +80,11 @@ There are three kinds of comments:
 
 The complete toolbox includes a complete set of the blocks the system knows about,
 organised into a system of categories and subcategories.
+
+## Connection checks
+
+Connection checks, also called type annotations, constrain how blocks can be connected together.
+There is a [Type Annotations](http://blksc3.rohandrape.net/?e=help/Guide/2.05%20Type%20Annotations) section in the _Guide_.
 
 ## Console
 
@@ -181,6 +195,13 @@ The figure below shows the ∿ (_SinOsc_) block with internal inputs.
 JavaScript (Wirfs-Brock 2020).
 The language is standardised in the document ECMA-262 and is maintained Ecma's Technical Committee 39.
 
+## JavaScript Object Notation (Json)
+
+JavaScript Object Notation (Crockford 2006) is a simple text format for encoding atoms, lists and dictionaries.
+Atoms are either strings, numbers, booleans or nil.
+Json is a subset of JavaScript,
+a Json value is a JavaScript program representing the value it encodes.
+
 ## Lambda
 
 λ (_Lambda_) blocks answer procedure values.
@@ -217,16 +238,28 @@ The figure below shows a numeric constant block with the menu open.
 
 ![](sw/blksc3/png/NumericConstant.png)
 
-## Naming Schema
+## Naming Scheme
 
-The 𝑁 control selects between symbolic and text naming schemas.
-Some equivalent names are ∿=_SinOsc_ and ≤=_LessThanOrEqualTo_.
+The 𝑁 control selects between symbolic and text naming schemes.
+Some equivalent names are ∿ and _SinOsc_,
+or ≤ and _LessThanOrEqualTo_.
+The figure below shows the unary mathematical operator block,
+with the √ (_Sqrt_) operator selected,
+in each naming scheme.
+
+![](sw/blksc3/png/NamingScheme.png)
+
+## Nil
+
+∅ (_Nil_) is a constant representing an undefined value.
+The ∅ block is fetched from the _Meta_ category.
+
+![](sw/blksc3/png/Nil.png)
 
 ## Notes
 
 Programs may include detailed notes.
 There is a notes text area to right of the workspace.
-
 
 ## Number
 
@@ -343,7 +376,10 @@ The _ν_ (_Frequency_) and ¹⁄𝑄 (_ReciprocalOfQ_) inputs are replaced by nu
 
 ## Simple Programming Language
 
-Simple Programming Language, or Simple Language, is the language that Block SuperCollider programs are drawings of, and that the drawings are translated into when evaluated.
+Simple Programming Language (Spl),
+or Simple Language,
+is the language that Block SuperCollider programs are drawings of,
+and that the drawings are translated into when evaluated.
 
 ## Small Programs
 
@@ -389,6 +425,10 @@ The ⦙ (_Statements_) input is a statement input,
 the ← (_Return_) input is a value input.
 
 ![](sw/blksc3/png/Lambda.zero.stm.png)
+
+## SuperCollider
+
+SuperCollider (McCartney 1996) is a family of languages for real-time audio synthesis.
 
 ## Symbolic Naming Schema
 
@@ -471,6 +511,13 @@ There is a [Type Annotations](http://blksc3.rohandrape.net/?e=help/Guide/2.05%20
 ## Unary Operator
 
 A unary operator is an operator with one operand.
+Unary operator blocks are written in prefix form,
+the operator precedes the operand.
+In the figure below the input of a list unary operator block,
+with the ᴙ (_Reversed_) operator selected,
+is connected to the output of a ⟦⟧ (_List_) block.
+
+![](sw/blksc3/png/UnaryOperator.png)
 
 ## Undo
 
@@ -480,13 +527,10 @@ and _redone_ by typing _Ctl-y_.
 ## Unicode
 
 Lisp editors will often display the typed text `lambda` using the glyph `λ`.
-We can extend this mechanism so that the text
-
-> `SinOsc(freq: 440, phase: 0, mul: 1, add: 0)`
-
+This mechanism can be extended so that the text
+`SinOsc(freq: 440, phase: 0, mul: 1, add: 0)`
 is displayed as
-
-> `∿(ν: 440, ϕ: 0, ×: 1, +: 0)`
+`∿(ν: 440, ϕ: 0, ×: 1, +: 0)`.
 
 ## Uniform Resource Locator
 
@@ -503,23 +547,24 @@ the ← (_Return_) input is a value input.
 
 ![](sw/blksc3/png/Lambda.zero.stm.png)
 
-## Variable
+## Variables
 
 Variables are created using the _Create Variable_ entry in the _Variable_ category of the toolbox,
 which also contains the variable reference and assignment blocks.
+
+## Visual Programming Languages
 
 ## Workspace
 
 The area containing the block drawing is called the _Workspace_.
 There is a [Workspace](https://blksc3.rohandrape.net/?e=help/Guide/1.02%20Workspace,%20Synthesiser) section in the _Guide_.
 
-## Visual Programming Language
-
 ## Workspace Comments
 
 _Workspace comments_ are texts that are attached to the workspace using the _Add comment_ item in the context menu.
 The text is displayed in a box that can be moved and resized, and has a header that allows the comment to be _collapsed_.
 The comment text is not printed.
+There is a [Workspace Comments](https://blksc3.rohandrape.net/?e=help/Guide/2.08%20Workspace%20Comments) section in the _Guide_.
 
 ## Zoom
 

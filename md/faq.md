@@ -4,6 +4,10 @@
 
 Block SuperCollider is a visual programming language specialised for writing programs for the SuperCollider synthesiser.
 
+There is a conscise overview of Block SuperCollider in
+[§1.01](https://blksc3.rohandrape.net/?e=help/Guide/1.01%20Block%20SuperCollider)
+of the Guide.
+
 ## Why Block SuperCollider?
 
 ## What is JavaScript SuperCollider?
@@ -16,7 +20,8 @@ Block SuperCollider is a visual programming language specialised for writing pro
 
 ## Where are the initials in the help files explained?
 
-- <https://blksc3.rohandrape.net/?e=help/Guide/2.02%20Authors%2C%20Initials>
+[§2.02](https://blksc3.rohandrape.net/?e=help/Guide/2.02%20Authors%2C%20Initials)
+of the Guide lists the authors of the illustration programs.
 
 ## How are the toolboxes defined?
 

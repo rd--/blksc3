@@ -26,4 +26,6 @@ with a randomly selected delay time,
 and to store the modified signal back into _x_,
 creating a cascade of _n_ ⬜ filters in series.
 
-Since the ← value is ignored the ← input is left empty.
+Since the ← value is ignored the ← input should either be left empty or,
+equivalenty,
+be set to ∅ (_Nil_).
