@@ -70,7 +70,7 @@ John Steinmetz.
 "Computers and Squeak as Environments for Learning".
 2000.
 In M. Guzdial (ed.), _Squeak: Open Personal Computing for Multimedia_.
-[PDF](http://coweb.cc.gatech.edu:8888/squeakbook/uploads/steinmetz.pdf)
+[PDF](https://coweb.cc.gatech.edu:8888/squeakbook/uploads/steinmetz.pdf)
 
 © [Rohan Drape](http://rohandrape.net/), 2021-2024, [Gpl](http://gnu.org/copyleft/)
 
