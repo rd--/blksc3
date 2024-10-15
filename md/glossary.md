@@ -79,7 +79,7 @@ The _Clear_ button can be selected using the _k_ access key.
 ## Code Generator
 
 To evaluate a block program it is first printed as a text program.
-This process is called code generation.
+This process is called code generation, and is performed by a code generator.
 
 ## Collapsed Blocks
 
@@ -332,8 +332,9 @@ The ∅ block is fetched from the _Meta_ category.
 
 ## Notes
 
-Programs may include detailed notes.
-There is a notes text area to right of the workspace.
+Programs may include detailed notes,
+written in a simple markup language (Gruber 2004).
+There is a notes area to the right of the workspace.
 
 ## Number
 
@@ -601,10 +602,28 @@ and a one sentence synopsis.
 
 ## Translator
 
-Block SuperCollider includes a program called _translator_ that can translate some Simple Programming Language text programs into block drawings.
+Block SuperCollider includes a Haskell program called _translator_ that can translate some Simple Programming Language text programs into block drawings.
 The illustration programs were translated from an existing collection of text programs.
-The translator is the mirror inverse of the code generator.
+The translator is the inverse of the code generator,
+it reads the program the code generator writes and writes the program the code generator reads.
 However while all block drawings can generate text programs, not all text programs can be drawn.
+The figure below shows the text of a brief program (Putnam 2004) that the translator reads,
+and the corresponding block program the translator writes.
+
+```
+CombC(
+	Formant(
+		LfNoise0([1, 0.7]) * 8 + 9,
+		LfNoise0([1, 0.7]) * 4000 + 4000,
+		200
+	) * 0.3,
+	0.2,
+	0.2,
+	1
+)
+```
+
+![](sw/blksc3/png/Translator.png)
 
 ## Tree
 
