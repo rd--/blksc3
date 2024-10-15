@@ -21,4 +21,4 @@ _Cc(2)_ controls the number of harmonics,
 _Cc(3)_ controls amplitude and
 _Cc(4)_ controls stereo location.
 
-_blksc3_ has a _Cc_ section that provides simple _Ui_ sliders to send the appropriate control messages to the synthesiser.
+_blkSc_ has a _Cc_ section that provides simple _Ui_ sliders to send the appropriate control messages to the synthesiser.

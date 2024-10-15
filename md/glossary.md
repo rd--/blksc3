@@ -9,11 +9,11 @@ The figure below shows the variable _i_ being incremented by one.
 
 ## Atom
 
-An atom is an indivisible value,
-a number or a boolean is an atom,
+An atom is an indivisible value.
+A number or a boolean is an atom,
 a list or a dictionary is not.
 A string may or may not be an atom,
-in Simple Language it is.
+in the Simple Language it is.
 
 ## Binary Operator
 
@@ -21,24 +21,40 @@ A binary operator is an operator with two operands,
 or a procedure of two arguments.
 In some contexts it particularly refers to a procedure that is written using infix notation.
 
-## Block & Parameter Names
-
-## Block Comments
+## Block Comment
 
 Block comments are texts attached to a block using the _Add comment_ context menu item.
 The text is displayed in a box that can be moved and resized.
 Blocks that have comments attached have a question mark (?) button to show or hide the text.
 The comment text is printed, as a comment, when the block is evaluated.
 
-## Block Outputs
+## Block Identifier
+
+Each block in a program has a unique identifier assigned to it by the system.
+Block identifiers are opaque values, they are used internally to distinguish otherwise equal blocks.
+
+## Block Message
+
+The text displayed on a block is called the block message.
+The block message is distinct from the block type,
+and the block message is not stored as part of the program.
+This allows for separate sets of block messages to be defined,
+so that block programs can be translated into different languages,
+or so that blocks can have both symbolic and text naming schemes.
+
+## Block Output
 
 A block may have a single output, represented as a jigsaw connector on the left edge.
 Block outputs connect to value inputs.
 Blocks with an output are usually called expression or value blocks.
 
-## Browser
+## Block Type
 
-WorldWideWeb (Berners-Lee 1992).
+Each block in a program is an instance of a block type.
+A blocks types defines the structure and behaviour of the block.
+Each block types has a unique names.
+Block types names are opaque values,
+the text that is displayed on a block is a separate value called the block message.
 
 ## Case Rule
 
@@ -60,6 +76,9 @@ A block can be _collapsed_ using the _Collapse Block_ item in the context menu.
 A collapsed block can be _expanded_ using the _Expand Block_ item in the context menu.
 
 ## Colours
+
+Blocks are coloured according to category.
+Block colours are specified by name, and looked up in a dictionary.
 
 ## Comment Blocks
 
@@ -90,7 +109,7 @@ There is a [Type Annotations](http://blksc3.rohandrape.net/?e=help/Guide/2.05%20
 
 The console is a text area that can be printed to.
 
-## Context menus
+## Context Menu
 
 A context menu contains a list of actions related to an element in the workspace, or to the workspace itself.
 A context menu is shown on right mouse clicks and long pen presses.
@@ -105,7 +124,8 @@ The figure below shows a ∿ (_SinOsc_) block with 𝒞 inputs for both frequenc
 
 ## Copy & Paste
 
-A block can be copied by typing _Ctl-c_ and a copied block can be pasted by typing _Ctl-v_.
+A block can be copied by typing _Ctl-c_.
+A copied block can be pasted by typing _Ctl-v_.
 
 ## Deleting Blocks
 
@@ -130,6 +150,10 @@ A block can be _duplicated_ using the _Duplicate_ item in the context menu.
 
 ## Expression
 
+An expression is a program that can be evaluated to give an answer,
+and which may in addition perform an action having an effect.
+Expressions form a tree structure, the leaves of which are called atoms.
+
 ## Expression Blocks
 
 An expression block (also called a function block or a value block) is a block that answers an output value (at an output connector) and accepts one or more inputs (at input fields).
@@ -147,6 +171,11 @@ The figure below shows the ∿ (_SinOsc_) block with external inputs.
 
 Block SuperCollider ordinarily runs a copy of the SuperCollider synthesiser (`scsynth`) within the browser.
 However it can also communicate with an external synthesiser by sending messages over a socket.
+
+## Forest
+
+A forest is a graph in which any two vertices are connected by at most one path,
+or equally a set of two or more unconnected trees.
 
 ## Function
 
@@ -200,8 +229,7 @@ The figure below shows the ∿ (_SinOsc_) block with internal inputs.
 
 ## JavaScript
 
-JavaScript (Wirfs-Brock 2020).
-The language is standardised in the document ECMA-262 and is maintained Ecma's Technical Committee 39.
+JavaScript (Wirfs-Brock 2020) is a language standardised in the document ECMA-262 and maintained by Technical Committee 39.
 
 ## JavaScript Object Notation (Json)
 
@@ -317,13 +345,18 @@ The figure below shows the toolbox entry for ᨏ, which includes a pre-composed 
 
 ## Patcher
 
-Patcher (Puckette 1988)
-Two of its descendents Max (Puckette 1991) and PureData (Puckette 1996) are still widely used.
+Patcher (Puckette 1988), Max (Puckette 1991) and PureData (Puckette 1996) are a closely related family of visual programming systems.
+Programs elements are drawn as boxes with inlets on the top edge and outlets on the lower edge.
+Boxes are connected by lines to form a graph.
+The evaluation model includes both a data flow signal processing system for audio signals and a reactive system for discrete events.
 
 ## Patchwork
 
-Patchwork (Laurson 1989)
-OpenMusic (Assayag 1996)
+Patchwork (Laurson 1989) is a domain specific visual programming language for music.
+It represents Lisp functions as boxes and with inlets at the left and right edges for input parameters,
+and a single outlet on the lower edge.
+Boxes are connected by lines to form a tree.
+OpenMusic (Assayag 1996) is a descendent of Patchwork.
 
 ## Play Block
 
@@ -347,6 +380,8 @@ The _Print_ button prints the synthesis graph of the current program to the cons
 
 ## Procedure
 
+A procedure, or operator or function or method, is a named behaviour that performs an action and may answer a value.
+
 ## Program Oracle
 
 The program oracle (易) selects at random from a subset of the list of programs in the program menu.
@@ -359,6 +394,7 @@ The _Programs_ menu can be selected using the _p_ access key.
 
 ## Scalable Vector Graphics
 
+Scalable Vector Graphics (Ferraiolo 2001) is a vector image format for defining two-dimensional graphics.
 The workspace can be saved as a Scalable Vector Graphics file.
 An image of the [Why SuperCollider?](sw/blksc3/svg/Why%20Block%20SuperCollider.svg) graph.
 
@@ -405,6 +441,8 @@ fit on a display of size 1366×768.
 
 ## Statement
 
+A statement is an experession that is evaluated for its effect and that does not answer a value.
+
 ## Statement Blocks
 
 A statement block is a block that does not answer a value,
@@ -437,6 +475,8 @@ the ← (_Return_) input is a value input.
 ## SuperCollider
 
 SuperCollider (McCartney 1996) is a family of languages for real-time audio synthesis.
+Block SuperCollider communicates directly with the SuperCollider synthesiser,
+ordinarily to an in-process copy compiled to Wasm (Rossberg 2019).
 
 ## Symbolic Naming Schema
 
@@ -506,6 +546,10 @@ Block SuperCollider includes a program called _translator_ that can translate so
 The translator is the mirror inverse of the code generator.
 However while all block drawings can generate text programs, not all text programs can be drawn.
 
+## Tree
+
+A tree is a graph in which any two vertices are connected by exactly one path.
+
 ## Type
 
 A type is a category (or collection or grouping) of values,
@@ -562,6 +606,37 @@ which also contains the variable reference and assignment blocks.
 
 ## Visual Programming Languages
 
+There is a long history of visual programming languages,
+encompassing systems of very different kinds.
+Some notable instances are:
+Sketchpad (Sutherland 1963),
+Experimental Graphical Programming System (Sutherland 1966),
+Grail (Ellis 1969),
+Pygmalion (Smith 1975),
+ThingLab (Borning 1977),
+VisiCalc (Bricklin 1979),
+Pict (Glinert 1984),
+Prograph (Cox 1984),
+Labview (Vose 1986),
+Show and Tell (Kimura 1986),
+The Alternate Reality Kit (Smith 1986),
+Patcher (Puckette 1988),
+Kyma (Scaletti 1988),
+Patchwork (Laurson 1989),
+Max (Puckette 1991),
+Self (Ungar 1991),
+AgentSheets (Repenning 1993),
+Alice (Pausch 1995),
+LogoBlocks (Begel 1996),
+PureData (Puckette 1996),
+OpenMusic (Assayag 1996)
+and
+SchemeBricks (Griffiths 2013).
+
+## Web Browser
+
+A web browser (Berners-Lee 1992), or browser, is a program for accessing the World Wide Web.
+
 ## Workspace
 
 The area containing the block drawing is called the _Workspace_.
@@ -574,7 +649,13 @@ The text is displayed in a box that can be moved and resized, and has a header t
 The comment text is not printed.
 There is a [Workspace Comments](https://blksc3.rohandrape.net/?e=help/Guide/2.08%20Workspace%20Comments) section in the _Guide_.
 
+## World Wide Web
+
+The World Wide Web (Www) is an information system.
+It allows documents to be accessed over the internet using the Hypertext Transfer Protocol (Http).
+
 ## Zoom
 
 The workspace has controls to zoom in (⊕) and out (⊖) of the drawing, and to center it at its initial scale (⊙).
 A mouse scroll wheel will also control workspace scaling.
+The block drawing is implemented using vector drawing primitives and scales without artifacts.

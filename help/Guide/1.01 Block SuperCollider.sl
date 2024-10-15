@@ -13,9 +13,9 @@ Block editors are a family of visual programming systems that use interlocking g
 
 For instance there are blocks to represent variable assignment and reference, procedure definition and application, and logical and mathematical operators.
 
-_BlkSc3_ also has blocks for the standard components of a synthesiser: oscillators, noise generators, filters, envelopes, panners, signal analysers and control signal generators.
+_BlkSc_ also has blocks for the standard components of a synthesiser: oscillators, noise generators, filters, envelopes, panners, signal analysers and control signal generators.
 
-To make sound _BlkSc3_ translates the block program into a _Simple Programming Language_ (Spl) program, which in turn sends messages to the _Sc_ synthesiser.
+To make sound _BlkSc_ translates the block program into a _Simple Programming Language_ (Spl) program, which in turn sends messages to the _Sc_ synthesiser.
 The synthesiser is started by pressing the _Begin_ button, the number of sounding _unit generators_ is shown in the adjacent box (the _status area_).
 
 To listen to a program press the _Play_ button, to stop listening press _Reset_.

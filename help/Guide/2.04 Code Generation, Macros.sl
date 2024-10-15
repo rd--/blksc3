@@ -34,6 +34,6 @@ and the 𝑓 input to ! is a reference to this variable.
 The macro form of ! would print this as _{ x } ! 16_,
 which would make a list containing the same value (_x_) at each place.
 
-_BlkSc3_ does not implement any _macro_ like blocks,
+_BlkSc_ does not implement any _macro_ like blocks,
 instead requiring that λ blocks be provided in programs as required.
 This is made straight-forward by blocks such a ! being pre-composed with an appropriate λ block.

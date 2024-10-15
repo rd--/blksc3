@@ -357,7 +357,7 @@ export class Blk {
 				const aBlock = this.workspace.getBlockById(event.blockId);
 				if (aBlock) {
 					// console.debug('onWorkspaceChange', aBlock.type);
-					if (aBlock.type == 'sc3_ControlField') {
+					if (aBlock.type == 'Sc_ControlField') {
 						// console.debug('onWorkspaceChange', aBlock.getFieldValue('VALUE'));
 						globalScSynth.sendOsc(
 							sc.n_set1(-1, aBlock.id, aBlock.getFieldValue('VALUE')),

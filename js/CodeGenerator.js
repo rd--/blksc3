@@ -13,69 +13,69 @@ export function initCodeGen(Blockly) {
 		) || '0';
 		return `${name} := ${value};\n`;
 	};
-	Blockly.JavaScript.forBlock['sc3_ArrayCollect'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_ArrayCollect'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'collect', ['ARRAY', 'PROC']);
 	};
-	Blockly.JavaScript.forBlock['sc3_ArrayFill'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_ArrayFill'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'duplicateInteger', [
 			'PROC',
 			'COUNT'
 		]);
 	};
-	Blockly.JavaScript.forBlock['sc3_ArrayFromTo'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_ArrayFromTo'] = function (block) {
 		const [code, order] = infixMethodCodeGen(Blockly, block, 'to', [
 			'FROM',
 			'TO'
 		]);
 		return [`asList(${code})`, order];
 	};
-	Blockly.JavaScript.forBlock['sc3_ArrayProc1'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_ArrayProc1'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), [
 			'IN'
 		]);
 	};
-	Blockly.JavaScript.forBlock['sc3_ArrayProc2'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_ArrayProc2'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), [
 			'LHS',
 			'RHS',
 		]);
 	};
-	Blockly.JavaScript.forBlock['sc3_Association'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Association'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'Association', ['KEY', 'VALUE']);
 	};
-	Blockly.JavaScript.forBlock['sc3_BinaryOp'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_BinaryOp'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), [
 			'LHS',
 			'RHS',
 		]);
 	};
-	Blockly.JavaScript.forBlock['sc3_Comment'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Comment'] = function (block) {
 		const commentField = block.getFieldValue('COMMENT');
 		const commentString = sc.stringLines(commentField);
 		const commentText = commentString[0];
 		return `{- ${commentText} -}\n`;
 	};
-	Blockly.JavaScript.forBlock['sc3_Constant'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Constant'] = function (block) {
 		return [
 			mathConstantValue(block.getFieldValue('CONST')),
 			Blockly.JavaScript.ORDER_FUNCTION_CALL,
 		];
 	};
-	Blockly.JavaScript.forBlock['sc3_ControlField'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_ControlField'] = function (block) {
 		return [
 			`NamedControl('${block.id}', ${block.getFieldValue('VALUE')})`,
 			Blockly.JavaScript.ORDER_FUNCTION_CALL,
 		];
 	};
-	Blockly.JavaScript.forBlock['sc3_Event'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Event'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'ContinuousEvent', ['FROM']);
 	};
-	Blockly.JavaScript.forBlock['sc3_EventParam'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_EventParam'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, block.getFieldValue('PARAM'), [
 			'EVENT',
 		]);
 	};
-	Blockly.JavaScript.forBlock['sc3_LetBinding'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_LetBinding'] = function (block) {
 		const name = Blockly.JavaScript.valueToCode(
 			block,
 			'NAME',
@@ -88,22 +88,22 @@ export function initCodeGen(Blockly) {
 		) || '0';
 		return `let ${name} = ${value};\n`;
 	};
-	Blockly.JavaScript.forBlock['sc3_LocalVoicer'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_LocalVoicer'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'Voicer', ['RECORD', 'PROC']);
 	};
-	Blockly.JavaScript.forBlock['sc3_Mix'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Mix'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'Mix', ['INARRAY']);
 	};
-	Blockly.JavaScript.forBlock['sc3_MulAdd'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_MulAdd'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'MulAdd', ['IN', 'MUL', 'ADD']);
 	};
-	Blockly.JavaScript.forBlock['sc3_Nil'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Nil'] = function (block) {
 		return [
 			'nil',
 			Blockly.JavaScript.ORDER_FUNCTION_CALL
 		];
 	};
-	Blockly.JavaScript.forBlock['sc3_OverlapTexture'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_OverlapTexture'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'OverlapTexture', [
 			'PROC',
 			'SUSTAINTIME',
@@ -111,38 +111,38 @@ export function initCodeGen(Blockly) {
 			'OVERLAP',
 		]);
 	};
-	Blockly.JavaScript.forBlock['sc3_Play'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Play'] = function (block) {
 		return Blockly.JavaScript.valueToCode(
 			block,
 			'CODE',
 			Blockly.JavaScript.ORDER_ATOMIC,
 		) || '0';
 	};
-	Blockly.JavaScript.forBlock['sc3_Proc0'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Proc0'] = function (block) {
 		return procedureDefinitionCodeGen(Blockly, block, 0, false);
 	};
-	Blockly.JavaScript.forBlock['sc3_Proc0Stm'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Proc0Stm'] = function (block) {
 		return procedureDefinitionCodeGen(Blockly, block, 0, true);
 	};
-	Blockly.JavaScript.forBlock['sc3_Proc1'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Proc1'] = function (block) {
 		return procedureDefinitionCodeGen(Blockly, block, 1, false);
 	};
-	Blockly.JavaScript.forBlock['sc3_Proc1Stm'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Proc1Stm'] = function (block) {
 		return procedureDefinitionCodeGen(Blockly, block, 1, true);
 	};
-	Blockly.JavaScript.forBlock['sc3_Proc2'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Proc2'] = function (block) {
 		return procedureDefinitionCodeGen(Blockly, block, 2, false);
 	};
-	Blockly.JavaScript.forBlock['sc3_Proc2Stm'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Proc2Stm'] = function (block) {
 		return procedureDefinitionCodeGen(Blockly, block, 2, true);
 	};
-	Blockly.JavaScript.forBlock['sc3_SoundFileBuffer'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_SoundFileBuffer'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'SoundFileBuffer', [
 			'SOUNDFILEID',
 			'NUMBEROFCHANNELS',
 		]);
 	};
-	Blockly.JavaScript.forBlock['sc3_TimesRepeat'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_TimesRepeat'] = function (block) {
 		const count_value = Blockly.JavaScript.valueToCode(
 			block,
 			'COUNT',
@@ -155,39 +155,39 @@ export function initCodeGen(Blockly) {
 		) || '{}';
 		return `${count_value}.timesRepeat(${proc_code});`;
 	};
-	Blockly.JavaScript.forBlock['sc3_UnaryOp'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_UnaryOp'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), [
 			'IN',
 		]);
 	};
-	Blockly.JavaScript.forBlock['sc3_Voicer'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Voicer'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'Voicer', [
 			'PART',
 			'COUNT',
 			'PROC',
 		]);
 	};
-	Blockly.JavaScript.forBlock['sc3_VoiceWriter'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_VoiceWriter'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'VoiceWriter', [
 			'PART',
 			'COUNT',
 			'PROC',
 		]);
 	};
-	Blockly.JavaScript.forBlock['sc3_Value0'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Value0'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'value', ['PROC']);
 	};
-	Blockly.JavaScript.forBlock['sc3_Value1'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Value1'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'value', ['PROC', 'VALUE']);
 	};
-	Blockly.JavaScript.forBlock['sc3_Value2'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_Value2'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'value', [
 			'PROC',
 			'VALUE1',
 			'VALUE2',
 		]);
 	};
-	Blockly.JavaScript.forBlock['sc3_XFadeTexture'] = function (block) {
+	Blockly.JavaScript.forBlock['Sc_XFadeTexture'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'XFadeTexture', [
 			'PROC',
 			'SUSTAINTIME',

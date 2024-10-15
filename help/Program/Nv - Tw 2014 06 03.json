@@ -3,7 +3,7 @@
   "languageVersion": 0,
   "blocks": [
    {
-    "type": "sc3_Comment",
+    "type": "Sc_Comment",
     "id": ";6c38m.z0y51u~Rh5.[w",
     "x": 0,
     "y": 0,
@@ -22,7 +22,7 @@
       "inputs": {
        "VALUE": {
         "block": {
-         "type": "sc3_Proc1",
+         "type": "Sc_Proc1",
          "id": "vp[k~P2R%!-_J;^2{:gL",
          "inputs": {
           "VAR": {
@@ -38,7 +38,7 @@
           },
           "RETURN": {
            "block": {
-            "type": "sc3_BinaryOp",
+            "type": "Sc_BinaryOp",
             "id": "%0#D*9z{MdxkxjbXXLv1",
             "fields": {
              "OP": "+"
@@ -46,7 +46,7 @@
             "inputs": {
              "LHS": {
               "block": {
-               "type": "sc3_BinaryOp",
+               "type": "Sc_BinaryOp",
                "id": "$tdXV0{{A{`4BpECI@PQ",
                "fields": {
                 "OP": "/"
@@ -54,7 +54,7 @@
                "inputs": {
                 "LHS": {
                  "block": {
-                  "type": "sc3_ArrayProc1",
+                  "type": "Sc_ArrayProc1",
                   "id": "#/j~:_eg.J:qwB#DL5:O",
                   "fields": {
                    "OP": "product"
@@ -62,23 +62,23 @@
                   "inputs": {
                    "IN": {
                     "block": {
-                     "type": "sc3_ArrayFill",
+                     "type": "Sc_ArrayFill",
                      "id": "qXcl;O;h?{`/Gx/e}c2G",
                      "inputs": {
                       "PROC": {
                        "block": {
-                        "type": "sc3_Proc0",
+                        "type": "Sc_Proc0",
                         "id": "HVK:J=HYxw;Pqr,dt$B8",
                         "inputs": {
                          "RETURN": {
                           "block": {
-                           "type": "sc3_LFPulse",
+                           "type": "Sc_LFPulse",
                            "id": "b)L?b6fjyUaZ{Zm:ju3z",
                            "inline": false,
                            "inputs": {
                             "FREQ": {
                              "block": {
-                              "type": "sc3_BinaryOp",
+                              "type": "Sc_BinaryOp",
                               "id": "p_YbvyFXs.p,kSD_c3-]",
                               "inline": true,
                               "fields": {
@@ -96,7 +96,7 @@
                                },
                                "RHS": {
                                 "block": {
-                                 "type": "sc3_IRand",
+                                 "type": "Sc_IRand",
                                  "id": "qnUoe3[oIaxjjtW-2j*i",
                                  "inline": true,
                                  "inputs": {
@@ -144,7 +144,7 @@
                             },
                             "IPHASE": {
                              "block": {
-                              "type": "sc3_IRand",
+                              "type": "Sc_IRand",
                               "id": "nw$:VzO?ROQKL.IAJA-)",
                               "inline": true,
                               "inputs": {
@@ -246,7 +246,7 @@
                 },
                 "RHS": {
                  "block": {
-                  "type": "sc3_BinaryOp",
+                  "type": "Sc_BinaryOp",
                   "id": "U*rmfiTZA,DHSh7W)WrK",
                   "inline": true,
                   "fields": {
@@ -321,7 +321,7 @@
         "inputs": {
          "VALUE": {
           "block": {
-           "type": "sc3_Proc0Stm",
+           "type": "Sc_Proc0Stm",
            "id": "EJ!!SM3%hE#{FLGWN~j;",
            "inputs": {
             "STATEMENTS": {
@@ -336,7 +336,7 @@
               "inputs": {
                "VALUE": {
                 "block": {
-                 "type": "sc3_BinaryOp",
+                 "type": "Sc_BinaryOp",
                  "id": "bpZx~EYzT+qf!WPiv1L!",
                  "inline": true,
                  "fields": {
@@ -345,7 +345,7 @@
                  "inputs": {
                   "LHS": {
                    "block": {
-                    "type": "sc3_ArrayProc1",
+                    "type": "Sc_ArrayProc1",
                     "id": "5Z?96M:|~|+~lDMHCzk+",
                     "fields": {
                      "OP": "product"
@@ -353,13 +353,16 @@
                     "inputs": {
                      "IN": {
                       "block": {
-                       "type": "sc3_ArrayCollect",
-                       "id": "ZDpU0|la5Cs{OhH`kZ/j",
+                       "type": "Sc_ArrayProc2",
+                       "id": "3-}A^D%kwMP?J~6JAmag",
                        "inline": true,
+                       "fields": {
+                        "OP": "collect"
+                       },
                        "inputs": {
-                        "ARRAY": {
+                        "LHS": {
                          "block": {
-                          "type": "sc3_ArrayFromTo",
+                          "type": "Sc_ArrayFromTo",
                           "id": "ceL8H:`5:A~^2Mw|K|lG",
                           "inline": true,
                           "inputs": {
@@ -384,7 +387,7 @@
                           }
                          }
                         },
-                        "PROC": {
+                        "RHS": {
                          "block": {
                           "type": "variables_get",
                           "id": "q3;Bmxl+~Hn]ASR6Cre~",
@@ -418,13 +421,13 @@
             },
             "RETURN": {
              "block": {
-              "type": "sc3_Pluck",
+              "type": "Sc_Pluck",
               "id": "n2FHOHj5$?~Zrs4:MCU:",
               "inline": false,
               "inputs": {
                "IN": {
                 "block": {
-                 "type": "sc3_UnaryOp",
+                 "type": "Sc_UnaryOp",
                  "id": "C20%]BEHdCvFS`(5n|eY",
                  "fields": {
                   "OP": "Sin"
@@ -432,7 +435,7 @@
                  "inputs": {
                   "IN": {
                    "block": {
-                    "type": "sc3_BPF",
+                    "type": "Sc_BPF",
                     "id": "xz4oeCYj{xxQ{x!s~*vf",
                     "inline": true,
                     "inputs": {
@@ -493,7 +496,7 @@
                },
                "TRIG": {
                 "block": {
-                 "type": "sc3_Saw",
+                 "type": "Sc_Saw",
                  "id": "uv#0Xkt@0~_+vH3}JVl%",
                  "inline": true,
                  "inputs": {
@@ -538,7 +541,7 @@
                },
                "DELAYTIME": {
                 "block": {
-                 "type": "sc3_BinaryOp",
+                 "type": "Sc_BinaryOp",
                  "id": "w_EzL~7;{hE/wbw8Ww/C",
                  "inline": true,
                  "fields": {
@@ -613,12 +616,12 @@
         },
         "next": {
          "block": {
-          "type": "sc3_Play",
+          "type": "Sc_Play",
           "id": "1TEV:^23;e0Dv^2a[WXo",
           "inputs": {
            "CODE": {
             "block": {
-             "type": "sc3_Splay",
+             "type": "Sc_Splay",
              "id": "]Mw0~c]@aP5^tQmaLQ^P",
              "inline": true,
              "inputs": {
@@ -631,7 +634,7 @@
                 }
                },
                "block": {
-                "type": "sc3_ArrayFill",
+                "type": "Sc_ArrayFill",
                 "id": "Ra,m@WD2BP$s9#.}LP+[",
                 "inline": true,
                 "inputs": {

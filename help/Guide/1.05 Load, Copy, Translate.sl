@@ -19,7 +19,7 @@ Programs are stored as _.json_ files.
 _Load_ prompts to select a _.json_ file and loads it into the workspace.
 _Copy_ copies the _.json_ text describing the current workspace state to the clipboard, from where it can be pasted into an editor and saved as an _.json_ file.
 
-_BlkSc3_ also includes a translator from _Spl_ (_.sl_) notation to the _.json_ block notation.
+_BlkSc_ also includes a translator from _Spl_ (_.sl_) notation to the _.json_ block notation.
 
 This program was translated from the _.sl_ program:
 

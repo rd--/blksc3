@@ -13,7 +13,7 @@ Ordinarily an internal copy of the SuperCollider synthesiser is used.
 The _𝓔_ button selects the _external synthesiser_.
 This selection must be made before a connection is established using _Begin_.
 
-_BlkSc3_ cannot start an external synthesiser, the synthesiser must be started separately.
+_BlkSc_ cannot start an external synthesiser, the synthesiser must be started separately.
 
 At present the Sc synthesiser does not directly implement the
 [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) protocol

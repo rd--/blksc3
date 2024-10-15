@@ -3,7 +3,7 @@
   "languageVersion": 0,
   "blocks": [
    {
-    "type": "sc3_Comment",
+    "type": "Sc_Comment",
     "id": "_q8g~t^[Goa8[sF;NV|s",
     "x": 0,
     "y": 0,
@@ -96,7 +96,7 @@
         "inputs": {
          "VALUE": {
           "block": {
-           "type": "sc3_Proc1Stm",
+           "type": "Sc_Proc1Stm",
            "id": "43;f+}$$G3C}OiyPrS,r",
            "inputs": {
             "VAR": {
@@ -144,7 +144,7 @@
               },
               "next": {
                "block": {
-                "type": "sc3_TimesRepeat",
+                "type": "Sc_TimesRepeat",
                 "id": ".@ut,mkuSwsyNe:Wt}!0",
                 "inputs": {
                  "COUNT": {
@@ -160,7 +160,7 @@
                  },
                  "PROC": {
                   "block": {
-                   "type": "sc3_Proc0Stm",
+                   "type": "Sc_Proc0Stm",
                    "id": "O27zD9`c65iDqpPcyGhI",
                    "inputs": {
                     "STATEMENTS": {
@@ -175,7 +175,7 @@
                       "inputs": {
                        "VALUE": {
                         "block": {
-                         "type": "sc3_ArrayProc1",
+                         "type": "Sc_ArrayProc1",
                          "id": "#@TP;~yLr.^{k1zTrXry",
                          "fields": {
                           "OP": "concatenation"
@@ -183,11 +183,14 @@
                          "inputs": {
                           "IN": {
                            "block": {
-                            "type": "sc3_ArrayCollect",
+                            "type": "Sc_ArrayProc2",
                             "id": "32+1)ICU$-5UB@c^e+Rv",
                             "inline": true,
+                            "fields": {
+                             "OP": "collect"
+                            },
                             "inputs": {
-                             "ARRAY": {
+                             "LHS": {
                               "block": {
                                "type": "variables_get",
                                "id": "*jgm?PDoP^Z33{CCw--c",
@@ -198,9 +201,9 @@
                                }
                               }
                              },
-                             "PROC": {
+                             "RHS": {
                               "block": {
-                               "type": "sc3_Proc1",
+                               "type": "Sc_Proc1",
                                "id": "rIQ:5s/cc^8~m$F-WP5w",
                                "inline": true,
                                "inputs": {
@@ -217,7 +220,7 @@
                                 },
                                 "RETURN": {
                                  "block": {
-                                  "type": "sc3_ArrayProc2",
+                                  "type": "Sc_ArrayProc2",
                                   "id": "[Em5ins-FA)6{%FC0~%_",
                                   "inline": true,
                                   "fields": {
@@ -237,7 +240,7 @@
                                    },
                                    "RHS": {
                                     "block": {
-                                     "type": "sc3_BinaryOp",
+                                     "type": "Sc_BinaryOp",
                                      "id": "MDJ+3K!ed;N[64bjaj$j",
                                      "inline": true,
                                      "fields": {
@@ -337,7 +340,7 @@
             "inputs": {
              "VALUE": {
               "block": {
-               "type": "sc3_Proc1Stm",
+               "type": "Sc_Proc1Stm",
                "id": "8%(d=ITb2G~|$gp:/Rs,",
                "inputs": {
                 "VAR": {
@@ -363,7 +366,7 @@
                   "inputs": {
                    "VALUE": {
                     "block": {
-                     "type": "sc3_Value1",
+                     "type": "Sc_Value1",
                      "id": ":/~%P$^GLBR{oKO$/CNx",
                      "inline": true,
                      "inputs": {
@@ -380,7 +383,7 @@
                       },
                       "VALUE": {
                        "block": {
-                        "type": "sc3_BinaryOp",
+                        "type": "Sc_BinaryOp",
                         "id": "R.|)mBDB`f0w2^W!@,c%",
                         "inline": true,
                         "fields": {
@@ -426,7 +429,7 @@
                     "inputs": {
                      "VALUE": {
                       "block": {
-                       "type": "sc3_BinaryOp",
+                       "type": "Sc_BinaryOp",
                        "id": "eCRq#@J-7MKvp`0(aQwj",
                        "inline": false,
                        "fields": {
@@ -435,7 +438,7 @@
                        "inputs": {
                         "LHS": {
                          "block": {
-                          "type": "sc3_BinaryOp",
+                          "type": "Sc_BinaryOp",
                           "id": "51,]_:eS$-znnFpP1|I!",
                           "inline": true,
                           "fields": {
@@ -444,7 +447,7 @@
                           "inputs": {
                            "LHS": {
                             "block": {
-                             "type": "sc3_BinaryOp",
+                             "type": "Sc_BinaryOp",
                              "id": ";t}?|(2-~Qe3{83A0w0p",
                              "inline": true,
                              "fields": {
@@ -462,7 +465,7 @@
                               },
                               "RHS": {
                                "block": {
-                                "type": "sc3_SampleRate",
+                                "type": "Sc_SampleRate",
                                 "id": "r-R#g7WP/s9nTs|XHPr:",
                                 "inline": true,
                                 "inputs": {
@@ -492,7 +495,7 @@
                            },
                            "RHS": {
                             "block": {
-                             "type": "sc3_BinaryOp",
+                             "type": "Sc_BinaryOp",
                              "id": "gCOIrC5nt70U%M*y3X}o",
                              "inline": true,
                              "fields": {
@@ -501,7 +504,7 @@
                              "inputs": {
                               "LHS": {
                                "block": {
-                                "type": "sc3_BinaryOp",
+                                "type": "Sc_BinaryOp",
                                 "id": "W[oEjwJ4xRwJo[k,@r2?",
                                 "inline": true,
                                 "fields": {
@@ -550,7 +553,7 @@
                         },
                         "RHS": {
                          "block": {
-                          "type": "sc3_MouseX",
+                          "type": "Sc_MouseX",
                           "id": "0`3t9UeF%kJ[GA]-+It^",
                           "inline": true,
                           "inputs": {
@@ -565,7 +568,7 @@
                            },
                            "MAXVAL": {
                             "block": {
-                             "type": "sc3_SampleRate",
+                             "type": "Sc_SampleRate",
                              "id": "Q#e(}[$a}Q+(-=i4Nlv4",
                              "inline": true,
                              "inputs": {
@@ -639,7 +642,7 @@
                 },
                 "RETURN": {
                  "block": {
-                  "type": "sc3_TDuty",
+                  "type": "Sc_TDuty",
                   "id": "Jcgdi,M3bX!bihDH(eSU",
                   "inline": true,
                   "inputs": {
@@ -665,13 +668,13 @@
                    },
                    "LEVEL": {
                     "block": {
-                     "type": "sc3_Dseq",
+                     "type": "Sc_Dseq",
                      "id": "gD^lCmAJDCv4HzY7gcMg",
                      "inline": true,
                      "inputs": {
                       "REPEATS": {
                        "block": {
-                        "type": "sc3_Constant",
+                        "type": "Sc_Constant",
                         "id": "PH+SzFa-Syhs5~#ud8U[",
                         "fields": {
                          "CONST": "inf"
@@ -680,7 +683,7 @@
                       },
                       "ARRAY": {
                        "block": {
-                        "type": "sc3_BinaryOp",
+                        "type": "Sc_BinaryOp",
                         "id": "oa@]Pj[8f:e4s:7i#pN=",
                         "inline": true,
                         "fields": {
@@ -758,12 +761,12 @@
             },
             "next": {
              "block": {
-              "type": "sc3_Play",
+              "type": "Sc_Play",
               "id": "%yF8u[7CYB/*}qT(Cnb4",
               "inputs": {
                "CODE": {
                 "block": {
-                 "type": "sc3_BinaryOp",
+                 "type": "Sc_BinaryOp",
                  "id": "se^P/|Kr]7o~G,k|ySC]",
                  "inline": true,
                  "fields": {
@@ -772,7 +775,7 @@
                  "inputs": {
                   "LHS": {
                    "block": {
-                    "type": "sc3_Splay",
+                    "type": "Sc_Splay",
                     "id": "Ea`Nfkp.h1O7nCX-yx~w",
                     "inline": true,
                     "inputs": {
@@ -785,13 +788,16 @@
                        }
                       },
                       "block": {
-                       "type": "sc3_ArrayCollect",
+                       "type": "Sc_ArrayProc2",
                        "id": "-j~-8m)b7)+WWo3LO__5",
                        "inline": true,
+                       "fields": {
+                        "OP": "collect"
+                       },
                        "inputs": {
-                        "ARRAY": {
+                        "LHS": {
                          "block": {
-                          "type": "sc3_ArrayFromTo",
+                          "type": "Sc_ArrayFromTo",
                           "id": "yhm[[j9]RQ0Wd[]n!J#2",
                           "inline": true,
                           "inputs": {
@@ -806,7 +812,7 @@
                            },
                            "TO": {
                             "block": {
-                             "type": "sc3_BinaryOp",
+                             "type": "Sc_BinaryOp",
                              "id": "qL,^E7HE_iu!G?=;V8Wi",
                              "inline": true,
                              "fields": {
@@ -839,7 +845,7 @@
                           }
                          }
                         },
-                        "PROC": {
+                        "RHS": {
                          "block": {
                           "type": "variables_get",
                           "id": "c4tRay}-;y/!b0Y+KST]",
