@@ -37,7 +37,7 @@ Block identifiers are opaque values, they are used internally to distinguish oth
 
 The text displayed on a block is called the block message.
 The block message is distinct from the block type,
-and the block message is not stored as part of the program.
+and is not stored as part of the program.
 This allows for separate sets of block messages to be defined,
 so that block programs can be translated into different languages,
 or so that blocks can have both symbolic and text naming schemes.
@@ -64,6 +64,17 @@ Identifiers are written in mixed case as `SinOsc`, `LfSaw` and `Fft`.
 
 The blocks in the toolbox are organised into categories, which may be further organised into sub-categories.
 Blocks in the same category are assigned the same colour.
+
+## Cleanup
+
+The _Cleanup_ button tidies the current drawing.
+Among other tasks it will move any obscured blocks into an open area.
+The _Cleanup_ button can be selected using the _o_ access key.
+
+## Clear
+
+The _Clear_ button deletes the current drawing.
+The _Clear_ button can be selected using the _k_ access key.
 
 ## Code Generator
 
@@ -122,7 +133,12 @@ The figure below shows a ∿ (_SinOsc_) block with 𝒞 inputs for both frequenc
 
 ![](sw/blksc3/png/ControlField.png)
 
-## Copy & Paste
+## Copy
+
+The _Copy_ button copies the internal notation of the current program to the clipboard.
+The _Copy_ button can be selected using the _c_ access key.
+
+## Copy and Paste
 
 A block can be copied by typing _Ctl-c_.
 A copied block can be pasted by typing _Ctl-v_.
@@ -148,6 +164,12 @@ The display menu can be selected using the _y_ access key.
 
 A block can be _duplicated_ using the _Duplicate_ item in the context menu.
 
+## Eval
+
+The _Eval_ button evaluates the program in the workspace and sends it to the synthesiser.
+It does not send the answer to the synthesiser.
+The _Eval_ button can be selected using the _/_ access key.
+
 ## Expression
 
 An expression is a program that can be evaluated to give an answer,
@@ -171,6 +193,11 @@ The figure below shows the ∿ (_SinOsc_) block with external inputs.
 
 Block SuperCollider ordinarily runs a copy of the SuperCollider synthesiser (`scsynth`) within the browser.
 However it can also communicate with an external synthesiser by sending messages over a socket.
+
+## Fit
+
+The _Fit_ button rescales the current drawing so that it fits in the workspace.
+The _Fit_ button can be selected using the _=_ access key.
 
 ## Forest
 
@@ -267,12 +294,23 @@ The `x` binding in the λ block is local, it does not interact with the outer `x
 
 ![](sw/blksc3/png/LexicalScope.png)
 
+## Load
+
+The _Load_ button opens a file selection dialog to select a _.json_ file,
+and loads the selected file into the workspace.
+The _Load_ button can be selected using the _l_ access key.
+
 ## Menu Field
 
 Block fields with a ▼ indicator are menus, from which items may be selected.
 The figure below shows a numeric constant block with the menu open.
 
 ![](sw/blksc3/png/NumericConstant.png)
+
+## Multiply and Add
+
+All unit generator blocks that have an output have × (_Multiply_) and + (_Add_) inputs.
+There is a [Multiply and Add](http://blksc3.rohandrape.net/?e=help/Guide/2.01%20Multiply%20and%20Add) section in the _Guide_.
 
 ## Naming Scheme
 
@@ -358,6 +396,12 @@ and a single outlet on the lower edge.
 Boxes are connected by lines to form a tree.
 OpenMusic (Assayag 1996) is a descendent of Patchwork.
 
+## Play
+
+The _Play_ button evaluates the program in the workspace and sends it to the synthesiser.
+There is also a _Play_ entry in the workspace context menu.
+The _Play_ button can be selected using the _,_ access key.
+
 ## Play Block
 
 The ⊳ (_Play_) block is a statement block that indicates the end of the program.
@@ -385,12 +429,26 @@ A procedure, or operator or function or method, is a named behaviour that perfor
 ## Program Oracle
 
 The program oracle (易) selects at random from a subset of the list of programs in the program menu.
+The 易 button can be selected using the _r_ access key.
 
 ## Programs
 
 There is a list of illustrative SuperCollider [Programs](https://blksc3.rohandrape.net/?e=help/Program/--Programs--) that have been translated into block drawings.
 The programs are arranged by author initials and include references to the original sources.
 The _Programs_ menu can be selected using the _p_ access key.
+
+## Replace
+
+The _Replace_ button evaluates the program in the workspace and sends the answer to the synthesiser,
+apllying a cross-fade with the previous program.
+There is also a _Replace_ entry in the workspace context menu.
+The _Replace_ button can be selected using the _-_ access key.
+
+## Reset
+
+The _Reset_ button resets the synthesiser.
+There is also a _Reset_ entry in the workspace context menu.
+The _Reset_ button can be selected using the _._ access key.
 
 ## Scalable Vector Graphics
 
@@ -421,7 +479,7 @@ The _ν_ (_Frequency_) and ¹⁄𝑄 (_ReciprocalOfQ_) inputs are replaced by nu
 ## Simple Programming Language
 
 Simple Programming Language (Spl),
-or Simple Language,
+or Simple Language (Sl),
 is the language that Block SuperCollider programs are drawings of,
 and that the drawings are translated into when evaluated.
 
@@ -493,7 +551,8 @@ The symbols used are:
 - +: add
 
 The naming scheme also applies to menu fields.
-The figure below shows the ⊥ (_False_) block using the symbolic naming scheme.
+The figure below shows the boolean block using the symbolic naming scheme,
+with the ⊥ (_False_) item selected.
 
 ![](sw/blksc3/png/False.png)
 
@@ -542,7 +601,8 @@ and a one sentence synopsis.
 
 ## Translator
 
-Block SuperCollider includes a program called _translator_ that can translate some _Simple Programming Language_ text programs into block drawings.
+Block SuperCollider includes a program called _translator_ that can translate some Simple Programming Language text programs into block drawings.
+The illustration programs were translated from an existing collection of text programs.
 The translator is the mirror inverse of the code generator.
 However while all block drawings can generate text programs, not all text programs can be drawn.
 

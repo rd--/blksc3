@@ -3,23 +3,23 @@
 ## What is Block SuperCollider?
 
 Block SuperCollider is a visual programming language specialised for writing programs for the SuperCollider synthesiser.
-
 There is a concise overview of Block SuperCollider in
 [§1.01](https://blksc3.rohandrape.net/?e=help/Guide/1.01%20Block%20SuperCollider)
 of the Guide.
 
-## Why Block SuperCollider?
+## Where is JavaScript SuperCollider defined?
 
-## What is JavaScript SuperCollider?
+- <https://rohandrape.net/t/jssc3>
 
-## What is Simple Programming Language?
+## Where is the Simple Programming Language defined?
 
-## What is the toolbox?
+- <https://rohandrape.net/t/spl>
 
 ## How are the notes texts defined?
 
-For each .json help file there is a corresponding .sl file.
-The notes are any text in the .sl following a comment line containing the string `---- notes.md ----`.
+For each `.json` help file there is a corresponding `.sl` file.
+The notes are any text in the `.sl` following a line containing the string `---- notes.md ----`.
+If there are no notes the `.sl` program is given.
 
 ## Where are the initials in the help files explained?
 

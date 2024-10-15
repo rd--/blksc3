@@ -28,7 +28,7 @@ This program contains blocks belonging to each of the five families of signal pr
 In addition
 × and ÷ are in _Math_,
 ⟦⟧ is in _List_,
-≔ is in _Var_,
+≔ is in _Variables_,
 and “ and ▷ are in _Meta_.
 
 This program generates quiet pink noise processed by four upward sweeping filters.

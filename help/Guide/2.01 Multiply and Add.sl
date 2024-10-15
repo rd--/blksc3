@@ -4,7 +4,7 @@
 {- ---- notes.md ---- -}
 # Multiply and Add
 
-All blocks with an _output connector_ have × (_multiplier_) and + (_adder_) inputs.
+All blocks with an _output connector_ have × (_Multiply_) and + (_Add_) inputs.
 These inputs, initialised to one and zero respectively, allow adjusting the scale and bias of blocks without introducing an extra block.
 These adjustments are made to the block after it is defined.
 This means that, in constrast to the SuperCollider language forms, the × and + inputs do not form part of the multiple channel expansion protocol for the block.

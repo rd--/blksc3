@@ -7,7 +7,7 @@
 {- ---- notes.md ---- -}
 # Block SuperCollider
 
-_Block SuperCollider_ (BlkSc3) is a [block](https://developers.google.com/blockly) editor for the [SuperCollider](https://www.audiosynth.com/) (Sc) synthesiser.
+_Block SuperCollider_ (BlkSc) is a [block](https://developers.google.com/blockly) editor for the [SuperCollider](https://www.audiosynth.com/) (Sc) synthesiser.
 
 Block editors are a family of visual programming systems that use interlocking graphical blocks to represent the elements of a program.
 
