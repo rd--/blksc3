@@ -147,7 +147,7 @@ A copied block can be pasted by typing _Ctl-v_.
 
 Blocks can be deleted using the _Delete_ item in the context menu,
 or by pressing the _Delete_ key.
-When a block is deleted all of its descendents are deleted along with it.
+When a block is deleted all of its descendants are deleted along with it.
 Deletion can be _undone_.
 
 ## Display
@@ -157,7 +157,7 @@ The rule sets the shape and size of the workspace and selects the font size for 
 The default rule is _%×%_, which allocates space as a proportion of the size of the viewport.
 In addition there is a set of fixed size layouts, such as _1366×768_, named by display dimensions.
 The fixed size layouts are useful for seeing how programs will appear on other displays,
-assuming that the browswer window occupies most of the display.
+assuming that the browser window occupies most of the display.
 The display menu can be selected using the _y_ access key.
 
 ## Duplicate
@@ -196,7 +196,7 @@ However it can also communicate with an external synthesiser by sending messages
 
 ## Fit
 
-The _Fit_ button rescales the current drawing so that it fits in the workspace.
+The _Fit_ button scales the current drawing so that it fits in the workspace.
 The _Fit_ button can be selected using the _=_ access key.
 
 ## Forest
@@ -282,7 +282,7 @@ and the output connector is on the left edge.
 
 A let binding introduces a local variable and assigns it an initial value.
 Let bindings must be grouped together at the start of a statement stack.
-In the figure below a local variable _x_ is defined to have the value of the matematical constant _e_.
+In the figure below a local variable _x_ is defined to have the value of the mathematical constant _e_.
 
 ![](sw/blksc3/png/LetBinding.png)
 
@@ -348,7 +348,7 @@ The figure below shows the number twenty three divided by an approximation of π
 
 ## Numeric Constant
 
-The numeric constant block is a block with a menu containg a number of predefined mathematical constants,
+The numeric constant block is a block with a menu containing a number of predefined mathematical constants,
 such as π (_Pi_), 2×π (_TwoPi_), 𝑒 (_E_) and ∞ (_Infinity_).
 It is fetched from the _Constants_ category of the toolbox.
 
@@ -441,7 +441,7 @@ The _Programs_ menu can be selected using the _p_ access key.
 ## Replace
 
 The _Replace_ button evaluates the program in the workspace and sends the answer to the synthesiser,
-apllying a cross-fade with the previous program.
+applying a cross-fade with the previous program.
 There is also a _Replace_ entry in the workspace context menu.
 The _Replace_ button can be selected using the _-_ access key.
 
@@ -500,7 +500,7 @@ fit on a display of size 1366×768.
 
 ## Statement
 
-A statement is an experession that is evaluated for its effect and that does not answer a value.
+A statement is an expression that is evaluated for its effect and that does not answer a value.
 
 ## Statement Blocks
 
@@ -671,7 +671,7 @@ The address of a World Wide Web page, abbreviated as Url.
 
 A value input accepts an output connector of an expression block.
 When the input is internal it is drawn as a missing puzzle piece,
-when the input is external it is drawn as a puzzle piece connecter on the right edge.
+when the input is external it is drawn as a puzzle piece connector on the right edge.
 The figure below shows the no-argument λ (_Lambda_) block.
 The ⦙ (_Statements_) input is a statement input,
 the ← (_Return_) input is a value input.
@@ -735,6 +735,6 @@ It allows documents to be accessed over the internet using the Hypertext Transfe
 
 ## Zoom
 
-The workspace has controls to zoom in (⊕) and out (⊖) of the drawing, and to center it at its initial scale (⊙).
+The workspace has controls to zoom in (⊕) and out (⊖) of the drawing, and to centre it at its initial scale (⊙).
 A mouse scroll wheel will also control workspace scaling.
-The block drawing is implemented using vector drawing primitives and scales without artifacts.
+The block drawing is implemented using vector drawing primitives and scales without artefacts.

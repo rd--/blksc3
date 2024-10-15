@@ -6,12 +6,12 @@ rohan.drape@gmail.com
 ## Abstract
 
 Block SuperCollider is an experimental visual programming language specialised for writing programs for the SuperCollider synthesiser.
-The system investigates eight areas of research:
+The system addresses eight areas of research:
 1\. rich-text editors for SuperCollider programs,
 2\. rendering program texts as interactive control surfaces,
-3\. browser based editors for the WebAssembly SuperCollider synthesiser,
+3\. browser based editors for the Wasm SuperCollider synthesiser,
 4\. tablet and pen based editors for SuperCollider programs,
-5\. environments for musicians who are non-programmers working with SuperCollider,
+5\. environments to help musicians who are non-programmers work with SuperCollider,
 6\. literate programming systems for SuperCollider programs,
 7\. simple systems for sharing SuperCollider programs with non-experts,
 and
@@ -29,7 +29,7 @@ Block editors are a family of visual programming systems that use interlocking g
 For instance there are blocks to represent variable assignment and reference, procedure definition and application, and logical and mathematical operators.
 Block SuperCollider also has blocks for the standard components of a synthesiser: oscillators, noise generators, filters, envelopes, panners, signal analysers and control signal generators.
 To make sound Block SuperCollider translates the block program into a form understood by the synthesiser and sends it to be played using the appropriate messaging protocol.
-Ordinarily the system runs an in-process copy of the synthesiser, compiled to Wasm (Rossberg 2019), within the browser.
+Ordinarily the system runs its own in-process copy of the synthesiser, compiled to Wasm (Rossberg 2019), within the browser.
 However it can also communicate with an external synthesiser by sending messages over a socket.
 The figure below shows the Block SuperCollider system.
 
@@ -82,10 +82,11 @@ The block message is distinct from the block name,
 and it is not stored as part of the program.
 This allows separate sets of block messages to be defined.
 Block SuperCollider defines two sets of messages,
-a symbolic set that provides concise symbolic names for each block and each parameter of each block,
-and a text set that provides a longer name for the block and elides the parameter names.
+1\. a symbolic set that provides concise symbolic names for each block,
+and for each parameter of each block, and
+2\. a text set that provides a longer name for the block and elides the parameter names.
 The 𝑁 control selects between the symbolic and text naming schemes.
-The figure below shows the sine oscillator unit generator block using the symbolic naming scheme.
+The figure below shows the sine oscillator unit-generator block using the symbolic naming scheme.
 The symbols used are:
 1\. ∿: sine,
 2\. ν: frequency,
@@ -130,7 +131,12 @@ All of the blocks can be deleted using _Clear_.
 Programs are stored as Json (Crockford 2006) files,
 _Load_ prompts to select a file and loads it into the workspace,
 _Copy_ copies the text describing the current workspace state to the clipboard.
-The program oracle (易) selects at random from a subset of the list of programs in the program menu.
+The _Display_ menu selects the page layout rule.
+The rule sets the shape and size of the workspace and selects the font size for the notes area.
+The default rule is %×%, which allocates space as a proportion of the size of the viewport.
+In addition there is a set of fixed size layouts, such as 1366×768, named by display dimensions.
+The fixed size layouts are useful for seeing how programs will appear on other displays,
+assuming that the browser window occupies most of the display.
 The _Play_, _Replace_ and _Reset_ controls have the same meanings as the respective items in the workspace context menu.
 All controls have keyboard shortcuts.
 
@@ -139,13 +145,16 @@ All controls have keyboard shortcuts.
 In addition to the controls,
 there are three collections of illustration programs that can be selected from menus below the workspace.
 When a program is selected the current workspace program is deleted, as if _Clear_ had been run.
-There is a _Guide_, which consists of simple programs accompanied by an explanatory text that appears in the notes area to the right of the workspace.
+There is a _Guide_, which consists of a sequence of simple programs accompanied by explanatory texts that appears in the notes area to the right of the workspace.
 There are _Help_ programs to illustrate individual blocks.
-There is a collection of a few hundred _Programs_ that have been translated into block drawings from existing SuperCollider text programs by various authors.
+In addition there is a collection of a few hundred SuperCollider _Programs_ that have been translated into block drawings from existing SuperCollider texts by various authors.
 These programs are sometimes quite intricate and illustrate more complicated synthesis techniques and linguistic constructions.
-Authors are indicated by their initials and comments indicate where the program was initially published.
-There is also a separate list that selects only the _Small Programs_ from the larger collection,
-programs that readily fit on the display of a small portable computer.
+Authors are indicated by their initials,
+and comments indicate where the program was initially published.
+An entry in the guide explicates the author initials.
+There is also a separate list that selects only the _Small Programs_ from the larger collection.
+A small program is defined as a drawing that readily fits on the display of a small portable computer.
+The program oracle (易) selects at random from a subset of the list of programs in the program menu.
 
 ## Translators
 
@@ -178,12 +187,13 @@ CombC(
 
 ## Control Fields
 
-The block 𝒞 (_ControlField_) is a _named control_ for which a unique name is assigned by the system.
+The block 𝒞 (_ControlField_) defines a named control unit-generator,
+for which a unique name is automatically assigned by the system.
 When the text field of 𝒞 is edited, the new value is sent immediately to the synthesiser.
 𝒞 is both a part of the definition of the synthesis program and,
 while the program is running,
 an interactive controller for the executing program.
-The program text is, at the same time, the control surface.
+The text that defines the program is, at the same time, the control surface.
 This elementary construct,
 which is simple both to comprehend and to implement in a visual program editor,
 poses numerous very subtle problems when translated to a text editor.
@@ -198,22 +208,22 @@ The figure below shows a ∿ (_SinOsc_) block with 𝒞 inputs for both frequenc
 A statement block is a block that does not answer a value,
 and therefore does not have an output connector.
 Statements may have a previous statement connector at the top or a next statement connector at the bottom or both.
-Statement may also have input connectors at the right.
+Statements may also have input connectors at the right.
 Input connectors are of two types, accepting either value blocks or statement blocks but not both.
 It is clear from looking at the connectors what will connect to what,
 and the system will not allow wrong connections.
 In addition, blocks can have value type annotations,
 specifying what type of value a block answers and what type of value each input must be.
-The system does not allow blocks with incompatible value types to be connected either.
+The system likewise does not allow blocks with incompatible value types to be connected.
 In the figure below, the ! (_Duplicate_) block checks that the 𝑓 input is a procedure of no arguments,
 and that the # input is a number,
 and also indicates that its answer is a list.
 The system would not allow the ⚁ block to be moved from the × input of ∿ to the # input of !,
 it would bounce off and the attempted connection would fail.
 Inputs and outputs can also be annotated with _sets_ of types.
-Unit generator inputs may ordinarily be either other unit generators or lists,
+Unit-generator inputs may ordinarily be either other unit-generators or lists,
 and in some cases numbers,
-and will accept blocks answering any of these types.
+and will accept blocks answering any one of these types.
 
 ![](sw/blksc3/png/TypeAnnotation.png)
 
@@ -224,50 +234,54 @@ encompassing systems of very different kinds.
 Four music related systems are of particular note:
 Kyma (Scaletti 1988),
 Max (Puckette 1988),
-Patchwork (Laurson 1989),
+Patchwork (Laurson 1989)
 and
-SchemeBricks (Griffiths 2013).
+SchemeBricks (Griffiths 2008).
 The first three belong to the same family of visual editors,
-in which programs elements are drawn as boxes,
-with inlets on the top or left edge,
-and outlets on the lower or right edge.
+in which programs elements are drawn as boxes with inlets on the top or left edge,
+and with outlets on the lower or right edge.
 The boxes are connected together by lines to form a graph.
 The evaluation model of Kyma is closely related to that described here,
-a high-level program is compiled to a low-level program which is then sent to a dedicated synthesiser.
+a high-level program,
+described by a drawing,
+is compiled to a low-level program which is then sent to a dedicated synthesiser.
 Kyma also implements a toolbox system for fetching new program elements,
-and a type system that only allows these elements to placed at correct points in an existing graph.
+and a type system that only allows these elements to be placed at correct points in an existing graph.
 The evaluation model of Max is rather different,
-it includes both a data flow signal processing system for audio signals and a reactive system for discrete events.
-However Max is an excellent model for thinking about how to incorporate the control interface directly into the program text.
+it includes both a data flow system for audio signals and a reactive system for discrete events,
+however Max is an excellent model for thinking about how to incorporate the control interface directly into the program text.
 The evaluation model of Patchwork is very close to that adopted here,
 the graph drawing maps directly to a Lisp program that is evaluated by a Lisp interpreter,
 however Patchwork is only very indirectly a language for sound synthesis.
-SchemeBricks is the only system that belongs in the same family of block editors described here,
-which are drawings of trees and not graphs,
+SchemeBricks belongs in the same family of block editors described here,
+which are drawings of trees and not graphs and therefore well suited to applicative languages such as Lisp,
 however the evaluation model is closer to the reactive model of Max.
+The lineage of block editors can be traced back at least to AgentSheets (Repenning 1993).
 
-## Further Research
+## Future Research
 
-Block SuperCollider is an experimental personal research project.
+Block SuperCollider is an experimental, personal research project that is still in its early stages of development.
 Considered as a proof of concept, the system behaves remarkably well.
 The large collection of illustration programs,
 the extensive guide,
-and the contents of the toolbox provide a detailed view of the current extent of the system.
-However there are a great many inconvenient aspects to working with the system that make it unsuitable for extensive non-expert use.
-The most open and interesting area for further work is centred around designing,
-and implementing,
-further reactive event-based control and display blocks.
-An initial step would be to write a simple inline _poll_ block,
+and the contents of the toolbox,
+provide a detailed view of the current extent of the system.
+However there remain a number of inconvenient aspects to working with the system which will take some time to address,
+and which make the system unsuitable for extensive non-expert use at this time.
+The most open and interesting areas for future work are centred around the design and implemention of further reactive event-based control and display blocks.
+An initial step will be to write a simple inline _poll_ block,
 the analytic counterpart of the 𝒞 block described above.
-However for this work to progress the current set of Wasm patches need revising.
+However for this work to progress the current set of Wasm patches to SuperCollider need revising.
 The present implementation does not place the synthesiser in the correct browser audio context,
-which introduces an unworkable amount of latency for most interactive use cases.
+and this introduces an unworkable amount of latency for most interactive use cases.
+At the present time,
+interactive musical use of the system is only practicable when working with an external instance of the synthesiser.
 
 ## Conclusion
 
 Block SuperCollider connects two mature, stable and useful ecosystems,
 the Blockly block editor and the SuperCollider synthesiser.
-It runs in the three main browsers, and on computers, tablets and telephones.
+It runs in the three most widely used browser systems, and on computers, tablets and telephones.
 The system is self documenting and encourages a form of literate programming.
 Block programs can act as their own control surfaces,
 and the nature of the editing environment may make the system more approachable for musicians who are not familiar with text programming systems.
@@ -280,3 +294,60 @@ SuperCollider is by James McCartney and others.
 Blockly is by Neil Fraser and others.
 The Wasm patches for the SuperCollider synthesiser are by Hanns Holger Rutz and others.
 OhmJs is by Alessandro Warth and others.
+
+## References
+
+Rossberg, A. (ed.).
+WebAssembly Core Specification.
+Technical Report, World Wide Web Consortium, Dec. 2019.
+[URL](https://www.w3.org/TR/wasm-core-1/)
+
+Crockford, D.
+The application/json Media Type for JavaScript Object Notation (JSON).
+RFC 4627, July 2006.
+[URL](https://www.rfc-editor.org/info/rfc4627)
+
+Fraser, N.
+Ten things we've learned from Blockly.
+In _IEEE Blocks and Beyond_. October 2015.
+[URL](https://developers.google.cn/blockly/publications/papers/TenThingsWeveLearnedFromBlockly.pdf)
+
+Griffiths, D.
+_Scheme Bricks_.
+Computer program, 2008.
+[URL](https://github.com/nebogeo/scheme-bricks)
+
+Gruber, J.
+_Markdown_.
+Dec. 2004.
+[URL](https://daringfireball.net/projects/markdown/)
+
+Laurson, M. and Duthen, J.
+Patchwork: a Graphic Language in preFORM.
+In _Proc. ICMC_. 1989.
+[URL](https://hdl.handle.net/2027/spo.bbp2372.1989.042)
+
+McCartney, J.
+SuperCollider: a new real time synthesis language.
+In _Proc. ICMC_. 1996.
+[URL](http://hdl.handle.net/2027/spo.bbp2372.1996.078)
+
+Puckette, M.
+The Patcher.
+In _Proc. ICMC_, 420–429. 1988.
+[URL](http://hdl.handle.net/2027/spo.bbp2372.1988.046)
+
+Putnam, L.
+_SuperCollider One-liners_.
+Computer program, 2004.
+[URL](https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html)
+
+Repenning, A.
+_Agentsheets: A Tool for Building Domain-Oriented Dynamic, Visual Environments_.
+PhD thesis, University of Colorado at Boulder, USA, 1993. UMI Order No. GAX94-23532.
+[URL](https://home.cs.colorado.edu/~ralex/papers/PDF/Repenning-PhD.pdf)
+
+Scaletti, C. and Johnson, R.
+An interactive environment for object-oriented music composition and sound synthesis.
+_SIGPLAN Not._, 23(11):222–233, 1988.
+[DOI](https://www.doi.org/10.1145/62084.62103)
