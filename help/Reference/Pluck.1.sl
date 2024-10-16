@@ -1,7 +1,20 @@
-{- Pluck.1 ; event control -}
-Voicer(1, 16, { :e |
-    let dm = 1 / 220;
-    let dl = (e.x.negated * 0.9 + 1) * dm;
-    let sig = Pluck(WhiteNoise() * e.z, e.w, dm, dl, 10, e.y / 3);
-    EqPan2(sig, e.i * 2 - 1)
-}).sum
+{- Pluck.2 ; https://scsynth.org/t/what-kind-of-synthesis-is-this/4318/17 (nh) -}
+let freq = LfNoise2(1);
+let trig = Impulse(LinExp(freq, -1, 1, 1, 100), 0);
+let freqs = (60.5 + [0 2 4 5 7 9 10]).MidiCps;
+let snd = Pluck(
+	Hasher(Sweep(trig, 1)) * -10.DbAmp,
+	trig,
+	freqs.Recip,
+	freqs.Recip,
+	0.9,
+	0.5
+);
+snd := LeakDc(snd, 0.995).sum;
+snd := MoogFf(
+	snd,
+	LinExp(LfNoise2(1), -1, 1, 500, 16000),
+	0,
+	0
+);
+EqPan2(snd, freq)

@@ -1,16 +1,23 @@
-{- CombC.1.sl ; event control -}
-let lfo = SinOsc(0.5, 0);
-let osc = Voicer(1, 16) { :e |
-	SinOsc(e.p.UnitCps, 0) * lfo * e.w * e.z
-};
-CombC(osc.Splay2, 0.5, 0.2, 3)
+{- CombC ; glissandi -}
+let lwr = 48;
+let tr = { Dust(0.65) } ! 2;
+{
+	let n = LinLin(LfNoise2(0.1), -1, 1, lwr, 72);
+	let e = Decay2(tr, 0.05, TRand(0.05, 0.75, tr));
+	let x = PinkNoise() * e * 0.1;
+	let m = LfNoise2(0.1);
+	let f = Lag(n.MidiCps, 0.25);
+	CombC(x, lwr.MidiCps.Recip, f.Recip, LinLin(m, -1, 1, 1, 8))
+} !+ 12 * 0.1
 
 {- ---- notes.md ---- -}
 # CombC
 
-ᚊ (_CombC_) is a comb format delay line with cubic interpolation.
+- _CombC(in, maxdelaytime, delaytime, decaytime)_
 
-The ⎵ (_delay_) and ↘ (_decay_) times are both in seconds.
+Comb delay line. CombN uses no interpolation, CombL uses linear interpolation, CombC uses cubic interpolation.
 
-The _i_-rate ⌈⎵ (_maximum delay_) time is used to allocate memory.
-The time-varying ⎵ parameter should not exceed ⌈⎵.
+- in: the input signal.
+- maxdelaytime: the maximum delay time in seconds. used to initialize the delay buffer size.
+- delaytime: delay time in seconds.
+- decaytime: time for the echoes to decay by 60 decibels. If this time is negative then the feedback coefficient will be negative, thus emphasizing only odd harmonics at an octave lower.

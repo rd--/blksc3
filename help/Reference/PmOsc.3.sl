@@ -1,9 +1,19 @@
-{- PmOsc.3 ; event control -}
-let s = Voicer(1, 16, { :e |
-    let cps = (e.x * 24 + 42).MidiCps;
-    let cpsv = cps + (cps * SinOsc(e.y * 4 + 4, 0) * 0.02);
-    let mfreq = LinLin(LfPulse(1 / 8, 0, 0.5), 0, 1, 1.01, 2.01) * cps;
-    let ix = TxLine(3, 0.001, 0.2, e.w);
-    PmOsc(cpsv, mfreq, ix, 0) * e.z * e.w
-}).sum;
-XFade2(s, GVerb(Bpf(s, 90.MidiCps, 1), 50, 5, 0.5, 0.5, 15, 0, 0.7, 0.5, 300), 0.2, 1)
+{- PmOsc.4 -}
+OverlapTexture({ :tr |
+	var pm = TLine(0, TRand(0, 12, tr), TRand(1, 12, tr), tr);
+	LinPan2(
+		PmOsc(
+			TRand(0, 2000, tr),
+			TRand(0, 800, tr),
+			pm,
+			0
+		),
+		TRand(-1, 1, tr),
+		0.05
+	)
+}, 1, 2, 7)
+
+{- ---- notes.md ---- -}
+# PmOsc
+
+Overlap-add texture of PmOsc signals with randomly selected linear ramps.
