@@ -257,6 +257,7 @@ SchemeBricks belongs in the same family of block editors described here,
 which are drawings of trees and not graphs and therefore well suited to applicative languages such as Lisp,
 however the evaluation model is closer to the reactive model of Max.
 The lineage of block editors can be traced back at least to AgentSheets (Repenning 1993).
+Existing synthesis systems with extensive histories that are now additionaly compiled to Wasm include Csound (Yi 2018).
 
 ## Future Research
 
@@ -298,17 +299,17 @@ OhmJs is by Alessandro Warth and others.
 ## References
 
 Rossberg, A. (ed.).
-WebAssembly Core Specification.
+"WebAssembly Core Specification."
 Technical Report, World Wide Web Consortium, Dec. 2019.
 [URL](https://www.w3.org/TR/wasm-core-1/)
 
 Crockford, D.
-The application/json Media Type for JavaScript Object Notation (JSON).
+"The application/json Media Type for JavaScript Object Notation (JSON)."
 RFC 4627, July 2006.
 [URL](https://www.rfc-editor.org/info/rfc4627)
 
 Fraser, N.
-Ten things we've learned from Blockly.
+"Ten things we've learned from Blockly."
 In _IEEE Blocks and Beyond_. October 2015.
 [URL](https://developers.google.cn/blockly/publications/papers/TenThingsWeveLearnedFromBlockly.pdf)
 
@@ -323,17 +324,17 @@ Dec. 2004.
 [URL](https://daringfireball.net/projects/markdown/)
 
 Laurson, M. and Duthen, J.
-Patchwork: a Graphic Language in preFORM.
+"Patchwork: a Graphic Language in preFORM."
 In _Proc. ICMC_. 1989.
 [URL](https://hdl.handle.net/2027/spo.bbp2372.1989.042)
 
 McCartney, J.
-SuperCollider: a new real time synthesis language.
+"SuperCollider: a New Real-Time Synthesis Language."
 In _Proc. ICMC_. 1996.
 [URL](http://hdl.handle.net/2027/spo.bbp2372.1996.078)
 
 Puckette, M.
-The Patcher.
+"The Patcher."
 In _Proc. ICMC_, 420–429. 1988.
 [URL](http://hdl.handle.net/2027/spo.bbp2372.1988.046)
 
@@ -348,6 +349,11 @@ PhD thesis, University of Colorado at Boulder, USA, 1993. UMI Order No. GAX94-23
 [URL](https://home.cs.colorado.edu/~ralex/papers/PDF/Repenning-PhD.pdf)
 
 Scaletti, C. and Johnson, R.
-An interactive environment for object-oriented music composition and sound synthesis.
+"An Interactive Environment for Object-Oriented Music Composition and Sound Synthesis."
 _SIGPLAN Not._, 23(11):222–233, 1988.
 [DOI](https://www.doi.org/10.1145/62084.62103)
+
+Yi S., and Lazzarini, V. and Costello, E.
+"WebAssembly AudioWorklet Csound".
+In _Proceedings of the International Web Audio Conference_. September 2018.
+[URL](https://webaudioconf.com/_data/papers/pdf/2018/2018_24.pdf)
