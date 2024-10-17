@@ -1,4 +1,4 @@
-{- lucier (cr) ; http://www.listarc.bham.ac.uk/lists/sc-users/msg47539.html -}
+/* lucier (cr) ; http://www.listarc.bham.ac.uk/lists/sc-users/msg47539.html */
 let bus = 20;
 OverlapTexture({ :tr |
 	let freq = TRand(56, 64, tr);
@@ -40,5 +40,5 @@ OverlapTexture({ :tr |
 	[outL, outR] <! lOut <! drv
 }, 1, 5, 3).Mix * 0.25
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 The OverlapTexture variant cannot use LocalIn & LocalOut since there can only be one pair per graph.

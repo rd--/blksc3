@@ -1,4 +1,4 @@
-{- modal space (jmcc) #8 -}
+/* modal space (jmcc) #8 */
 var b = [0, 2, 3.2, 5, 7, 9, 10].asLocalBuf;
 var k = DegreeToKey(b, MouseX(0, 15, 0, 0.1), 12);
 var n = LfNoise1([3, 3]);
@@ -10,5 +10,5 @@ var d = Rlpf(t, f, 0.1) * 0.1;
 var m = o + d;
 CombC(m, 0.31, 0.31, 2) + m * 0.25
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 Mouse control.

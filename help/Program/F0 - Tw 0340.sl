@@ -1,4 +1,4 @@
-{- https://sccode.org/1-4Qy ; F0 ; 0340 -}
+/* https://sccode.org/1-4Qy ; F0 ; 0340 */
 let c = SinOscFb(1 / [12, 8], 0) + 3 / 24;
 let l = Dseq(
 	inf,

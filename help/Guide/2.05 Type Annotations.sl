@@ -1,4 +1,4 @@
-{- Type Annotations -}
+/* Type Annotations */
 {
 	SinOsc(
 		ExpRand(333, 555),
@@ -6,7 +6,7 @@
 	) * Rand(0.1, 0.3)
 } ! 2
 
-{- ---- notes.md ---- }
+/* ---- notes.md ---- }
 # Type Annotations
 
 Blocks can have type annotations specifying what type a block answers and what type each input must be.

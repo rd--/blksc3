@@ -1,4 +1,4 @@
-{- blips 001 (jmcc) #SC3d1.5 ; graph rewrite -}
+/* blips 001 (jmcc) #SC3d1.5 ; graph rewrite */
 let z = OverlapTexture({ :tr |
     let blips = {
         let f = TxLine(TExpRand(0.25, 400, tr), TExpRand(0.25, 400, tr), 4, tr);

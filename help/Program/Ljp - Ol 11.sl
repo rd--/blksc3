@@ -1,4 +1,4 @@
-{- Noise slurps ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #11 -}
+/* Noise slurps ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #11 */
 SinOsc(
 	0,
 	Bpf(

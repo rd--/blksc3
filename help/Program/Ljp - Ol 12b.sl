@@ -1,4 +1,4 @@
-{- Feedback racket ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #12b -}
+/* Feedback racket ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #12b */
 let p = Saw(440 + [0, 0.2]) * 0.02;
 p + CombC(
 	p,

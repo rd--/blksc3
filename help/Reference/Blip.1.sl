@@ -1,4 +1,4 @@
-{- Blip.2 ; https://github.com/cianoc/supercollider_fragments -}
+/* Blip.2 ; https://github.com/cianoc/supercollider_fragments */
 let t = Impulse(6, 0);
 let o = Blip(
 	TRand(48, 72, t).MidiCps,
@@ -11,7 +11,7 @@ let p = Pan2(
 );
 p + CombC(p, 2, 4 / 6, 6)
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Blip
 
 - _Blip(freq, numharm)_

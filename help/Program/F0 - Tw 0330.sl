@@ -1,4 +1,4 @@
-{- https://sccode.org/1-4Qy ; f0 ; 0330 -}
+/* https://sccode.org/1-4Qy ; f0 ; 0330 */
 let c = SinOsc([2 3] / 8, 0) % 0.5;
 let o = FreqShift(
 	c,

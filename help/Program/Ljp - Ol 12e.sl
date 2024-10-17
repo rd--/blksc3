@@ -1,4 +1,4 @@
-{- feedback racket ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #12e -}
+/* feedback racket ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #12e */
 let p = { Dust2(200) * 0.2 } ! 2;
 p + CombC(
 	p,

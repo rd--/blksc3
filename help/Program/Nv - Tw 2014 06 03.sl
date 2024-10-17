@@ -1,4 +1,4 @@
-{- https://twitter.com/headcube/status/474064500564324352 (nv) -}
+/* https://twitter.com/headcube/status/474064500564324352 (nv) */
 let o = { :ix |
 	{
 		LfPulse(

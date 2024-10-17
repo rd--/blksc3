@@ -1,4 +1,4 @@
-{- harmonic zither (jmcc) #11 ; mouse control -}
+/* harmonic zither (jmcc) #11 ; mouse control */
 var pitch = [50, 53.86, 57.02, 59.69, 62, 64.04, 65.86, 67.51, 69.02, 71.69, 72.88, 74];
 var triggerSpacing = 0.5 / (pitch.size - 1);
 var panSpacing = 1.5 / (pitch.size - 1);
@@ -11,5 +11,5 @@ var stringFunc = {
 };
 LeakDc(Lpf(1.to(pitch.size).collect(stringFunc).sum, 12000), 0.995)
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 Mouse control.

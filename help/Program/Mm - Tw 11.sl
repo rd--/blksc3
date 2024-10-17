@@ -1,4 +1,4 @@
-{- Sc-140 ; #11 ; Micromoog -}
+/* Sc-140 ; #11 ; Micromoog */
 let f = Hasher(
 	Latch(
 		SinOsc([1 .. 4] ! 2, 0),

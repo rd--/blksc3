@@ -1,4 +1,4 @@
-{- Harmonic tumbling (Jmcc) #1 -}
+/* Harmonic tumbling (Jmcc) #1 */
 let t = TxLine([10, 11], 0.1, 60, 1);
 let o = { :h |
     let e = Decay2(

@@ -1,11 +1,11 @@
-{- List Inputs, List Expansion -}
+/* List Inputs, List Expansion */
 let m = [0 2 3 5 7 9] + 48;
 let k = m.size + 1;
 let x = MouseX(0, k, 0, 0.2);
 let y = MouseY(0, k, 0, 0.2);
 SinOsc(Select([x, y], m).MidiCps, 0) * 0.1
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # List Inputs, List Expansion
 
 When a signal block receives a list as an input there are two distinct behaviors.

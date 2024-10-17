@@ -1,4 +1,4 @@
-{- sawed cymbals (jmcc) ; #9 ; graph rewrite -}
+/* sawed cymbals (jmcc) ; #9 ; graph rewrite */
 var p = 15;
 OverlapTexture({
     arg tr;

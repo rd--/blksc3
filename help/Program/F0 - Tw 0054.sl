@@ -1,4 +1,4 @@
-{- https://fredrikolofsson.com/f0blog/more-sc-twitter/ -}
+/* https://fredrikolofsson.com/f0blog/more-sc-twitter/ */
 let sq = Dseq(99, [2 2 2 2 2 2 4 3]);
 let sy = Saw([3 4]) * 32 + 64;
 let sz = Saw([4 3]) * 99;

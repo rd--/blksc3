@@ -1,4 +1,4 @@
-{- clipped inharmonic warbulence ; jmcc -}
+/* clipped inharmonic warbulence ; jmcc */
 let z = { :tr |
 	let r = LinExp(LfNoise1(1 / 16), -1, 1, 0.1, 20);
 	let f = TRand(24, 96, tr).MidiCps;

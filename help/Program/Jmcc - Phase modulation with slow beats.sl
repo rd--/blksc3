@@ -1,4 +1,4 @@
-{- phase modulation with slow beats ; jmcc #6 ; graph rewrite -}
+/* phase modulation with slow beats ; jmcc #6 ; graph rewrite */
 var n = 4;
 var x = MouseX(100, 6000, 1, 0.2);
 var y = MouseY(0, 2, 0, 0.2);
@@ -13,7 +13,7 @@ OverlapTexture({
     SinOsc([f1, f1 + TRand(-1, 1, tr)], a) * 0.1
 }, 4, 4, n) * 0.25;
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 Mouse control.
 
 _MouseX_ controls random frequency of new events.

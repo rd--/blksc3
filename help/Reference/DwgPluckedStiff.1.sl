@@ -1,4 +1,4 @@
-{- DwgPluckedStiff.1 -}
+/* DwgPluckedStiff.1 */
 let t = TDuty(
 	Dseq(inf, [1 1 2 1 1 1 2 3 1 1 1 1 2 3 4] * 0.175),
 	0,

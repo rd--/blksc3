@@ -1,11 +1,11 @@
-{- Mouse control ; jmcc #3 -}
+/* Mouse control ; jmcc #3 */
 let x = MouseX(200, 2000, 1, 0.2);
 let y = MouseY(0, 1, 0, 0);
 let f = [x, Lag(LinExp(y, 0, 1, 200, 2000), 0.2)];
 let a = Lag(LinLin(y, 0, 1, -90, -36), 0.2).DbAmp;
 SinOsc(f, 0) * a
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # MouseX
 
 ☟𝑥 (_MouseX_) reads  the _x_ axis location of the mouse on the screen.

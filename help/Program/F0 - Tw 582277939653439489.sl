@@ -1,4 +1,4 @@
-{- http://twitter.com/redFrik/status/582277939653439489 -}
+/* http://twitter.com/redFrik/status/582277939653439489 */
 let b = [0.999 .. 9];
 Hpf(
 	MoogFf(

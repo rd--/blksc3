@@ -1,4 +1,4 @@
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Block Comments
 
 Block comments can be added to a program using the _Add Comment_ item in the block context menu.

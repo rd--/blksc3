@@ -1,4 +1,4 @@
-{- jmcc ; choip choip choip -}
+/* jmcc ; choip choip choip */
 var dur = 12;
 var z = OverlapTexture({
     arg tr;

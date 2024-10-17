@@ -1,4 +1,4 @@
-{- https://twitter.com/redFrik/status/1115745664523218944 -}
+/* https://twitter.com/redFrik/status/1115745664523218944 */
 let b = [1, 2, 6, 3] + (SinOsc(0.0345, 0) < 0);
 let c = 2 ^ SinOsc(b, 0);
 let j = MulAdd(

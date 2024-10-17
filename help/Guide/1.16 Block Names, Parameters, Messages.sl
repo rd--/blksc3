@@ -1,7 +1,7 @@
-{- Block Names, Parameters, Messages -}
+/* Block Names, Parameters, Messages */
 SinOsc(SinOsc(1 / [7, 9], 0) * [55, 57] + 110, 0) * SinOsc(1 / [5, 7], 0) * 0.1
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Block Names, Parameters, Messages
 
 Each _blocks_ and each _parameter_ of each block have a _name_.

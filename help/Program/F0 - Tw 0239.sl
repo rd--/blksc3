@@ -1,4 +1,4 @@
-{- https://sccode.org/1-4Qy ; F0 ; 0239 -}
+/* https://sccode.org/1-4Qy ; F0 ; 0239 */
 let b = 0.11 / (1 .. 6);
 let q = [
 	032 035 083 117 112 101 114 067

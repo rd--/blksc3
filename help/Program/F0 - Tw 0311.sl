@@ -1,4 +1,4 @@
-{- https://sccode.org/1-4Qy ; f0 ; 0311 -}
+/* https://sccode.org/1-4Qy ; f0 ; 0311 */
 let f = (
 	SinOscFb(8, 0) + 3
 	<<

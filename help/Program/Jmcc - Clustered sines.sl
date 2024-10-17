@@ -1,4 +1,4 @@
-{- clustered sines ; jmcc #2 -}
+/* clustered sines ; jmcc #2 */
 let n = 80;
 { :tr |
     let f1 = TRand(100, 1100, tr);
@@ -9,5 +9,5 @@ let n = 80;
     { fn } ! 2 * 0.1 / n
 }.OverlapTexture(4, 4, 3).sum
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 Texture graph rewrite.

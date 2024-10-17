@@ -1,7 +1,7 @@
-{- Guide, Help, Graphs -}
+/* Guide, Help, Graphs */
 EqPan2(PinkNoise(), SinOsc(1 / 7, 0)) * (SinOsc(1 / 5, 3 / 2 * pi) * 0.5 + 1) * -32.DbAmp
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Guide, Help, Graphs
 
 There are three collections of _programs_ that can be selected from menus below the workspace.

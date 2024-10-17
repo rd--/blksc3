@@ -1,4 +1,4 @@
-{- Resonz.1 -}
+/* Resonz.1 */
 Resonz(
 	PinkNoise(),
 	999,

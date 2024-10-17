@@ -1,4 +1,4 @@
-{- Tank (Jmcc) -}
+/* Tank (Jmcc) */
 let p = {
 	Pan2(
 		Decay2(Dust(0.2), 0.1, 0.5) * 0.1 * SinOsc(ExpRand(300, 2200), 0).cubed,

@@ -1,4 +1,4 @@
-{- Reverberated sine percussion (Jmcc) #3 -}
+/* Reverberated sine percussion (Jmcc) #3 */
 let d = 5;
 let s = {
 	Resonz(

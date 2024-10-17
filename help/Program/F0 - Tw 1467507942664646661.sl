@@ -1,4 +1,4 @@
-{- https://twitter.com/redFrik/status/1467507942664646661 -}
+/* https://twitter.com/redFrik/status/1467507942664646661 */
 var b = [3, 4, 5, 6, 7, 8, 1, 2];
 var fb1 = { arg freq; FBSineC(freq, 1, 0.1, 1.1, 0.5, 0.1, 0.1) };
 var d = fb1.value(b / 12) > 0 / 80 + 1.051;

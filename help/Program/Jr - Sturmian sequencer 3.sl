@@ -1,4 +1,4 @@
-{- Sturmian Sequencer 3 (Jrhb) -}
+/* Sturmian Sequencer 3 (Jrhb) */
 let rules = [[0, 1], [0]];
 let rewrite = { :n |
 	let r = [0];
@@ -6,7 +6,7 @@ let rewrite = { :n |
 		r := r.collect { :e |
 			rules[e + 1]
 		}.concatenation
-	};  {- u = for translator... -}
+	};  /* u = for translator... */
 	r
 };
 let n = 9;
@@ -17,5 +17,5 @@ let strFunc = { :i |
 };
 0.to(n - 1).collect(strFunc:/1).Splay2 * 0.3
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 Mouse control.

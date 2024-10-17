@@ -1,4 +1,4 @@
-{- pkt 26 (f0) - http://www.fredrikolofsson.com/f0blog/?q=node/490 -}
+/* pkt 26 (f0) - http://www.fredrikolofsson.com/f0blog/?q=node/490 */
 let n = 8;
 let x = { :i |
   let t = i / n;

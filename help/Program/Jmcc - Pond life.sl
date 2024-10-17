@@ -1,4 +1,4 @@
-{- Pond life (Jmcc) #1 ; texture=overlap,8,8,4,inf -}
+/* Pond life (Jmcc) #1 ; texture=overlap,8,8,4,inf */
 let f = SinOsc(
 	Rand(20, 50),
 	0

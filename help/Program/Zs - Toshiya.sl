@@ -1,4 +1,4 @@
-{- https://github.com/schollz/18000/blob/main/drone/toshiya.scd -}
+/* https://github.com/schollz/18000/blob/main/drone/toshiya.scd */
 var hz, amp, note, snd, sig, fx, y, z;
 hz := 440;
 amp := 1.0;
@@ -23,5 +23,5 @@ snd := Lpf(snd, 10000);
 snd := Hpf(snd.Tanh, 20);
 snd * -10.DbAmp
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 _MoogLadder_ requires _sc3-plugins_.

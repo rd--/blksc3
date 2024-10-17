@@ -1,4 +1,4 @@
-{- Harmonic swimming (Jmcc) #1 -}
+/* Harmonic swimming (Jmcc) #1 */
 let a = 0.02;
 let l = Line(0, 0 - a, 60);
 let o = { :h |

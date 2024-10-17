@@ -1,4 +1,4 @@
-{- <https://swiki.hfbk-hamburg.de/MusicTechnology/899> (tw ; tim walters) -}
+/* <https://swiki.hfbk-hamburg.de/MusicTechnology/899> (tw ; tim walters) */
 var z = 0;
 var f = {
     arg i;

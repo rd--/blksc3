@@ -1,4 +1,4 @@
-{- Jmcc ; http://soundcloud.com/soundaspureform/bach-prelude ; requires=matrix-syntax -}
+/* Jmcc ; http://soundcloud.com/soundaspureform/bach-prelude ; requires=matrix-syntax */
 let p1 = [
 	60 64 67 72 76; 60 62 69 74 77;
 	59 62 67 74 77; 60 64 67 72 76;

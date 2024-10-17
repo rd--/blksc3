@@ -1,4 +1,4 @@
-{- VoiceWriter.1.sl -}
+/* VoiceWriter.1.sl */
 VoiceWriter(1, 16) {
 	let tr = Impulse(Rand(0.15, 0.85), Rand(0, 1));
 	(
@@ -8,7 +8,7 @@ VoiceWriter(1, 16) {
 	)
 }
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # VoiceWriter
 
 _VoiceWriter_ (𝓥𝓌) is the inverse of _Voicer_.

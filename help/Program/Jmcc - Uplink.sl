@@ -1,4 +1,4 @@
-{- Uplink (Jmcc) #2 ; texture=overlap,4,1,5,inf -}
+/* Uplink (Jmcc) #2 ; texture=overlap,4,1,5,inf */
 let osc = {
   LfPulse(
 	  Rand(0, 20),

@@ -1,4 +1,4 @@
-{- Ljp - Ol 08 -}
+/* Ljp - Ol 08 */
 let f = { 0.2 } ! 8;
 Bpf(
 	PinkNoise() * 0.2,
@@ -6,7 +6,7 @@ Bpf(
 	LfNoise1(f) * 0.3 + 0.31
 ).Splay2
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Blizzard
 
 <https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html> No.8

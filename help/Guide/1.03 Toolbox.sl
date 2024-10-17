@@ -1,8 +1,8 @@
-{- Toolbox -}
+/* Toolbox */
 let tr = Impulse(Rand(0.5, 1) / [3, 5, 7, 9], 0);
 Hpf(PinkNoise() * TRand(0.05, 0.15, tr) * Decay2(tr, 3, 27), TLine(300, [3, 9, 12, 15] * 1000, 3, tr)).Splay2
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Toolbox
 
 The area at the left of the workspace is the _toolbox_.

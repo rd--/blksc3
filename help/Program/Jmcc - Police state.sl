@@ -1,4 +1,4 @@
-{- Police state (Jmcc) #2 -}
+/* Police state (Jmcc) #2 */
 let node = {
   let f = SinOsc(
 	  Rand(0.02, 0.12),

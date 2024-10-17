@@ -1,4 +1,4 @@
-{- Random sine waves (Jmcc) #1 -}
+/* Random sine waves (Jmcc) #1 */
 { :tr |
     EqPan2(
 	    SinOsc(

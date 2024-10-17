@@ -1,4 +1,4 @@
-{- Tw 0134 (F0) -}
+/* Tw 0134 (F0) */
 let n = 50;
 let z = { :i |
 	Ringz(

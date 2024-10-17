@@ -1,4 +1,4 @@
-{- Sprinkler (Jmcc) #1 -}
+/* Sprinkler (Jmcc) #1 */
 Bpz2(
 	WhiteNoise()
 	*

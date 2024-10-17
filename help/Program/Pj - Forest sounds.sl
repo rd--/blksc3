@@ -1,4 +1,4 @@
-{- Forest sounds (Pj) -}
+/* Forest sounds (Pj) */
 {
 	Bpf(
 		BrownNoise(),

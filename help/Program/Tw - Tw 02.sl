@@ -1,4 +1,4 @@
-{- tw 02 (tw) tim walters -}
+/* tw 02 (tw) tim walters */
 let nd = { :k |
 	let x = { :p |
 		let f = p.at(1);
@@ -11,10 +11,10 @@ let nd = { :k |
 	let u = 9.timesRepeat({
 		y := x([i * k * [4, 8], y, i]);
 		i := i + 1
-	}); {- u = for translator... -}
+	}); /* u = for translator... */
 	y
 };
 (1 .. 8).collect(nd:/1).sum / 4
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 [swiki](https://swiki.hfbk-hamburg.de/MusicTechnology/899)

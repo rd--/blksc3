@@ -1,4 +1,4 @@
-{- sidereal time (jmcc) #9 -}
+/* sidereal time (jmcc) #9 */
 var z = OverlapTexture({
     arg tr;
     var p = 15;

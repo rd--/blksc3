@@ -1,4 +1,4 @@
-{- https://twitter.com/redFrik/status/1452599226882535431 f0 -}
+/* https://twitter.com/redFrik/status/1452599226882535431 f0 */
 var e = LFSaw(0.1, 0);
 var b = #[1, 2, 3, 4] / 2;
 var f = #[0, 1];

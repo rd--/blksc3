@@ -1,4 +1,4 @@
-{- Feedback racket ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #12d -}
+/* Feedback racket ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #12d */
 let p = { WhiteNoise() * 0.02 } ! 2;
 p + CombC(
 	p,

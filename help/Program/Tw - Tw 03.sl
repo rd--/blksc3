@@ -1,4 +1,4 @@
-{- sc-140 ; 03 ; Tim Walters ; sc140_sourcecode.txt -}
+/* sc-140 ; 03 ; Tim Walters ; sc140_sourcecode.txt */
 var f = {
     arg k;
     0.to(7).collect({

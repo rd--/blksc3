@@ -1,4 +1,4 @@
-{- plucked strings (jmcc) -}
+/* plucked strings (jmcc) */
 var strFunc = {
     Pan2(CombC(Decay(
         [

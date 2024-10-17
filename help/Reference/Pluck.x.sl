@@ -1,4 +1,4 @@
-{- Pluck.1 ; event control -}
+/* Pluck.1 ; event control */
 Voicer(1, 16, { :e |
     let dm = 1 / 220;
     let dl = (e.x.negated * 0.9 + 1) * dm;

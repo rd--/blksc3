@@ -1,4 +1,4 @@
-{- rain thunder (jl) ; http://sccode.org/1-e -}
+/* rain thunder (jl) ; http://sccode.org/1-e */
 let n0 = PinkNoise() * (0.08 + (LfNoise1(0.3) * 0.02));
 let d0 = Lpf(Dust2(LinLin(LfNoise1(0.2), -1, 1, 40, 50)), 7000);
 let e0 = Line(0, 1, 10);

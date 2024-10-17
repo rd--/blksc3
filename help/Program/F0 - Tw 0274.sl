@@ -1,4 +1,4 @@
-{- https://sccode.org/1-4Qy ; f0 ; 0274 ; requires=pyramid -}
+/* https://sccode.org/1-4Qy ; f0 ; 0274 ; requires=pyramid */
 let b = 1 / [1 8];
 let q = [
 		32

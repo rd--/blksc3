@@ -1,4 +1,4 @@
-{- LocalBuf ; https://sccode.org/1-5fx -}
+/* LocalBuf ; https://sccode.org/1-5fx */
 let t = (
 	{ Rand(-0.08, 0.08) } ! 1024
 ).asLocalBuf;

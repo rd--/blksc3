@@ -1,4 +1,4 @@
-{- Trills ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #13b -}
+/* Trills ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #13b */
 let p = [1, 2] + 0.01;
 Pan2(
 	SinOsc(

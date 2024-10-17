@@ -1,4 +1,4 @@
-{- f0 ; https://twitter.com/redFrik/status/1374517800048291847 -}
+/* f0 ; https://twitter.com/redFrik/status/1374517800048291847 */
 var b = 1.to(9);
 var f0 = Lag(VarSaw(0.003, b / 9, 0.5).roundTo(1 / 3), 1.9) * 91 + 252;
 var w0 = VarSaw(b / 9 / 99, 0, 0.5) % 1;

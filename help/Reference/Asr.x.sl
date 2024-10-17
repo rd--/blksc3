@@ -1,4 +1,4 @@
-{- Asr ; Event control -}
+/* Asr ; Event control */
 let f = { :e |
     Blip(
 	    e.p.UnitCps,

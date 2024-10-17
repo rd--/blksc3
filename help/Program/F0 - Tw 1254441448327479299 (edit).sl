@@ -1,4 +1,4 @@
-{- F0 ; https://twitter.com/redFrik/status/1254441448327479299 ; rd (edit) -}
+/* F0 ; https://twitter.com/redFrik/status/1254441448327479299 ; rd (edit) */
 let b = [1, 3, 5, 8, 10];
 let e = [3, 2 / 3, 4, 3 / 2, 2];
 let c = 0.021;
@@ -10,5 +10,5 @@ let k = DegreeToKey(b.asLocalBuf, j, 12);
 let o = SinOscFb(k.MidiCps, LfTri(c / b + 1 / 3, Decay2(Impulse([2 / 3, 1.5, 3, 1.5, 3], 0), c, d)) * d);
 FreeVerb(Splay2(o), 0.1, 1, 0.5) * 0.1
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 A slight edit of the f0 graph [f0/1254441448327479299](https://twitter.com/redFrik/status/1254441448327479299)

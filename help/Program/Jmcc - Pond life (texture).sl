@@ -1,4 +1,4 @@
-{- pond life (jmcc) #1 ; graph rewrite -}
+/* pond life (jmcc) #1 ; graph rewrite */
 OverlapTexture({
     arg tr;
     Pan2(

@@ -1,7 +1,7 @@
-{- Latch.2 -}
+/* Latch.2 */
 SinOsc(Latch(LfSaw(MouseX(0.1, 22, 0, 0.2), 0) * 500 + 600, Impulse([10, 11], 0)), 0) * 0.1
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Latch
 
 In this program ☟𝑥 (_MouseX_) controls the frequency of an ␊◿ (_LFSaw_) oscillator.

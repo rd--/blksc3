@@ -1,4 +1,4 @@
-{- repeating inharmonic klank ; jmcc #6 ; graph rewrite -}
+/* repeating inharmonic klank ; jmcc #6 ; graph rewrite */
 var n = 4;
 var p = 8;
 OverlapTexture({

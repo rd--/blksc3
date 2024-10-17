@@ -1,4 +1,4 @@
-{- Pulsing bottles (Jmcc) #2 -}
+/* Pulsing bottles (Jmcc) #2 */
 let n = 6;
 let f = {
 	let a = LfPulse(

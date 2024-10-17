@@ -1,4 +1,4 @@
-{- Shifty feedback ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #16a -}
+/* Shifty feedback ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #16a */
 Pan2(
 	CombC(
 		SinOsc(100, 0),

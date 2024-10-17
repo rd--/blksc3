@@ -1,4 +1,4 @@
-{- Blip.2 -}
+/* Blip.2 */
 { :tr |
 	Pan2(
 		Blip(

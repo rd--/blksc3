@@ -1,4 +1,4 @@
-{- https://sccode.org/1-4Qy ; f0 ; tweet0350 -}
+/* https://sccode.org/1-4Qy ; f0 ; tweet0350 */
 let b = 1.to(9).reversed / 99;
 let o = LfSaw(
 	LfSaw(b, b) + 1 * 99,

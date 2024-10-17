@@ -1,4 +1,4 @@
-{- alien meadow (jmcc) #6 -}
+/* alien meadow (jmcc) #6 */
 { :tr |
     let z = TRand(0, 5000, tr);
     let f = SinOsc(TRand(0, 20, tr), 0) * (0.1 * z) + z;

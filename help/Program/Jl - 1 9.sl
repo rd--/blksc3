@@ -1,4 +1,4 @@
-{- http://sccode.org/1-9 (jl) -}
+/* http://sccode.org/1-9 (jl) */
 var n = 956;
 var a = HPF(PinkNoise() * 0.005, 10) * Ln(0, 1, 9);
 var f = { arg i; Ringz(a * LFNoise1(0.05 + Rand(0, 0.1)), 55 * (i + n) + 60, 0.2) };

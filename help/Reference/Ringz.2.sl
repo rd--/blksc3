@@ -1,4 +1,4 @@
-{- Ringz.2.sl -}
+/* Ringz.2.sl */
 { :tr |
 	var exciter = WhiteNoise() * 0.001;
 	{
@@ -10,7 +10,7 @@
 	} !^ 10
 }.OverlapTexture(5, 10, 3)
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Ringz
 
 Texture of parallel filters with linear frequency ramps.

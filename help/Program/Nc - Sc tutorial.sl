@@ -1,4 +1,4 @@
-{- https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html 1.1 -}
+/* https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html 1.1 */
 var n = 11;
 var mk = {
     var freq = Rand(50, 560.3);
@@ -11,7 +11,7 @@ var x = MouseX(100, 2000, 0, 0.2);
 var y = MouseY(0.01, 1.0, 0, 0.2);
 Resonz(mk.dup(n).sum, x, y) * 0.5
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 Mouse control.
 
 

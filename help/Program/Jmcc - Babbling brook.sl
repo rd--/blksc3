@@ -1,4 +1,4 @@
-{- babbling brook (jmcc) #Sc3 -}
+/* babbling brook (jmcc) #Sc3 */
 let p = {
 	Rhpf(
 		OnePole(BrownNoise(), 0.99),

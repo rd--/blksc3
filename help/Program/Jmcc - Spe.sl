@@ -1,4 +1,4 @@
-{- Spe (Jmcc) -}
+/* Spe (Jmcc) */
 let t = Impulse(9, 0);
 let s = [00, 03, 02, 07, 08, 32, 16, 18, 00, 12, 24, 32];
 let f = (Demand(t, 0, Dseq(inf, s)) + 32).MidiCps;

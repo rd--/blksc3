@@ -1,4 +1,4 @@
-{- Hell is busy (Jmcc) #1 ; Graph rewrite -}
+/* Hell is busy (Jmcc) #1 ; Graph rewrite */
 { :tr |
 	let e = LfPulse(
 		TRand(1, 11, tr),

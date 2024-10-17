@@ -1,4 +1,4 @@
-{- bowed string (jmcc) -}
+/* bowed string (jmcc) */
 { :tr |
     let root = 5;
     let scale = [0, 2, 4, 5, 7, 9, 11] + root;

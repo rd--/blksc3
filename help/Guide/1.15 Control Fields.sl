@@ -1,10 +1,10 @@
-{- Control Fields -}
+/* Control Fields */
 SinOsc([
 	NamedControl('Name.1', 440),
 	NamedControl('Name.2', 443)
 ], 0) * NamedControl('Name.3', 0.1)
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Control Fields
 
 𝒞 (_ControlField_) is a _named control_ for which a unique name is assigned by the system.

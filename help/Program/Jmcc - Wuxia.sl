@@ -1,4 +1,4 @@
-{- Wuxia (Jmcc) ; http://www.iamas.ac.jp/~aka/dspss2004/materials/ ; Graph rewrite -}
+/* Wuxia (Jmcc) ; http://www.iamas.ac.jp/~aka/dspss2004/materials/ ; Graph rewrite */
 let tr = Impulse(1 / 7, 0);
 let amp = 0.1;
 let eg = LinSeg(tr, [0, 0.03, 1, 4, 1, 2, 0]);

@@ -1,4 +1,4 @@
-{- pkt 28 (f0) - http://www.fredrikolofsson.com/f0blog/?q=node/490; -}
+/* pkt 28 (f0) - http://www.fredrikolofsson.com/f0blog/?q=node/490; */
 let n = 28;
 let x = { :i |
     let a = LfSaw(i + 1 * 5, 0) * 0.5 * pi;

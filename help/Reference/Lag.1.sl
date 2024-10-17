@@ -1,7 +1,7 @@
-{- Lag.1 -}
+/* Lag.1 */
 Ringz(Saw(LinExp(Lag(LfNoise0(5), 0.1), -1, 1, 100, 2000)) * 0.2, 1000, 0.01) * 0.1
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Lag
 
 - _Lag(in, lagTime)_

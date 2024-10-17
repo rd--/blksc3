@@ -1,4 +1,4 @@
-{- PmOsc.3 ; event control -}
+/* PmOsc.3 ; event control */
 let s = Voicer(1, 16, { :e |
     let cps = (e.x * 24 + 42).MidiCps;
     let cpsv = cps + (cps * SinOsc(e.y * 4 + 4, 0) * 0.02);

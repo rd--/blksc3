@@ -1,4 +1,4 @@
-{- https://twitter.com/redFrik/status/1254441448327479299 -}
+/* https://twitter.com/redFrik/status/1254441448327479299 */
 let b = [1, 3, 5, 8, 10];
 let e = [3, 2 / 3, 4, 3 / 2, 2];
 let c = 0.021;

@@ -1,4 +1,4 @@
-{- http://www.fredrikolofsson.com/f0blog/?q=node/537 ; graph rewrite (rd) -}
+/* http://www.fredrikolofsson.com/f0blog/?q=node/537 ; graph rewrite (rd) */
 let n1 = [
 	0 0 0 0 0 0 0 3 4 6 4 0 3 2 0 0
 	0 0 1 6 0 1 0 0 0 0 0 0 4 0 0 3

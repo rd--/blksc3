@@ -1,4 +1,4 @@
-{- https://swiki.hfbk-hamburg.de/MusicTechnology/899 (nv) [Line 40] -}
+/* https://swiki.hfbk-hamburg.de/MusicTechnology/899 (nv) [Line 40] */
 let f = { :i |
 	Rlpf(
 		0.6 ^ i * 40 * Impulse(2 ^ i / 32, 1 / 2),

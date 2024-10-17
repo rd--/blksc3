@@ -1,4 +1,4 @@
-{- Let Binding, Lexical Scoping -}
+/* Let Binding, Lexical Scoping */
 let x = 293;
 let f = {
 	let x = 440;
@@ -13,7 +13,7 @@ let g = { :x |
 	SinOsc(x, 0)
 ].sum
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Let Binding, Lexical Scoping
 
 Local variables may be declared within λ (_Lambda_) blocks using the `let` (_LetBinding_) block.

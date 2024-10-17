@@ -1,4 +1,4 @@
-{- cymbalism accellerando ; jmcc #2 ; graph rewrite -}
+/* cymbalism accellerando ; jmcc #2 ; graph rewrite */
 var p = 15;
 OverlapTexture({
     arg tr;

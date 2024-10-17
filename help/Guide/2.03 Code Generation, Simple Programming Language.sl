@@ -1,8 +1,8 @@
-{- Code Generation, Simple Programming Language -}
+/* Code Generation, Simple Programming Language */
 let a = SinOsc(1,0).Abs * 0.1;
 SinOsc(440, 0) * a
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Code Generation, Simple Programming Language
 
 Blocks can print themselves using _.sl_ notation.

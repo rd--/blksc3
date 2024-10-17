@@ -1,4 +1,4 @@
-{- https://twitter.com/thormagnusson/status/463992770596577280 (tm) -}
+/* https://twitter.com/thormagnusson/status/463992770596577280 (tm) */
 let k = 9.to(28).atRandom;
 let f = { :x |
     let e = LfNoise2(0.5) * Line(0, 0.1, Rand(0, 99)) / (x * 0.2);
@@ -6,7 +6,7 @@ let f = { :x |
 };
 { 1.to(k).collect(f:/1).sum } ! 2
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 _f_ is applied (twice) to the integers between 1 and _k_.
 
 _k_ is chosen anew each time the program is evaluated.

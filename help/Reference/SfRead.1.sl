@@ -1,4 +1,4 @@
-{- SfRead ; phasor as phase input -}
+/* SfRead ; phasor as phase input */
 var sf = SfAcquireStereo('harp-a4');
 {
     var tr = Impulse(2 ^ Rand(1, 3) / (SfDur(sf) * 4), 0).kr;
@@ -8,7 +8,7 @@ var sf = SfAcquireStereo('harp-a4');
     SfRead(sf, ph, 0, 2)
 } !+ 8 * 0.1
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # SfRead
 
 _SfAcquire_ returns an array of _buffer_ objects.

@@ -1,4 +1,4 @@
-{- Analog bubbles (Jmcc) #1 ; controls -}
+/* Analog bubbles (Jmcc) #1 ; controls */
 CombC(
 	SinOsc(
 		MidiCps(

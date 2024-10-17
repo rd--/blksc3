@@ -1,4 +1,4 @@
-{- swept resonant noise (jmcc) #2 ; graph rewrite -}
+/* swept resonant noise (jmcc) #2 ; graph rewrite */
 OverlapTexture({ :tr |
 	var p = 10;
 	var n = WhiteNoise() * 0.007;

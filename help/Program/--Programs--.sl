@@ -1,5 +1,5 @@
-{- Program files -}
+/* Program files */
 PinkNoise() * 0.1
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 Program files.

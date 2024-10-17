@@ -1,4 +1,4 @@
-{- Iteration -}
+/* Iteration */
 let n = 10;
 let x = Dust([3, 9]);
 n.timesRepeat {
@@ -11,7 +11,7 @@ n.timesRepeat {
 };
 x
 
-{- ---- notes.md ---- }
+/* ---- notes.md ---- }
 # Iteration
 
 The # (_TimesRepeat_) block evaluates the procedure at 𝑓 the indicated number of times.

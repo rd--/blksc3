@@ -1,4 +1,4 @@
-{- Generative landscape (Jr) ; http://www.listarc.bham.ac.uk/lists/sc-users/msg68991.html -}
+/* Generative landscape (Jr) ; http://www.listarc.bham.ac.uk/lists/sc-users/msg68991.html */
 let x = MouseX(-10, 10, 0, 0.1);
 let y = MouseY(0, 5, 0, 0.1);
 let i = (LfSaw(0.062, 0) * 10) + (y * [0 .. 8]);

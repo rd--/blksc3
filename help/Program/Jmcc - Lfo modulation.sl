@@ -1,4 +1,4 @@
-{- Lfo modulation (Jmcc) #1 -}
+/* Lfo modulation (Jmcc) #1 */
 CombC(
 	Rlpf(
 		LfPulse(

@@ -1,4 +1,4 @@
-{- Reso-pulse ; Jmcc #1 -}
+/* Reso-pulse ; Jmcc #1 */
 let lfoFreq = 6;
 let lfo = LfNoise0(lfoFreq) * 1000 + 1200;
 let left = Rlpf(

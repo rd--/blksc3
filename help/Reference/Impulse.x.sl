@@ -1,4 +1,4 @@
-{- Impulse ; Voicer -}
+/* Impulse ; Voicer */
 Splay2(
 	Voicer(
 		1,

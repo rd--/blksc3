@@ -1,4 +1,4 @@
-{- modified from a patch by Landon Rose ; jmcc #8 ; graph rewrite -}
+/* modified from a patch by Landon Rose ; jmcc #8 ; graph rewrite */
 var m = [[32, 43, 54, 89], [10, 34, 80, 120], [67, 88, 90, 100], [14, 23, 34, 45]];
 var f = {
     arg i;

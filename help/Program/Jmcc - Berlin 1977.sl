@@ -1,4 +1,4 @@
-{- berlin 1977 (jmcc) 4 -}
+/* berlin 1977 (jmcc) 4 */
 let clockRate = MouseX(5, 20, 1, 0.2);
 let clockTime = 1 / clockRate;
 let clock = Impulse(clockRate, 0);
@@ -14,5 +14,5 @@ let pw = SinOsc(0.08, [0, 0.5 * pi]) * 0.45 + 0.5;
 let s = Pulse(freq, pw) * amp;
 CombC(Rlpf(s, filt, 0.15), 0.2, [0.2, 0.17], 1.5)
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 Mouse control.

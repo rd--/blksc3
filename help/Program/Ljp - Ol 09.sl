@@ -1,4 +1,4 @@
-{- Fey emissions ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #9 -}
+/* Fey emissions ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #9 */
 let d = { Dust(2) } ! 2;
 CombC(
 	Bpf(

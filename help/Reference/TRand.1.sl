@@ -1,4 +1,4 @@
-{- TRand.1.sl -}
+/* TRand.1.sl */
 let t = Impulse(7, 0) * SinOsc(331, 0);
 let e = Decay2(
 	t,

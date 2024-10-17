@@ -1,4 +1,4 @@
-{- XLine.1.sl -}
+/* XLine.1.sl */
 let t = 60;
 let ln = { :x |
 	XLine(x.first, x.second, t)
@@ -19,7 +19,7 @@ let a = [
 ];
 (SinOsc(500 * m.collect(ln:/1), 0) * a).Splay2 * 0.05
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # XLine
 
 Exponential line segment generator.

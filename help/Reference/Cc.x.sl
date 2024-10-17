@@ -1,7 +1,7 @@
-{- Cc ; continuous controller -}
+/* Cc ; continuous controller */
 Pan2(Blip(Lag(Cc(1), 0.1) * 110 + 110, Lag(Cc(2), 0.2) * 9 + 1) * Lag(Cc(3), 0.3) * 0.1, Lag(Cc(4), 0.4) * 2 - 1, 1)
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Cc
 
 _Cc_ reads input from external continuous controllers.

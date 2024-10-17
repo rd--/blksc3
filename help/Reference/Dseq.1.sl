@@ -1,4 +1,4 @@
-{- Dseq.1 -}
+/* Dseq.1 */
 let tr = Impulse(6, 0);
 let n0 = Demand(
 	tr,

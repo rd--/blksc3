@@ -1,4 +1,4 @@
-{- FM curio ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #7c -}
+/* FM curio ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #7c */
 SinOsc(
 	1,
 	SinOsc(

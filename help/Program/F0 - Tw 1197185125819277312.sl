@@ -1,4 +1,4 @@
-{- https://twitter.com/redFrik/status/1197185125819277312 -}
+/* https://twitter.com/redFrik/status/1197185125819277312 */
 let f = [2, 2.2];
 let e = f / 22;
 let g = 2 << 2;

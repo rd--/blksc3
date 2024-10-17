@@ -1,4 +1,4 @@
-{- Short-loops ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #14a -}
+/* Short-loops ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #14a */
 Pan2(
 	SinOsc(
 		Lpf(

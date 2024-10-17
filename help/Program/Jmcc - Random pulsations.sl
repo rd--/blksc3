@@ -1,4 +1,4 @@
-{- random pulsations (jmcc) #1 ; graph rewrite -}
+/* random pulsations (jmcc) #1 ; graph rewrite */
 OverlapTexture({
     arg tr;
     Pan2(

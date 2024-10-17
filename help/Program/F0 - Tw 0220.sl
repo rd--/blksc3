@@ -1,4 +1,4 @@
-{- Tw 0220 (F0) ; http://www.fredrikolofsson.com/f0blog/?q=node/617 -}
+/* Tw 0220 (F0) ; http://www.fredrikolofsson.com/f0blog/?q=node/617 */
 let c = InFb(1, 0);
 let b = BufAlloc(1, 90000).BufClear;
 let g = TGrains(

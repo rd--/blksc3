@@ -1,4 +1,4 @@
-{- https://sccode.org/1-4Qy ; F0 ; 0297 -}
+/* https://sccode.org/1-4Qy ; F0 ; 0297 */
 (0 .. 3).collect { :i |
 	let c = (
 		SinOscFb(i + 1 / [6, 4], 0)

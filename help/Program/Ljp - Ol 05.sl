@@ -1,4 +1,4 @@
-{- Hedge trimmer ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #5 -}
+/* Hedge trimmer ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #5 */
 Pan2(
 	Bpf(
 		PinkNoise(),

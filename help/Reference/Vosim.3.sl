@@ -1,4 +1,4 @@
-{- Vosim.3.sl -}
+/* Vosim.3.sl */
 OverlapTexture({ :tr |
 	{
 		Vosim(

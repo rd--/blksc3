@@ -1,4 +1,4 @@
-{- tremulate (jmcc) ;  event control -}
+/* tremulate (jmcc) ;  event control */
 let voiceFunc = { :e |
 	Pan2(
 		SinOsc(e.x * 400 + 500 * [1.0, 1.2, 1.5, 1.8], 0),

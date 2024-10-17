@@ -1,4 +1,4 @@
-{- Sturmian Sequencer 1 (Jr) -}
+/* Sturmian Sequencer 1 (Jr) */
 let rules = [[0, 1], [0]];
 let rewrite = { :n |
     let r = [0];
@@ -6,7 +6,7 @@ let rewrite = { :n |
 	    r := r.collect { :e |
 		    rules[e + 1]
 	    }.concatenation
-    }; {- u = for translator -}
+    }; /* u = for translator */
     r
 };
 let strFunc = { :i |

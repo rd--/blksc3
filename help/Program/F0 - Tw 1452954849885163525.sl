@@ -1,4 +1,4 @@
-{- https://twitter.com/redFrik/status/1452954849885163525 ; f0 ; reset (rd) -}
+/* https://twitter.com/redFrik/status/1452954849885163525 ; f0 ; reset (rd) */
 var r = Impulse(1 / 9, 0);
 var i = TRand(1, 64, r);
 var x = (SinOsc(i % 9.33, 0) * 5 + 5).ceiling;

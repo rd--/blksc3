@@ -1,9 +1,9 @@
-{- Lists, Variables, Binary Operators -}
+/* Lists, Variables, Binary Operators */
 let o = SinOsc(440, 0);
 let a = [o o];
 a * 0.1
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Lists, Variables, Binary Operators
 
 ≔ is the _variable assignment_ block.

@@ -1,9 +1,9 @@
-{- OverlapTexture.1 -}
+/* OverlapTexture.1 */
 { :tr |
 	EqPan2(SinOsc(TRand(110, 440, tr), 0), TRand(-1, 1, tr)) * TRand(0.01, 0.05, tr)
 }.OverlapTexture(3, 5, 7)
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # OverlapTexture
 
 The _graph_ form of _OverlapTexture_ sums an array of _#_ programs.

@@ -1,4 +1,4 @@
-{- Overlap Texture -}
+/* Overlap Texture */
 { :tr |
     EqPan2(
         SinOsc(80 + TRand(0, 2000, tr), 0),
@@ -6,7 +6,7 @@
 	) * (LfNoise1(0.4 + TRand(0, 0.8, tr)) * 0.4 + 0.5)
 }.OverlapTexture(2, 8, 12).Mix * 0.05
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Overlap Texture
 
 ᨏ (_OverlapTexture_) is a graph combinator, a form of _higher order function_.

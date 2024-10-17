@@ -1,7 +1,7 @@
-{- Help files -}
+/* Help files */
 PinkNoise() * 0.1
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Help Files
 
 A collection of help files for unit generators.

@@ -1,4 +1,4 @@
-{- Decay2 ; texture -}
+/* Decay2 ; texture */
 OverlapTexture({ :tr |
 	var e = Decay2(
 		Impulse({ TRand(10, 13, tr) } ! 2, 0),
@@ -10,7 +10,7 @@ OverlapTexture({ :tr |
 	o * a * 0.15
 }, 2, 4, 2)
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Decay2
 
 - _Decay2(in, attackTime, decayTime)_

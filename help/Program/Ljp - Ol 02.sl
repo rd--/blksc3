@@ -1,4 +1,4 @@
-{- Nostalgic sci-fi music ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #2 -}
+/* Nostalgic sci-fi music ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #2 */
 CombC(
 	SinOsc(
 		LfNoise2(

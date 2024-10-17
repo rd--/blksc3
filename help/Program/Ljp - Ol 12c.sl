@@ -1,4 +1,4 @@
-{- Feedback racket ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #12c -}
+/* Feedback racket ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #12c */
 let p = { PinkNoise() * 0.03 } ! 2;
 p + CombC(
 	p,

@@ -1,4 +1,4 @@
-{- https://twitter.com/redFrik/status/1519791409921941507 ; f0 -}
+/* https://twitter.com/redFrik/status/1519791409921941507 ; f0 */
 let f = { :freq |
 	SinOsc(freq, [0, 5])
 };

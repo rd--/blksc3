@@ -1,4 +1,4 @@
-{- TRand.2.sl -}
+/* TRand.2.sl */
 let tr = Impulse([0.25, 0.75], 0);
 SinOsc(
 	Lag(

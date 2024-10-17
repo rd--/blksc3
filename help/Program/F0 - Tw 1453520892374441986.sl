@@ -1,4 +1,4 @@
-{- <https://twitter.com/redFrik/status/1453520892374441986> ; f0 -}
+/* <https://twitter.com/redFrik/status/1453520892374441986> ; f0 */
 var b = [1, 2, 3] / 3;
 var c = 2 * pi * b;
 var t = SinOsc(10, pi * b);

@@ -1,4 +1,4 @@
-{- https://twitter.com/redFrik/status/1138498427241861122 (f0) -}
+/* https://twitter.com/redFrik/status/1138498427241861122 (f0) */
 let f = 9.sqrt;
 let b = [f, 9.999];
 let d = SinOscFb(b / 99, 0).Max(0);

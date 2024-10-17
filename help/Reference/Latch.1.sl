@@ -1,7 +1,7 @@
-{- Latch.1 -}
+/* Latch.1 */
 SinOsc(300 + (200 * Latch(SinOsc(13.3, 0), Impulse([10, 11], 0))), 0) * 0.1
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Latch
 
 ⍀ (_Latch_) samples and holds an ∙ (_input_) signal at each ⤴ (_trigger_).

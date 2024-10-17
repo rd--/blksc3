@@ -1,4 +1,4 @@
-{- Sine slurps ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #10 -}
+/* Sine slurps ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #10 */
 SinOsc(
 	0,
 	Bpf(

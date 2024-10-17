@@ -1,4 +1,4 @@
-{- https://schollz.com/blog/phasedistortion/ (zs) -}
+/* https://schollz.com/blog/phasedistortion/ (zs) */
 Voicer(1, 16, { :e |
     let freq = (e.x * 36 + 48).MidiCps;
     let amp = e.z;

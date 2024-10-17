@@ -1,4 +1,4 @@
-{- birdies (jmcc) #6 ; graph rewrite -}
+/* birdies (jmcc) #6 ; graph rewrite */
 OverlapTexture({ :tr |
     let p1 = LfPulse(TRand(0.4, 1.4, tr), 0, TRand(0.1, 0.9, tr)) * TRand(4, 7, tr);
     let p2 = LfPulse(TRand(0.2, 0.7, tr), 0, 0.4) * 0.02;

@@ -12,7 +12,7 @@ function markdownToHtml(mdText) {
 function mdNotesFromSpl(splText) {
 	const lines = splText.split('\n');
 	const notesMarker = lines.findIndex((str) =>
-		sc.stringIsPrefixOf('{- ---- notes.md', str)
+		sc.stringIsPrefixOf('/* ---- notes.md', str)
 	);
 	const hasMarker = notesMarker >= 0;
 	if (lines.length == 0) {

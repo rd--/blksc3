@@ -1,4 +1,4 @@
-{- https://twitter.com/redFrik/status/1246461901669838848 -}
+/* https://twitter.com/redFrik/status/1246461901669838848 */
 let c = LfPulse(1 / 11, 0, 1 / 4) * 99 + 99;
 let l1 = SinOscFb(1 / 11, 0) / 2 + 1 / 9;
 let f1 = Lag(

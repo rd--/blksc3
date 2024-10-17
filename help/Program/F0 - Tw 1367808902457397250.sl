@@ -1,4 +1,4 @@
-{- f0 <https://twitter.com/redFrik/status/1367808902457397250> -}
+/* f0 <https://twitter.com/redFrik/status/1367808902457397250> */
 let rat = [76.11, 76.11, 64, 57.02, 38.05, 85.43, 32, 114.04, 42.71, 47.95, 95.89];
 (1 .. 10).collect { :i |
 	let f0 = rat[i] * (SinOsc(1 / 16, 0) > 0 * 2 + 6 - (SinOsc(SinOsc(1 / 32, i), 0) / 20));
@@ -10,5 +10,5 @@ let rat = [76.11, 76.11, 64, 57.02, 38.05, 85.43, 32, 114.04, 42.71, 47.95, 95.8
 	CombC(z, 0.5, dly, dcy)
 }.Splay2.Tanh
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 _VarLag_

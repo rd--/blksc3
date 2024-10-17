@@ -1,4 +1,4 @@
-{- Formant ; Voicer -}
+/* Formant ; Voicer */
 Splay2(
 	Voicer(
 		1,

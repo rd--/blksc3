@@ -1,4 +1,4 @@
-{- vibraphone simulation ; Kevin Larke ; Real Time Vibraphone Pitch and Timbre Classification -}
+/* vibraphone simulation ; Kevin Larke ; Real Time Vibraphone Pitch and Timbre Classification */
 let voiceFunc = { :e |
 	let freq = e.p.UnitCps;
 	let detune = e.y * 15;
@@ -13,7 +13,7 @@ let voiceFunc = { :e |
 	let decays = [1, 0.7 * (-1 * decay).exp, 0.5 * (-1 * decay).exp, 0.4 * (-1 * decay).exp];
 	let zero = 0.000001;
 	let soundMain = TxLine(zero, 1, 1 / freqs, e.w) * TxLine(1, zero, decays * 4, e.w) * sound * mod;
-	let soundHigh = TxLine(0.3 * (velocity + zero), zero, 0.02, e.w) * SinOsc(hifreqs, 0); {- hi frequency onset -}
+	let soundHigh = TxLine(0.3 * (velocity + zero), zero, 0.02, e.w) * SinOsc(hifreqs, 0); /* hi frequency onset */
 	let pan = e.i * 2 - 1;
 	Pan2(soundMain.sum + soundHigh.sum, pan, LagUd(e.w, 0.01, 4))
 };

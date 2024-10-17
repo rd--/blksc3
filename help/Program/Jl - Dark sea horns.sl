@@ -1,4 +1,4 @@
-{- Dark sea horns (Jl) -}
+/* Dark sea horns (Jl) */
 var x = LocalIn(2, 0);
 var a = (SinOsc(65, x * LfNoise1(0.1) * 3) * LfNoise1(3) * 6).Tanh;
 9.timesRepeat {

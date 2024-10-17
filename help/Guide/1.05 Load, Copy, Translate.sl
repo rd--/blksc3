@@ -1,4 +1,4 @@
-{- Load, Copy, Translate -}
+/* Load, Copy, Translate */
 let dur = 7;
 { :tr |
     let cf = TRand(0, 2000, tr);
@@ -12,7 +12,7 @@ let dur = 7;
     EqPan2 (snd, lc) * 0.05
 }.OverlapTexture(1, 3, 4).Mix
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Load, Copy, Translate
 
 Programs are stored as _.json_ files.

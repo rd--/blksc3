@@ -1,4 +1,4 @@
-{- https://fredrikolofsson.com/f0blog/more-sc-twitter/, f0 -}
+/* https://fredrikolofsson.com/f0blog/more-sc-twitter/, f0 */
 let t = Saw([9, 9.01]);
 let f = Demand(
 	t,

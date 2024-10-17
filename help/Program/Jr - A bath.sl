@@ -1,4 +1,4 @@
-{- a bath (jr) -}
+/* a bath (jr) */
 let above = MouseY(0, 2, 0, 0.2).RoundTo(1);
 let aside = MouseX(1, 1.6, 0, 0.2);
 let sources = [
@@ -12,5 +12,5 @@ let u3 = { Rlpf(u2, { Rand(100.0, 340) * aside } ! 4, 0.2).Sum } ! 2;
 let u4 = CombC(u3.reverse, 0.05, 0.05, 0.3) * 0.3 * LfNoise2(0.2).Max(0) + u3;
 SelectX(above.Lag(0.4), [u2, u4]) * 2
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 Mouse control.

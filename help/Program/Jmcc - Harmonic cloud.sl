@@ -1,4 +1,4 @@
-{- https://soundcloud.com/soundaspureform/harmonic-cloud-1 Jmcc ; Rough guess -}
+/* https://soundcloud.com/soundaspureform/harmonic-cloud-1 Jmcc ; Rough guess */
 let n = 36;
 { :tr |
 	{

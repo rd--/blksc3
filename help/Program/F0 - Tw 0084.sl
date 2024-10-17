@@ -1,4 +1,4 @@
-{- tw 0084 (f0) - http://sccode.org/1-4Qy -}
+/* tw 0084 (f0) - http://sccode.org/1-4Qy */
 let f = Saw((0 .. 5) * 2 + 5 * 19) * 99 + 199;
 let g = Saw((0 .. 6) * 2 + 1 * 29) * 199 + 299;
 let w = Saw(

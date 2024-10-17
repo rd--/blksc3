@@ -1,4 +1,4 @@
-{- why supercollider (jmcc) #0 ; Rand UGens -}
+/* why supercollider (jmcc) #0 ; Rand UGens */
 let s = {
 	Resonz(Dust(0.2) * 50,  Rand(200, 3200), 0.003)
 } !+ 10;

@@ -1,4 +1,4 @@
-{- Drummer (Tm) -}
+/* Drummer (Tm) */
 let tempo = 4;
 let n = WhiteNoise();
 let tr1 = Impulse(tempo, 0);

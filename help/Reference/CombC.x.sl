@@ -1,11 +1,11 @@
-{- CombC.1.sl ; event control -}
+/* CombC.1.sl ; event control */
 let lfo = SinOsc(0.5, 0);
 let osc = Voicer(1, 16) { :e |
 	SinOsc(e.p.UnitCps, 0) * lfo * e.w * e.z
 };
 CombC(osc.Splay2, 0.5, 0.2, 3)
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # CombC
 
 ᚊ (_CombC_) is a comb format delay line with cubic interpolation.

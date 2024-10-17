@@ -1,7 +1,7 @@
-{- Play -}
+/* Play */
 SinOsc([220, 220.5], 0) * -30.DbAmp
 
-{- ---- notes.md ---- -}
+/* ---- notes.md ---- */
 # Play
 
 The ⊳ (_Play_) block indicates that the signal it receives should be sent to the speakers.
