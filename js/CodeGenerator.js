@@ -53,7 +53,7 @@ export function initCodeGen(Blockly) {
 		const commentField = block.getFieldValue('COMMENT');
 		const commentString = sc.stringLines(commentField);
 		const commentText = commentString[0];
-		return `{- ${commentText} -}\n`;
+		return `/* ${commentText} */\n`;
 	};
 	Blockly.JavaScript.forBlock['Sc_Constant'] = function (block) {
 		return [
