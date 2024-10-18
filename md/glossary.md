@@ -21,6 +21,17 @@ A binary operator is an operator with two operands,
 or a procedure of two arguments.
 In some contexts it particularly refers to a procedure that is written using infix notation.
 
+## Black & White
+
+There is a black and white, our outline, drawing mode.
+These drawings may be more suitable for printing,
+for including in documentation,
+or for use with non-colour displays.
+This mode can be selected by pressing the ⬜ button beneath the workspace.
+The figure below is the drawing from §1.01 of the guide.
+
+![](sw/blksc3/svg/BlockSuperCollider.svg)
+
 ## Block Comment
 
 Block comments are texts attached to a block using the _Add comment_ context menu item.

@@ -279,6 +279,7 @@ export class Blk {
 	blackAndWhite() {
 		this.Blockly.utils.colour.setHsvSaturation(0);
 		this.Blockly.utils.colour.setHsvValue(1);
+		this.workspace.setTheme(this.Blockly.Themes.Classic);
 		const r = document.querySelector(':root');
 		r.style.setProperty('--toolbox-colour', '#fff');
 		r.style.setProperty('--paper-colour', '#fff');
