@@ -21,6 +21,14 @@ function graphMenuInit(menuId, graphDir, loadProc) {
 	});
 }
 
+function setCssProperties(settings) {
+	const r = document.querySelector(':root');
+	for (const key in settings) {
+		const value = settings[key];
+		r.style.setProperty(key, value);
+	}
+}
+
 export class Blk {
 	constructor(Blockly, withUiCtl, trackHistory) {
 		this.Blockly = Blockly;
@@ -30,6 +38,7 @@ export class Blk {
 		this.layouts = null;
 		this.naming = 'Symbolic';
 		this.whichToolbox = 'Complete';
+		this.whichColourScheme = 'Pretty';
 		this.init(withUiCtl);
 		this.programOracle = [];
 	}
@@ -39,7 +48,9 @@ export class Blk {
 		initCodeGenUgen(Blockly);
 		this.Blockly.ContextMenuItems.registerCommentOptions();
 		this.initWorkspaceContextMenu();
-		this.setColours();
+		// https://developers.google.com/blockly/guides/create-custom-blocks/block-colour#colour_references
+		this.loadBlockMessages('json/ColourScheme.json');
+		this.setPrettyColours();
 		this.loadBlockMessages(`json/${this.naming}Messages.json`);
 		this.loadBlockDefinitions('json/BlockDefinitions.json');
 		this.loadBlockDefinitions('json/UgenBlockDefinitions.json');
@@ -269,24 +280,30 @@ export class Blk {
 		return sc.prettyPrintSyndefOf(this.evalCode());
 	}
 
-	setColours() {
+	setPrettyColours() {
 		this.Blockly.utils.colour.setHsvSaturation(0.20);
 		this.Blockly.utils.colour.setHsvValue(0.95);
-		// https://developers.google.com/blockly/guides/create-custom-blocks/block-colour#colour_references
-		this.loadBlockMessages('json/ColourScheme.json');
+		setCssProperties({
+			'--toolbox-colour': '#f0fff0',
+			'--paper-colour': '#fffacd',
+			'--text-colour': '#424242',
+			'--workspace-colour': '#fddde6',
+			'--fragment-colour': '#98ece8',
+			'--outline-colour': '#f6d4f6'
+		});
 	}
 
-	blackAndWhite() {
+	setGreyColours() {
 		this.Blockly.utils.colour.setHsvSaturation(0);
 		this.Blockly.utils.colour.setHsvValue(1);
-		this.workspace.setTheme(this.Blockly.Themes.Classic);
-		const r = document.querySelector(':root');
-		r.style.setProperty('--toolbox-colour', '#fff');
-		r.style.setProperty('--paper-colour', '#fff');
-		r.style.setProperty('--text-colour', '#000');
-		r.style.setProperty('--workspace-colour', '#fff');
-		r.style.setProperty('--fragment-colour', '#fff');
-		r.style.setProperty('--outline-colour', '#000');
+		setCssProperties({
+			'--toolbox-colour': '#eee',
+			'--paper-colour': '#eee',
+			'--text-colour': '#000',
+			'--workspace-colour': '#f3f3f3',
+			'--fragment-colour': '#eee',
+			'--outline-colour': '#000'
+		});
 	}
 
 	loadBlockMessages(fileName) {
@@ -359,6 +376,16 @@ export class Blk {
 		this.whichToolbox = this.whichToolbox == 'Complete' ? 'Small' : 'Complete';
 		sc.fetchJson(`json/${this.whichToolbox}Toolbox.json`, { cache: 'no-cache' })
 			.then((tree) => this.workspace.updateToolbox(tree));
+	}
+
+	nextColourScheme() {
+		this.whichColourScheme = this.whichColourScheme == 'Pretty' ? 'Grey' : 'Pretty';
+		if (this.whichColourScheme == 'Pretty') {
+			this.setPrettyColours();
+		} else {
+			this.setGreyColours();
+		}
+		this.workspace.setTheme(this.Blockly.Themes.Classic);
 	}
 
 	onWorkspaceChange() {
