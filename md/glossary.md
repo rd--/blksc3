@@ -23,7 +23,7 @@ In some contexts it particularly refers to a procedure that is written using inf
 
 ## Black & White
 
-There is a black and white, our outline, drawing mode.
+There is a black and white, or grey, or outline, drawing mode.
 These drawings may be more suitable for printing,
 for including in documentation,
 or for use with non-colour displays.
@@ -31,6 +31,7 @@ This mode can be selected by pressing the ⬜ button beneath the workspace.
 The figure below is the drawing from §1.01 of the guide.
 
 ![](sw/blksc3/svg/BlockSuperCollider.svg)
+<!-- ![](sw/blksc3/svg/WhyBlockSuperCollider.grey.svg) -->
 
 ## Block Comment
 
@@ -466,7 +467,9 @@ The _Reset_ button can be selected using the _._ access key.
 
 Scalable Vector Graphics (Ferraiolo 2001) is a vector image format for defining two-dimensional graphics.
 The workspace can be saved as a Scalable Vector Graphics file.
-An image of the [Why SuperCollider?](sw/blksc3/svg/Why%20Block%20SuperCollider.svg) graph.
+The figure below is an exported image of the [Why SuperCollider?](sw/blksc3/svg/WhyBlockSuperCollider.colours.svg) graph.
+
+![](sw/blksc3/svg/WhyBlockSuperCollider.colours.svg)
 
 ## S-Expression
 
