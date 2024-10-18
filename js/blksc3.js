@@ -93,6 +93,7 @@ export class Blk {
 		this.config = {
 			media: 'lib/blockly-11.1.1/media/',
 			renderer: 'thrasos', // geras thrasos zelos
+			theme: this.Blockly.Themes.Classic,
 			sounds: false,
 			toolbox: toolbox,
 			rtl: false,
@@ -273,6 +274,18 @@ export class Blk {
 		this.Blockly.utils.colour.setHsvValue(0.95);
 		// https://developers.google.com/blockly/guides/create-custom-blocks/block-colour#colour_references
 		this.loadBlockMessages('json/ColourScheme.json');
+	}
+
+	blackAndWhite() {
+		this.Blockly.utils.colour.setHsvSaturation(0);
+		this.Blockly.utils.colour.setHsvValue(1);
+		const r = document.querySelector(':root');
+		r.style.setProperty('--toolbox-colour', '#fff');
+		r.style.setProperty('--paper-colour', '#fff');
+		r.style.setProperty('--text-colour', '#000');
+		r.style.setProperty('--workspace-colour', '#fff');
+		r.style.setProperty('--fragment-colour', '#fff');
+		r.style.setProperty('--outline-colour', '#000');
 	}
 
 	loadBlockMessages(fileName) {
