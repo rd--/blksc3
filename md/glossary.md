@@ -467,7 +467,7 @@ The _Reset_ button can be selected using the _._ access key.
 
 Scalable Vector Graphics (Ferraiolo 2001) is a vector image format for defining two-dimensional graphics.
 The workspace can be saved as a Scalable Vector Graphics file.
-The figure below is an exported image of the [Why SuperCollider?](sw/blksc3/svg/WhyBlockSuperCollider.colours.svg) graph.
+The figure below is an exported image of the _Why SuperCollider?_ graph.
 
 ![](sw/blksc3/svg/WhyBlockSuperCollider.colours.svg)
 
