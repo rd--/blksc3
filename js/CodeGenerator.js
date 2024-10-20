@@ -13,9 +13,6 @@ export function initCodeGen(Blockly) {
 		) || '0';
 		return `${name} := ${value};\n`;
 	};
-	Blockly.JavaScript.forBlock['Sc_ArrayCollect'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, 'collect', ['ARRAY', 'PROC']);
-	};
 	Blockly.JavaScript.forBlock['Sc_ArrayFill'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'duplicateInteger', [
 			'PROC',

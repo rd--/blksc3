@@ -1,7 +1,8 @@
 blksc3
 ------
 
-A [Block](https://developers.google.com/blockly) editor for the
+SuperBlock, or Block SuperCollider,
+a [Block](https://developers.google.com/blockly) editor for the
 [SuperCollider](https://www.audiosynth.com/) synthesiser.
 
 ![](https://rohandrape.net/sw/blksc3/svg/BlockSuperCollider.svg)
