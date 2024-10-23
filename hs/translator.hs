@@ -1,8 +1,7 @@
-{- | Translator for simple .stc/.spl graphs to Blockly .xml notation.
-
-In addition to the current .xml notation there is also a newer .json notation.
-
--}
+-- \| Translator for simple .stc/.spl graphs to Blockly .xml notation.
+--
+-- In addition to the current .xml notation there is also a newer .json notation.
+--
 
 import Data.Char {- base -}
 import Data.Either {- base -}
@@ -31,14 +30,18 @@ is_event_param = flip elem (words "v w y x z o rx ry p px")
 
 -- * Json
 
-{- | Literal given type.  See lit_float_json, lit_int_json and lit_str_json for use. -}
+-- | Literal given type.  See lit_float_json, lit_int_json and lit_str_json for use.
 lit_ty_json :: String -> String -> String -> (t -> Json.Value) -> t -> Json.Value
 lit_ty_json blk_ty lit_ty field_ty enc n =
   Json.object
-  [(blk_ty
-   ,Json.object
-     [("type", Json.string lit_ty)
-     ,("fields", Json.object [(field_ty, enc n)])])]
+    [
+      ( blk_ty
+      , Json.object
+          [ ("type", Json.string lit_ty)
+          , ("fields", Json.object [(field_ty, enc n)])
+          ]
+      )
+    ]
 
 {- | Literal float.
 
@@ -67,12 +70,12 @@ lit_str_json ty = lit_ty_json ty "text" "TEXT" Json.string
 lit_json :: String -> St.Literal -> Json.Value
 lit_json ty l =
   case l of
-  St.NumberLiteral (St.Float n) -> lit_float_json ty n
-  St.NumberLiteral (St.Int n) -> lit_int_json ty n
-  St.StringLiteral s -> lit_str_json ty s
-  St.SymbolLiteral s -> lit_str_json ty s
-  St.ArrayLiteral a -> array_json (map (lit_json ty . fromLeft (error "non-literal in literal array")) a)
-  _ -> error "lit_json"
+    St.NumberLiteral (St.Float n) -> lit_float_json ty n
+    St.NumberLiteral (St.Int n) -> lit_int_json ty n
+    St.StringLiteral s -> lit_str_json ty s
+    St.SymbolLiteral s -> lit_str_json ty s
+    St.ArrayLiteral a -> array_json (map (lit_json ty . fromLeft (error "non-literal in literal array")) a)
+    _ -> error "lit_json"
 
 {- | Ugen Json
 
@@ -83,12 +86,13 @@ ugen_json :: String -> [Json.Value] -> Json.Value
 ugen_json stcNm l =
   let nm = Db.sc3_ugen_initial_name stcNm
       (p, o) = ugen_param nm
-      i = p ++ (if o then ["mul","add"] else [])
+      i = p ++ (if o then ["mul", "add"] else [])
       l' = l ++ (if o then [lit_int_json "shadow" 1, lit_int_json "shadow" 0] else [])
   in Json.object
-     [("type", Json.string ("Sc_" ++ nm))
-     ,("inline", Json.boolean True)
-     ,("inputs", Json.object (zip i l'))]
+      [ ("type", Json.string ("Sc_" ++ nm))
+      , ("inline", Json.boolean True)
+      , ("inputs", Json.object (zip i l'))
+      ]
 
 {-
 
@@ -98,9 +102,10 @@ ugen_json stcNm l =
 block_json_for :: String -> [String] -> [Json.Value] -> Json.Value
 block_json_for nm p d =
   Json.object
-     [("type", Json.string ("Sc_" ++ nm))
-     ,("inline", Json.boolean True)
-     ,("inputs", Json.object (zip p d))]
+    [ ("type", Json.string ("Sc_" ++ nm))
+    , ("inline", Json.boolean True)
+    , ("inputs", Json.object (zip p d))
+    ]
 
 -- | Zero-indexed.
 array_elem_json :: Int -> Json.Value -> Json.Association
@@ -114,21 +119,32 @@ array_elem_json k x = (printf "ADD%d" k, x)
 array_json :: [Json.Value] -> Json.Value
 array_json l =
   Json.object
-  [("block"
-   ,Json.object
-    [("type", Json.string "lists_create_with")
-    ,("inline", Json.boolean True)
-    ,("extraState", Json.object [("itemCount", Json.int (length l))])
-    ,("inputs", Json.object (zipWith array_elem_json [0..] l))])]
+    [
+      ( "block"
+      , Json.object
+          [ ("type", Json.string "lists_create_with")
+          , ("inline", Json.boolean True)
+          , ("extraState", Json.object [("itemCount", Json.int (length l))])
+          , ("inputs", Json.object (zipWith array_elem_json [0 ..] l))
+          ]
+      )
+    ]
 
 comment_json :: St.Comment -> Maybe Json.Value
 comment_json c =
   if null c
-  then Nothing
-  else Just (Json.object
-             [("type", Json.string "Sc_Comment")
-             ,("fields", Json.object
-                         [("COMMENT", Json.string (if last c == '\n' then init c else c))])])
+    then Nothing
+    else
+      Just
+        ( Json.object
+            [ ("type", Json.string "Sc_Comment")
+            ,
+              ( "fields"
+              , Json.object
+                  [("COMMENT", Json.string (if last c == '\n' then init c else c))]
+              )
+            ]
+        )
 
 -- * Xml
 
@@ -144,12 +160,12 @@ lit_str_xml ty s = printf "<%s type='text'><field name='TEXT'>%s</field></%s>" t
 lit_xml :: String -> St.Literal -> String
 lit_xml ty l =
   case l of
-  St.NumberLiteral (St.Float n) -> lit_float_xml ty n
-  St.NumberLiteral (St.Int n) -> lit_int_xml ty n
-  St.StringLiteral s -> lit_str_xml ty s
-  St.SymbolLiteral s -> lit_str_xml ty s
-  St.ArrayLiteral a -> array_xml (map (lit_xml ty . fromLeft (error "non-literal in literal array")) a)
-  _ -> error "lit_xml"
+    St.NumberLiteral (St.Float n) -> lit_float_xml ty n
+    St.NumberLiteral (St.Int n) -> lit_int_xml ty n
+    St.StringLiteral s -> lit_str_xml ty s
+    St.SymbolLiteral s -> lit_str_xml ty s
+    St.ArrayLiteral a -> array_xml (map (lit_xml ty . fromLeft (error "non-literal in literal array")) a)
+    _ -> error "lit_xml"
 
 {- | Ugen Param
 
@@ -163,11 +179,11 @@ ugen_param nm =
   case Db.u_lookup_cs nm of
     Just u -> (Db.u_input_names u, isJust (Db.ugen_outputs u))
     Nothing -> case Db.pseudo_ugen_db_lookup nm of
-                 Just (_,p,o,_,_)  -> (p, o)
-                 Nothing -> error ("ugen_param: " ++ nm)
+      Just (_, p, o, _, _) -> (p, o)
+      Nothing -> error ("ugen_param: " ++ nm)
 
 named_value_xml :: (String, String) -> String
-named_value_xml (k,v) = printf "<value name='%s'>%s</value>" (map toUpper k) v
+named_value_xml (k, v) = printf "<value name='%s'>%s</value>" (map toUpper k) v
 
 {- | Ugen Xml
 
@@ -183,20 +199,22 @@ ugen_xml :: String -> [String] -> String
 ugen_xml stcNm l =
   let nm = Db.sc3_ugen_initial_name stcNm
       (p, o) = ugen_param nm
-      i = p ++ (if o then ["mul","add"] else [])
+      i = p ++ (if o then ["mul", "add"] else [])
       l' = l ++ (if o then [lit_int_xml "shadow" 1, lit_int_xml "shadow" 0] else [])
   in unlines
-     [printf "<block type='Sc_%s' inline='true'>" nm
-     ,String.unlinesNoTrailingNewline (map named_value_xml (zip i l'))
-     ,"</block>"]
+      [ printf "<block type='Sc_%s' inline='true'>" nm
+      , String.unlinesNoTrailingNewline (map named_value_xml (zip i l'))
+      , "</block>"
+      ]
 
 block_xml_for :: String -> [String] -> [String] -> String
 block_xml_for nm p d =
   let l = concatMap named_value_xml (zip p d)
   in unlines
-     [printf "<block type='Sc_%s' inline='true'>" nm
-     ,l
-     ,"</block>"]
+      [ printf "<block type='Sc_%s' inline='true'>" nm
+      , l
+      , "</block>"
+      ]
 
 {- | Some names are handled specially: {Overlap|XFade}Texture, SoundFileBuffer, Voicer, VoiceWriter
 
@@ -212,29 +230,30 @@ implicit_send_xml :: String -> [String] -> String
 implicit_send_xml nm l =
   case (nm, l) of
     ("OverlapTexture", [_, _, _, _]) ->
-      block_xml_for "OverlapTexture" ["PROC","SUSTAINTIME","TRANSITIONTIME","OVERLAP"] l
+      block_xml_for "OverlapTexture" ["PROC", "SUSTAINTIME", "TRANSITIONTIME", "OVERLAP"] l
     ("XFadeTexture", [_, _, _]) ->
-      block_xml_for "XFadeTexture" ["PROC","SUSTAINTIME","TRANSITIONTIME"] l
+      block_xml_for "XFadeTexture" ["PROC", "SUSTAINTIME", "TRANSITIONTIME"] l
     ("SoundFileBuffer", [_, _]) ->
       block_xml_for "SoundFileBuffer" ["SOUNDFILEID", "NUMBEROFCHANNELS"] l
     ("Voicer", [_, _]) ->
-      block_xml_for "Voicer" ["COUNT","PROC"] l
+      block_xml_for "Voicer" ["COUNT", "PROC"] l
     ("VoiceWriter", [_, _]) ->
-      block_xml_for "VoiceWriter" ["COUNT","PROC"] l
+      block_xml_for "VoiceWriter" ["COUNT", "PROC"] l
     _ -> ugen_xml nm l
 
 -- | Event parameters (v, w, x, y, z &etc)
 event_param_xml :: String -> String -> String
 event_param_xml o e =
   unlines
-  ["<block type='Sc_EventParam'>"
-  ,printf "<field name='PARAM'>%s</field>" o
-  ,printf "<value name='EVENT'>%s</value>" e
-  ,"</block>"]
+    [ "<block type='Sc_EventParam'>"
+    , printf "<field name='PARAM'>%s</field>" o
+    , printf "<value name='EVENT'>%s</value>" e
+    , "</block>"
+    ]
 
 -- | Method names that belong to Array not UGen
 array_proc_1 :: [String]
-array_proc_1 = ["asLocalBuf","choose","concatenation","first","mean","reverse","second","size","sum","third","transpose"]
+array_proc_1 = ["asLocalBuf", "choose", "concatenation", "first", "mean", "reverse", "second", "size", "sum", "third", "transpose"]
 
 {- | Some operators are handled specially.
 
@@ -254,31 +273,35 @@ uop_xml o e =
   case o of
     "dup" ->
       unlines
-      ["<block type='Sc_ArrayFill' inline='true'>"
-      ,printf "<value name='PROC'>%s</value>" e
-      ,printf "<value name='COUNT'>%s</value>" (lit_int_xml "block" 2)
-      ,"</block>"]
+        [ "<block type='Sc_ArrayFill' inline='true'>"
+        , printf "<value name='PROC'>%s</value>" e
+        , printf "<value name='COUNT'>%s</value>" (lit_int_xml "block" 2)
+        , "</block>"
+        ]
     "value" ->
       unlines
-      ["<block type='Sc_Value0' inline='true'>"
-      ,printf "<value name='PROC'>%s</value>" e
-      ,"</block>"]
+        [ "<block type='Sc_Value0' inline='true'>"
+        , printf "<value name='PROC'>%s</value>" e
+        , "</block>"
+        ]
     "splay2" ->
       unlines
-      ["<block type='Sc_Splay2' inline='true'>"
-      ,printf "<value name='INARRAY'>%s</value>" e
-      ,"</block>"]
+        [ "<block type='Sc_Splay2' inline='true'>"
+        , printf "<value name='INARRAY'>%s</value>" e
+        , "</block>"
+        ]
     _ ->
       let ty = if o `elem` array_proc_1 then "ArrayProc1" else "UnaryOp"
       in unlines
-         [printf "<block type='Sc_%s'>" ty
-         ,printf "<field name='OP'>%s</field>" o
-         ,printf "<value name='IN'>%s</value>" e
-         ,"</block>"]
+          [ printf "<block type='Sc_%s'>" ty
+          , printf "<field name='OP'>%s</field>" o
+          , printf "<value name='IN'>%s</value>" e
+          , "</block>"
+          ]
 
 -- | Operator and method names that belong to Array not UGen
 array_proc_2 :: [String]
-array_proc_2 = ["++","collect","at"]
+array_proc_2 = ["++", "collect", "at"]
 
 {- | Some operators are handled specially.
 
@@ -295,11 +318,12 @@ binop_xml :: String -> String -> String -> String
 binop_xml o lhs rhs =
   let ty = if o `elem` array_proc_2 then "ArrayProc2" else "BinaryOp"
   in unlines
-     [printf "<block type='Sc_%s' inline='true'>" ty
-     ,printf "<field name='OP'>%s</field>" o
-     ,printf "<value name='LHS'>%s</value>" lhs
-     ,printf "<value name='RHS'>%s</value>" rhs
-     ,"</block>"]
+      [ printf "<block type='Sc_%s' inline='true'>" ty
+      , printf "<field name='OP'>%s</field>" o
+      , printf "<value name='LHS'>%s</value>" lhs
+      , printf "<value name='RHS'>%s</value>" rhs
+      , "</block>"
+      ]
 
 {- | Some operators are handled specially.
 
@@ -310,37 +334,46 @@ binop_xml o lhs rhs =
 5. value -> Value1
 -}
 keybinop_xml :: String -> String -> String -> String
-keybinop_xml msg lhs rhs  =
+keybinop_xml msg lhs rhs =
   case msg of
     "dup:" ->
       printf
-      "<block type='Sc_ArrayFill' inline='true'>\n<value name='PROC'>%s</value>\n<value name='COUNT'>%s</value>\n</block>"
-      lhs rhs
+        "<block type='Sc_ArrayFill' inline='true'>\n<value name='PROC'>%s</value>\n<value name='COUNT'>%s</value>\n</block>"
+        lhs
+        rhs
     "timesRepeat:" ->
       printf
-      "<block type='Sc_TimesRepeat'>\n<value name='COUNT'>%s</value>\n<value name='PROC'>%s</value>\n</block>"
-      lhs rhs
+        "<block type='Sc_TimesRepeat'>\n<value name='COUNT'>%s</value>\n<value name='PROC'>%s</value>\n</block>"
+        lhs
+        rhs
     "to:" ->
       printf
-      "<block type='Sc_ArrayFromTo' inline='true'>\n<value name='FROM'>%s</value>\n<value name='TO'>%s</value>\n</block>"
-      lhs rhs
+        "<block type='Sc_ArrayFromTo' inline='true'>\n<value name='FROM'>%s</value>\n<value name='TO'>%s</value>\n</block>"
+        lhs
+        rhs
     "value:" ->
       printf
-      "<block type='Sc_Value1' inline='true'>\n<value name='PROC'>%s</value>\n<value name='VALUE'>%s</value>\n</block>"
-      lhs rhs
+        "<block type='Sc_Value1' inline='true'>\n<value name='PROC'>%s</value>\n<value name='VALUE'>%s</value>\n</block>"
+        lhs
+        rhs
     _ ->
       let ty = if (init msg) `elem` array_proc_2 then "ArrayProc2" else "BinaryOp"
       in printf
-         "<block type='Sc_%s' inline='true'>\n<field name='OP'>%s</field>\n<value name='LHS'>%s</value>\n<value name='RHS'>%s</value>\n</block>"
-         ty (init msg) lhs rhs
+          "<block type='Sc_%s' inline='true'>\n<field name='OP'>%s</field>\n<value name='LHS'>%s</value>\n<value name='RHS'>%s</value>\n</block>"
+          ty
+          (init msg)
+          lhs
+          rhs
 
 keyternaryop_xml :: String -> String -> String -> String -> String
-keyternaryop_xml msg p1 p2 p3  =
+keyternaryop_xml msg p1 p2 p3 =
   case msg of
     "value:value:" ->
       printf
-      "<block type='Sc_Value2' inline='true'>\n<value name='PROC'>%s</value>\n<value name='VALUE1'>%s</value>\n<value name='VALUE2'>%s</value>\n</block>"
-      p1 p2 p3
+        "<block type='Sc_Value2' inline='true'>\n<value name='PROC'>%s</value>\n<value name='VALUE1'>%s</value>\n<value name='VALUE2'>%s</value>\n</block>"
+        p1
+        p2
+        p3
     _ -> error ("keyternaryop_xml: " ++ show [msg, p1, p2, p3])
 
 {- | Variable declaration
@@ -351,8 +384,8 @@ keyternaryop_xml msg p1 p2 p3  =
 var_decl :: [String] -> String
 var_decl v =
   if null v
-  then ""
-  else printf "<variables>%s</variables>" (concatMap (\x -> concat ["<variable>",x,"</variable>"]) v)
+    then ""
+    else printf "<variables>%s</variables>" (concatMap (\x -> concat ["<variable>", x, "</variable>"]) v)
 
 {- | Variable set
 
@@ -365,12 +398,12 @@ var_decl v =
 var_set :: String -> String -> String
 var_set =
   printf
-  "<block type='variables_set'>\n<field name='VAR'>%s</field>\n<value name='VALUE'>%s</value>\n</block>"
+    "<block type='variables_set'>\n<field name='VAR'>%s</field>\n<value name='VALUE'>%s</value>\n</block>"
 
 var_set_then :: String -> String -> String -> String
 var_set_then =
   printf
-  "<block type='variables_set'>\n<field name='VAR'>%s</field>\n<value name='VALUE'>%s</value>\n<next>%s</next>\n</block>"
+    "<block type='variables_set'>\n<field name='VAR'>%s</field>\n<value name='VALUE'>%s</value>\n<next>%s</next>\n</block>"
 
 -- | Booleans are special cases
 var_get :: String -> String
@@ -396,8 +429,9 @@ array_elem_xml k x = printf "<value name='ADD%d'>%s</value>" k x
 array_xml :: [String] -> String
 array_xml l =
   printf
-  "<block type='lists_create_with' inline='true'>\n<mutation items='%d'></mutation>\n%s</block>"
-  (length l) (unlines (zipWith array_elem_xml [0..] l))
+    "<block type='lists_create_with' inline='true'>\n<mutation items='%d'></mutation>\n%s</block>"
+    (length l)
+    (unlines (zipWith array_elem_xml [0 ..] l))
 
 -- | If the last expression is an assignment (ie. if the rhs is null), return the variable getter.
 expr_group_assignments :: [Expr] -> ([Expr], Expr)
@@ -415,35 +449,44 @@ proc_xml a _v e =
   case (a, expr_group_assignments e) of
     ([], ([], r)) ->
       printf
-      "<block type='Sc_Proc0' inline='true'>\n<value name='RETURN'>%s</value>\n</block>"
-      (expr_xml r)
+        "<block type='Sc_Proc0' inline='true'>\n<value name='RETURN'>%s</value>\n</block>"
+        (expr_xml r)
     ([], (s, r)) ->
       printf
-      "<block type='Sc_Proc0Stm'>\n<value name='STATEMENTS'>%s</value>\n<value name='RETURN'>%s</value>\n</block>"
-      (assign_seq_xml s) (expr_xml r)
+        "<block type='Sc_Proc0Stm'>\n<value name='STATEMENTS'>%s</value>\n<value name='RETURN'>%s</value>\n</block>"
+        (assign_seq_xml s)
+        (expr_xml r)
     ([a1], ([], r)) ->
       printf
-      "<block type='Sc_Proc1' inline='true'>\n<value name='VAR'>%s</value>\n<value name='RETURN'>%s</value>\n</block>"
-      (var_get a1) (expr_xml r)
+        "<block type='Sc_Proc1' inline='true'>\n<value name='VAR'>%s</value>\n<value name='RETURN'>%s</value>\n</block>"
+        (var_get a1)
+        (expr_xml r)
     ([a1], (s, r)) ->
       printf
-      "<block type='Sc_Proc1Stm'>\n<value name='VAR'>%s</value>\n<value name='STATEMENTS'>%s</value>\n<value name='RETURN'>%s</value>\n</block>"
-      (var_get a1) (assign_seq_xml s) (expr_xml r)
+        "<block type='Sc_Proc1Stm'>\n<value name='VAR'>%s</value>\n<value name='STATEMENTS'>%s</value>\n<value name='RETURN'>%s</value>\n</block>"
+        (var_get a1)
+        (assign_seq_xml s)
+        (expr_xml r)
     ([a1, a2], ([], r)) ->
       printf
-      "<block type='Sc_Proc2' inline='true'>\n<value name='VAR1'>%s</value>\n<value name='VAR2'>%s</value>\n<value name='RETURN'>%s</value>\n</block>"
-      (var_get a1) (var_get a2)  (expr_xml r)
+        "<block type='Sc_Proc2' inline='true'>\n<value name='VAR1'>%s</value>\n<value name='VAR2'>%s</value>\n<value name='RETURN'>%s</value>\n</block>"
+        (var_get a1)
+        (var_get a2)
+        (expr_xml r)
     ([a1, a2], (s, r)) ->
       printf
-      "<block type='Sc_Proc2Stm'>\n<value name='VAR1'>%s</value>\n<value name='VAR2'>%s</value>\n<value name='STATEMENTS'>%s</value>\n<value name='RETURN'>%s</value>\n</block>"
-      (var_get a1) (var_get a2) (assign_seq_xml s) (expr_xml r)
+        "<block type='Sc_Proc2Stm'>\n<value name='VAR1'>%s</value>\n<value name='VAR2'>%s</value>\n<value name='STATEMENTS'>%s</value>\n<value name='RETURN'>%s</value>\n</block>"
+        (var_get a1)
+        (var_get a2)
+        (assign_seq_xml s)
+        (expr_xml r)
     _ -> error (show ("proc_xml: not 0, 1 or 2 argument", a, e))
 
 comment_xml :: St.Comment -> String
 comment_xml c =
   if null c
-  then ""
-  else printf "<block type='Sc_Comment'>\n<field name='COMMENT'>%s</field>\n</block>" (if last c == '\n' then init c else c)
+    then ""
+    else printf "<block type='Sc_Comment'>\n<field name='COMMENT'>%s</field>\n</block>" (if last c == '\n' then init c else c)
 
 expr_xml :: Expr -> String
 expr_xml e =
@@ -472,12 +515,11 @@ assign_seq_xml e_seq =
     _ -> error ("assign_seq_xml: " ++ show e_seq)
 
 in_xml :: String -> String
-in_xml x = unlines ["<xml>",x ++ "</xml>"]
+in_xml x = unlines ["<xml>", x ++ "</xml>"]
 
 -- | .stc files may have .md notes sections, discard these.
 extract_stc_graph :: String -> String
 extract_stc_graph = unlines . takeWhile (not . isPrefixOf "{- ----") . lines
-
 
 {- | Stc to Xml
 
@@ -563,7 +605,6 @@ extract_stc_graph = unlines . takeWhile (not . isPrefixOf "{- ----") . lines
 <value name='FROM'><block type='math_number'><field name='NUM'>1</field></block></value>
 <value name='TO'><block type='math_number'><field name='NUM'>9</field></block></value>
 </block></xml>
-
 -}
 stc_to_xml :: String -> String
 stc_to_xml = in_xml . expr_xml . Stc.stcToExpr
@@ -615,7 +656,6 @@ stc_to_xml = in_xml . expr_xml . Stc.stcToExpr
 </value>
 </block></value>
 </block></xml>
-
 -}
 spl_to_xml :: String -> String
 spl_to_xml = in_xml . expr_xml . Stc.splToExpr
@@ -626,7 +666,7 @@ graph_file_to_xml_file trs fn = do
   txt <- readFile (dir ++ fn)
   writeFile (dir ++ fn ++ ".xml") (in_xml (expr_xml (trs (extract_stc_graph txt))))
 
-{- | Stc file to Xml file -}
+-- | Stc file to Xml file
 stc_file_to_xml_file :: FilePath -> IO ()
 stc_file_to_xml_file = graph_file_to_xml_file Stc.stcToExpr
 

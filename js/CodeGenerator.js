@@ -18,19 +18,19 @@ export function initCodeGen(Blockly) {
 	Blockly.JavaScript.forBlock['Sc_ArrayFill'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, 'duplicateInteger', [
 			'PROC',
-			'COUNT'
+			'COUNT',
 		]);
 	};
 	Blockly.JavaScript.forBlock['Sc_ArrayFromTo'] = function (block) {
 		const [code, order] = infixMethodCodeGen(Blockly, block, 'to', [
 			'FROM',
-			'TO'
+			'TO',
 		]);
 		return [`asList(${code})`, order];
 	};
 	Blockly.JavaScript.forBlock['Sc_ArrayProc1'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), [
-			'IN'
+			'IN',
 		]);
 	};
 	Blockly.JavaScript.forBlock['Sc_ArrayProc2'] = function (block) {
@@ -99,7 +99,7 @@ export function initCodeGen(Blockly) {
 	Blockly.JavaScript.forBlock['Sc_Nil'] = function (block) {
 		return [
 			'nil',
-			Blockly.JavaScript.ORDER_FUNCTION_CALL
+			Blockly.JavaScript.ORDER_FUNCTION_CALL,
 		];
 	};
 	Blockly.JavaScript.forBlock['Sc_OverlapTexture'] = function (block) {

@@ -23,7 +23,7 @@ The file name is either a key for an entry in the _sound file dictionary_ or a
 In this program _HarpA4_ is a key in the default dictionary.
 It resolves to the Url
 
->  <https://rohandrape.net/pub/jssc3/flac/harp-a4.flac>
+>  <https://rohandrape.net/pub/jssc3/flac/HarpA4.flac>
 
 The first time a file is requested the system will take an arbitrary amount of time to allocate and fill the buffer.
 Subsequent requests for the same file return the cached buffer.

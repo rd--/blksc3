@@ -19,7 +19,8 @@ remote-setup:
 	(cd lib/scsynth-wasm-builds ; git pull)
 	(cd lib ; make copy-dist)
 
-indent:
+mk-fmt:
+	deno fmt --use-tabs --single-quote blksc3.html
 	fourmolu -i hs
 
 doctest:

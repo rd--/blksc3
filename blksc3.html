@@ -1,10 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="utf-8" />
 		<title>Block SuperCollider</title>
 		<link rel="icon" type="image/png" href="lib/jssc3/png/os.512.png" />
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css"
+		/>
 		<link rel="stylesheet" type="text/css" media="all" href="css/BlkSc3.css" />
 		<script src="lib/blockly-11.1.1/blockly_compressed.js"></script>
 		<script src="lib/blockly-11.1.1/javascript_compressed.js"></script>
@@ -13,28 +17,28 @@
 		<script src="lib/scsynth-wasm-builds/lib/ext/commonmark.js"></script>
 		<script src="lib/scsynth-wasm-builds/lib/ext/osc-browser.js"></script>
 		<script type="module">
-import * as sc from './lib/jssc3/dist/jssc3.js' /* local */
-import * as sl from './lib/spl/dist/sl.js' /* local */
-import * as blk from './js/blksc3.js'
-globalThis.sc = sc;
-globalThis.sl = sl;
-globalThis.blk = blk;
-sl.addLoadUrlMethods();
-window.onload = function() {
-	globalThis.globalScSynth = sc.ScSynthWasm();
-	sc.sc3MouseInit(globalScSynth);
-	sc.scSynthInitStatusTextListener(globalScSynth, '---');
-	sl.assignGlobals();
-	sl.setSplDir('lib/spl');
-	sl.loadUrl('*Load*', 'sl/Meta/PackageIndex.sl').then(function() {
-		sl.primitiveLoadPackageSequence([
-			'Kernel',
-			'StandardLibrary',
-			'SuperColliderLibrary'
-		]);
-	});
-	globalThis.rec = new blk.Blk(Blockly, false, false);
-};
+			import * as sc from './lib/jssc3/dist/jssc3.js'; /* local */
+			import * as sl from './lib/spl/dist/sl.js'; /* local */
+			import * as blk from './js/blksc3.js';
+			globalThis.sc = sc;
+			globalThis.sl = sl;
+			globalThis.blk = blk;
+			sl.addLoadUrlMethods();
+			window.onload = function () {
+				globalThis.globalScSynth = sc.ScSynthWasm();
+				sc.sc3MouseInit(globalScSynth);
+				sc.scSynthInitStatusTextListener(globalScSynth, '---');
+				sl.assignGlobals();
+				sl.setSplDir('lib/spl');
+				sl.loadUrl('*Load*', 'sl/Meta/PackageIndex.sl').then(function () {
+					sl.primitiveLoadPackageSequence([
+						'Kernel',
+						'StandardLibrary',
+						'SuperColliderLibrary',
+					]);
+				});
+				globalThis.rec = new blk.Blk(Blockly, false, false);
+			};
 		</script>
 	</head>
 	<body>
@@ -44,8 +48,11 @@ window.onload = function() {
 				<select id="programsMenu" title="Program (p)" accesskey="p"></select>
 				<select id="helpMenu" title="Help (h)" accesskey="h"></select>
 				<select id="guideMenu" title="Guide (g)" accesskey="g"></select>
-				<select id="smallProgramsMenu" title="Small Programs (a)" accesskey="a"></select>
-				<select id="userMenu" title="User (u)" accesskey="u"><option value="">--User--</option></select>
+				<select id="smallProgramsMenu" title="Small Programs (a)" accesskey="a">
+				</select>
+				<select id="userMenu" title="User (u)" accesskey="u">
+					<option value="">--User--</option>
+				</select>
 				<select id="actionsMenu" title="Actions">
 					<option value="">&#x2630;</option>
 					<option value="userBackup">Backup</option>
@@ -54,21 +61,99 @@ window.onload = function() {
 				</select>
 			</div>
 			<div id="blkCmd">
-				<input type="file" id="jsonInputFile" accept=".json" onchange="rec.readInputJson('jsonInputFile')" style="display:none">
-				<input type="file" id="userProgramArchiveFile" accept=".json" onchange="sc.userProgramReadArchive('userProgramArchiveFile', 'userMenu')" style="display:none">
-				<button id="oracleButton" title="Oracle (r)" accesskey="r" onclick="rec.runOracle()">易</button>
-				<button id="jsonInputFileSelect" title="Select and load .json file to workspace (l)" accesskey="l">Load</button>
-				<button title="Copy workspace json to clipboard (c)"  accesskey="c" onclick="navigator.clipboard.writeText(rec.workspaceJson())">Copy</button>
-				<button title="Cleanup workspace (o)" accesskey="o" onclick="rec.workspace.cleanUp()">Cleanup</button>
-				<!-- <button title="Center drawing in workspace" onclick="rec.workspace.scrollCenter()">Center</button> -->
-				<button title="Fit drawing to workspace (=)" accesskey="=" onclick="rec.workspace.zoomToFit()">Fit</button>
+				<input
+					type="file"
+					id="jsonInputFile"
+					accept=".json"
+					onchange="rec.readInputJson('jsonInputFile')"
+					style="display: none"
+				/>
+				<input
+					type="file"
+					id="userProgramArchiveFile"
+					accept=".json"
+					onchange="sc.userProgramReadArchive('userProgramArchiveFile', 'userMenu')"
+					style="display: none"
+				/>
+				<button
+					id="oracleButton"
+					title="Oracle (r)"
+					accesskey="r"
+					onclick="rec.runOracle()"
+				>
+					易
+				</button>
+				<button
+					id="jsonInputFileSelect"
+					title="Select and load .json file to workspace (l)"
+					accesskey="l"
+				>
+					Load
+				</button>
+				<button
+					title="Copy workspace json to clipboard (c)"
+					accesskey="c"
+					onclick="navigator.clipboard.writeText(rec.workspaceJson())"
+				>
+					Copy
+				</button>
+				<button
+					title="Cleanup workspace (o)"
+					accesskey="o"
+					onclick="rec.workspace.cleanUp()"
+				>
+					Cleanup
+				</button>
+				<button
+					title="Fit drawing to workspace (=)"
+					accesskey="="
+					onclick="rec.workspace.zoomToFit()"
+				>
+					Fit
+				</button>
 				<button title="Print" onclick="rec.printCode()">Print</button>
-				<button title="Evaluate workspace program (/)" accesskey="/" onclick="rec.evalCode()">Eval</button>
-				<button title="Play workspace program (,)" accesskey="," onclick="rec.playCode()">Play</button>
-				<button title="Send reset command (.)" accesskey="." onclick="globalScSynth.reset()">Reset</button>
-				<button title="Replace workspace program (-)" accesskey="-" onclick="rec.replaceCode()">Replace</button>
-				<button title="Delete all blocks from workspace (k)" accesskey="k" onclick="rec.workspace.clear()">Clear</button>
-				<button title="Save document to local storage (s)" accesskey="s" onclick="sc.userProgramSaveTo('userMenu', rec.workspaceJson(), false)">Save</button>
+				<button
+					title="Evaluate workspace program (/)"
+					accesskey="/"
+					onclick="rec.evalCode()"
+				>
+					Eval
+				</button>
+				<button
+					title="Play workspace program (,)"
+					accesskey=","
+					onclick="rec.playCode()"
+				>
+					Play
+				</button>
+				<button
+					title="Send reset command (.)"
+					accesskey="."
+					onclick="globalScSynth.reset()"
+				>
+					Reset
+				</button>
+				<button
+					title="Replace workspace program (-)"
+					accesskey="-"
+					onclick="rec.replaceCode()"
+				>
+					Replace
+				</button>
+				<button
+					title="Delete all blocks from workspace (k)"
+					accesskey="k"
+					onclick="rec.workspace.clear()"
+				>
+					Clear
+				</button>
+				<button
+					title="Save document to local storage (s)"
+					accesskey="s"
+					onclick="sc.userProgramSaveTo('userMenu', rec.workspaceJson(), false)"
+				>
+					Save
+				</button>
 				<select id="blkLayoutMenu" title="System layouts (y)" accesskey="y">
 					<option value="">--Display--</option>
 					<option value="%×%">%×%</option>
@@ -77,16 +162,32 @@ window.onload = function() {
 					<option value="1680×1050">1680×1050</option>
 					<option value="1920×1080">1920×1080</option>
 				</select>
-				<button title="Begin" accesskey="b" onclick="globalScSynth.connect()">Begin</button>
-<!--
-				ⓘ
--->
+				<button title="Begin" accesskey="b" onclick="globalScSynth.connect()">
+					Begin
+				</button>
 				<span id="statusText">...</span>
-				<button title="Fullscreen" accesskey="x" onclick="sc.fullscreen()">⇱</button>
-				<button title="Naming Schema" accesskey="n" onclick="rec.nextNamingScheme()">𝑁</button>
-				<button title="Toolbox" accesskey="t" onclick="rec.nextToolbox()">𝑇</button>
-				<button title="External ScSynth" onclick="sc.scSynthUseWebSocket(globalScSynth, 'ws://localhost:58110')">𝓔</button>
-				<button title="External ScSynth" onclick="rec.nextColourScheme()">⬜</button>
+				<button title="Fullscreen" accesskey="x" onclick="sc.fullscreen()">
+					⇱
+				</button>
+				<button
+					title="Naming Schema"
+					accesskey="n"
+					onclick="rec.nextNamingScheme()"
+				>
+					𝑁
+				</button>
+				<button title="Toolbox" accesskey="t" onclick="rec.nextToolbox()">
+					𝑇
+				</button>
+				<button
+					title="External ScSynth"
+					onclick="sc.scSynthUseWebSocket(globalScSynth, 'ws://localhost:58110')"
+				>
+					𝓔
+				</button>
+				<button title="External ScSynth" onclick="rec.nextColourScheme()">
+					⬜
+				</button>
 			</div>
 		</div>
 
@@ -97,17 +198,18 @@ window.onload = function() {
 					<h2>Block SuperCollider</h2>
 					<p><em>blksc3</em> is a visual editor for SuperCollider.</p>
 					<p>There is a <em>Guide</em>, the menu is below the workspace.</p>
-					<p>If the <em>status area</em> says <em>Loading...</em> please wait.</p>
+					<p>
+						If the <em>status area</em> says <em>Loading...</em> please wait.
+					</p>
 				</div>
 			</details>
-<!--
-			<div id="uiCtlContainer"></div>
--->
 		</div>
 		<script async src="lib/scsynth-wasm-builds/ext/scsynth.js"></script>
 	</body>
 </html>
 
 <!--
+<div id="uiCtlContainer"></div>
+<button title="Center drawing in workspace" onclick="rec.workspace.scrollCenter()">Center</button>
 <button title="Copy current workspace Svg to clipboard" onclick="navigator.clipboard.writeText(blk.getSvg())">Copy Svg</button>
 -->

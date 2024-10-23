@@ -1,5 +1,2 @@
 mk-fmt:
 	deno fmt --use-tabs --single-quote
-
-mk-lint:
-	deno lint

@@ -289,7 +289,7 @@ export class Blk {
 			'--text-colour': '#424242',
 			'--workspace-colour': '#fddde6',
 			'--fragment-colour': '#98ece8',
-			'--outline-colour': '#f6d4f6'
+			'--outline-colour': '#f6d4f6',
 		});
 	}
 
@@ -302,7 +302,7 @@ export class Blk {
 			'--text-colour': '#000',
 			'--workspace-colour': '#f3f3f3',
 			'--fragment-colour': '#eee',
-			'--outline-colour': '#000'
+			'--outline-colour': '#000',
 		});
 	}
 
@@ -379,7 +379,9 @@ export class Blk {
 	}
 
 	nextColourScheme() {
-		this.whichColourScheme = this.whichColourScheme == 'Pretty' ? 'Grey' : 'Pretty';
+		this.whichColourScheme = this.whichColourScheme == 'Pretty'
+			? 'Grey'
+			: 'Pretty';
 		if (this.whichColourScheme == 'Pretty') {
 			this.setPrettyColours();
 		} else {
