@@ -1,5 +1,7 @@
 // Modifies builtin Js code generator, .sl uses := for "assignment"
 
+import * as sc from '../lib/jssc3/dist/jssc3.js';
+
 export function initCodeGen(Blockly) {
 	Blockly.JavaScript.forBlock['variables_set'] = function (block) {
 		const name = Blockly.JavaScript.nameDB_.getName(

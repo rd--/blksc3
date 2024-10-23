@@ -1,6 +1,6 @@
 /* https://www.listarc.cal.bham.ac.uk/lists/sc-users-2002/msg00534.html ; f0 */
 {
-	let b = SfAcquireMono('floating_1');
+	let b = SfAcquireMono('Floating');
 	let a = (LfNoise1(1.6) * 10000).RoundTo((LfNoise0(0.1) * 6400).Abs).kr;
 	let z = {
 		AllpassL(

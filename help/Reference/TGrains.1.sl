@@ -1,10 +1,10 @@
 /* TGrains.1 */
-var sf = SfAcquireMono('crotale-d6'); /* floating_1 */
-var trRate = MouseY(2, 120, 1, 0.2);
-var tr = Impulse(trRate, 0);
-var rate = 1.2 ^ (WhiteNoise() * 3).RoundTo(1);
-var centerPos = MouseX(0, SfDur(sf), 0, 0.2);
-var dur = 1.2 / trRate;
+let sf = SfAcquireMono('CrotaleD6'); /* Floating */
+let trRate = MouseY(2, 120, 1, 0.2);
+let tr = Impulse(trRate, 0);
+let rate = 1.2 ^ (WhiteNoise() * 3).RoundTo(1);
+let centerPos = MouseX(0, SfDur(sf), 0, 0.2);
+let dur = 1.2 / trRate;
 TGrains(2, tr, sf, rate, centerPos, dur, WhiteNoise() * 0.6, 0.75, 4)
 
 /* ---- notes.md ---- */
