@@ -19,8 +19,8 @@ A λ block may be _evaluated_ to run the program fragment it holds and to return
 When evaluated, a λ block must be passed the appropriate number of arguments, one for each declared parameter.
 
 ! (_Duplicate_) is a graph combinator, a form of _higher order function_.
-! requires a zero argument λ block (𝑓) and an integer (#) as inputs.
-! generates a ⟦⟧ (_List_) of # places, and evaluates 𝑓 # times, once for each place, to set its values.
+! requires a zero argument λ block (λ) and an integer (#) as inputs.
+! generates a ⟦⟧ (_List_) of # places, and evaluates λ # times, once for each place, to set its values.
 
 This program sums twelve sine oscillators,
 with random frequencies in _(110, 220)_ _hz_,

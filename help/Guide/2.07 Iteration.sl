@@ -14,10 +14,10 @@ x
 /* ---- notes.md ---- }
 # Iteration
 
-The # (_TimesRepeat_) block evaluates the procedure at 𝑓 the indicated number of times.
+The # (_TimesRepeat_) block evaluates the procedure at λ the indicated number of times.
 
 \# is a statement block, it does not answer a value.
-The ← (_Return_) value of the procedure at 𝑓 is ignored.
+The ← (_Return_) value of the procedure at λ is ignored.
 
 The procedure is therefore applied for its _effect_.
 

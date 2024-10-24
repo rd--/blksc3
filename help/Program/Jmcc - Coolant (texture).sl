@@ -17,7 +17,7 @@ A λ block with a ⍵ input defines a one-argument function.
 
 A ◠₂ block distributes an array of signals at ⟦∙⟧ across the stereo field.
 
-A ! block creates an array of # places by evaluating the function at 𝑓 # times.
+A ! block creates an array of # places by evaluating the function at λ # times.
 
 A λ block with only a ← input defines a zero-argument function.
 
@@ -38,6 +38,6 @@ A ⤴⚁ block is a triggered random number generator.
 ⤴ the trigger.
 
 A ᨏ block generates an overlapping texture by cross-fading two copies of a sound.
-𝑓 is the function to be triggered for each component of the texture,
+λ is the function to be triggered for each component of the texture,
 ⌒ is the sustain time, and
 ⤢ is the transition time.

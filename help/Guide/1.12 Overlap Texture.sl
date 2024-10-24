@@ -12,7 +12,7 @@
 ᨏ (_OverlapTexture_) is a graph combinator, a form of _higher order function_.
 ᨏ requires a one argument λ block as an input.
 
-ᨏ makes # (_overlap_) parallel copies of the graph fragment at 𝑓 (_proc_).
+ᨏ makes # (_overlap_) parallel copies of the graph fragment at λ (_procedure_).
 Each copy forms one voice of an evolving texture.
 
 ᨏ applies a simple linear envelope to each voice.
@@ -22,7 +22,7 @@ The duration of the envelope is: 2 × ⤢ + ⌒.
 The envelopes of each voice are reset at equally spaced regular intervals.
 The interval between between resets is: (2 × ⤢ + ⌒) ÷ #.
 
-The argument to 𝑓 is a signal that indicates to the voice when its envelope is reset,
+The argument to λ is a signal that indicates to the voice when its envelope is reset,
 allowing voices to move to a new state for each iteration.
 
 This program generates a texture of 12 voices, each a single ∿ (_SinOsc_).

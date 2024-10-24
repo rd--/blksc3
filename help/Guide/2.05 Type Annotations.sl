@@ -13,7 +13,7 @@ Blocks can have type annotations specifying what type a block answers and what t
 
 The system does not allow incompatible types of blocks to be connected.
 
-The ! block checks that the 𝑓 input is a procedure of no arguments,
+The ! block checks that the λ input is a procedure of no arguments,
 and that the # input is a number.
 The ! block also indicates that its answer is a list.
 
@@ -24,6 +24,6 @@ Inputs can also accept _sets_ of types.
 Unit generator inputs may ordinarily be either other unit generators or lists,
 and in some cases numbers.
 
-If we try and move the λ block from the 𝑓 input of ! to the input of ⊳ it will bounce off.
+If we try and move the λ block from the λ input of ! to the input of ⊳ it will bounce off.
 
 This program plays two quiet sine tones at random frequencies and amplitudes.

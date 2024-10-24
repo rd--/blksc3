@@ -6,378 +6,266 @@ Out and LocalOut have results (and are not statements) so that LocalOut may be a
 
 Unicode:
 
+- ~/data/unicode.org/Public/11.0.0/ucd/UnicodeGlyphs.txt
+- <https://en.wikipedia.org/wiki/List_of_Unicode_characters>
+
 Todo:
  - haltAfter, dx, param, mnn, rate, step
- - Formant
- - LfCub, LfGauss, LfPar
- - Pluck, Bezier
- - Crackle, QuadC
+ - Bezier
+ - QuadC
  - Gendy
- - Brf, OnePole
- - Formlet, MoogFf, MoogLadder
+ - Brf
+ - MoogFf, MoogLadder
  - BandStop
- - FreqShift, Pitch, PitchShift
  - Fold, MantissaMask, Wrap
  - Amplitude, Limiter, Normalizer
  - Slew
- - Phasor, RunningMax, Stepper, Sweep, ToggleFf
+ - RunningMax, ToggleFf
  - TScramble
- - GrainFM, GrainSin, TGrains
- - Adsr
  - LinSeg
- - Hasher
- - BufFrames, BufAlloc
- - DegreeToKey
- - Osc, BufRec
 
-λ = Proc (Lambda)
-⍵ = Arg1 (Omega, Apl)
-← = Return
-⦙ = Statements
-Σ = Sum
-∏ = Product
-√ = Sqrt
-∞ = Infinity
-≠ = Not equal
-× = Mul, level, times
-÷ = Div
-⌊ = Floor ; Minimum ; Low
-↻ = Loop
-⌈ = Ceiling ; Maximum ; Left high
+# Glyphs
+
+λ = Lambda ; λ U+003BB Greek Small Letter Lambda
+⍵ = Arg1 ; ⍵ U+02375 Apl Functional Symbol Omega
+← = Return ; ← U+02190 Leftwards Arrow { ⏎ }
+⦙ = Statements ; ⦙ U+02999 Dotted Fence { ⋮ }
+Σ = Sum ; Σ U+003A3 Greek Capital Letter Sigma
+∏ = Product ; ∏ U+0220F N-Ary Product ; Π U+003A0 Greek Capital Letter Pi
+√ = Sqrt ; √ U+0221A Square Root
+∞ = Infinity ; ∞ U+0221E Infinity
+≠ = NotEqual ; U+02260 Not Equal To
+× = Mul, Level, Times ; × U+000D7 Multiplication Sign
+÷ = Div ; ÷ U+000F7 Division Sign
+⌊ = Floor, Minimum, Low ; ⌊ U+0230A Left Floor
+↻ = Loop, Reset, Orientation ; ↻ U+021BB Clockwise Open Circle Arrow { ⤿ }
+⌈ = Ceiling, Maximum ; ⌈ U+02308 Left Ceiling
+⌉ = High ; ⌉ U+02309 Right Ceiling
+⌋ = Low ; ⌋ U+0230B Right Floor
+º = Ordinal ; º U+000BA Masculine Ordinal Indicator
+₂ = Second ; ₂ U+02082 Subscript Two
+⊳ = Play ; ⊳ U+022B3 Contains As Normal Subgroup
+🔊 = 🔊 U+1F50A Speaker With Three Sound Waves
+▷ = ▷ U+025B7 White Right-Pointing Triangle
+✐ = Comment ; ✐ U+02710 Upper Right Pencil { ‹› «» “” ❮❯ }
+“ = Comment ; “ U+0201C Left Double Quotation Mark
+ν = Frequency ; ν U+003BD Greek Small Letter Nu
+ω = Angular frequency ; ω U+003C9 Greek Small Letter Omega
+ϕ = Phase, Phasor ; ϕ U+003D5 Greek Phi Symbol
+∿ = Sin ; ∿ U+0223F Sine Wave
+⏦ = Sin ; ⏦ U+023E6 Ac Current
+⎍ = Pulse, Square ; ⎍ U+0238D Monostable Symbol { ⑀ }
+≤ = Le ; ≤ U+02264 Less-Than Or Equal To
+≥ = Ge ; ≥ U+02265 Greater-Than Or Equal To
+↗ = Attack time ; ↗ U+02197 North East Arrow
+↘ = Decay, Decay time ; ↘ U+02198 South East Arrow { ◟ ◟ ヘ }
+⇲ = Release time ; ⇲ U+021F2 South East Arrow To Corner
+| = Abs ; | U+0007C Vertical Line
+⤴ = Trigger ; ⤴ U+02934 Arrow Pointing Rightwards Then Curving Upwards
+⊥ = Impulse ; ⊥ U+022A5 Up Tack
+𝄇 = Repeat ; 𝄇 U+1D107 Musical Symbol Right Repeat Sign
+ᨏ = Overlap ; ᨏ U+01A0F Buginese Letter Nyca
+⏲ = Time ; ⏲ U+023F2 Timer Clock { ◔ }
+⌒ = Sustain time ; ⌒ U+02312 Arc
+⤢ = Transition time ; ⤢ U+02922 North East And South West Arrow
+⟦⟧ = List ; ⟦ U+027E6 Mathematical Left White Square Bracket & ⟧ U+027E7 Mathematical Right White Square Bracket
+≔ = Assignment, Set ; ≔ U+02254 Colon Equals
+↔ = Width, Range ; ↔ U+02194 Left Right Arrow
+⎵ = Delay ; ⎵ U+023B5 Bottom Square Bracket
+⢅ = Dust ; ⢅ U+02885 Braille Pattern Dots-138 { ⠇ ⦙ ⵘ 㙠 }
+△ = Triangle ; △ U+025B3 White Up-Pointing Triangle { ꟿ 𝖶 }
+◿ = Saw ; ◿ U+025FF Lower Right Triangle { ◺ }
+ᚊ = Comb ; ᚊ U+0168A Ogham Letter Ceirt
+⎕ = Default ; ⎕ U+02395 Apl Functional Symbol Quad
+𝑓 = Function ; 𝑓 U+1D453 Mathematical Italic Small F
+― = Line ; ― U+02015 Horizontal Bar
+⟜ = Start ; ⟜ U+027DC Left Multimap
+⊸ = End ; ⊸ U+022B8 Multimap
+☟ = Mouse ; ☟ U+0261F White Down Pointing Index
+↕ = Button ; ↕ U+02195 Up Down Arrow
+⌨ = Key ; ⌨ U+02328 Keyboard
+◠ = Splay ; ◠ U+025E0 Upper Half Circle { ◚ }
+⚁ = Rand, ExpRand ; ⚁ U+02681 Die Face-2 { ⚀ ⚁ ⚂ ⚃ ⚄ ⚅ }
+⇛ = Collect, Map ; ⇛ U+021DB Rightwards Triple Arrow { ∀ ¨ }
+½ = Half ; ½ U+000BD Vulgar Fraction One Half
+𝐿 = Left ; 𝐿 U+1D43F Mathematical Italic Capital L
+𝑅 = Right ; 𝑅 U+1D445 Mathematical Italic Capital R
+𝑋 = Exponential ; 𝑋 U+1D44B Mathematical Italic Capital X { ˣ }
+⚖ = Balance ; ⚖ U+02696 Scales
+⌖ = Position ; ⌖ U+02316 Position Indicator
+▣ = Roomsize ; ▣ U+025A3 White Square Containing Black Small Square
+⊕ = Mix ; ⊕ U+02295 Circled Plus
+⊏ = Clip ; ⊏ U+0228F Square Image Of
+↲ = Sync ; ↲ U+021B2 Downwards Arrow With Tip Leftwards { ↻ ↱ }
+ᴙ = Reverse ; ᴙ U+01D19 Latin Letter Small Capital Reversed R
+⎎ = Hysteresis, Lag ; ⎎ U+0238E Hysteresis Symbol
+𝄶 = Octave ; 𝄶 U+1D136 Musical Symbol Ottava Alta
+⅟ = Reciprocal ; ⅟ U+0215F Fraction Numerator One
+𝑄 = Q ; 𝑄 U+1D444 Mathematical Italic Capital Q
+㏈ = Decibels ; ㏈ U+033C8 Square Db { ȸ }
+⛁ = Buffer, bufNum ; ⛁ U+026C1 White Draughts King
+⚙ = Mutate ; ⚙ U+02699 Gear
+𝑥 = X-axis ; 𝑥 U+1D465 Mathematical Italic Small X
+𝑦 = Y-axis ; 𝑦 U+1D466 Mathematical Italic Small Y
+𝐿 = Linear ; 𝐿 U+1D43F Mathematical Italic Capital L { ᴸ }
+𝐼 = Integer ; 𝐼 U+1D43C Mathematical Italic Capital I
+𝑉 = Variable ; 𝑉 U+1D449 Mathematical Italic Capital V
+␊ = Lf, Low Frequency ; ␊ U+0240A Symbol For Line Feed
+▩ = Density ; ▩ U+025A9 Square With Diagonal Crosshatch Fill { ⛆ }
+⎇ = Gate ; ⎇ U+02387 Alternative Key Symbol
+⎓ = DC ; ⎓ U+02393 Direct Current Symbol Form Two
+⎚ = Clear ; ⎚ U+0239A Clear Screen Symbol
+⍳ = Iota ; ⍳ U+02373 Apl Functional Symbol Iota
+⍴ = Rho ; ⍴ U+02374 Apl Functional Symbol Rho
+≡ = Equality ; ≡ U+02261 Identical To
+☞ = Which, Index ; ☞ U+0261E White Right Pointing Index
+⊗ = Feedback coefficient, Damping coefficient, gain ; ⊗ U+02297 Circled Times
+⏢ = Attack-Release ; ⏢ U+023E2 White Trapezium
+⊙ = Midi ; ⊙ U+02299 Circled Dot Operator
+? = predicate ; ? U+0003F Question Mark
+⍰ = Noise, Uncertainty ; ⍰ U+02370 Apl Functional Symbol Quad Question
+⋏ = Resonant filter (Resonz) ; ⋏ U+022CF Curly Logical And
+⬔ = Lowpass filter ; ⬔ U+02B14 Square With Upper Right Diagonal Half Black { ⬕ }
+◩ = Highpass filter ; ◩ U+025E9 Square With Upper Left Diagonal Half Black { ◪ }
+⬜ = Allpass filter ; ⬜ U+02B1C White Large Square
+◫ = Bandpass filter ; ◫ U+025EB White Square With Vertical Bisecting Line
+⍀ = Latch ; ⍀ U+02340 Apl Functional Symbol Backslash Bar
+… = Elipsis ; … U+02026 Horizontal Ellipsis
+┋ = Bank ; ┋ U+0250B Box Drawings Heavy Quadruple Dash Vertical { ┊ }
+⊤ = True ; ⊤ U+022A4 Down Tack { T ⊨ }
+⊥ = False ; ⊥ U+022A5 Up Tack { F }
+⧈ = Reverb, Room ; ⧈ U+029C8 Squared Square
+∙ = Input ; ∙ U+02219 Bullet Operator
+𝔼 = Event ; 𝔼 U+1D53C Mathematical Double-Struck Capital E
+⌓ = Window ; ⌓ U+02313 Segment
+⌽ = OnePole, centerPos, center ; ⌽ U+0233D Apl Functional Symbol Circle Stile
+δ = rate ; δ U+003B4 Greek Small Letter Delta
+# = Hasher, numChan ; # U+00023 Number Sign
+𝓰 = Grain ; 𝓰 U+1D4F0 Mathematical Bold Script Small G
+Ⅲ = Blip ; Ⅲ U+02162 Roman Numeral Three
+☜ = Select ; ☜ U+0261C White Left Pointing Index
+⌶ = Limiter ; ⌶ U+02336 Apl Functional Symbol I-Beam
+⦦ = Sweep ; ⦦ U+029A6 Oblique Angle Opening Up
+𝆱 = Stepper ; 𝆱 U+1D1B1 Musical Symbol Glissando Up
+⦧ = step ; ⦧ U+029A7 Oblique Angle Opening Down
+⠿ = Sequencer ; ⠿ U+0283F Braille Pattern Dots-123456
+⫨ = Bus ; ⫨ U+02AE8 Short up tack with underbar
+𝓥 = Voice ; 𝓥 U+1D4E5 Mathematical Bold Script Capital V { 𝑣 𝑣 }
+⌼ = Formant ; ⌼ U+0233C Apl Functional Symbol Quad Circle
+⍋ = Pluck ; ⍋ U+0234B Apl Functional Symbol Delta Stile
+𝅘𝅥𝅮 = Pitch ; 𝅘𝅥𝅮 U+1D160 Musical Symbol Eighth Note
+⧢ = Shuffler ; ⧢ U+029E2 Shuffle Product
+⫳ = Tanh ; ⫳ U+02AF3 Parallel With Tilde Operator
+𝌏 = Distort ; 𝌏 U+1D30F Tetragram For Defectiveness Or Distortion
+
+# Composites
+
 ⌊⌉ = Round
-⌉ = High ; Right high
-⌋ = Right Low
-º = Ordinal (1º = first, 2º = second)
-₂ = second
-⊳ = Play (🔊, ▷)
-✐ = Comment (‹› «» “” ❮❯)
-ν = Frequency (Greek Small Letter Nu, U+03BD)
-ω = Angular frequency
-ϕ = phase
-∿ = Sin (⏦) U+223F ∿ Sine Wave ; U+23E6 ⏦ Ac Current
-⎍ = Pulse, Square (⑀)
-≤ = Less than or equal to
-≥ = Greater than or equal to
-↗ = Attack time
-↘ = Decay time (◟)
-⇲ = Release time
-| = Abs
-⤴ = Trigger (U+2934)
-⊥ = Impulse
-𝄇 = Repeat
-ᨏ = Overlap
-↘ = Decay (◟, ヘ)
-⏲ = Time (◔)
-⌒ = Sustain time
-⤢ = Transition time
-⟦⟧ = Array
-≔ = Assignment, Set
-↔ = Width, Range
-⎵ = Delay
-⢅ = Dust (⠇, ⦙)
-△ = Triangle (ꟿ, 𝖶)
-◿ = Saw
-ᚊ = Comb
-⎕ = Default
-𝑓 = Function
-↻ = Reset, resetPos
-― - Line
-⟜ = Start
-⊸ = End
-☟ = Mouse (☟𝑥, ☟𝑦, ☟↕)
-↕ = Button
-⌨ = Key
-◠ = Splay (◚)
+1º = First
+2º = Second
+☟𝑥 = MouseX
+☟𝑦 = MouseY
+☟↕ = MouseButton
 ◠₂ = Splay2
-⚁ = Rand, ExpRand (⚀ ⚁ ⚂ ⚃ ⚄ ⚅)
 ⤴⚁ = TRand
-⇛ = Collect, Map (∀, ¨)
-½ = Half
-½, ↉, ⅓, ⅔, ¼, ¾, ⅕, ⅖, ⅗, ⅘, ⅙, ⅚, ⅐, ⅛, ⅜, ⅝, ⅞, ⅑, ⅒, ⅟ = Fractions
-𝐿 = Left
-𝑅 = Right
-𝑋 = Exponential (ˣ, XRand, XLine)
-⚖ = Balance
-⌖ = Position (⌖₂ = Pan2)
+⌖₂ = Pan2
 𝑨𝒛 = Azimuth
-▣ = Roomsize
-⊕  = Mix
-⊏ = Clip
-↲ = Sync (↻, ↱)
-ᴙ = Reverse
-÷𝑄 = rq
-⎎ = Hysteresis, Lag
-𝄶 = Octave
-¹⁄ = Reciprocal
-㏈ = Decibels (ȸ)
-⛁ = bufnum
-⏢⛁ = envbufnum
-⚙ = Mutate
-𝑥 = X-axis
-𝑦 = Y-axis
-𝑋 = Exponential
-𝐿 = Linear (ᴸ)
-𝐼 = Integer
-𝑉 = Variable
-␊ = Low Frequency (Lf)
-▩ = Density
-⎇ = Gate
-⏎ = Return
-⎓ = DC
-⎚ = Clear
-⍳ = Iota
-⍴ = Rho
-⍵ = Omega
-≡ = Equality
+÷𝑄 = Rq
+⏢⛁ = envBufNum
 𝑥ⁿ = Exponentiation
 𝑒ⁿ = Exponentiation of e
-☞ = Which, Index
-⊗ = Feedback coefficient, Damping coefficient, gain
-⏢ = Attack-Release
-⊙ = Midi
 ♩→ν = MidiCps
 ν→♩ = CpsMidi
-? = predicate
-⍰ = Noise, Uncertainty
 ⍰𝒘 = WhiteNoise
 ⍰𝒑 = PinkNoise
 ⍰𝒃 = BrownNoise
 ⍰𝒈 = GreyNoise
-⋏ = Resonant filter (Resonz)
-⋏ₜ  =Resonant filter (Ringz)
+⍰𝑐 = Crackle
+⋏ₜ = Resonant filter (Ringz)
 ₀¹ = Unit
-⬔ = Lowpass filter (⬕?)
-◩ = Highpass filter (◪?)
-⬜ = Allpass filter
-◫ = Bandpass filter
-⍀ = Latch
-… = Elipsis
-┋ = Bank (┊)
-⊤ = True (T, ⊨)
-⊥ = False (F)
-𝑓′ = Slop
-⧈ = Reverb (Room)
-∙ = Input
-⟦∙⟧ = InputArray
-𝔼 = Event
-⌓ = Window
-#⌓ = Window size
-⌽ = OnePole, centerPos, center
-δ = rate
-# = numChan
-#∙ = numInputs
-#𝑓 = numFrames
-#↓ = numOutputs
-⛁ = bufnum
-∙↻ = InFb
-↻∿𝑐  = FbSineC
-↻∿𝑙  = FbSineL
-×𝑐 = levelComp
-𝓰 = Grain
-𝓰∿ = GrainSin
-⤴𝓰 = TGrains
-⌈𝓰 = maxGrains
-Ⅲ = Blip
 #→♩ = DegreeToKey
 ␊◡ = LfPar
 ␊◠ = LfCub
-𝌅 = Digram
-𝍖 = Tetragram
-◌ = Dotted circle
-☜ = Select
-⛁∿ = Osc (i.e. table oscillator)
-𝑙∙ = LocalIn
-𝑙↓ = LocalOut
-𝐷⚁ = Drand
-𝐷⋯ = Dseq
-𝐷⤴ = Demand
-𝐷⏲ = Duty
-⤴𝐷⏲ = TDuty
-⌶  = Limiter
-⦦ = Sweep
 𝑆δ = SampleRate
 𝑅⌈ = RunningMax
 ⛁⏲ = BufDur
 ⛁# = BufFrames
 ⛁δ× = BufRateScale
 →⛁ = asLocalBuf
-⍰𝑐 = Crackle
-ϕ = Phasor
-𝆱 = Stepper
-⦧ = step
-⠿ = Sequencer
+⛁∿ = Osc, Table Oscillator
+𝑙∙ = LocalIn
+𝑙↓ = LocalOut
+𝐷⚁ = Drand
+𝐷⋯ = Dseq ; ⋯ U+022EF Midline Horizontal Ellipsis
+𝐷⤴ = Demand
+𝐷⏲ = Duty
+⤴𝐷⏲ = TDuty
 ⊥⠿ = ImpulseSequencer
-↻ = orientation ; U+21BB ↻ Clockwise open circle arrow
-⫨ = bus ; U+2AE8 Short up tack with underbar
-𝓥 = voice ; 𝑣 𝑣
+𝓰∿ = GrainSin
+⤴𝓰 = TGrains
+⌈𝓰 = maxGrains
+#∙ = numInputs
+#𝑓 = numFrames
+#↓ = numOutputs
+∙↻ = InFb
+↻∿𝑐  = FbSineC
+↻∿𝑙  = FbSineL
+×𝑐 = Level compensation
+⟦∙⟧ = Input list
+#⌓ = Window size
+𝑓′ = Slope { ⌳ }
+→⌼ = Formlet
+ν↕ = FreqShift
+#→♩ = DegreeToKey
+⏢↘ = Adsr
+⛁↓ = BufRec
+⛁! = BufAlloc
+␊◠ = LfCub
+␊𝒢 = LfGauss
+␊◡ = LfPar
+𝅘𝅥𝅮↕ = PitchShift
+𝓰ν+ = GrainFm
+⧢⛁ = ShufflerB
 
-Musical symbol glissando up: 𝆱
+* * *
 
-𝑆 U+1D446 Mathematical Italic Capital S
-𝑠 U+1D460 Mathematical Italic Small S
-𝑟 U+1D45F Mathematical Italic Small R
-𝑅 (U+1D445)
-𝑐 U+1D450 Mathematical Italic Small C
-𝐶 U+1D436 Mathematical Italic Capital C
-𝐷 U+1D437 Mathematical Italic Capital D
-𝑑 U+1D451 Mathematical Italic Small D
-𝑁 U+1D441 Mathematical Italic Capital N
-𝑛
-
-
-Oblique angle opening down: ⦧
-Oblique angle opening up: ⦦
-Lower left semicircular anticlockwise arrow: ⤿
 Turned not sign: ⌙
-Lower left quadrant circular arc: ◟
 Righthand interior product: ⨽
 Right angle: ∟
-Slope: ⌳
-Lower left triangle: ◺
 
-ⵘ
-« = Left Angle Quotation Mark
-» = Right Angle Quotation Mark
-‹ = Single Left Angle Quotation Mark
-› = Single Right Angle Quotation Mark
-“ = Left Quotation Mark
-” = Right Quotation Mark
-⋯ = U+22EF Midline Horizontal Ellipsis
+ⵘ = Tifinagh Letter Ayer Yagh
+◌ = Dotted circle
 
 * * *
 
 ⛁ = Disk
 ⎙ = Print
 ✉ = Email
-↓ = Save (▼)
-
-⛆ = Rain
+↓ = Save { ▼ }
  = Powder
-㙠 = Dust
 亂 = Chaos
-
 ⋐ = Double subset = 0x22d0
 ⚆ = White circle with dot right = 0x2686
-
 🚫 = No entry sign
 ⦵ = Circle with horizontal bar
 ∅ = Empty set
 ⌀ = Diameter sign
 ⌀ = O with stroke
 Ꝋ = O with stroke
-
-𝆱 = Glissando up
-
 ⑁ = Ocr chair
 ⑀ = Ocr hook
 ⑂ = Ocr fork
 ⑃ = Ocr inverted fork
-
-“⊗” U+2297 Circled Times Unicode Character - Compart
-
-⟜ = Left multimap
-
-☰  = Trigram for heaven
-
 ⓘ = Status text (✍, ℹ, 🛈)
-
 ⨠ = Z notation schema piping
 ≪ = Much less-than
 ≫ = Much greater-than
-
-Ω = Ohm sign
-
-⌽ = Apl functional symbol circle stile = 0x233d
-⍉ = Apl functional symbol circle backslash = 0x2349
+Ω = Ω U+003A9 Greek Capital Letter Omega
 ⦵ = Circle with horizontal bar = 0x29b5
 
-APL
-⌶ U+2336
-⌷ U+2337
-⌸ U+2338
-⌹ U+2339
-⌺ U+233A
-⌻ U+233B
-⌼ U+233C
-⌽ U+233D
-⌾ U+233E
-⌿ U+233F
-⍀ U+2340
-⍁ U+2341
-⍂ U+2342
-⍃ U+2343
-⍄ U+2344
-⍅ U+2345
-⍆ U+2346
-⍇ U+2347
-⍈ U+2348
-⍉ U+2349
-⍊ U+234A
-⍋ U+234B
-⍌ U+234C
-⍍ U+234D
-⍎ U+234E
-⍏ U+234F
-⍐ U+2350
-⍑ U+2351
-⍒ U+2352
-⍓ U+2353
-⍔ U+2354
-⍕ U+2355
-⍖ U+2356
-⍗ U+2357
-⍘ U+2358
-⍙ U+2359
-⍚ U+235A
-⍛ U+235B
-⍜ U+235C
-⍝ U+235D
-⍞ U+235E
-⍟ U+235F
-⍠ U+2360
-⍡ U+2361
-⍢ U+2362
-⍣ U+2363
-⍤ U+2364
-⍥ U+2365
-⍦ U+2366
-⍧ U+2367
-⍨ U+2368
-⍩ U+2369
-⍪ U+236A
-⍫ U+236B
-⍬ U+236C
-⍭ U+236D
-⍮ U+236E
-⍯ U+236F
-⍰ U+2370
-⍱ U+2371
-⍲ U+2372
-⍳ U+2373
-⍴ U+2374
-⍵ U+2375
-⍶ U+2376
-⍷ U+2377
-⍸ U+2378
-⍹ U+2379
-⍺ U+237A
-
-- U+2254 ≔ Colon Equals
-- U+250A ┊ Box Drawings Light Quadruple Dash Vertical
-- U+250B ┋ Box Drawings Heavy Quadruple Dash Vertical
-- U+2807 ⠇Braille Pattern Dots-123
-- U+2999 ⦙ Dotted Fence
-
-- U+22EE ⋮ Vertical Ellipsis
-- U+2630 ☰ Trigram For Heaven
-
 - U+2394 ⎔ Software-Function Symbol
-
 - U+26AC ⚬ Medium Small White Circle
 - U+2609 ☉ Sun
-
-°ºₒ⃘∘⊙⊚⌾○◉◦☉⚬⦁⦾⦿⨀ꙩ
-
 - U+25A0 ■ Black Square
 - U+25A3 ▣ White Square Containing Black Small Square
 - U+25E6 ◦ White Bullet
@@ -387,15 +275,62 @@ APL
 - U+00B7 · Middle Dot
 - U+2981 ⦁ Z Notation Spot
 
-← → ↑ ↓
-⟵ ⟶
-⇦ ⇨ ⇧ ⇩
-⬅ ➡ ⬆ ⬇
+°ºₒ⃘∘⊙⊚⌾○◉◦☉⚬⦁⦾⦿⨀ꙩ
 
-♚ ♛ ♜ ♝ ♞ ♟ ♔ ♕ ♖ ♗ ♘ ♙
+# Arrows = U+02190 - U+021FF, U+027F5 - U+027FF, U+02900 - U+0297F
+
+← ↑ → ↓ ↔ ↕ ↖ ↗ ↘ ↙
+↚ ↛ ↜ ↝ ↞ ↟ ↠ ↡ ↢ ↣ ↤ ↥ ↦ ↧ ↨
+↩ ↪ ↫ ↬ ↭ ↮ ↯ ↰ ↱ ↲ ↳ ↴ ↵ ↶ ↷ ↸ ↹ ↺ ↻
+↼ ↽ ↾ ↿ ⇀ ⇁ ⇂ ⇃
+⇄ ⇅ ⇆ ⇇ ⇈ ⇉ ⇊ ⇋ ⇌
+⇍ ⇎ ⇏ ⇐ ⇑ ⇒ ⇓ ⇔ ⇕ ⇖ ⇗ ⇘ ⇙ ⇚ ⇛
+⇜ ⇝ ⇞ ⇟ ⇠ ⇡ ⇢ ⇣ ⇤ ⇥
+⇦ ⇧ ⇨ ⇩ ⇪ ⇫ ⇬ ⇭ ⇮ ⇯ ⇰ ⇱ ⇲ ⇳
+⇴ ⇵ ⇶ ⇷ ⇸ ⇹ ⇺ ⇻ ⇼ ⇽ ⇾ ⇿
+⇪ ⇫ ⇬ ⇭ ⇮ ⇯ ⇰ ⇱ ⇲ ⇳
+⇴ ⇵ ⇶ ⇷ ⇸ ⇹ ⇺ ⇻ ⇼ ⇽ ⇾ ⇿
+⟵ ⟶ ⟷ ⟸ ⟹ ⟺ ⟻ ⟼ ⟽ ⟾ ⟿
+⤀ ⤁ ⤂ ⤃ ⤄ ⤅ ⤆ ⤇ ⤈ ⤉ ⤊ ⤋ ⤌ ⤍ ⤎ ⤏
+⤐ ⤑ ⤒ ⤓ ⤔ ⤕ ⤖ ⤗ ⤘ ⤙ ⤚ ⤛ ⤜ ⤝ ⤞ ⤟ ⤠
+⤡ ⤢ ⤣ ⤤ ⤥ ⤦ ⤧ ⤨ ⤩ ⤪ ⤫ ⤬ ⤭ ⤮ ⤯ ⤰ ⤱ ⤲
+⤳ ⤴ ⤵ ⤶ ⤷ ⤸ ⤹ ⤺ ⤻ ⤼ ⤽ ⤾ ⤿ ⥀ ⥁
+⥂ ⥃ ⥄ ⥅ ⥆ ⥇ ⥈ ⥉
+⥊ ⥋ ⥌ ⥍ ⥎ ⥏ ⥐ ⥑ ⥒ ⥓ ⥔ ⥕ ⥖ ⥗ ⥘ ⥙ ⥚ ⥛ ⥜ ⥝ ⥞ ⥟ ⥠ ⥡
+⥢ ⥣ ⥤ ⥥ ⥦ ⥧ ⥨ ⥩ ⥪ ⥫ ⥬ ⥭ ⥮ ⥯
+⥰ ⥱ ⥲ ⥳ ⥴ ⥵ ⥶ ⥷ ⥸ ⥹ ⥺ ⥻ ⥼ ⥽ ⥾ ⥿
+⬅ ➡ ⬆ ⬇ ⟰ ⟱
+
+# APL = U+02336 - U+0237A
+
+⌶ ⌷ ⌸ ⌹ ⌺ ⌻ ⌼ ⌽ ⌾ ⌿ ⍀ ⍁ ⍂ ⍃ ⍄ ⍅ ⍆ ⍇ ⍈ ⍉ ⍊ ⍋ ⍌ ⍍
+⍎ ⍏ ⍐ ⍑ ⍒ ⍓ ⍔ ⍕ ⍖ ⍗ ⍘ ⍙ ⍚ ⍛ ⍜ ⍝ ⍞ ⍟ ⍠ ⍡ ⍢ ⍣ ⍤ ⍥
+⍦ ⍧ ⍨ ⍩ ⍪ ⍫ ⍬ ⍭ ⍮ ⍯ ⍰ ⍱ ⍲ ⍳ ⍴ ⍵ ⍶ ⍷ ⍸ ⍹ ⍺
+
+# Chess = U+02654 - U+0265F
+
+♔ ♕ ♖ ♗ ♘ ♙
+♚ ♛ ♜ ♝ ♞ ♟
+
+# Cards = U+02660 - U+02667
+
+♠ ♡ ♢ ♣
+♤ ♥ ♦ ♧
+
+# Die = U+02680 - U+02685
+
 ⚀ ⚁ ⚂ ⚃ ⚄ ⚅
+
+# Draughts = U+026C0 - U+026C3
+
 ⛀ ⛁ ⛂ ⛃
-☗ ⛊ ☖ ⛉
+
+# Shogi = U+02616 - U+02617, U+026C9 - U+026CA
+
+☖ ☗ ⛉ ⛊
+
+# Domino = U+1F030 - U+1F093
+
 🁣 🁤 🁥 🁦 🁧 🁨 🁩
 🁪 🁫 🁬 🁭 🁮 🁯 🁰
 🁱 🁲 🁳 🁴 🁵 🁶 🁷
@@ -413,6 +348,100 @@ APL
 🁛 🁜 🁝 🁞 🁟 🁠 🁡
 🀰
 
-https://www.w3.org/TR/xml-entity-names/1D4.html
+# Fractions = U+000BC - U+000BE, U+02150 - U+0215F, U+02189
 
-⦃⦄ 《》 ⟬⟭ ⦇⦈ ⦉⦊ ⦗⦘ ⧼⧽ ⸠⸡ ⸨⸩ 〈〉 〔〕 ﴾﴿ ⟮⟯ ⦅⦆
+½ ↉ ⅓ ⅔ ¼ ¾ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ ⅐ ⅛ ⅜ ⅝ ⅞ ⅑ ⅒ ⅟
+
+# Quotation Marks
+
+" « » ‘ ’ ‚ ‛ “ ” „ ‟ ‹ › ❛ ❜ ❝ ❞ ❟ ❠ ❮ ❯ ⹂ 〝 〞 〟 ＂
+
+# Roman Numerals = U+02160 - U+02188
+
+Ⅰ Ⅱ Ⅳ Ⅴ Ⅵ Ⅶ Ⅷ Ⅸ Ⅹ Ⅺ Ⅻ Ⅼ Ⅽ Ⅾ Ⅿ
+ⅰ ⅱ ⅲ ⅳ ⅴ ⅵ ⅶ ⅷ ⅸ ⅹ ⅺ ⅻ ⅼ ⅽ ⅾ ⅿ
+ↀ ↁ ↂ Ↄ ↄ ↅ ↆ ↇ ↈ
+
+# Monogram, Digram, Tetragram = U+1D300 - U+1D356
+
+𝌀
+𝌁 𝌂 𝌃 𝌄 𝌅
+𝌆 𝌇 𝌈 𝌉 𝌊 𝌋 𝌌 𝌍 𝌎 𝌏 𝌐 𝌑 𝌒 𝌓 𝌔 𝌕
+𝌖 𝌗 𝌘 𝌙 𝌚 𝌛 𝌜 𝌝 𝌞 𝌟 𝌠 𝌡 𝌢 𝌣 𝌤 𝌥
+𝌦 𝌧 𝌨 𝌩 𝌪 𝌫 𝌬 𝌭 𝌮 𝌯 𝌰 𝌱 𝌲 𝌳 𝌴 𝌵
+𝌶 𝌷 𝌸 𝌹 𝌺 𝌻 𝌼 𝌽 𝌾 𝌿 𝍀 𝍁 𝍂 𝍃 𝍄 𝍅
+𝍆 𝍇 𝍈 𝍉 𝍊 𝍋 𝍌 𝍍 𝍎 𝍏 𝍐 𝍑 𝍒 𝍓 𝍔 𝍕
+𝍖
+
+# Mathematical Letters = U+1D400 - U+1D7FF
+
+𝐀 𝐁 𝐂 𝐃 𝐄 𝐅 𝐆 𝐇 𝐈 𝐉 𝐊 𝐋 𝐌 𝐍 𝐎 𝐏 𝐐 𝐑 𝐒 𝐓 𝐔 𝐕 𝐖 𝐗 𝐘 𝐙
+𝐚 𝐛 𝐜 𝐝 𝐞 𝐟 𝐠 𝐡 𝐢 𝐣 𝐤 𝐥 𝐦 𝐧 𝐨 𝐩 𝐪 𝐫 𝐬 𝐭 𝐮 𝐯 𝐰 𝐱 𝐲 𝐳
+𝐴 𝐵 𝐶 𝐷 𝐸 𝐹 𝐺 𝐻 𝐼 𝐽 𝐾 𝐿 𝑀 𝑁 𝑂 𝑃 𝑄 𝑅 𝑆 𝑇 𝑈 𝑉 𝑊 𝑋 𝑌 𝑍
+𝑎 𝑏 𝑐 𝑑 𝑒 𝑓 𝑔 𝑖 𝑗 𝑘 𝑙 𝑚 𝑛 𝑜 𝑝 𝑞 𝑟 𝑠 𝑡 𝑢 𝑣 𝑤 𝑥 𝑦 𝑧
+𝑨 𝑩 𝑪 𝑫 𝑬 𝑭 𝑮 𝑯 𝑰 𝑱 𝑲 𝑳 𝑴 𝑵 𝑶 𝑷 𝑸 𝑹 𝑺 𝑻 𝑼 𝑽 𝑾 𝑿 𝒀 𝒁
+𝒂 𝒃 𝒄 𝒅 𝒆 𝒇 𝒈 𝒉 𝒊 𝒋 𝒌 𝒍 𝒎 𝒏 𝒐 𝒑 𝒒 𝒓 𝒔 𝒕 𝒖 𝒗 𝒘 𝒙 𝒚 𝒛
+𝒜 𝒞 𝒟 𝒢 𝒥 𝒦 𝒩 𝒪 𝒫 𝒬 𝒮 𝒯 𝒰 𝒱 𝒲 𝒳 𝒴 𝒵
+𝒶 𝒷 𝒸 𝒹 𝒻 𝒽 𝒾 𝒿 𝓀 𝓁 𝓂 𝓃 𝓅 𝓆 𝓇 𝓈 𝓉 𝓊 𝓋 𝓌 𝓍 𝓎 𝓏
+𝓐 𝓑 𝓒 𝓓 𝓔 𝓕 𝓖 𝓗 𝓘 𝓙 𝓚 𝓛 𝓜 𝓝 𝓞 𝓟 𝓠 𝓡 𝓢 𝓣 𝓤 𝓥 𝓦 𝓧 𝓨 𝓩
+𝓪 𝓫 𝓬 𝓭 𝓮 𝓯 𝓰 𝓱 𝓲 𝓳 𝓴 𝓵 𝓶 𝓷 𝓸 𝓹 𝓺 𝓻 𝓼 𝓽 𝓾 𝓿 𝔀 𝔁 𝔂 𝔃
+𝔄 𝔅 𝔇 𝔈 𝔉 𝔊 𝔍 𝔎 𝔏 𝔐 𝔑 𝔒 𝔓 𝔔 𝔖 𝔗 𝔘 𝔙 𝔚 𝔛 𝔜
+𝔞 𝔟 𝔠 𝔡 𝔢 𝔣 𝔤 𝔥 𝔦 𝔧 𝔨 𝔩 𝔪 𝔫 𝔬 𝔭 𝔮 𝔯 𝔰 𝔱 𝔲 𝔳 𝔴 𝔵 𝔶 𝔷
+𝔸 𝔹 𝔻 𝔼 𝔽 𝔾 𝕀 𝕁 𝕂 𝕃 𝕄 𝕆 𝕊 𝕋 𝕌 𝕍 𝕎 𝕏 𝕐
+𝕒 𝕓 𝕔 𝕕 𝕖 𝕗 𝕘 𝕙 𝕚 𝕛 𝕜 𝕝 𝕞 𝕟 𝕠 𝕡 𝕢 𝕣 𝕤 𝕥 𝕦 𝕧 𝕨 𝕩 𝕪 𝕫
+𝕬 𝕭 𝕮 𝕯 𝕰 𝕱 𝕲 𝕳 𝕴 𝕵 𝕶 𝕷 𝕸 𝕹 𝕺 𝕻 𝕼 𝕽 𝕾 𝕿 𝖀 𝖁 𝖂 𝖃 𝖄 𝖅
+𝖆 𝖇 𝖈 𝖉 𝖊 𝖋 𝖌 𝖍 𝖎 𝖏 𝖐 𝖑 𝖒 𝖓 𝖔 𝖕 𝖖 𝖗 𝖘 𝖙 𝖚 𝖛 𝖜 𝖝 𝖞 𝖟
+𝖠 𝖡 𝖢 𝖣 𝖤 𝖥 𝖦 𝖧 𝖨 𝖩 𝖪 𝖫 𝖬 𝖭 𝖮 𝖯 𝖰 𝖱 𝖲 𝖳 𝖴 𝖵 𝖶 𝖷 𝖸 𝖹
+𝖺 𝖻 𝖼 𝖽 𝖾 𝖿 𝗀 𝗁 𝗂 𝗃 𝗄 𝗅 𝗆 𝗇 𝗈 𝗉 𝗊 𝗋 𝗌 𝗍 𝗎 𝗏 𝗐 𝗑 𝗒 𝗓
+𝗔 𝗕 𝗖 𝗗 𝗘 𝗙 𝗚 𝗛 𝗜 𝗝 𝗞 𝗟 𝗠 𝗡 𝗢 𝗣 𝗤 𝗥 𝗦 𝗧 𝗨 𝗩 𝗪 𝗫 𝗬 𝗭
+𝗮 𝗯 𝗰 𝗱 𝗲 𝗳 𝗴 𝗵 𝗶 𝗷 𝗸 𝗹 𝗺 𝗻 𝗼 𝗽 𝗾 𝗿 𝘀 𝘁 𝘂 𝘃 𝘄 𝘅 𝘆 𝘇
+𝘈 𝘉 𝘊 𝘋 𝘌 𝘍 𝘎 𝘏 𝘐 𝘑 𝘒 𝘓 𝘔 𝘕 𝘖 𝘗 𝘘 𝘙 𝘚 𝘛 𝘜 𝘝 𝘞 𝘟 𝘠 𝘡
+𝘢 𝘣 𝘤 𝘥 𝘦 𝘧 𝘨 𝘩 𝘪 𝘫 𝘬 𝘭 𝘮 𝘯 𝘰 𝘱 𝘲 𝘳 𝘴 𝘵 𝘶 𝘷 𝘸 𝘹 𝘺 𝘻
+𝘼 𝘽 𝘾 𝘿 𝙀 𝙁 𝙂 𝙃 𝙄 𝙅 𝙆 𝙇 𝙈 𝙉 𝙊 𝙋 𝙌 𝙍 𝙎 𝙏 𝙐 𝙑 𝙒 𝙓 𝙔 𝙕
+𝙖 𝙗 𝙘 𝙙 𝙚 𝙛 𝙜 𝙝 𝙞 𝙟 𝙠 𝙡 𝙢 𝙣 𝙤 𝙥 𝙦 𝙧 𝙨 𝙩 𝙪 𝙫 𝙬 𝙭 𝙮 𝙯
+𝙰 𝙱 𝙲 𝙳 𝙴 𝙵 𝙶 𝙷 𝙸 𝙹 𝙺 𝙻 𝙼 𝙽 𝙾 𝙿 𝚀 𝚁 𝚂 𝚃 𝚄 𝚅 𝚆 𝚇 𝚈 𝚉
+𝚊 𝚋 𝚌 𝚍 𝚎 𝚏 𝚐 𝚑 𝚒 𝚓 𝚔 𝚕 𝚖 𝚗 𝚘 𝚙 𝚚 𝚛 𝚜 𝚝 𝚞 𝚟 𝚠 𝚡 𝚢 𝚣
+𝚤 𝚥
+𝚨 𝚩 𝚪 𝚫 𝚬 𝚭 𝚮 𝚯 𝚰 𝚱 𝚲 𝚳 𝚴 𝚵 𝚶 𝚷 𝚸 𝚹 𝚺 𝚻 𝚼 𝚽 𝚾 𝚿 𝛀 𝛁
+𝛂 𝛃 𝛄 𝛅 𝛆 𝛇 𝛈 𝛉 𝛊 𝛋 𝛌 𝛍 𝛎 𝛏 𝛐 𝛑 𝛒 𝛓 𝛔 𝛕 𝛖 𝛗 𝛘 𝛙 𝛚 𝛛 𝛜 𝛝 𝛞 𝛟 𝛠 𝛡
+𝛢 𝛣 𝛤 𝛥 𝛦 𝛧 𝛨 𝛩 𝛪 𝛫 𝛬 𝛭 𝛮 𝛯 𝛰 𝛱 𝛲 𝛳 𝛴 𝛵 𝛶 𝛷 𝛸 𝛹 𝛺 𝛻
+𝛼 𝛽 𝛾 𝛿 𝜀 𝜁 𝜂 𝜃 𝜄 𝜅 𝜆 𝜇 𝜈 𝜉 𝜊 𝜋 𝜌 𝜍 𝜎 𝜏 𝜐 𝜑 𝜒 𝜓 𝜔 𝜕 𝜖 𝜗 𝜘 𝜙 𝜚 𝜛
+𝜜 𝜝 𝜞 𝜟 𝜠 𝜡 𝜢 𝜣 𝜤 𝜥 𝜦 𝜧 𝜨 𝜩 𝜪 𝜫 𝜬 𝜭 𝜮 𝜯 𝜰 𝜱 𝜲 𝜳 𝜴 𝜵
+𝜶 𝜷 𝜸 𝜹 𝜺 𝜻 𝜼 𝜽 𝜾 𝜿 𝝀 𝝁 𝝂 𝝃 𝝄 𝝅 𝝆 𝝇 𝝈 𝝉 𝝊 𝝋 𝝌 𝝍 𝝎 𝝏 𝝐 𝝑 𝝒 𝝓 𝝔 𝝕
+𝝖 𝝗 𝝘 𝝙 𝝚 𝝛 𝝜 𝝝 𝝞 𝝟 𝝠 𝝡 𝝢 𝝣 𝝤 𝝥 𝝦 𝝧 𝝨 𝝩 𝝪 𝝫 𝝬 𝝭 𝝮 𝝯
+𝝰 𝝱 𝝲 𝝳 𝝴 𝝵 𝝶 𝝷 𝝸 𝝹 𝝺 𝝻 𝝼 𝝽 𝝾 𝝿 𝞀 𝞁 𝞂 𝞃 𝞄 𝞅 𝞆 𝞇 𝞈 𝞉 𝞊 𝞋 𝞌 𝞍 𝞎 𝞏
+𝞐 𝞑 𝞒 𝞓 𝞔 𝞕 𝞖 𝞗 𝞘 𝞙 𝞚 𝞛 𝞜 𝞝 𝞞 𝞟 𝞠 𝞡 𝞢 𝞣 𝞤 𝞥 𝞦 𝞧 𝞨 𝞩
+𝞪 𝞫 𝞬 𝞭 𝞮 𝞯 𝞰 𝞱 𝞲 𝞳 𝞴 𝞵 𝞶 𝞷 𝞸 𝞹 𝞺 𝞻 𝞼 𝞽 𝞾 𝞿 𝟀 𝟁 𝟂 𝟃 𝟄 𝟅 𝟆 𝟇 𝟈 𝟉
+𝟊 𝟋
+𝟎 𝟏 𝟐 𝟑 𝟒 𝟓 𝟔 𝟕 𝟖 𝟗
+𝟘 𝟙 𝟚 𝟛 𝟜 𝟝 𝟞 𝟟 𝟠 𝟡
+𝟢 𝟣 𝟤 𝟥 𝟦 𝟧 𝟨 𝟩 𝟪 𝟫
+𝟬 𝟭 𝟮 𝟯 𝟰 𝟱 𝟲 𝟳 𝟴 𝟵
+𝟶 𝟷 𝟸 𝟹 𝟺 𝟻 𝟼 𝟽 𝟾 𝟿
+
+# Braille = U+028FF
+
+⠀ ⠁ ⠂ ⠃ ⠄ ⠅ ⠆ ⠇ ⠈ ⠉ ⠊ ⠋ ⠌ ⠍ ⠎ ⠏ ⠐ ⠑ ⠒ ⠓ ⠔ ⠕ ⠖ ⠗ ⠘ ⠙ ⠚ ⠛ ⠜ ⠝ ⠞ ⠟
+⠠ ⠡ ⠢ ⠣ ⠤ ⠥ ⠦ ⠧ ⠨ ⠩ ⠪ ⠫ ⠬ ⠭ ⠮ ⠯ ⠰ ⠱ ⠲ ⠳ ⠴ ⠵ ⠶ ⠷ ⠸ ⠹ ⠺ ⠻ ⠼ ⠽ ⠾ ⠿
+⡀ ⡁ ⡂ ⡃ ⡄ ⡅ ⡆ ⡇ ⡈ ⡉ ⡊ ⡋ ⡌ ⡍ ⡎ ⡏ ⡐ ⡑ ⡒ ⡓ ⡔ ⡕ ⡖ ⡗ ⡘ ⡙ ⡚ ⡛ ⡜ ⡝ ⡞ ⡟
+⡠ ⡡ ⡢ ⡣ ⡤ ⡥ ⡦ ⡧ ⡨ ⡩ ⡪ ⡫ ⡬ ⡭ ⡮ ⡯ ⡰ ⡱ ⡲ ⡳ ⡴ ⡵ ⡶ ⡷ ⡸ ⡹ ⡺ ⡻ ⡼ ⡽ ⡾ ⡿
+⢀ ⢁ ⢂ ⢃ ⢄ ⢅ ⢆ ⢇ ⢈ ⢉ ⢊ ⢋ ⢌ ⢍ ⢎ ⢏ ⢐ ⢑ ⢒ ⢓ ⢔ ⢕ ⢖ ⢗ ⢘ ⢙ ⢚ ⢛ ⢜ ⢝ ⢞ ⢟
+⢠ ⢡ ⢢ ⢣ ⢤ ⢥ ⢦ ⢧ ⢨ ⢩ ⢪ ⢫ ⢬ ⢭ ⢮ ⢯ ⢰ ⢱ ⢲ ⢳ ⢴ ⢵ ⢶ ⢷ ⢸ ⢹ ⢺ ⢻ ⢼ ⢽ ⢾ ⢿
+⣀ ⣁ ⣂ ⣃ ⣄ ⣅ ⣆ ⣇ ⣈ ⣉ ⣊ ⣋ ⣌ ⣍ ⣎ ⣏ ⣐ ⣑ ⣒ ⣓ ⣔ ⣕ ⣖ ⣗ ⣘ ⣙ ⣚ ⣛ ⣜ ⣝ ⣞ ⣟
+⣠ ⣡ ⣢ ⣣ ⣤ ⣥ ⣦ ⣧ ⣨ ⣩ ⣪ ⣫ ⣬ ⣭ ⣮ ⣯ ⣰ ⣱ ⣲ ⣳ ⣴ ⣵ ⣶ ⣷ ⣸ ⣹ ⣺ ⣻ ⣼ ⣽ ⣾ ⣿
+
+# Entity Names
+
+<https://www.w3.org/TR/xml-entity-names/1D4.html>
+
+# Parentheses, Brackets
+
+() ⦇⦈ ⸨⸩ ﴾﴿ ⟮⟯ ⦅⦆ ₍₎
+{} ⁅⁆ ⦃⦄ ❴❵ ⟅⟆ ⧘⧙ ⧚⧛
+[] ⟬⟭ 〔〕 ❲❳ ⦗⦘ ⸠⸡ ｢｣
+<> 〈〉 ⟨⟩ ❬❭ 《》 ⟪⟫ ⦉⦊ ⧼⧽ 〈〉 ⧼⧽
+
+# Small
+
+,﹐ .﹒ ;﹔ :﹕ ?﹖ !﹗ -﹣ #﹟ &﹠ *﹡ +﹢ =﹦ \﹨ $﹩ %﹪ @﹫
+()﹙﹚ {}﹛﹜ []﹝﹞ <>﹤﹥
