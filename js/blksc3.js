@@ -251,15 +251,18 @@ export class Blk {
 	}
 
 	playCode() {
-		globalScSynth.playUgenAt(addWorkspaceEnv(this.evalCode()), 0, -1, 1, []);
+		const blockProgram = this.evalCode();
+		globalScSynth.playUgenAt(blockProgram, 0, -1, 1, []);
 	}
 
 	replaceCode() {
+		const blockProgram = this.evalCode();
+		const replacingProgram = addWorkspaceEnv(blockProgram);
 		globalScSynth.sendOsc(
 			sc.n_set(-1, [['workspaceReleaseTime', 3], ['workspaceGate', 0]]),
 		);
 		globalScSynth.playUgenAt(
-			addWorkspaceEnv(this.evalCode()),
+			replacingProgram,
 			0,
 			-1,
 			1,
