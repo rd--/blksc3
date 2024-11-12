@@ -31,9 +31,9 @@ Block SuperCollider also has blocks for the standard components of a synthesiser
 To make sound Block SuperCollider translates the block program into a form understood by the synthesiser and sends it to be played using the appropriate messaging protocol.
 Ordinarily the system runs its own in-process copy of the synthesiser, compiled to Wasm (Rossberg 2019), within the browser.
 However it can also communicate with an external synthesiser by sending messages over a socket.
-The figure below shows the Block SuperCollider system.
+[Figure 1](https://rohandrape.net/sw/blksc3/png/BlockSuperCollider.png) shows the Block SuperCollider system.
 
-![](sw/blksc3/png/BlockSuperCollider.png)
+<!-- ![Figure 1](sw/blksc3/png/BlockSuperCollider.png) -->
 
 ## Workspace
 
@@ -58,9 +58,9 @@ The system has two different toolboxes, a complete toolbox and a small toolbox.
 The latter has a flat structure and omits many obscure and rarely used blocks.
 The 𝑇 button below the workspace switches between them.
 Blocks are fetched by dragging them out of the toolbox and into the workspace.
-The figure below shows the complete toolbox with the constants category selected.
+[Figure 2](https://rohandrape.net/sw/blksc3/png/Toolbox.png) shows the complete toolbox with the constants category selected.
 
-![](sw/blksc3/png/Toolbox.png)
+<!-- ![Figure 2](sw/blksc3/png/Toolbox.png) -->
 
 ## Notes
 
@@ -86,7 +86,7 @@ Block SuperCollider defines two sets of messages,
 and for each parameter of each block, and
 2\. a text set that provides a longer name for the block and elides the parameter names.
 The 𝑁 control selects between the symbolic and text naming schemes.
-The figure below shows the sine oscillator unit-generator block using the symbolic naming scheme.
+[Figure 3](https://rohandrape.net/sw/blksc3/png/SinOsc.internal.png) shows the sine oscillator unit-generator block using the symbolic naming scheme.
 The symbols used are:
 1\. ∿: sine,
 2\. ν: frequency,
@@ -97,13 +97,13 @@ and
 The naming scheme also applies to menu items.
 The entries in the menu of the boolean constant block will be either ⊤ and ⊥ or _True_ and _False_.
 
-![](sw/blksc3/png/SinOsc.internal.png)
+<!-- ![Figure 3](sw/blksc3/png/SinOsc.internal.png) -->
 
 ## Block Colours
 
 The blocks in each category are all drawn in the same colour, shown to the left of the category name.
 Categories are grouped into families, also indicated by colour.
-The program in the figure below contains blocks belonging to each of the five families of signal processing objects:
+The program in [Figure 4](https://rohandrape.net/sw/blksc3/png/BlockColours.png) contains blocks belonging to each of the five families of signal processing objects:
 
 1. ⊥ (_Impulse_) is in _Generator → Oscillator_
 2. ⍰𝒑 (_PinkNoise_) is in _Generator → Noise_
@@ -120,7 +120,7 @@ the numbers are in _Constants_,
 ≔ and _t_ are in _Variables_,
 and ▷ is in _Meta_.
 
-![](sw/blksc3/png/BlockColours.png)
+<!-- ![Figure 4](sw/blksc3/png/BlockColours.png) -->
 
 ## Workspace Controls
 
@@ -167,8 +167,7 @@ The illustration programs were translated from an existing collection of text pr
 The translator is the inverse of the code generator,
 it reads a text program of the kind the code generator writes,
 and writes a block program of the kind the code generator reads.
-The figure below shows the text of a brief program (Putnam 2004) that the translator reads,
-and the corresponding block program the translator writes.
+[Figure 5](https://rohandrape.net/sw/blksc3/png/Translator.png) shows the block program the translator writes given the text of the following brief program (Putnam 2004):
 
 ```
 CombC(
@@ -183,7 +182,7 @@ CombC(
 )
 ```
 
-![](sw/blksc3/png/Translator.png)
+<!-- ![Figure 5](sw/blksc3/png/Translator.png) -->
 
 ## Control Fields
 
@@ -199,9 +198,9 @@ which is simple both to comprehend and to implement in a visual program editor,
 poses numerous very subtle problems when translated to a text editor.
 A block drawing is a concise view onto a complex structure,
 and it is largely for this reason that the view can readily support multiple complex modes of interaction.
-The figure below shows a ∿ (_SinOsc_) block with 𝒞 inputs for both frequency and amplitude.
+[Figure 6](https://rohandrape.net/sw/blksc3/png/ControlField.png) shows a ∿ (_SinOsc_) block with 𝒞 inputs for both frequency and amplitude.
 
-![](sw/blksc3/png/ControlField.png)
+<!-- ![Figure 6](sw/blksc3/png/ControlField.png) -->
 
 ## Types of Types
 
@@ -215,7 +214,7 @@ and the system will not allow wrong connections.
 In addition, blocks can have value type annotations,
 specifying what type of value a block answers and what type of value each input must be.
 The system likewise does not allow blocks with incompatible value types to be connected.
-In the figure below, the ! (_Duplicate_) block checks that the 𝑓 input is a procedure of no arguments,
+In [Figure 7](https://rohandrape.net/sw/blksc3/png/TypeAnnotation.png) the ! (_Duplicate_) block checks that the 𝑓 input is a procedure of no arguments,
 and that the # input is a number,
 and also indicates that its answer is a list.
 The system would not allow the ⚁ block to be moved from the × input of ∿ to the # input of !,
@@ -225,7 +224,7 @@ Unit-generator inputs may ordinarily be either other unit-generators or lists,
 and in some cases numbers,
 and will accept blocks answering any one of these types.
 
-![](sw/blksc3/png/TypeAnnotation.png)
+<!-- ![Figure 7](sw/blksc3/png/TypeAnnotation.png) -->
 
 ## Related Work
 
@@ -261,22 +260,19 @@ Existing synthesis systems with extensive histories that are now additionaly com
 
 ## Future Research
 
-Block SuperCollider is an experimental, personal research project that is still in its early stages of development.
-Considered as a proof of concept, the system behaves remarkably well.
-The large collection of illustration programs,
-the extensive guide,
-and the contents of the toolbox,
+Block SuperCollider is an experimental, personal research project that is in the early stages of development.
+Considered as a proof of concept, the system behaves well.
+The collection of illustration programs,
+the annotated guide,
+and the organisation of the toolbox,
 provide a detailed view of the current extent of the system.
-However there remain a number of inconvenient aspects to working with the system which will take some time to address,
-and which make the system unsuitable for extensive non-expert use at this time.
 The most open and interesting areas for future work are centred around the design and implemention of further reactive event-based control and display blocks.
 An initial step will be to write a simple inline _poll_ block,
 the analytic counterpart of the 𝒞 block described above.
 However for this work to progress the current set of Wasm patches to SuperCollider need revising.
 The present implementation does not place the synthesiser in the correct browser audio context,
-and this introduces an unworkable amount of latency for most interactive use cases.
-At the present time,
-interactive musical use of the system is only practicable when working with an external instance of the synthesiser.
+and this introduces significant latency,
+making interactive real-time musical use of the system practicable only when working with an external instance of the synthesiser.
 
 ## Conclusion
 
@@ -309,7 +305,7 @@ RFC 4627, July 2006.
 [URL](https://www.rfc-editor.org/info/rfc4627)
 
 Fraser, N.
-"Ten things we've learned from Blockly."
+"Ten Things We've Learned from Blockly."
 In _IEEE Blocks and Beyond_. October 2015.
 [URL](https://developers.google.cn/blockly/publications/papers/TenThingsWeveLearnedFromBlockly.pdf)
 
