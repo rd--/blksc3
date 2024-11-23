@@ -3,66 +3,59 @@
 		'Computer Modern Concrete', 'Computer Modern Serif', 'C059', 'Palatino',
 		'Garamond', 'Bookman', 'Georgia', 'Didot', 'Times New Roman', serif
 		!important;
-}
-
-:root {
-	--toolbox-colour: #f0fff0; /* #f0fff0 #fff */
-	--paper-colour: #fffacd; /* #fffacd #fff */
-	--text-colour: #424242; /* #424242 #000 */
-	--workspace-colour: #fddde6; /* #fddde6 #fff */
 	--fragment-colour: #98ece8; /* #98ece8 #fff */
 	--outline-colour: #f6d4f6; /* #f6d4f6 #000 */
+	--paper-colour: #fffacd; /* #fffacd #fff */
+	--text-colour: #424242; /* #424242 #000 */
+	--toolbox-colour: #f0fff0; /* #f0fff0 #fff */
+	--workspace-colour: #fddde6; /* #fddde6 #fff */
 }
 
 body {
-	margin: 1em 1em;
 	background-color: var(--paper-colour);
+	margin: 1em 1em;
 }
 
-body, code, button, select, span, .blocklyText, .blocklyTreeLabel {
+body, button, code, select, span {
 	font-family: var(--font-family);
+}
+
+button, select {
+	background-color: var(--paper-colour);
+	border: 1px dotted;
+}
+
+button:focus, select:focus {
+	outline: 1px solid #999;
+}
+
+h1, h2 {
+	font-size: 1em;
+}
+
+input[type='range'] {
+	width: 100%;
+}
+
+input[type='checkbox'] {
 }
 
 pre {
-	font-family: var(--font-family);
 	background-color: var(--fragment-colour);
-	tab-size: 4;
+	font-family: var(--font-family);
 	padding: 1em 1em;
+	tab-size: 4;
 }
 
-.blocklyPath {
-	stroke: var(--outline-colour);
+details#blkSwB > div > button {
+	padding: 0.75em;
 }
 
-.blocklyDropdownRect {
-	stroke: var(--outline-colour) !important;
-}
-
-.blocklyIconShape {
-	fill: var(--fragment-colour);
-	stroke: var(--text-colour);
-}
-
-.blocklyText, .blocklyTreeLabel {
-	fill: var(--text-colour) !important;
-}
-
-.blocklyToolboxDiv {
-	background-color: var(--toolbox-colour);
-}
-
-.blocklyTreeIcon {
-	filter: opacity(25%); /* the icon is an image, soften it */
-}
-
-.blocklySvg {
-	background-color: var(--workspace-colour);
-}
-
-div#blocklyContainer {
-	padding-top: 5px;
-	height: 87.5vh;
-	width: 77.5vw;
+div#blkCtl {
+	left: 78.75vw;
+	position: absolute;
+	top: 0px;
+	width: 20vw;
 }
 
 div#blkEdit {
@@ -73,19 +66,12 @@ div#blkMenu {
 	margin-bottom: 5px;
 }
 
-div#blkCtl {
-	position: absolute;
-	top: 0px;
-	left: 78.75vw;
-	width: 20vw;
-}
-
 div#blkNotes {
-	width: 100%;
+	border: 1px dotted;
 	font-size: 11pt;
 	height: 87.5vh;
-	border: 1px dotted;
 	overflow-y: auto;
+	width: 100%;
 }
 
 div#blkNotes a {
@@ -100,33 +86,46 @@ div#blkUi {
 	margin-left: 1em;
 }
 
-button, select {
-	background-color: var(--paper-colour);
-	border: 1px dotted;
-}
-
-button:focus, select:focus {
-	outline: 1px solid #999;
-}
-
-input[type='range'] {
-	width: 100%;
-}
-
-input[type='checkbox'] {}
-
-details#blkSwB > div > button {
-	padding: 0.75em;
-}
-
-h1, h2 {
-	font-size: 1em;
-}
-
-#statusText {
-	display: inline-block;
-	border: 1px dotted #ccc;
-	width: 75px;
+div#blocklyContainer {
+	height: 87.5vh;
+	padding-top: 5px;
+	width: 77.5vw;
 }
 
 #guideMenu {}
+
+#statusText {
+	border: 1px dotted #ccc;
+	display: inline-block;
+	width: 75px;
+}
+
+.blocklyDropdownRect {
+	stroke: var(--outline-colour) !important;
+}
+
+.blocklyIconShape {
+	fill: var(--fragment-colour);
+	stroke: var(--text-colour);
+}
+
+.blocklyPath {
+	stroke: var(--outline-colour);
+}
+
+.blocklySvg {
+	background-color: var(--workspace-colour);
+}
+
+.blocklyText, .blocklyTreeLabel {
+	fill: var(--text-colour) !important;
+	font-family: var(--font-family);
+}
+
+.blocklyToolboxDiv {
+	background-color: var(--toolbox-colour);
+}
+
+.blocklyTreeIcon {
+	filter: opacity(25%); /* the icon is an image, soften it */
+}
