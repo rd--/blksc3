@@ -4,7 +4,6 @@
 	WhiteNoise() * MouseX(0.01, 0.05, 0, 0.2)
 ]
 
-/* ---- notes.md ---- */
 # PinkNoise
 
 Quiet ⍰𝒑 (_PinkNoise_) in the left channel

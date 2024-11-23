@@ -10,7 +10,6 @@
 	} !^ 10
 }.OverlapTexture(5, 10, 3)
 
-/* ---- notes.md ---- */
 # Ringz
 
 Texture of parallel filters with linear frequency ramps.

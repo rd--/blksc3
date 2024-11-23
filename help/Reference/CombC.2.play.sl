@@ -5,7 +5,6 @@ let osc = Voicer(1, 16) { :e |
 };
 CombC(osc.Splay2, 0.5, 0.2, 3)
 
-/* ---- notes.md ---- */
 # CombC
 
 ᚊ (_CombC_) is a comb format delay line with cubic interpolation.

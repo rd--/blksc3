@@ -8,5 +8,6 @@ var p = Latch(WhiteNoise(), c);
 var i = Pan2(SinOsc(f, 0), p, Decay2(c, 0.1 * t, 0.9 * t));
 CombC(i, 0.3, 0.3, 2)
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

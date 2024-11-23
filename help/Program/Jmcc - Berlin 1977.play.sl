@@ -14,5 +14,6 @@ let pw = SinOsc(0.08, [0, 0.5 * pi]) * 0.45 + 0.5;
 let s = Pulse(freq, pw) * amp;
 CombC(Rlpf(s, filt, 0.15), 0.2, [0.2, 0.17], 1.5)
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

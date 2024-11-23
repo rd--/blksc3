@@ -21,5 +21,6 @@ OverlapTexture({
     Pan2(f, LfNoise1(TRand(0, 1, tr)), e)
 }, 12, 3, 6) * 0.2;
 
-/* ---- notes.md ---- */
-_TScramble_ requires _sc3-rdu_.
+# Notes
+
+`TScramble` requires _sc3-rdu_.

@@ -15,7 +15,6 @@ var m = TChoose(
 var c = SinOsc(1200, 0) * Decay(t1, 1) * 0.1;
 SinOsc(m * 110, 0) * 0.1 + c
 
-/* ---- notes.md ---- */
 # TScramble
 
 Sequences of different lengths, scrambled.

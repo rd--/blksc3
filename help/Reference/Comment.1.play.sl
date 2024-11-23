@@ -5,7 +5,6 @@ var f = Latch(
 ) * 220 + 110;
 Splay2(SinOsc(f, 0)) * 0.1
 
-/* ---- notes.md ---- */
 # Comment
 
 The “ (_Comment_) block has no effect in a program, it is a note to the reader.

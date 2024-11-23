@@ -7,7 +7,6 @@ var s = VarSaw(freq * [0.5, 1, 2], 0, LfNoise1(0.3) * 0.1 + 0.1) * 0.1;
 });
 s
 
-/* ---- notes.md ---- */
 # Pitch
 
 - _Pitch(in, initFreq, minFreq, maxFreq, execFreq, maxBinsPerOctave, median, ampThreshold, peakThreshold, downSample)_

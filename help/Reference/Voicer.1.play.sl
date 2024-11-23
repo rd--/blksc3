@@ -11,7 +11,6 @@ Voicer(1, 16) { :e |
     ) * e.w * e.z
 }.sum * 0.5
 
-/* ---- notes.md ---- */
 # Voicer
 
 Voicer (𝓥), located in the _Event_ cateory of the toolbox, defines an array of # (_count_) places.

@@ -10,7 +10,6 @@ var mod = SinOsc(freq * mratio, 0) * freq * mratio * index;
 var car = SinOsc([freq * mod * in.second, freq + mod + in.first], 0);
 Pan2(LeakDc(car.sum, 0.995), pan, amp) <! LocalOut(car * fb)
 
-/* ---- notes.md ---- */
 # LocalIn
 
 Stereo cross channel feedback modulation.

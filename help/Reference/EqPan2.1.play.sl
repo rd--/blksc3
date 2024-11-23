@@ -4,7 +4,6 @@ EqPan2(
 	SinOsc(1, 0)
 )
 
-/* ---- notes.md ---- */
 # EqPan2
 
 Equal power stereo panner.

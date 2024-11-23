@@ -17,5 +17,6 @@ let strFunc = { :i |
 };
 0.to(n - 1).collect(strFunc:/1).Splay2 * 0.3
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

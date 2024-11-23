@@ -7,7 +7,6 @@ o = Vosim(
 );
 Splay2(o) * MouseY(0.01, 1, 1, 0.2)
 
-/* ---- notes.md ---- */
 # Vosim
 
 Vosim pulse generator.

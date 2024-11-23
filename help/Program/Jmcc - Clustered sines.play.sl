@@ -9,5 +9,6 @@ let n = 80;
     { fn } ! 2 * 0.1 / n
 }.OverlapTexture(4, 4, 3).sum
 
-/* ---- notes.md ---- */
+# Notes
+
 Texture graph rewrite.

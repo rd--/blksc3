@@ -5,7 +5,6 @@ var f = TiRand(48, 60, t).MidiCps;
 var o = TChoose(t, [SinOsc(f, 0), Saw(f * 2), Pulse(f * 0.5, 0.1)]);
 o * 0.1
 
-/* ---- notes.md ---- */
 # TChoose
 
 Select input at trigger.

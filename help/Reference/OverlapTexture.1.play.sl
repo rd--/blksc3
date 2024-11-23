@@ -3,7 +3,6 @@
 	EqPan2(SinOsc(TRand(110, 440, tr), 0), TRand(-1, 1, tr)) * TRand(0.01, 0.05, tr)
 }.OverlapTexture(3, 5, 7)
 
-/* ---- notes.md ---- */
 # OverlapTexture
 
 The _graph_ form of _OverlapTexture_ sums an array of _#_ programs.

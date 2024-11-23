@@ -7,7 +7,6 @@ let w = Phasor(t, (w1 - w0) / SampleRate(), w0, w1, 0);
 let o = VarSaw(TRand(36, 72, t).MidiCps, 0, w) * Decay2(t, 0.1, d);
 Pan2(o, TRand(-1, 1, t), 0.1)
 
-/* ---- notes.md ---- */
 # VarSaw
 
 Per-note width modulation.

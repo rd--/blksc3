@@ -16,7 +16,6 @@ var voiceFunc = {
 };
 voiceFunc !+ 32 * 0.25
 
-/* ---- notes.md ---- */
 _Dx7_ requires _sc3-rdu_.
 
 A SuperCollider form of the Raph Levien / Pascal Gauthier implementation of the Yamaha Dx7 architecture.

@@ -4,5 +4,6 @@ let f = 2 ^ Lag(LfNoise0(4 / 3) * 4, 0.1) * 300;
 let a = CombC(Bpf(s, f, 0.1).Distort, 2, 2, 40);
 (a * 0.35) <! LocalOut(a)
 
-/* ---- notes.md ---- */
+# Notes
+
 Note initial silence caused by two second delay.

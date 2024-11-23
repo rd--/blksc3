@@ -5,7 +5,6 @@ var f0 = 40;
 var f = HenonC(f0, x, [y, y * 0.75], 0, 0) * 800 + 900;
 SinOsc(f, 0) * 0.4
 
-/* ---- notes.md ---- */
 # HenonC
 
 As a frequency control.

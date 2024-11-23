@@ -10,7 +10,6 @@ OverlapTexture({ :tr |
 	} ! 2
 }, 3, 5, 3).Mix * 0.1
 
-/* ---- notes.md ---- */
 # User Progams
 
 Programs can also be stored in the _local storage_ area of the web browser using the _Save_ button.

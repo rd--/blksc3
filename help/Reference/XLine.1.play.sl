@@ -19,7 +19,6 @@ let a = [
 ];
 (SinOsc(500 * m.collect(ln:/1), 0) * a).Splay2 * 0.05
 
-/* ---- notes.md ---- */
 # XLine
 
 Exponential line segment generator.

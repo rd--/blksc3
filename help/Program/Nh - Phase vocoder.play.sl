@@ -12,7 +12,8 @@ var srcAmp = Amplitude(Bpf(src, bandFreqs, 1 / filterQ), 0.01, 0.05);
 var snd = Bpf(carrier, bandFreqs, 0.05) * srcAmp;
 Pan2(snd.sum, 0, numBands / 4)
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.
 
 _TChoose_ is complicated in that if the trigger is at audio rate then all of the input signals must also be at audio rate,

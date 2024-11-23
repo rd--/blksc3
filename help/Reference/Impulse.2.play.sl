@@ -7,7 +7,6 @@ var f = { :i |
 };
 Splay2([1 .. freq.size].collect(f)) * 0.1
 
-/* ---- notes.md ---- */
 # Impulse
 
 Synchronised impulses,

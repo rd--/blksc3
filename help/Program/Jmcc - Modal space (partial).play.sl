@@ -10,5 +10,6 @@ var d = Rlpf(t, f, 0.1) * 0.1;
 var m = o + d;
 CombC(m, 0.31, 0.31, 2) + m * 0.25
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

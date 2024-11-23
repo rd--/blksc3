@@ -5,7 +5,6 @@ XFadeTexture({ :tr |
 	} !^ 7
 }, 3, 5)
 
-/* ---- notes.md ---- */
 # XFadeTexture
 
 The _graph_ form of _XFadeTexture_ sums two overlapping copies of a program.

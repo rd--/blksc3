@@ -5,9 +5,11 @@ let f = { :i |
 };
 1.to(99).collect(f:/1).Splay2
 
-/* ---- notes.md ---- */
+# Notes
+
 [status/435684664200540161](https://twitter.com/sluyterrific_sc/status/435684664200540161)
 
-A simple stereo distribution of _SinOsc_ oscillators with randomly modulated (_LfNoise2_) parameters.
+A simple stereo distribution of `SinOsc` oscillators,
+with randomly modulated (`LfNoise2`) parameters.
 
-The frequency of each oscillator is derived using the index of the iteration process (_collect_).
+The frequency of each oscillator is derived using the index of the iteration process (`collect`).

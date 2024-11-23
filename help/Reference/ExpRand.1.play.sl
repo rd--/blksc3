@@ -5,7 +5,6 @@ var f = {
 };
 f !+ harmonics / (2 * harmonics)
 
-/* ---- notes.md ---- */
 # ExpRand
 
 _ExpRand_ generates a single random value in an exponential distribution in the indicated range.

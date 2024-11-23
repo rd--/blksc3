@@ -3,7 +3,6 @@ let f = SinOsc([0.1, 0.3], 0).Abs * 150 + 75;
 let a = SinOsc([0.5, 0.7], 0).Abs * 0.1;
 SinOsc(f, 0).Tanh * a
 
-/* ---- notes.md ---- */
 # Code Generation, Smalltalk, Scheme
 
 Blocks can print themselves in _.stc_ form.

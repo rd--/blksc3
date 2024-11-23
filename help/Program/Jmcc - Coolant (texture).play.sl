@@ -6,8 +6,9 @@ let o = OnePole(BrownNoise() * 0.002, 0.95);
 	} !^ 10
 }.XFadeTexture(4, 4)
 
-/* ---- notes.md ---- */
-Coolant texture, individual resonator (_Ringz_) blocks.
+# Notes
+
+Coolant texture, individual resonator (`Ringz`) blocks.
 
 A ≔ block declares and initialises a variable.
 

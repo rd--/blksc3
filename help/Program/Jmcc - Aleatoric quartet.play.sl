@@ -14,5 +14,6 @@ var g = 1.to(4).collect(mkSig).sum;
 5.timesRepeat({ g = AllpassC(g, 0.05, { Rand(0, 0.05) }.dup, 1) });
 LeakDc(g, 0.995)
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

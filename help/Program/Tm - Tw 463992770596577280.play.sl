@@ -6,7 +6,8 @@ let f = { :x |
 };
 { 1.to(k).collect(f:/1).sum } ! 2
 
-/* ---- notes.md ---- */
+# Notes
+
 _f_ is applied (twice) to the integers between 1 and _k_.
 
 _k_ is chosen anew each time the program is evaluated.

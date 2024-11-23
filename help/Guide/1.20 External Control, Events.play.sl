@@ -8,7 +8,6 @@ FreeVerb(
 	0.5
 )
 
-/* ---- notes.md ---- */
 # External Control, Events
 
 𝓥 (_Voicer_) reads _#_ event streams,

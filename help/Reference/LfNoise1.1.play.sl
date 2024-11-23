@@ -3,7 +3,6 @@ var o = SinOsc((LfNoise1(0.5) * 600 + (LfSaw(1.5, 0) * 50 + 500)).Abs, 0) * 0.1;
 var d = CombC(o, 3.0, [1.35, 0.7], 6);
 Pan2(o, 0, 1) + d
 
-/* ---- notes.md ---- */
 # LfNoise1
 
 - _LfNoise1(freq)_

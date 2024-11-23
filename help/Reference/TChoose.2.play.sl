@@ -6,7 +6,6 @@ var m = TChoose(t1, a.collect { :x | Demand(t2, 0, Dseq(inf, x)) });
 var c = SinOsc(1200, 0) * Decay(t1, 1) * 0.1;
 SinOsc(m * 110, 0) * 0.1 + c
 
-/* ---- notes.md ---- */
 # TChoose
 
 Sequences of different lengths.

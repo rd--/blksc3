@@ -12,7 +12,6 @@ let a = Adsr(
 );
 o * a * 0.1
 
-/* ---- notes.md ---- */
 # Adsr
 
 _Adsr_ is an attack-decay-sustain-release envelope generator.

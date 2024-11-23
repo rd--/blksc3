@@ -7,7 +7,6 @@
 	) * 0.06
 } ! 2
 
-/* ---- notes.md ---- */
 # Keyboard Shortcuts
 
 _Keyboard shortcuts_ (also called _keybindings_ or _access keys_) perform actions that would otherwise require a mouse.

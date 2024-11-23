@@ -1,4 +1,4 @@
-/* tw 02 (tw) tim walters */
+/* Tw 02 (Tw) ; https://swiki.hfbk-hamburg.de/MusicTechnology/899 */
 let nd = { :k |
 	let x = { :p |
 		let f = p.at(1);
@@ -15,6 +15,3 @@ let nd = { :k |
 	y
 };
 (1 .. 8).collect(nd:/1).sum / 4
-
-/* ---- notes.md ---- */
-[swiki](https://swiki.hfbk-hamburg.de/MusicTechnology/899)

@@ -7,7 +7,6 @@ OverlapTexture({ :tr |
 	} !^ 10
 }, 2, 3, 4).Mix
 
-/* ---- notes.md ---- */
 # LfSaw
 
 Overlap-add texture of randomly modulated sawtooth oscillators.

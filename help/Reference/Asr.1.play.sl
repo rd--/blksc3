@@ -5,7 +5,6 @@ let o = Blip(TRand(36, [48, 60], tr).MidiCps, TRand(1, 7, tr));
 let a = Asr(gt, TRand(0.01, 0.2, tr), TRand(0.2, 2, tr), -4);
 o * a * 0.1
 
-/* ---- notes.md ---- */
 # Asr
 
 ⏢ (_Asr_) is an attack-sustain-release envelope generator.

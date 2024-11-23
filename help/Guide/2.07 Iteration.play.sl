@@ -11,7 +11,6 @@ n.timesRepeat {
 };
 x
 
-/* ---- notes.md ---- }
 # Iteration
 
 The # (_TimesRepeat_) block evaluates the procedure at λ the indicated number of times.

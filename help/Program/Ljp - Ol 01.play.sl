@@ -9,7 +9,8 @@ Pan2(
 	0.1
 )
 
-/* ---- notes.md ---- */
+# Notes
+
 Here `Phasor` replaces `Line`, so voices reset at individual intervals.
 
 Eventually all voices reset together and the process restarts.

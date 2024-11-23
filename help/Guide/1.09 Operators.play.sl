@@ -7,7 +7,6 @@ var mk = { :f |
 var m = { IRand(0, 12) } ! k + 48;
 [m, m.reverse].collect({ :x | mk.value(x.MidiCps) }).sum
 
-/* ---- notes.md ---- */
 # Operators
 
 _Operator_ blocks have a menu to select the required operator.

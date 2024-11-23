@@ -14,5 +14,6 @@ var s = LeakDc(Lpf(1.to(8).collect(str).sum, 12000), 0.995);
 6.timesRepeat({s = AllpassC(s, 0.1, { Rand(0, 0.05) }.dup, 4)});
 s
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

@@ -7,7 +7,6 @@ var f = { :partial |
 var harmonics = 16;
 (1 .. harmonics).collect(f).sum / harmonics * 0.5
 
-/* ---- notes.md ---- */
 # SinOsc
 
 Multiple sine tones, courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

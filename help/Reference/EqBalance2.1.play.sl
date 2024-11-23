@@ -2,7 +2,6 @@
 var o = SinOsc([440, 550], 0);
 EqBalance2(o.first, o.second, LfNoise1(4)) * 0.1
 
-/* ---- notes.md ---- */
 # EqBalance2
 
 _EqBalance2_ is a stereo signal balancer.

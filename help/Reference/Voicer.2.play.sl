@@ -10,7 +10,6 @@ let tr = { Impulse(Rand(0.15, 0.85), Rand(0, 1)) } ! k;
 	SinOsc(e.p.UnitCps, 0) * lfo * e.w * e.z
 }.Splay2.CombC(0.5, 0.2, 3)
 
-/* ---- notes.md ---- */
 # Voicer
 
 𝓥 (_Voicer_) has a second form that reads event data from a _Record_ (a dictionary where all of the keys are strings).

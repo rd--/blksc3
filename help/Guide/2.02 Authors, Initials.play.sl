@@ -6,7 +6,6 @@ let t = TDuty(Dseq(inf, d) / 4, 0, 1);
 let f = Demand(t, 0, Dseq(inf, 60 + n.collect { :i | m[i] })).MidiCps;
 Pan2(SinOsc(f, 0).Tanh, 0, Decay2(t, 0.05, 0.2) * 0.1)
 
-/* ---- notes.md ---- */
 # Authors, Initials
 
 The authors of the graphs in the _Programs_ and _Small Programs_ menus are indicated by initials.

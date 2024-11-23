@@ -8,7 +8,6 @@ PanAz(
 	0.5
 )
 
-/* ---- notes.md ---- */
 # PanAz
 
 Azimuth panner.

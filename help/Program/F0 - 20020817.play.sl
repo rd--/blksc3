@@ -13,7 +13,8 @@
 	LeakDc(z, 0.995)
 } !+ 2
 
-/* ---- notes.md ---- */
+# Notes
+
 F0 [Sc-Users 2002](https://www.listarc.cal.bham.ac.uk/lists/sc-users-2002/msg00534.html)
 
 Control rate noise is linearly interpolated to audio rate phase.

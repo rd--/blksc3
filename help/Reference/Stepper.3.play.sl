@@ -25,7 +25,6 @@ lfo := SinOsc(0.2, [0, 0.5 * pi]) * 0.0024 + 0.0025;
 };
 OnePole(out, 0.9) * 0.5
 
-/* ---- notes.md ---- */
 # Stepper
 
 SC2 help file example (Jmcc).

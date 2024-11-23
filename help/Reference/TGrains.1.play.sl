@@ -7,7 +7,6 @@ let centerPos = MouseX(0, SfDur(sf), 0, 0.2);
 let dur = 1.2 / trRate;
 TGrains(2, tr, sf, rate, centerPos, dur, WhiteNoise() * 0.6, 0.75, 4)
 
-/* ---- notes.md ---- */
 # TGrains
 
 Buffer granulator

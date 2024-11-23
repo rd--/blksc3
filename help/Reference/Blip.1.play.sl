@@ -11,7 +11,6 @@ let p = Pan2(
 );
 p + CombC(p, 2, 4 / 6, 6)
 
-/* ---- notes.md ---- */
 # Blip
 
 - _Blip(freq, numharm)_

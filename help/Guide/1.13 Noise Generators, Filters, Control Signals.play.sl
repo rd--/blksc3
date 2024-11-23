@@ -5,7 +5,6 @@ Resonz(
     MouseX(0.01, 0.05, 0, 0.2)
 )
 
-/* ---- notes.md ---- */
 # Noise Generators, Filters, Control Signals
 
 ⍰𝒘 (_WhiteNoise_) is a noise generator with uniform spectral density.

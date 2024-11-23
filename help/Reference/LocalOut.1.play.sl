@@ -5,7 +5,6 @@ var d = DelayC(l, 0.2, 0.2);
 var o = LocalOut(d.reversed * 0.8);
 d <! o
 
-/* ---- notes.md ---- */
 # LocalOut
 
 _n_ is pink noise is enveloped by a decaying impulse signal.

@@ -8,7 +8,6 @@ VoiceWriter(1, 16) {
 	)
 }.print
 
-/* ---- notes.md ---- */
 # VoiceWriter
 
 _VoiceWriter_ (𝓥𝓌) is the inverse of _Voicer_.

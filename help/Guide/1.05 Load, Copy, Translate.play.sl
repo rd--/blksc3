@@ -12,7 +12,6 @@ let dur = 7;
     EqPan2 (snd, lc) * 0.05
 }.OverlapTexture(1, 3, 4).Mix
 
-/* ---- notes.md ---- */
 # Load, Copy, Translate
 
 Programs are stored as _.json_ files.

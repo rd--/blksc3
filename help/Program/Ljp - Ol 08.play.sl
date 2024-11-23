@@ -6,7 +6,6 @@ Bpf(
 	LfNoise1(f) * 0.3 + 0.31
 ).Splay2
 
-/* ---- notes.md ---- */
 # Blizzard
 
 <https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html> No.8

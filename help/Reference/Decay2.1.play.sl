@@ -7,7 +7,6 @@
     )
 } !+ 15 * 0.1
 
-/* ---- notes.md ---- */
 # Decay2
 
 ↘₂ (_Decay2_) is two ↘ (_Decay_) blocks arranged as:

@@ -9,5 +9,6 @@ var strFunc = {
 };
 LeakDc(Lpf(1.to(8).collect(strFunc).sum, 12000), 0.995)
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

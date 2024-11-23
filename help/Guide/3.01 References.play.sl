@@ -5,7 +5,6 @@ let x = MouseX(0.01, 0.2, 1, 0.2);
 let y = MouseY([700, 1300], [2000, 100], 1, 0.2);
 Formlet(s, y, 0.005, x)
 
-/* ---- notes.md ---- */
 # References
 
 Alan Kay.

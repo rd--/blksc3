@@ -11,5 +11,6 @@ var z = OverlapTexture({ :tr |
 z := z * Select2(MouseX(0, 1, 0, 0.2) > 0.5, SinOsc(5, 0).max(0), 1);
 CombC(z, 0.3, 0.3, 8) + z.reverse
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

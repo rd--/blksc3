@@ -11,7 +11,6 @@ OverlapTexture({ :tr |
 	} !^ 7
 }, 4, 0.05, 2)
 
-/* ---- notes.md ---- */
 # TiRand
 
 - _TiRand(lo, hi, trig)_

@@ -6,5 +6,6 @@ let rqmod = LinLin(LfNoise2(1 / 8), -1, 1, 0.1, 1.0);
 let snd = Rlpf(gen, freq * fmod, rqmod);
 snd.Splay
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

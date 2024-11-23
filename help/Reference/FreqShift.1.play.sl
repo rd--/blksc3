@@ -4,7 +4,6 @@ let b = a / 4 + LocalIn(2, 0);
 let c = FreqShift(b, LfNoise0(1 / 4) * 90, 0);
 c <! LocalOut(DelayC(c, 1, 0.1) * 0.9)
 
-/* ---- notes.md ---- */
 # FreqShift (ν↕)
 
 - _FreqShift(input, shift, phase)_

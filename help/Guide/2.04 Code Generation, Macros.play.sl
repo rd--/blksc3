@@ -13,7 +13,6 @@ let x = {
 	x !^ 16
 ].sum
 
-/* ---- notes.md ---- */
 # Code Generation, Macros
 
 There is a sense in which this simple program could be made simpler still.

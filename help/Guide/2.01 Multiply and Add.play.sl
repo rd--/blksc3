@@ -1,7 +1,6 @@
 /* Multiply and Add */
 [PinkNoise() * [0.05, 0.05], SinOsc(LfNoise2([0.5, 0.5]) * 110 + 110, 0) * 0.1].sum
 
-/* ---- notes.md ---- */
 # Multiply and Add
 
 All blocks with an _output connector_ have × (_Multiply_) and + (_Add_) inputs.

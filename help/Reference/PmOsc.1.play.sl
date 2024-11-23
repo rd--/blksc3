@@ -6,7 +6,6 @@ var ratio = 2;
 var env = Decay2(trig, 0, 1.25 / rate);
 PmOsc(freq, freq * ratio, 3 + env * 4, 0) * env * 0.25
 
-/* ---- notes.md ---- */
 # PmOsc
 
 Ping pong, courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

@@ -6,7 +6,6 @@ Formlet(
 	LinExp(LfNoise2([3, 9]), -1, 1, 0.01, 0.2)
 )
 
-/* ---- notes.md ---- */
 # External Synthesiser
 
 Ordinarily an internal copy of the SuperCollider synthesiser is used.

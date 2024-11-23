@@ -15,5 +15,6 @@ var strFunc = { :i |
 var out = 1.to(pitch1.size).collect(strFunc).sum;
 LeakDc(Lpf(out, 12000), 0.995)
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

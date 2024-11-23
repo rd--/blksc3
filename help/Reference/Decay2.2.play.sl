@@ -10,7 +10,6 @@ OverlapTexture({ :tr |
 	o * a * 0.15
 }, 2, 4, 2)
 
-/* ---- notes.md ---- */
 # Decay2
 
 - _Decay2(in, attackTime, decayTime)_

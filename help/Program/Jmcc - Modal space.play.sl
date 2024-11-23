@@ -14,5 +14,6 @@ var c = {
 };
 [48, 72].collect(c).sum * 0.25
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

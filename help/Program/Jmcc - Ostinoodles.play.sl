@@ -15,5 +15,6 @@ let z = { :tr |
 };
 z
 
-/* ---- notes.md ---- */
-_TrScramble_ requires _sc3-rdu_.
+# Notes
+
+`TrScramble` requires _sc3-rdu_.

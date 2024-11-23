@@ -23,5 +23,6 @@ snd := Lpf(snd, 10000);
 snd := Hpf(snd.Tanh, 20);
 snd * -10.DbAmp
 
-/* ---- notes.md ---- */
-_MoogLadder_ requires _sc3-plugins_.
+# Notes
+
+`MoogLadder` requires _sc3-plugins_.

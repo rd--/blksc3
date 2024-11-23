@@ -8,5 +8,4 @@ let m = { :f |
 };
 Splay2(SinOsc([2, 3, 5].collect(m:/1), 0)) * 0.1
 
-/* ---- notes.md ---- */
 # Dseq

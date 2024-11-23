@@ -9,7 +9,6 @@ EqPan2(
 	LfNoise2(0.25)
 )
 
-/* ---- notes.md ---- */
 # XFade2
 
 Cross fade between two signals.

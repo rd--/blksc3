@@ -3,7 +3,6 @@ let o = SinOsc(440, 0);
 let a = [o o];
 a * 0.1
 
-/* ---- notes.md ---- */
 # Lists, Variables, Binary Operators
 
 ≔ is the _variable assignment_ block.

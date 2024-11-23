@@ -8,7 +8,6 @@
 	0.5
 )
 
-/* ---- notes.md ---- */
 # PanAz
 
 Offset an _n_-channel panner by pre-pending an array of silent channels.

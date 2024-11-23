@@ -8,7 +8,6 @@ var env = Decay2(trig, 0.005, 1.4) * 0.25;
 var z = VarSaw(freq * [1, 1.505], 0, MouseY(0, 1, 0, 0.2)) * env;
 CombN(z, 0.26, 0.26, 4).SoftClip
 
-/* ---- notes.md ---- */
 # Sequencer
 
 Sequence of shifting sequences.

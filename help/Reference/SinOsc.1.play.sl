@@ -5,7 +5,6 @@ Splay2(
 	} ! 15
 ).sum
 
-/* ---- notes.md ---- */
 # SinOsc
 
 Random sine tones, courtesy [Coc](https://github.com/cianoc/supercollider_fragments)

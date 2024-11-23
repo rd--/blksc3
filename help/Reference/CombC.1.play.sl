@@ -10,7 +10,6 @@ let tr = { Dust(0.65) } ! 2;
 	CombC(x, lwr.MidiCps.Recip, f.Recip, LinLin(m, -1, 1, 1, 8))
 } !+ 12 * 0.1
 
-/* ---- notes.md ---- */
 # CombC
 
 - _CombC(in, maxdelaytime, delaytime, decaytime)_

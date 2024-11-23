@@ -11,5 +11,6 @@ var stringFunc = {
 };
 LeakDc(Lpf(1.to(pitch.size).collect(stringFunc).sum, 12000), 0.995)
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.

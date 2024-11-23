@@ -13,9 +13,10 @@ OverlapTexture({
     SinOsc([f1, f1 + TRand(-1, 1, tr)], a) * 0.1
 }, 4, 4, n) * 0.25;
 
-/* ---- notes.md ---- */
+# Notes
+
 Mouse control.
 
-_MouseX_ controls random frequency of new events.
+`MouseX` controls random frequency of new events.
 
-_MouseY_ controls modulation index.
+`MouseY` controls modulation index.

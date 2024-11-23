@@ -5,7 +5,6 @@ Resonz(
 	[0.03, 0.003]
 ) * 9
 
-/* ---- notes.md ---- */
 # Workspace Comments
 
 Workspace comments can be added to a program using the _Add Comment_ item in the workspace context menu.

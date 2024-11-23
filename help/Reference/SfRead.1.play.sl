@@ -8,7 +8,6 @@ let sf = SfAcquireStereo('HarpA4');
 	SfRead(sf, ph, 0, 2)
 } !+ 8 * 0.1
 
-/* ---- notes.md ---- */
 # SfRead
 
 ☖☼ (_SfAcquire_) returns a list of _buffer_ objects.

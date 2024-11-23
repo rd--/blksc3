@@ -6,7 +6,6 @@
 	) * 0.1
 } !^ 9 * 0.25
 
-/* ---- notes.md ---- */
 # Pulse
 
 Nine quiet ⎍ (_Pulse_) oscillators with randomly shifting ν (_freq_) and ↔ (_width_) inputs.

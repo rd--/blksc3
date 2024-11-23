@@ -13,7 +13,6 @@ OverlapTexture({ :tr |
 	)
 }, 1, 2, 7)
 
-/* ---- notes.md ---- */
 # PmOsc
 
 Overlap-add texture of PmOsc signals with randomly selected linear ramps.

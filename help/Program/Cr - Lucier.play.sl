@@ -40,5 +40,7 @@ OverlapTexture({ :tr |
 	[outL, outR] <! lOut <! drv
 }, 1, 5, 3).Mix * 0.25
 
-/* ---- notes.md ---- */
-The OverlapTexture variant cannot use LocalIn & LocalOut since there can only be one pair per graph.
+# Notes
+
+The `OverlapTexture` variant cannot use `LocalIn` & `LocalOut`,
+since there can only be one pair per graph.

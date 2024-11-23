@@ -1,7 +1,6 @@
 /* Workspace, Synthesiser */
 { PinkNoise() } ! 2 * 0.025
 
-/* ---- notes.md ---- */
 # Workspace, Synthesiser
 
 The area containing the block drawing is called the _workspace_.

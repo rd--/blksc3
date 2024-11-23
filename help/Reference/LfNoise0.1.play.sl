@@ -8,7 +8,6 @@
 	) * LfNoise0(MouseX(Rand(1, 6), Rand(1, 6), 0, 0.2)).Max(0) * 0.05
 } !+ 12
 
-/* ---- notes.md ---- */
 # LfNoise0
 
 Pretty, nice, but inessential,

@@ -20,7 +20,6 @@
 	)
 } !+ 10
 
-/* ---- notes.md ---- */
 # Gendy1
 
 Random texture.
