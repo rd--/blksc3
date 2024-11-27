@@ -23,13 +23,13 @@ and discusses directions for future research.
 
 ## Introduction
 
-_Block SuperCollider_ is a block editor for the SuperCollider (McCartney 1996) synthesiser.
-It runs in the browser utilising the Blockly (Fraser 2015) library.
+_Block SuperCollider_ is a block editor for the SuperCollider [@McCartney1996a] synthesiser.
+It runs in the browser utilising the Blockly [@Fraser2015a] library.
 Block editors are a family of visual programming systems that use interlocking graphical blocks to represent the elements of a program.
 For instance there are blocks to represent variable assignment and reference, procedure definition and application, and logical and mathematical operators.
 Block SuperCollider also has blocks for the standard components of a synthesiser: oscillators, noise generators, filters, envelopes, panners, signal analysers and control signal generators.
 To make sound Block SuperCollider translates the block program into a form understood by the synthesiser and sends it to be played using the appropriate messaging protocol.
-Ordinarily the system runs its own in-process copy of the synthesiser, compiled to Wasm (Rossberg 2019), within the browser.
+Ordinarily the system runs its own in-process copy of the synthesiser, compiled to Wasm [@Rossberg2019a], within the browser.
 However it can also communicate with an external synthesiser by sending messages over a socket.
 [Figure 1](https://rohandrape.net/sw/blksc3/png/BlockSuperCollider.png) shows the Block SuperCollider system.
 
@@ -66,7 +66,7 @@ Blocks are fetched by dragging them out of the toolbox and into the workspace.
 
 The text area to the right of the workspace is for notes.
 Programs may include detailed notes,
-written in a simple markup language (Gruber 2004).
+written in a simple markup language [@Gruber2004a].
 Block SuperCollider aims to be self documenting,
 and the notes area is used for the user guide and help files.
 It is the manner in which system is able to explain itself.
@@ -128,7 +128,7 @@ Beneath the workspace are a number of controls.
 There is a control to _Fit_ the drawing to the workspace area.
 The drawing can be tidied using _Cleanup_, which among other tasks will move any obscured blocks into an open area.
 All of the blocks can be deleted using _Clear_.
-Programs are stored as Json (Crockford 2006) files,
+Programs are stored as Json [@Crockford2006a] files,
 _Load_ prompts to select a file and loads it into the workspace,
 _Copy_ copies the text describing the current workspace state to the clipboard.
 The _Display_ menu selects the page layout rule.
@@ -167,7 +167,7 @@ The illustration programs were translated from an existing collection of text pr
 The translator is the inverse of the code generator,
 it reads a text program of the kind the code generator writes,
 and writes a block program of the kind the code generator reads.
-[Figure 5](https://rohandrape.net/sw/blksc3/png/Translator.png) shows the block program the translator writes given the text of the following brief program (Putnam 2004):
+[Figure 5](https://rohandrape.net/sw/blksc3/png/Translator.png) shows the block program the translator writes given the text of the following brief program [@Putnam2004a]:
 
 ```
 CombC(
@@ -231,11 +231,11 @@ and will accept blocks answering any one of these types.
 There is a long history of visual programming languages,
 encompassing systems of very different kinds.
 Four music related systems are of particular note:
-Kyma (Scaletti 1988),
-Max (Puckette 1988),
-Patchwork (Laurson 1989)
+Kyma [@Scaletti1987a],
+Max [@Puckette1988a],
+Patchwork [@Laurson1989a]
 and
-SchemeBricks (Griffiths 2008).
+SchemeBricks [@Griffiths2008a].
 The first three belong to the same family of visual editors,
 in which programs elements are drawn as boxes with inlets on the top or left edge,
 and with outlets on the lower or right edge.
@@ -255,8 +255,8 @@ however Patchwork is only very indirectly a language for sound synthesis.
 SchemeBricks belongs in the same family of block editors described here,
 which are drawings of trees and not graphs and therefore well suited to applicative languages such as Lisp,
 however the evaluation model is closer to the reactive model of Max.
-The lineage of block editors can be traced back at least to AgentSheets (Repenning 1993).
-Existing synthesis systems with extensive histories that are now additionaly compiled to Wasm include Csound (Yi 2018).
+The lineage of block editors can be traced back at least to AgentSheets [@Repenning1993a].
+Existing synthesis systems with extensive histories that are now additionaly compiled to Wasm include Csound [@Yi2018a].
 
 ## Future Research
 
@@ -290,66 +290,6 @@ Block SuperCollider programs can be shared as readily as any other web resource.
 SuperCollider is by James McCartney and others.
 Blockly is by Neil Fraser and others.
 The Wasm patches for the SuperCollider synthesiser are by Hanns Holger Rutz and others.
-OhmJs is by Alessandro Warth and others.
+OhmJs [@Warth2016a] is by Alessandro Warth and others.
 
 ## References
-
-Rossberg, A. (ed.).
-"WebAssembly Core Specification."
-Technical Report, World Wide Web Consortium, Dec. 2019.
-[URL](https://www.w3.org/TR/wasm-core-1/)
-
-Crockford, D.
-"The application/json Media Type for JavaScript Object Notation (JSON)."
-RFC 4627, July 2006.
-[URL](https://www.rfc-editor.org/info/rfc4627)
-
-Fraser, N.
-"Ten Things We've Learned from Blockly."
-In _IEEE Blocks and Beyond_. October 2015.
-[URL](https://developers.google.cn/blockly/publications/papers/TenThingsWeveLearnedFromBlockly.pdf)
-
-Griffiths, D.
-_Scheme Bricks_.
-Computer program, 2008.
-[URL](https://github.com/nebogeo/scheme-bricks)
-
-Gruber, J.
-_Markdown_.
-Dec. 2004.
-[URL](https://daringfireball.net/projects/markdown/)
-
-Laurson, M. and Duthen, J.
-"Patchwork: a Graphic Language in preFORM."
-In _Proc. ICMC_. 1989.
-[URL](https://hdl.handle.net/2027/spo.bbp2372.1989.042)
-
-McCartney, J.
-"SuperCollider: a New Real-Time Synthesis Language."
-In _Proc. ICMC_. 1996.
-[URL](http://hdl.handle.net/2027/spo.bbp2372.1996.078)
-
-Puckette, M.
-"The Patcher."
-In _Proc. ICMC_, 420–429. 1988.
-[URL](http://hdl.handle.net/2027/spo.bbp2372.1988.046)
-
-Putnam, L.
-_SuperCollider One-liners_.
-Computer program, 2004.
-[URL](https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html)
-
-Repenning, A.
-_Agentsheets: A Tool for Building Domain-Oriented Dynamic, Visual Environments_.
-PhD thesis, University of Colorado at Boulder, USA, 1993. UMI Order No. GAX94-23532.
-[URL](https://home.cs.colorado.edu/~ralex/papers/PDF/Repenning-PhD.pdf)
-
-Scaletti, C. and Johnson, R.
-"An Interactive Environment for Object-Oriented Music Composition and Sound Synthesis."
-_SIGPLAN Not._, 23(11):222–233, 1988.
-[DOI](https://www.doi.org/10.1145/62084.62103)
-
-Yi S., and Lazzarini, V. and Costello, E.
-"WebAssembly AudioWorklet Csound".
-In _Proceedings of the International Web Audio Conference_. September 2018.
-[URL](https://webaudioconf.com/_data/papers/pdf/2018/2018_24.pdf)
