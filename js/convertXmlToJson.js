@@ -6,7 +6,7 @@ deno run --allow-read --allow-write --allow-env convertXmlToJson.js
 
 */
 
-import * as Blockly from 'npm:blockly@11.1.1';
+import * as Blockly from 'npm:blockly@11.2.0';
 
 async function readJson(fileName) {
 	const text = await Deno.readTextFile(fileName);

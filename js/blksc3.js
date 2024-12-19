@@ -102,7 +102,7 @@ export class Blk {
 
 	initConfig(toolbox) {
 		this.config = {
-			media: 'lib/blockly-11.1.1/media/',
+			media: 'lib/blockly-11.2.0/media/',
 			renderer: 'thrasos', // geras thrasos zelos
 			theme: this.Blockly.Themes.Classic,
 			sounds: false,
@@ -117,7 +117,7 @@ export class Blk {
 				wheel: false,
 			},
 			zoom: {
-				controls: true,
+				controls: false, // missing sprites?
 				wheel: true,
 				startScale: 1.0,
 				maxScale: 3,
