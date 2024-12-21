@@ -172,8 +172,12 @@ and writes a block program of the kind the code generator reads.
 ```
 CombC(
 	Formant(
-		LfNoise0([1, 0.7]) * 8 + 9,
-		LfNoise0([1, 0.7]) * 4000 + 4000,
+		LfNoise0(
+			[1, 0.7]
+		) * 8 + 9,
+		LfNoise0(
+			[1, 0.7]
+		) * 4000 + 4000,
 		200
 	) * 0.3,
 	0.2,
