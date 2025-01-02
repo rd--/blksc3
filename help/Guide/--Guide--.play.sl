@@ -1,7 +1,7 @@
-/* Guide files */
+/* Guide Files */
 PinkNoise() * 0.1
 
-# Guide files.
+# Guide Files
 
 This menu has an online guide to the system.
 

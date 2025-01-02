@@ -19,4 +19,4 @@ _JMcC_ is [James McCartney](https://www.audiosynth.com/), the author of SuperCol
 _F0_ is [Fredrik Olofsson](https://fredrikolofsson.com/).
 Comments indicate where the program was initially published.
 
-This program modulates the amplitude and stereo postion of quiet pink noise using sine oscillators.
+This program modulates the amplitude and stereo position of quiet pink noise using sine oscillators.

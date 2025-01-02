@@ -8,27 +8,27 @@ Formlet(s, y, 0.005, x)
 # References
 
 Alan Kay.
-_Squeak etoys, children & learning._
-Technical report, VPRI, 2005.
+_Squeak Etoys, Children & Learning._
+Technical Report, VPRI, 2005.
 [PDF](http://www.vpri.org/pdf/rn2005001_learning.pdf)
 
 John Maloney, Mitchel Resnick, Natalie Rusk, Brian Silverman, and Evelyn Eastmond.
-"The scratch programming language and environment."
+"The Scratch Programming Language and Environment."
 _ACM Trans. Comput. Educ._, 10(4):1--15, November 2010.
 [DOI](https://doi.org/10.1145/1868358.1868363)
 
 James McCartney.
-"Supercollider: a new real time synthesis language".
+"SuperCollider: A New Real-time Synthesis Language".
 In _Proc. ICMC_, 1996.
 [PDF](https://quod.lib.umich.edu/cgi/p/pod/dod-idx/supercollider-a-new-real-time-synthesis-language.pdf?c=icmc;idno=bbp2372.1996.078;format=pdf)
 
 James McCartney.
-"Rethinking the computer music language: Supercollider".
+"Rethinking the Computer Music Language: SuperCollider".
 _Computer Music Journal_, 26(4):61--68, 2002.
 [DOI](https://doi.org/10.1162/014892602320991383)
 
 Randy Pausch, Tommy Burnette, A.C. Capeheart et. al.
-"Alice: Rapid prototyping system for virtual reality".
+"Alice: Rapid Prototyping System for Virtual Reality".
 _IEEE Computer Graphics and Applications_, 15:8--11, May 1995.
 [HTML](https://www.cs.cmu.edu/~stage3/publications/95/journals/IEEEcomputer/CGandA/paper.html)
 
@@ -38,7 +38,7 @@ PhD thesis, University of Colorado at Boulder, USA, 1993.
 [PDF](https://home.cs.colorado.edu/~ralex/papers/PDF/Repenning-PhD.pdf)
 
 Mitchel Resnick, John Maloney, Natalie Rusk, Evelyn Eastmond, Karen Brennan et. al.
-"Scratch: programming for all."
+"Scratch: Programming for All."
 _Commun. ACM_, 52(11):60--67, November 2009.
 [DOI](https://doi.org/10.1145/1592761.1592779) 🔓
 

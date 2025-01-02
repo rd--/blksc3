@@ -1,8 +1,9 @@
 blksc3
 ------
 
-SuperBlock, or Block SuperCollider,
-a [Block](https://developers.google.com/blockly) editor for the
+Block SuperCollider,
+or SuperBlock,
+is a [Block](https://developers.google.com/blockly) editor for the
 [SuperCollider](https://www.audiosynth.com/) synthesiser.
 
 ![](https://rohandrape.net/sw/blksc3/svg/BlockSuperCollider.svg)
@@ -75,7 +76,7 @@ John Steinmetz.
 In M. Guzdial (ed.), _Squeak: Open Personal Computing for Multimedia_.
 [PDF](https://coweb.cc.gatech.edu:8888/squeakbook/uploads/steinmetz.pdf)
 
-© [Rohan Drape](http://rohandrape.net/), 2021-2024, [Gpl](http://gnu.org/copyleft/)
+© [Rohan Drape](http://rohandrape.net/), 2021-2025, [Gpl](http://gnu.org/copyleft/)
 
 * * *
 
