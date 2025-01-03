@@ -31,9 +31,10 @@ Block SuperCollider also has blocks for the standard components of a synthesiser
 To make sound Block SuperCollider translates the block program into a form understood by the synthesiser and sends it to be played using the appropriate messaging protocol.
 Ordinarily the system runs its own in-process copy of the synthesiser, compiled to Wasm [@Rossberg2019a], within the browser.
 However it can also communicate with an external synthesiser by sending messages over a socket.
-[Figure 1](https://rohandrape.net/sw/blksc3/png/BlockSuperCollider.png) shows the Block SuperCollider system.
 
-<!-- ![Figure 1](sw/blksc3/png/BlockSuperCollider.png) -->
+[Figure 1](https://rohandrape.net/sw/blksc3/png/BlockSuperCollider.png) shows and example program of the Block SuperCollider system.
+
+![Figure 1](sw/blksc3/png/BlockSuperCollider.svg)
 
 ## Workspace
 
@@ -60,7 +61,7 @@ The 𝑇 button below the workspace switches between them.
 Blocks are fetched by dragging them out of the toolbox and into the workspace.
 [Figure 2](https://rohandrape.net/sw/blksc3/png/Toolbox.png) shows the complete toolbox with the constants category selected.
 
-<!-- ![Figure 2](sw/blksc3/png/Toolbox.png) -->
+![Figure 2](sw/blksc3/png/Toolbox.svg)
 
 ## Notes
 
@@ -97,7 +98,7 @@ and
 The naming scheme also applies to menu items.
 The entries in the menu of the boolean constant block will be either ⊤ and ⊥ or _True_ and _False_.
 
-<!-- ![Figure 3](sw/blksc3/png/SinOsc.internal.png) -->
+![Figure 3](sw/blksc3/png/SinOsc.internal.svg)
 
 ## Block Colours
 
@@ -120,7 +121,7 @@ the numbers are in _Constants_,
 ≔ and _t_ are in _Variables_,
 and ▷ is in _Meta_.
 
-<!-- ![Figure 4](sw/blksc3/png/BlockColours.png) -->
+![Figure 4](sw/blksc3/png/BlockColours.svg)
 
 ## Workspace Controls
 
@@ -186,7 +187,7 @@ CombC(
 )
 ```
 
-<!-- ![Figure 5](sw/blksc3/png/Translator.png) -->
+![Figure 5](sw/blksc3/png/Translator.svg)
 
 ## Control Fields
 
@@ -204,7 +205,7 @@ A block drawing is a concise view onto a complex structure,
 and it is largely for this reason that the view can readily support multiple complex modes of interaction.
 [Figure 6](https://rohandrape.net/sw/blksc3/png/ControlField.png) shows a ∿ (_SinOsc_) block with 𝒞 inputs for both frequency and amplitude.
 
-<!-- ![Figure 6](sw/blksc3/png/ControlField.png) -->
+![Figure 6](sw/blksc3/png/ControlField.svg)
 
 ## Types of Types
 
@@ -228,7 +229,7 @@ Unit-generator inputs may ordinarily be either other unit-generators or lists,
 and in some cases numbers,
 and will accept blocks answering any one of these types.
 
-<!-- ![Figure 7](sw/blksc3/png/TypeAnnotation.png) -->
+![Figure 7](sw/blksc3/png/TypeAnnotation.svg)
 
 ## Related Work
 
