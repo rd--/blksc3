@@ -1,4 +1,4 @@
--- \| Translator for simple .stc/.spl graphs to Blockly .xml notation.
+-- | Translator for simple .stc/.spl graphs to Blockly .xml notation.
 --
 -- In addition to the current .xml notation there is also a newer .json notation.
 --
