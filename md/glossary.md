@@ -3,7 +3,8 @@
 ## Assignment
 
 The assignment block ≔ sets the value of a variable.
-The figure below shows the variable _i_ being incremented by one.
+The figure below shows the variable _i_ being incremented by one,
+it is the block drawing of the expression _i := i + 1_.
 
 ![](sw/blksc3/png/Assignment.svg)
 
@@ -20,6 +21,9 @@ in the Simple Language it is.
 A binary operator is an operator with two operands,
 or a procedure of two arguments.
 In some contexts it particularly refers to a procedure that is written using infix notation.
+The figure below is the block diagram of _3 + 4_.
+
+![](sw/blksc3/png/BinaryOperator.svg)
 
 ## Black & White
 
@@ -30,8 +34,7 @@ or for use with non-colour displays.
 This mode can be selected by pressing the ⬜ button beneath the workspace.
 The figure below is the drawing from §1.01 of the guide.
 
-![](sw/blksc3/svg/BlockSuperCollider.svg)
-<!-- ![](sw/blksc3/svg/WhyBlockSuperCollider.grey.svg) -->
+![](sw/blksc3/png/OutlineDrawingMode.svg)
 
 ## Block Comment
 
@@ -59,6 +62,14 @@ or so that blocks can have both symbolic and text naming schemes.
 A block may have a single output, represented as a jigsaw connector on the left edge.
 Block outputs connect to value inputs.
 Blocks with an output are usually called expression or value blocks.
+In the figure below the output of a _number block_,
+holding the value _9_,
+is connected to the input of a _unary operator_ block,
+with the √ (`sqrt`) operator selected,
+it is the block drawing of the expression _sqrt(9)_,
+or equally _9.sqrt_.
+
+![](sw/blksc3/png/BlockOutput.svg)
 
 ## Block Type
 
@@ -97,6 +108,13 @@ This process is called code generation, and is performed by a code generator.
 
 A block can be _collapsed_ using the _Collapse Block_ item in the context menu.
 A collapsed block can be _expanded_ using the _Expand Block_ item in the context menu.
+The figure below shows the collapsed form of a two block program,
+the blocks are a _unary operator_ block,
+with the √ (`sqrt`) operator selected,
+and a _number block_,
+holding the value _9_.
+
+![](sw/blksc3/png/CollapsedBlocks.svg)
 
 ## Colours
 
@@ -132,6 +150,13 @@ There is a [Type Annotations](http://blksc3.rohandrape.net/?e=help/Guide/2.05%20
 
 The console is a text area that can be printed to.
 
+## Constant
+
+A constant is a value that does not change over time.
+The figure below shows the numeric constants defined in the _Constants_ category of the toolbox.
+
+![](sw/blksc3/png/Constant.svg)
+
 ## Context Menu
 
 A context menu contains a list of actions related to an element in the workspace, or to the workspace itself.
@@ -141,7 +166,7 @@ A context menu is shown on right mouse clicks and long pen presses.
 
 𝒞 (_ControlField_) is a _named control_ for which a unique name is assigned by the system.
 There is a [Control Fields](http://blksc3.rohandrape.net/?e=help/Guide/1.15%20Control%20Fields) section in the _Guide_.
-The figure below shows a ∿ (_SinOsc_) block with 𝒞 inputs for both frequency and amplitude.
+The figure below shows a ∿ (_SinOsc_) block with 𝒞 inputs for both ν (_frequency_) and × (_amplitude_).
 
 ![](sw/blksc3/png/ControlField.svg)
 
@@ -197,7 +222,8 @@ See also _Statement Block_.
 
 Blocks can be drawn with either _Internal Inputs_ or _External inputs_.
 There is a context menu item to select between the two drawing modes.
-The figure below shows the ∿ (_SinOsc_) block with external inputs.
+The figure below shows the ∿ (_SinOsc_) block with external inputs,
+it is the block drawing of the expression _SinOsc(440, 0) * 0.1 + 0_.
 
 ![](sw/blksc3/png/ExternalInputs.svg)
 
@@ -262,7 +288,8 @@ Statement inputs accept one or more statement blocks.
 
 Blocks can be drawn with either _Internal Inputs_ or _External inputs_.
 There is a context menu item to select between the two drawing modes.
-The figure below shows the ∿ (_SinOsc_) block with internal inputs.
+The figure below shows the ∿ (_SinOsc_) block with internal inputs,
+it is the block drawing of the expression _SinOsc(440, 0) * 0.1 + 0_.
 
 ![](sw/blksc3/png/InternalInputs.svg)
 
@@ -294,7 +321,8 @@ and the output connector is on the left edge.
 
 A let binding introduces a local variable and assigns it an initial value.
 Let bindings must be grouped together at the start of a statement stack.
-In the figure below a local variable _x_ is defined to have the value of the mathematical constant _e_.
+In the figure below a local variable _x_ is defined to have the value of the mathematical constant _e_,
+it is the block drawing of the expression _let x = 2.71828_.
 
 ![](sw/blksc3/png/LetBinding.svg)
 
@@ -315,9 +343,13 @@ The _Load_ button can be selected using the _l_ access key.
 ## Menu Field
 
 Block fields with a ▼ indicator are menus, from which items may be selected.
-The figure below shows a numeric constant block with the menu open.
+The figure below shows a program with four menus,
+the _unary operator_ block menu is selecting the √ (`sqrt`) operation,
+the _binary operator_ block menu is selecting the ÷ (`/`) operation,
+and the two _numeric constant_ block menus select π (`pi`) and `e` respectively.
+This program prints as _sqrt(pi / e)_.
 
-![](sw/blksc3/png/NumericConstant.png)
+![](sw/blksc3/png/MenuField.svg)
 
 ## Multiply and Add
 
@@ -333,12 +365,13 @@ The figure below shows the unary mathematical operator block,
 with the √ (_Sqrt_) operator selected,
 in each naming scheme.
 
-![](sw/blksc3/png/NamingScheme.png)
+![](sw/blksc3/png/NamingScheme.svg)
 
 ## Nil
 
 ∅ (_Nil_) is a constant representing an undefined value.
 The ∅ block is fetched from the _Meta_ category.
+The figure below shows the block drawing of the expression _x := { nil }_.
 
 ![](sw/blksc3/png/Nil.svg)
 
@@ -354,7 +387,8 @@ A number block is a block with a single editable text field in which one can wri
 The number may be an integer or a real number.
 Trying to type in a text that is not a number leaves the number unchanged.
 The number block is fetched from the _Constants_ category of the toolbox.
-The figure below shows the number twenty three divided by an approximation of π.
+The figure below shows the number twenty three divided by an approximation of π,
+it is the block drawing of the expression _23 / 3.141_.
 
 ![](sw/blksc3/png/Number.svg)
 
@@ -363,13 +397,16 @@ The figure below shows the number twenty three divided by an approximation of π
 The numeric constant block is a block with a menu containing a number of predefined mathematical constants,
 such as π (_Pi_), 2×π (_TwoPi_), 𝑒 (_E_) and ∞ (_Infinity_).
 It is fetched from the _Constants_ category of the toolbox.
+The figure below shows the numeric constants from the _Constants_ category of the toolbox.
 
-![](sw/blksc3/png/NumericConstant.png)
+![](sw/blksc3/png/NumericConstant.svg)
 
 ## Operand
 
 An operand, also called an argument or a parameter, is a value operated on by an operator.
 In the infix expression `p + q`, `p` and `q` are operands and `+` is the operator.
+
+![](sw/blksc3/png/Operand.svg)
 
 ## Operator
 
@@ -378,12 +415,18 @@ In the expression `p + q`, `+` is the operator and `p` and `q` are operands.
 The number of operands required by an operator is the arity of the operator.
 In some contexts operator refers to specifically to verbs that are written infix.
 
+![](sw/blksc3/png/Operator.svg)
+
 ## Operator Menu
 
 Blocks may implement many different behaviours selected from an operator menu.
-The figure below shows the binary math operator block with the operator menu opened.
+The figure below shows two binary math operator blocks,
+with the operators × (`*`) and ÷ (`/`) selected,
+the two unary operator blocks,
+with the operators ∿ (`sin`) and √ (`sqrt`) selected.
+This program prints as _sin(pi / 2) * sqrt(9)_.
 
-![](sw/blksc3/png/OperatorMenu.png)
+![](sw/blksc3/png/OperatorMenu.svg)
 
 ## Overlap Texture
 
@@ -392,7 +435,7 @@ The figure below shows the binary math operator block with the operator menu ope
 There is an [Overlap Texture](https://blksc3.rohandrape.net/?e=help/Guide/1.12%20Overlap%20Texture) section in the _Guide_.
 The figure below shows the toolbox entry for ᨏ, which includes a pre-composed λ block at 𝑓, and a _tr_ variable reference at ⍵.
 
-![](sw/blksc3/png/Texture.svg)
+![](sw/blksc3/png/OverlapTexture.svg)
 
 ## Patcher
 
@@ -420,6 +463,10 @@ The _Play_ button can be selected using the _,_ access key.
 The ⊳ (_Play_) block is a statement block that indicates the end of the program.
 The input to the ⊳ block is the sound that is heard when the program is listened to.
 There should only be one ⊳ block in a program, and it should be the last block.
+The figure below shows the output of the block drawing of the expression _PinkNoise() * 0.1 + 0_,
+connected to the input of the ⊳ block.
+
+![](sw/blksc3/png/PlayBlock.svg)
 
 ## Postfix Notation
 
@@ -467,9 +514,12 @@ The _Reset_ button can be selected using the _._ access key.
 
 Scalable Vector Graphics (Ferraiolo 2001) is a vector image format for defining two-dimensional graphics.
 The workspace can be saved as a Scalable Vector Graphics file.
+
+<!--
 The figure below is an exported image of the _Why SuperCollider?_ graph.
 
-![](sw/blksc3/svg/WhyBlockSuperCollider.colours.svg)
+![](sw/blksc3/png/BabblingBrook.svg)
+-->
 
 ## S-Expression
 
@@ -527,7 +577,7 @@ Statement blocks may also have input connectors at the right (for instance ⊳ a
 Statement blocks are connected together into statement stacks.
 In the figure below a ≔ (_Assignment_) block is connected to a ⊳ (_Play_) block.
 
-![](sw/blksc3/png/Statements.svg)
+![](sw/blksc3/png/StatementBlocks.svg)
 
 ## Statement Connections
 
@@ -543,7 +593,7 @@ The figure below shows the no-argument λ (_Lambda_) block.
 The ⦙ (_Statements_) input is a statement input,
 the ← (_Return_) input is a value input.
 
-![](sw/blksc3/png/Lambda.zero.stm.svg)
+![](sw/blksc3/png/StatementInput.svg)
 
 ## SuperCollider
 
@@ -555,7 +605,7 @@ ordinarily to an in-process copy compiled to Wasm (Rossberg 2019).
 
 The figure below shows the ∿ (_SinOsc_) block using the symbolic naming scheme.
 
-![](sw/blksc3/png/SinOsc.internal.svg)
+![](sw/blksc3/png/SymbolicNamingSchema.svg)
 
 The symbols used are:
 
@@ -569,19 +619,19 @@ The naming scheme also applies to menu fields.
 The figure below shows the boolean block using the symbolic naming scheme,
 with the ⊥ (_False_) item selected.
 
-![](sw/blksc3/png/False.svg)
+![](sw/blksc3/png/SymbolicNamingSchemaFalse.svg)
 
 ## Text Naming Schema
 
 The figure below shows the ∿ (_SinOsc_) block using the text naming scheme.
 In this scheme the input names are elided.
 
-![](sw/blksc3/png/SinOsc.internal.text.svg)
+![](sw/blksc3/png/TextNamingSchema.svg)
 
 The naming scheme also applies to menu fields.
 The figure below shows the ⊥ (_False_) block using the text naming scheme.
 
-![](sw/blksc3/png/False.text.svg)
+![](sw/blksc3/png/TextNamingSchemaFalse.svg)
 
 ## Toolbox
 
@@ -602,17 +652,17 @@ however any block program may be placed in the toolbox,
 including small commonly used sub-programs, called idioms.
 The figure below shows a pre-composed sequence of ᵀ (_Transposed_) and Σ (_Sum_) from the List category.
 
-![](sw/blksc3/png/Precomposed.svg)
+![](sw/blksc3/png/ToolboxEntries.svg)
 
 ## Tooltip
 
 A tooltip is a small help window that is show when the mouse hovers over a block.
-The figure below shows the ∿ (_SinOsc_) block with the tooltip displayed.
+The text below shows the ∿ (_SinOsc_) block with the tooltip displayed.
 The help text gives the text name of the block,
 the text names of the parameters,
 and a one sentence synopsis.
 
-![](sw/blksc3/png/Tooltip.png)
+> SinOsc(freq, phase): Interpolating sine wavetable oscillator.
 
 ## Translator
 
@@ -661,6 +711,7 @@ the operator precedes the operand.
 In the figure below the input of a list unary operator block,
 with the ᴙ (_Reversed_) operator selected,
 is connected to the output of a ⟦⟧ (_List_) block.
+It is the block drawing of the expression _reversed([1 2 3])_.
 
 ![](sw/blksc3/png/UnaryOperator.svg)
 
@@ -690,12 +741,16 @@ The figure below shows the no-argument λ (_Lambda_) block.
 The ⦙ (_Statements_) input is a statement input,
 the ← (_Return_) input is a value input.
 
-![](sw/blksc3/png/Lambda.zero.stm.svg)
+![](sw/blksc3/png/ValueInput.svg)
 
 ## Variables
 
 Variables are created using the _Create Variable_ entry in the _Variable_ category of the toolbox,
 which also contains the variable reference and assignment blocks.
+The figure below indicates the two variable related blocks,
+_variable assignment_ and _variable reference_.
+
+![](sw/blksc3/png/Variables.svg)
 
 ## Visual Programming Languages
 
