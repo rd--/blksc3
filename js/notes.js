@@ -8,7 +8,7 @@ function markdownToHtml(mdText) {
 	return htmlWriter.render(mdReader.parse(mdText));
 }
 
-// .play.sl files can have a .md segment, indicated by a line beginning '# '
+// .sp files can have a .md segment, indicated by a line beginning '# '
 function mdNotesFromSpl(splText) {
 	const lines = splText.split('\n');
 	const notesMarker = lines.findIndex((str) =>

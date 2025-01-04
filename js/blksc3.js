@@ -355,14 +355,14 @@ export class Blk {
 
 	loadHelpGraph(graphPath) {
 		this.fetchJson(`${graphPath}.json`, false);
-		loadNotes(`${graphPath}.play.sl`)
+		loadNotes(`${graphPath}.sp`)
 			.then(sc.setterForInnerHtmlOf('blkNotes'));
 		if (this.trackHistory) {
 			sc.windowUrlSetParam('e', graphPath);
 		}
 	}
 
-	// If the Url has fileParamKey, load the named .json/.play.sl files.
+	// If the Url has fileParamKey, load the named .json/.sp files.
 	maybeLoadHelpFileFromUrlParam(fileParamKey) {
 		const fileName = sc.urlGetParam(fileParamKey);
 		if (fileName) {

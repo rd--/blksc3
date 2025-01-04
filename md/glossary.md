@@ -5,7 +5,7 @@
 The assignment block ≔ sets the value of a variable.
 The figure below shows the variable _i_ being incremented by one.
 
-![](sw/blksc3/png/Assignment.png)
+![](sw/blksc3/png/Assignment.svg)
 
 ## Atom
 
@@ -143,7 +143,7 @@ A context menu is shown on right mouse clicks and long pen presses.
 There is a [Control Fields](http://blksc3.rohandrape.net/?e=help/Guide/1.15%20Control%20Fields) section in the _Guide_.
 The figure below shows a ∿ (_SinOsc_) block with 𝒞 inputs for both frequency and amplitude.
 
-![](sw/blksc3/png/ControlField.png)
+![](sw/blksc3/png/ControlField.svg)
 
 ## Copy
 
@@ -199,7 +199,7 @@ Blocks can be drawn with either _Internal Inputs_ or _External inputs_.
 There is a context menu item to select between the two drawing modes.
 The figure below shows the ∿ (_SinOsc_) block with external inputs.
 
-![](sw/blksc3/png/SinOsc.external.png)
+![](sw/blksc3/png/ExternalInputs.svg)
 
 ## External Synthesiser
 
@@ -264,7 +264,7 @@ Blocks can be drawn with either _Internal Inputs_ or _External inputs_.
 There is a context menu item to select between the two drawing modes.
 The figure below shows the ∿ (_SinOsc_) block with internal inputs.
 
-![](sw/blksc3/png/SinOsc.internal.png)
+![](sw/blksc3/png/InternalInputs.svg)
 
 ## JavaScript
 
@@ -296,7 +296,7 @@ A let binding introduces a local variable and assigns it an initial value.
 Let bindings must be grouped together at the start of a statement stack.
 In the figure below a local variable _x_ is defined to have the value of the mathematical constant _e_.
 
-![](sw/blksc3/png/LetBinding.png)
+![](sw/blksc3/png/LetBinding.svg)
 
 ## Lexical Scope
 
@@ -304,7 +304,7 @@ Lexical scope is the part of a program text, or drawing, in which a binding of a
 In the figure below `x` is bound to `1` and `y` is bound to `pi`.
 The `x` binding in the λ block is local, it does not interact with the outer `x` binding.
 
-![](sw/blksc3/png/LexicalScope.png)
+![](sw/blksc3/png/LexicalScope.svg)
 
 ## Load
 
@@ -340,7 +340,7 @@ in each naming scheme.
 ∅ (_Nil_) is a constant representing an undefined value.
 The ∅ block is fetched from the _Meta_ category.
 
-![](sw/blksc3/png/Nil.png)
+![](sw/blksc3/png/Nil.svg)
 
 ## Notes
 
@@ -356,7 +356,7 @@ Trying to type in a text that is not a number leaves the number unchanged.
 The number block is fetched from the _Constants_ category of the toolbox.
 The figure below shows the number twenty three divided by an approximation of π.
 
-![](sw/blksc3/png/Number.png)
+![](sw/blksc3/png/Number.svg)
 
 ## Numeric Constant
 
@@ -392,7 +392,7 @@ The figure below shows the binary math operator block with the operator menu ope
 There is an [Overlap Texture](https://blksc3.rohandrape.net/?e=help/Guide/1.12%20Overlap%20Texture) section in the _Guide_.
 The figure below shows the toolbox entry for ᨏ, which includes a pre-composed λ block at 𝑓, and a _tr_ variable reference at ⍵.
 
-![](sw/blksc3/png/Texture.png)
+![](sw/blksc3/png/Texture.svg)
 
 ## Patcher
 
@@ -489,7 +489,7 @@ In the figure below both input fields of the ⍰𝒑 (_PinkNoise_) block,
 and the × (_Multiply_) and + (_Add_) fields of the ⋏ (_Resonz_) block are shadow blocks.
 The _ν_ (_Frequency_) and ¹⁄𝑄 (_ReciprocalOfQ_) inputs are replaced by number blocks.
 
-![](sw/blksc3/png/ShadowBlock.png)
+![](sw/blksc3/png/ShadowBlock.svg)
 
 ## Simple Programming Language
 
@@ -527,7 +527,7 @@ Statement blocks may also have input connectors at the right (for instance ⊳ a
 Statement blocks are connected together into statement stacks.
 In the figure below a ≔ (_Assignment_) block is connected to a ⊳ (_Play_) block.
 
-![](sw/blksc3/png/Statements.png)
+![](sw/blksc3/png/Statements.svg)
 
 ## Statement Connections
 
@@ -543,7 +543,7 @@ The figure below shows the no-argument λ (_Lambda_) block.
 The ⦙ (_Statements_) input is a statement input,
 the ← (_Return_) input is a value input.
 
-![](sw/blksc3/png/Lambda.zero.stm.png)
+![](sw/blksc3/png/Lambda.zero.stm.svg)
 
 ## SuperCollider
 
@@ -555,7 +555,7 @@ ordinarily to an in-process copy compiled to Wasm (Rossberg 2019).
 
 The figure below shows the ∿ (_SinOsc_) block using the symbolic naming scheme.
 
-![](sw/blksc3/png/SinOsc.internal.png)
+![](sw/blksc3/png/SinOsc.internal.svg)
 
 The symbols used are:
 
@@ -569,19 +569,19 @@ The naming scheme also applies to menu fields.
 The figure below shows the boolean block using the symbolic naming scheme,
 with the ⊥ (_False_) item selected.
 
-![](sw/blksc3/png/False.png)
+![](sw/blksc3/png/False.svg)
 
 ## Text Naming Schema
 
 The figure below shows the ∿ (_SinOsc_) block using the text naming scheme.
 In this scheme the input names are elided.
 
-![](sw/blksc3/png/SinOsc.internal.text.png)
+![](sw/blksc3/png/SinOsc.internal.text.svg)
 
 The naming scheme also applies to menu fields.
 The figure below shows the ⊥ (_False_) block using the text naming scheme.
 
-![](sw/blksc3/png/False.text.png)
+![](sw/blksc3/png/False.text.svg)
 
 ## Toolbox
 
@@ -593,7 +593,7 @@ the 𝑇 button selects between them.
 There is a [Toolbox](https://blksc3.rohandrape.net/?e=help/Guide/1.03%20Toolbox) section in the _Guide_.
 The figure below shows the complete toolbox with the constants category selected.
 
-![](sw/blksc3/png/Toolbox.png)
+![](sw/blksc3/png/Toolbox.svg)
 
 ## Toolbox Entries
 
@@ -602,7 +602,7 @@ however any block program may be placed in the toolbox,
 including small commonly used sub-programs, called idioms.
 The figure below shows a pre-composed sequence of ᵀ (_Transposed_) and Σ (_Sum_) from the List category.
 
-![](sw/blksc3/png/Precomposed.png)
+![](sw/blksc3/png/Precomposed.svg)
 
 ## Tooltip
 
@@ -637,7 +637,7 @@ CombC(
 )
 ```
 
-![](sw/blksc3/png/Translator.png)
+![](sw/blksc3/png/Translator.svg)
 
 ## Tree
 
@@ -662,7 +662,7 @@ In the figure below the input of a list unary operator block,
 with the ᴙ (_Reversed_) operator selected,
 is connected to the output of a ⟦⟧ (_List_) block.
 
-![](sw/blksc3/png/UnaryOperator.png)
+![](sw/blksc3/png/UnaryOperator.svg)
 
 ## Undo
 
@@ -690,7 +690,7 @@ The figure below shows the no-argument λ (_Lambda_) block.
 The ⦙ (_Statements_) input is a statement input,
 the ← (_Return_) input is a value input.
 
-![](sw/blksc3/png/Lambda.zero.stm.png)
+![](sw/blksc3/png/Lambda.zero.stm.svg)
 
 ## Variables
 
