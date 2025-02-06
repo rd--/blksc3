@@ -1,5 +1,15 @@
 # Glossary
 
+## Arity
+
+The arity of an operator (or function or procedure) is the number of operands (or arguments or parameters) it takes.
+The figure below shows three blocks with different arities.
+The operator √ (`sqrt`) has arity one,
+the operator + (`plus`) has arity two,
+the operator ᨏ (`OverlapTexture`) has arity four.
+
+![](sw/blksc3/png/Arity.svg)
+
 ## Assignment
 
 The assignment block ≔ sets the value of a variable.
@@ -74,14 +84,23 @@ or equally _9.sqrt_.
 ## Block Type
 
 Each block in a program is an instance of a block type.
-A blocks types defines the structure and behaviour of the block.
-Each block types has a unique names.
-Block types names are opaque values,
+A blocks type defines the structure and behaviour of the block.
+Each block type has a unique name.
+Block type names are opaque values,
 the text that is displayed on a block is a separate value called the block message.
 
 ## Case Rule
 
 Identifiers are written in mixed case as `SinOsc`, `LfSaw` and `Fft`.
+Abbreviated terms follow the same rule,
+as indicated above where `Lf`,
+which abbreviates _low frequency_,
+and `Fft`,
+which abbreviates _fast Fourier transform_,
+are capitalised rather than upper cased.
+The case changes occur where a hypen (in a Lisp system) or underscore (in C system) might be placed,
+if such a naming convention were used,
+as in `sin-osc`, `lf-saw` and `fft`.
 
 ## Categories
 
@@ -92,12 +111,12 @@ Blocks in the same category are assigned the same colour.
 
 The _Cleanup_ button tidies the current drawing.
 Among other tasks it will move any obscured blocks into an open area.
-The _Cleanup_ button can be selected using the _o_ access key.
+The _Cleanup_ button can be selected using the _"o"_ access key.
 
 ## Clear
 
 The _Clear_ button deletes the current drawing.
-The _Clear_ button can be selected using the _k_ access key.
+The _Clear_ button can be selected using the _"k"_ access key.
 
 ## Code Generator
 
@@ -113,6 +132,7 @@ the blocks are a _unary operator_ block,
 with the √ (`sqrt`) operator selected,
 and a _number block_,
 holding the value _9_.
+The text of the collapsed block shows both these values.
 
 ![](sw/blksc3/png/CollapsedBlocks.svg)
 
@@ -141,7 +161,7 @@ There are three kinds of comments:
 The complete toolbox includes a complete set of the blocks the system knows about,
 organised into a system of categories and subcategories.
 
-## Connection checks
+## Connection Checks
 
 Connection checks, also called type annotations, constrain how blocks can be connected together.
 There is a [Type Annotations](http://blksc3.rohandrape.net/?e=help/Guide/2.05%20Type%20Annotations) section in the _Guide_.
@@ -173,7 +193,7 @@ The figure below shows a ∿ (_SinOsc_) block with 𝒞 inputs for both ν (_fre
 ## Copy
 
 The _Copy_ button copies the internal notation of the current program to the clipboard.
-The _Copy_ button can be selected using the _c_ access key.
+The _Copy_ button can be selected using the _"c"_ access key.
 
 ## Copy and Paste
 
@@ -195,7 +215,7 @@ The default rule is _%×%_, which allocates space as a proportion of the size of
 In addition there is a set of fixed size layouts, such as _1366×768_, named by display dimensions.
 The fixed size layouts are useful for seeing how programs will appear on other displays,
 assuming that the browser window occupies most of the display.
-The display menu can be selected using the _y_ access key.
+The display menu can be selected using the _"y"_ access key.
 
 ## Duplicate
 
@@ -205,7 +225,7 @@ A block can be _duplicated_ using the _Duplicate_ item in the context menu.
 
 The _Eval_ button evaluates the program in the workspace and sends it to the synthesiser.
 It does not send the answer to the synthesiser.
-The _Eval_ button can be selected using the _/_ access key.
+The _Eval_ button can be selected using the _"/"_ access key.
 
 ## Expression
 
@@ -235,7 +255,7 @@ However it can also communicate with an external synthesiser by sending messages
 ## Fit
 
 The _Fit_ button scales the current drawing so that it fits in the workspace.
-The _Fit_ button can be selected using the _=_ access key.
+The _Fit_ button can be selected using the _"="_ access key.
 
 ## Forest
 
@@ -248,7 +268,9 @@ In mathematics, a function is a relation that uniquely associates members of one
 In some contexts function may be used as a synonym for operator or procedure or subroutine.
 In some contexts function may be used to refer to a procedure that has no side effects.
 In some contexts function may be used to refer to a procedure that is written using function notation,
-and operator to refer to a procedure that is written using infix notation.
+that is _f(x, y)_,
+and operator to refer to a procedure that is written using infix notation,
+that is _x + y_.
 
 ## Function Notation
 
@@ -258,20 +280,25 @@ The prefix expression `f p q` is written `f(p, q)` in function notation, `f` is 
 ## Help
 
 There is an online [Help](https://blksc3.rohandrape.net/?e=help/Reference/--Help--) system.
-The _Help_ menu can be selected using the _h_ access key.
+The _Help_ menu can be selected using the _"h"_ access key.
 The help programs illustrate individual blocks.
 Some blocks have multiple illustrations and the help programs have numerical suffixes to distinguish them.
 
 ## Guide
 
 There is an online [Guide](https://blksc3.rohandrape.net/?e=help/Guide/--Guide--).
-The _Guide_ menu can be selected using the _g_ access key.
+The _Guide_ menu can be selected using the _"g"_ access key.
 The Guide consists of a sequence of small example programs each with extensive notes.
 
 ## Idioms
 
 An idiom is, as in Apl, a composite sequence of blocks that is often used.
 The Toolbox contains a number of idioms.
+The figure below shows one,
+taken from the _List_ category,
+that pre-composes the Σ (`sum`) and ᵀ (`transposed`) blocks.
+
+![](sw/blksc3/png/Idiom.svg)
 
 ## Infix Notation
 
@@ -338,7 +365,7 @@ The `x` binding in the λ block is local, it does not interact with the outer `x
 
 The _Load_ button opens a file selection dialog to select a _.json_ file,
 and loads the selected file into the workspace.
-The _Load_ button can be selected using the _l_ access key.
+The _Load_ button can be selected using the _"l"_ access key.
 
 ## Menu Field
 
@@ -430,7 +457,7 @@ This program prints as _sin(pi / 2) * sqrt(9)_.
 
 ## Overlap Texture
 
-ᨏ (_OverlapTexture_) is a is a graph combinator, a form of higher order function.
+ᨏ (_OverlapTexture_) is a graph combinator, a form of higher order function.
 ᨏ requires a λ (_Lambda_) block at 𝑓 and makes an evolving texture of # (_Overlap_) voices.
 There is an [Overlap Texture](https://blksc3.rohandrape.net/?e=help/Guide/1.12%20Overlap%20Texture) section in the _Guide_.
 The figure below shows the toolbox entry for ᨏ, which includes a pre-composed λ block at 𝑓, and a _tr_ variable reference at ⍵.
@@ -447,7 +474,7 @@ The evaluation model includes both a data flow signal processing system for audi
 ## Patchwork
 
 Patchwork (Laurson 1989) is a domain specific visual programming language for music.
-It represents Lisp functions as boxes and with inlets at the left and right edges for input parameters,
+It represents Lisp functions as boxes with inlets at the left and right edges for input parameters,
 and a single outlet on the lower edge.
 Boxes are connected by lines to form a tree.
 OpenMusic (Assayag 1996) is a descendent of Patchwork.
@@ -456,7 +483,7 @@ OpenMusic (Assayag 1996) is a descendent of Patchwork.
 
 The _Play_ button evaluates the program in the workspace and sends it to the synthesiser.
 There is also a _Play_ entry in the workspace context menu.
-The _Play_ button can be selected using the _,_ access key.
+The _Play_ button can be selected using the _","_ access key.
 
 ## Play Block
 
@@ -489,26 +516,26 @@ A procedure, or operator or function or method, is a named behaviour that perfor
 ## Program Oracle
 
 The program oracle (易) selects at random from a subset of the list of programs in the program menu.
-The 易 button can be selected using the _r_ access key.
+The 易 button can be selected using the _"r"_ access key.
 
 ## Programs
 
 There is a list of illustrative SuperCollider [Programs](https://blksc3.rohandrape.net/?e=help/Program/--Programs--) that have been translated into block drawings.
 The programs are arranged by author initials and include references to the original sources.
-The _Programs_ menu can be selected using the _p_ access key.
+The _Programs_ menu can be selected using the _"p"_ access key.
 
 ## Replace
 
 The _Replace_ button evaluates the program in the workspace and sends the answer to the synthesiser,
 applying a cross-fade with the previous program.
 There is also a _Replace_ entry in the workspace context menu.
-The _Replace_ button can be selected using the _-_ access key.
+The _Replace_ button can be selected using the _"-"_ access key.
 
 ## Reset
 
 The _Reset_ button resets the synthesiser.
 There is also a _Reset_ entry in the workspace context menu.
-The _Reset_ button can be selected using the _._ access key.
+The _Reset_ button can be selected using the _"."_ access key.
 
 ## Scalable Vector Graphics
 
@@ -530,6 +557,7 @@ The atomic symbols are s-expressions, and if `p` and `q` are s-expressions, so i
 There are a two additional notations to simplify writing common idioms,
 `(p q r)` is an abbreviation of `(p . (q . (r . nil)))`,
 and `'p` is an abbreviation of `(quote p)`.
+The function notation `f(x, y)` would have the s-expression form `(f x y)`.
 
 ## Shadow Block
 
@@ -552,7 +580,7 @@ and that the drawings are translated into when evaluated.
 
 There is a list of [Small Programs](https://blksc3.rohandrape.net/?e=help/Program/--Small%20Programs--).
 These are programs that can be drawn within the workspace on a _1366×768_ display.
-The _Small Programs_ menu can be selected using the _a_ access key.
+The _Small Programs_ menu can be selected using the _"a"_ access key.
 
 ## Small Toolbox
 
