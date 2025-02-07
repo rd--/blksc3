@@ -1,4 +1,4 @@
-# Glossary
+# Block SuperCollider: Glossary
 
 ## Arity
 
@@ -322,11 +322,11 @@ it is the block drawing of the expression _SinOsc(440, 0) * 0.1 + 0_.
 
 ## JavaScript
 
-JavaScript (Wirfs-Brock 2020) is a language standardised in the document ECMA-262 and maintained by Technical Committee 39.
+JavaScript [@WirfsBrock2020a] is a language standardised in the document ECMA-262 and maintained by Technical Committee 39.
 
 ## JavaScript Object Notation (Json)
 
-JavaScript Object Notation (Crockford 2006) is a simple text format for encoding atoms, lists and dictionaries.
+JavaScript Object Notation [@Crockford2006a] is a simple text format for encoding atoms, lists and dictionaries.
 Atoms are either strings, numbers, booleans or nil.
 Json is a subset of JavaScript,
 a Json value is a JavaScript program representing the value it encodes.
@@ -335,7 +335,7 @@ a Json value is a JavaScript program representing the value it encodes.
 
 λ (_Lambda_) blocks answer procedure values.
 They define the expected arguments and the steps of execution or evaluation for a procedure.
-The name is from the lambda calculus (Church 1941) and Lisp (McCarthy 1960).
+The name is from the lambda calculus [@Church1941a] and Lisp [@McCarthy1960a].
 
 ## Left to right
 
@@ -405,7 +405,7 @@ The figure below shows the block drawing of the expression _x := { nil }_.
 ## Notes
 
 Programs may include detailed notes,
-written in a simple markup language (Gruber 2004).
+written in a simple markup language [@Gruber2004a].
 There is a notes area to the right of the workspace.
 
 ## Number
@@ -466,18 +466,18 @@ The figure below shows the toolbox entry for ᨏ, which includes a pre-composed 
 
 ## Patcher
 
-Patcher (Puckette 1988), Max (Puckette 1991) and PureData (Puckette 1996) are a closely related family of visual programming systems.
+Patcher [@Puckette1988a], Max [@Puckette1991a] and PureData [@Puckette1996a] are a closely related family of visual programming systems.
 Programs elements are drawn as boxes with inlets on the top edge and outlets on the lower edge.
 Boxes are connected by lines to form a graph.
 The evaluation model includes both a data flow signal processing system for audio signals and a reactive system for discrete events.
 
 ## Patchwork
 
-Patchwork (Laurson 1989) is a domain specific visual programming language for music.
+Patchwork [@Laurson1989a] is a domain specific visual programming language for music.
 It represents Lisp functions as boxes with inlets at the left and right edges for input parameters,
 and a single outlet on the lower edge.
 Boxes are connected by lines to form a tree.
-OpenMusic (Assayag 1996) is a descendent of Patchwork.
+OpenMusic [@Assayag1996a] is a descendent of Patchwork.
 
 ## Play
 
@@ -539,7 +539,7 @@ The _Reset_ button can be selected using the _"."_ access key.
 
 ## Scalable Vector Graphics
 
-Scalable Vector Graphics (Ferraiolo 2001) is a vector image format for defining two-dimensional graphics.
+Scalable Vector Graphics [@Ferraiolo2001a] is a vector image format for defining two-dimensional graphics.
 The workspace can be saved as a Scalable Vector Graphics file.
 
 <!--
@@ -550,7 +550,7 @@ The figure below is an exported image of the _Why SuperCollider?_ graph.
 
 ## S-Expression
 
-S-expressions (McCarthy 1960) are a class of symbolic expressions.
+S-expressions [@McCarthy1960a] are a class of symbolic expressions.
 They are formed by using the three special characters `(.)`,
 and an infinite set of distinguishable atomic symbols.
 The atomic symbols are s-expressions, and if `p` and `q` are s-expressions, so is `(p . q)`.
@@ -625,9 +625,9 @@ the ← (_Return_) input is a value input.
 
 ## SuperCollider
 
-SuperCollider (McCartney 1996) is a family of languages for real-time audio synthesis.
+SuperCollider [@McCartney1996a] is a family of languages for real-time audio synthesis.
 Block SuperCollider communicates directly with the SuperCollider synthesiser,
-ordinarily to an in-process copy compiled to Wasm (Rossberg 2019).
+ordinarily to an in-process copy compiled to Wasm [@Rossberg2019a].
 
 ## Symbolic Naming Schema
 
@@ -699,7 +699,7 @@ The illustration programs were translated from an existing collection of text pr
 The translator is the inverse of the code generator,
 it reads the program the code generator writes and writes the program the code generator reads.
 However while all block drawings can generate text programs, not all text programs can be drawn.
-The figure below shows the text of a brief program (Putnam 2004) that the translator reads,
+The figure below shows the text of a brief program [@Putnam2004a] that the translator reads,
 and the corresponding block program the translator writes.
 
 ```
@@ -785,33 +785,33 @@ _variable assignment_ and _variable reference_.
 There is a long history of visual programming languages,
 encompassing systems of very different kinds.
 Some notable instances are:
-Sketchpad (Sutherland 1963),
-Experimental Graphical Programming System (Sutherland 1966),
-Grail (Ellis 1969),
-Pygmalion (Smith 1975),
-ThingLab (Borning 1977),
-VisiCalc (Bricklin 1979),
-Pict (Glinert 1984),
-Prograph (Cox 1984),
-Labview (Vose 1986),
-Show and Tell (Kimura 1986),
-The Alternate Reality Kit (Smith 1986),
-Patcher (Puckette 1988),
-Kyma (Scaletti 1988),
-Patchwork (Laurson 1989),
-Max (Puckette 1991),
-Self (Ungar 1991),
-AgentSheets (Repenning 1993),
-Alice (Pausch 1995),
-LogoBlocks (Begel 1996),
-PureData (Puckette 1996),
-OpenMusic (Assayag 1996)
+Sketchpad [@Sutherland1963a],
+Experimental Graphical Programming System [@Sutherland1966a],
+Grail [@Ellis1969a],
+Pygmalion [@Smith1975a],
+ThingLab [@Borning1977a],
+VisiCalc [@Bricklin1979a],
+Pict [@Glinert1984a],
+Prograph [@Cox1984a],
+Labview [@Vose1986a],
+Show and Tell [@Kimura1986a],
+The Alternate Reality Kit [@Smith1986b],
+Patcher [@Puckette1988a],
+Kyma [@Scaletti1987a],
+Patchwork [@Laurson1989a],
+Max [@Puckette1991b],
+Self [@Ungar1991a],
+AgentSheets [@Repenning1993a],
+Alice [@Pausch1995a],
+LogoBlocks [@Begel1996a],
+PureData [@Puckette1996a],
+OpenMusic [@Assayag1996a]
 and
-SchemeBricks (Griffiths 2013).
+SchemeBricks [@Griffiths2008a].
 
 ## Web Browser
 
-A web browser (Berners-Lee 1992), or browser, is a program for accessing the World Wide Web.
+A web browser [@BernersLee1992b], or browser, is a program for accessing the World Wide Web.
 
 ## Workspace
 
@@ -835,3 +835,5 @@ It allows documents to be accessed over the internet using the Hypertext Transfe
 The workspace has controls to zoom in (⊕) and out (⊖) of the drawing, and to centre it at its initial scale (⊙).
 A mouse scroll wheel will also control workspace scaling.
 The block drawing is implemented using vector drawing primitives and scales without artefacts.
+
+## References

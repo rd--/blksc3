@@ -1,4 +1,4 @@
-# Block SuperCollider
+# Block SuperCollider: Extended Abstract
 
 Rohan Drape\
 rohan.drape@gmail.com
@@ -31,8 +31,7 @@ Block SuperCollider also has blocks for the standard components of a synthesiser
 To make sound Block SuperCollider translates the block program into a form understood by the synthesiser and sends it to be played using the appropriate messaging protocol.
 Ordinarily the system runs its own in-process copy of the synthesiser, compiled to Wasm [@Rossberg2019a], within the browser.
 However it can also communicate with an external synthesiser by sending messages over a socket.
-
-[Figure 1](https://rohandrape.net/sw/blksc3/png/BlockSuperCollider.png) shows and example program of the Block SuperCollider system.
+[Figure 1](https://rohandrape.net/sw/blksc3/png/BlockSuperCollider.png) shows a simple Block SuperCollider program.
 
 ![Figure 1](sw/blksc3/png/BlockSuperCollider.svg)
 
