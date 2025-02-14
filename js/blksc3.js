@@ -29,6 +29,18 @@ function setCssProperties(settings) {
 	}
 }
 
+const blksc3Theme = Blockly.Theme.defineTheme(
+	'blksc3',
+	{
+		'base': Blockly.Themes.Classic,
+		'fontStyle': {
+			'family': 'CM059, Georgia, serif',
+			'weight': 'normal',
+			'size': 14
+		}
+	}
+);
+
 export class Blk {
 	constructor(Blockly, withUiCtl, trackHistory) {
 		this.Blockly = Blockly;
@@ -104,7 +116,7 @@ export class Blk {
 		this.config = {
 			media: 'lib/scsynth-wasm-builds/lib/ext/blockly-11.2.1/media/',
 			renderer: 'thrasos', // geras thrasos zelos
-			theme: this.Blockly.Themes.Classic,
+			theme: blksc3Theme,
 			sounds: false,
 			toolbox: toolbox,
 			rtl: false,

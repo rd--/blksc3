@@ -14,10 +14,7 @@ remote-update:
 	ssh rd@rohandrape.net "(cd rohandrape.net/pub/blksc3 ; git pull ; make remote-setup)"
 
 remote-setup:
-	(cd lib/jssc3 ; git pull)
-	(cd lib/spl ; git pull)
 	(cd lib/scsynth-wasm-builds ; git pull)
-	(cd lib ; make copy-dist)
 
 mk-fmt:
 	deno fmt --use-tabs --single-quote blksc3.html
