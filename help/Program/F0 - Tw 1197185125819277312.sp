@@ -15,7 +15,7 @@ let d = (
 	Rlpf(
 		o,
 		g ^ SinOsc(e / 2 / 2, 0) * 2222 / 2,
-		SinOsc(e, 0) + 2 / (2 * pi)
+		SinOsc(e, 0) + 2 / 2.pi
 	) + c
 ).Splay2.Tanh;
 (d * 0.25) <! LocalOut(d)

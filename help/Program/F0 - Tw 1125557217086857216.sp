@@ -1,6 +1,6 @@
 /* https://twitter.com/redFrik/status/1125557217086857216 */
-let scl = [0, 2.94, 4.98, 7.02, 9.96];
-let b = -7.to(6) + 0.7 * 2 / 666;
+let scl = [0 2.94 4.98 7.02 9.96];
+let b = -7:6 + 0.7 * 2 / 666;
 let m = DegreeToKey(
 	scl.asLocalBuf,
 	LfTri(b, b) * LfTri(b, 0) * 9 + 9 % 32,

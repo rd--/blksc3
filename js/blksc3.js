@@ -1,5 +1,5 @@
-import * as sc from '../lib/jssc3/dist/jssc3.js';
-import * as sl from '../lib/spl/dist/sl.js';
+import * as sc from '../lib/scsynth-wasm-builds/lib/jssc3/dist/jssc3.js';
+import * as sl from '../lib/scsynth-wasm-builds/lib/spl/dist/sl.js';
 
 import { initCodeGen } from './CodeGenerator.js';
 import { initCodeGenUgen } from './UgenCodeGenerator.js';
@@ -102,7 +102,7 @@ export class Blk {
 
 	initConfig(toolbox) {
 		this.config = {
-			media: 'lib/blockly-11.2.0/media/',
+			media: 'lib/scsynth-wasm-builds/lib/ext/blockly-11.2.1/media/',
 			renderer: 'thrasos', // geras thrasos zelos
 			theme: this.Blockly.Themes.Classic,
 			sounds: false,
@@ -117,7 +117,7 @@ export class Blk {
 				wheel: false,
 			},
 			zoom: {
-				controls: false, // missing sprites?
+				controls: true, // missing sprites?
 				wheel: true,
 				startScale: 1.0,
 				maxScale: 3,
@@ -241,7 +241,7 @@ export class Blk {
 	getCodeJs() {
 		const slText = this.getCodeSl();
 		console.debug(`getCodeJs: slText: ${slText}`);
-		const jsText = sl.rewriteString(slText);
+		const jsText = sl.rewriteSlToJs(slText);
 		// console.debug(`getCodeJs: jsText: ${jsText}`);
 		return jsText;
 	}

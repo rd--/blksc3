@@ -1,6 +1,6 @@
 // Modifies builtin Js code generator, .sl uses := for "assignment"
 
-import * as sc from '../lib/jssc3/dist/jssc3.js';
+import * as sc from '../lib/scsynth-wasm-builds/lib/jssc3/dist/jssc3.js';
 
 export function initCodeGen(Blockly) {
 	Blockly.JavaScript.forBlock['variables_set'] = function (block) {
@@ -199,7 +199,7 @@ function mathConstantValue(c) {
 	switch (c) {
 		case 'e':
 			return '2.718281828459045';
-		case 'inf':
+		case 'Infinity':
 			return '2147483647'; // maxBound Int32 (sclang knows this value)
 		case 'pi':
 			return '3.141592653589793';

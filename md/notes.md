@@ -1,3 +1,12 @@
+# Upgrade Blockly
+
+Files to edit:
+
+- blksc3.html
+- js/blksc3.js
+- js/convertXmlToJson.js
+- lib/Makefile
+
 # Issues
 
 - Sf - all noise?

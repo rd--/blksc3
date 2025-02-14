@@ -1,4 +1,4 @@
-import * as sc from '../lib/jssc3/dist/jssc3.js';
+import * as sc from '../lib/scsynth-wasm-builds/lib/jssc3/dist/jssc3.js';
 
 // Convert .md text to .html, requires commonmark.
 function markdownToHtml(mdText) {

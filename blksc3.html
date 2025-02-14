@@ -10,15 +10,16 @@
 			href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css"
 		/>
 		<link rel="stylesheet" type="text/css" media="all" href="css/BlkSc3.css" />
-		<script src="lib/blockly-11.2.0/blockly_compressed.js"></script>
-		<script src="lib/blockly-11.2.0/javascript_compressed.js"></script>
-		<script src="lib/blockly-11.2.0/msg/en.js"></script>
-		<script src="lib/blockly-11.2.0/blocks_compressed.js"></script>
+		<script src="lib/scsynth-wasm-builds/lib/ext/blockly-11.2.1/blockly_compressed.js"></script>
+		<script src="lib/scsynth-wasm-builds/lib/ext/blockly-11.2.1/javascript_compressed.js"></script>
+		<script src="lib/scsynth-wasm-builds/lib/ext/blockly-11.2.1/msg/en.js"></script>
+		<script src="lib/scsynth-wasm-builds/lib/ext/blockly-11.2.1/blocks_compressed.js"></script>
+		<script src="lib/scsynth-wasm-builds/lib/ext/toolbox-search-2.0.12/dist/index.js"></script>
 		<script src="lib/scsynth-wasm-builds/lib/ext/commonmark.js"></script>
 		<script src="lib/scsynth-wasm-builds/lib/ext/osc-browser.js"></script>
 		<script type="module">
-			import * as sc from './lib/jssc3/dist/jssc3.js'; /* local */
-			import * as sl from './lib/spl/dist/sl.js'; /* local */
+			import * as sc from './lib/scsynth-wasm-builds/lib/jssc3/dist/jssc3.js';
+			import * as sl from './lib/scsynth-wasm-builds/lib/spl/dist/sl.js';
 			import * as blk from './js/blksc3.js';
 			globalThis.sc = sc;
 			globalThis.sl = sl;
@@ -29,7 +30,7 @@
 				sc.sc3MouseInit(globalScSynth);
 				sc.scSynthInitStatusTextListener(globalScSynth, '---');
 				sl.assignGlobals();
-				sl.setSplDir('lib/spl');
+				sl.setSplDir('lib/scsynth-wasm-builds/lib/spl');
 				sl.loadUrl('*Load*', 'Package/Meta/PackageIndex.sl').then(function () {
 					sl.primitiveLoadPackageSequence([
 						'Kernel',

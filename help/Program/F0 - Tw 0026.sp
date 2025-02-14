@@ -12,7 +12,7 @@ let b = [0 2 4 5 7 9 11].asLocalBuf;
 let t = Impulse(4, 0);
 let m = DegreeToKey(
 	b,
-	Demand(t, 0, Dseq(inf, n)),
+	Demand(t, 0, Dseq(Infinity, n)),
 	12
 );
 let e = Decay2(

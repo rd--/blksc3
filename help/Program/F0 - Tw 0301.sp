@@ -7,7 +7,7 @@ let b = (0 .. 3).collect { :i |
 			1,
 			i + 1 % 4
 		) + Dseq(
-			inf,
+			Infinity,
 			[1, 1, 2, 3, 5, 8, 13, 21]
 		) % 9
 	).kr

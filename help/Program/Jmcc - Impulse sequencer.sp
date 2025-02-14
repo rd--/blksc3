@@ -1,6 +1,6 @@
 /* impulse sequencer (jmcc) SC2 */
 var t = Impulse(8, 0);
-var isequ = { arg s; t * Demand(t, 0, Seq(inf, s)) };
+var isequ = { arg s; t * Demand(t, 0, Seq(Infinity, s)) };
 var c_sq = isequ.value(#[1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0]);
 var d_sq = isequ.value(#[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0]);
 var n_sq = isequ.value(#[1.0, 0.1, 0.1, 1.0, 0.1, 1.0, 0.1, 0.1]);

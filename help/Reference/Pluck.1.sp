@@ -5,8 +5,8 @@ let freqs = (60.5 + [0 2 4 5 7 9 10]).MidiCps;
 let snd = Pluck(
 	Hasher(Sweep(trig, 1)) * -10.DbAmp,
 	trig,
-	freqs.Recip,
-	freqs.Recip,
+	freqs.Reciprocal,
+	freqs.Reciprocal,
 	0.9,
 	0.5
 );

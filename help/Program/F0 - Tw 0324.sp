@@ -4,7 +4,7 @@ let f = Duty(
 	c + 1 / 16,
 	0,
 	Dseq(
-		inf,
+		Infinity,
 		LfTri(1 / c / 8, 0) > 0 * 3 + c * 99
 	)
 );

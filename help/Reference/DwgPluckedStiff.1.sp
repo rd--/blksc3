@@ -1,12 +1,12 @@
 /* DwgPluckedStiff.1 */
 let t = TDuty(
-	Dseq(inf, [1 1 2 1 1 1 2 3 1 1 1 1 2 3 4] * 0.175),
+	Dseq(Infinity, [1 1 2 1 1 1 2 3 1 1 1 1 2 3 4] * 0.175),
 	0,
 	1
 );
 let freq = [
-	Demand(t, 0, Dseq(inf, [60 62 63 58 48 55])),
-	Demand(t, 0, Dseq(inf, [63 60 48 62 55 58]))
+	Demand(t, 0, Dseq(Infinity, [60 62 63 58 48 55])),
+	Demand(t, 0, Dseq(Infinity, [63 60 48 62 55 58]))
 ].MidiCps;
 let amp = TRand(0.05, 0.65, t);
 let gate = 1;

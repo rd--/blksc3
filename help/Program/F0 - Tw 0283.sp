@@ -1,5 +1,5 @@
-/* https://sccode.org/1-4Qy ; f0 ; 0283 */
-let b = 1 / (2 .. 6);
+/* F0 - Tw 0283 ; https://sccode.org/1-4Qy */
+let b = 1 / 2:6;
 let o1 = SinOscFb(
 	SinOscFb(b, 1) < b * 500 + 99,
 	0

@@ -4,7 +4,7 @@ let q = [
 	032 035 083 117 112 101 114 067
 	111 108 108 105 100 101 114 032
 ].MidiCps;
-let o = LfTri(Duty(b, 0, Dseq(inf, q)), 0);
+let o = LfTri(Duty(b, 0, Dseq(Infinity, q)), 0);
 Splay2(
 	CombC(
 		o,
