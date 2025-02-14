@@ -6,15 +6,15 @@ clean:
 	(cd cmd ; make clean)
 	(cd help ; make clean)
 
+update-lib:
+	git submodule update --remote lib/scsynth-wasm-builds
+
 push-all:
 	r.gitlab-push.sh blksc3
 	r.github-push.sh blksc3
 
 remote-update:
-	ssh rd@rohandrape.net "(cd rohandrape.net/pub/blksc3 ; git pull ; make remote-setup)"
-
-remote-setup:
-	(cd lib/scsynth-wasm-builds ; git pull)
+	ssh rd@rohandrape.net "(cd rohandrape.net/pub/blksc3 ; git pull ; make update-lib)"
 
 mk-fmt:
 	deno fmt --use-tabs --single-quote blksc3.html
