@@ -1,5 +1,5 @@
-/* trills ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #13e */
-let p = [1, 4] + 0.01;
+/* Trills ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #13e */
+let p = [1 4] + 0.01;
 Pan2(
 	SinOsc(
 		Lag(
@@ -8,7 +8,7 @@ Pan2(
 				1 / 8
 			),
 			0.002
-		).sum * 1400,
+		).Sum * 1400,
 		0
 	),
 	0,

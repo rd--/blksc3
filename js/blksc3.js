@@ -109,7 +109,7 @@ export class Blk {
 		if (withUiCtl) {
 			sc.fetchUtf8('html/ui-ctl.html', { cache: 'no-cache' })
 				.then(sc.setterForInnerHtmlOf('uiCtlContainer'));
-		}
+		};
 	}
 
 	initConfig(toolbox) {
@@ -180,13 +180,12 @@ export class Blk {
 		// console.debug(`setLayout: ${configName}`);
 		if (configName) {
 			const w = document.getElementById('blocklyContainer');
-			const c = document.getElementById('blkCtl');
 			const n = document.getElementById('blkNotes');
 			const o = this.layouts[configName];
 			w.style.height = o.workspaceHeight;
 			w.style.width = o.workspaceWidth;
-			c.style.left = o.ctlLeft;
-			c.style.width = o.ctlWidth;
+			n.style.left = o.notesLeft;
+			n.style.width = o.notesWidth;
 			n.style['font-size'] = o.notesFontSize;
 			n.style.height = o.workspaceHeight;
 			this.Blockly.svgResize(this.workspace);
@@ -205,7 +204,14 @@ export class Blk {
 		const select = document.getElementById('blkLayoutMenu');
 		select.addEventListener('change', (e) => this.setLayout(e.target.value));
 		sc.fetchJson('json/Layouts.json', { cache: 'no-cache' })
-			.then((obj) => this.layouts = obj);
+			.then((obj) => {
+				this.layouts = obj;
+				console.log('layoutMenuInit', obj);
+				Object.keys(obj).forEach((k) => {
+					const e = new Option(k, k);
+					select.add(e);
+				});
+			});
 	}
 
 	// Configure and inject Blockly given toolbox definition.
@@ -403,6 +409,12 @@ export class Blk {
 			this.setGreyColours();
 		}
 		this.workspace.setTheme(this.Blockly.Themes.Classic);
+	}
+
+	playSelectedText() {
+		const splText = _selectedTextOrParagraphAtCaret_1(window); /* window.getSelection().toString() */
+		const jsText = sl.rewriteSlToJs(`{ ${splText} }.value.play`);
+		return eval(jsText);
 	}
 
 	onWorkspaceChange() {

@@ -15,14 +15,20 @@ function mdNotesFromSpl(splText) {
 		sc.stringIsPrefixOf('# ', str)
 	);
 	const hasMarker = notesMarker >= 0;
+	const endSrc = hasMarker ? notesMarker : lines.length;
+	const includeSrc = !hasMarker || (lines[notesMarker].includes('Annotation'));
 	if (lines.length == 0) {
 		return 'No notes?';
-	} else if (hasMarker) {
-		return sc.arrayUnlines(lines.slice(notesMarker + 1, lines.length));
-	} else {
-		const program = lines.slice(1, lines.length);
-		return sc.arrayUnlines([['Source:', '~~~'], program, ['~~~']].flat(1));
 	}
+	const answerLines = [];
+	if (hasMarker) {
+		answerLines.push(sc.arrayUnlines(lines.slice(notesMarker + 1, lines.length)));
+	}
+	if(includeSrc) {
+		const program = lines.slice(1, endSrc);
+		answerLines.push(sc.arrayUnlines([['Source:', '~~~'], program, ['~~~']].flat(1)));
+	}
+	return sc.arrayUnlines(answerLines);
 }
 
 // Load .sl from fileName, extract .md notes, convert to .html.

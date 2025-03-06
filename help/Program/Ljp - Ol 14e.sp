@@ -2,11 +2,18 @@
 EqPan2(
 	SinOsc(
 		Rlpf(
-			Stepper(Impulse(8, 0),  0,  1,  8,  [1, 2, 3], 1),
+			Stepper(
+				Impulse(8, 0),
+				0,
+				1,
+				8,
+				[1 2 3],
+				1
+			),
 			1000,
 			0.01
 		) * 200,
 		0
-	).sum,
+	).Sum,
 	0
 ) * 0.1

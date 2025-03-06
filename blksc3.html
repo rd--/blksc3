@@ -36,6 +36,7 @@
 						'Kernel',
 						'StandardLibrary',
 						'SuperColliderLibrary',
+						'DocumentObjectModel',
 					]);
 				});
 				globalThis.rec = new blk.Blk(Blockly, false, false);
@@ -157,11 +158,6 @@
 				</button>
 				<select id="blkLayoutMenu" title="System layouts (y)" accesskey="y">
 					<option value="">--Display--</option>
-					<option value="%×%">%×%</option>
-					<option value="1366×768">1366×768</option>
-					<option value="1440×900">1440×900</option>
-					<option value="1680×1050">1680×1050</option>
-					<option value="1920×1080">1920×1080</option>
 				</select>
 				<button title="Begin" accesskey="b" onclick="globalScSynth.connect()">
 					Begin
@@ -189,9 +185,12 @@
 				<button title="Colour Scheme" onclick="rec.nextColourScheme()">
 					⬜
 				</button>
+				<button title="Evaluate Text (')" accesskey="'" onclick="rec.playSelectedText()">
+					′
+				</button>
 			</div>
 		</div>
-		<div id="blkNotes">
+		<div id="blkNotes" contenteditable="true" spellcheck="false">
 			<h2>Block SuperCollider</h2>
 			<p><em>blksc3</em> is a visual editor for SuperCollider.</p>
 			<p>There is a <em>Guide</em>, the menu is below the workspace.</p>

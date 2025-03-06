@@ -6,8 +6,8 @@ Bpf(
 	LfNoise1(f) * 0.3 + 0.31
 ).Splay2
 
-# Blizzard
+# Annotation
 
-<https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html> No.8
+[No. 8](https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html)
 
 Note that the λ argument to ! must be a λ block, unlike in the SuperCollider language, or indeed in the Simple Programming Language.

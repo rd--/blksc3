@@ -1,5 +1,5 @@
-/* Harmonic tumbling (Jmcc) #1 */
-let t = TxLine([10, 11], 0.1, 60, 1);
+/* Harmonic Tumbling (Jmcc) #1 */
+let t = TxLine([10 11], 0.1, 60, 1);
 let o = { :h |
     let e = Decay2(
 	    Dust(t) * 0.02,

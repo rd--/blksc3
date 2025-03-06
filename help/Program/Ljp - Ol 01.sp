@@ -9,7 +9,7 @@ Pan2(
 	0.1
 )
 
-# Notes
+# Annotation
 
 Here `Phasor` replaces `Line`, so voices reset at individual intervals.
 
