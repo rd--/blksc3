@@ -4,11 +4,6 @@
 		<meta charset="utf-8" />
 		<title>Block SuperCollider</title>
 		<link rel="icon" type="image/png" href="./lib/scsynth-wasm-builds/lib/jssc3/png/os.512.png" />
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css"
-		/>
 		<link rel="stylesheet" type="text/css" media="all" href="css/BlkSc3.css" />
 		<script src="lib/scsynth-wasm-builds/lib/ext/blockly-11.2.1/blockly_compressed.js"></script>
 		<script src="lib/scsynth-wasm-builds/lib/ext/blockly-11.2.1/javascript_compressed.js"></script>
@@ -67,7 +62,7 @@
 					type="file"
 					id="jsonInputFile"
 					accept=".json"
-					onchange="rec.readInputJson('jsonInputFile')"
+					onchange="rec.readFileInputJson('jsonInputFile')"
 					style="display: none"
 				/>
 				<input
@@ -95,7 +90,7 @@
 				<button
 					title="Copy workspace json to clipboard (c)"
 					accesskey="c"
-					onclick="navigator.clipboard.writeText(rec.workspaceJson())"
+					onclick="navigator.clipboard.writeText(rec.getWorkspaceJson())"
 				>
 					Copy
 				</button>
@@ -112,14 +107,6 @@
 					onclick="rec.workspace.zoomToFit()"
 				>
 					Fit
-				</button>
-				<button title="Print" onclick="rec.printCode()">Print</button>
-				<button
-					title="Evaluate workspace program (/)"
-					accesskey="/"
-					onclick="rec.evalCode()"
-				>
-					Eval
 				</button>
 				<button
 					title="Play workspace program (,)"
@@ -157,9 +144,9 @@
 					Save
 				</button>
 				<select id="blkLayoutMenu" title="System layouts (y)" accesskey="y">
-					<option value="">--Display--</option>
+					<option value="">--Layout--</option>
 				</select>
-				<button title="Begin" accesskey="b" onclick="globalScSynth.connect()">
+				<button title="Begin (b)" accesskey="b" onclick="globalScSynth.connect()">
 					Begin
 				</button>
 				<span id="statusText">...</span>
@@ -176,17 +163,25 @@
 				<button title="Toolbox" accesskey="t" onclick="rec.nextToolbox()">
 					𝑇
 				</button>
-				<button
-					title="External ScSynth"
-					onclick="sc.scSynthUseWebSocket(globalScSynth, 'ws://localhost:57110')"
-				>
-					𝓔
-				</button>
 				<button title="Colour Scheme" onclick="rec.nextColourScheme()">
 					⬜
 				</button>
 				<button title="Evaluate Text (')" accesskey="'" onclick="rec.playSelectedText()">
 					′
+				</button>
+				<button
+					title="Evaluate workspace program (/)"
+					accesskey="/"
+					onclick="rec.evalCode()"
+				>
+					/
+				</button>
+				<button title="Print" onclick="rec.printCode()">P</button>
+				<button
+					title="External ScSynth"
+					onclick="sc.scSynthUseWebSocket(globalScSynth, 'ws://localhost:57110')"
+				>
+					𝓔
 				</button>
 			</div>
 		</div>

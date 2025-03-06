@@ -14,19 +14,24 @@ function mdNotesFromSpl(splText) {
 	const notesMarker = lines.findIndex((str) =>
 		sc.stringIsPrefixOf('# ', str)
 	);
-	const hasMarker = notesMarker >= 0;
-	const endSrc = hasMarker ? notesMarker : lines.length;
-	const includeSrc = !hasMarker || (lines[notesMarker].includes('Annotation'));
+	const hasNotes = notesMarker >= 0;
+	const endSrc = hasNotes ? notesMarker : lines.length;
+	const includeSrc = !hasNotes || (lines[notesMarker].includes('Annotation'));
 	if (lines.length == 0) {
 		return 'No notes?';
 	}
 	const answerLines = [];
-	if (hasMarker) {
+	if (hasNotes) {
 		answerLines.push(sc.arrayUnlines(lines.slice(notesMarker + 1, lines.length)));
 	}
-	if(includeSrc) {
+	if (includeSrc) {
 		const program = lines.slice(1, endSrc);
-		answerLines.push(sc.arrayUnlines([['Source:', '~~~'], program, ['~~~']].flat(1)));
+		if (!hasNotes) {
+			answerLines.push('Source:');
+		}
+		answerLines.push('~~~');
+		answerLines.push(...program);
+		answerLines.push('~~~');
 	}
 	return sc.arrayUnlines(answerLines);
 }

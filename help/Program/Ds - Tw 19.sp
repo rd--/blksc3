@@ -10,5 +10,5 @@ _k_ is the _sum_ of five `LfPar` oscillators with frequencies given by _a_.
 
 _f_ is an array of five `Latch` filters that sample and hold _k_ at frequencies given by _a_.
 
-The sound is a stereo displacement (`Splay`) of five `SinOsc` oscillators,
+The sound is a stereo displacement (`Splay2`) of five `SinOsc` oscillators,
 with frequencies given by _f_.

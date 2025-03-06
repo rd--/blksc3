@@ -5,7 +5,7 @@ import { initCodeGen } from './CodeGenerator.js';
 import { initCodeGenUgen } from './UgenCodeGenerator.js';
 import { loadNotes } from './notes.js';
 
-function addWorkspaceEnv(input) {
+function addWorkspaceEnvelope(input) {
 	const gate = sc.NamedControl('workspaceGate', 1);
 	const attackTime = sc.NamedControl('workspaceAttackTime', 0.01);
 	const releaseTime = sc.NamedControl('workspaceReleaseTime', 0.1);
@@ -67,7 +67,7 @@ export class Blk {
 		this.loadBlockDefinitions('json/BlockDefinitions.json');
 		this.loadBlockDefinitions('json/UgenBlockDefinitions.json');
 		this.loadProgramOracle('json/ProgramOracle.json');
-		this.loadJsonToolbox('json/CompleteToolbox.json', () => {
+		this.loadToolbox('json/CompleteToolbox.json', () => {
 			this.workspace.addChangeListener(this.onWorkspaceChange());
 			this.maybeLoadHelpFileFromUrlParam('e');
 		});
@@ -99,7 +99,7 @@ export class Blk {
 		sc.userPrograms.storageKey = 'blksc3UserPrograms/json';
 		sc.userProgramsMenuInit(
 			'userMenu',
-			(jsonText) => this.loadJson(jsonText),
+			(jsonText) => this.loadProgramText(jsonText),
 		);
 		sc.selectOnChange('actionsMenu', function (menuElement, entryName) {
 			sc.userActionDo(entryName, 'userMenu', 'userProgramArchiveFile');
@@ -143,26 +143,26 @@ export class Blk {
 
 	// Setup workspace on loading a new program.
 	// Resets to unit scale and centers blocks.
-	onLoad() {
+	onProgramLoad() {
 		this.workspace.setScale(1);
 		this.workspace.scrollCenter();
 	}
 
 	// Load program from .json definition.
 	// Clears any existing blocks.
-	loadJson(jsonText) {
+	loadProgramText(jsonText) {
 		this.workspace.clear();
 		this.Blockly.serialization.workspaces.load(
 			JSON.parse(jsonText),
 			this.workspace,
 		);
-		this.onLoad();
+		this.onProgramLoad();
 	}
 
-	// Read selected .json file.
-	readInputJson(inputId) {
+	// Read selected .json file from file input.
+	readFileInputJson(inputId) {
 		const inputFile = sc.getFileInputFile(inputId, 0);
-		inputFile.text().then((jsonText) => this.loadJson(jsonText));
+		inputFile.text().then((jsonText) => this.loadProgramText(jsonText));
 	}
 
 	/*
@@ -186,6 +186,7 @@ export class Blk {
 			w.style.width = o.workspaceWidth;
 			n.style.left = o.notesLeft;
 			n.style.width = o.notesWidth;
+			n.style.display = (o.notesWidth === "0") ? "none" : "block";
 			n.style['font-size'] = o.notesFontSize;
 			n.style.height = o.workspaceHeight;
 			this.Blockly.svgResize(this.workspace);
@@ -275,7 +276,7 @@ export class Blk {
 
 	replaceCode() {
 		const blockProgram = this.evalCode();
-		const replacingProgram = addWorkspaceEnv(blockProgram);
+		const replacingProgram = addWorkspaceEnvelope(blockProgram);
 		globalScSynth.sendOsc(
 			sc.n_set(-1, [['workspaceReleaseTime', 3], ['workspaceGate', 0]]),
 		);
@@ -328,7 +329,7 @@ export class Blk {
 	}
 
 	loadBlockMessages(fileName) {
-		sc.fetchJson(fileName, { cache: 'no-cache' })
+		return sc.fetchJson(fileName, { cache: 'no-cache' })
 			.then((messages) => {
 				for (const key in messages) {
 					const value = messages[key];
@@ -360,19 +361,19 @@ export class Blk {
 		}
 	}
 
-	loadJsonToolbox(fileName, onCompletion) {
+	loadToolbox(fileName, onCompletion) {
 		sc.fetchJson(fileName, { cache: 'no-cache' })
 			.then((toolbox) => this.injectWithToolbox(toolbox, onCompletion));
 	}
 
 	// Read and load .json format program from Url.
-	fetchJson(jsonUrl) {
+	loadProgram(jsonUrl) {
 		sc.fetchUtf8(sc.urlAppendTimeStamp(jsonUrl), { cache: 'no-cache' })
-			.then((jsonText) => this.loadJson(jsonText));
+			.then((jsonText) => this.loadProgramText(jsonText));
 	}
 
 	loadHelpGraph(graphPath) {
-		this.fetchJson(`${graphPath}.json`, false);
+		this.loadProgram(`${graphPath}.json`, false);
 		loadNotes(`${graphPath}.sp`)
 			.then(sc.setterForInnerHtmlOf('blkNotes'));
 		if (this.trackHistory) {
@@ -388,9 +389,16 @@ export class Blk {
 		}
 	}
 
+	rebuildWorkspace() {
+		console.log('rebuildWorkspace');
+		this.loadProgramText(this.getWorkspaceJson())
+	}
+
 	nextNamingScheme() {
 		this.naming = this.naming == 'Symbolic' ? 'Text' : 'Symbolic';
-		this.loadBlockMessages(`json/${this.naming}Messages.json`);
+		this.loadBlockMessages(`json/${this.naming}Messages.json`).then(
+			(unused) => this.rebuildWorkspace()
+		);
 	}
 
 	nextToolbox() {
@@ -409,6 +417,7 @@ export class Blk {
 			this.setGreyColours();
 		}
 		this.workspace.setTheme(this.Blockly.Themes.Classic);
+		this.rebuildWorkspace();
 	}
 
 	playSelectedText() {
@@ -439,7 +448,7 @@ export class Blk {
 	}
 
 	// Get .json serialization of workspace.
-	workspaceJson() {
+	getWorkspaceJson() {
 		const jsonData = this.Blockly.serialization.workspaces.save(this.workspace);
 		const jsonText = JSON.stringify(jsonData, null, ' ');
 		return jsonText;
