@@ -9,4 +9,4 @@ The ! (_Duplicate_) block creates an array of _n_ places by evaluating a no-argu
 
 In this program 12 quiet sine oscillators (∿), each with a randomly selected (⚁) frequency (ν) and amplitude (×), are equally spaced across the stereo spectrum (◠).
 
-Each time the program is run a different frequency set it generated.
+Each time the program is run a different frequency set is generated.

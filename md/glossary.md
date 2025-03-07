@@ -24,7 +24,7 @@ An atom is an indivisible value.
 A number or a boolean is an atom,
 a list or a dictionary is not.
 A string may or may not be an atom,
-in the Simple Language it is.
+in the Simple Programming Language it is.
 
 ## Binary Operator
 
@@ -52,6 +52,12 @@ Block comments are texts attached to a block using the _Add comment_ context men
 The text is displayed in a box that can be moved and resized.
 Blocks that have comments attached have a question mark (?) button to show or hide the text.
 The comment text is printed, as a comment, when the block is evaluated.
+
+## Block Editor Library
+
+The block editor is implemented by writing block definitions,
+block message definitions,
+and translator definitions for the Blockly library [@Fraser2015a].
 
 ## Block Identifier
 
@@ -464,6 +470,11 @@ The figure below shows the toolbox entry for ᨏ, which includes a pre-composed 
 
 ![](sw/blksc3/png/OverlapTexture.svg)
 
+## Parser
+
+A parser is a program that reads an input text and constructs a parse tree in relation to a formal grammar.
+The parser for Sᴘʟ is written using the Ohm library [@Warth2016a].
+
 ## Patcher
 
 Patcher [@Puckette1988a], Max [@Puckette1991a] and PureData [@Puckette1996a] are a closely related family of visual programming systems.
@@ -571,8 +582,8 @@ The _ν_ (_Frequency_) and ¹⁄𝑄 (_ReciprocalOfQ_) inputs are replaced by nu
 
 ## Simple Programming Language
 
-Simple Programming Language (Spl),
-or Simple Language (Sl),
+Simple Programming Language (Sᴘʟ),
+or Simple Language (Sʟ),
 is the language that Block SuperCollider programs are drawings of,
 and that the drawings are translated into when evaluated.
 
@@ -805,9 +816,19 @@ AgentSheets [@Repenning1993a],
 Alice [@Pausch1995a],
 LogoBlocks [@Begel1996a],
 PureData [@Puckette1996a],
-OpenMusic [@Assayag1996a]
+OpenMusic [@Assayag1996a],
+Etoys[@Steinmetz2001a],
+Scratch [@Maloney2004a],
 and
 SchemeBricks [@Griffiths2008a].
+
+## Web Assembly
+
+Ordinarily the system runs an in-process copy of the SuperCollider synthesiser,
+compiled to Web Assembly (Wasm) [@Rossberg2019a].
+Web Assembly is a binary instruction format for a stack-based virtual machine,
+designed as a portable compilation target.
+Existing synthesis systems with extensive histories that are now additionaly compiled to Wasm include Csound [@Yi2018a].
 
 ## Web Browser
 

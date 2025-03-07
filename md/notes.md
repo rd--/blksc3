@@ -1,4 +1,6 @@
-# Upgrade Blockly
+# Notes
+
+## Upgrade Blockly
 
 Files to edit:
 
@@ -7,7 +9,7 @@ Files to edit:
 - js/convertXmlToJson.js
 - lib/Makefile
 
-# Issues
+## Issues
 
 - Sf - all noise?
 - An Tw 99846300173991936 (Crash? New rewrite rules for pseudo-ugens?)
@@ -19,26 +21,26 @@ Files to edit:
 - TChoose.1
 - Sequencer.1
 
-# Clarify
+## Clarify
 
 - Explain why textures require Mix/Sum
 - Document how concise "create list with" and "set x to" (as "[]" and ":=") are defined
 
-# Spl
+## Spl
 
 The Blockly Js printer prints "var p, q, r;" to declare temporaries.
 Spl allows this form particularly to support BlkSc3.
 Properly BlkSc3 should write "let p = nil; let q = nil; let r = nil;".
 Note distinction between "var f; f := {...};" and "let f = {...};"
 
-# Help
+## Help
 
 Document:
 replace (envelopes),
 editable number (named control),
 external synthesiser (localhost, not Wasm).
 
-# Sub-graphs
+## Sub-graphs
 
 A diagram can be a sub-graph.
 The ⊳ (Play) block indicates the "outlets" of the diagram.
@@ -49,7 +51,7 @@ Diagrams could be written to use "inlet" and "outlet" blocks.
 In the case of "top-level" diagrams, the system would connect these to the "audio device".
 In the case of "sub-diagrams" these would be connected to the blocks that connect to the "sub-diagram" block.
 
-# Url
+## Url
 
 An initial file can be loaded by setting the Url parameter _e_,
 i.e. _blksc3.html?e=help/Program/Jmcc - Why SuperCollider_.
@@ -57,7 +59,7 @@ i.e. _blksc3.html?e=help/Program/Jmcc - Why SuperCollider_.
 This loads the .sl notes as well as the .json graph,
 i.e. _blksc3.html?e=help/Guide/2.05%20Type%20Annotations_
 
-# Notes
+## Notes
 
 Wasm requires Pointer{WXY}, does not include sc3-plugins or sc3-rdu.
 Other errors are:
@@ -78,7 +80,11 @@ _fromAssocArray_ and _->_ belong at _Event_, not _Math_.
 
 _kr_ should not exist?  But it is necessary.
 
-# Guide:
+## References
+
+- [Toolbox](https://developers.google.com/blockly/guides/configure/web/toolbox)
+
+## Guide:
 
 - Notes, .sl.
   That notes are not stored in blocks.
@@ -103,7 +109,7 @@ _kr_ should not exist?  But it is necessary.
   Chrome: d is "go to address box" (cannot be draw), e & f are "chrome menu" (cannot be erase or fit)
   Firefox: f,e,v,s,b,t and h are menus (cannot be erase or fit), ␣ (space key) interacts poorly with menus (cannot be play)
 
-# Remainder
+## Remainder
 
 - unicode/ugen: Fold, Formant
 - unicode/op: clump, softClip
