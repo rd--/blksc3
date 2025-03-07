@@ -16,7 +16,7 @@ function mdNotesFromSpl(splText) {
 	);
 	const hasNotes = notesMarker >= 0;
 	const endSrc = hasNotes ? notesMarker : lines.length;
-	const includeSrc = !hasNotes || (lines[notesMarker].includes('Annotation'));
+	const includeSrc = !hasNotes || (lines[notesMarker] === '# Annotation');
 	if (lines.length == 0) {
 		return 'No notes?';
 	}
