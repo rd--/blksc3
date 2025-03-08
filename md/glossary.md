@@ -26,6 +26,11 @@ a list or a dictionary is not.
 A string may or may not be an atom,
 in the Simple Programming Language it is.
 
+## Begin
+
+The _Begin_ button starts an in-process copy of the SuperColldider synthesiser.
+See also _Status Area_.
+
 ## Binary Operator
 
 A binary operator is an operator with two operands,
@@ -147,6 +152,10 @@ The text of the collapsed block shows both these values.
 Blocks are coloured according to category.
 Block colours are specified by name, and looked up in a dictionary.
 
+## Colour Schemes
+
+The ⬜ button selects the next colour scheme.
+
 ## Comment Blocks
 
 Comment blocks, written as a left double quote (“), are statement blocks located in the _Meta_ category.
@@ -170,7 +179,7 @@ organised into a system of categories and subcategories.
 ## Connection Checks
 
 Connection checks, also called type annotations, constrain how blocks can be connected together.
-There is a [Type Annotations](http://blksc3.rohandrape.net/?e=help/Guide/2.05%20Type%20Annotations) section in the _Guide_.
+See also _Type Annotations_.
 
 ## Console
 
@@ -633,6 +642,13 @@ The ⦙ (_Statements_) input is a statement input,
 the ← (_Return_) input is a value input.
 
 ![](sw/blksc3/png/StatementInput.svg)
+
+## Status Area
+
+The _status area_ is located to the right of the _Begin_ button.
+When the system is connected to a SuperCollider synthesiser process,
+either an in-process copy or an external instance,
+the status area shows the number of sounding _unit generators_.
 
 ## SuperCollider
 
