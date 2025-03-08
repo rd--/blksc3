@@ -1,5 +1,5 @@
 /* 4.X - Status Area */
-let x = { WhiteNoise() * 0.1 } ! 2;
+let x = { WhiteNoise() * 0.05 } ! 2;
 {
 	Resonz(
 		x,
@@ -12,4 +12,4 @@ let x = { WhiteNoise() * 0.1 } ! 2;
 
 The _Status Area_ is located to the right of the _Begin_ button.
 It shows the number of sounding unit generators.
-This program describes a graph of one-hundred and seventy vertices.
+This program describes a graph with eighty-three vertices.

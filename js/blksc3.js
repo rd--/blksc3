@@ -13,14 +13,6 @@ function addWorkspaceEnvelope(input) {
 	return sc.Mul(input, envelope);
 }
 
-function graphMenuInit(menuId, graphDir, loadProc) {
-	sc.menuOnChangeWithOptionValue(menuId, (optionValue) => {
-		const graphPath = `help/${graphDir}/${optionValue}`;
-		// console.debug(graphPath);
-		loadProc(graphPath);
-	});
-}
-
 function setCssProperties(settings) {
 	const r = document.querySelector(':root');
 	for (const key in settings) {
@@ -72,30 +64,8 @@ export class Blk {
 			this.maybeLoadHelpFileFromUrlParam('e');
 		});
 		sc.connectButtonToInput('jsonInputFileSelect', 'jsonInputFile'); // Initialise .json file selector
-		graphMenuInit(
-			'programsMenu',
-			'Program',
-			(path) => this.loadHelpGraph(path),
-		);
-		sc.fetchJson('json/ProgramsMenu.json', { cache: 'no-cache' })
-			.then((json) =>
-				sc.selectAddKeysAsOptions('programsMenu', json.programsMenu)
-			);
-		graphMenuInit('helpMenu', 'Reference', (path) => this.loadHelpGraph(path));
-		sc.fetchJson('json/HelpMenu.json', { cache: 'no-cache' })
-			.then((json) => sc.selectAddKeysAsOptions('helpMenu', json.helpMenu));
-		graphMenuInit('guideMenu', 'Guide', (path) => this.loadHelpGraph(path));
-		sc.fetchJson('json/GuideMenu.json', { cache: 'no-cache' })
-			.then((json) => sc.selectAddKeysAsOptions('guideMenu', json.guideMenu));
-		graphMenuInit(
-			'smallProgramsMenu',
-			'Program',
-			(path) => this.loadHelpGraph(path),
-		);
-		sc.fetchJson('json/SmallProgramsMenu.json', { cache: 'no-cache' })
-			.then((json) =>
-				sc.selectAddKeysAsOptions('smallProgramsMenu', json.smallProgramsMenu)
-			);
+		this.initMenus();
+		this.loadMenus();
 		sc.userPrograms.storageKey = 'blksc3UserPrograms/json';
 		sc.userProgramsMenuInit(
 			'userMenu',
@@ -110,6 +80,47 @@ export class Blk {
 			sc.fetchUtf8('html/ui-ctl.html', { cache: 'no-cache' })
 				.then(sc.setterForInnerHtmlOf('uiCtlContainer'));
 		};
+	}
+
+	initMenus() {
+		function graphMenuInit(menuId, graphDir, loadProc) {
+			sc.menuOnChangeWithOptionValue(menuId, (optionValue) => {
+				const graphPath = `help/${graphDir}/${optionValue}`;
+				// console.debug(graphPath);
+				loadProc(graphPath);
+			});
+		}
+		graphMenuInit(
+			'programsMenu',
+			'Program',
+			(path) => this.loadHelpGraph(path),
+		);
+		graphMenuInit('helpMenu', 'Reference', (path) => this.loadHelpGraph(path));
+		graphMenuInit('guideMenu', 'Guide', (path) => this.loadHelpGraph(path));
+		graphMenuInit(
+			'smallProgramsMenu',
+			'Program',
+			(path) => this.loadHelpGraph(path),
+		);
+	}
+
+	loadMenus() {
+		sc.selectClearFrom('programsMenu', 0);
+		sc.fetchJson('json/ProgramsMenu.json', { cache: 'no-cache' })
+			.then((json) =>
+				sc.selectAddKeysAsOptions('programsMenu', json.programsMenu)
+			);
+		sc.selectClearFrom('helpMenu', 0);
+		sc.fetchJson('json/HelpMenu.json', { cache: 'no-cache' })
+			.then((json) => sc.selectAddKeysAsOptions('helpMenu', json.helpMenu));
+		sc.selectClearFrom('guideMenu', 0);
+		sc.fetchJson('json/GuideMenu.json', { cache: 'no-cache' })
+			.then((json) => sc.selectAddKeysAsOptions('guideMenu', json.guideMenu));
+		sc.selectClearFrom('smallProgramsMenu', 0);
+		sc.fetchJson('json/SmallProgramsMenu.json', { cache: 'no-cache' })
+			.then((json) =>
+				sc.selectAddKeysAsOptions('smallProgramsMenu', json.smallProgramsMenu)
+			);
 	}
 
 	initConfig(toolbox) {
@@ -181,6 +192,7 @@ export class Blk {
 		if (configName) {
 			const w = document.getElementById('blocklyContainer');
 			const n = document.getElementById('blkNotes');
+			const e = document.getElementById('blkEdit');
 			const o = this.layouts[configName];
 			w.style.height = o.workspaceHeight;
 			w.style.width = o.workspaceWidth;
@@ -189,6 +201,8 @@ export class Blk {
 			n.style.display = (o.notesWidth === "0") ? "none" : "block";
 			n.style['font-size'] = o.notesFontSize;
 			n.style.height = o.workspaceHeight;
+			e.style.top = o.editTop;
+			e.style.height = o.editHeight;
 			this.Blockly.svgResize(this.workspace);
 		}
 	}
@@ -390,7 +404,6 @@ export class Blk {
 	}
 
 	rebuildWorkspace() {
-		console.log('rebuildWorkspace');
 		this.loadProgramText(this.getWorkspaceJson())
 	}
 

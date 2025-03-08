@@ -8,7 +8,10 @@
 
 # Annotation
 
-Ordinarily block programs are sent to an in-process copy of the SuperCollider synthesiser.
-The synthesiser can be started by pressing the _Begin_ button.
-When the synthesiser is running the _Status Area_ shows the number of sounding _unit generators_,
-for this program eleven.
+_Block SuperCollider_
+is a visual editor for
+_SuperCollider_ synthesiser programs.
+
+Ordinarily,
+programs are sent to an in-process copy of the SuperCollider synthesiser,
+which can be started by pressing the _Begin_ button.
