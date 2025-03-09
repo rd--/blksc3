@@ -1,4 +1,4 @@
-/* 4.02 */
+/* 4.X - Simple Language */
 Resonz(
 	WhiteNoise(),
 	333,

@@ -1,4 +1,4 @@
-/* 4.04 Lists */
+/* 4.X - Stereo */
 [
 	PinkNoise() * 0.1,
 	BrownNoise() * 0.05

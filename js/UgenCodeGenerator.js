@@ -557,8 +557,8 @@ Blockly.JavaScript.forBlock['Sc_Dseries'] = function(block) {
 Blockly.JavaScript.forBlock['Sc_SfAcquire'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'SfAcquire', ['URLORKEY', 'NUMBEROFCHANNELS', 'CHANNELINDICES'], true);
 };
-Blockly.JavaScript.forBlock['Sc_SfDur'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SfDur', ['SFBUFFERARRAY'], true);
+Blockly.JavaScript.forBlock['Sc_SfDuration'] = function(block) {
+	return ugenCodeGen(Blockly, block, 'SfDuration', ['SFBUFFERARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SfFrames'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'SfFrames', ['SFBUFFERARRAY'], true);

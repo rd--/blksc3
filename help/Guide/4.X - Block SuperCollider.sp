@@ -1,4 +1,4 @@
-/* 4.01 */
+/* 4.X - Block SuperCollider */
 SinOsc(440, 0) * 0.1
 
 # Annotation

@@ -9,7 +9,8 @@ function addWorkspaceEnvelope(input) {
 	const gate = sc.NamedControl('workspaceGate', 1);
 	const attackTime = sc.NamedControl('workspaceAttackTime', 0.01);
 	const releaseTime = sc.NamedControl('workspaceReleaseTime', 0.1);
-	const envelope = sc.Asr(gate, attackTime, releaseTime, 'sin');
+	const env = sc.EnvAsr(attackTime, 1, releaseTime, 'sin');
+	const envelope = sc.EnvGen(gate, 1, 0, 1, 2, sc.envCoord(env));
 	return sc.Mul(input, envelope);
 }
 
@@ -43,6 +44,7 @@ export class Blk {
 		this.naming = 'Symbolic';
 		this.whichToolbox = 'Complete';
 		this.whichColourScheme = 'Pretty';
+		this.colourSaturation = 0.25;
 		this.init(withUiCtl);
 		this.programOracle = [];
 	}
@@ -317,8 +319,8 @@ export class Blk {
 	}
 
 	setPrettyColours() {
-		this.Blockly.utils.colour.setHsvSaturation(0.20);
-		this.Blockly.utils.colour.setHsvValue(0.95);
+		this.Blockly.utils.colour.setHsvSaturation(this.colourSaturation);
+		this.Blockly.utils.colour.setHsvValue(1);
 		setCssProperties({
 			'--toolbox-colour': '#f0fff0',
 			'--paper-colour': '#fffacd',

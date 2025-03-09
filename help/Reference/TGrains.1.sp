@@ -3,7 +3,7 @@ let sf = SfAcquireMono('CrotaleD6'); /* Floating */
 let trRate = MouseY(2, 120, 1, 0.2);
 let tr = Impulse(trRate, 0);
 let rate = 1.2 ^ (WhiteNoise() * 3).RoundTo(1);
-let centerPos = MouseX(0, SfDur(sf), 0, 0.2);
+let centerPos = MouseX(0, SfDuration(sf), 0, 0.2);
 let dur = 1.2 / trRate;
 TGrains(2, tr, sf, rate, centerPos, dur, WhiteNoise() * 0.6, 0.75, 4)
 

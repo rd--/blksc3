@@ -1,4 +1,4 @@
-/* 4.03 */
+/* 4.X - Workspace */
 Resonz(
 	WhiteNoise(),
 	LfNoise2(0.77) * 333 + 555,

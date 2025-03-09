@@ -222,16 +222,6 @@ or by pressing the _Delete_ key.
 When a block is deleted all of its descendants are deleted along with it.
 Deletion can be _undone_.
 
-## Display
-
-The display menu selects the page layout rule.
-The rule sets the shape and size of the workspace and selects the font size for the notes area.
-The default rule is _%×%_, which allocates space as a proportion of the size of the viewport.
-In addition there is a set of fixed size layouts, such as _1366×768_, named by display dimensions.
-The fixed size layouts are useful for seeing how programs will appear on other displays,
-assuming that the browser window occupies most of the display.
-The display menu can be selected using the _"y"_ access key.
-
 ## Duplicate
 
 A block can be _duplicated_ using the _Duplicate_ item in the context menu.
@@ -352,6 +342,16 @@ a Json value is a JavaScript program representing the value it encodes.
 They define the expected arguments and the steps of execution or evaluation for a procedure.
 The name is from the lambda calculus [@Church1941a] and Lisp [@McCarthy1960a].
 
+## Layout
+
+The _Layout_ menu selects the page layout rule.
+The rule sets the shape and size of the workspace and selects the font size for the notes area.
+The default rule is _%×%_, which allocates space as a proportion of the size of the viewport.
+In addition there is a set of fixed size layouts, such as _1366×768_, named by display dimensions.
+The fixed size layouts are useful for seeing how programs will appear on other displays,
+assuming that the browser window occupies most of the display.
+The display menu can be selected using the _"y"_ access key.
+
 ## Left to right
 
 Ordinarily the system is in left-to-right mode.
@@ -421,7 +421,9 @@ The figure below shows the block drawing of the expression _x := { nil }_.
 
 Programs may include detailed notes,
 written in a simple markup language [@Gruber2004a].
-There is a notes area to the right of the workspace.
+Notes are displayed to the right of the workspace.
+Layouts allocate more or less space to the notes,
+and set the font size.
 
 ## Number
 
@@ -556,6 +558,10 @@ The _Replace_ button can be selected using the _"-"_ access key.
 The _Reset_ button resets the synthesiser.
 There is also a _Reset_ entry in the workspace context menu.
 The _Reset_ button can be selected using the _"."_ access key.
+
+## Save
+
+The _Save_ button saves the current workspace state to the local storage.
 
 ## Scalable Vector Graphics
 
