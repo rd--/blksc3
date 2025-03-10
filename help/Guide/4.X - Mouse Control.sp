@@ -8,4 +8,4 @@ EqPan2(PinkNoise() * o, o * -3)
 # Annotation
 
 The _Mouse_ unit generators do not work at the in-process synthesiser instance,
-in which case a simulation is provided by writing the mouse coordinates to control buses.
+however a simulation is provided by writing the mouse coordinates to control buses.

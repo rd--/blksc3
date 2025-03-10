@@ -58,6 +58,11 @@ The text is displayed in a box that can be moved and resized.
 Blocks that have comments attached have a question mark (?) button to show or hide the text.
 The comment text is printed, as a comment, when the block is evaluated.
 
+## Block Colours
+
+Blocks are coloured according to category.
+Block colours are specified by name, and looked up in a dictionary.
+
 ## Block Editor
 
 The block editor has two parts,
@@ -152,11 +157,6 @@ holding the value _9_.
 The text of the collapsed block shows both these values.
 
 ![](sw/blksc3/png/CollapsedBlocks.svg)
-
-## Colours
-
-Blocks are coloured according to category.
-Block colours are specified by name, and looked up in a dictionary.
 
 ## Colour Schemes
 
