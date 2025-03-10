@@ -253,7 +253,7 @@ event_param_xml o e =
 
 -- | Method names that belong to Array not UGen
 array_proc_1 :: [String]
-array_proc_1 = ["asLocalBuf", "choose", "concatenation", "first", "mean", "reverse", "second", "size", "sum", "third", "transpose"]
+array_proc_1 = ["asLocalBuf", "choose", "catenate", "first", "mean", "reverse", "second", "size", "sum", "third", "transpose"]
 
 {- | Some operators are handled specially.
 

@@ -9,8 +9,7 @@ TGrains(
 	MouseX(0, SfDuration([b]), 0, 0.2),
 	4 / t,
 	Dseq(Infinity, [-1, 1]),
-	0.1,
-	4
+	0.1, 4
 )
 
 # Annotation

@@ -58,6 +58,12 @@ The text is displayed in a box that can be moved and resized.
 Blocks that have comments attached have a question mark (?) button to show or hide the text.
 The comment text is printed, as a comment, when the block is evaluated.
 
+## Block Editor
+
+The block editor has two parts,
+a _Workspace_ where the drawing is made,
+and a _Toolbox_ from which the blocks for the drawing are taken.
+
 ## Block Editor Library
 
 The block editor is implemented by writing block definitions,

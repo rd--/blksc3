@@ -1,8 +1,11 @@
 /* 4.X - Toolbox */
-...
+let t = Dust([0.7 1.3]);
+LfTri(
+	TiRand(33, 99, t).MidiCps,
+	0
+) * Decay2(t, 1 / 33, 2.3) * 0.1
 
 # Annotation
 
-The editor has two parts,
-a _workspace_ where the drawing is made,
-and a _toolbox_ from which the blocks for the drawing are taken.
+The _Toolbox_ contains instances of the blocks the system knows about, organised into categories.
+Blocks are fetched by dragging them out of the toolbox and into the workspace.

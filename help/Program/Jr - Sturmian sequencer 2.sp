@@ -5,7 +5,7 @@ var rewrite = { :m |
     var u = m.timesRepeat {
 	    r := r.collect { :e |
 		    rules[e + 1]
-	    }.concatenation
+	    }.catenate
     }; /* u = for translator */
     r
 };

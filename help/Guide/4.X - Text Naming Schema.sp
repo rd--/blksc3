@@ -2,10 +2,7 @@
 SinOsc(
 	Latch(
 		WhiteNoise() * 0.5 + 0.5,
-		Impulse(
-			[2 1 0.2 0.142],
-			0
-		)
+		Impulse([2 1 0.2 0.142], 0)
 	) * 220 + 110,
 	0
 ).Splay * 0.1

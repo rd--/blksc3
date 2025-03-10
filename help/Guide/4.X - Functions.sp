@@ -10,7 +10,5 @@
 
 The λ family of blocks represent procedures.
 ! constructs a list by evaluating a λ block the specified number of times.
-
-Ⅲ is a band limited impulse generator.
-𝑋⚁ is a random number generator.
+◠ arranges the list of sounds equidistantly across the stereo field.
 _Replace_ crossfades between sounds.
