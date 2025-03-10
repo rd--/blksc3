@@ -560,8 +560,8 @@ Blockly.JavaScript.forBlock['Sc_SfAcquire'] = function(block) {
 Blockly.JavaScript.forBlock['Sc_SfDuration'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'SfDuration', ['SFBUFFERARRAY'], true);
 };
-Blockly.JavaScript.forBlock['Sc_SfFrames'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SfFrames', ['SFBUFFERARRAY'], true);
+Blockly.JavaScript.forBlock['Sc_SfFrameCount'] = function(block) {
+	return ugenCodeGen(Blockly, block, 'SfFrameCount', ['SFBUFFERARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SfPlay'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'SfPlay', ['SFBUFFERARRAY', 'RATE', 'TRIGGER', 'STARTPOS', 'LOOP'], true);

@@ -222,6 +222,11 @@ or by pressing the _Delete_ key.
 When a block is deleted all of its descendants are deleted along with it.
 Deletion can be _undone_.
 
+## Demand Rate
+
+_Demand Rate_ refers to a category of unit generators that are not scheduled on either the audio or control rate sample clocks,
+but instead calculate values when requested to by either `Demand`, `Duty` or `TDuty`.
+
 ## Duplicate
 
 A block can be _duplicated_ using the _Duplicate_ item in the context menu.
@@ -588,6 +593,7 @@ The function notation `f(x, y)` would have the s-expression form `(f x y)`.
 ## Shadow Block
 
 A shadow block is an editable but non-movable block connected to another block.
+Toolbox entries ordinarily have shadow blocks at each input specifying a _default value_.
 Blocks can be placed on top of shadow blocks to overwrite them.
 In the figure below both input fields of the ⍰𝒑 (_PinkNoise_) block,
 and the × (_Multiply_) and + (_Add_) fields of the ⋏ (_Resonz_) block are shadow blocks.
