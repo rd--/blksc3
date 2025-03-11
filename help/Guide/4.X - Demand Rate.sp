@@ -7,5 +7,5 @@
 
 # Annotation
 
-_Demand Rate_ refers to a category of unit generators that are not scheduled on either the audio or control rate sample clocks,
+_Demand Rate_ unit generators are not scheduled on either the audio or control rate sample clocks,
 but instead calculate values when requested to by either `Demand`, `Duty` or `TDuty`.

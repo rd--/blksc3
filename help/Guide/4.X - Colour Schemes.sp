@@ -1,6 +1,0 @@
-/* 4.X - Colour Schemes */
-...
-
-# Annotation
-
-...

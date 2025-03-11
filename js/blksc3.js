@@ -43,7 +43,7 @@ export class Blk {
 		this.layouts = null;
 		this.naming = 'Symbolic';
 		this.whichToolbox = 'Complete';
-		this.whichColourScheme = 'Pretty';
+		this.whichColourSchema = 'Pretty';
 		this.colourSaturation = 0.25;
 		this.init(withUiCtl);
 		this.programOracle = [];
@@ -55,7 +55,7 @@ export class Blk {
 		this.Blockly.ContextMenuItems.registerCommentOptions();
 		this.initWorkspaceContextMenu();
 		// https://developers.google.com/blockly/guides/create-custom-blocks/block-colour#colour_references
-		this.loadBlockMessages('json/ColourScheme.json');
+		this.loadBlockMessages('json/ColourSchema.json');
 		this.setPrettyColours();
 		this.loadBlockMessages(`json/${this.naming}Messages.json`);
 		this.loadBlockDefinitions('json/BlockDefinitions.json');
@@ -223,7 +223,7 @@ export class Blk {
 		sc.fetchJson('json/Layouts.json', { cache: 'no-cache' })
 			.then((obj) => {
 				this.layouts = obj;
-				console.log('layoutMenuInit', obj);
+				// console.debug('layoutMenuInit', obj);
 				Object.keys(obj).forEach((k) => {
 					const e = new Option(k, k);
 					select.add(e);
@@ -235,6 +235,7 @@ export class Blk {
 	injectWithToolbox(toolbox, onCompletion) {
 		this.initConfig(toolbox);
 		this.workspace = this.Blockly.inject('blocklyContainer', this.config);
+		this.workspace.addChangeListener(shadowBlockConversionChangeListener);
 		this.displayScrollbars(false);
 		// console.debug('injectWithToolbox: injection completed');
 		onCompletion(this);
@@ -422,11 +423,11 @@ export class Blk {
 			.then((tree) => this.workspace.updateToolbox(tree));
 	}
 
-	nextColourScheme() {
-		this.whichColourScheme = this.whichColourScheme == 'Pretty'
+	nextColourSchema() {
+		this.whichColourSchema = this.whichColourSchema == 'Pretty'
 			? 'Grey'
 			: 'Pretty';
-		if (this.whichColourScheme == 'Pretty') {
+		if (this.whichColourSchema == 'Pretty') {
 			this.setPrettyColours();
 		} else {
 			this.setGreyColours();

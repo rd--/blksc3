@@ -9,6 +9,10 @@ z <! LocalOut(DelayC(z, 1, 0.1) * 0.9)
 
 # Annotation
 
+The text displayed on a block is called the block message.
+It is distinct from the block type,
+and is not stored as part of the program.
+
 The _N_ button selects between alternate naming schemas.
 Ordinarily the _Symbolic Naming Schema_ is selected.
 There is also a _Text Naming Schema_.

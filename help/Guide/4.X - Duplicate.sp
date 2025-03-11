@@ -1,4 +1,4 @@
-/* 4.X - Functions */
+/* 4.X - Duplicate */
 {
 	Blip(
 		ExpRand(99, 222),
@@ -8,7 +8,8 @@
 
 # Annotation
 
-The λ family of blocks represent procedures.
 ! constructs a list by evaluating a λ block the specified number of times.
-◠ arranges the list of sounds equidistantly across the stereo field.
+The λ family of blocks represent procedures.
+◠ arranges a list of sounds equidistantly across the stereo field.
 _Replace_ crossfades between sounds.
+◠!λ is an _idiom_.

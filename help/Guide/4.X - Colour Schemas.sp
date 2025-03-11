@@ -1,4 +1,4 @@
-/* 4.X - Black and White */
+/* 4.X - Colour Schemas */
 SinOsc(
 	Latch(
 		SinOsc(12.3, 0),
@@ -9,6 +9,6 @@ SinOsc(
 
 # Annotation
 
-There is a black and white, or grey, or outline, drawing mode.
+There is also a black and white (or grey, or outline) drawing mode.
 These drawings may be more suitable for printing or for non-colour displays,
 and are selected using the ⬜ button.

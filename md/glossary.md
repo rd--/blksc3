@@ -62,6 +62,7 @@ The comment text is printed, as a comment, when the block is evaluated.
 
 Blocks are coloured according to category.
 Block colours are specified by name, and looked up in a dictionary.
+[1](https://developers.google.com/blockly/guides/create-custom-blocks/block-colour)
 
 ## Block Editor
 
@@ -79,6 +80,14 @@ and translator definitions for the Blockly library [@Fraser2015a].
 
 Each block in a program has a unique identifier assigned to it by the system.
 Block identifiers are opaque values, they are used internally to distinguish otherwise equal blocks.
+
+## Block Input
+
+A block has one or more inputs.
+Each input has a sequence of _fields_ and may end in a _connection_.
+A _value input_ connects to an output connection of a value block.
+A _statement_ input connects to a previous connection of a statement block.
+[1](https://developers.google.com/blockly/guides/create-custom-blocks/define-blocks#block_inputs)
 
 ## Block Message
 
@@ -144,6 +153,7 @@ The _Clear_ button can be selected using the _"k"_ access key.
 
 To evaluate a block program it is first printed as a text program.
 This process is called code generation, and is performed by a code generator.
+[1](https://developers.google.com/blockly/guides/create-custom-blocks/code-generation/overview)
 
 ## Collapsed Blocks
 
@@ -182,10 +192,18 @@ There are three kinds of comments:
 The complete toolbox includes a complete set of the blocks the system knows about,
 organised into a system of categories and subcategories.
 
+## Connections
+
+Connections define where and when different blocks can connect together.
+There are four different types of connections:
+_Output_, _Input_, _Previous_ and _Next_.
+[1](https://developers.google.com/blockly/guides/create-custom-blocks/inputs/overview#connections)
+
 ## Connection Checks
 
 Connection checks, also called type annotations, constrain how blocks can be connected together.
 See also _Type Annotations_.
+[1](https://developers.google.com/blockly/guides/create-custom-blocks/inputs/connection-checks)
 
 ## Console
 
@@ -237,11 +255,11 @@ but instead calculate values when requested to by either `Demand`, `Duty` or `TD
 
 A block can be _duplicated_ using the _Duplicate_ item in the context menu.
 
-## Eval
+## Evaluate Workspace
 
-The _Eval_ button evaluates the program in the workspace and sends it to the synthesiser.
+The _/_ button evaluates the program in the workspace.
 It does not send the answer to the synthesiser.
-The _Eval_ button can be selected using the _"/"_ access key.
+The _/_ button can be selected using the _"/"_ access key.
 
 ## Expression
 
@@ -267,6 +285,12 @@ it is the block drawing of the expression _SinOsc(440, 0) * 0.1 + 0_.
 
 Block SuperCollider ordinarily runs a copy of the SuperCollider synthesiser (`scsynth`) within the browser.
 However it can also communicate with an external synthesiser by sending messages over a socket.
+
+## Field
+
+Fields are the non-connection elements of a block, such as labels and inputs for literal data.
+[1](https://developers.google.com/blockly/guides/create-custom-blocks/fields/overview)
+[2](https://developers.google.com/blockly/guides/create-custom-blocks/fields/built-in-fields/overview)
 
 ## Fit
 
@@ -347,6 +371,11 @@ Atoms are either strings, numbers, booleans or nil.
 Json is a subset of JavaScript,
 a Json value is a JavaScript program representing the value it encodes.
 
+## Label
+
+A label is a _field_ for displaying non-editable text in a block drawing.
+[1](https://developers.google.com/blockly/guides/create-custom-blocks/fields/built-in-fields/label)
+
 ## Lambda
 
 λ (_Lambda_) blocks answer procedure values.
@@ -401,6 +430,7 @@ the _unary operator_ block menu is selecting the √ (`sqrt`) operation,
 the _binary operator_ block menu is selecting the ÷ (`/`) operation,
 and the two _numeric constant_ block menus select π (`pi`) and `e` respectively.
 This program prints as _sqrt(pi / e)_.
+[1](https://developers.google.com/blockly/guides/create-custom-blocks/fields/built-in-fields/dropdown)
 
 ![](sw/blksc3/png/MenuField.svg)
 
@@ -436,7 +466,7 @@ Notes are displayed to the right of the workspace.
 Layouts allocate more or less space to the notes,
 and set the font size.
 
-## Number
+## Number Block
 
 A number block is a block with a single editable text field in which one can write a number.
 The number may be an integer or a real number.
@@ -446,6 +476,12 @@ The figure below shows the number twenty three divided by an approximation of π
 it is the block drawing of the expression _23 / 3.141_.
 
 ![](sw/blksc3/png/Number.svg)
+
+## Number Field
+
+A number field is a text entry that only accepts numeric literals,
+and which can include constraints on minimum and maximum values and numeric precision.
+[1](https://developers.google.com/blockly/guides/create-custom-blocks/fields/built-in-fields/number)
 
 ## Numeric Constant
 
@@ -528,6 +564,14 @@ connected to the input of the ⊳ block.
 
 ![](sw/blksc3/png/PlayBlock.svg)
 
+## Play Text
+
+The _′_ button evaluates either the selected text or,
+if no text is selected,
+the current paragraph as indicated by the text cursor,
+and sends the answer to the synthesiser.
+The _′_ button can be selected using the _"'"_ access key.
+
 ## Postfix Notation
 
 Postfix notation, also called reverse Polish or reverse Łukasiewicz notation, is a notation where the operator follows the operands.
@@ -604,6 +648,7 @@ Blocks can be placed on top of shadow blocks to overwrite them.
 In the figure below both input fields of the ⍰𝒑 (_PinkNoise_) block,
 and the × (_Multiply_) and + (_Add_) fields of the ⋏ (_Resonz_) block are shadow blocks.
 The _ν_ (_Frequency_) and ¹⁄𝑄 (_ReciprocalOfQ_) inputs are replaced by number blocks.
+[1](https://developers.google.com/blockly/guides/get-started/workspace-anatomy#shadow_block)
 
 ![](sw/blksc3/png/ShadowBlock.svg)
 
@@ -822,6 +867,7 @@ Variables are created using the _Create Variable_ entry in the _Variable_ catego
 which also contains the variable reference and assignment blocks.
 The figure below indicates the two variable related blocks,
 _variable assignment_ and _variable reference_.
+[1](https://developers.google.com/blockly/guides/create-custom-blocks/variables)
 
 ![](sw/blksc3/png/Variables.svg)
 

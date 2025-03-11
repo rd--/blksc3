@@ -5,8 +5,8 @@
    {
     "type": "Sc_Comment",
     "id": "_A_O_3isdc%K{X9K^L47",
-    "x": 8,
-    "y": 12,
+    "x": 0,
+    "y": 0,
     "fields": {
      "COMMENT": "Blip.1 ; https://github.com/cianoc/supercollider_fragments"
     },
@@ -69,54 +69,118 @@
       "next": {
        "block": {
         "type": "variables_set",
-        "id": "KPS^`ycjuJjU^ns3?D5y",
+        "id": "w[j41Kfo35S!{CKC8qH(",
         "fields": {
          "VAR": {
-          "id": "SgyGy)qaX0]uEpEl+/)Q"
+          "id": "e.fF=)d([Y1t?%)*KJqF"
          }
         },
         "inputs": {
          "VALUE": {
           "block": {
-           "type": "Sc_Blip",
-           "id": "gx}H@ciIVap^yyEN_yoU",
+           "type": "Sc_Pan2",
+           "id": "d;w5k3c+vlqLX@p92ev+",
            "inputs": {
-            "FREQ": {
+            "IN": {
              "block": {
-              "type": "Sc_UnaryOp",
-              "id": "`i_+%bK+6,1RWutM}o@O",
-              "fields": {
-               "OP": "MidiCps"
-              },
+              "type": "Sc_Blip",
+              "id": "gx}H@ciIVap^yyEN_yoU",
               "inputs": {
-               "IN": {
+               "FREQ": {
+                "block": {
+                 "type": "Sc_UnaryOp",
+                 "id": "`i_+%bK+6,1RWutM}o@O",
+                 "fields": {
+                  "OP": "MidiCps"
+                 },
+                 "inputs": {
+                  "IN": {
+                   "block": {
+                    "type": "Sc_TRand",
+                    "id": "dc;Cvi})501s5PgK}tnj",
+                    "inline": true,
+                    "inputs": {
+                     "LO": {
+                      "block": {
+                       "type": "math_number",
+                       "id": "@{CK8G:j[}ig_$=n@+`G",
+                       "fields": {
+                        "NUM": 48
+                       }
+                      }
+                     },
+                     "HI": {
+                      "block": {
+                       "type": "math_number",
+                       "id": "@2qR^QA;CjF.+P-@7N,o",
+                       "fields": {
+                        "NUM": 72
+                       }
+                      }
+                     },
+                     "TRIG": {
+                      "block": {
+                       "type": "variables_get",
+                       "id": "0V6~2kVHL/S_yGRUQHo@",
+                       "fields": {
+                        "VAR": {
+                         "id": "_|#XH~`*aoww@ao)`d|y"
+                        }
+                       }
+                      }
+                     },
+                     "MUL": {
+                      "shadow": {
+                       "type": "math_number",
+                       "id": ")HftS)+[~49.WTzDyzD^",
+                       "fields": {
+                        "NUM": 1
+                       }
+                      }
+                     },
+                     "ADD": {
+                      "shadow": {
+                       "type": "math_number",
+                       "id": "1UU8MTDGDqA#HB3;pY@s",
+                       "fields": {
+                        "NUM": 0
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+               },
+               "NUMHARM": {
                 "block": {
                  "type": "Sc_TRand",
-                 "id": "dc;Cvi})501s5PgK}tnj",
+                 "id": "HySnP4NOuhqbnFSuRvCa",
                  "inline": true,
                  "inputs": {
                   "LO": {
                    "block": {
                     "type": "math_number",
-                    "id": "@{CK8G:j[}ig_$=n@+`G",
+                    "id": "LcCl^WSA[Otj^5CK63+9",
                     "fields": {
-                     "NUM": 48
+                     "NUM": 1
                     }
                    }
                   },
                   "HI": {
                    "block": {
                     "type": "math_number",
-                    "id": "@2qR^QA;CjF.+P-@7N,o",
+                    "id": "5_G_ChSf~v6:*d!)4K]f",
                     "fields": {
-                     "NUM": 72
+                     "NUM": 12
                     }
                    }
                   },
                   "TRIG": {
                    "block": {
                     "type": "variables_get",
-                    "id": "0V6~2kVHL/S_yGRUQHo@",
+                    "id": "p1LU0k|elZrwD*KD3NIu",
                     "fields": {
                      "VAR": {
                       "id": "_|#XH~`*aoww@ao)`d|y"
@@ -127,7 +191,7 @@
                   "MUL": {
                    "shadow": {
                     "type": "math_number",
-                    "id": ")HftS)+[~49.WTzDyzD^",
+                    "id": "Crvu{73yj-a*;jA~PgR/",
                     "fields": {
                      "NUM": 1
                     }
@@ -136,7 +200,7 @@
                   "ADD": {
                    "shadow": {
                     "type": "math_number",
-                    "id": "1UU8MTDGDqA#HB3;pY@s",
+                    "id": "pK8@qNU-w*Rl|IiX?BzY",
                     "fields": {
                      "NUM": 0
                     }
@@ -144,38 +208,131 @@
                   }
                  }
                 }
+               },
+               "MUL": {
+                "shadow": {
+                 "type": "math_number",
+                 "id": "leD^P.B(P*bQBzMXi1ry",
+                 "fields": {
+                  "NUM": 1
+                 }
+                },
+                "block": {
+                 "type": "Sc_BinaryOp",
+                 "id": "bvu/v=Vs9DO+34*|rfyq",
+                 "inline": true,
+                 "fields": {
+                  "OP": "Max"
+                 },
+                 "inputs": {
+                  "LHS": {
+                   "block": {
+                    "type": "Sc_TRand",
+                    "id": "FOUXnpVT+6v2T4@me{VX",
+                    "inline": true,
+                    "inputs": {
+                     "LO": {
+                      "block": {
+                       "type": "math_number",
+                       "id": "t/Q6JE#S-}*e_%`2m7l8",
+                       "fields": {
+                        "NUM": -0.5
+                       }
+                      }
+                     },
+                     "HI": {
+                      "block": {
+                       "type": "math_number",
+                       "id": ",XRNWAcWcI~%F3_O)xuy",
+                       "fields": {
+                        "NUM": 0.4
+                       }
+                      }
+                     },
+                     "TRIG": {
+                      "block": {
+                       "type": "variables_get",
+                       "id": "JJ%B3S/PszDvT3MH/WY?",
+                       "fields": {
+                        "VAR": {
+                         "id": "_|#XH~`*aoww@ao)`d|y"
+                        }
+                       }
+                      }
+                     },
+                     "MUL": {
+                      "shadow": {
+                       "type": "math_number",
+                       "id": "vjMHFeR8BA-{?#Lpouu,",
+                       "fields": {
+                        "NUM": 1
+                       }
+                      }
+                     },
+                     "ADD": {
+                      "shadow": {
+                       "type": "math_number",
+                       "id": "-+*#Gqa[6DN7,$X/^Q^L",
+                       "fields": {
+                        "NUM": 0
+                       }
+                      }
+                     }
+                    }
+                   }
+                  },
+                  "RHS": {
+                   "block": {
+                    "type": "math_number",
+                    "id": "M,@~me/m#iCFO6/jOm*c",
+                    "fields": {
+                     "NUM": 0
+                    }
+                   }
+                  }
+                 }
+                }
+               },
+               "ADD": {
+                "shadow": {
+                 "type": "math_number",
+                 "id": "z3K?EF7w+5GsfHCtWJ1Z",
+                 "fields": {
+                  "NUM": 0
+                 }
+                }
                }
               }
              }
             },
-            "NUMHARM": {
+            "POS": {
              "block": {
               "type": "Sc_TRand",
-              "id": "HySnP4NOuhqbnFSuRvCa",
+              "id": "BrzV~sLpeOIs4-oj~lJ!",
               "inline": true,
               "inputs": {
                "LO": {
                 "block": {
                  "type": "math_number",
-                 "id": "LcCl^WSA[Otj^5CK63+9",
+                 "id": "#f@=g;64i0^1Ce/?n6WU",
                  "fields": {
-                  "NUM": 1
+                  "NUM": -1
                  }
                 }
                },
                "HI": {
                 "block": {
                  "type": "math_number",
-                 "id": "5_G_ChSf~v6:*d!)4K]f",
+                 "id": "0=S^iGTg!im#jWnhr^$w",
                  "fields": {
-                  "NUM": 12
+                  "NUM": 1
                  }
                 }
                },
                "TRIG": {
                 "block": {
                  "type": "variables_get",
-                 "id": "p1LU0k|elZrwD*KD3NIu",
+                 "id": "U$I?%qIk8%G-$4VrAao]",
                  "fields": {
                   "VAR": {
                    "id": "_|#XH~`*aoww@ao)`d|y"
@@ -186,7 +343,7 @@
                "MUL": {
                 "shadow": {
                  "type": "math_number",
-                 "id": "Crvu{73yj-a*;jA~PgR/",
+                 "id": "D3vWXBp9v#$W!R{=Ll:T",
                  "fields": {
                   "NUM": 1
                  }
@@ -195,7 +352,70 @@
                "ADD": {
                 "shadow": {
                  "type": "math_number",
-                 "id": "pK8@qNU-w*Rl|IiX?BzY",
+                 "id": ";)DFYGfghU{cwrh`^v:w",
+                 "fields": {
+                  "NUM": 0
+                 }
+                }
+               }
+              }
+             }
+            },
+            "LEVEL": {
+             "block": {
+              "type": "Sc_Decay2",
+              "id": ".x{qqn8)A2SrKsi_U_Ch",
+              "inline": true,
+              "inputs": {
+               "IN": {
+                "block": {
+                 "type": "variables_get",
+                 "id": "Hym}wB?6~iH`wA@H$HsF",
+                 "fields": {
+                  "VAR": {
+                   "id": "_|#XH~`*aoww@ao)`d|y"
+                  }
+                 }
+                }
+               },
+               "ATTACKTIME": {
+                "block": {
+                 "type": "math_number",
+                 "id": "g@rVbNbZRZj3xM/gpR?~",
+                 "fields": {
+                  "NUM": 0.01
+                 }
+                }
+               },
+               "DECAYTIME": {
+                "block": {
+                 "type": "math_number",
+                 "id": "0l9tf_icG[ZdD#.L3;Sg",
+                 "fields": {
+                  "NUM": 3
+                 }
+                }
+               },
+               "MUL": {
+                "shadow": {
+                 "type": "math_number",
+                 "id": "V=r)5/e4M)(BO,:NR9h(",
+                 "fields": {
+                  "NUM": 1
+                 }
+                },
+                "block": {
+                 "type": "math_number",
+                 "id": "wcDWvDF*W$L{_-(43uP2",
+                 "fields": {
+                  "NUM": 0.1
+                 }
+                }
+               },
+               "ADD": {
+                "shadow": {
+                 "type": "math_number",
+                 "id": ")`gusEl~lpnA@`)-^D-o",
                  "fields": {
                   "NUM": 0
                  }
@@ -207,91 +427,16 @@
             "MUL": {
              "shadow": {
               "type": "math_number",
-              "id": "leD^P.B(P*bQBzMXi1ry",
+              "id": "Hso#amSHTX8.9dcK|9^-",
               "fields": {
                "NUM": 1
-              }
-             },
-             "block": {
-              "type": "Sc_BinaryOp",
-              "id": "bvu/v=Vs9DO+34*|rfyq",
-              "inline": true,
-              "fields": {
-               "OP": "Max"
-              },
-              "inputs": {
-               "LHS": {
-                "block": {
-                 "type": "Sc_TRand",
-                 "id": "FOUXnpVT+6v2T4@me{VX",
-                 "inline": true,
-                 "inputs": {
-                  "LO": {
-                   "block": {
-                    "type": "math_number",
-                    "id": "t/Q6JE#S-}*e_%`2m7l8",
-                    "fields": {
-                     "NUM": -0.5
-                    }
-                   }
-                  },
-                  "HI": {
-                   "block": {
-                    "type": "math_number",
-                    "id": ",XRNWAcWcI~%F3_O)xuy",
-                    "fields": {
-                     "NUM": 0.4
-                    }
-                   }
-                  },
-                  "TRIG": {
-                   "block": {
-                    "type": "variables_get",
-                    "id": "JJ%B3S/PszDvT3MH/WY?",
-                    "fields": {
-                     "VAR": {
-                      "id": "_|#XH~`*aoww@ao)`d|y"
-                     }
-                    }
-                   }
-                  },
-                  "MUL": {
-                   "shadow": {
-                    "type": "math_number",
-                    "id": "vjMHFeR8BA-{?#Lpouu,",
-                    "fields": {
-                     "NUM": 1
-                    }
-                   }
-                  },
-                  "ADD": {
-                   "shadow": {
-                    "type": "math_number",
-                    "id": "-+*#Gqa[6DN7,$X/^Q^L",
-                    "fields": {
-                     "NUM": 0
-                    }
-                   }
-                  }
-                 }
-                }
-               },
-               "RHS": {
-                "block": {
-                 "type": "math_number",
-                 "id": "M,@~me/m#iCFO6/jOm*c",
-                 "fields": {
-                  "NUM": 0
-                 }
-                }
-               }
               }
              }
             },
             "ADD": {
              "shadow": {
               "type": "math_number",
-              "id": "z3K?EF7w+5GsfHCtWJ1Z",
+              "id": "vJ_35N~Pl7M|WEGQi55[",
               "fields": {
                "NUM": 0
               }
@@ -303,153 +448,78 @@
         },
         "next": {
          "block": {
-          "type": "variables_set",
-          "id": "w[j41Kfo35S!{CKC8qH(",
-          "fields": {
-           "VAR": {
-            "id": "e.fF=)d([Y1t?%)*KJqF"
-           }
-          },
+          "type": "Sc_Play",
+          "id": "j!a+G{APF5fgyJvG.a/$",
           "inputs": {
-           "VALUE": {
+           "CODE": {
             "block": {
-             "type": "Sc_Pan2",
-             "id": "d;w5k3c+vlqLX@p92ev+",
+             "type": "Sc_CombC",
+             "id": "xDAYhC+-$9GYK-:6Zc6K",
+             "inline": true,
              "inputs": {
               "IN": {
                "block": {
                 "type": "variables_get",
-                "id": "U6a)NWsam2fB%+n_-cT.",
+                "id": "Adf0pXH%}|X!+${_nw8a",
                 "fields": {
                  "VAR": {
-                  "id": "SgyGy)qaX0]uEpEl+/)Q"
+                  "id": "e.fF=)d([Y1t?%)*KJqF"
                  }
                 }
                }
               },
-              "POS": {
+              "MAXDELAYTIME": {
                "block": {
-                "type": "Sc_TRand",
-                "id": "BrzV~sLpeOIs4-oj~lJ!",
+                "type": "math_number",
+                "id": "@=dC{gu0rvgN*~8~i!S=",
+                "fields": {
+                 "NUM": 2
+                }
+               }
+              },
+              "DELAYTIME": {
+               "block": {
+                "type": "Sc_BinaryOp",
+                "id": "C5Tb:Hw(TJ$.%@eOp.bh",
                 "inline": true,
+                "fields": {
+                 "OP": "/"
+                },
                 "inputs": {
-                 "LO": {
+                 "LHS": {
                   "block": {
                    "type": "math_number",
-                   "id": "#f@=g;64i0^1Ce/?n6WU",
+                   "id": "^}TM54m)b7=$hUXV+8s5",
                    "fields": {
-                    "NUM": -1
+                    "NUM": 4
                    }
                   }
                  },
-                 "HI": {
+                 "RHS": {
                   "block": {
                    "type": "math_number",
-                   "id": "0=S^iGTg!im#jWnhr^$w",
+                   "id": "jN?nq5G#[{1Gt={y{U)@",
                    "fields": {
-                    "NUM": 1
-                   }
-                  }
-                 },
-                 "TRIG": {
-                  "block": {
-                   "type": "variables_get",
-                   "id": "U$I?%qIk8%G-$4VrAao]",
-                   "fields": {
-                    "VAR": {
-                     "id": "_|#XH~`*aoww@ao)`d|y"
-                    }
-                   }
-                  }
-                 },
-                 "MUL": {
-                  "shadow": {
-                   "type": "math_number",
-                   "id": "D3vWXBp9v#$W!R{=Ll:T",
-                   "fields": {
-                    "NUM": 1
-                   }
-                  }
-                 },
-                 "ADD": {
-                  "shadow": {
-                   "type": "math_number",
-                   "id": ";)DFYGfghU{cwrh`^v:w",
-                   "fields": {
-                    "NUM": 0
+                    "NUM": 6
                    }
                   }
                  }
                 }
                }
               },
-              "LEVEL": {
+              "DECAYTIME": {
                "block": {
-                "type": "Sc_Decay2",
-                "id": ".x{qqn8)A2SrKsi_U_Ch",
-                "inline": true,
-                "inputs": {
-                 "IN": {
-                  "block": {
-                   "type": "variables_get",
-                   "id": "Hym}wB?6~iH`wA@H$HsF",
-                   "fields": {
-                    "VAR": {
-                     "id": "_|#XH~`*aoww@ao)`d|y"
-                    }
-                   }
-                  }
-                 },
-                 "ATTACKTIME": {
-                  "block": {
-                   "type": "math_number",
-                   "id": "g@rVbNbZRZj3xM/gpR?~",
-                   "fields": {
-                    "NUM": 0.01
-                   }
-                  }
-                 },
-                 "DECAYTIME": {
-                  "block": {
-                   "type": "math_number",
-                   "id": "0l9tf_icG[ZdD#.L3;Sg",
-                   "fields": {
-                    "NUM": 3
-                   }
-                  }
-                 },
-                 "MUL": {
-                  "shadow": {
-                   "type": "math_number",
-                   "id": "V=r)5/e4M)(BO,:NR9h(",
-                   "fields": {
-                    "NUM": 1
-                   }
-                  },
-                  "block": {
-                   "type": "math_number",
-                   "id": "wcDWvDF*W$L{_-(43uP2",
-                   "fields": {
-                    "NUM": 0.1
-                   }
-                  }
-                 },
-                 "ADD": {
-                  "shadow": {
-                   "type": "math_number",
-                   "id": ")`gusEl~lpnA@`)-^D-o",
-                   "fields": {
-                    "NUM": 0
-                   }
-                  }
-                 }
+                "type": "math_number",
+                "id": "U2vqLbeVOSb:sx9F/Un)",
+                "fields": {
+                 "NUM": 6
                 }
                }
               },
               "MUL": {
                "shadow": {
                 "type": "math_number",
-                "id": "Hso#amSHTX8.9dcK|9^-",
+                "id": "L~jKy38iz`Vj58ipnS6E",
                 "fields": {
                  "NUM": 1
                 }
@@ -458,111 +528,17 @@
               "ADD": {
                "shadow": {
                 "type": "math_number",
-                "id": "vJ_35N~Pl7M|WEGQi55[",
+                "id": ":X+svX/g9UIIYhh}G:-F",
                 "fields": {
                  "NUM": 0
                 }
-               }
-              }
-             }
-            }
-           }
-          },
-          "next": {
-           "block": {
-            "type": "Sc_Play",
-            "id": "j!a+G{APF5fgyJvG.a/$",
-            "inputs": {
-             "CODE": {
-              "block": {
-               "type": "Sc_CombC",
-               "id": "xDAYhC+-$9GYK-:6Zc6K",
-               "inline": true,
-               "inputs": {
-                "IN": {
-                 "block": {
-                  "type": "variables_get",
-                  "id": "Adf0pXH%}|X!+${_nw8a",
-                  "fields": {
-                   "VAR": {
-                    "id": "e.fF=)d([Y1t?%)*KJqF"
-                   }
-                  }
-                 }
-                },
-                "MAXDELAYTIME": {
-                 "block": {
-                  "type": "math_number",
-                  "id": "@=dC{gu0rvgN*~8~i!S=",
-                  "fields": {
-                   "NUM": 2
-                  }
-                 }
-                },
-                "DELAYTIME": {
-                 "block": {
-                  "type": "Sc_BinaryOp",
-                  "id": "C5Tb:Hw(TJ$.%@eOp.bh",
-                  "inline": true,
-                  "fields": {
-                   "OP": "/"
-                  },
-                  "inputs": {
-                   "LHS": {
-                    "block": {
-                     "type": "math_number",
-                     "id": "^}TM54m)b7=$hUXV+8s5",
-                     "fields": {
-                      "NUM": 4
-                     }
-                    }
-                   },
-                   "RHS": {
-                    "block": {
-                     "type": "math_number",
-                     "id": "jN?nq5G#[{1Gt={y{U)@",
-                     "fields": {
-                      "NUM": 6
-                     }
-                    }
-                   }
-                  }
-                 }
-                },
-                "DECAYTIME": {
-                 "block": {
-                  "type": "math_number",
-                  "id": "U2vqLbeVOSb:sx9F/Un)",
-                  "fields": {
-                   "NUM": 6
-                  }
-                 }
-                },
-                "MUL": {
-                 "shadow": {
-                  "type": "math_number",
-                  "id": "L~jKy38iz`Vj58ipnS6E",
-                  "fields": {
-                   "NUM": 1
-                  }
-                 }
-                },
-                "ADD": {
-                 "shadow": {
-                  "type": "math_number",
-                  "id": ":X+svX/g9UIIYhh}G:-F",
-                  "fields": {
-                   "NUM": 0
-                  }
-                 },
-                 "block": {
-                  "type": "variables_get",
-                  "id": "_hFErUmh:Y?(dpw-O_rR",
-                  "fields": {
-                   "VAR": {
-                    "id": "e.fF=)d([Y1t?%)*KJqF"
-                   }
-                  }
+               },
+               "block": {
+                "type": "variables_get",
+                "id": "_hFErUmh:Y?(dpw-O_rR",
+                "fields": {
+                 "VAR": {
+                  "id": "e.fF=)d([Y1t?%)*KJqF"
                  }
                 }
                }
@@ -584,10 +560,6 @@
   {
    "name": "t",
    "id": "_|#XH~`*aoww@ao)`d|y"
-  },
-  {
-   "name": "o",
-   "id": "SgyGy)qaX0]uEpEl+/)Q"
   },
   {
    "name": "p",
