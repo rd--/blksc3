@@ -9,6 +9,6 @@ SinOsc(
 
 # Annotation
 
-There is also a black and white (or grey, or outline) drawing mode.
+There is also an outline drawing mode.
 These drawings may be more suitable for printing or for non-colour displays,
 and are selected using the ⬜ button.

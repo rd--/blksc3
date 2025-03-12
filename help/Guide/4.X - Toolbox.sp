@@ -8,9 +8,5 @@ LfTri(
 # Annotation
 
 The _Toolbox_ contains instances of the blocks the system knows about, organised into categories.
-Blocks are fetched by dragging them out of the toolbox and into the workspace.
 
-A toolbox is an organised collection of block programs,
-there can be any number of these,
-and they can be switched between.
-The 𝑇 button selects between the _Complete_ and the _Small_ toolbox.
+Blocks are fetched by dragging them out of the toolbox and into the workspace.

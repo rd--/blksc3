@@ -14,4 +14,6 @@ TGrains(
 
 # Annotation
 
-`SfAcquire` fetches a sound file.
+`SfAcquire` fetches a sound file,
+specified either as a _Url_ or as a key into a user extensible dictionary,
+and answers a list of buffer numbers.

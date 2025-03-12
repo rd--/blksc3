@@ -10,5 +10,5 @@ Unlike in SuperCollider language,
 block programs must be connected.
 There is no implicit framing mechasism.
 In this program,
-by F. Olofsson ([0041](https://fredrikolofsson.com/f0blog/more-sc-twitter/)),
+by Fredrik Olofsson ([0041](https://fredrikolofsson.com/f0blog/more-sc-twitter/)),
 the ⅄ block attaches the 𝑙↓ block to the unit generator graph.

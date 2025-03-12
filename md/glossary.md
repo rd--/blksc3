@@ -112,6 +112,12 @@ or equally _9.sqrt_.
 
 ![](sw/blksc3/png/BlockOutput.svg)
 
+## Block Stack
+
+Block programs are sometimes referred to as block stacks.
+Any arrangement of connected blocks is considered a block stack,
+regardless of orientation or connection type.
+
 ## Block Type
 
 Each block in a program is an instance of a block type.
@@ -168,9 +174,9 @@ The text of the collapsed block shows both these values.
 
 ![](sw/blksc3/png/CollapsedBlocks.svg)
 
-## Colour Schemes
+## Colour Schemas
 
-The ⬜ button selects the next colour scheme.
+The ⬜ button selects the next colour schema.
 
 ## Comment Blocks
 

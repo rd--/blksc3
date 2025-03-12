@@ -5,11 +5,11 @@ rohan.drape@gmail.com
 
 ## Abstract
 
-Block SuperCollider is an experimental visual programming language specialised for writing programs for the SuperCollider synthesiser.
-The system addresses eight areas of research:
+Block SuperCollider is a structure editor specialised for writing programs for the SuperCollider synthesiser.
+The system is an experiment to help study:
 1\. rich-text editors for SuperCollider programs,
 2\. rendering program texts as interactive control surfaces,
-3\. browser based editors for the Wasm SuperCollider synthesiser,
+3\. browser based editors for working with the WebAssembly variant of the SuperCollider synthesiser,
 4\. tablet and pen based editors for SuperCollider programs,
 5\. environments to help musicians who are non-programmers work with SuperCollider,
 6\. literate programming systems for SuperCollider programs,

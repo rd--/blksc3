@@ -8,4 +8,6 @@
 # Annotation
 
 _Demand Rate_ unit generators are not scheduled on either the audio or control rate sample clocks,
-but instead calculate values when requested to by either `Demand`, `Duty` or `TDuty`.
+but instead calculate values when requested to.
+
+In this program a short sequence is played simultaneously on three distinct clocks.

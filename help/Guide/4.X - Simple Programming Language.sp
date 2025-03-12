@@ -8,7 +8,7 @@ Resonz(
 # Annotation
 
 Block drawings are evaluated by translation into a text language.
-_Block SuperCollider_ programs are drawings of
+_Block SuperCollider_ programs, in particular, are drawings of
 _Simple Programming Language_ (Sᴘʟ) programs.
 
 The text below is the Sᴘʟ translation of the drawing at the left,

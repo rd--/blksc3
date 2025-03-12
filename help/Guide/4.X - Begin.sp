@@ -13,5 +13,5 @@ is a visual editor for
 _SuperCollider_ synthesiser programs.
 
 Ordinarily,
-programs are sent to an in-process copy of the SuperCollider synthesiser,
+programs are sent to an in-process WebAssembly copy of the SuperCollider synthesiser,
 which can be started by pressing the _Begin_ button.

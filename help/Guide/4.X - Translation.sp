@@ -14,4 +14,4 @@
 
 There is also a translator from Sᴘʟ programs to block drawings.
 At left is a translation of the following program from the _sc-users_ mailing list,
-posted on 2007-04-06 by Paul Jones,
+posted by Paul Jones on 2007-04-06.

@@ -9,5 +9,6 @@ SinOscFb(
 # Annotation
 
 All unit generator blocks with an output port have × and + inputs for adjusting scale and bias.
-The adjustments are made after the block is defined,
+Unlike in SuperCollider language,
+the adjustments are made after the block is defined,
 and do not form part of the list processing behaviour of the block.
