@@ -672,10 +672,7 @@ stc_file_to_xml_file = graph_file_to_xml_file Stc.stcToExpr
 
 {- | Stc file to Xml file
 
-> spl_file_to_xml_file "tmp/Hy - Tw 1601331785409134592.sl"
-> spl_file_to_xml_file "tmp/Io - 6353.sl"
-> spl_file_to_xml_file "tmp/F0 - Tw 0301.sl"
-> spl_file_to_xml_file "tmp/Jrhb - Gcd.sl"
+> spl_file_to_xml_file "tmp/F0 - Tw 0198.sp"
 -}
 spl_file_to_xml_file :: FilePath -> IO ()
 spl_file_to_xml_file = graph_file_to_xml_file Stc.splToExpr

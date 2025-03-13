@@ -37,7 +37,7 @@ const workspace = new Blockly.Workspace();
 await defineBlocks(dir + 'json/BlockDefinitions.json');
 await defineBlocks(dir + 'json/UgenBlockDefinitions.json');
 await loadBlockMessages(dir + 'json/SymbolicMessages.json');
-await loadBlockMessages(dir + 'json/ColourScheme.json');
+await loadBlockMessages(dir + 'json/ColourSchema.json');
 
 const subdir = dir + 'help/tmp/';
 

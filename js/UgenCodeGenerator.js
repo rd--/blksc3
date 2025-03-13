@@ -59,6 +59,9 @@ Blockly.JavaScript.forBlock['Sc_BufRd'] = function(block) {
 Blockly.JavaScript.forBlock['Sc_Clip'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'Clip', ['IN', 'LO', 'HI'], true);
 };
+Blockly.JavaScript.forBlock['Sc_ClipNoise'] = function(block) {
+	return ugenCodeGen(Blockly, block, 'ClipNoise', [], true);
+};
 Blockly.JavaScript.forBlock['Sc_CombC'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'CombC', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
 };
