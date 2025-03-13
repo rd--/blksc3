@@ -47,6 +47,7 @@ export class Blk {
 		this.colourSaturation = 0.25;
 		this.init(withUiCtl);
 		this.programOracle = [];
+		this.masterGain = 1.5; /* Set for symposium talk &etc. else set to null */
 	}
 
 	init(withUiCtl) {
@@ -275,7 +276,10 @@ export class Blk {
 	}
 
 	getCodeJs() {
-		const slText = this.getCodeSl();
+		let slText = this.getCodeSl();
+		if (this.masterGain !== null) {
+			 slText = `{ ${this.getCodeSl()} * ${this.masterGain} }.value`;
+		}
 		console.debug(`getCodeJs: slText: ${slText}`);
 		const jsText = sl.rewriteSlToJs(slText);
 		// console.debug(`getCodeJs: jsText: ${jsText}`);
@@ -437,8 +441,13 @@ export class Blk {
 	}
 
 	playSelectedText() {
-		const splText = _selectedTextOrParagraphAtCaret_1(window); /* window.getSelection().toString() */
-		const jsText = sl.rewriteSlToJs(`{ ${splText} }.value.play`);
+		let textRegion = _selectedTextOrParagraphAtCaret_1(window);
+		let slText = `{ ${textRegion} }.value.play`;
+		if (this.masterGain !== null) {
+			slText = `{ ${textRegion} * ${this.masterGain} }.value.play`;
+		}
+		console.debug(`playSelectedText: slText: ${slText}`);
+		const jsText = sl.rewriteSlToJs(slText);
 		return eval(jsText);
 	}
 

@@ -12,4 +12,6 @@ The block editor library, called [_Blockly_](https://developers.google.com/block
 
 The parser library, called [_OhmJs_](https://ohmjs.org/), is by Alessandro Warth and others.
 
-<!-- <https://rohandrape.net/?t=blksc3> -->
+Block SuperCollider,
+and an _Extended Abstract_ for this talk,
+is at <https://rohandrape.net/?t=blksc3>.
