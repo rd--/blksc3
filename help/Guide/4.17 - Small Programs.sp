@@ -6,7 +6,7 @@ SinOsc(
 		Impulse(a, 0)
 	) * 100 + 300,
 	0
-).Splay * 0.2
+).Splay * 0.1
 
 # Annotation
 

@@ -41,8 +41,8 @@
 	</head>
 	<body>
 		<div id="blocklyContainer"></div>
-		<div id="blkEdit">
-			<div id="blkMenu">
+		<div id="blkEditorControlPanel">
+			<div id="blkMenus">
 				<select id="programsMenu" title="Program (p)" accesskey="p"></select>
 				<select id="helpMenu" title="Help (h)" accesskey="h"></select>
 				<select id="guideMenu" title="Guide (g)" accesskey="g"></select>
@@ -58,7 +58,7 @@
 					<option value="userClear">Clear</option>
 				</select>
 			</div>
-			<div id="blkCmd">
+			<div id="blkEditorCommands">
 				<input
 					type="file"
 					id="jsonInputFile"
@@ -185,6 +185,7 @@
 				>
 					𝓔
 				</button>
+				<input type="text" value="1" title="Master Gain" id="masterGain" onchange="rec.setMasterGain(Number(document.getElementById('masterGain').value) || 1)"/>
 			</div>
 		</div>
 		<div id="blkNotes" contenteditable="true" spellcheck="false">
@@ -198,9 +199,3 @@
 		<script async src="lib/scsynth-wasm-builds/ext/scsynth.js"></script>
 	</body>
 </html>
-
-<!--
-<div id="uiCtlContainer"></div>
-<button title="Center drawing in workspace" onclick="rec.workspace.scrollCenter()">Center</button>
-<button title="Copy current workspace Svg to clipboard" onclick="navigator.clipboard.writeText(blk.getSvg())">Copy Svg</button>
--->

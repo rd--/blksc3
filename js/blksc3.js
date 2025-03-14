@@ -47,7 +47,7 @@ export class Blk {
 		this.colourSaturation = 0.25;
 		this.init(withUiCtl);
 		this.programOracle = [];
-		this.masterGain = 1.5; /* Set for symposium talk &etc. else set to null */
+		this.masterGain = 1;
 	}
 
 	init(withUiCtl) {
@@ -195,7 +195,7 @@ export class Blk {
 		if (configName) {
 			const w = document.getElementById('blocklyContainer');
 			const n = document.getElementById('blkNotes');
-			const e = document.getElementById('blkEdit');
+			const e = document.getElementById('blkEditorControlPanel');
 			const o = this.layouts[configName];
 			w.style.height = o.workspaceHeight;
 			w.style.width = o.workspaceWidth;
@@ -275,9 +275,16 @@ export class Blk {
 		return slText;
 	}
 
+	setMasterGain(anObject) {
+		console.log('setMasterGain', anObject, typeof anObject);
+		if(typeof anObject === 'number') {
+			this.masterGain = anObject;
+		}
+	}
+
 	getCodeJs() {
 		let slText = this.getCodeSl();
-		if (this.masterGain !== null) {
+		if (this.masterGain !== 1) {
 			 slText = `{ ${this.getCodeSl()} * ${this.masterGain} }.value`;
 		}
 		console.debug(`getCodeJs: slText: ${slText}`);
@@ -443,7 +450,7 @@ export class Blk {
 	playSelectedText() {
 		let textRegion = _selectedTextOrParagraphAtCaret_1(window);
 		let slText = `{ ${textRegion} }.value.play`;
-		if (this.masterGain !== null) {
+		if (this.masterGain !== 1) {
 			slText = `{ ${textRegion} * ${this.masterGain} }.value.play`;
 		}
 		console.debug(`playSelectedText: slText: ${slText}`);

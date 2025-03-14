@@ -235,6 +235,13 @@ The figure below shows a ∿ (_SinOsc_) block with 𝒞 inputs for both ν (_fre
 
 ![](sw/blksc3/png/ControlField.svg)
 
+## Control Panel
+
+The _Editor Control Panel_ is the area below the workspace.
+It has two parts,
+the first row has menus for selecting block programs,
+the second row has various editor and synthesiser controls.
+
 ## Copy
 
 The _Copy_ button copies the internal notation of the current program to the clipboard.

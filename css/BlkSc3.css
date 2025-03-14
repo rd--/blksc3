@@ -22,7 +22,7 @@ body, button, code, select, span {
 	font-family: var(--font-family);
 }
 
-button, select {
+button, select, div#blkEditorControlPanel input {
 	background-color: var(--paper-colour);
 	border: 1px dotted;
 }
@@ -61,13 +61,13 @@ details#blkSwB > div > button {
 	padding: 0.75em;
 }
 
-div#blkEdit {
+div#blkEditorControlPanel {
 	height: 7.5vh;
 	position: absolute;
 	top: 91.5vh;
 }
 
-div#blkMenu {
+div#blkMenus {
 	margin-bottom: 5px;
 }
 
@@ -102,10 +102,14 @@ div#blocklyContainer {
 
 #guideMenu {}
 
-#statusText {
+#masterGain, #statusText {
 	border: 1px dotted #ccc;
 	display: inline-block;
 	width: 75px;
+}
+
+#masterGain {
+	width: 25px;
 }
 
 .blocklyDropdownRect {
