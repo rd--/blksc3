@@ -15,4 +15,4 @@ Categories are grouped into families,
 also indicated by colouring.
 
 This program includes blocks from nine categories,
-drawn in nine colours.
+and they are drawn in nine colours.

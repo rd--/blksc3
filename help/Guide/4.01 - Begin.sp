@@ -14,5 +14,7 @@ _SuperCollider_ synthesiser programs.
 
 Ordinarily,
 programs are sent to an in-process WebAssembly copy of the SuperCollider synthesiser,
-which can be started by pressing the _Begin_ button,
-located in the _Editor Control Panel_ below the _Workspace_.
+which can be started by pressing the _Begin_ button.
+
+<!--  in the second row of the _Editor Control Panel_, or by typing _Meta-B_. -->
+

@@ -11,9 +11,9 @@ SinOsc(
 # Annotation
 
 The system includes translations of a few hundred small programs,
-which can be loaded using the _Program_ menu.
-
-These include various SuperCollider example programs by James McCartney,
-a collection of 140-character _haiku_ programs by Fredrik Olofsson,
-and the program below by Dan Stowell.
+listed in the _Program_ menu.
+These include SuperCollider example programs by James McCartney,
+a set of 140-character _haiku_ programs by Fredrik Olofsson,
+a set of one-line programs by Lance Putnam,
+and this program by Dan Stowell.
 

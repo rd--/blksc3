@@ -14,5 +14,6 @@ TRand(0.1, 0.6, t), 0, 0, 0, 0), TRand(-1,
 
 # Annotation
 
-The _Collapse Block_ context menu item elides part of a block drawing,
+The context menu for each block includes a _Collapse Block_ entry.
+It elides part of a block drawing,
 in this case of DX7 patch data.

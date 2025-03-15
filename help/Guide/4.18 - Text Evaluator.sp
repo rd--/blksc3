@@ -8,9 +8,8 @@ o.Tanh.Splay2.transposed.Mix / 2
 
 # Annotation
 
-Since block drawings are evaluated by first translating them into text programs,
-the system will happily evaluate text programs as well.
-
+Since block drawings are evaluated by first being translated into text programs,
+it is straightforward for the system to evaluate text programs as well.
 The _′_ button will play either the selected text or,
 if no text is selected,
 the paragraph at the cursor.

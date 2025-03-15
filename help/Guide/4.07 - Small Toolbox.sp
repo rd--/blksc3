@@ -11,7 +11,6 @@
 A toolbox is an organised collection of block programs.
 There can be any number of toolboxes,
 and they can be switched between as required.
-
 The 𝑇 button selects between the _Complete Toolbox_,
 which has nested sub-categories and a search mechanism,
 and the _Small Toolbox_,
