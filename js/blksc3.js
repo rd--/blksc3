@@ -128,7 +128,7 @@ export class Blk {
 
 	initConfig(toolbox) {
 		this.config = {
-			media: 'lib/scsynth-wasm-builds/lib/ext/blockly-11.2.1/media/',
+			media: 'lib/scsynth-wasm-builds/lib/ext/blockly-12.3.1/media/',
 			renderer: 'thrasos', // geras thrasos zelos
 			theme: blksc3Theme,
 			sounds: false,
