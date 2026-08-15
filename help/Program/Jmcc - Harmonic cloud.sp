@@ -2,7 +2,7 @@
 let n = 36;
 { :tr |
 	{
-		let f = TExpRand(64, 4000, tr).RoundTo(64);
+		let f = TExpRand(64, 4000, tr).Round(64);
 		Lpf(
 			Saw({ TRand(-1, 1, tr) } ! 2 + f),
 			TRand(1, 6, tr) * f

@@ -5,7 +5,7 @@ let j = MulAdd(
 	SinOsc(1 / b, 0),
 	b / 3,
 	b * (SinOsc(0.0234, 0) < 0 + 1)
-).RoundTo(1);
+).Round(1);
 let o = SinOsc(
 	Duty(c, 0, Dseq(Infinity, 99 * j)),
 	b

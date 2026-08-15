@@ -349,7 +349,7 @@ An idiom is, as in Apl, a composite sequence of blocks that is often used.
 The Toolbox contains a number of idioms.
 The figure below shows one,
 taken from the _List_ category,
-that pre-composes the Σ (`sum`) and ᵀ (`transposed`) blocks.
+that pre-composes the Σ (`sum`) and ᵀ (`transpose`) blocks.
 
 ![](sw/blksc3/png/Idiom.svg)
 
@@ -781,7 +781,7 @@ The figure below shows the complete toolbox with the constants category selected
 The items in the toolbox are ordinarily instances of single blocks,
 however any block program may be placed in the toolbox,
 including small commonly used sub-programs, called idioms.
-The figure below shows a pre-composed sequence of ᵀ (_Transposed_) and Σ (_Sum_) from the List category.
+The figure below shows a pre-composed sequence of ᵀ (_Transpose_) and Σ (_Sum_) from the List category.
 
 ![](sw/blksc3/png/ToolboxEntries.svg)
 
@@ -840,9 +840,9 @@ A unary operator is an operator with one operand.
 Unary operator blocks are written in prefix form,
 the operator precedes the operand.
 In the figure below the input of a list unary operator block,
-with the ᴙ (_Reversed_) operator selected,
+with the ᴙ (_Reverse_) operator selected,
 is connected to the output of a ⟦⟧ (_List_) block.
-It is the block drawing of the expression _reversed([1 2 3])_.
+It is the block drawing of the expression _reverse([1 2 3])_.
 
 ![](sw/blksc3/png/UnaryOperator.svg)
 

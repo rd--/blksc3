@@ -3,7 +3,7 @@ let p = [0.5 1 2];
 Pan2(
 	SinOsc(
 		1000 * Lag(
-			(LfSaw(p * 0.4, 0) / p).RoundTo(1 / 8),
+			(LfSaw(p * 0.4, 0) / p).Round(1 / 8),
 			0.002
 		).Sum,
 		0

@@ -1,6 +1,6 @@
 /* SinOsc.3.sl */
 var speeds = (1 .. 11) / 20;
-var f0 = (MouseX(0, 36, 0, 0.2).RoundTo(7) + 24).MidiCps;
+var f0 = (MouseX(0, 36, 0, 0.2).Round(7) + 24).MidiCps;
 var f = { :partial |
     Pan2(SinOsc(f0 * partial, 0), Rand(-1, 1), SinOsc(speeds.atRandom, 0).Max(0))
 };

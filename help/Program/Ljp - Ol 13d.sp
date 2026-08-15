@@ -3,7 +3,7 @@ let p = [1, 2] + 0.04;
 Pan2(
 	SinOsc(
 		Lag(
-			RoundTo(
+			Round(
 				LfTri(p * 0.2, 0) / p,
 				1 / 8
 			),

@@ -11,4 +11,4 @@ let f = { :x |
 [
 	14 400 500 0.06;
 	20 800 1000 0.10
-].collect(f:/1).transposed.Sum
+].collect(f:/1).transpose.Sum

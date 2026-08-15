@@ -6,4 +6,4 @@ let n = { :i |
 		0.15
 	) * (5 ^ LfNoise2(1.9 ^ i / 128) / (i + 8) * 20)
 };
-1.to(15).collect(n:/1).Splay2.transposed.sum
+1.to(15).collect(n:/1).Splay2.transpose.sum

@@ -6,8 +6,8 @@ let f = Hasher(
 	)
 ) * 300 + 300;
 let z = VarSaw(
-	f.RoundTo(60),
+	f.Round(60),
 	0,
 	LfNoise2(2) / 3 + 0.5
 ) / 5;
-z.transposed.sum
+z.transpose.sum

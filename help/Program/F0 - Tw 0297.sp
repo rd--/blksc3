@@ -11,4 +11,4 @@
 		*
 		Lag3(d, c % 1 / 99)
 	)
-}.Splay2.transposed.sum / 3
+}.Splay2.transpose.sum / 3

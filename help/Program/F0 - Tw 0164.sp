@@ -17,7 +17,7 @@ let fr = Pitch(
 	0.5,
 	1,
 	0
-).transposed.first - 4;
+).transpose.first - 4;
 let ph = SinOsc(fr, 0) * 2.pi * SinOsc(1 / 16, 0);
 let o = SinOsc([1 2], ph);
 LeakDc(o, 0.995) / 2 / 2 / 2 / 2

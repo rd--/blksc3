@@ -149,8 +149,8 @@ Blockly.JavaScript.forBlock['Sc_GrainFM'] = function(block) {
 Blockly.JavaScript.forBlock['Sc_GrainSin'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'GrainSin', ['NUMCHANNELS', 'TRIGGER', 'DUR', 'FREQ', 'PAN', 'ENVBUFNUM', 'MAXGRAINS'], true);
 };
-Blockly.JavaScript.forBlock['Sc_GrayNoise'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'GrayNoise', [], true);
+Blockly.JavaScript.forBlock['Sc_GreyNoise'] = function(block) {
+	return ugenCodeGen(Blockly, block, 'GreyNoise', [], true);
 };
 Blockly.JavaScript.forBlock['Sc_HPF'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'Hpf', ['IN', 'FREQ'], true);

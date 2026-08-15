@@ -25,4 +25,4 @@ let s1 = SinOscFb(f1, d) * SinOscFb(b / 9, 0) * d;
 let c = PitchShift(s1, 9 / b, 9 / b.sqrt, b / 999, b / 99);
 let s2 = GVerb(c * d * d * d, 99, 9, 9 / 999, 0.5, 15, 1, 0.7, 0.5, 300);
 let s3 = s2 / 9 + PitchShift(c, f / 9, f / 9, 0, 0);
-Hpf(s3.Splay2, 9).transposed.Sum * 0.5
+Hpf(s3.Splay2, 9).transpose.Sum * 0.5

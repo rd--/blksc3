@@ -3,9 +3,9 @@ let f = { :freq |
 	SinOsc(freq, [0, 5])
 };
 let g = f(5);
-let i = (f(1) * f(0.005) + 1.02).RoundTo(1);
+let i = (f(1) * f(0.005) + 1.02).Round(1);
 let j = [
-	(g / 2 + 1).RoundTo(1) / 9 ^ i,
+	(g / 2 + 1).Round(1) / 9 ^ i,
 	30,
 	(g * 3 + 40)
 ].product;
@@ -18,5 +18,5 @@ let c = [
 [
 	c,
 	PitchShift(c, 0.5, 0.5, 0, 0.5),
-	PitchShift(c, 0.5, (5 ^ f(0.005)).RoundTo(1), 0.05, 0.05)
+	PitchShift(c, 0.5, (5 ^ f(0.005)).Round(1), 0.05, 0.05)
 ].Mix

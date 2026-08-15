@@ -2,10 +2,10 @@
 let x = MouseX(-10, 10, 0, 0.1);
 let y = MouseY(0, 5, 0, 0.1);
 let i = (LfSaw(0.062, 0) * 10) + (y * [0 .. 8]);
-let d = i.FractionPart;
-let a = ModDif(d, 0.5, 1).Negated + 0.8;
+let d = i.FractionalPart;
+let a = ModDif(d, 0.5, 1).Negate + 0.8;
 let z1 = i.Gcd(x) + d;
 let z2 = i.Lcm(x) + d;
-let freq = [z1, z2].transposed.Abs + 1 * 120;
+let freq = [z1, z2].transpose.Abs + 1 * 120;
 let c = AmpComp(freq, 261.625, 1 / 3) * a;
 (SinOsc(freq, 0) * c).Mix * 0.01

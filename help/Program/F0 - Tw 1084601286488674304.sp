@@ -7,7 +7,7 @@ let y = VarSaw(
 	LfSaw(b / 9, 0) % 1
 );
 let z = Hpf(
-	LfSaw(LfSaw(1 / b, 0).RoundTo(1) + (1 / 2), 0) > 0,
+	LfSaw(LfSaw(1 / b, 0).Round(1) + (1 / 2), 0) > 0,
 	LfSaw(b / 33, 0) * 4 + 8
 );
 let d = MoogFf(

@@ -16,4 +16,4 @@ let x = { :i |
 	Pan2(z, l, 1 / n)
 };
 let y = Limiter(LeakDc(1.to(n).collect(x:/1).Sum, 0.995), 1, 0.01);
-GVerb(y, 3, 5, 0.2, 0.8, 20, 0.1, 0.7, 0.5, 300).transposed.Sum * 0.25
+GVerb(y, 3, 5, 0.2, 0.8, 20, 0.1, 0.7, 0.5, 300).transpose.Sum * 0.25

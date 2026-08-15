@@ -9,4 +9,4 @@ let s = { :k |
     z := k;
     1.to(6).collect(f:/1).Sum
 };
-(GVerb(0.to(15).collect(s:/1).Sum, 1, 3, 0.5, 0.5, 15, 1, 0.7, 0.5, 300) / 512).transposed.Sum
+(GVerb(0.to(15).collect(s:/1).Sum, 1, 3, 0.5, 0.5, 15, 1, 0.7, 0.5, 300) / 512).transpose.Sum

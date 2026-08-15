@@ -13,4 +13,4 @@ Splay2(
 		b / 9.9,
 		9
 	) * 0.9
-).transposed.Sum
+).transpose.Sum

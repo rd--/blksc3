@@ -14,4 +14,4 @@ GVerb(
 	0.7,
 	0.5,
 	300
-).transposed.Sum
+).transpose.Sum

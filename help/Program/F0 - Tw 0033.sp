@@ -1,5 +1,5 @@
 /* Tw 0033 (F0) - http://www.fredrikolofsson.com/f0blog/?q=node/537 */
-let f = LfPar(1 / 14, 0).RoundTo(1) * 20 + 80;
+let f = LfPar(1 / 14, 0).Round(1) * 20 + 80;
 let a = Pulse([1, 2, 3, 4], 0.35);
 let n = BrownNoise() * a;
 let z = { :i |

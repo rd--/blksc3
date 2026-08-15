@@ -7,7 +7,7 @@ let strFunc = { :i |
    let pluck1 = PinkNoise() * Decay(trigger.Max(0), 0.05);
    let period1 = pitch1.at(i).MidiCps.Reciprocal;
    let string1 = CombL(pluck1, period1, period1, 4);
-   let pluck2 = BrownNoise() * Decay(trigger.Negated.Max(0), 0.05);
+   let pluck2 = BrownNoise() * Decay(trigger.Negate.Max(0), 0.05);
    let period2 = pitch2.at(i).MidiCps.Reciprocal;
    let string2 = CombL(pluck2, period2, period2, -4);
    Pan2(string1 + string2, i * 0.2 - 0.5,  1)

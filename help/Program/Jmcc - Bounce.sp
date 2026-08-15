@@ -2,7 +2,7 @@
 let freq = 80;
 let trig = Impulse(4, 0) * 0.05;
 let f = Lag(
-	freq * Latch((WhiteNoise() * 3 + 3).RoundTo(0.5) + 1, trig),
+	freq * Latch((WhiteNoise() * 3 + 3).Round(0.5) + 1, trig),
 	0.03
 );
 let z = (

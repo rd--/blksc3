@@ -1,7 +1,7 @@
 /* 4.X - Begin */
 {
 	Hpf(
-		GrayNoise() * 0.1,
+		GreyNoise() * 0.1,
 		LfNoise2(3) * 6666 + 9999
 	)
 } ! 2

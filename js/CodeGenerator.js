@@ -16,7 +16,7 @@ export function initCodeGen(Blockly) {
 		return `${name} := ${value};\n`;
 	};
 	Blockly.JavaScript.forBlock['Sc_ArrayFill'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, 'duplicateInteger', [
+		return infixMethodCodeGen(Blockly, block, 'duplicate', [
 			'PROC',
 			'COUNT',
 		]);

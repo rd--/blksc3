@@ -1,5 +1,5 @@
 /* Code Generation, Simple Programming Language */
-let a = SinOsc(1,0).Abs * 0.1;
+let a = SinOsc(1, 0).Abs * 0.1;
 SinOsc(440, 0) * a
 
 # Code Generation, Simple Programming Language
