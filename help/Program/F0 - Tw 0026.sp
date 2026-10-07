@@ -8,7 +8,7 @@ let n2 = [
 	0 0 1 0 1 7 0 0 5 6 3 0 4 0 9 0
 ];
 let n = n1 ++ n2;
-let b = [0 2 4 5 7 9 11].asLocalBuf;
+let b = [0 2 4 5 7 9 11].LocalBuf;
 let t = Impulse(4, 0);
 let m = DegreeToKey(
 	b,

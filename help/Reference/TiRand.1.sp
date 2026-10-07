@@ -1,15 +1,15 @@
 /* TiRand.1.sl */
-var scale = [0 2 4 5 7 9 10 12].asLocalBuf;
-OverlapTexture({ :tr |
+let scale = [0 2 4 5 7 9 10 12].LocalBuf;
+{ :tr |
 	{
-		var degree = TiRand(0, 7, tr);
-		var octave = TiRand(4, 7, tr);
-		var pitchClass = Index(scale, degree);
-		var mnn = (octave * 12) + pitchClass;
-		var numHarm = TiRand(1, 4, tr);
+		let degree = TiRand(0, 7, tr);
+		let octave = TiRand(4, 7, tr);
+		let pitchClass = Index(scale, degree);
+		let mnn = (octave * 12) + pitchClass;
+		let numHarm = TiRand(1, 4, tr);
 		Blip(mnn.MidiCps, numHarm) * 0.05
 	} !^ 7
-}, 4, 0.05, 2)
+}.OverlapTexture(4, 0.05, 2).Mix
 
 # TiRand
 

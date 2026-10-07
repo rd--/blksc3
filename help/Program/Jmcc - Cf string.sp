@@ -1,7 +1,7 @@
 /* cfstring1 (jmcc) ; graph rewrite ; http://www.iamas.ac.jp/~aka/dspss2004/materials/ */
 let nc = 2;
 { :tr |
-    let dgr = DegreeToKey([0, 2, 4, 5, 7, 9, 11].asLocalBuf, TRand(0, 12, tr), 12);
+    let dgr = DegreeToKey([0, 2, 4, 5, 7, 9, 11].LocalBuf, TRand(0, 12, tr), 12);
     let freq = (60 + dgr).MidiCps;
     let pan = TRand(-0.25, 0.25, tr);
     let amp = TRand(0.1, 0.2, tr);

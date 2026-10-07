@@ -1,6 +1,6 @@
 /* pentatonic pipes (jmcc) ; mousex on right half of screen causes pulsation */
 var n = 5;
-var mode = [0, 3, 5, 7, 10].asLocalBuf;
+var mode = [0, 3, 5, 7, 10].LocalBuf;
 var root = Rand(12, 48);
 var z = OverlapTexture({ :tr |
     Pan2(

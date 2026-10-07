@@ -1,7 +1,7 @@
 /* jmcc - ostinoodles */
 let z = { :tr |
     let root = 81 + TRand(-6, 6, tr);
-    let major = [0, 2, 4, 5, 7, 9, 11].asLocalBuf;
+    let major = [0, 2, 4, 5, 7, 9, 11].LocalBuf;
     let offset = TRand(-16, 16, tr);
     let sequence = DegreeToKey(major, TScramble(tr, [0, 1, 2, 3] + offset), 12) + root;
     let f = TxLine(TExpRand(4, 24, tr), TExpRand(4, 24, tr), 12, tr);

@@ -1,7 +1,7 @@
 /* https://sccode.org/1-5fc (dst) */
 Voicer(1, 16, { :e |
 	let tr = Trig(e.w, e.y * 0.002 + 0.001);
-	let buf = [0, 7, 15.93, 5, 9.7, 12, 17.5, 13.1].asLocalBuf;
+	let buf = [0, 7, 15.93, 5, 9.7, 12, 17.5, 13.1].LocalBuf;
 	let samp = TExpRand(0.07, 0.5, tr);
 	let root = TChoose(tr, [23, 30, 35, 37]);
 	let atk = TExpRand(0.04, 0.3, tr);
