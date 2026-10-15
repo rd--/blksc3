@@ -128,7 +128,7 @@ export class Blk {
 
 	initConfig(toolbox) {
 		this.config = {
-			media: 'lib/scsynth-wasm-builds/lib/ext/blockly-12.3.1/media/',
+			media: 'lib/scsynth-wasm-builds/lib/ext/blockly-13.4.0/media/',
 			renderer: 'thrasos', // geras thrasos zelos
 			theme: blksc3Theme,
 			sounds: false,
@@ -285,7 +285,7 @@ export class Blk {
 	getCodeJs() {
 		let slText = this.getCodeSl();
 		if (this.masterGain !== 1) {
-			 slText = `{ ${this.getCodeSl()} * ${this.masterGain} }.value`;
+			 slText = `{ ${this.getCodeSl()} * ${this.masterGain} }.nullaryApply`;
 		}
 		console.debug(`getCodeJs: slText: ${slText}`);
 		const jsText = sl.rewriteSlToJs(slText);
@@ -449,9 +449,9 @@ export class Blk {
 
 	playSelectedText() {
 		let textRegion = _selectedTextOrParagraphAtCaret_1(window);
-		let slText = `{ ${textRegion} }.value.play`;
+		let slText = `{ ${textRegion} }.nullaryApply.play`;
 		if (this.masterGain !== 1) {
-			slText = `{ ${textRegion} * ${this.masterGain} }.value.play`;
+			slText = `{ ${textRegion} * ${this.masterGain} }.nullaryApply.play`;
 		}
 		console.debug(`playSelectedText: slText: ${slText}`);
 		const jsText = sl.rewriteSlToJs(slText);

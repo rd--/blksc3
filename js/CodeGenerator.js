@@ -26,7 +26,7 @@ export function initCodeGen(Blockly) {
 			'FROM',
 			'TO',
 		]);
-		return [`asList(${code})`, order];
+		return [`List(${code})`, order];
 	};
 	Blockly.JavaScript.forBlock['Sc_ArrayProc1'] = function (block) {
 		return infixMethodCodeGen(Blockly, block, block.getFieldValue('OP'), [
@@ -174,13 +174,13 @@ export function initCodeGen(Blockly) {
 		]);
 	};
 	Blockly.JavaScript.forBlock['Sc_Value0'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, 'value', ['PROC']);
+		return infixMethodCodeGen(Blockly, block, 'nullaryApply', ['PROC']);
 	};
 	Blockly.JavaScript.forBlock['Sc_Value1'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, 'value', ['PROC', 'VALUE']);
+		return infixMethodCodeGen(Blockly, block, 'unaryApply', ['PROC', 'VALUE']);
 	};
 	Blockly.JavaScript.forBlock['Sc_Value2'] = function (block) {
-		return infixMethodCodeGen(Blockly, block, 'value', [
+		return infixMethodCodeGen(Blockly, block, 'binaryApply', [
 			'PROC',
 			'VALUE1',
 			'VALUE2',
