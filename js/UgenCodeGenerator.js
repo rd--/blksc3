@@ -59,6 +59,9 @@ Blockly.JavaScript.forBlock['Sc_BufRd'] = function(block) {
 Blockly.JavaScript.forBlock['Sc_Clip'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'Clip', ['IN', 'LO', 'HI'], true);
 };
+Blockly.JavaScript.forBlock['Sc_ClipIndex'] = function(block) {
+	return ugenCodeGen(Blockly, block, 'ClipIndex', ['BUFNUM', 'IN'], true);
+};
 Blockly.JavaScript.forBlock['Sc_ClipNoise'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'ClipNoise', [], true);
 };
@@ -175,9 +178,6 @@ Blockly.JavaScript.forBlock['Sc_IRand'] = function(block) {
 };
 Blockly.JavaScript.forBlock['Sc_Impulse'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'Impulse', ['FREQ', 'PHASE'], true);
-};
-Blockly.JavaScript.forBlock['Sc_Index'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Index', ['BUFNUM', 'IN'], true);
 };
 Blockly.JavaScript.forBlock['Sc_K2A'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'K2A', ['IN'], true);
