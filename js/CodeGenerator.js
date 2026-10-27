@@ -94,7 +94,7 @@ export function initCodeGen(Blockly) {
 		return prefixMethodCodeGen(Blockly, block, 'Mix', ['INARRAY']);
 	};
 	Blockly.JavaScript.forBlock['Sc_MulAdd'] = function (block) {
-		return prefixMethodCodeGen(Blockly, block, 'MulAdd', ['IN', 'MUL', 'ADD']);
+		return prefixMethodCodeGen(Blockly, block, 'timesPlus', ['IN', 'MUL', 'ADD']);
 	};
 	Blockly.JavaScript.forBlock['Sc_Nil'] = function (block) {
 		return [
@@ -328,7 +328,7 @@ function appendMulAdd(Blockly, block, codeStr) {
 	const reqMul = Number.parseFloat(mulStr) != 1;
 	const reqAdd = Number.parseFloat(addStr) != 0;
 	if (reqMul && reqAdd) {
-		return `MulAdd(${codeStr}, ${mulStr}, ${addStr})`;
+		return `(${codeStr} * ${mulStr} + ${addStr})`;
 	} else if (reqMul) {
 		return `(${codeStr} * ${mulStr})`;
 	} else if (reqAdd) {

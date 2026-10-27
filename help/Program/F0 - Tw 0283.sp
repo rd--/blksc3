@@ -8,5 +8,5 @@ let o2 = SinOscFb(
 	999 * b,
 	SinOscFb(SinOscFb(b, 1) < 0.1 + 1, 1) % b
 );
-let o3 = SinOscFb(0.1 - b, 1).Min(0);
+let o3 = SinOscFb(0.1 - b, 1).min(0);
 Splay(o1 + (o2 * o3)) / 2

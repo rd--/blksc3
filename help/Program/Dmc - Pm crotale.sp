@@ -4,7 +4,7 @@ OverlapTexture({ :tr |
     let tone = TRand(1, 6, tr);
     let art = TRand(2, 6, tr) * 3;
     let pan = TRand(-1, 1, tr);
-    let freq = midi.MidiCps;
+    let freq = midi.midiCps;
     let env = Decay2(tr, 0, art);
     let mod = 5 + (1 / TiRand(2, 6, tr));
     let amp1 = Decay2(tr, 0, art) * TRand(0.1, 0.3, tr);

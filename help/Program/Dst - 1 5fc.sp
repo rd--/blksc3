@@ -15,7 +15,7 @@ Voicer(1, 16, { :e |
 	let index = LinLin(LfSaw(samp, 0), -1, 1, bottom, top) * BufFrames(buf);
 	let tonic = DegreeToKey(buf, index, 12) + root;
 	let env = Decay2(tr, atk, decay) * 0.35;
-	let sig = Bpf(SyncSaw(root.MidiCps, tonic.MidiCps) * env, cfreq, rq) * amp;
+	let sig = Bpf(SyncSaw(root.midiCps, tonic.midiCps) * env, cfreq, rq) * amp;
 	let loc = Pan2(sig, SinOsc(rate * 0.9 + Rand(-0.6, 0.6), 0), 1);
 	let cmb = CombL(loc, 0.1, SinOsc(0.01, 0) * 0.03 + 0.07, 5) * 0.7;
 	XFade2(Lpf(cmb, 4800), loc, -0.5, 0.3)

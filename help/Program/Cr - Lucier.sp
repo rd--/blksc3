@@ -30,9 +30,9 @@ OverlapTexture({ :tr |
 		let a = Amplitude(drv, 0.01, 0.01) * 11;
 		let p = Pulse(60 + a, 0.5) * 0.1;
 		let f = Rlpf(s + p, 320, 0.05);
-		let e = 1 - Amplitude(drv, 0.01, 0.01).Min(1);
+		let e = 1 - Amplitude(drv, 0.01, 0.01).min(1);
 		Normalizer(f, 0.7, 0.01) * e
-	}.value;
+	}.nullaryApply;
 	let lOut = ReplaceOut(bus, source * 0.2 + stringR);
 	let outL = pk1L + pk1R;
 	let outR = pk2L + pk2R;

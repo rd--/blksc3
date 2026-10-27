@@ -1,5 +1,5 @@
 /* F0 - Tw 0350 ; https://sccode.org/1-4Qy */
-let b = (9 .. 1) / 99;
+let b = [9 .. 1; -1] / 99;
 let o = LfSaw(
 	LfSaw(b, b) + 1 * 99,
 	b

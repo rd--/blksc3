@@ -3,7 +3,7 @@
     let root = 5;
     let scale = [0, 2, 4, 5, 7, 9, 11] + root;
     let oct = [24, 36, 48, 60, 72, 84];
-    let f0 = (TChoose(tr, scale) + TChoose(tr, oct)).MidiCps;
+    let f0 = (TChoose(tr, scale) + TChoose(tr, oct)).midiCps;
     let freq = 1.to(12).collect { :i | f0 * i };
     let a0 = TRand(0.7, 0.9, tr);
     let amp = { a0 := a0 * a0 } ! 12;

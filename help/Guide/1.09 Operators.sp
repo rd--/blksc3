@@ -1,11 +1,11 @@
 /* Operators */
-var k = 12;
-var mk = { :f |
-    var a = { LfNoise2(0.25) * 0.05 } ! k;
-    Splay2(SinOsc(f, 0).Tanh * a)
+let k = 12;
+let mk = { :f |
+    let a = { LfNoise2(0.25) * 0.05 } ! k;
+    Splay2(SinOsc(f, 0).tanh * a)
 };
-var m = { IRand(0, 12) } ! k + 48;
-[m, m.reverse].collect({ :x | mk.value(x.MidiCps) }).sum
+let m = { IRand(0, 12) } ! k + 48;
+[m, m.reverse].collect({ :x | mk(x.midiCps) }).sum
 
 # Operators
 
@@ -22,4 +22,4 @@ Thus both ⇛ (_Collect_) and ++ (_Append_), which are instances of the same blo
 
 In this program 24 sine oscillators at 12 frequencies are arranged across the stereo field in symmetrical pairs,
 each oscillator has a distinct amplitude modulator.
-The program has instances of all four basic operators: 1. Σ (_sum_) & ᴙ (_reverse_), 2. ⇛ (_collect_), 3. ♩→ν (_MidiCps_) & _Tanh_ and 4. + (_Add_)
+The program has instances of all four basic operators: 1. Σ (_sum_) & ᴙ (_reverse_), 2. ⇛ (_collect_), 3. ♩→ν (_midiCps_) & _Tanh_ and 4. + (_Add_)

@@ -7,7 +7,7 @@
 		0.04
 	);
 	let z = 1:3.collect { :i |
-		let dt = 1 / (n + [-0.05 0 0.04][i]).MidiCps;
+		let dt = 1 / (n + [-0.05 0 0.04][i]).midiCps;
 		CombL(LfNoise2(3000) * e, dt, dt, 6)
 	};
 	EqPan2(z.Sum, n - 36 / 27 - 1)

@@ -23,11 +23,11 @@ let p2 = [
 	60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60
 ];
 let p = (p1.collect { :x |
-	let y = x ++ (x @* [3 4 5]);
+	let y = x ++ x.atAll([3 4 5]);
 	y ++ y
 } ++ p2).++;
 let tr = Impulse(5, 0);
-let freq = Demand(tr, 0, Dseq(1, p.MidiCps));
+let freq = Demand(tr, 0, Dseq(1, p.midiCps));
 EqPan2(
 	FreeVerb(
 		Lpf(Saw(Lag(freq, 0.03)), 1000),

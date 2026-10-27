@@ -5,7 +5,7 @@ Splay2(
 		16,
 		{ :e |
 			Impulse(
-				MulAdd(e.x, 48, 12).MidiCps,
+				e.x.*+(48, 12).midiCps,
 				0
 			) * e.w * e.z
 		}

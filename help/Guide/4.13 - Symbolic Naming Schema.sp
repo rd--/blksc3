@@ -3,7 +3,7 @@
 	Pulse(
 		(
 			LfNoise2(0.07) * 7 + 77
-		).Floor.MidiCps,
+		).floor.midiCps,
 		LfNoise2(5) * 0.5 + 0.5
 	).Lpf(777) * 0.07
 } !^ 11

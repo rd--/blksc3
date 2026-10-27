@@ -15,7 +15,7 @@ OverlapTexture({ :tr |
 			TRand(3, 6, tr)
 			+
 			Select(TChoose(tr, [0, 2, 3, 5, 7, 8, 10]), c)
-		).MidiCps
+		).midiCps
 	);
         let y = SinOscFb(
 		f,
@@ -27,5 +27,5 @@ OverlapTexture({ :tr |
 		TRand(0, 1, tr) > 0.5 / 2
 	)
     } !+ 9;
-    CombC(z, 0.2, 0.2, 1).Tanh * 0.1
+    CombC(z, 0.2, 0.2, 1).tanh * 0.1
 }, 3, 9, 2).Mix

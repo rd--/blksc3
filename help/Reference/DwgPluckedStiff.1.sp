@@ -7,7 +7,7 @@ let t = TDuty(
 let freq = [
 	Demand(t, 0, Dseq(Infinity, [60 62 63 58 48 55])),
 	Demand(t, 0, Dseq(Infinity, [63 60 48 62 55 58]))
-].MidiCps;
+].midiCps;
 let amp = TRand(0.05, 0.65, t);
 let gate = 1;
 let pos = TRand(0.05, 0.25, t);

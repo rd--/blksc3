@@ -4,8 +4,8 @@ let m = { :f |
 		Impulse(f, 0),
 		0,
 		Dseq(Infinity, [60 63 67 69])
-	).MidiCps
+	).midiCps
 };
-Splay2(SinOsc([2, 3, 5].collect(m:/1), 0)) * 0.1
+Splay2(SinOsc([2, 3, 5].collect(m/1), 0)) * 0.1
 
 # Dseq

@@ -6,7 +6,7 @@ let d = LfTri(b / 999, 0) % 1;
 let m = LfTri(b * c, 0);
 let l = m * 7 + 20 + Dseq(Infinity, b % (m * 5 + 6));
 let j = Duty(e / (12 ^ m), 0, l);
-let f = DegreeToKey(b.LocalBuf, j, 12).MidiCps;
+let f = DegreeToKey(b.LocalBuf, j, 12).midiCps;
 let o = SinOscFb(
 	f,
 	LfTri(c / b, 0) + 1 / 3

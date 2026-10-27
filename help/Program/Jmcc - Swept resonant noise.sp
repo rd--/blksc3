@@ -2,12 +2,11 @@
 { :tr |
 	let p = 10;
 	let n = WhiteNoise() * 0.007;
-	let m = MulAdd(
-		SinOsc(0.1 + TRand(0, 0.2, tr), 0),
+	let m = SinOsc(0.1 + TRand(0, 0.2, tr), 0).*+(
 		12 + TRand(0, 12, tr),
 		60 + TRand(-24, 24, tr)
 	);
-	let sweep = Resonz(n, m.MidiCps, 0.1);
+	let sweep = Resonz(n, m.midiCps, 0.1);
 	{
 		RingzBank(
 			sweep,

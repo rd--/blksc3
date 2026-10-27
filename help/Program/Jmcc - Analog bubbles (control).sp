@@ -1,7 +1,7 @@
 /* Analog bubbles (Jmcc) #1 ; controls */
 CombC(
 	SinOsc(
-		MidiCps(
+		midiCps(
 			LfSaw(
 				NamedControl('freq1', 0.4),
 				0

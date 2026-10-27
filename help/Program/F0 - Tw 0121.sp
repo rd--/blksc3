@@ -6,7 +6,7 @@ let z = SinOsc(
 let l = (0:7 * 6 + 56).LocalBuf;
 let m = SinOsc(1 / [4 3], 0);
 let o = SinOsc(
-	BufRd(1, l, z, 0, 1).MidiCps,
+	BufRd(1, l, z, 0, 1).midiCps,
 	0
 ) * m;
-CombN(o, 1, 1 / [6 5], 9).Tanh * 0.1
+CombN(o, 1, 1 / [6 5], 9).tanh * 0.1

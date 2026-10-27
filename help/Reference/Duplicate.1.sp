@@ -1,6 +1,6 @@
 /* Duplicate */
 {
-	SinOsc(Rand(36, 72).MidiCps, 0) * Rand(0.05, 0.1)
+	SinOsc(Rand(36, 72).midiCps, 0) * Rand(0.05, 0.1)
 } !^ 12
 
 # !

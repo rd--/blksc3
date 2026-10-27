@@ -1,5 +1,5 @@
 /* Code Generation, Javascript */
-var a = SinOsc(1,0).abs * 0.1;
+let a = SinOsc(1,0).abs * 0.1;
 SinOsc(440, 0) * a
 
 # Code Generation, Javascript

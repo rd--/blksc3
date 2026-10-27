@@ -24,10 +24,10 @@ let e = Decay2(
 	CombC(
 		(
 			Blip(
-				(48 + m + TRand(0, 0.05, t)).MidiCps,
+				(48 + m + TRand(0, 0.05, t)).midiCps,
 				TRand(1, 7, t)
 			) * e * 8
-		).Tanh / 8,
+		).tanh / 8,
 		1,
 		1,
 		8

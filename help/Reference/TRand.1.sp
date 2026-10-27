@@ -10,6 +10,6 @@ Rlpf(
 		TRand(321, 333, t),
 		0
 	),
-	(LfNoise1(2) * 4 + 100).MidiCps,
+	(LfNoise1(2) * 4 + 100).midiCps,
 	1
 ) * e

@@ -1,5 +1,5 @@
 /* Play */
-SinOsc([220, 220.5], 0) * -30.DbAmp
+SinOsc([220, 220.5], 0) * -30.dbAmp
 
 # Play
 

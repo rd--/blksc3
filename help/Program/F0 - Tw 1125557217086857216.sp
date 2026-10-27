@@ -7,9 +7,9 @@ let m = DegreeToKey(
 	12
 ) + 24;
 let o = VarSaw(
-	m.MidiCps,
+	m.midiCps,
 	0,
 	LfTri(b, 0) + 1 / 2
 ) * AmpComp(m, 440, 1 / 3) * LfTri(b, b) * b * 9;
 let s = Rlpf(o, Lag2(m, 1 / b % 1) * 3, 1);
-AllpassC(s, 0.3, 0.2 - b, 3).Splay2.Tanh
+AllpassC(s, 0.3, 0.2 - b, 3).Splay2.tanh

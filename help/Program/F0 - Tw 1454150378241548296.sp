@@ -4,22 +4,22 @@ let b = [1, 2, 3, 4, 5, 6, 7, 8] / 8;
 let z = [
   Rlpf(
 	  Impulse(2, 0),
-	  Select(LfSaw(x, 0) * 88 % 5, [0, 3, 5, 7, 10] + 51).MidiCps,
+	  Select(LfSaw(x, 0) * 88 % 5, [0, 3, 5, 7, 10] + 51).midiCps,
 	  x * 9
   ),
   Rlpf(
 	  Impulse(1, b),
-	  Select(0 % 5, [0, 3, 5, 7, 10] + 70).MidiCps,
+	  Select(0 % 5, [0, 3, 5, 7, 10] + 70).midiCps,
 	  x * 5
   ),
   Rlpf(
 	  Impulse(LfSaw(1 / 9, 0) + 1, b * 3),
-	  Select(5 ^ LfSaw(b / 9, 0) % 5, [0, 3, 5, 7, 10] + 82).MidiCps,
+	  Select(5 ^ LfSaw(b / 9, 0) % 5, [0, 3, 5, 7, 10] + 82).midiCps,
 	  x * 3
   ) / 8,
   Rlpf(
 	  Impulse(3, 0),
-	  Select(LfSaw(x * 2, 0.5) * 88 % 5, [0, 3, 5, 7, 10] + 63).MidiCps,
+	  Select(LfSaw(x * 2, 0.5) * 88 % 5, [0, 3, 5, 7, 10] + 63).midiCps,
 	  x * 7
   ) / 4
 ];

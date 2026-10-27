@@ -10,4 +10,4 @@ let n1 = Demand(
 	0,
 	Dseq(Infinity, [63 60 48 62 55 58])
 );
-LfSaw([n0, n1].MidiCps, 0) * 0.05
+LfSaw([n0, n1].midiCps, 0) * 0.05

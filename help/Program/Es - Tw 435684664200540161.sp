@@ -6,11 +6,11 @@ let f = { :i |
 	    (LfNoise2(0.1) * 10 + 40)
     );
     SinOsc(
-	    m.MidiCps,
+	    m.midiCps,
 	    0
     ) * (LfNoise2(1) * 0.01 + 0.01)
 };
-1:99.collect(f:/1).Splay2
+1:99.collect(f/1).Splay2
 
 # Annotation
 

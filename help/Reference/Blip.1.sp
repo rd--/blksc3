@@ -1,9 +1,9 @@
 /* Blip.2 ; https://github.com/cianoc/supercollider_fragments */
 let t = Impulse(6, 0);
 let o = Blip(
-	TRand(48, 72, t).MidiCps,
+	TRand(48, 72, t).midiCps,
 	TRand(1, 12, t)
-) * TRand(-0.5, 0.4, t).Max(0);
+) * TRand(-0.5, 0.4, t).max(0);
 let p = Pan2(
 	o,
 	TRand(-1, 1, t),

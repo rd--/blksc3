@@ -1,7 +1,7 @@
 /* Analog bubbles (Jmcc) #1 */
 CombC(
 	SinOsc(
-		MidiCps(
+		midiCps(
 			LfSaw(
 				0.4,
 				0

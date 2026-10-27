@@ -279,7 +279,7 @@ Blockly.JavaScript.forBlock['Sc_MantissaMask'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'MantissaMask', ['IN', 'BITS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_ModDif'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'ModDif', ['X', 'Y', 'MOD'], true);
+	return ugenCodeGen(Blockly, block, 'modularDistance', ['X', 'Y', 'MOD'], true);
 };
 Blockly.JavaScript.forBlock['Sc_MoogFF'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'MoogFf', ['IN', 'FREQ', 'GAIN', 'RESET'], true);

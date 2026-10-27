@@ -1,6 +1,6 @@
 /* EqPan2 */
 EqPan2(
-	PinkNoise() * 0.1 + (SinOsc(48.MidiCps, 0) * 0.05),
+	PinkNoise() * 0.1 + (SinOsc(48.midiCps, 0) * 0.05),
 	SinOsc(1, 0)
 )
 

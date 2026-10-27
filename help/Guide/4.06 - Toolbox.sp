@@ -1,7 +1,7 @@
 /* 4.X - Toolbox */
 let t = Dust([0.7 1.3]);
 LfTri(
-	TiRand(33, 99, t).MidiCps,
+	TiRand(33, 99, t).midiCps,
 	0
 ) * Decay2(t, 1 / 33, 2.3) * 0.1
 

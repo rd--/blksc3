@@ -1,5 +1,5 @@
 /* Guide, Help, Graphs */
-EqPan2(PinkNoise(), SinOsc(1 / 7, 0)) * (SinOsc(1 / 5, 3 / 2 * pi) * 0.5 + 1) * -32.DbAmp
+EqPan2(PinkNoise(), SinOsc(1 / 7, 0)) * (SinOsc(1 / 5, 3/2.pi) * 0.5 + 1) * -32.dbAmp
 
 # Guide, Help, Graphs
 

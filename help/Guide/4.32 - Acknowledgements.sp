@@ -1,6 +1,6 @@
 /* 4.X - Acknowledgements */
 0.4.LfSaw(0).*(24).+([8 7.23].LfSaw(0)
-.*(3).+(80)).MidiCps.SinOsc(0).*(0.04)
+.*(3).+(80)).midiCps.SinOsc(0).*(0.04)
 .CombN(0.2, 0.2, 4).*(0.1)
 
 # Annotation
