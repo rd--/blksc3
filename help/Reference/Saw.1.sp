@@ -8,4 +8,4 @@ let o = Saw(
 		f * TRand(0.975, 1.025, t)
 	]
 ).sum;
-(o * TRand(0.0, 0.5, t)).Clip2(0.75)
+(o * TRand(0.0, 0.5, t)).bilateralClip(0.75)

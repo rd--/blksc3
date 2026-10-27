@@ -1,7 +1,7 @@
 /* Freezer.1 */
 let sf = SfAcquireMono('CrotaleD6');
 let n = { :i :j |
-	LinLin(LfNoise2(0.1), -1, 1, i, j)
+	linLin(LfNoise2(0.1), -1, 1, i, j)
 };
 Freezer(
 	sf,

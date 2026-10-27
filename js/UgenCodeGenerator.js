@@ -252,7 +252,7 @@ Blockly.JavaScript.forBlock['Sc_Limiter'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'Limiter', ['IN', 'LEVEL', 'DUR'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LinExp'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LinExp', ['IN', 'SRCLO', 'SRCHI', 'DSTLO', 'DSTHI'], true);
+	return ugenCodeGen(Blockly, block, 'linExp', ['IN', 'SRCLO', 'SRCHI', 'DSTLO', 'DSTHI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LinPan2'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'LinPan2', ['IN', 'POS', 'LEVEL'], true);
@@ -531,7 +531,7 @@ Blockly.JavaScript.forBlock['Sc_KeyTimbre'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'KeyTimbre', ['VOICENUMBER'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LinLin'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LinLin', ['IN', 'SRCLO', 'SRCHI', 'DSTLO', 'DSTHI'], true);
+	return ugenCodeGen(Blockly, block, 'linLin', ['IN', 'SRCLO', 'SRCHI', 'DSTLO', 'DSTHI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LinSeg'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'LinSeg', ['GATE', 'COORD'], true);

@@ -3,7 +3,7 @@ VoiceWriter(1, 16) {
 	let tr = Impulse(Rand(0.15, 0.85), Rand(0, 1));
 	(
 		w: Trig(tr, 0.25),
-		p: Latch(LinLin(SinOsc(Rand(0.25, 1.5), 0), -1, 1, 0.15, 0.95), tr),
+		p: Latch(linLin(SinOsc(Rand(0.25, 1.5), 0), -1, 1, 0.15, 0.95), tr),
 		z: TRand(0.1, 0.2, tr)
 	)
 }.print
