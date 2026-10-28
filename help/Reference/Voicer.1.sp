@@ -1,9 +1,9 @@
 /* Voicer.1 */
 Voicer(1, 16) { :e |
-    let freq = (e.x * [25, LfNoise2(0.25) * 0.25 + 25] + 48).midiCps;
-    EqPan2(
-	    Rlpf(
-		    Saw(freq),
+    let freq = (e.x * [25, lfNoise2(0.25) * 0.25 + 25] + 48).midiCps;
+    eqPan2(
+	    rlpf(
+		    saw(freq),
 		    e.y + 0.75 * freq,
 		    e.y * 0.5
 	    ).sum,
@@ -27,9 +27,9 @@ The set of signals at each 𝔼 is:
 
 In this program the _w_, _x_, _y_, _z_ and _i_ signals are read.
 
-The ν (_frequency_) of a ◿ (_Saw_) oscillator is given by _x_.
-This frequency is scaled by _y_ to give the cutoff frequency of a ⋏⬔ (_Rlpf_) filter.
-The ⌖ (_pos_) input of a ⌖₂ (_EqPan2_) is given by _i_, and the × (_level_) by _z_.
+The ν (_frequency_) of a ◿ (_saw_) oscillator is given by _x_.
+This frequency is scaled by _y_ to give the cutoff frequency of a ⋏⬔ (_rlpf_) filter.
+The ⌖ (_pos_) input of a ⌖₂ (_eqPan2_) is given by _i_, and the × (_level_) by _z_.
 
 _x_ is scaled and offset to the range (48, 72),
 which in midi note numbers is the two octaves about middle C.

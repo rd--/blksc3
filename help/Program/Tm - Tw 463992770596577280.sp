@@ -1,8 +1,8 @@
 /* https://twitter.com/thormagnusson/status/463992770596577280 (tm) */
 let k = 9.to(28).atRandom;
 let f = { :x |
-    let e = LfNoise2(0.5) * Line(0, 0.1, Rand(0, 99)) / (x * 0.2);
-    SinOsc(30 * x + linLin(LfNoise2(0.1), -1, 1, -2, 2), 0) * e
+    let e = lfNoise2(0.5) * Line(0, 0.1, rand(0, 99)) / (x * 0.2);
+    sinOsc(30 * x + linLin(lfNoise2(0.1), -1, 1, -2, 2), 0) * e
 };
 { 1.to(k).collect(f/1).sum } ! 2
 

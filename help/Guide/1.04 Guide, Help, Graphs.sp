@@ -1,5 +1,5 @@
 /* Guide, Help, Graphs */
-EqPan2(PinkNoise(), SinOsc(1 / 7, 0)) * (SinOsc(1 / 5, 3/2.pi) * 0.5 + 1) * -32.dbAmp
+eqPan2(pinkNoise(), sinOsc(1 / 7, 0)) * (sinOsc(1 / 5, 3/2.pi) * 0.5 + 1) * -32.dbAmp
 
 # Guide, Help, Graphs
 
@@ -10,7 +10,7 @@ There is a _Guide_, of which this program is one section.
 The guide consists of very short programs, each with an explanatory text that appears in the _Notes_ area to the right of the workspace.
 
 There are _Help_ programs that illustrate individual blocks.
-Some blocks have multiple illustrations and the help programs have numerical suffixes to distinguish them, i.e. _SinOsc.1_ and _SinOsc.2_ &etc.
+Some blocks have multiple illustrations and the help programs have numerical suffixes to distinguish them, i.e. _sinOsc.1_ and _sinOsc.2_ &etc.
 
 There is a collection of _Graph_ programs translated from _SuperCollider_ programs by various authors.
 These are sometimes intricate and illustrate more complicated synthesis techniques and graph constructions.

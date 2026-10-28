@@ -1,19 +1,19 @@
-/* Blip.2 ; https://github.com/cianoc/supercollider_fragments */
-let t = Impulse(6, 0);
-let o = Blip(
-	TRand(48, 72, t).midiCps,
-	TRand(1, 12, t)
-) * TRand(-0.5, 0.4, t).max(0);
-let p = Pan2(
+/* blip.2 ; https://github.com/cianoc/supercollider_fragments */
+let t = impulse(6, 0);
+let o = blip(
+	tRand(48, 72, t).midiCps,
+	tRand(1, 12, t)
+) * tRand(-0.5, 0.4, t).max(0);
+let p = pan2(
 	o,
-	TRand(-1, 1, t),
-	Decay2(t, 0.01, 3) * 0.1
+	tRand(-1, 1, t),
+	decay2(t, 0.01, 3) * 0.1
 );
-p + CombC(p, 2, 4 / 6, 6)
+p + combC(p, 2, 4 / 6, 6)
 
-# Blip
+# blip
 
-- _Blip(freq, numharm)_
+- _blip(freq, numharm)_
 
 Band Limited ImPulse generator. All harmonics have equal amplitude.  This is the equivalent of 'buzz' in MusicN languages. _Warning_: This waveform in its raw form could be damaging to your ears at high amplitudes or for long periods.
 

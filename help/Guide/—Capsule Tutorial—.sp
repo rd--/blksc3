@@ -1,5 +1,5 @@
 /* Tutorial */
-PinkNoise() * 0.1
+pinkNoise() * 0.1
 
 # Annotation
 

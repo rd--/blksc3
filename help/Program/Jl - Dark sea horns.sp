@@ -1,18 +1,18 @@
 /* Dark sea horns (Jl) */
-let x = LocalIn(2, 0);
+let x = localIn(2, 0);
 let a = (
-	SinOsc(
+	sinOsc(
 		65,
-		x * LfNoise1(0.1) * 3
-	) * LfNoise1(3) * 6
-).Tanh;
+		x * lfNoise1(0.1) * 3
+	) * lfNoise1(3) * 6
+).tanh;
 9.timesRepeat {
-	a := AllpassL(
+	a := allpassL(
 		a,
 		0.3,
-		{ Rand(0, 0.2) + 0.1 } ! 2,
+		{ rand(0, 0.2) + 0.1 } ! 2,
 		5
 	)
 };
-a := a.Tanh;
-(a * 0.1) <! LocalOut(a)
+a := a.tanh;
+(a * 0.1) <! localOut(a)

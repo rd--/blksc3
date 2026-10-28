@@ -1,19 +1,19 @@
-/* TiRand.1.sl */
-let scale = [0 2 4 5 7 9 10 12].LocalBuf;
+/* tiRand.1.sl */
+let scale = [0 2 4 5 7 9 10 12].localBuf;
 { :tr |
 	{
-		let degree = TiRand(0, 7, tr);
-		let octave = TiRand(4, 7, tr);
+		let degree = tiRand(0, 7, tr);
+		let octave = tiRand(4, 7, tr);
 		let pitchClass = ClipIndex(scale, degree);
 		let mnn = (octave * 12) + pitchClass;
-		let numHarm = TiRand(1, 4, tr);
-		Blip(midiCps(mnn), numHarm) * 0.05
+		let numHarm = tiRand(1, 4, tr);
+		blip(midiCps(mnn), numHarm) * 0.05
 	} !^ 7
-}.OverlapTexture(4, 0.05, 2).Mix
+}.overlapTexture(4, 0.05, 2).mix
 
-# TiRand
+# tiRand
 
-- _TiRand(lo, hi, trig)_
+- _tiRand(lo, hi, trig)_
 
 Triggered integer random number generator.
 Generates a random integer value in uniform distribution from lo to hi each time the trig signal changes from nonpositive to positive values

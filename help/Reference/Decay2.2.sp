@@ -1,18 +1,18 @@
-/* Decay2 ; texture */
-OverlapTexture({ :tr |
-	let e = Decay2(
-		Impulse({ TRand(10, 13, tr) } ! 2, 0),
-		TRand(0.001, 0.01, tr),
-		TRand(0.005, 0.02, tr)
+/* decay2 ; texture */
+overlapTexture({ :tr |
+	let e = decay2(
+		impulse({ tRand(10, 13, tr) } ! 2, 0),
+		tRand(0.001, 0.01, tr),
+		tRand(0.005, 0.02, tr)
 	);
-	let a = SinOsc({ TRand(10, 13, tr) } ! 2, 0) * e * ({ TRand(4, 7, tr) } ! 2);
-	let o = SinOsc({ TRand(2220, 2227, Impulse(0.7, 0)) } ! 2, 0);
+	let a = sinOsc({ tRand(10, 13, tr) } ! 2, 0) * e * ({ tRand(4, 7, tr) } ! 2);
+	let o = sinOsc({ tRand(2220, 2227, impulse(0.7, 0)) } ! 2, 0);
 	o * a * 0.15
-}, 2, 4, 2).Mix
+}, 2, 4, 2).mix
 
-# Decay2
+# decay2
 
-- _Decay2(in, attackTime, decayTime)_
+- _decay2(in, attackTime, decayTime)_
 
 Exponential decay.
 
@@ -20,4 +20,4 @@ Exponential decay.
 - attackTime: 60 dB attack time in seconds.
 - decayTime: 60 dB decay time in seconds.
 
-_Decay_ has a very sharp attack and can produce clicks. _Decay2_ rounds off the attack by subtracting one Decay from another. _Decay2(in, attackTime, decayTime)_ is equivalent to _Decay(in, decayTime) - Decay(in, attackTime)_.
+_decay_ has a very sharp attack and can produce clicks. _decay2_ rounds off the attack by subtracting one decay from another. _decay2(in, attackTime, decayTime)_ is equivalent to _decay(in, decayTime) - decay(in, attackTime)_.

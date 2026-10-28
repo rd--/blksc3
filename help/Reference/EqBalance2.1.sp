@@ -1,10 +1,10 @@
-/* EqBalance2 */
-var o = SinOsc([440, 550], 0);
-EqBalance2(o.first, o.second, LfNoise1(4)) * 0.1
+/* eqBalance2 */
+var o = sinOsc([440, 550], 0);
+eqBalance2(o.first, o.second, lfNoise1(4)) * 0.1
 
-# EqBalance2
+# eqBalance2
 
-_EqBalance2_ is a stereo signal balancer.
+_eqBalance2_ is a stereo signal balancer.
 
 It places the _L_ (_left_) input in the left channel and the _R_ (_right_) input in the right channel.
 

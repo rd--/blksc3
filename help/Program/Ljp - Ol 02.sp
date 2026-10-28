@@ -1,11 +1,11 @@
 /* Nostalgic sci-fi music (Lpj, No.2) ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html */
-CombC(
-	SinOsc(
-		LfNoise2(
+combC(
+	sinOsc(
+		lfNoise2(
 			1 # 4 * 0.1
 		) * 440 + ([1 2] * 440),
 		0
-	).Sum * 0.01,
+	).sum * 0.01,
 	0.2,
 	[0.13 0.2],
 	15

@@ -1,13 +1,13 @@
-/* CombC.2.sl ; Event control */
-let lfo = SinOsc(0.5, 0);
+/* combC.2.sl ; Event control */
+let lfo = sinOsc(0.5, 0);
 let osc = Voicer(1, 16) { :e |
-	SinOsc(e.p.UnitCps, 0) * lfo * e.w * e.z
+	sinOsc(e.p.UnitCps, 0) * lfo * e.w * e.z
 };
-CombC(osc.Splay2, 0.5, 0.2, 3)
+combC(osc.splay2, 0.5, 0.2, 3)
 
-# CombC
+# combC
 
-ᚊ (_CombC_) is a comb format delay line with cubic interpolation.
+ᚊ (_combC_) is a comb format delay line with cubic interpolation.
 
 The ⎵ (_delay_) and ↘ (_decay_) times are both in seconds.
 

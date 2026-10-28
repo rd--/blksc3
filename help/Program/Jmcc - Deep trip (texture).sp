@@ -1,8 +1,8 @@
 /* deep trip (jmcc) #9 ; graph rewrite */
 { :tr |
-    let f = (LfNoise1(TRand(0, 0.3, tr)) * 60 + 70).midiCps;
-    let a = LfNoise2(f * TRand(0, 0.5, tr)) * (LfNoise1(TRand(0, 8, tr)) * SinOsc(TRand(0, 40, tr), 0) * 0.1).max(0);
-    let s = Pan2(SinOsc(f, 0) *  a, LfNoise1(TRand(0, 5, tr)), 1);
-    let c = { CombC(s, 0.5, { TRand(0, 0.2, tr) + 0.3 } ! 2, 20) };
+    let f = (lfNoise1(tRand(0, 0.3, tr)) * 60 + 70).midiCps;
+    let a = lfNoise2(f * tRand(0, 0.5, tr)) * (lfNoise1(tRand(0, 8, tr)) * sinOsc(tRand(0, 40, tr), 0) * 0.1).max(0);
+    let s = pan2(sinOsc(f, 0) *  a, lfNoise1(tRand(0, 5, tr)), 1);
+    let c = { combC(s, 0.5, { tRand(0, 0.2, tr) + 0.3 } ! 2, 20) };
     s + (c/0 !+ 2)
-}.OverlapTexture(12, 4, 4).Mix
+}.overlapTexture(12, 4, 4).mix

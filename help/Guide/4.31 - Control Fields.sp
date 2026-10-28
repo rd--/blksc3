@@ -1,5 +1,5 @@
 /* 4.X - Control Fields */
-SinOsc(
+sinOsc(
 	[
 		NamedControl('α', 440),
 		NamedControl('β', 443)

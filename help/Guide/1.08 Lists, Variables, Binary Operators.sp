@@ -1,5 +1,5 @@
 /* Lists, Variables, Binary Operators */
-let o = SinOsc(440, 0);
+let o = sinOsc(440, 0);
 let a = [o o];
 a * 0.1
 

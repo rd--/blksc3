@@ -1,4 +1,4 @@
-/* Blip ; Voicer */
+/* blip ; Voicer */
 Voicer(1, 16) { :e |
-    Blip(e.p.UnitCps, e.y * 9) * e.w * e.z
-}.Splay2
+    blip(e.p.UnitCps, e.y * 9) * e.w * e.z
+}.splay2

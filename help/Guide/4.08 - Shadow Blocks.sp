@@ -1,6 +1,6 @@
 /* 4.X - Shadow Blocks */
-Resonz(
-	PinkNoise(),
+resonz(
+	pinkNoise(),
 	[333 999],
 	[0.01 0.03]
 )

@@ -1,5 +1,5 @@
 /* Help files */
-PinkNoise() * 0.1
+pinkNoise() * 0.1
 
 # Help Files
 

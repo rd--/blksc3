@@ -1,9 +1,9 @@
 /* 4.X - Assignment */
-let p = { WhiteNoise() * 0.02 } ! 2;
-p + CombC(
+let p = { whiteNoise() * 0.02 } ! 2;
+p + combC(
 	p,
 	0.1,
-	LfNoise1(10) * 0.08 + 0.08,
+	lfNoise1(10) * 0.08 + 0.08,
 	-10000
 )
 

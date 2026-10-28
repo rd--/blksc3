@@ -1,11 +1,11 @@
 /* 4.X - Text Naming Schema */
-SinOsc(
-	Latch(
-		WhiteNoise() * 0.5 + 0.5,
-		Impulse([2 1 0.2 0.142], 0)
+sinOsc(
+	latch(
+		whiteNoise() * 0.5 + 0.5,
+		impulse([2 1 0.2 0.142], 0)
 	) * 222 + 111,
 	0
-).Splay * 0.1
+).splay * 0.1
 
 # Annotation
 

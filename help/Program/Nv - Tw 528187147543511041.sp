@@ -5,13 +5,13 @@ let x = { :j |
 			1 / 4 ^ (i - 1)
 			*
 			(
-				LfNoise0(0.25 ^ (j - 1) / 8) > 0
+				lfNoise0(0.25 ^ (j - 1) / 8) > 0
 				-
-				LfPulse(2 ^ (i - 1) / 8, 0, 0.5)
+				lfPulse(2 ^ (i - 1) / 8, 0, 0.5)
 			).abs
 		)
 	};
 	let f = 32 ^ 1.to(10).collect(y/1).sum * 30;
-	Pan2(Rlpf(Pulse(f, 0.3), Lag(f.signedSqrt, 2) * 30, 0.5), 0, 0.2)
+	pan2(rlpf(pulse(f, 0.3), lag(f.signedSqrt, 2) * 30, 0.5), 0, 0.2)
 };
 1.to(4).collect(x/1).sum * 0.25

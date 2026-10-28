@@ -1,10 +1,10 @@
 /* 4.X - Status Area */
-let x = { WhiteNoise() * 0.05 } ! 2;
+let x = { whiteNoise() * 0.05 } ! 2;
 {
-	Resonz(
+	resonz(
 		x,
-		LfNoise2(0.33) * 333 + 777,
-		LfNoise2(0.77) * 0.07 + 0.09
+		lfNoise2(0.33) * 333 + 777,
+		lfNoise2(0.77) * 0.07 + 0.09
 	)
 } !+ 10
 

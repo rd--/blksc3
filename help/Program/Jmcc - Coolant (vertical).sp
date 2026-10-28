@@ -1,10 +1,10 @@
 /* Coolant (Jmcc) */
-let o = OnePole(BrownNoise() * 0.002, 0.95);
-OverlapTexture({ :tr |
+let o = onePole(brownNoise() * 0.002, 0.95);
+overlapTexture({ :tr |
 	{
-		Ringz(o, TRand(40, 2040, tr), 1) * 0.2
+		ringz(o, tRand(40, 2040, tr), 1) * 0.2
 	} !^ 10
-}, 6, 6, 3).Mix
+}, 6, 6, 3).mix
 
 # Notes
 

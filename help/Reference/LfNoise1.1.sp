@@ -1,11 +1,11 @@
-/* LfNoise1.1 */
-var o = SinOsc((LfNoise1(0.5) * 600 + (LfSaw(1.5, 0) * 50 + 500)).Abs, 0) * 0.1;
-var d = CombC(o, 3.0, [1.35, 0.7], 6);
-Pan2(o, 0, 1) + d
+/* lfNoise1.1 */
+var o = sinOsc((lfNoise1(0.5) * 600 + (lfSaw(1.5, 0) * 50 + 500)).Abs, 0) * 0.1;
+var d = combC(o, 3.0, [1.35, 0.7], 6);
+pan2(o, 0, 1) + d
 
-# LfNoise1
+# lfNoise1
 
-- _LfNoise1(freq)_
+- _lfNoise1(freq)_
 
 Ramp noise.
 Generates linearly interpolated random values at a rate given by the nearest integer division of the sample rate by the freq argument.

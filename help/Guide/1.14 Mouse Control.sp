@@ -1,15 +1,15 @@
 /* External Control, Mouse */
-let x = MouseX(20, 22000, 0, [0.005, 0.025]);
-let y = MouseY(20, 22000, 0, [0.005, 0.075]);
+let x = mouseX(20, 22000, 0, [0.005, 0.025]);
+let y = mouseY(20, 22000, 0, [0.005, 0.075]);
 ({
-  let a = SinOsc(x + LfNoise0([5, 9]), 0);
-  let b = SinOsc(y, 0);
+  let a = sinOsc(x + lfNoise0([5, 9]), 0);
+  let b = sinOsc(y, 0);
   a * b
 } ! 3).sum * 0.15
 
 # External Control, Mouse
 
-SuperCollider includes three unit generators to read the mouse state as a control signal, _MouseX_, _MouseY_ and _MouseButton_.
+SuperCollider includes three unit generators to read the mouse state as a control signal, _mouseX_, _mouseY_ and _mouseButton_.
 
 These unit generators do not work in the web assembly variant of the SuperCollider synthesiser.
 Instead the mouse controls are implemented in terms of _Pointer_ pseudo unit-generators.

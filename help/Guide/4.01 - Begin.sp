@@ -1,8 +1,8 @@
 /* 4.X - Begin */
 {
-	Hpf(
-		GreyNoise() * 0.1,
-		LfNoise2(3) * 6666 + 9999
+	hpf(
+		greyNoise() * 0.1,
+		lfNoise2(3) * 6666 + 9999
 	)
 } ! 2
 

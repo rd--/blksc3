@@ -1,14 +1,14 @@
-/* Impulse.2 */
-let t = Impulse(1 / 3, 0);
-let m = { Rand(1, 3) } ! 2;
-let env = Decay2(t, 0.01 * m, 1 * m) / (1 .. 6);
-Splay2(SinOsc([60, 64, 67, 71, 74, 78].midiCps, 0) * env) * 0.1
+/* impulse.2 */
+let t = impulse(1 / 3, 0);
+let m = { rand(1, 3) } ! 2;
+let env = decay2(t, 0.01 * m, 1 * m) / (1 .. 6);
+splay2(sinOsc([60, 64, 67, 71, 74, 78].midiCps, 0) * env) * 0.1
 
-# Impulse
+# impulse
 
-- _Impulse(freq, phase)_
+- _impulse(freq, phase)_
 
-Impulse oscillator.
+impulse oscillator.
 Outputs non band limited single sample impulses.
 
 - freq: frequency in Hertz

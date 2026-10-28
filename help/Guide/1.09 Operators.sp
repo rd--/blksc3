@@ -1,10 +1,10 @@
 /* Operators */
 let k = 12;
 let mk = { :f |
-    let a = { LfNoise2(0.25) * 0.05 } ! k;
-    Splay2(SinOsc(f, 0).tanh * a)
+    let a = { lfNoise2(0.25) * 0.05 } ! k;
+    splay2(sinOsc(f, 0).tanh * a)
 };
-let m = { IRand(0, 12) } ! k + 48;
+let m = { iRand(0, 12) } ! k + 48;
 [m, m.reverse].collect({ :x | mk(x.midiCps) }).sum
 
 # Operators

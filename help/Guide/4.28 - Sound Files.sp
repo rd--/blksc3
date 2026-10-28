@@ -1,14 +1,14 @@
 /* 4.X - Sound Files */
-let [b] = SfAcquire('Floating', 1, [1]);
-let t = MouseY(2, 200, 1, 0.2);
-TGrains(
+let [b] = sfAcquire('Floating', 1, [1]);
+let t = mouseY(2, 200, 1, 0.2);
+tGrains(
 	2,
-	Impulse(t, 0),
+	impulse(t, 0),
 	b,
-	Dseq(Infinity, [10 1 1 0.5 0.5 0.2 0.1]),
-	MouseX(0, SfDuration([b]), 0, 0.2),
+	dseq(Infinity, [10 1 1 0.5 0.5 0.2 0.1]),
+	mouseX(0, sfDuration([b]), 0, 0.2),
 	4 / t,
-	Dseq(Infinity, [-1, 1]),
+	dseq(Infinity, [-1, 1]),
 	0.1, 4
 )
 

@@ -1,8 +1,8 @@
 /* 4.X - Colour Schemas */
-SinOsc(
-	Latch(
-		SinOsc(12.3, 0),
-		Impulse([9.9 11.1], 0)
+sinOsc(
+	latch(
+		sinOsc(12.3, 0),
+		impulse([9.9 11.1], 0)
 	) * 234 + 345,
 	0
 ) * 0.1

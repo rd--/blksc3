@@ -1,14 +1,14 @@
-/* SfRead ; phasor as phase input */
-let sf = SfAcquireStereo('HarpA4');
+/* sfRead ; phasor as phase input */
+let sf = sfAcquireStereo('HarpA4');
 {
-	let tr = Impulse(2 ^ Rand(1, 3) / (SfDuration(sf) * 4), 0).kr;
-	let mnn = TiRand(-2, 0, tr) * 12 + TChoose(tr, [0 2.1 4.9 7 9.2]);
-	let rt = mnn.MidiRatio * SfRateScale(sf);
-	let ph = Phasor(tr, rt, 0, SfFrames(sf), 0);
-	SfRead(sf, ph, 0, 2)
+	let tr = impulse(2 ^ rand(1, 3) / (sfDuration(sf) * 4), 0).kr;
+	let mnn = tiRand(-2, 0, tr) * 12 + tChoose(tr, [0 2.1 4.9 7 9.2]);
+	let rt = mnn.MidiRatio * sfRateScale(sf);
+	let ph = phasor(tr, rt, 0, SfFrames(sf), 0);
+	sfRead(sf, ph, 0, 2)
 } !+ 8 * 0.1
 
-# SfRead
+# sfRead
 
 ☖☼ (_SfAcquire_) returns a list of _buffer_ objects.
 Buffers are lists of floating point values with an associated channel count, frame count, and sample rate.
@@ -33,5 +33,5 @@ The _Eval_ command _evaluates_ the program,
 and therefore starts the process of fetching the sound file and preparing the buffer,
 but does not _Play_ the program.
 
-In this program a ϕ (_Phasor_) at the ϕ (_phase_) input of ☖↑ (_SfRead_) determines the pitch of the sound file playback,
+In this program a ϕ (_phasor_) at the ϕ (_phase_) input of ☖↑ (_sfRead_) determines the pitch of the sound file playback,
 there are parallel programs for each of eight parts.

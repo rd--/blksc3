@@ -6,604 +6,604 @@ import { ugenCodeGen } from './CodeGenerator.js'
 export function initCodeGenUgen(Blockly) {
 
 Blockly.JavaScript.forBlock['Sc_AllpassC'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'AllpassC', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'allpassC', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_AllpassL'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'AllpassL', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'allpassL', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_AmpComp'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'AmpComp', ['FREQ', 'ROOT', 'EXP'], true);
+	return ugenCodeGen(Blockly, block, 'ampComp', ['FREQ', 'ROOT', 'EXP'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Amplitude'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Amplitude', ['IN', 'ATTACKTIME', 'RELEASETIME'], true);
+	return ugenCodeGen(Blockly, block, 'amplitude', ['IN', 'ATTACKTIME', 'RELEASETIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BBandPass'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'BBandPass', ['IN', 'FREQ', 'BW'], true);
+	return ugenCodeGen(Blockly, block, 'bBandPass', ['IN', 'FREQ', 'BW'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BBandStop'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'BBandStop', ['IN', 'FREQ', 'BW'], true);
+	return ugenCodeGen(Blockly, block, 'bBandStop', ['IN', 'FREQ', 'BW'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BLowPass'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'BLowPass', ['IN', 'FREQ', 'RQ'], true);
+	return ugenCodeGen(Blockly, block, 'bLowPass', ['IN', 'FREQ', 'RQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BPF'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Bpf', ['IN', 'FREQ', 'RQ'], true);
+	return ugenCodeGen(Blockly, block, 'bpf', ['IN', 'FREQ', 'RQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BPZ2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Bpz2', ['IN'], true);
+	return ugenCodeGen(Blockly, block, 'bpz2', ['IN'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BRF'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Brf', ['IN', 'FREQ', 'RQ'], true);
+	return ugenCodeGen(Blockly, block, 'brf', ['IN', 'FREQ', 'RQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_EqBalance2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'EqBalance2', ['LEFT', 'RIGHT', 'POS'], true);
+	return ugenCodeGen(Blockly, block, 'eqBalance2', ['LEFT', 'RIGHT', 'POS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Blip'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Blip', ['FREQ', 'NUMHARM'], true);
+	return ugenCodeGen(Blockly, block, 'blip', ['FREQ', 'NUMHARM'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BrownNoise'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'BrownNoise', [], true);
+	return ugenCodeGen(Blockly, block, 'brownNoise', [], true);
 };
 Blockly.JavaScript.forBlock['Sc_BufDur'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'BufDur', ['BUFNUM'], true);
+	return ugenCodeGen(Blockly, block, 'bufDur', ['BUFNUM'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BufFrames'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'BufFrames', ['BUFNUM'], true);
+	return ugenCodeGen(Blockly, block, 'bufFrames', ['BUFNUM'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BufRateScale'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'BufRateScale', ['BUFNUM'], true);
+	return ugenCodeGen(Blockly, block, 'bufRateScale', ['BUFNUM'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BufRd'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'BufRd', ['NUMCHANNELS', 'BUFNUM', 'PHASE', 'LOOP', 'INTERPOLATION'], true);
+	return ugenCodeGen(Blockly, block, 'bufRd', ['NUMCHANNELS', 'BUFNUM', 'PHASE', 'LOOP', 'INTERPOLATION'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Clip'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Clip', ['IN', 'LO', 'HI'], true);
-};
-Blockly.JavaScript.forBlock['Sc_ClipIndex'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'ClipIndex', ['BUFNUM', 'IN'], true);
+	return ugenCodeGen(Blockly, block, 'clip', ['IN', 'LO', 'HI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_ClipNoise'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'ClipNoise', [], true);
+	return ugenCodeGen(Blockly, block, 'clipNoise', [], true);
 };
 Blockly.JavaScript.forBlock['Sc_CombC'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'CombC', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'combC', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_CombL'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'CombL', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'combL', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_CombN'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'CombN', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'combN', ['IN', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_ControlIn'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'ControlIn', ['NUMCHANNELS', 'BUS'], true);
+	return ugenCodeGen(Blockly, block, 'controlIn', ['NUMCHANNELS', 'BUS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_ControlOut'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'ControlOut', ['BUS', 'CHANNELSLIST'], false);
+	return ugenCodeGen(Blockly, block, 'controlOut', ['BUS', 'CHANNELSLIST'], false);
 };
 Blockly.JavaScript.forBlock['Sc_Crackle'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Crackle', ['CHAOSPARAM'], true);
+	return ugenCodeGen(Blockly, block, 'crackle', ['CHAOSPARAM'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Decay'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Decay', ['IN', 'DECAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'decay', ['IN', 'DECAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Decay2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Decay2', ['IN', 'ATTACKTIME', 'DECAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'decay2', ['IN', 'ATTACKTIME', 'DECAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_DegreeToKey'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'DegreeToKey', ['BUFNUM', 'IN', 'OCTAVE'], true);
+	return ugenCodeGen(Blockly, block, 'degreeToKey', ['BUFNUM', 'IN', 'OCTAVE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_DelayC'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'DelayC', ['IN', 'MAXDELAYTIME', 'DELAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'delayC', ['IN', 'MAXDELAYTIME', 'DELAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_DelayL'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'DelayL', ['IN', 'MAXDELAYTIME', 'DELAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'delayL', ['IN', 'MAXDELAYTIME', 'DELAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_DelayN'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'DelayN', ['IN', 'MAXDELAYTIME', 'DELAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'delayN', ['IN', 'MAXDELAYTIME', 'DELAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Dust'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Dust', ['DENSITY'], true);
+	return ugenCodeGen(Blockly, block, 'dust', ['DENSITY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Dust2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Dust2', ['DENSITY'], true);
+	return ugenCodeGen(Blockly, block, 'dust2', ['DENSITY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_EqPan2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'EqPan2', ['IN', 'POS'], true);
+	return ugenCodeGen(Blockly, block, 'eqPan2', ['IN', 'POS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_ExpRand'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'ExpRand', ['LO', 'HI'], true);
+	return ugenCodeGen(Blockly, block, 'expRand', ['LO', 'HI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_FBSineC'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'FbSineC', ['FREQ', 'IM', 'FB', 'A', 'C', 'XI', 'YI'], true);
+	return ugenCodeGen(Blockly, block, 'fbSineC', ['FREQ', 'IM', 'FB', 'A', 'C', 'XI', 'YI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_FBSineL'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'FbSineL', ['FREQ', 'IM', 'FB', 'A', 'C', 'XI', 'YI'], true);
+	return ugenCodeGen(Blockly, block, 'fbSineL', ['FREQ', 'IM', 'FB', 'A', 'C', 'XI', 'YI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_FFT'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Fft', ['BUFFER', 'IN', 'HOP', 'WINTYPE', 'ACTIVE', 'WINSIZE'], true);
+	return ugenCodeGen(Blockly, block, 'fft', ['BUFFER', 'IN', 'HOP', 'WINTYPE', 'ACTIVE', 'WINSIZE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Fold'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Fold', ['IN', 'LO', 'HI'], true);
+	return ugenCodeGen(Blockly, block, 'fold', ['IN', 'LO', 'HI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Formant'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Formant', ['FUNDFREQ', 'FORMFREQ', 'BWFREQ'], true);
+	return ugenCodeGen(Blockly, block, 'formant', ['FUNDFREQ', 'FORMFREQ', 'BWFREQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Formlet'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Formlet', ['IN', 'FREQ', 'ATTACKTIME', 'DECAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'formlet', ['IN', 'FREQ', 'ATTACKTIME', 'DECAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_FreeVerb'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'FreeVerb', ['IN', 'MIX', 'ROOM', 'DAMP'], true);
+	return ugenCodeGen(Blockly, block, 'freeVerb', ['IN', 'MIX', 'ROOM', 'DAMP'], true);
 };
 Blockly.JavaScript.forBlock['Sc_FreeVerb2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'FreeVerb2', ['IN', 'IN2', 'MIX', 'ROOM', 'DAMP'], true);
+	return ugenCodeGen(Blockly, block, 'freeVerb2', ['IN', 'IN2', 'MIX', 'ROOM', 'DAMP'], true);
 };
 Blockly.JavaScript.forBlock['Sc_FreqShift'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'FreqShift', ['IN', 'FREQ', 'PHASE'], true);
+	return ugenCodeGen(Blockly, block, 'freqShift', ['IN', 'FREQ', 'PHASE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_GVerb'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'GVerb', ['IN', 'ROOMSIZE', 'REVTIME', 'DAMPING', 'INPUTBW', 'SPREAD', 'DRYLEVEL', 'EARLYREFLEVEL', 'TAILLEVEL', 'MAXROOMSIZE'], true);
+	return ugenCodeGen(Blockly, block, 'gVerb', ['IN', 'ROOMSIZE', 'REVTIME', 'DAMPING', 'INPUTBW', 'SPREAD', 'DRYLEVEL', 'EARLYREFLEVEL', 'TAILLEVEL', 'MAXROOMSIZE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Gendy1'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Gendy1', ['AMPDIST', 'DURDIST', 'ADPARAM', 'DDPARAM', 'MINFREQ', 'MAXFREQ', 'AMPSCALE', 'DURSCALE', 'INITCPS', 'KNUM'], true);
+	return ugenCodeGen(Blockly, block, 'gendy1', ['AMPDIST', 'DURDIST', 'ADPARAM', 'DDPARAM', 'MINFREQ', 'MAXFREQ', 'AMPSCALE', 'DURSCALE', 'INITCPS', 'KNUM'], true);
 };
 Blockly.JavaScript.forBlock['Sc_GrainFM'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'GrainFm', ['NUMCHANNELS', 'TRIGGER', 'DUR', 'CARFREQ', 'MODFREQ', 'INDEX', 'PAN', 'ENVBUFNUM', 'MAXGRAINS'], true);
+	return ugenCodeGen(Blockly, block, 'grainFm', ['NUMCHANNELS', 'TRIGGER', 'DUR', 'CARFREQ', 'MODFREQ', 'INDEX', 'PAN', 'ENVBUFNUM', 'MAXGRAINS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_GrainSin'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'GrainSin', ['NUMCHANNELS', 'TRIGGER', 'DUR', 'FREQ', 'PAN', 'ENVBUFNUM', 'MAXGRAINS'], true);
+	return ugenCodeGen(Blockly, block, 'grainSin', ['NUMCHANNELS', 'TRIGGER', 'DUR', 'FREQ', 'PAN', 'ENVBUFNUM', 'MAXGRAINS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_GreyNoise'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'GreyNoise', [], true);
+	return ugenCodeGen(Blockly, block, 'greyNoise', [], true);
 };
 Blockly.JavaScript.forBlock['Sc_HPF'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Hpf', ['IN', 'FREQ'], true);
+	return ugenCodeGen(Blockly, block, 'hpf', ['IN', 'FREQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_HPZ1'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Hpz1', ['IN'], true);
+	return ugenCodeGen(Blockly, block, 'hpz1', ['IN'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Hasher'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Hasher', ['IN'], true);
+	return ugenCodeGen(Blockly, block, 'hasher', ['IN'], true);
 };
 Blockly.JavaScript.forBlock['Sc_HenonC'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'HenonC', ['FREQ', 'A', 'B', 'X0', 'X1'], true);
+	return ugenCodeGen(Blockly, block, 'henonC', ['FREQ', 'A', 'B', 'X0', 'X1'], true);
 };
 Blockly.JavaScript.forBlock['Sc_HenonL'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'HenonL', ['FREQ', 'A', 'B', 'X0', 'X1'], true);
+	return ugenCodeGen(Blockly, block, 'henonL', ['FREQ', 'A', 'B', 'X0', 'X1'], true);
 };
 Blockly.JavaScript.forBlock['Sc_IFFT'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Ifft', ['BUFFER', 'WINTYPE', 'WINSIZE'], true);
+	return ugenCodeGen(Blockly, block, 'ifft', ['BUFFER', 'WINTYPE', 'WINSIZE'], true);
+};
+Blockly.JavaScript.forBlock['Sc_Index'] = function(block) {
+	return ugenCodeGen(Blockly, block, 'bufIndexClip', ['BUFNUM', 'IN'], true);
 };
 Blockly.JavaScript.forBlock['Sc_IRand'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'IRand', ['LO', 'HI'], true);
+	return ugenCodeGen(Blockly, block, 'iRand', ['LO', 'HI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Impulse'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Impulse', ['FREQ', 'PHASE'], true);
+	return ugenCodeGen(Blockly, block, 'impulse', ['FREQ', 'PHASE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_K2A'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'K2A', ['IN'], true);
+	return ugenCodeGen(Blockly, block, 'k2A', ['IN'], true);
 };
 Blockly.JavaScript.forBlock['Sc_KeyState'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'KeyState', ['KEYCODE', 'MINVAL', 'MAXVAL', 'LAG'], true);
+	return ugenCodeGen(Blockly, block, 'keyState', ['KEYCODE', 'MINVAL', 'MAXVAL', 'LAG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFClipNoise'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfClipNoise', ['FREQ'], true);
+	return ugenCodeGen(Blockly, block, 'lfClipNoise', ['FREQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFCub'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfCub', ['FREQ', 'IPHASE'], true);
+	return ugenCodeGen(Blockly, block, 'lfCub', ['FREQ', 'IPHASE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFDNoise1'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfdNoise1', ['FREQ'], true);
+	return ugenCodeGen(Blockly, block, 'lfdNoise1', ['FREQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFDNoise3'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfdNoise3', ['FREQ'], true);
+	return ugenCodeGen(Blockly, block, 'lfdNoise3', ['FREQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFGauss'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfGauss', ['DURATION', 'WIDTH', 'IPHASE', 'LOOP', 'DONEACTION'], true);
+	return ugenCodeGen(Blockly, block, 'lfGauss', ['DURATION', 'WIDTH', 'IPHASE', 'LOOP', 'DONEACTION'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFNoise0'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfNoise0', ['FREQ'], true);
+	return ugenCodeGen(Blockly, block, 'lfNoise0', ['FREQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFNoise1'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfNoise1', ['FREQ'], true);
+	return ugenCodeGen(Blockly, block, 'lfNoise1', ['FREQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFNoise2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfNoise2', ['FREQ'], true);
+	return ugenCodeGen(Blockly, block, 'lfNoise2', ['FREQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFPar'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfPar', ['FREQ', 'IPHASE'], true);
+	return ugenCodeGen(Blockly, block, 'lfPar', ['FREQ', 'IPHASE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFPulse'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfPulse', ['FREQ', 'IPHASE', 'WIDTH'], true);
+	return ugenCodeGen(Blockly, block, 'lfPulse', ['FREQ', 'IPHASE', 'WIDTH'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFSaw'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfSaw', ['FREQ', 'IPHASE'], true);
+	return ugenCodeGen(Blockly, block, 'lfSaw', ['FREQ', 'IPHASE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LFTri'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LfTri', ['FREQ', 'IPHASE'], true);
+	return ugenCodeGen(Blockly, block, 'lfTri', ['FREQ', 'IPHASE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LPF'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Lpf', ['IN', 'FREQ'], true);
+	return ugenCodeGen(Blockly, block, 'lpf', ['IN', 'FREQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LPZ1'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Lpz1', ['IN'], true);
+	return ugenCodeGen(Blockly, block, 'lpz1', ['IN'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Lag'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Lag', ['IN', 'LAGTIME'], true);
+	return ugenCodeGen(Blockly, block, 'lag', ['IN', 'LAGTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Lag2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Lag2', ['IN', 'LAGTIME'], true);
+	return ugenCodeGen(Blockly, block, 'lag2', ['IN', 'LAGTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Lag3'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Lag3', ['IN', 'LAGTIME'], true);
+	return ugenCodeGen(Blockly, block, 'lag3', ['IN', 'LAGTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Lag3UD'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Lag3Ud', ['IN', 'LAGTIMEU', 'LAGTIMED'], true);
+	return ugenCodeGen(Blockly, block, 'lag3Ud', ['IN', 'LAGTIMEU', 'LAGTIMED'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LagUD'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LagUd', ['IN', 'LAGTIMEU', 'LAGTIMED'], true);
+	return ugenCodeGen(Blockly, block, 'lagUd', ['IN', 'LAGTIMEU', 'LAGTIMED'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Latch'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Latch', ['IN', 'TRIG'], true);
+	return ugenCodeGen(Blockly, block, 'latch', ['IN', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LeakDC'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LeakDc', ['IN', 'COEF'], true);
+	return ugenCodeGen(Blockly, block, 'leakDc', ['IN', 'COEF'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Limiter'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Limiter', ['IN', 'LEVEL', 'DUR'], true);
+	return ugenCodeGen(Blockly, block, 'limiter', ['IN', 'LEVEL', 'DUR'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LinExp'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'linExp', ['IN', 'SRCLO', 'SRCHI', 'DSTLO', 'DSTHI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LinPan2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LinPan2', ['IN', 'POS', 'LEVEL'], true);
+	return ugenCodeGen(Blockly, block, 'linPan2', ['IN', 'POS', 'LEVEL'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LinRand'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LinRand', ['LO', 'HI', 'MINMAX'], true);
+	return ugenCodeGen(Blockly, block, 'linRand', ['LO', 'HI', 'MINMAX'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LinXFade2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LinXFade2', ['INA', 'INB', 'PAN'], true);
+	return ugenCodeGen(Blockly, block, 'linXFade2', ['INA', 'INB', 'PAN'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Linen'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Linen', ['GATE', 'ATTACKTIME', 'SUSLEVEL', 'RELEASETIME', 'DONEACTION'], true);
+	return ugenCodeGen(Blockly, block, 'linen', ['GATE', 'ATTACKTIME', 'SUSLEVEL', 'RELEASETIME', 'DONEACTION'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LocalIn'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LocalIn', ['NUMCHANNELS', 'DEFAULT'], true);
+	return ugenCodeGen(Blockly, block, 'localIn', ['NUMCHANNELS', 'DEFAULT'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LocalOut'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LocalOut', ['CHANNELSARRAY'], false);
+	return ugenCodeGen(Blockly, block, 'localOut', ['CHANNELSARRAY'], false);
 };
 Blockly.JavaScript.forBlock['Sc_LorenzL'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LorenzL', ['FREQ', 'S', 'R', 'B', 'H', 'XI', 'YI', 'ZI'], true);
+	return ugenCodeGen(Blockly, block, 'lorenzL', ['FREQ', 'S', 'R', 'B', 'H', 'XI', 'YI', 'ZI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_MantissaMask'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'MantissaMask', ['IN', 'BITS'], true);
+	return ugenCodeGen(Blockly, block, 'mantissaMask', ['IN', 'BITS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_ModDif'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'modularDistance', ['X', 'Y', 'MOD'], true);
 };
 Blockly.JavaScript.forBlock['Sc_MoogFF'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'MoogFf', ['IN', 'FREQ', 'GAIN', 'RESET'], true);
+	return ugenCodeGen(Blockly, block, 'moogFf', ['IN', 'FREQ', 'GAIN', 'RESET'], true);
 };
 Blockly.JavaScript.forBlock['Sc_MouseButton'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'MouseButton', ['MINVAL', 'MAXVAL', 'LAG'], true);
+	return ugenCodeGen(Blockly, block, 'mouseButton', ['MINVAL', 'MAXVAL', 'LAG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_MouseX'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'MouseX', ['MINVAL', 'MAXVAL', 'WARP', 'LAG'], true);
+	return ugenCodeGen(Blockly, block, 'mouseX', ['MINVAL', 'MAXVAL', 'WARP', 'LAG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_MouseY'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'MouseY', ['MINVAL', 'MAXVAL', 'WARP', 'LAG'], true);
+	return ugenCodeGen(Blockly, block, 'mouseY', ['MINVAL', 'MAXVAL', 'WARP', 'LAG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_NRand'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'NRand', ['LO', 'HI', 'N'], true);
+	return ugenCodeGen(Blockly, block, 'nRand', ['LO', 'HI', 'N'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Normalizer'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Normalizer', ['IN', 'LEVEL', 'DUR'], true);
+	return ugenCodeGen(Blockly, block, 'normalizer', ['IN', 'LEVEL', 'DUR'], true);
 };
 Blockly.JavaScript.forBlock['Sc_OnePole'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'OnePole', ['IN', 'COEF'], true);
+	return ugenCodeGen(Blockly, block, 'onePole', ['IN', 'COEF'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Osc'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Osc', ['BUFNUM', 'FREQ', 'PHASE'], true);
+	return ugenCodeGen(Blockly, block, 'osc', ['BUFNUM', 'FREQ', 'PHASE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Out'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Out', ['BUS', 'CHANNELSARRAY'], false);
+	return ugenCodeGen(Blockly, block, 'out', ['BUS', 'CHANNELSARRAY'], false);
 };
 Blockly.JavaScript.forBlock['Sc_PV_RandComb'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'PvRandComb', ['BUFFER', 'WIPE', 'TRIG'], true);
+	return ugenCodeGen(Blockly, block, 'pvRandComb', ['BUFFER', 'WIPE', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Pan2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Pan2', ['IN', 'POS', 'LEVEL'], true);
+	return ugenCodeGen(Blockly, block, 'pan2', ['IN', 'POS', 'LEVEL'], true);
 };
 Blockly.JavaScript.forBlock['Sc_PanAz'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'PanAz', ['NUMCHANNELS', 'IN', 'POS', 'LEVEL', 'WIDTH', 'ORIENTATION'], true);
+	return ugenCodeGen(Blockly, block, 'panAz', ['NUMCHANNELS', 'IN', 'POS', 'LEVEL', 'WIDTH', 'ORIENTATION'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Phasor'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Phasor', ['TRIG', 'RATE', 'START', 'END', 'RESETPOS'], true);
+	return ugenCodeGen(Blockly, block, 'phasor', ['TRIG', 'RATE', 'START', 'END', 'RESETPOS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_PinkNoise'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'PinkNoise', [], true);
+	return ugenCodeGen(Blockly, block, 'pinkNoise', [], true);
 };
 Blockly.JavaScript.forBlock['Sc_Pitch'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Pitch', ['IN', 'INITFREQ', 'MINFREQ', 'MAXFREQ', 'EXECFREQ', 'MAXBINSPEROCTAVE', 'MEDIAN', 'AMPTHRESHOLD', 'PEAKTHRESHOLD', 'DOWNSAMPLE', 'CLAR'], true);
+	return ugenCodeGen(Blockly, block, 'pitch', ['IN', 'INITFREQ', 'MINFREQ', 'MAXFREQ', 'EXECFREQ', 'MAXBINSPEROCTAVE', 'MEDIAN', 'AMPTHRESHOLD', 'PEAKTHRESHOLD', 'DOWNSAMPLE', 'CLAR'], true);
 };
 Blockly.JavaScript.forBlock['Sc_PitchShift'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'PitchShift', ['IN', 'WINDOWSIZE', 'PITCHRATIO', 'PITCHDISPERSION', 'TIMEDISPERSION'], true);
+	return ugenCodeGen(Blockly, block, 'pitchShift', ['IN', 'WINDOWSIZE', 'PITCHRATIO', 'PITCHDISPERSION', 'TIMEDISPERSION'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Pluck'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Pluck', ['IN', 'TRIG', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME', 'COEF'], true);
+	return ugenCodeGen(Blockly, block, 'pluck', ['IN', 'TRIG', 'MAXDELAYTIME', 'DELAYTIME', 'DECAYTIME', 'COEF'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Pulse'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Pulse', ['FREQ', 'WIDTH'], true);
+	return ugenCodeGen(Blockly, block, 'pulse', ['FREQ', 'WIDTH'], true);
 };
 Blockly.JavaScript.forBlock['Sc_PulseCount'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'PulseCount', ['TRIG', 'RESET'], true);
+	return ugenCodeGen(Blockly, block, 'pulseCount', ['TRIG', 'RESET'], true);
 };
 Blockly.JavaScript.forBlock['Sc_PulseDivider'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'PulseDivider', ['TRIG', 'DIV', 'START'], true);
+	return ugenCodeGen(Blockly, block, 'pulseDivider', ['TRIG', 'DIV', 'START'], true);
 };
 Blockly.JavaScript.forBlock['Sc_QuadC'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'QuadC', ['FREQ', 'A', 'B', 'C', 'XI'], true);
+	return ugenCodeGen(Blockly, block, 'quadC', ['FREQ', 'A', 'B', 'C', 'XI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_QuadL'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'QuadL', ['FREQ', 'A', 'B', 'C', 'XI'], true);
+	return ugenCodeGen(Blockly, block, 'quadL', ['FREQ', 'A', 'B', 'C', 'XI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_RHPF'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Rhpf', ['IN', 'FREQ', 'RQ'], true);
+	return ugenCodeGen(Blockly, block, 'rhpf', ['IN', 'FREQ', 'RQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_RLPF'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Rlpf', ['IN', 'FREQ', 'RQ'], true);
+	return ugenCodeGen(Blockly, block, 'rlpf', ['IN', 'FREQ', 'RQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Rand'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Rand', ['LO', 'HI'], true);
+	return ugenCodeGen(Blockly, block, 'rand', ['LO', 'HI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_ReplaceOut'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'ReplaceOut', ['BUS', 'CHANNELSARRAY'], false);
+	return ugenCodeGen(Blockly, block, 'replaceOut', ['BUS', 'CHANNELSARRAY'], false);
 };
 Blockly.JavaScript.forBlock['Sc_Resonz'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Resonz', ['IN', 'FREQ', 'BWR'], true);
+	return ugenCodeGen(Blockly, block, 'resonz', ['IN', 'FREQ', 'BWR'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Ringz'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Ringz', ['IN', 'FREQ', 'DECAYTIME'], true);
+	return ugenCodeGen(Blockly, block, 'ringz', ['IN', 'FREQ', 'DECAYTIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Rotate2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Rotate2', ['X', 'Y', 'POS'], true);
+	return ugenCodeGen(Blockly, block, 'rotate2', ['X', 'Y', 'POS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_RunningMax'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'RunningMax', ['IN', 'TRIG'], true);
+	return ugenCodeGen(Blockly, block, 'runningMax', ['IN', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SampleRate'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SampleRate', [], true);
+	return ugenCodeGen(Blockly, block, 'sampleRate', [], true);
 };
 Blockly.JavaScript.forBlock['Sc_Saw'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Saw', ['FREQ'], true);
+	return ugenCodeGen(Blockly, block, 'saw', ['FREQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Select'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Select', ['WHICH', 'ARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'selectT', ['WHICH', 'ARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Sequencer'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Sequencer', ['ARRAY', 'TRIG'], true);
+	return ugenCodeGen(Blockly, block, 'sequencer', ['ARRAY', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_ImpulseSequencer'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'ImpulseSequencer', ['ARRAY', 'TRIG'], true);
+	return ugenCodeGen(Blockly, block, 'impulseSequencer', ['ARRAY', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SinOsc'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SinOsc', ['FREQ', 'PHASE'], true);
+	return ugenCodeGen(Blockly, block, 'sinOsc', ['FREQ', 'PHASE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SinOscFB'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SinOscFb', ['FREQ', 'FEEDBACK'], true);
+	return ugenCodeGen(Blockly, block, 'sinOscFb', ['FREQ', 'FEEDBACK'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Slew'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Slew', ['IN', 'UP', 'DN'], true);
+	return ugenCodeGen(Blockly, block, 'slew', ['IN', 'UP', 'DN'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Slope'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Slope', ['IN'], true);
+	return ugenCodeGen(Blockly, block, 'slope', ['IN'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Stepper'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Stepper', ['TRIG', 'RESET', 'MIN', 'MAX', 'STEP', 'RESETVAL'], true);
+	return ugenCodeGen(Blockly, block, 'stepper', ['TRIG', 'RESET', 'MIN', 'MAX', 'STEP', 'RESETVAL'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Sweep'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Sweep', ['TRIG', 'RATE'], true);
+	return ugenCodeGen(Blockly, block, 'sweep', ['TRIG', 'RATE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SyncSaw'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SyncSaw', ['SYNCFREQ', 'SAWFREQ'], true);
+	return ugenCodeGen(Blockly, block, 'syncSaw', ['SYNCFREQ', 'SAWFREQ'], true);
 };
 Blockly.JavaScript.forBlock['Sc_TExpRand'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'TExpRand', ['LO', 'HI', 'TRIG'], true);
+	return ugenCodeGen(Blockly, block, 'tExpRand', ['LO', 'HI', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_TGrains'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'TGrains', ['NUMCHANNELS', 'TRIGGER', 'BUFNUM', 'RATE', 'CENTERPOS', 'DUR', 'PAN', 'AMP', 'INTERP'], true);
+	return ugenCodeGen(Blockly, block, 'tGrains', ['NUMCHANNELS', 'TRIGGER', 'BUFNUM', 'RATE', 'CENTERPOS', 'DUR', 'PAN', 'AMP', 'INTERP'], true);
 };
 Blockly.JavaScript.forBlock['Sc_TIRand'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'TiRand', ['LO', 'HI', 'TRIG'], true);
+	return ugenCodeGen(Blockly, block, 'tiRand', ['LO', 'HI', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_TRand'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'TRand', ['LO', 'HI', 'TRIG'], true);
+	return ugenCodeGen(Blockly, block, 'tRand', ['LO', 'HI', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_ToggleFF'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'ToggleFf', ['TRIG'], true);
+	return ugenCodeGen(Blockly, block, 'toggleFf', ['TRIG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Trig'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Trig', ['IN', 'DUR'], true);
+	return ugenCodeGen(Blockly, block, 'trig', ['IN', 'DUR'], true);
 };
 Blockly.JavaScript.forBlock['Sc_TwoPole'] = function(block) {
-  return ugenCodeGen(Blockly, block, 'TwoPole', ['IN', 'FREQ', 'RADIUS'], true);
+  return ugenCodeGen(Blockly, block, 'twoPole', ['IN', 'FREQ', 'RADIUS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_VarLag'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'VarLag', ['IN', 'TIME', 'CURVATURE'], true);
+	return ugenCodeGen(Blockly, block, 'varLag', ['IN', 'TIME', 'CURVATURE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_VarSaw'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'VarSaw', ['FREQ', 'IPHASE', 'WIDTH'], true);
+	return ugenCodeGen(Blockly, block, 'varSaw', ['FREQ', 'IPHASE', 'WIDTH'], true);
 };
 Blockly.JavaScript.forBlock['Sc_WhiteNoise'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'WhiteNoise', [], true);
+	return ugenCodeGen(Blockly, block, 'whiteNoise', [], true);
 };
 Blockly.JavaScript.forBlock['Sc_Wrap'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Wrap', ['IN', 'LO', 'HI'], true);
+	return ugenCodeGen(Blockly, block, 'wrap', ['IN', 'LO', 'HI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_XFade2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'XFade2', ['INA', 'INB', 'PAN', 'LEVEL'], true);
+	return ugenCodeGen(Blockly, block, 'xFade2', ['INA', 'INB', 'PAN', 'LEVEL'], true);
 };
 Blockly.JavaScript.forBlock['Sc_ZeroCrossing'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'ZeroCrossing', ['IN'], true);
+	return ugenCodeGen(Blockly, block, 'zeroCrossing', ['IN'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Bezier'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Bezier', ['HALTAFTER', 'DX', 'FREQ', 'PHASE', 'PARAM'], true);
+	return ugenCodeGen(Blockly, block, 'bezier', ['HALTAFTER', 'DX', 'FREQ', 'PHASE', 'PARAM'], true);
 };
 Blockly.JavaScript.forBlock['Sc_DWGPluckedStiff'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'DwgPluckedStiff', ['FREQ', 'AMP', 'GATE', 'POS', 'C1', 'C3', 'INP', 'RELEASE', 'FB'], true);
+	return ugenCodeGen(Blockly, block, 'dwgPluckedStiff', ['FREQ', 'AMP', 'GATE', 'POS', 'C1', 'C3', 'INP', 'RELEASE', 'FB'], true);
 };
 Blockly.JavaScript.forBlock['Sc_DustRange'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'DustRange', ['IOTMIN', 'IOTMAX'], true);
+	return ugenCodeGen(Blockly, block, 'dustRange', ['IOTMIN', 'IOTMAX'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Dx7'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Dx7', ['BUFNUM', 'ON', 'OFF', 'DATA', 'VC', 'MNN', 'VEL', 'PW', 'MW', 'BC', 'FC'], true);
+	return ugenCodeGen(Blockly, block, 'dx7', ['BUFNUM', 'ON', 'OFF', 'DATA', 'VC', 'MNN', 'VEL', 'PW', 'MW', 'BC', 'FC'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Freezer'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Freezer', ['BUFNUM', 'LEFT', 'RIGHT', 'GAIN', 'INCREMENT', 'INCREMENTOFFSET', 'INCREMENTRANDOM', 'RIGHTRANDOM', 'SYNCPHASETRIGGER', 'RANDOMIZEPHASETRIGGER', 'NUMBEROFLOOPS'], true);
+	return ugenCodeGen(Blockly, block, 'freezer', ['BUFNUM', 'LEFT', 'RIGHT', 'GAIN', 'INCREMENT', 'INCREMENTOFFSET', 'INCREMENTRANDOM', 'RIGHTRANDOM', 'SYNCPHASETRIGGER', 'RANDOMIZEPHASETRIGGER', 'NUMBEROFLOOPS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_GreyholeRaw'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'GreyholeRaw', ['IN1', 'IN2', 'DAMPING', 'DELAYTIME', 'DIFFUSION', 'FEEDBACK', 'MODDEPTH', 'MODFREQ', 'SIZE'], true);
+	return ugenCodeGen(Blockly, block, 'greyholeRaw', ['IN1', 'IN2', 'DAMPING', 'DELAYTIME', 'DIFFUSION', 'FEEDBACK', 'MODDEPTH', 'MODFREQ', 'SIZE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_MoogLadder'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'MoogLadder', ['IN', 'FFREQ', 'RES'], true);
+	return ugenCodeGen(Blockly, block, 'moogLadder', ['IN', 'FFREQ', 'RES'], true);
 };
 Blockly.JavaScript.forBlock['Sc_ShufflerB'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'ShufflerB', ['BUFNUM', 'READLOCATIONMINIMA', 'READLOCATIONMAXIMA', 'READINCREMENTMINIMA', 'READINCREMENTMAXIMA', 'DURATIONMINIMA', 'DURATIONMAXIMA', 'ENVELOPEAMPLITUDEMINIMA', 'ENVELOPEAMPLITUDEMAXIMA', 'ENVELOPESHAPEMINIMA', 'ENVELOPESHAPEMAXIMA', 'ENVELOPESKEWMINIMA', 'ENVELOPESKEWMAXIMA', 'STEREOLOCATIONMINIMA', 'STEREOLOCATIONMAXIMA', 'INTEROFFSETTIMEMINIMA', 'INTEROFFSETTIMEMAXIMA', 'FTABLEREADLOCATIONINCREMENT', 'READINCREMENTQUANTA', 'INTEROFFSETTIMEQUANTA'], true);
+	return ugenCodeGen(Blockly, block, 'shufflerB', ['BUFNUM', 'READLOCATIONMINIMA', 'READLOCATIONMAXIMA', 'READINCREMENTMINIMA', 'READINCREMENTMAXIMA', 'DURATIONMINIMA', 'DURATIONMAXIMA', 'ENVELOPEAMPLITUDEMINIMA', 'ENVELOPEAMPLITUDEMAXIMA', 'ENVELOPESHAPEMINIMA', 'ENVELOPESHAPEMAXIMA', 'ENVELOPESKEWMINIMA', 'ENVELOPESKEWMAXIMA', 'STEREOLOCATIONMINIMA', 'STEREOLOCATIONMAXIMA', 'INTEROFFSETTIMEMINIMA', 'INTEROFFSETTIMEMAXIMA', 'FTABLEREADLOCATIONINCREMENT', 'READINCREMENTQUANTA', 'INTEROFFSETTIMEQUANTA'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SvfBp'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SvfBp', ['IN', 'FREQ', 'Q'], true);
+	return ugenCodeGen(Blockly, block, 'svfBp', ['IN', 'FREQ', 'Q'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SvfHp'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SvfHp', ['IN', 'FREQ', 'Q'], true);
+	return ugenCodeGen(Blockly, block, 'svfHp', ['IN', 'FREQ', 'Q'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SvfLp'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SvfLp', ['IN', 'FREQ', 'Q'], true);
+	return ugenCodeGen(Blockly, block, 'svfLp', ['IN', 'FREQ', 'Q'], true);
 };
 Blockly.JavaScript.forBlock['Sc_TScramble'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'TScramble', ['TRIGGER', 'INPUTS'], true);
+	return ugenCodeGen(Blockly, block, 'tScramble', ['TRIGGER', 'INPUTS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_VOSIM'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Vosim', ['TRIG', 'FREQ', 'NCYCLES', 'DECAY'], true);
+	return ugenCodeGen(Blockly, block, 'vosim', ['TRIG', 'FREQ', 'NCYCLES', 'DECAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Adsr'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Adsr', ['GATE', 'ATTACKTIME', 'DECAYTIME', 'SUSTAINLEVEL', 'RELEASETIME', 'CURVES'], true);
+	return ugenCodeGen(Blockly, block, 'adsr', ['GATE', 'ATTACKTIME', 'DECAYTIME', 'SUSTAINLEVEL', 'RELEASETIME', 'CURVES'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Asr'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Asr', ['GATE', 'ATTACKTIME', 'RELEASETIME', 'CURVES'], true);
+	return ugenCodeGen(Blockly, block, 'asr', ['GATE', 'ATTACKTIME', 'RELEASETIME', 'CURVES'], true);
 };
 Blockly.JavaScript.forBlock['Sc_AudioIn'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'AudioIn', ['CHANNELARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'audioIn', ['CHANNELARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BufAlloc'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'BufAlloc', ['NUMCHANNELS', 'NUMFRAMES'], true);
+	return ugenCodeGen(Blockly, block, 'bufAlloc', ['NUMCHANNELS', 'NUMFRAMES'], true);
 };
 Blockly.JavaScript.forBlock['Sc_BufRec'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'BufRec', ['BUFNUM', 'RESET', 'INPUTARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'bufRec', ['BUFNUM', 'RESET', 'INPUTARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Cc'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Cc', ['INDEX'], true);
+	return ugenCodeGen(Blockly, block, 'cc', ['INDEX'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Drand'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Drand', ['REPEATS', 'ARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'drand', ['REPEATS', 'ARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Duty'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Duty', ['DUR', 'RESET', 'LEVEL'], true);
+	return ugenCodeGen(Blockly, block, 'duty', ['DUR', 'RESET', 'LEVEL'], true);
 };
 Blockly.JavaScript.forBlock['Sc_TDuty'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'TDuty', ['DUR', 'RESET', 'LEVEL'], true);
+	return ugenCodeGen(Blockly, block, 'tDuty', ['DUR', 'RESET', 'LEVEL'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Demand'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Demand', ['TRIG', 'RESET', 'DEMANDUGENS'], true);
+	return ugenCodeGen(Blockly, block, 'demand', ['TRIG', 'RESET', 'DEMANDUGENS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_InFb'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'InFb', ['NUMCHANNELS', 'BUS'], true);
+	return ugenCodeGen(Blockly, block, 'inFb', ['NUMCHANNELS', 'BUS'], true);
 };
 Blockly.JavaScript.forBlock['Sc_KeyDown'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'KeyDown', ['VOICENUMBER'], true);
+	return ugenCodeGen(Blockly, block, 'keyDown', ['VOICENUMBER'], true);
 };
 Blockly.JavaScript.forBlock['Sc_KeyPitch'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'KeyPitch', ['VOICENUMBER'], true);
+	return ugenCodeGen(Blockly, block, 'keyPitch', ['VOICENUMBER'], true);
 };
 Blockly.JavaScript.forBlock['Sc_KeyVelocity'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'KeyVelocity', ['VOICENUMBER'], true);
+	return ugenCodeGen(Blockly, block, 'keyVelocity', ['VOICENUMBER'], true);
 };
 Blockly.JavaScript.forBlock['Sc_KeyTimbre'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'KeyTimbre', ['VOICENUMBER'], true);
+	return ugenCodeGen(Blockly, block, 'keyTimbre', ['VOICENUMBER'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LinLin'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'linLin', ['IN', 'SRCLO', 'SRCHI', 'DSTLO', 'DSTHI'], true);
 };
 Blockly.JavaScript.forBlock['Sc_LinSeg'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'LinSeg', ['GATE', 'COORD'], true);
+	return ugenCodeGen(Blockly, block, 'linSeg', ['GATE', 'COORD'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Line'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Line', ['START', 'END', 'DUR'], true);
+	return ugenCodeGen(Blockly, block, 'line', ['START', 'END', 'DUR'], true);
 };
 Blockly.JavaScript.forBlock['Sc_PMOsc'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'PmOsc', ['CARFREQ', 'MODFREQ', 'PMINDEX', 'MODPHASE'], true);
+	return ugenCodeGen(Blockly, block, 'pmOsc', ['CARFREQ', 'MODFREQ', 'PMINDEX', 'MODPHASE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_RingzBank'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'RingzBank', ['INPUT', 'FREQ', 'AMP', 'TIME'], true);
+	return ugenCodeGen(Blockly, block, 'ringzBank', ['INPUT', 'FREQ', 'AMP', 'TIME'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Select2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Select2', ['PREDICATE', 'IFTRUE', 'IFFALSE'], true);
+	return ugenCodeGen(Blockly, block, 'select2', ['PREDICATE', 'IFTRUE', 'IFFALSE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SelectX'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SelectX', ['WHICH', 'ARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'selectX', ['WHICH', 'ARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Dseq'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Dseq', ['REPEATS', 'ARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'dseq', ['REPEATS', 'ARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Dseries'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Dseries', ['LENGTH', 'START', 'STEP'], true);
+	return ugenCodeGen(Blockly, block, 'dseries', ['LENGTH', 'START', 'STEP'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SfAcquire'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SfAcquire', ['URLORKEY', 'NUMBEROFCHANNELS', 'CHANNELINDICES'], true);
+	return ugenCodeGen(Blockly, block, 'sfAcquire', ['URLORKEY', 'NUMBEROFCHANNELS', 'CHANNELINDICES'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SfDuration'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SfDuration', ['SFBUFFERARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'sfDuration', ['SFBUFFERARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SfFrameCount'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SfFrameCount', ['SFBUFFERARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'sfFrameCount', ['SFBUFFERARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SfPlay'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SfPlay', ['SFBUFFERARRAY', 'RATE', 'TRIGGER', 'STARTPOS', 'LOOP'], true);
+	return ugenCodeGen(Blockly, block, 'sfPlay', ['SFBUFFERARRAY', 'RATE', 'TRIGGER', 'STARTPOS', 'LOOP'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SfRateScale'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SfRateScale', ['SFBUFFERARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'sfRateScale', ['SFBUFFERARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SfRead'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SfRead', ['SFBUFFERARRAY', 'PHASE', 'LOOP', 'INTERPOLATION'], true);
+	return ugenCodeGen(Blockly, block, 'sfRead', ['SFBUFFERARRAY', 'PHASE', 'LOOP', 'INTERPOLATION'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SfSampleRate'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SfSampleRate', ['SFBUFFERARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'sfSampleRate', ['SFBUFFERARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Dshuf'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Dshuf', ['REPEATS', 'ARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'dshuf', ['REPEATS', 'ARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_SinOscBank'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'SinOscBank', ['FREQ', 'AMP', 'PHASE'], true);
+	return ugenCodeGen(Blockly, block, 'sinOscBank', ['FREQ', 'AMP', 'PHASE'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Splay2'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Splay2', ['INPUT', 'SPREAD', 'LEVEL', 'CENTER', 'LEVELCOMP'], true);
+	return ugenCodeGen(Blockly, block, 'splay2', ['INPUT', 'SPREAD', 'LEVEL', 'CENTER', 'LEVELCOMP'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Splay'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Splay', ['INARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'splay', ['INARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_Sw'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'Sw', ['INDEX'], true);
+	return ugenCodeGen(Blockly, block, 'sw', ['INDEX'], true);
 };
 Blockly.JavaScript.forBlock['Sc_TChoose'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'TChoose', ['TRIG', 'ARRAY'], true);
+	return ugenCodeGen(Blockly, block, 'tChoose', ['TRIG', 'ARRAY'], true);
 };
 Blockly.JavaScript.forBlock['Sc_TLine'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'TLine', ['START', 'END', 'DUR', 'TRIG'], true);
+	return ugenCodeGen(Blockly, block, 'tLine', ['START', 'END', 'DUR', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_TxLine'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'TxLine', ['START', 'END', 'DUR', 'TRIG'], true);
+	return ugenCodeGen(Blockly, block, 'txLine', ['START', 'END', 'DUR', 'TRIG'], true);
 };
 Blockly.JavaScript.forBlock['Sc_XLine'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'XLine', ['START', 'END', 'DUR'], true);
+	return ugenCodeGen(Blockly, block, 'xLine', ['START', 'END', 'DUR'], true);
 };
 
 }

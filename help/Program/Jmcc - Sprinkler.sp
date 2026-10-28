@@ -1,9 +1,9 @@
 /* Sprinkler (Jmcc) #1 */
-Bpz2(
-	WhiteNoise()
+bpz2(
+	whiteNoise()
 	*
-	LfPulse(
-		LfPulse(
+	lfPulse(
+		lfPulse(
 			0.09,
 			0,
 			0.16

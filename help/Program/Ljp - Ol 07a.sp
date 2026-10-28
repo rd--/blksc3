@@ -1,13 +1,13 @@
 /* FM curio ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html #7a */
-SinOsc(
+sinOsc(
 	1,
-	SinOsc(
+	sinOsc(
 		333,
-		SinOsc(
+		sinOsc(
 			143,
 			0
 		) * (
-			{ LfNoise2(0.2) } ! 2 * 100 + 110
+			{ lfNoise2(0.2) } ! 2 * 100 + 110
 		)
 	)
 ) * 0.1

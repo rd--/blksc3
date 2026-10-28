@@ -1,10 +1,10 @@
-/* EqPan2 */
-EqPan2(
-	PinkNoise() * 0.1 + (SinOsc(48.midiCps, 0) * 0.05),
-	SinOsc(1, 0)
+/* eqPan2 */
+eqPan2(
+	pinkNoise() * 0.1 + (sinOsc(48.midiCps, 0) * 0.05),
+	sinOsc(1, 0)
 )
 
-# EqPan2
+# eqPan2
 
 Equal power stereo panner.
 

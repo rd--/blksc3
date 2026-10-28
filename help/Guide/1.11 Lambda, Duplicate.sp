@@ -1,7 +1,7 @@
 /* Lambda, Duplicate */
-let f = { Rand(110, 220) } ! 12;
-let a = { SinOsc(Rand(0.1, 0.5), 0) } ! 12;
-(SinOsc(f, 0) * a).Splay2 * 0.1
+let f = { rand(110, 220) } ! 12;
+let a = { sinOsc(rand(0.1, 0.5), 0) } ! 12;
+(sinOsc(f, 0) * a).splay2 * 0.1
 
 # Lambda, Duplicate
 

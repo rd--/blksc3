@@ -1,11 +1,11 @@
 /* Vosim.3.sl */
-OverlapTexture({ :tr |
+overlapTexture({ :tr |
 	{
 		Vosim(
-			Impulse(110 + TRand(-1, 1, tr), 0),
-			TExpRand(110, 880, tr),
-			TChoose(tr, [3, 5, 7]),
-			TChoose(tr, [0.77, 0.88, 0.99])
+			impulse(110 + tRand(-1, 1, tr), 0),
+			tExpRand(110, 880, tr),
+			tChoose(tr, [3, 5, 7]),
+			tChoose(tr, [0.77, 0.88, 0.99])
 		)
 	} ! 2
-}, 3, 5, 3).Mix * 0.1
+}, 3, 5, 3).mix * 0.1

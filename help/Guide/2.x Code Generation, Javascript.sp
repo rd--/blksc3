@@ -1,6 +1,6 @@
 /* Code Generation, Javascript */
-let a = SinOsc(1,0).abs * 0.1;
-SinOsc(440, 0) * a
+let a = sinOsc(1,0).abs * 0.1;
+sinOsc(440, 0) * a
 
 # Code Generation, Javascript
 
@@ -8,7 +8,7 @@ Blocks can print themselves using _.js_ notation.
 
 The three block fragment assigned to the variable _a_ (×, |, ∿) prints as:
 
-> _Mul(Abs(SinOsc(1, 0)), 0.1)_
+> _Mul(Abs(sinOsc(1, 0)), 0.1)_
 
 [jssc3](https://rd.slavepianos.org/t/jssc3) is a
 [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) library for interacting with the

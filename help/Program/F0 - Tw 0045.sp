@@ -1,19 +1,19 @@
 /* F0 - Tw 0045 */
-let f = SinOsc(
-	SinOsc(0.11, 0),
+let f = sinOsc(
+	sinOsc(0.11, 0),
 	0
 );
-let pf = SinOsc(
-	95 * (SinOsc(0.01, 0) +  1),
+let pf = sinOsc(
+	95 * (sinOsc(0.01, 0) +  1),
 	0
 ) * (
-	SinOsc(0.005, 0) * 50
+	sinOsc(0.005, 0) * 50
 ) + 100;
-let p = SinOsc(
+let p = sinOsc(
 	pf,
-	SinOsc([98, 97], 0)
-) * (1.pi + SinOsc(0.0005, 0));
-SinOsc(f, p).Tanh * 0.1
+	sinOsc([98, 97], 0)
+) * (1.pi + sinOsc(0.0005, 0));
+sinOsc(f, p).tanh * 0.1
 
 # Annotation
 

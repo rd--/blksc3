@@ -1,12 +1,12 @@
-/* VarSaw.1.sl */
-let d = linLin(LfNoise2(0.1), -1, 1, 0.05, 0.5);
-let t = Impulse(1 / d, 0);
-let w0 = TRand(0, 0.35, t);
-let w1 = TRand(0.65, 1, t);
-let w = Phasor(t, (w1 - w0) / SampleRate(), w0, w1, 0);
-let o = VarSaw(TRand(36, 72, t).midiCps, 0, w) * Decay2(t, 0.1, d);
-Pan2(o, TRand(-1, 1, t), 0.1)
+/* varSaw.1.sl */
+let d = linLin(lfNoise2(0.1), -1, 1, 0.05, 0.5);
+let t = impulse(1 / d, 0);
+let w0 = tRand(0, 0.35, t);
+let w1 = tRand(0.65, 1, t);
+let w = phasor(t, (w1 - w0) / sampleRate(), w0, w1, 0);
+let o = varSaw(tRand(36, 72, t).midiCps, 0, w) * decay2(t, 0.1, d);
+pan2(o, tRand(-1, 1, t), 0.1)
 
-# VarSaw
+# varSaw
 
 Per-note width modulation.

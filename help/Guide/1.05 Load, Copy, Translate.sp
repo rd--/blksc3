@@ -1,16 +1,16 @@
 /* Load, Copy, Translate */
 let dur = 7;
 { :tr |
-    let cf = TRand(0, 2000, tr);
-    let mf = TRand(0, 800, tr);
-    let pme = TRand(0, 12, tr);
-    let l1 = TRand(-1, 1, tr);
-    let l2 = TRand(-1, 1, tr);
-    let lc = TLine(l1, l2, dur, tr);
-    let pm = TLine(0, pme, dur, tr);
-    let snd = PmOsc(cf, mf, pm, 0);
-    EqPan2 (snd, lc) * 0.05
-}.OverlapTexture(1, 3, 4).Mix
+    let cf = tRand(0, 2000, tr);
+    let mf = tRand(0, 800, tr);
+    let pme = tRand(0, 12, tr);
+    let l1 = tRand(-1, 1, tr);
+    let l2 = tRand(-1, 1, tr);
+    let lc = tLine(l1, l2, dur, tr);
+    let pm = tLine(0, pme, dur, tr);
+    let snd = pmOsc(cf, mf, pm, 0);
+    eqPan2 (snd, lc) * 0.05
+}.overlapTexture(1, 3, 4).mix
 
 # Load, Copy, Translate
 
@@ -24,17 +24,17 @@ This program was translated from the _.sl_ program:
 
 ```
 let dur = 7;
-OverlapTexture({ :tr |
-    let cf = TRand(0, 2000, tr);
-    let mf = TRand(0, 800, tr);
-    let pme = TRand(0, 12, tr);
-    let l1 = TRand(-1, 1, tr);
-    let l2 = TRand(-1, 1, tr);
-    let lc = TLine(l1, l2, dur, tr);
-    let pm = TLine(0, pme, dur, tr);
-    let snd = PmOsc(cf, mf, pm, 0);
-    EqPan2 (snd, lc) * 0.05
-}, 1, 3, 4).Mix
+overlapTexture({ :tr |
+    let cf = tRand(0, 2000, tr);
+    let mf = tRand(0, 800, tr);
+    let pme = tRand(0, 12, tr);
+    let l1 = tRand(-1, 1, tr);
+    let l2 = tRand(-1, 1, tr);
+    let lc = tLine(l1, l2, dur, tr);
+    let pm = tLine(0, pme, dur, tr);
+    let snd = pmOsc(cf, mf, pm, 0);
+    eqPan2 (snd, lc) * 0.05
+}, 1, 3, 4).mix
 ```
 
 The program generates a simple texture of four phase modulation oscillator pairs, with random inputs and a linear modulation index sweep.

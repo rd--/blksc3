@@ -1,8 +1,8 @@
 /* Keyboard Shortcuts (Keybindings, Access Keys) */
 {
-	Rhpf(
-		OnePole(BrownNoise(), 0.99),
-		Lpf(BrownNoise(), 14) * 400 + 500,
+	rhpf(
+		onePole(brownNoise(), 0.99),
+		lpf(brownNoise(), 14) * 400 + 500,
 		0.03
 	) * 0.06
 } ! 2

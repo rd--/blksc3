@@ -1,7 +1,7 @@
 /* 4.X - Small Toolbox */
 {
-	SinOsc(
-		ExpRand(333, 666),
+	sinOsc(
+		expRand(333, 666),
 		0
 	) * 0.1
 } !^ 10

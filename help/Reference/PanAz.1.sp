@@ -1,14 +1,14 @@
-/* PanAz.1.sl */
-PanAz(
+/* panAz.1.sl */
+panAz(
 	2,
-	PinkNoise(),
-	LfSaw(0.25, 0),
+	pinkNoise(),
+	lfSaw(0.25, 0),
 	0.1,
 	2,
 	0.5
 )
 
-# PanAz
+# panAz
 
 Azimuth panner.
 The number of channels input (_#_) tells how many consecutive channels to pan across.
@@ -18,7 +18,7 @@ The input signal (_∙_) is the single channel sound to be panned.
 
 The position input (_⌖_) has a range of _0--2_,
 where _0_ is the first speaker, _1_ is the middle, and _2_ the last.
-Out of range values are wrapped around,
+out of range values are wrapped around,
 a line _-1--1_ will traverse the speakers clockise starting at the middle speaker,
 i.e. from _1--2_ and then from _0--1_.
 

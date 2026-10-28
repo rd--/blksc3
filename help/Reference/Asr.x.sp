@@ -1,13 +1,13 @@
-/* Asr ; Event control */
+/* asr ; Event control */
 let f = { :e |
-    Blip(
+    blip(
 	    e.p.UnitCps,
 	    e.i * 5
-    ) * Asr(
+    ) * asr(
 	    e.w,
 	    0.5 * e.y,
 	    e.y * 4,
 	    -4
     )
 };
-Splay2(Voicer(1, 16, f:/1)) * 0.1
+splay2(Voicer(1, 16, f:/1)) * 0.1

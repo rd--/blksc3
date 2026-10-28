@@ -5,5 +5,5 @@ let n = [
     [1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368],
     [75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309]
 ];
-let a = Duty(0.1, 0, Dseq(Infinity, n.catenate.wrap(20, 55).midiCps));
-Hpf(LeakDc(Splay2(LfCub([-1, a, a / 3, -2], 0)), 0.995) * 9, 440).bilateralClip(1) / 9
+let a = duty(0.1, 0, dseq(Infinity, n.catenate.wrap(20, 55).midiCps));
+hpf(leakDc(splay2(lfCub([-1, a, a / 3, -2], 0)), 0.995) * 9, 440).bilateralClip(1) / 9

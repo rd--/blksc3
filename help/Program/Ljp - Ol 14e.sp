@@ -1,9 +1,9 @@
 /* Ljp - Ol 14e ; https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html */
-EqPan2(
-	SinOsc(
-		Rlpf(
-			Stepper(
-				Impulse(8, 0),
+eqPan2(
+	sinOsc(
+		rlpf(
+			stepper(
+				impulse(8, 0),
 				0,
 				1,
 				8,
@@ -14,6 +14,6 @@ EqPan2(
 			0.01
 		) * 200,
 		0
-	).Sum,
+	).sum,
 	0
 ) * 0.1

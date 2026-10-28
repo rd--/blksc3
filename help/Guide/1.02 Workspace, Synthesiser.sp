@@ -1,5 +1,5 @@
 /* Workspace, Synthesiser */
-{ PinkNoise() } ! 2 * 0.025
+{ pinkNoise() } ! 2 * 0.025
 
 # Workspace, Synthesiser
 

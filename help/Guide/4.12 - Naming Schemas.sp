@@ -1,11 +1,11 @@
 /* 4.X - Naming Schemas */
-let e = LfGauss(4, 1 / 8, 0, 1, 0) * 0.25;
-let z = FreqShift(
-	Blip(60, 4) * e + LocalIn(2, 0),
-	LfNoise0(1 / 4) * 90,
+let e = lfGauss(4, 1 / 8, 0, 1, 0) * 0.25;
+let z = freqShift(
+	blip(60, 4) * e + localIn(2, 0),
+	lfNoise0(1 / 4) * 90,
 	0
 );
-z <! LocalOut(DelayC(z, 1, 0.1) * 0.9)
+z <! localOut(delayC(z, 1, 0.1) * 0.9)
 
 # Annotation
 

@@ -1,14 +1,14 @@
 /* Voicer.2 */
 let k = 9;
-let lfo = SinOsc(0.5, 0);
-let tr = { Impulse(Rand(0.15, 0.85), Rand(0, 1)) } ! k;
+let lfo = sinOsc(0.5, 0);
+let tr = { impulse(rand(0.15, 0.85), rand(0, 1)) } ! k;
 (
-	w: Trig(tr, 0.25),
-	p: Latch(SinOsc(Rand(0.25, 1.5), 0).linLin(-1, 1, 0.15, 0.95), tr),
-	z: TRand(0.1, 0.2, tr)
+	w: trig(tr, 0.25),
+	p: latch(sinOsc(rand(0.25, 1.5), 0).linLin(-1, 1, 0.15, 0.95), tr),
+	z: tRand(0.1, 0.2, tr)
 ).Voicer { :e |
-	SinOsc(e.p.unitCps, 0) * lfo * e.w * e.z
-}.Splay2.CombC(0.5, 0.2, 3)
+	sinOsc(e.p.unitCps, 0) * lfo * e.w * e.z
+}.splay2.combC(0.5, 0.2, 3)
 
 # Voicer
 
@@ -19,4 +19,4 @@ For each voice a function is evaluated to answer a _Record_ associating event ke
 This program writes only the _w_ (_gate_), _p_ (_pitch_) and _z_ (_pressure_) fields of the first 16 voices.
 Unset fields retain their default values.
 
-This program combines the _VoiceWriter.1_ (𝓥𝓌) generator and the _CombC.2_ reader programs into a single program.
+This program combines the _VoiceWriter.1_ (𝓥𝓌) generator and the _combC.2_ reader programs into a single program.

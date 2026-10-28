@@ -1,14 +1,14 @@
 /* 4.X - Overlap Texture */
 { :t |
-	Pan2(
-		SinOsc(
-			TRand(33, 3333, t),
+	pan2(
+		sinOsc(
+			tRand(33, 3333, t),
 			0
 		) * 0.33,
-		LfNoise1(0.11),
-		LfNoise1(0.77) * 0.1 + 0.1
+		lfNoise1(0.11),
+		lfNoise1(0.77) * 0.1 + 0.1
 	)
-}.OverlapTexture(2, 8, 12).Mix
+}.overlapTexture(2, 8, 12).mix
 
 # Annotation
 

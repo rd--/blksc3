@@ -1,11 +1,11 @@
-/* LocalOut.1.sl ; ping pong */
-let n = Decay(Impulse(0.3, 0), 0.1) * PinkNoise() * 0.2;
-let l = LocalIn(2, 0) + [n, 0];
-let d = DelayC(l, 0.2, 0.2);
-let o = LocalOut(d.reverse * 0.8);
+/* localOut.1.sl ; ping pong */
+let n = decay(impulse(0.3, 0), 0.1) * pinkNoise() * 0.2;
+let l = localIn(2, 0) + [n, 0];
+let d = delayC(l, 0.2, 0.2);
+let o = localOut(d.reverse * 0.8);
 d <! o
 
-# LocalOut
+# localOut
 
 _n_ is pink noise is enveloped by a decaying impulse signal.
 

@@ -1,22 +1,22 @@
 /* phase modulation with slow beats ; jmcc #6 ; graph rewrite */
 var n = 4;
-var x = MouseX(100, 6000, 1, 0.2);
-var y = MouseY(0, 2, 0, 0.2);
-OverlapTexture({
+var x = mouseX(100, 6000, 1, 0.2);
+var y = mouseY(0, 2, 0, 0.2);
+overlapTexture({
     arg tr;
     var a = 0;
-    var f1 = TRand(0, x, tr);
+    var f1 = tRand(0, x, tr);
     var u = 3.timesRepeat({ // u = for translator...
-        var f2 = TRand(0, x, tr);
-        a = SinOsc([f2, f2 + TRand(-1, 1, tr)], 0) * y + a;
+        var f2 = tRand(0, x, tr);
+        a = sinOsc([f2, f2 + tRand(-1, 1, tr)], 0) * y + a;
     });
-    SinOsc([f1, f1 + TRand(-1, 1, tr)], a) * 0.1
+    sinOsc([f1, f1 + tRand(-1, 1, tr)], a) * 0.1
 }, 4, 4, n) * 0.25;
 
 # Notes
 
 Mouse control.
 
-`MouseX` controls random frequency of new events.
+`mouseX` controls random frequency of new events.
 
-`MouseY` controls modulation index.
+`mouseY` controls modulation index.

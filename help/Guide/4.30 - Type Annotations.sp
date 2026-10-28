@@ -1,9 +1,9 @@
 /* 4.X - Type Annotations */
 {
-	SinOsc(
-		ExpRand(333, 555),
+	sinOsc(
+		expRand(333, 555),
 		0
-	) * Rand(0.1, 0.3)
+	) * rand(0.1, 0.3)
 } ! 2
 
 # Annotation

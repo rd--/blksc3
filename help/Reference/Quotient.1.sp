@@ -1,8 +1,8 @@
 /* Quotient.1 */
-SinOsc(
+sinOsc(
 	(
 		(
-			SinOsc(0.25, 0) * 200 + 500
+			sinOsc(0.25, 0) * 200 + 500
 		) // 17 * 3
 	).midiCps,
 	0

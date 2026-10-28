@@ -1,5 +1,5 @@
 /* Small Programs */
-PinkNoise() * 0.1
+pinkNoise() * 0.1
 
 # Small Programs.
 

@@ -1,13 +1,13 @@
-/* XFadeTexture.1 */
-XFadeTexture({ :tr |
+/* xFadeTexture.1 */
+xFadeTexture({ :tr |
 	{
-		SinOsc(TRand(110, 440, tr), 0) * TRand(0.01, 0.1, tr)
+		sinOsc(tRand(110, 440, tr), 0) * tRand(0.01, 0.1, tr)
 	} !^ 7
 }, 3, 5)
 
-# XFadeTexture
+# xFadeTexture
 
-The _graph_ form of _XFadeTexture_ sums two overlapping copies of a program.
+The _graph_ form of _xFadeTexture_ sums two overlapping copies of a program.
 
 Each program receives a _trigger_ input which is set each time the program restarts.
 

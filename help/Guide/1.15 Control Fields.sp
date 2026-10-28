@@ -1,5 +1,5 @@
 /* Control Fields */
-SinOsc([
+sinOsc([
 	NamedControl('Name.1', 440),
 	NamedControl('Name.2', 443)
 ], 0) * NamedControl('Name.3', 0.1)

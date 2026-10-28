@@ -1,13 +1,13 @@
-/* Asr */
-let tr = Impulse([1, 0.75], 0);
-let gt = Trig(tr, TRand(0.1, 0.2, tr));
-let o = Blip(TRand(36, [48, 60], tr).midiCps, TRand(1, 7, tr));
-let a = Asr(gt, TRand(0.01, 0.2, tr), TRand(0.2, 2, tr), -4);
+/* asr */
+let tr = impulse([1, 0.75], 0);
+let gt = trig(tr, tRand(0.1, 0.2, tr));
+let o = blip(tRand(36, [48, 60], tr).midiCps, tRand(1, 7, tr));
+let a = asr(gt, tRand(0.01, 0.2, tr), tRand(0.2, 2, tr), -4);
 o * a * 0.1
 
-# Asr
+# asr
 
-⏢ (_Asr_) is an attack-sustain-release envelope generator.
+⏢ (_asr_) is an attack-sustain-release envelope generator.
 
 The ⎇ (_gate_) input begins the envelope on a rising zero crossing and holds it open until a falling zero crossing.
 

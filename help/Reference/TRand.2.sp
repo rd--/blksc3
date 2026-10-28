@@ -1,12 +1,12 @@
-/* TRand.2.sl */
-let tr = Impulse([0.25, 0.75], 0);
-SinOsc(
-	Lag(
-		TRand(110, 440, tr),
+/* tRand.2.sl */
+let tr = impulse([0.25, 0.75], 0);
+sinOsc(
+	lag(
+		tRand(110, 440, tr),
 		0.05
 	),
 	0
-) * Lag(
-	TRand(0.01, 0.1, tr),
+) * lag(
+	tRand(0.01, 0.1, tr),
 	0.05
 )

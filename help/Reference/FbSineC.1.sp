@@ -1,15 +1,15 @@
-/* FbSineC.1 */
-FbSineC(
-	LfNoise2([1 2]) * 1000 + 10000,
-	LfNoise2([1 2]) * 32 + 33,
-	LfNoise2([1 2]) * 0.5,
-	LfNoise2([1 2]) * 0.05 + 1.05,
-	LfNoise2([1 2]) * 0.3 + 0.3,
+/* fbSineC.1 */
+fbSineC(
+	lfNoise2([1 2]) * 1000 + 10000,
+	lfNoise2([1 2]) * 32 + 33,
+	lfNoise2([1 2]) * 0.5,
+	lfNoise2([1 2]) * 0.05 + 1.05,
+	lfNoise2([1 2]) * 0.3 + 0.3,
 	0.1,
 	0.1
 ) * 0.05
 
-_FbSineC_ is a cubic-interpolating sound generator based on the difference equations:
+_fbSineC_ is a cubic-interpolating sound generator based on the difference equations:
 
 - x(n+1) = sin(im * y(n) + fb * x(n))
 - y(n+1) = (a * y(n) + c) % 2pi

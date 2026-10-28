@@ -1,14 +1,14 @@
-/* PanAz.2.sl */
-{ 0 } ! 8 ++ PanAz(
+/* panAz.2.sl */
+{ 0 } ! 8 ++ panAz(
 	8,
-	PinkNoise(),
-	MouseX(0.1, 2, 0, 0.2),
+	pinkNoise(),
+	mouseX(0.1, 2, 0, 0.2),
 	0.1,
 	3,
 	0.5
 )
 
-# PanAz
+# panAz
 
 Offset an _n_-channel panner by pre-pending an array of silent channels.
 

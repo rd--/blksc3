@@ -1,9 +1,9 @@
 /* 4.X - Multiply and Add */
-SinOscFb(
+sinOscFb(
 	[400 301],
-	LfNoise2([0.57 0.35]) * 0.7 + 0.7
+	lfNoise2([0.57 0.35]) * 0.7 + 0.7
 ) * (
-	LfNoise2([0.79 0.57]) * 0.05 + 0.05
+	lfNoise2([0.79 0.57]) * 0.05 + 0.05
 )
 
 # Annotation

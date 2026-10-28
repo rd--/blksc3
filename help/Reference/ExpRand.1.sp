@@ -1,13 +1,13 @@
-/* ExpRand.1 */
+/* expRand.1 */
 var harmonics = 16;
 var f = {
-    Pan2(SinOsc(ExpRand(100, 2000), 0), Rand(-1, 1), SinOsc(1 / Rand(3, 6), 0) * Rand(0.1, 0.9))
+    pan2(sinOsc(expRand(100, 2000), 0), rand(-1, 1), sinOsc(1 / rand(3, 6), 0) * rand(0.1, 0.9))
 };
 f !+ harmonics / (2 * harmonics)
 
-# ExpRand
+# expRand
 
-_ExpRand_ generates a single random value in an exponential distribution in the indicated range.
+_expRand_ generates a single random value in an exponential distribution in the indicated range.
 
 Here it is used to generate a frequency input for a sine wave oscillator.
 

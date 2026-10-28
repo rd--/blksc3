@@ -1,22 +1,22 @@
-/* TScramble.2.sl */
+/* tScramble.2.sl */
 var a = [
 	1 2 3;
 	1 2 3 4 5;
 	1 2 3 4 5 6 7
 ];
-var t1 = Impulse(1 / 5, 0);
-var t2 = Impulse(5, 0);
-var m = TChoose(
+var t1 = impulse(1 / 5, 0);
+var t2 = impulse(5, 0);
+var m = tChoose(
 	t1,
 	a.collect { :x |
-		Demand(t2, 0, Dseq(Infinity, TScramble(t1, x)))
+		demand(t2, 0, dseq(Infinity, tScramble(t1, x)))
 	}
 );
-var c = SinOsc(1200, 0) * Decay(t1, 1) * 0.1;
-SinOsc(m * 110, 0) * 0.1 + c
+var c = sinOsc(1200, 0) * decay(t1, 1) * 0.1;
+sinOsc(m * 110, 0) * 0.1 + c
 
-# TScramble
+# tScramble
 
 Sequences of different lengths, scrambled.
 
-_TScramble_ requires _sc3-rdu_.
+_tScramble_ requires _sc3-rdu_.

@@ -1,7 +1,7 @@
 /* 4.X - Workspace */
-Resonz(
-	PinkNoise(),
-	LfNoise2([0.11 0.77]) * 333 + 555,
+resonz(
+	pinkNoise(),
+	lfNoise2([0.11 0.77]) * 333 + 555,
 	[0.11 0.33]
 ) * 0.1
 

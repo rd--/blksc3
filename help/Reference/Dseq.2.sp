@@ -1,11 +1,11 @@
-/* Dseq.2 */
+/* dseq.2 */
 let m = { :f |
-	Demand(
-		Impulse(f, 0),
+	demand(
+		impulse(f, 0),
 		0,
-		Dseq(Infinity, [60 63 67 69])
+		dseq(Infinity, [60 63 67 69])
 	).midiCps
 };
-Splay2(SinOsc([2, 3, 5].collect(m/1), 0)) * 0.1
+splay2(sinOsc([2, 3, 5].collect(m/1), 0)) * 0.1
 
-# Dseq
+# dseq

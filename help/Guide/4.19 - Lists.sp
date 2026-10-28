@@ -1,7 +1,7 @@
 /* 4.X - Stereo */
 [
-	PinkNoise() * 0.1,
-	BrownNoise() * 0.05
+	pinkNoise() * 0.1,
+	brownNoise() * 0.05
 ]
 
 # Annotation

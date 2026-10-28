@@ -1,6 +1,6 @@
 /* Workspace Comments */
-Resonz(
-	Dust([0.3, 3]),
+resonz(
+	dust([0.3, 3]),
 	[333, 999],
 	[0.03, 0.003]
 ) * 9

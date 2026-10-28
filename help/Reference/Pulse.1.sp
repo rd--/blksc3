@@ -1,11 +1,11 @@
-/* Pulse.1 */
+/* pulse.1 */
 {
-	Pulse(
-		LfNoise2(Rand(0.25, 1)) * 100 + 200,
-		LfNoise2(Rand(0.5, 2)) * 0.5 + 0.5
+	pulse(
+		lfNoise2(rand(0.25, 1)) * 100 + 200,
+		lfNoise2(rand(0.5, 2)) * 0.5 + 0.5
 	) * 0.1
 } !^ 9 * 0.25
 
-# Pulse
+# pulse
 
-Nine quiet ⎍ (_Pulse_) oscillators with randomly shifting ν (_freq_) and ↔ (_width_) inputs.
+Nine quiet ⎍ (_pulse_) oscillators with randomly shifting ν (_freq_) and ↔ (_width_) inputs.

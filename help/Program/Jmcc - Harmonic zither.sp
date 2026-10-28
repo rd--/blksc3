@@ -4,12 +4,12 @@ var triggerSpacing = 0.5 / (pitch.size - 1);
 var panSpacing = 1.5 / (pitch.size - 1);
 var stringFunc = {
     arg i;
-    Pan2(CombL(PinkNoise() * Decay(Hpz1(MouseX(0, 1, 0, 0.2) > (0.25 + i * triggerSpacing)).abs, 0.05),
+    pan2(combL(pinkNoise() * decay(hpz1(mouseX(0, 1, 0, 0.2) > (0.25 + i * triggerSpacing)).abs, 0.05),
                pitch.nth(i).midiCps.reciprocal,
                pitch.nth(i).midiCps.reciprocal, 8),
                i - 1 * panSpacing - 0.75, 1)
 };
-LeakDc(Lpf(1.to(pitch.size).collect(stringFunc).sum, 12000), 0.995)
+leakDc(lpf(1.to(pitch.size).collect(stringFunc).sum, 12000), 0.995)
 
 # Notes
 

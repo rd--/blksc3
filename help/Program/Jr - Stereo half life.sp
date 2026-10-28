@@ -4,10 +4,10 @@ let nAtoms = 100000;
 let n = (
 	nAtoms
 	-
-	PulseCount(LocalIn(2, 0), 0)
-).Max(0);
-let activity = Dust(n * 2.log / tHalf);
-activity <! LocalOut(activity) * 0.1
+	pulseCount(localIn(2, 0), 0)
+).max(0);
+let activity = dust(n * 2.log / tHalf);
+activity <! localOut(activity) * 0.1
 
 # Annotation
 

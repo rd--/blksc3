@@ -1,10 +1,10 @@
-/* Formant ; Voicer */
-Splay2(
+/* formant ; Voicer */
+splay2(
 	Voicer(
 		1,
 		16,
 		{ :e |
-			Formant(
+			formant(
 				e.p.UnitCps,
 				e.y.UnitCps,
 				880

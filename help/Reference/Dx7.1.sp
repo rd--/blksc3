@@ -9,10 +9,10 @@ var voiceData = [
 	99 99 99 99 50 50 50 50  3  2  1 29 99 1 0 0  0 1 24
 ];
 var voiceFunc = {
-    var tr = Dust(1 / 32).kr;
-    var buf = voiceData.catenate.LocalBuf;
-    var dx7 = Dx7(buf, tr, 0, 0, 0, TRand(48, 72, tr), TRand(0.1, 0.6, tr), 0, 0, 0, 0);
-    Pan2(dx7, TRand(-1, 1, tr), 1)
+    var tr = dust(1 / 32).kr;
+    var buf = voiceData.catenate.localBuf;
+    var dx7 = Dx7(buf, tr, 0, 0, 0, tRand(48, 72, tr), tRand(0.1, 0.6, tr), 0, 0, 0, 0);
+    pan2(dx7, tRand(-1, 1, tr), 1)
 };
 voiceFunc !+ 32 * 0.25
 

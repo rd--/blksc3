@@ -1,14 +1,14 @@
 /* Analog bubbles (Jmcc) #1 */
-CombC(
-	SinOsc(
+combC(
+	sinOsc(
 		midiCps(
-			LfSaw(
+			lfSaw(
 				0.4,
 				0
 			)
 			* 24
 			+ (
-				LfSaw(
+				lfSaw(
 					[8 7.23],
 					0
 				)

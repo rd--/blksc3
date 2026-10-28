@@ -1,11 +1,11 @@
 /* 4.X - Symbolic Naming Schema */
 {
-	Pulse(
+	pulse(
 		(
-			LfNoise2(0.07) * 7 + 77
+			lfNoise2(0.07) * 7 + 77
 		).floor.midiCps,
-		LfNoise2(5) * 0.5 + 0.5
-	).Lpf(777) * 0.07
+		lfNoise2(5) * 0.5 + 0.5
+	).lpf(777) * 0.07
 } !^ 11
 
 # Annotation

@@ -1,11 +1,11 @@
-/* OverlapTexture.1 */
+/* overlapTexture.1 */
 { :tr |
-	EqPan2(SinOsc(TRand(110, 440, tr), 0), TRand(-1, 1, tr)) * TRand(0.01, 0.05, tr)
-}.OverlapTexture(3, 5, 7)
+	eqPan2(sinOsc(tRand(110, 440, tr), 0), tRand(-1, 1, tr)) * tRand(0.01, 0.05, tr)
+}.overlapTexture(3, 5, 7)
 
-# OverlapTexture
+# overlapTexture
 
-The _graph_ form of _OverlapTexture_ sums an array of _#_ programs.
+The _graph_ form of _overlapTexture_ sums an array of _#_ programs.
 
 Each program receives a _trigger_ input which is set each time the program restarts.
 

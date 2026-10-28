@@ -1,10 +1,10 @@
 /* Ljp - Ol 08 */
 let f = { 0.2 } ! 8;
-Bpf(
-	PinkNoise() * 0.2,
-	LfNoise1(f) * 1000 + 1040,
-	LfNoise1(f) * 0.3 + 0.31
-).Splay2
+bpf(
+	pinkNoise() * 0.2,
+	lfNoise1(f) * 1000 + 1040,
+	lfNoise1(f) * 0.3 + 0.31
+).splay2
 
 # Annotation
 

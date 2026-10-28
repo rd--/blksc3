@@ -1,7 +1,7 @@
 /* alien meadow (jmcc) #6 */
 { :tr |
-    let z = TRand(0, 5000, tr);
-    let f = SinOsc(TRand(0, 20, tr), 0) * (0.1 * z) + z;
-    let a = SinOsc(TRand(0, 20, tr), 0) * 0.05 + 0.05;
-    Pan2(SinOsc(f, 0), TRand(-1, 1, tr), a)
-}.OverlapTexture(6, 2, 6).sum
+    let z = tRand(0, 5000, tr);
+    let f = sinOsc(tRand(0, 20, tr), 0) * (0.1 * z) + z;
+    let a = sinOsc(tRand(0, 20, tr), 0) * 0.05 + 0.05;
+    pan2(sinOsc(f, 0), tRand(-1, 1, tr), a)
+}.overlapTexture(6, 2, 6).sum

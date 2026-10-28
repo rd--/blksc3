@@ -1,17 +1,17 @@
 /* https://fredrikolofsson.com/f0blog/more-sc-twitter/, f0 */
-let t = Saw([9, 9.01]);
-let f = Demand(
+let t = saw([9, 9.01]);
+let f = demand(
 	t,
 	0,
-	Dseq(Infinity, [0, 0, 0, 0, 0, 0, 500])
+	dseq(Infinity, [0, 0, 0, 0, 0, 0, 500])
 );
-let m = Lag(
-	Demand(
+let m = lag(
+	demand(
 		t,
 		0,
-		Dshuf(Infinity, 0.to(7) * 99)
+		dshuf(Infinity, 0.to(7) * 99)
 	),
 	0.04
 );
-let p = SinOsc(m, 0);
-SinOsc(f, p) / 2
+let p = sinOsc(m, 0);
+sinOsc(f, p) / 2

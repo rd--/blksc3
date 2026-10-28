@@ -1,14 +1,14 @@
 /* Code Generation, Macros */
 let x = {
-	Ringz(
-		Dust(0.1),
-		Rand(1200, 2400),
-		Rand(1, 3)
-	) * Rand(0, 0.05)
+	ringz(
+		dust(0.1),
+		rand(1200, 2400),
+		rand(1, 3)
+	) * rand(0, 0.05)
 };
 [
 	{
-		SinOsc(Rand(110, 220), 0) * Rand(0, 0.05)
+		sinOsc(rand(110, 220), 0) * rand(0, 0.05)
 	} !^ 16,
 	x !^ 16
 ].sum
@@ -25,7 +25,7 @@ and print itself as _{ proc } ! count_.
 
 This form of ! would be a _macro_.
 The first ! block (containing ∿) would print exactly as it currently does,
-i.e. _{ SinOsc(..., 0) * ... } ! 16_.
+i.e. _{ sinOsc(..., 0) * ... } ! 16_.
 
 A difficulty with macros is illustrated by the second ! block.
 Here we have given a name (_x_) to the λ block (containing ⋏ₜ),

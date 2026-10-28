@@ -1,6 +1,6 @@
 /* 4.X - Simple Programming Language */
-Resonz(
-	WhiteNoise(),
+resonz(
+	whiteNoise(),
 	[333 333.3],
 	0.33
 ) * 0.33

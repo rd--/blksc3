@@ -1,6 +1,6 @@
 /* 4.X - Notes */
-SinOsc(
-	LfCub(
+sinOsc(
+	lfCub(
 		[1.3 5.7],
 		0
 	) * 135 + 357 % [123 345],

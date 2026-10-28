@@ -8,28 +8,28 @@ let n2 = [
 	0 0 1 0 1 7 0 0 5 6 3 0 4 0 9 0
 ];
 let n = n1 ++ n2;
-let b = [0 2 4 5 7 9 11].LocalBuf;
-let t = Impulse(4, 0);
-let m = DegreeToKey(
+let b = [0 2 4 5 7 9 11].localBuf;
+let t = impulse(4, 0);
+let m = degreeToKey(
 	b,
-	Demand(t, 0, Dseq(Infinity, n)),
+	demand(t, 0, dseq(Infinity, n)),
 	12
 );
-let e = Decay2(
+let e = decay2(
 	t,
-	TRand(0.05, 0.15, t),
-	TRand(0.15, 0.5, t)
+	tRand(0.05, 0.15, t),
+	tRand(0.15, 0.5, t)
 );
 {
-	CombC(
+	combC(
 		(
-			Blip(
-				(48 + m + TRand(0, 0.05, t)).midiCps,
-				TRand(1, 7, t)
+			blip(
+				(48 + m + tRand(0, 0.05, t)).midiCps,
+				tRand(1, 7, t)
 			) * e * 8
 		).tanh / 8,
 		1,
 		1,
 		8
-	) * TRand(0.05, 0.15, t)
+	) * tRand(0.05, 0.15, t)
 } ! 2

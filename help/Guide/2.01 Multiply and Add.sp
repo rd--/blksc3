@@ -1,5 +1,5 @@
 /* Multiply and Add */
-[PinkNoise() * [0.05, 0.05], SinOsc(LfNoise2([0.5, 0.5]) * 110 + 110, 0) * 0.1].sum
+[pinkNoise() * [0.05, 0.05], sinOsc(lfNoise2([0.5, 0.5]) * 110 + 110, 0) * 0.1].sum
 
 # Multiply and Add
 
@@ -9,15 +9,15 @@ These adjustments are made to the block after it is defined.
 This means that, in constrast to the SuperCollider language forms, the × and + inputs do not form part of the multiple channel expansion protocol for the block.
 In SuperCollider the expression
 
-> _PinkNoise([0.1, 0.1])_
+> _pinkNoise([0.1, 0.1])_
 
-describes a graph with two PinkNoise generators.
+describes a graph with two pinkNoise generators.
 The left and right channels are decorrelated.
-The equivalent block program has only one _PinkNoise_ generator.
+The equivalent block program has only one _pinkNoise_ generator.
 This distinction is most noticeable for noise generators that have no direct inputs,
 and that must therefore be written as
 
-> _{ PinkNoise() } ! 2 * 0.1_
+> _{ pinkNoise() } ! 2 * 0.1_
 
 ␊⍰₂ (_LFNoise2_), which has a _frequency_ (ν) input, can be duplicated by passing a list of equal values.
 

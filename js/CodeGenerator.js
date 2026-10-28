@@ -88,10 +88,10 @@ export function initCodeGen(Blockly) {
 		return `let ${name} = ${value};\n`;
 	};
 	Blockly.JavaScript.forBlock['Sc_LocalVoicer'] = function (block) {
-		return prefixMethodCodeGen(Blockly, block, 'Voicer', ['RECORD', 'PROC']);
+		return prefixMethodCodeGen(Blockly, block, 'voicer', ['RECORD', 'PROC']);
 	};
 	Blockly.JavaScript.forBlock['Sc_Mix'] = function (block) {
-		return prefixMethodCodeGen(Blockly, block, 'Mix', ['INARRAY']);
+		return prefixMethodCodeGen(Blockly, block, 'mix', ['INARRAY']);
 	};
 	Blockly.JavaScript.forBlock['Sc_MulAdd'] = function (block) {
 		return prefixMethodCodeGen(Blockly, block, 'timesPlus', ['IN', 'MUL', 'ADD']);
@@ -103,7 +103,7 @@ export function initCodeGen(Blockly) {
 		];
 	};
 	Blockly.JavaScript.forBlock['Sc_OverlapTexture'] = function (block) {
-		return prefixMethodCodeGen(Blockly, block, 'OverlapTexture', [
+		return prefixMethodCodeGen(Blockly, block, 'overlapTexture', [
 			'PROC',
 			'SUSTAINTIME',
 			'TRANSITIONTIME',
@@ -160,14 +160,14 @@ export function initCodeGen(Blockly) {
 		]);
 	};
 	Blockly.JavaScript.forBlock['Sc_Voicer'] = function (block) {
-		return prefixMethodCodeGen(Blockly, block, 'Voicer', [
+		return prefixMethodCodeGen(Blockly, block, 'voicer', [
 			'PART',
 			'COUNT',
 			'PROC',
 		]);
 	};
 	Blockly.JavaScript.forBlock['Sc_VoiceWriter'] = function (block) {
-		return prefixMethodCodeGen(Blockly, block, 'VoiceWriter', [
+		return prefixMethodCodeGen(Blockly, block, 'voiceWriter', [
 			'PART',
 			'COUNT',
 			'PROC',
@@ -187,7 +187,7 @@ export function initCodeGen(Blockly) {
 		]);
 	};
 	Blockly.JavaScript.forBlock['Sc_XFadeTexture'] = function (block) {
-		return prefixMethodCodeGen(Blockly, block, 'XFadeTexture', [
+		return prefixMethodCodeGen(Blockly, block, 'xFadeTexture', [
 			'PROC',
 			'SUSTAINTIME',
 			'TRANSITIONTIME',

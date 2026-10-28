@@ -1,7 +1,7 @@
 /* 4.X - Block Editor */
-Rlpf(
-	WhiteNoise() * 0.1,
-	LfGauss(
+rlpf(
+	whiteNoise() * 0.1,
+	lfGauss(
 		[3.3 6.6],
 		0.33,
 		0, 1, 0

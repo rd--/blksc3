@@ -1,7 +1,7 @@
 /* 4.X - Duplicate */
 {
-	Blip(
-		ExpRand(99, 222),
+	blip(
+		expRand(99, 222),
 		4
 	) * 0.1
 } !^ 23

@@ -2,9 +2,9 @@
 let n = [3 2 1 2  3 3 3  2 2 2  3 5 5] ++ [3 2 1 2  3 3 3 3  2 2 3 2  1];
 let d = [1 1 1 1  1 1 2  1 1 2  1 1 2] ++ [1 1 1 1  1 1 1 1  1 1 1 1  4];
 let m = [0 2 4 5 7];
-let t = TDuty(Dseq(Infinity, d) / 4, 0, 1);
-let f = Demand(t, 0, Dseq(Infinity, 60 + n.collect { :i | m[i] })).midiCps;
-Pan2(SinOsc(f, 0).tanh, 0, Decay2(t, 0.05, 0.2) * 0.1)
+let t = tDuty(dseq(Infinity, d) / 4, 0, 1);
+let f = demand(t, 0, dseq(Infinity, 60 + n.collect { :i | m[i] })).midiCps;
+pan2(sinOsc(f, 0).tanh, 0, decay2(t, 0.05, 0.2) * 0.1)
 
 # Authors, Initials
 

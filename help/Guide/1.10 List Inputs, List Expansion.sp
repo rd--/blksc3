@@ -1,16 +1,16 @@
 /* List Inputs, List Expansion */
 let m = [0 2 3 5 7 9] + 48;
 let k = m.size + 1;
-let x = MouseX(0, k, 0, 0.2);
-let y = MouseY(0, k, 0, 0.2);
-SinOsc(Select([x, y], m).midiCps, 0) * 0.1
+let x = mouseX(0, k, 0, 0.2);
+let y = mouseY(0, k, 0, 0.2);
+sinOsc(selectT([x, y], m).midiCps, 0) * 0.1
 
 # List Inputs, List Expansion
 
 When a signal block receives a list as an input there are two distinct behaviors.
 
 In one case the block answers a list of signals.
-_SinOsc([440, 441], 0)_ has the same meaning as _[SinOsc(440, 0), SinOsc(441, 0)]_.
+_sinOsc([440, 441], 0)_ has the same meaning as _[sinOsc(440, 0), sinOsc(441, 0)]_.
 This behaviour is called _list expansion_, and is the ordinary rule for SuperCollider unit generators.
 
 In the other case the block expects a list as an input and processes it directly.

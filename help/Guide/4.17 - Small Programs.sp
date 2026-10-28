@@ -1,12 +1,12 @@
 /* 4.X - Small Programs */
 let a = [0.02 0.1 1 2 3 4];
-SinOsc(
-	Latch(
-		LfPar(a + 0.5, 0).Sum,
-		Impulse(a, 0)
+sinOsc(
+	latch(
+		lfPar(a + 0.5, 0).sum,
+		impulse(a, 0)
 	) * 100 + 300,
 	0
-).Splay * 0.1
+).splay * 0.1
 
 # Annotation
 

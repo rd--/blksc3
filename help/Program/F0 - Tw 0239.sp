@@ -4,12 +4,12 @@ let q = [
 	032 035 083 117 112 101 114 067
 	111 108 108 105 100 101 114 032
 ].midiCps;
-let o = LfTri(Duty(b, 0, Dseq(Infinity, q)), 0);
-Splay2(
-	CombC(
+let o = lfTri(duty(b, 0, dseq(Infinity, q)), 0);
+splay2(
+	combC(
 		o,
 		4,
-		LfTri(b / 9, 0) % LfTri(b, 0) * 4 % 4,
+		lfTri(b / 9, 0) % lfTri(b, 0) * 4 % 4,
 		5
 	) / 6
 ).tanh
