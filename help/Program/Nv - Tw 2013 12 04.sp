@@ -7,4 +7,4 @@ let f = { :i |
 	let o = sinOsc(2, 0) + [4 9];
 	combC(x, 1, o * 0.001, 0) - x
 };
-1:9.collect(f:/1).sum / 81
+1:9.collect(f/1).sum / 81

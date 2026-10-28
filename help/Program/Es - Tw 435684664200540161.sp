@@ -12,7 +12,7 @@ let f = { :i |
 };
 1:99.collect(f/1).splay2
 
-# Annotation
+# Notes
 
 [status/435684664200540161](https://twitter.com/sluyterrific_sc/status/435684664200540161)
 

@@ -6,6 +6,6 @@ let y = mouseY(4000, 200, 1, 0.8) + detune;
 let f = y + (y * sinOsc(mod, 0) * 0.02);
 pan2(sinOsc(f, 0), 0, x * 0.1)
 
-# Annotation
+# Notes
 
 Mouse control.

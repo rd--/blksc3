@@ -1,7 +1,7 @@
 /* User Programs */
 overlapTexture({ :tr |
 	{
-		Vosim(
+		vosim(
 			impulse(110 + tRand(-1, 1, tr), 0),
 			tExpRand(110, 880, tr),
 			tChoose(tr, [3, 5, 7]),

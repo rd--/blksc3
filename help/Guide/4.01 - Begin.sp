@@ -6,7 +6,7 @@
 	)
 } ! 2
 
-# Annotation
+# Notes
 
 _Block SuperCollider_
 is a visual editor for

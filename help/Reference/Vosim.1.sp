@@ -1,5 +1,5 @@
 /* Vosim.1.sl */
-o = Vosim(
+let o = vosim(
 	impulse(110 + [-1, 0, 1], 0),
 	mouseX([110, 220, 440], 880, 1, 0.2),
 	[3, 5, 7],

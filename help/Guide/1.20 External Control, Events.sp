@@ -1,10 +1,10 @@
 /* External Control, Events */
 freeVerb(
-	Voicer(1, 16) { :e |
-		blip(e.p.UnitCps, e.y * 9) * e.w * e.z
+	voicer(1, 16) { :e |
+		blip(e.p.unitCps, e.y * 9) * e.w * e.z
 	}.splay2,
-	lag(NamedControl('Mix', 0.65), 0.2),
-	lag(NamedControl('Room', 0.75), 0.2),
+	lag(namedControl('Mix', 0.65), 0.2),
+	lag(namedControl('Room', 0.75), 0.2),
 	0.5
 )
 

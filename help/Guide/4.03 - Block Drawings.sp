@@ -1,7 +1,7 @@
 /* 4.X - Block SuperCollider */
 sinOsc(440, 0) * 0.1
 
-# Annotation
+# Notes
 
 Programs are written as sets of interlocking graphical blocks.
 Each block represents one element of the program.

@@ -1,14 +1,14 @@
 /* bowed string (jmcc) */
-var root = 5;
-var scale = [0, 2, 4, 5, 7, 9, 11] + root;
-var oct = [24, 36, 48, 60, 72, 84];
-var f0 = (scale.choose + oct.choose).midiCps;
-var freq = 1.to(12).collect({ arg i; f0 * i });
-var a0 = rand(0.7, 0.9);
-var amp = { a0 := a0 * a0 }.dup(12);
-var x = { brownNoise() }.dup * 0.007 * (lfNoise1(expRand(0.125, 0.5)) * 0.6 + 0.4).max(0);
-var k = ringzBank(x, freq, amp, { rand(1, 3) }.dup(12));
-(k * 0.1).SoftClip
+let root = 5;
+let scale = [0, 2, 4, 5, 7, 9, 11] + root;
+let oct = [24, 36, 48, 60, 72, 84];
+let f0 = (scale.atRandom + oct.atRandom).midiCps;
+let freq = 1.to(12).collect({ :i | f0 * i });
+let a0 = rand(0.7, 0.9);
+let amp = { a0 := a0 * a0 }.duplicate(12);
+let x = { brownNoise() }.duplicate(2) * 0.007 * (lfNoise1(expRand(0.125, 0.5)) * 0.6 + 0.4).max(0);
+let k = ringzBank(x, freq, amp, { rand(1, 3) }.duplicate(12));
+(k * 0.1).softClip
 
 # Notes
 

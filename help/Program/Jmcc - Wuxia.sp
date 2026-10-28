@@ -8,7 +8,7 @@ let dt = txLine(
 	tExpRand(10, 12000, tr),
 	4,
 	tr
-).Reciprocal;
+).reciprocal;
 6.timesRepeat {
     noise := leakDc(
 	    combC(noise, 0.1, dt, dt * 6) + dt,

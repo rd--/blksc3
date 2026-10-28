@@ -9,7 +9,7 @@ rlpf(
 	0.22
 )
 
-# Annotation
+# Notes
 
 The block editor has two parts,
 a _Workspace_ where drawings are constructed,

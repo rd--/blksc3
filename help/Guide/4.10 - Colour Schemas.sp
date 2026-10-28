@@ -7,7 +7,7 @@ sinOsc(
 	0
 ) * 0.1
 
-# Annotation
+# Notes
 
 There is also an outline drawing mode.
 These drawings may be more suitable for printing or for non-colour displays,

@@ -6,7 +6,7 @@ let f1 = lag(
 	l1
 ) * 4 / 3 + 1 ^ lfPulse(1 / [9,8], 0, 0.5) * c;
 let l2 = sinOscFb(1 / [5,4], 0).max(0) / 9;
-let f2 = Pitch(
+let f2 = pitchFollower(
 	lag(lfPulse(f1, 0, 0.5), l2).sum,
 	440,
 	60,

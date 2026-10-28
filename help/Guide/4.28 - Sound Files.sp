@@ -12,7 +12,7 @@ tGrains(
 	0.1, 4
 )
 
-# Annotation
+# Notes
 
 `SfAcquire` fetches a sound file,
 specified either as a _Url_ or as a key into an extensible dictionary,

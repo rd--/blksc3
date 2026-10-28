@@ -4,7 +4,7 @@
 	brownNoise() * 0.05
 ]
 
-# Annotation
+# Notes
 
 A stereo sound can be made by writing a list of two mono sounds.
 

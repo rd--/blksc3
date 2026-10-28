@@ -1,4 +1,4 @@
-/* https://twitter.com/headcube/status/474064500564324352 (nv) */
+/* https://twitter.com/headcube/status/474064500564324352 (nv) ; packet size */
 let o = { :ix |
 	{
 		lfPulse(
@@ -9,11 +9,11 @@ let o = { :ix |
 	} !* ix / (ix - 1) + 1
 };
 let z = {
-	let f = 2.to(9).collect(o:/1).product * 86;
+	let f = 2.to(9).collect(o/1).product * 86;
 	pluck(
-		bpf(f, f, 1).Sin,
+		bpf(f, f, 1).sin,
 		saw(440),
 		1, 1 / f, 9, 0.5
 	)
 };
-splay(z:/0 ! 9) * 0.2
+splay(z/0 ! 9) * 0.2

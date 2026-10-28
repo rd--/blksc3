@@ -3,7 +3,7 @@
 .*(3).+(80)).midiCps.sinOsc(0).*(0.04)
 .combN(0.2, 0.2, 4).*(0.1)
 
-# Annotation
+# Notes
 
 The synthesiser, called [_SuperCollider_](https://audiosynth.com/), is by James McCartney and others.
 The WebAssembly patches are by Hanns Holger Rutz and others.

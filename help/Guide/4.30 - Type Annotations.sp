@@ -6,7 +6,7 @@
 	) * rand(0.1, 0.3)
 } ! 2
 
-# Annotation
+# Notes
 
 Blocks can specify input and output types,
 and these are checked by the editor.

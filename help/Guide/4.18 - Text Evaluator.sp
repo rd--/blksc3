@@ -6,7 +6,7 @@ let f = 2 ^ lfTri(b / 99, 0).round(1) * 99;
 let o = grainSin(2, c, d, f * b, 0, -1, 512);
 o.tanh.splay2.transpose.mix / 2
 
-# Annotation
+# Notes
 
 Since block drawings are evaluated by first being translated into text programs,
 it is straightforward for the system to evaluate text programs as well.

@@ -1,6 +1,6 @@
 /* lfSaw.1 */
-var f = { :c | pan2(sinOsc(lfSaw((c * 0.2 + 1)/3, 0) * 500 + 700, 0), lfNoise0(1), 0.05) };
-1.to(5).collect(f).sum
+let f = { :c | pan2(sinOsc(lfSaw((c * 0.2 + 1)/3, 0) * 500 + 700, 0), lfNoise0(1), 0.05) };
+1.to(5).collect(f/1).sum
 
 # lfSaw
 

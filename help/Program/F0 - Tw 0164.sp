@@ -5,7 +5,7 @@ let cm = combC(
 	[4.8 4.7],
 	1
 );
-let fr = Pitch(
+let fr = pitchFollower(
 	cm,
 	440,
 	60,

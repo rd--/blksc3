@@ -7,6 +7,6 @@ let f = { :i |
 };
 let s = { :k |
     z := k;
-    1.to(6).collect(f:/1).sum
+    1.to(6).collect(f/1).sum
 };
-(gVerb(0.to(15).collect(s:/1).sum, 1, 3, 0.5, 0.5, 15, 1, 0.7, 0.5, 300) / 512).transpose.sum
+(gVerb(0.to(15).collect(s/1).sum, 1, 3, 0.5, 0.5, 15, 1, 0.7, 0.5, 300) / 512).transpose.sum

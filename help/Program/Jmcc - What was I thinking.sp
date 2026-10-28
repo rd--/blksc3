@@ -12,4 +12,4 @@ let c = { :i |
 	)
 };
 let y = z * 0.6;
-{ [y, y].collect(c:/1).sum } ! 2 + z
+{ [y, y].collect(c/1).sum } ! 2 + z

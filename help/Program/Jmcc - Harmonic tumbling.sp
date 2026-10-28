@@ -11,5 +11,4 @@ let o = { :h |
 	    0
     ) * e
 };
-0:10.collect(o:/1).sum
-
+0:10.collect(o/1).sum

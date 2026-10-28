@@ -1,8 +1,7 @@
 /* https://twitter.com/redFrik/status/1115745664523218944 */
 let b = [1, 2, 6, 3] + (sinOsc(0.0345, 0) < 0);
 let c = 2 ^ sinOsc(b, 0);
-let j = mulAdd(
-	sinOsc(1 / b, 0),
+let j = sinOsc(1 / b, 0).timesPlus(
 	b / 3,
 	b * (sinOsc(0.0234, 0) < 0 + 1)
 ).round(1);

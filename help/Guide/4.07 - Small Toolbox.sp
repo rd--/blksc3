@@ -6,7 +6,7 @@
 	) * 0.1
 } !^ 10
 
-# Annotation
+# Notes
 
 A toolbox is an organised collection of block programs.
 There can be any number of toolboxes,

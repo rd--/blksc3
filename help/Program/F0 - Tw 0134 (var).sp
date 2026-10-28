@@ -8,4 +8,4 @@ let z = { :i |
 	let o3 = blip(f0, i + [2, 3]) * m;
 	ringz(o3, i + 1 * (n * 2 - 1), 0.1)
 };
-1.to(n).collect(z:/1).mean / 5
+1.to(n).collect(z/1).mean / 5

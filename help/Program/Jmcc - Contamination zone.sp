@@ -2,7 +2,7 @@
 let z = { :tr |
 	let f = tExpRand(800, 8000, tr);
 	let s = pinkNoise() * (lfNoise1(tRand(0, 3, tr)) * 0.0008 + 0.0022);
-	let r = ringzBank(s, { tRand(50, 2000, tr) } ! 4, [1], { tRand(0.2, 4, tr) } ! 4).Abs;
+	let r = ringzBank(s, { tRand(50, 2000, tr) } ! 4, [1], { tRand(0.2, 4, tr) } ! 4).abs;
 	pan2(
 		rlpf(r, sinOsc(tRand(0, 1, tr), 0) * 0.7 * f + f, 0.1),
 		lfNoise1(tRand(0, 1, tr)),

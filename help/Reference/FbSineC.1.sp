@@ -9,7 +9,9 @@ fbSineC(
 	0.1
 ) * 0.05
 
-_fbSineC_ is a cubic-interpolating sound generator based on the difference equations:
+# FbSineC
+
+`fbSineC` is a cubic-interpolating sound generator based on the difference equations:
 
 - x(n+1) = sin(im * y(n) + fb * x(n))
 - y(n+1) = (a * y(n) + c) % 2pi

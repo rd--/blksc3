@@ -1,5 +1,5 @@
 /* Voicer.y */
-Voicer(1, 16) { :e |
+voicer(1, 16) { :e |
     pan2(
         sinOsc((e.x * 24 + 48).midiCps, 0),
         e.i * 2 - 1,

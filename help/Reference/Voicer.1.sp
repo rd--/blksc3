@@ -1,5 +1,5 @@
 /* Voicer.1 */
-Voicer(1, 16) { :e |
+voicer(1, 16) { :e |
     let freq = (e.x * [25, lfNoise2(0.25) * 0.25 + 25] + 48).midiCps;
     eqPan2(
 	    rlpf(

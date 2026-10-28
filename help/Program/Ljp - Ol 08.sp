@@ -6,7 +6,7 @@ bpf(
 	lfNoise1(f) * 0.3 + 0.31
 ).splay2
 
-# Annotation
+# Notes
 
 [No. 8](https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html)
 

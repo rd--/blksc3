@@ -12,6 +12,6 @@
 	} !^ 10
 }.xFadeTexture(4, 4)
 
-# Annotation
+# Notes
 
 ...

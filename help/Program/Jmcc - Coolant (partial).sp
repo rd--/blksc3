@@ -1,5 +1,5 @@
 /* coolant (jmcc) */
-var o = onePole(brownNoise() * 0.002, 0.95);
+let o = onePole(brownNoise() * 0.002, 0.95);
 { ringz(o, rand(40, 2040), 1) * 0.2 } !^ 10
 
 # Notes

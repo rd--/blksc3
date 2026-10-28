@@ -6,4 +6,4 @@ overlapTexture({ :tr |
     let freq = lag(sw, 0.05);
     let amp = lag(p2, 0.3);
     pan2(sinOsc(freq, 0), tRand(-1, 1, tr), amp)
-}, 7, 4, 4)
+}, 7, 4, 4).sum

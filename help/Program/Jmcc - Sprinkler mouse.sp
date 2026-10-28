@@ -9,6 +9,6 @@ bpz2(
 	) * 0.1
 )
 
-# Annotation
+# Notes
 
 Mouse control.

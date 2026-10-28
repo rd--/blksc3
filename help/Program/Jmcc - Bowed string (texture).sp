@@ -9,5 +9,5 @@
     let amp = { a0 := a0 * a0 } ! 12;
     let x = { brownNoise() } ! 2 * 0.007 * (lfNoise1(tExpRand(0.125, 0.5, tr)) * 0.6 + 0.4).max(0);
     let k = ringzBank(x, freq, amp, { tRand(1, 3, tr) } ! 12);
-    (k * 0.1).SoftClip
+    (k * 0.1).softClip
 }.overlapTexture(5, 2, 12).mix

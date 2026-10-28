@@ -1,8 +1,8 @@
 /* Control Fields */
 sinOsc([
-	NamedControl('Name.1', 440),
-	NamedControl('Name.2', 443)
-], 0) * NamedControl('Name.3', 0.1)
+	namedControl('Name.1', 440),
+	namedControl('Name.2', 443)
+], 0) * namedControl('Name.3', 0.1)
 
 # Control Fields
 

@@ -1,9 +1,9 @@
-/* External Control, cc, Sw */
+/* External Control, Cc, Sw */
 let f = lag(cc(1), 0.2) * 110 + 110;
 let a = lag(cc(2), 0.2) * 0.1;
 sinOsc(f, 0) * a
 
-# External Control, cc, Sw
+# External Control, Cc, Sw
 
 Many music synthesisers, including _SuperCollider_, have two distinct operating rates, audio rate and control rate,
 often set to 48,000 _hz_ and 1,000 _hz_.

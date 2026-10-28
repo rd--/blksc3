@@ -1,13 +1,13 @@
 /* 4.X - Control Fields */
 sinOsc(
 	[
-		NamedControl('α', 440),
-		NamedControl('β', 443)
+		namedControl('α', 440),
+		namedControl('β', 443)
 	],
 	0
-) * NamedControl('γ', 0.1)
+) * namedControl('γ', 0.1)
 
-# Annotation
+# Notes
 
 𝒞 is a _control field_.
 When the text of 𝒞 is edited,

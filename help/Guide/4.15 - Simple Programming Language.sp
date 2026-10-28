@@ -5,7 +5,7 @@ resonz(
 	0.33
 ) * 0.33
 
-# Annotation
+# Notes
 
 Block drawings are evaluated by translation into a text language.
 _Block SuperCollider_ programs, in particular, are drawings of

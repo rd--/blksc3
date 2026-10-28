@@ -7,7 +7,7 @@ splay(
 	) * tRand(0.05, 0.15, t)
 )
 
-# Annotation
+# Notes
 
 Blocks are drawn in colours according to category.
 The colours are shown to the left of the category name.

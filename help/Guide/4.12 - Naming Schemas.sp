@@ -7,7 +7,7 @@ let z = freqShift(
 );
 z <! localOut(delayC(z, 1, 0.1) * 0.9)
 
-# Annotation
+# Notes
 
 The text displayed on a block is called the block message.
 It is distinct from the block type,

@@ -1,7 +1,7 @@
 /* combC.2.sl ; Event control */
 let lfo = sinOsc(0.5, 0);
-let osc = Voicer(1, 16) { :e |
-	sinOsc(e.p.UnitCps, 0) * lfo * e.w * e.z
+let osc = voicer(1, 16) { :e |
+	sinOsc(e.p.unitCps, 0) * lfo * e.w * e.z
 };
 combC(osc.splay2, 0.5, 0.2, 3)
 

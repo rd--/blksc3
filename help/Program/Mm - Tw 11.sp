@@ -1,7 +1,7 @@
 /* Sc-140 ; #11 ; Micromoog */
 let f = hasher(
 	latch(
-		sinOsc([1 .. 4] ! 2, 0),
+		sinOsc([1 2 3 4; 1 2 3 4], 0),
 		impulse([5 / 2, 5], 0)
 	)
 ) * 300 + 300;

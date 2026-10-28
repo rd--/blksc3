@@ -1,5 +1,5 @@
 /* https://sccode.org/1-5fc (dst) */
-Voicer(1, 16, { :e |
+voicer(1, 16, { :e |
 	let tr = trig(e.w, e.y * 0.002 + 0.001);
 	let buf = [0, 7, 15.93, 5, 9.7, 12, 17.5, 13.1].localBuf;
 	let samp = tExpRand(0.07, 0.5, tr);

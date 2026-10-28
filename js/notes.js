@@ -8,7 +8,7 @@ function markdownToHtml(mdText) {
 	return htmlWriter.render(mdReader.parse(mdText));
 }
 
-// .sp files can have a .md segment, indicated by a line beginning '# '
+// .sp files can have a .md segment, indicated by a line beginning '# Notes'
 function mdNotesFromSpl(splText) {
 	const lines = splText.split('\n');
 	const notesMarker = lines.findIndex((str) =>
@@ -16,7 +16,7 @@ function mdNotesFromSpl(splText) {
 	);
 	const hasNotes = notesMarker >= 0;
 	const endSrc = hasNotes ? notesMarker : lines.length;
-	const includeSrc = !hasNotes || (lines[notesMarker] === '# Annotation');
+	const includeSrc = !hasNotes || (lines[notesMarker] === '# Notes');
 	if (lines.length == 0) {
 		return 'No notes?';
 	}

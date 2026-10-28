@@ -1,15 +1,15 @@
-/* Pitch.1 */
-var input = audioIn([1, 2]).sum;
-var freq = Pitch(input, 440, 60, 4000, 100, 16, 7, 0.02, 0.5, 1, 0).nth(1);
-var s = varSaw(freq * [0.5, 1, 2], 0, lfNoise1(0.3) * 0.1 + 0.1) * 0.1;
+/* PitchFollower.1 */
+let input = audioIn([1, 2]).sum;
+let freq = pitchFollower(input, 440, 60, 4000, 100, 16, 7, 0.02, 0.5, 1, 0).at(1);
+let s = varSaw(freq * [0.5, 1, 2], 0, lfNoise1(0.3) * 0.1 + 0.1) * 0.1;
 6.timesRepeat({
-    s := allpassC(s, 0.040, { rand(0, 0.04) }.dup(2), 2)
+    s := allpassC(s, 0.040, { rand(0, 0.04) }.duplicate(2), 2)
 });
 s
 
-# Pitch
+# PitchFollower
 
-- _Pitch(in, initFreq, minFreq, maxFreq, execFreq, maxBinsPerOctave, median, ampThreshold, peakThreshold, downSample)_
+- _PitchFollower(in, initFreq, minFreq, maxFreq, execFreq, maxBinsPerOctave, median, ampThreshold, peakThreshold, downSample)_
 
 Autocorrelation pitch follower
 

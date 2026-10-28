@@ -5,7 +5,7 @@ let o = sinOsc(
 ) * 0.1;
 eqPan2(pinkNoise() * o, o * -3)
 
-# Annotation
+# Notes
 
 The _mouseX_ and _mouseY_ unit generators are not implemented at the in-process synthesiser instance,
 however the system simulates them by writing the window mouse coordinates to synthesiser control buses.

@@ -10,7 +10,7 @@ let x = {
 	{
 		sinOsc(rand(110, 220), 0) * rand(0, 0.05)
 	} !^ 16,
-	x !^ 16
+	x/0 !^ 16
 ].sum
 
 # Code Generation, Macros

@@ -9,7 +9,7 @@ resonz(
 	0.1
 )
 
-# Annotation
+# Notes
 
 An _idiom_ is a small program that is often repeated.
 !λ is an idiom, and the toolbox includes it in the _List_ category.

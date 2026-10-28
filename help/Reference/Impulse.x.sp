@@ -1,6 +1,6 @@
 /* impulse ; Voicer */
 splay2(
-	Voicer(
+	voicer(
 		1,
 		16,
 		{ :e |

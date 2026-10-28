@@ -1,7 +1,7 @@
 /* jh ; https://scsynth.org/t/auditory-illusion-with-exponentially-spaced-frequencies/4157 ; rd (edit) */
 let t = impulse(0.1, 0);
 let sinosc = { :freq |
-    (phasor(t, freq / sampleRate(), 0, 1, 0) * 2.pi).Sin
+    (phasor(t, freq / sampleRate(), 0, 1, 0) * 2.pi).sin
 };
 let k = 64; /* Adjust for Udp etc. */
 let b = tRand(2, 2.25, t);

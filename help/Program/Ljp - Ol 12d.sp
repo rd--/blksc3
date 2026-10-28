@@ -7,6 +7,6 @@ p + combC(
 	-10000
 )
 
-# Annotation
+# Notes
 
 [No. 12(d)](https://w2.mat.ucsb.edu/l.putnam/sc3one/index.html)

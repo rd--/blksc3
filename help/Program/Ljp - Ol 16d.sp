@@ -12,6 +12,6 @@ eqPan2(
 	0
 ) * 0.1
 
-# Annotation
+# Notes
 
 Note initial delay.

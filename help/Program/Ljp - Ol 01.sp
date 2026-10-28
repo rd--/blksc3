@@ -9,7 +9,7 @@ pan2(
 	0.1
 )
 
-# Annotation
+# Notes
 
 Here `phasor` replaces `Line`, so voices reset at individual intervals.
 

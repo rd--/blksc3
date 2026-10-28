@@ -4,6 +4,6 @@ let i = impulse([1 0.749 6 12 3 4], 0);
 let o = sinOsc(1 / runningMax(s, i), 0);
 (o.splay2.tanh / 2 * 0.1) <! localOut(o)
 
-# Annotation
+# Notes
 
 ⅄ attaches 𝑙↓ (`localOut`) to the graph.

@@ -14,4 +14,4 @@ let x = { :i |
 	let z = leakDc(varSaw(o, t, 0.5), 0.995);
 	pan2(z, varSaw(0.02, t, 0.5), 1 / n)
 };
-(1 .. n).collect(x:/1).sum * 0.25
+(1 .. n).collect(x/1).sum * 0.25

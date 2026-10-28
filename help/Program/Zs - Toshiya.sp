@@ -10,13 +10,13 @@ snd := {
     sig := delayC(sig, rand(0.01, 0.03), (lfNoise1(rand(5, 10)) * 0.01 + 0.02) / nRand(10, 20, 3) );
     pan2(sig, lag(lfNoise0(1 / 3), 3), 1) / 12 * amp
 } !+ 12 + snd;
-snd := MoogLadder(snd.tanh, linExp(lag(lfNoise0(1 / 6), 6), -1, 1, hz * 2, hz * 10), 0);
+snd := moogLadder(snd.tanh, linExp(lag(lfNoise0(1 / 6), 6), -1, 1, hz * 2, hz * 10), 0);
 z := delayC(snd, 0.048, 0.048);
 y := { combL(z, 0.1, lfNoise1(rand(0, 0.1)) * 0.04 + 0.05, 15) } !+ 7;
 4.timesRepeat({ y := allpassC(y, 0.050, [rand(0, 0.050), rand(0, 0.050)], 1) });
 snd := snd + (linLin(lag(lfNoise0(1 / 10), 10), -1, 1, 0.01, 0.06) * y);
 snd := snd + [
-    Amplitude(snd, 0.01, 0.01),
+    amplitude(snd, 0.01, 0.01),
     linLin(lag(lfNoise0(1 / 1), 1), -1, 1, 0, 1),
     ringzBank({ pinkNoise() * 0.007 } ! 2, [hz, hz * 2 + 23, hz * 4 + 53, hz * 8 + 23], [1, 1, 1, 1], [1, 1, 1, 1])].product;
 snd := lpf(snd, 10000);

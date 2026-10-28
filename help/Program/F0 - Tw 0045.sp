@@ -15,6 +15,6 @@ let p = sinOsc(
 ) * (1.pi + sinOsc(0.0005, 0));
 sinOsc(f, p).tanh * 0.1
 
-# Annotation
+# Notes
 
 [F0](http://www.fredrikolofsson.com/f0blog/?q=node/537)

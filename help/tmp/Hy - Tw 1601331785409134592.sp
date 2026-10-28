@@ -1,8 +1,8 @@
 /* http://twitter.com/hrhkymd/status/1601331785409134592 */
 let b = 1 / 25.6;
 let p = impulse(b, 0);
-let f = Choose(p, [58 58.2 62; 56 56.2 67]) ++ [39 51 60 63 65];
-let t = Choose(p, [-2 0 4]) + f;
+let f = tChoose(p, [58 58.2 62; 56 56.2 67]) ++ [39 51 60 63 65];
+let t = tChoose(p, [-2 0 4]) + f;
 {
 	let osc = sinOsc(
 		t.midiCps,

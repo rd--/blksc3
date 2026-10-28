@@ -2,7 +2,7 @@
 combC(
 	sinOsc(
 		lfNoise2(
-			1 # 4 * 0.1
+			[1 1 1 1] * 0.1
 		) * 440 + ([1 2] * 440),
 		0
 	).sum * 0.01,
@@ -11,7 +11,7 @@ combC(
 	15
 )
 
-# Annotation
+# Notes
 
 ␊⍰₂ _threads over_ the four item list at the ν input,
 so that there are four noise generators,

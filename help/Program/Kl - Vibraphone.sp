@@ -17,4 +17,4 @@ let voiceFunc = { :e |
 	let pan = e.i * 2 - 1;
 	pan2(soundMain.sum + soundHigh.sum, pan, lagUd(e.w, 0.01, 4))
 };
-Voicer(1, 16, voiceFunc/1).sum * 0.1
+voicer(1, 16, voiceFunc/1).sum * 0.1

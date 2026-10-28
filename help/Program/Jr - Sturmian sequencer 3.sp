@@ -15,7 +15,7 @@ let strFunc = { :i |
 	let dt = 1 / sampleRate() / (n - i + 2) * mouseX(1, sampleRate(), 1, 0.2);
 	tDuty(dt, 0, dseq(Infinity, str - 0.5))
 };
-0.to(n - 1).collect(strFunc:/1).splay2 * 0.3
+0.to(n - 1).collect(strFunc/1).splay2 * 0.3
 
 # Notes
 

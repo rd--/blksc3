@@ -8,7 +8,7 @@ let f = {
 	) * 0.8 / n;
 	let l = sinOsc(
 		0.1 + rand(0, 0.4),
-		rand(0, 2 * pi)
+		rand(0, 2.pi)
 	);
 	pan2(
 		resonz(
@@ -20,5 +20,4 @@ let f = {
 		a
 	)
 };
-f:/0 !+ n
-
+f/0 !+ n

@@ -6,7 +6,7 @@
 	) * 0.1
 } !^ 23
 
-# Annotation
+# Notes
 
 ! constructs a list by evaluating a λ block the specified number of times.
 The λ family of blocks represent procedures.

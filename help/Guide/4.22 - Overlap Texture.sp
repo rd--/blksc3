@@ -10,7 +10,7 @@
 	)
 }.overlapTexture(2, 8, 12).mix
 
-# Annotation
+# Notes
 
 ᨏλ𝑡 is another idiom, in this case combining three blocks.
 ᨏ constructs a texture by overlapping multiple copies of a generating function λ,

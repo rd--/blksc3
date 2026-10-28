@@ -1,5 +1,5 @@
 /* eqBalance2.2 ; Mouse control of pan rate ; Reset frequencies at rightward center crossings */
-var b = sinOsc(mouseX(0.25, 0.7, 0, 0.2), 0);
+let b = sinOsc(mouseX(0.25, 0.7, 0, 0.2), 0);
 {
 	eqBalance2(saw(tRand(33, 55, b)), pulse(tRand(33, 55, b), 0.5), b) * 0.05
 } !+ 2

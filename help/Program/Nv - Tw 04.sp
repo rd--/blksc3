@@ -7,11 +7,11 @@ let f = 2 ^ lag(
 	0.1
 ) * 300;
 let a = combC(
-	bpf(s, f, 0.1).Distort,
+	bpf(s, f, 0.1).distort,
 	2, 2, 40
 );
 (a * 0.35) <! localOut(a)
 
-# Annotation
+# Notes
 
 Note initial silence caused by two second delay.

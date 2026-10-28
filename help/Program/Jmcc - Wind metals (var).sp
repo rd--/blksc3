@@ -5,5 +5,5 @@ overlapTexture({ :tr |
 	let f = { tRand(0, tRand(500, 8000, tr), tr) + tExpRand(60, 4000, tr) } ! n;
 	let dt = { tRand(0.1, 2, tr) } ! n;
 	let s = ringzBank(exc, f, [1], dt) * 0.1;
-	s.SoftClip
+	s.softClip
 }, 5, 2, 12).mix * 0.1

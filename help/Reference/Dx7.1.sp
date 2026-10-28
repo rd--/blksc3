@@ -1,5 +1,5 @@
 /* Dx7.1 */
-var voiceData = [
+let voiceData = [
 	25 21 98 38 99  0 99  0 36 17 87  2  1 0 0 0 59 0  1 1 8;
 	66 69 60 35  0  0 98  0  0  0  4  0  0 0 0 1 90 0  1 0 8;
 	25 21 98 38 99  0 99  2 35 15 79  3  1 1 0 0 91 1  0 0 6;
@@ -8,13 +8,13 @@ var voiceData = [
 	98 56 63 23 99 89 74  2  0  4  1  0  0 0 0 0 99 0  1 0 7;
 	99 99 99 99 50 50 50 50  3  2  1 29 99 1 0 0  0 1 24
 ];
-var voiceFunc = {
-    var tr = dust(1 / 32).kr;
-    var buf = voiceData.catenate.localBuf;
-    var dx7 = Dx7(buf, tr, 0, 0, 0, tRand(48, 72, tr), tRand(0.1, 0.6, tr), 0, 0, 0, 0);
+let voiceFunc = {
+    let tr = dust(1 / 32).kr;
+    let buf = voiceData.catenate.localBuf;
+    let dx7 = dx7(buf, tr, 0, 0, 0, tRand(48, 72, tr), tRand(0.1, 0.6, tr), 0, 0, 0, 0);
     pan2(dx7, tRand(-1, 1, tr), 1)
 };
-voiceFunc !+ 32 * 0.25
+voiceFunc/0 !+ 32 * 0.25
 
 # Notes
 

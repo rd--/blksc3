@@ -1,5 +1,5 @@
 /* lfSaw.2 */
-var lfo = lfSaw(2, 0) * -100 + 600;
+let lfo = lfSaw(2, 0) * -100 + 600;
 sinOsc(lfo, 0) * 0.1
 
 # lfSaw

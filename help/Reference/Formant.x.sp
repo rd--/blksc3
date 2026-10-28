@@ -1,12 +1,12 @@
 /* formant ; Voicer */
 splay2(
-	Voicer(
+	voicer(
 		1,
 		16,
 		{ :e |
 			formant(
-				e.p.UnitCps,
-				e.y.UnitCps,
+				e.p.unitCps,
+				e.y.unitCps,
 				880
 			) * e.w * e.z
 		}

@@ -14,6 +14,6 @@ let strFunc = { :i |
     let dt = 2 ^ i.negate * 10;
     let trig = tDuty(dt, 0, dseq(1, str));
     let freq = expRand(200, i + 1 / 7 * 10100);
-    ringz(trig, freq * [1, 1.2, 1.5], expRand(2 ^ i.negate * 0.1, 1.101)).sum.Distort
+    ringz(trig, freq * [1, 1.2, 1.5], expRand(2 ^ i.negate * 0.1, 1.101)).sum.distort
 };
-0.to(6).collect(strFunc:/1).splay2 * 0.3
+0.to(6).collect(strFunc/1).splay2 * 0.3

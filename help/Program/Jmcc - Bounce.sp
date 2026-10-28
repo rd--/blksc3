@@ -12,4 +12,4 @@ let z = (
 		mouseY(0, 1, 0, 0.2)
 	) * decay2(trig, 0.005, 1.4)
 ).clump(2).sum;
-combC(z * 0.5, 0.375, 0.375, 4).SoftClip
+combC(z * 0.5, 0.375, 0.375, 4).softClip

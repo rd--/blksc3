@@ -1,9 +1,8 @@
 /* expRand.1 */
-var harmonics = 16;
-var f = {
+let harmonics = 16;
+{
     pan2(sinOsc(expRand(100, 2000), 0), rand(-1, 1), sinOsc(1 / rand(3, 6), 0) * rand(0.1, 0.9))
-};
-f !+ harmonics / (2 * harmonics)
+} !+ harmonics / (2 * harmonics)
 
 # expRand
 

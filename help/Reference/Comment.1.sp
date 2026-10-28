@@ -1,5 +1,5 @@
 /* “ (Comment) */
-var f = latch(
+let f = latch(
 	whiteNoise() * 0.5 + 0.5,
 	impulse(1 / [0.5, 1, 5, 7], 0)
 ) * 220 + 110;

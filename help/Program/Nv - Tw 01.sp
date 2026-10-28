@@ -8,5 +8,5 @@ let o = {
 	);
 	a := bBandStop(a, f, expRand(0.1, 2))
 };
-50.timesRepeat(o:/0);
+50.timesRepeat(o/0);
 lpf(a, 100000)

@@ -5,7 +5,7 @@ resonz(
 	[0.01 0.03]
 )
 
-# Annotation
+# Notes
 
 A shadow block is an editable but non-movable block connected to a parent block.
 Toolbox entries ordinarily have shadow blocks at each input specifying a _default value_.

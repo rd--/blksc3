@@ -8,7 +8,7 @@
 	).lpf(777) * 0.07
 } !^ 11
 
-# Annotation
+# Notes
 
 In the _Symbolic Naming Schema_ the block,
 and each of its inputs,

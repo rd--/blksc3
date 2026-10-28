@@ -16,5 +16,5 @@ overlapTexture({ :tr |
 		} ! n,
 		[1],
 		{ tRand(0.1, 2, tr) } ! n * 0.1
-	).SoftClip
+	).softClip
 }, 5, 2, 12).sum * 0.1

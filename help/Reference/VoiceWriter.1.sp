@@ -1,12 +1,12 @@
 /* VoiceWriter.1.sl */
-VoiceWriter(1, 16) {
+voiceWriter(1, 16) {
 	let tr = impulse(rand(0.15, 0.85), rand(0, 1));
 	(
 		w: trig(tr, 0.25),
 		p: latch(linLin(sinOsc(rand(0.25, 1.5), 0), -1, 1, 0.15, 0.95), tr),
 		z: tRand(0.1, 0.2, tr)
 	)
-}.print
+}
 
 # VoiceWriter
 

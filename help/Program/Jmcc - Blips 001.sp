@@ -10,7 +10,7 @@ let z = overlapTexture({ :tr |
 	    tLine(tRand(-1, 1, tr), tRand(-1, 1, tr), 4, tr)
     ) * 0.1
 }, 2, 1, 12).mix;
-z := z.Distort;
+z := z.distort;
 6.timesRepeat {
 	z := allpassC(z, 0.05, { rand(0, 0.05) } ! 2, 4)
 };

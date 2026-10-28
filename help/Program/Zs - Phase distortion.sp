@@ -1,5 +1,5 @@
 /* https://schollz.com/blog/phasedistortion/ (zs) */
-Voicer(1, 16, { :e |
+voicer(1, 16, { :e |
     let freq = (e.x * 36 + 48).midiCps;
     let amp = e.z;
     let freqBase = freq;
@@ -13,4 +13,3 @@ Voicer(1, 16, { :e |
     let env = decay2(trig(e.w, 0.001), 0.005, 10);
     pan2(snd, e.i * 2 - 1, env * amp)
 }).sum
-

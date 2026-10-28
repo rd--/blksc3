@@ -1,9 +1,8 @@
 /* modal space (jmcc) #8 */
-var b = [0, 2, 3.2, 5, 7, 9, 10].localBuf;
-var k = degreeToKey(b, mouseX(0, 15, 0, 0.1), 12);
-var n = lfNoise1([3, 3]);
-var c = {
-    arg r;
+let b = [0, 2, 3.2, 5, 7, 9, 10].localBuf;
+let k = degreeToKey(b, mouseX(0, 15, 0, 0.1), 12);
+let n = lfNoise1([3, 3]);
+let c = { :r |
     combN(
         sinOsc((r + k + (n * 0.04)).midiCps, 0) * 0.1
         +
@@ -12,7 +11,7 @@ var c = {
         0.31,
         2)
 };
-[48, 72].collect(c).sum * 0.25
+[48, 72].collect(c/1).sum * 0.25
 
 # Notes
 

@@ -27,10 +27,10 @@ overlapTexture({ :tr |
 	let stringR = mkDelay([pk2R, pk2Pos - srcPos]);
 	let source = {
 		let s = sinOsc(220, 0) * 0.01;
-		let a = Amplitude(drv, 0.01, 0.01) * 11;
+		let a = amplitude(drv, 0.01, 0.01) * 11;
 		let p = pulse(60 + a, 0.5) * 0.1;
 		let f = rlpf(s + p, 320, 0.05);
-		let e = 1 - Amplitude(drv, 0.01, 0.01).min(1);
+		let e = 1 - amplitude(drv, 0.01, 0.01).min(1);
 		normalizer(f, 0.7, 0.01) * e
 	}.nullaryApply;
 	let lOut = replaceOut(bus, source * 0.2 + stringR);

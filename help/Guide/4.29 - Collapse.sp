@@ -1,5 +1,5 @@
 /* 4.X - Collapse */
-{ let t = dust(1 / 16).kr; pan2(Dx7([25 21
+{ let t = dust(1 / 16).kr; pan2(dx7([25 21
 98 38 99 0 99 0 36 17 87 2 1 0 0 0 59 0 1
 1 8 66 69 60 35 0 0 98 0 0 0 4 0 0 0 0 1 90
 0 1 0 8 25 21 98 38 99 0 99 2 35 15 79 3 1
@@ -12,7 +12,7 @@
 tRand(0.1, 0.6, t), 0, 0, 0, 0), tRand(-1,
 1, t), 0.25) } !+ 32
 
-# Annotation
+# Notes
 
 The context menu for each block includes a _Collapse Block_ entry.
 It elides part of a block drawing,

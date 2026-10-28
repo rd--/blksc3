@@ -11,4 +11,4 @@ let f = duty(
 hpf(
 	bLowPass(lfTri(c, 0), f, 0.001) / 12,
 	9
-).splay2.Sin / 2
+).splay2.sin / 2

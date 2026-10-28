@@ -7,7 +7,7 @@ sinOsc(
 	0
 ).splay * 0.1
 
-# Annotation
+# Notes
 
 In the _Text Naming Schema_ the input names are elided,
 emphasing the expression tree nature of the drawings.

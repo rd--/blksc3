@@ -1,7 +1,7 @@
 /* Tutorial */
 pinkNoise() * 0.1
 
-# Annotation
+# Notes
 
 The _Capsule Tutorial_,
 §4 of the _Guide_,

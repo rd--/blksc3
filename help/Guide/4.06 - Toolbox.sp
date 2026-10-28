@@ -5,7 +5,7 @@ lfTri(
 	0
 ) * decay2(t, 1 / 33, 2.3) * 0.1
 
-# Annotation
+# Notes
 
 The _Toolbox_ contains instances of the blocks the system knows about, organised into categories.
 

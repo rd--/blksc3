@@ -7,7 +7,7 @@ p + combC(
 	-10000
 )
 
-# Annotation
+# Notes
 
 The assignment block ≔ sets the value of a variable.
 Because block drawings are of trees and not graphs,

@@ -6,7 +6,7 @@ let tr = { impulse(rand(0.15, 0.85), rand(0, 1)) } ! k;
 	w: trig(tr, 0.25),
 	p: latch(sinOsc(rand(0.25, 1.5), 0).linLin(-1, 1, 0.15, 0.95), tr),
 	z: tRand(0.1, 0.2, tr)
-).Voicer { :e |
+).voicer { :e |
 	sinOsc(e.p.unitCps, 0) * lfo * e.w * e.z
 }.splay2.combC(0.5, 0.2, 3)
 

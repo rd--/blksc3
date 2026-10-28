@@ -14,4 +14,4 @@ let nd = { :k |
 	}); /* u = for translator... */
 	y
 };
-(1 .. 8).collect(nd:/1).sum / 4
+(1 .. 8).collect(nd/1).sum / 4

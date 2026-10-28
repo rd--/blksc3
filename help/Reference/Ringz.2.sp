@@ -1,6 +1,6 @@
 /* ringz.2.sl */
 { :tr |
-	var exciter = whiteNoise() * 0.001;
+	let exciter = whiteNoise() * 0.001;
 	{
 		ringz(
 			exciter,
@@ -8,7 +8,7 @@
 			0.5
 		)
 	} !^ 10
-}.overlapTexture(5, 10, 3)
+}.overlapTexture(5, 10, 3).sum
 
 # ringz
 

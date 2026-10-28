@@ -6,7 +6,7 @@ let cfreq = mouseY(400, 8000, 1, 0.2);
 let freq = sinOsc(0.2, 0) * cfreq + (1.05 * cfreq);
 resonz(n * amp, freq, 0.1)
 
-# Annotation
+# Notes
 
 Mouse control.
 

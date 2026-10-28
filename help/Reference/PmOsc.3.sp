@@ -1,6 +1,6 @@
 /* pmOsc.4 */
 overlapTexture({ :tr |
-	var pm = tLine(0, tRand(0, 12, tr), tRand(1, 12, tr), tr);
+	let pm = tLine(0, tRand(0, 12, tr), tRand(1, 12, tr), tr);
 	linPan2(
 		pmOsc(
 			tRand(0, 2000, tr),
@@ -11,7 +11,7 @@ overlapTexture({ :tr |
 		tRand(-1, 1, tr),
 		0.05
 	)
-}, 1, 2, 7)
+}, 1, 2, 7).sum
 
 # pmOsc
 

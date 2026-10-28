@@ -9,7 +9,7 @@ let n = (
 let activity = dust(n * 2.log / tHalf);
 activity <! localOut(activity) * 0.1
 
-# Annotation
+# Notes
 
 3.92 is the half life of Radon-219, discovered 1904 by Giesel and Debierne.
 

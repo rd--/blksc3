@@ -1,7 +1,7 @@
 /* overlapTexture.1 */
 { :tr |
 	eqPan2(sinOsc(tRand(110, 440, tr), 0), tRand(-1, 1, tr)) * tRand(0.01, 0.05, tr)
-}.overlapTexture(3, 5, 7)
+}.overlapTexture(3, 5, 7).sum
 
 # overlapTexture
 

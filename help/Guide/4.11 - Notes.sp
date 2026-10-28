@@ -7,7 +7,7 @@ sinOsc(
 	0
 ) * 0.1
 
-# Annotation
+# Notes
 
 Programs may include notes written in a simple markup language,
 allowing for a kind of literate programming.

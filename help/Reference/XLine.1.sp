@@ -17,7 +17,7 @@ let m = [
 let a = [
 	0.25 0.25 1 0.8 0.5 0.9 0.4 0.3 0.6 0.1 0.1
 ];
-(sinOsc(500 * m.collect(ln:/1), 0) * a).splay2 * 0.05
+(sinOsc(500 * m.collect(ln/1), 0) * a).splay2 * 0.05
 
 # xLine
 

@@ -9,4 +9,4 @@ let s = sinOsc(
 	lfSaw(99 / b, 0)
 ) * o;
 let c = combN(s, 0.2, 0.2, 1);
-c.splay2.Sin * 0.5
+c.splay2.sin * 0.5

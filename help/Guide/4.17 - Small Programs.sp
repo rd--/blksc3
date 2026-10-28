@@ -8,7 +8,7 @@ sinOsc(
 	0
 ).splay * 0.1
 
-# Annotation
+# Notes
 
 The system includes translations of a few hundred small programs,
 listed in the _Program_ menu.

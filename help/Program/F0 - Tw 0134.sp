@@ -13,4 +13,4 @@ let z = { :i |
 		0.1
 	)
 };
-1.to(n).collect(z:/1).mean / 5
+1.to(n).collect(z/1).mean / 5

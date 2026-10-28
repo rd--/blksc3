@@ -1,5 +1,5 @@
 /* eqBalance2 */
-var o = sinOsc([440, 550], 0);
+let o = sinOsc([440, 550], 0);
 eqBalance2(o.first, o.second, lfNoise1(4)) * 0.1
 
 # eqBalance2

@@ -6,7 +6,7 @@ sinOscFb(
 	lfNoise2([0.79 0.57]) * 0.05 + 0.05
 )
 
-# Annotation
+# Notes
 
 All unit generator blocks with an output port have × and + inputs for adjusting scale and bias.
 Unlike in SuperCollider language,

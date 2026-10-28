@@ -4,7 +4,7 @@ let scale = [0 2 4 5 7 9 10 12].localBuf;
 	{
 		let degree = tiRand(0, 7, tr);
 		let octave = tiRand(4, 7, tr);
-		let pitchClass = ClipIndex(scale, degree);
+		let pitchClass = bufIndexClip(scale, degree);
 		let mnn = (octave * 12) + pitchClass;
 		let numHarm = tiRand(1, 4, tr);
 		blip(midiCps(mnn), numHarm) * 0.05

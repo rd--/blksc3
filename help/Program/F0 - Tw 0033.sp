@@ -8,5 +8,5 @@ let z = { :i |
 		i * f + i + 0.333
 	]
 };
-let o = lfPar([1 .. 4].collect(z:/1), 0);
+let o = lfPar([1 .. 4].collect(z/1), 0);
 (o > n / 3).splay2.sum * 0.1

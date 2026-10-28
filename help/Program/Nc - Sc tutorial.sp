@@ -9,13 +9,8 @@ let mk = {
 };
 let x = mouseX(100, 2000, 0, 0.2);
 let y = mouseY(0.01, 1.0, 0, 0.2);
-resonz((mk:/0 ! n).sum, x, y) * 0.5
+resonz((mk/0 ! n).sum, x, y) * 0.5
 
 # Notes
 
 Mouse control.
-
-
-
-
-

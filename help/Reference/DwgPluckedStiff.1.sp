@@ -21,5 +21,5 @@ let inp = [
 ].product;
 let release = tRand(0.05, 0.15, t);
 let fB = tRand(1, 4, t);
-let ps = DwgPluckedStiff(freq, amp, gate, pos, c1, c3, inp, release, fB);
+let ps = dwgPluckedStiff(freq, amp, gate, pos, c1, c3, inp, release, fB);
 pan2(ps, tRand(-1, 1, t), 0.1).sum

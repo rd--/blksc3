@@ -8,7 +8,7 @@ let x = { whiteNoise() * 0.05 } ! 2;
 	)
 } !+ 10
 
-# Annotation
+# Notes
 
 The _Status Area_ is located to the right of the _Begin_ button.
 It shows the number of sounding unit generators.

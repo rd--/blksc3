@@ -1,5 +1,7 @@
 /* Sw ; switch controller */
-splay2(1.to(8).collect({ :i | sinOsc(110 * i, 0) * Sw(i) * sinOsc(0.05, i * pi / 4) * 0.1 }))
+splay2(1.to(8).collect({ :i | sinOsc(110 * i, 0) * cc(i) * sinOsc(0.05, i.pi / 4) * 0.1 }))
+
+# Sw.1
 
 A switch is an input that has two states represented by the signals 0 and 1.
 

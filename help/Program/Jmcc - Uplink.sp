@@ -11,7 +11,7 @@ let osc = {
   ) * rand(0, 8000) + rand(0, 2000)
 };
 pan2(
-	lfPulse(osc:/0 !+ 2, 0, 0.5) * 0.04,
+	lfPulse(osc/0 !+ 2, 0, 0.5) * 0.04,
 	rand(0, 0.8),
 	1
 )

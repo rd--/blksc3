@@ -5,7 +5,7 @@
 	demand(t, 0, n).midiCps
 }.sinOsc(0).splay * 0.1
 
-# Annotation
+# Notes
 
 _demand Rate_ unit generators are not scheduled on either the audio or control rate sample clocks,
 but instead calculate values when requested to.

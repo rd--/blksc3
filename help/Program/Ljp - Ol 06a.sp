@@ -7,7 +7,7 @@ combC(
 	[-10 10]
 ) + p
 
-# Annotation
+# Notes
 
 The _decaytime_  input at `combC` is the time for the echoes to decay by 60 decibels.
 

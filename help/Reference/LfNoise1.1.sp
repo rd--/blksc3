@@ -1,6 +1,6 @@
 /* lfNoise1.1 */
-var o = sinOsc((lfNoise1(0.5) * 600 + (lfSaw(1.5, 0) * 50 + 500)).Abs, 0) * 0.1;
-var d = combC(o, 3.0, [1.35, 0.7], 6);
+let o = sinOsc((lfNoise1(0.5) * 600 + (lfSaw(1.5, 0) * 50 + 500)).abs, 0) * 0.1;
+let d = combC(o, 3.0, [1.35, 0.7], 6);
 pan2(o, 0, 1) + d
 
 # lfNoise1

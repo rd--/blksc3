@@ -3,7 +3,7 @@ let sf = sfAcquireMono('CrotaleD6');
 let n = { :i :j |
 	linLin(lfNoise2(0.1), -1, 1, i, j)
 };
-Freezer(
+freezer(
 	sf,
 	n(0.3, [0.4, 0.5]),
 	n(0.5, [0.6, 0.7]),
