@@ -324,7 +324,7 @@ Blockly.JavaScript.forBlock['Sc_PinkNoise'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'pinkNoise', [], true);
 };
 Blockly.JavaScript.forBlock['Sc_Pitch'] = function(block) {
-	return ugenCodeGen(Blockly, block, 'pitch', ['IN', 'INITFREQ', 'MINFREQ', 'MAXFREQ', 'EXECFREQ', 'MAXBINSPEROCTAVE', 'MEDIAN', 'AMPTHRESHOLD', 'PEAKTHRESHOLD', 'DOWNSAMPLE', 'CLAR'], true);
+	return ugenCodeGen(Blockly, block, 'pitchFollower', ['IN', 'INITFREQ', 'MINFREQ', 'MAXFREQ', 'EXECFREQ', 'MAXBINSPEROCTAVE', 'MEDIAN', 'AMPTHRESHOLD', 'PEAKTHRESHOLD', 'DOWNSAMPLE', 'CLAR'], true);
 };
 Blockly.JavaScript.forBlock['Sc_PitchShift'] = function(block) {
 	return ugenCodeGen(Blockly, block, 'pitchShift', ['IN', 'WINDOWSIZE', 'PITCHRATIO', 'PITCHDISPERSION', 'TIMEDISPERSION'], true);
